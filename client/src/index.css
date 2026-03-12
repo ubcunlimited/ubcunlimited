@@ -60,7 +60,7 @@
 
 :root {
   --radius: 0.5rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.12 0.025 240);
   --foreground: oklch(0.15 0.02 240);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.15 0.02 240);
@@ -98,10 +98,17 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    background-color: #0d1b2a;
+  }
   body {
     @apply bg-background text-foreground;
+    background-color: #0d1b2a;
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
+  }
+  #root {
+    background-color: #0d1b2a;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Sora', 'Inter', system-ui, sans-serif;
