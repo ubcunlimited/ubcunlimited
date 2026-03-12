@@ -7,6 +7,8 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 
 // Core pages
 import Home from "./pages/Home";
+import Locations from "./pages/Locations";
+import LocationDetail from "./pages/LocationDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -79,6 +81,10 @@ function Router() {
       <Route path="/legal/terms-of-service" component={TermsOfService} />
       <Route path="/legal/cookie-policy" component={CookiePolicy} />
       <Route path="/legal/disclaimer" component={Disclaimer} />
+
+      {/* Locations */}
+      <Route path="/locations" component={Locations} />
+      <Route path="/locations/:slug" component={LocationDetail} />
 
       {/* 404 */}
       <Route path="/404" component={NotFound} />

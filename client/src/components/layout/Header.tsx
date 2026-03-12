@@ -1,98 +1,116 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone, ChevronDown, CreditCard } from "lucide-react";
+import { Menu, X, Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES } from "@/lib/config";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [location] = useLocation();
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
     setMobileOpen(false);
-    setSolutionsOpen(false);
-    setIndustriesOpen(false);
+    setOpenMenu(null);
   }, [location]);
 
-  const isActive = (path: string) => location === path;
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setOpenMenu(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  const isActive = (path: string) => location === path || location.startsWith(path + "/");
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#040c1c]/95 backdrop-blur-md shadow-lg shadow-black/20 border-b border-white/5"
-          : "bg-[#040c1c]/80 backdrop-blur-sm"
+          ? "bg-[#0d1b2a]/98 backdrop-blur-md shadow-xl shadow-black/20 border-b border-white/5"
+          : "bg-[#0d1b2a]/95 backdrop-blur-sm"
       }`}
     >
       {/* Top bar */}
-      <div className="bg-[#169fa8]/10 border-b border-[#169fa8]/20 hidden md:block">
-        <div className="container flex justify-between items-center py-1.5 text-xs text-white/60">
-          <span>Utah's Local Merchant Services Experts — Serving Businesses Statewide</span>
-          <a href={SITE.phoneHref} className="flex items-center gap-1.5 text-[#d4a843] font-semibold hover:text-[#e8c06a] transition-colors">
-            <Phone size={11} />
-            {SITE.phone}
-          </a>
+      <div className="bg-[#1e6fa8]/10 border-b border-[#1e6fa8]/20 hidden md:block">
+        <div className="container flex justify-between items-center py-1.5 text-xs text-white/50">
+          <span>Utah's Local Merchant Services Experts — {SITE.yearsInBusiness} Years in Business</span>
+          <div className="flex items-center gap-4">
+            <a href={`mailto:${SITE.email}`} className="hover:text-white/80 transition-colors">{SITE.email}</a>
+            <a href={SITE.phoneHref} className="flex items-center gap-1.5 text-[#c47c2b] font-semibold hover:text-[#d9973e] transition-colors">
+              <Phone size={11} /> {SITE.phone}
+            </a>
+          </div>
         </div>
       </div>
 
-      <div className="container">
+      <div className="container" ref={navRef}>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#169fa8] to-[#0f2040] flex items-center justify-center shadow-lg group-hover:shadow-[#169fa8]/30 transition-shadow">
-              <CreditCard size={18} className="text-white" />
+          <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#1e6fa8] to-[#152234] flex items-center justify-center shadow-lg">
+              <span className="text-white font-extrabold text-sm" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>U</span>
             </div>
             <div className="leading-tight">
-              <div className="text-white font-bold text-base tracking-tight" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <div className="text-white font-bold text-base" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 UBC Unlimited
               </div>
-              <div className="text-[#169fa8] text-[10px] font-medium tracking-widest uppercase">
+              <div className="text-[#1e6fa8] text-[10px] font-medium tracking-widest uppercase hidden sm:block">
                 Merchant Services
               </div>
             </div>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
-            <Link href="/" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive("/") ? "text-[#169fa8]" : "text-white/80 hover:text-white hover:bg-white/5"}`}>
-              Home
-            </Link>
-
+          <nav className="hidden lg:flex items-center gap-0.5">
             {/* Solutions dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setSolutionsOpen(true)}
-              onMouseLeave={() => setSolutionsOpen(false)}
-            >
-              <button className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.startsWith("/solutions") ? "text-[#169fa8]" : "text-white/80 hover:text-white hover:bg-white/5"}`}>
-                Solutions <ChevronDown size={14} className={`transition-transform ${solutionsOpen ? "rotate-180" : ""}`} />
+            <div className="relative">
+              <button
+                onClick={() => setOpenMenu(openMenu === "solutions" ? null : "solutions")}
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  isActive("/solutions") ? "text-[#1e6fa8] bg-[#1e6fa8]/10" : "text-white/75 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                Solutions <ChevronDown size={14} className={`transition-transform ${openMenu === "solutions" ? "rotate-180" : ""}`} />
               </button>
               <AnimatePresence>
-                {solutionsOpen && (
+                {openMenu === "solutions" && (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-1 w-64 bg-[#0a1628] border border-white/10 rounded-xl shadow-2xl shadow-black/50 overflow-hidden"
+                    className="absolute top-full left-0 mt-1 w-[540px] bg-[#152234] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden z-50"
                   >
-                    <div className="p-2">
-                      <div className="px-3 py-2 text-[10px] font-semibold text-[#169fa8] uppercase tracking-widest">Payment Solutions</div>
-                      {NAV_SOLUTIONS.map((item) => (
-                        <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
-                          <span className="text-base">{item.icon}</span>
-                          {item.label}
+                    <div className="p-4">
+                      <div className="text-[10px] font-semibold text-[#1e6fa8] uppercase tracking-widest mb-3">Payment Solutions</div>
+                      <div className="grid grid-cols-2 gap-1">
+                        {NAV_SOLUTIONS.map((item) => (
+                          <Link key={item.href} href={item.href} className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group">
+                            <span className="text-lg mt-0.5">{item.icon}</span>
+                            <div>
+                              <div className="text-white text-sm font-medium group-hover:text-[#1e6fa8] transition-colors">{item.label}</div>
+                              <div className="text-white/40 text-xs mt-0.5">{item.desc}</div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="pt-3 mt-2 border-t border-white/10">
+                        <Link href="/solutions" className="flex items-center gap-1 text-[#1e6fa8] text-xs font-medium hover:underline">
+                          View all solutions <ArrowRight size={12} />
                         </Link>
-                      ))}
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -100,61 +118,75 @@ export default function Header() {
             </div>
 
             {/* Industries dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIndustriesOpen(true)}
-              onMouseLeave={() => setIndustriesOpen(false)}
-            >
-              <button className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.startsWith("/industries") ? "text-[#169fa8]" : "text-white/80 hover:text-white hover:bg-white/5"}`}>
-                Industries <ChevronDown size={14} className={`transition-transform ${industriesOpen ? "rotate-180" : ""}`} />
+            <div className="relative">
+              <button
+                onClick={() => setOpenMenu(openMenu === "industries" ? null : "industries")}
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  isActive("/industries") ? "text-[#1e6fa8] bg-[#1e6fa8]/10" : "text-white/75 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                Industries <ChevronDown size={14} className={`transition-transform ${openMenu === "industries" ? "rotate-180" : ""}`} />
               </button>
               <AnimatePresence>
-                {industriesOpen && (
+                {openMenu === "industries" && (
                   <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-1 w-60 bg-[#0a1628] border border-white/10 rounded-xl shadow-2xl shadow-black/50 overflow-hidden"
+                    className="absolute top-full left-0 mt-1 w-[540px] bg-[#152234] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden z-50"
                   >
-                    <div className="p-2">
-                      <div className="px-3 py-2 text-[10px] font-semibold text-[#169fa8] uppercase tracking-widest">Industries Served</div>
-                      {NAV_INDUSTRIES.map((item) => (
-                        <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
-                          <span className="text-base">{item.icon}</span>
-                          {item.label}
+                    <div className="p-4">
+                      <div className="text-[10px] font-semibold text-[#1e6fa8] uppercase tracking-widest mb-3">Industries We Serve</div>
+                      <div className="grid grid-cols-2 gap-1">
+                        {NAV_INDUSTRIES.map((item) => (
+                          <Link key={item.href} href={item.href} className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group">
+                            <span className="text-lg mt-0.5">{item.icon}</span>
+                            <div>
+                              <div className="text-white text-sm font-medium group-hover:text-[#1e6fa8] transition-colors">{item.label}</div>
+                              <div className="text-white/40 text-xs mt-0.5">{item.desc}</div>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="pt-3 mt-2 border-t border-white/10">
+                        <Link href="/industries" className="flex items-center gap-1 text-[#1e6fa8] text-xs font-medium hover:underline">
+                          View all industries <ArrowRight size={12} />
                         </Link>
-                      ))}
+                      </div>
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
-            <Link href="/blog" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.startsWith("/blog") ? "text-[#169fa8]" : "text-white/80 hover:text-white hover:bg-white/5"}`}>
-              Blog
+            <Link href="/blog" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive("/blog") ? "text-[#1e6fa8] bg-[#1e6fa8]/10" : "text-white/75 hover:text-white hover:bg-white/5"}`}>
+              News &amp; Updates
             </Link>
-            <Link href="/about" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive("/about") ? "text-[#169fa8]" : "text-white/80 hover:text-white hover:bg-white/5"}`}>
+            <Link href="/locations" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive("/locations") ? "text-[#1e6fa8] bg-[#1e6fa8]/10" : "text-white/75 hover:text-white hover:bg-white/5"}`}>
+              Locations
+            </Link>
+            <Link href="/about" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive("/about") ? "text-[#1e6fa8] bg-[#1e6fa8]/10" : "text-white/75 hover:text-white hover:bg-white/5"}`}>
               About
             </Link>
-            <Link href="/contact" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive("/contact") ? "text-[#169fa8]" : "text-white/80 hover:text-white hover:bg-white/5"}`}>
+            <Link href="/contact" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive("/contact") ? "text-[#1e6fa8] bg-[#1e6fa8]/10" : "text-white/75 hover:text-white hover:bg-white/5"}`}>
               Contact
             </Link>
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Link href="/statement-review" className="btn-outline-white text-sm py-2 px-4">
-              Free Statement Review
-            </Link>
-            <Link href="/consultation" className="btn-teal text-sm py-2 px-4">
-              Get a Quote
+          {/* Desktop CTAs */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
+            <a href={SITE.phoneHref} className="flex items-center gap-1.5 text-white/55 text-sm hover:text-white transition-colors">
+              <Phone size={13} /> {SITE.phone}
+            </a>
+            <Link href="/consultation" className="btn-gold text-sm py-2 px-5">
+              Book a Consultation
             </Link>
           </div>
 
-          {/* Mobile menu toggle */}
+          {/* Mobile toggle */}
           <button
-            className="lg:hidden p-2 text-white/80 hover:text-white"
+            className="lg:hidden p-2 text-white/75 hover:text-white"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -171,33 +203,34 @@ export default function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden bg-[#0a1628] border-t border-white/10 overflow-hidden"
+            className="lg:hidden bg-[#0d1b2a] border-t border-white/10 overflow-hidden max-h-[80vh] overflow-y-auto"
           >
             <div className="container py-4 space-y-1">
-              <Link href="/" className="block px-3 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg">Home</Link>
-              
-              <div className="px-3 py-2 text-[10px] font-semibold text-[#169fa8] uppercase tracking-widest mt-3">Solutions</div>
+              <div className="text-[10px] font-semibold text-[#1e6fa8] uppercase tracking-widest px-3 py-2">Solutions</div>
               {NAV_SOLUTIONS.map((item) => (
-                <Link key={item.href} href={item.href} className="flex items-center gap-2 px-3 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg">
+                <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2.5 text-sm text-white/75 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
                   <span>{item.icon}</span>{item.label}
                 </Link>
               ))}
-              
-              <div className="px-3 py-2 text-[10px] font-semibold text-[#169fa8] uppercase tracking-widest mt-3">Industries</div>
+              <div className="text-[10px] font-semibold text-[#1e6fa8] uppercase tracking-widest px-3 py-2 mt-2">Industries</div>
               {NAV_INDUSTRIES.map((item) => (
-                <Link key={item.href} href={item.href} className="flex items-center gap-2 px-3 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 rounded-lg">
+                <Link key={item.href} href={item.href} className="flex items-center gap-2.5 px-3 py-2.5 text-sm text-white/75 hover:text-white hover:bg-white/5 rounded-lg transition-colors">
                   <span>{item.icon}</span>{item.label}
                 </Link>
               ))}
-
-              <div className="pt-3 border-t border-white/10 mt-3 space-y-2">
-                <Link href="/blog" className="block px-3 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg">Blog</Link>
-                <Link href="/about" className="block px-3 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg">About</Link>
-                <Link href="/contact" className="block px-3 py-2.5 text-sm font-medium text-white/80 hover:text-white hover:bg-white/5 rounded-lg">Contact</Link>
+              <div className="pt-3 border-t border-white/10 mt-3 space-y-1">
+                <Link href="/blog" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">News &amp; Updates</Link>
+                <Link href="/locations" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">Locations</Link>
+                <Link href="/about" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">About</Link>
+                <Link href="/contact" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">Contact</Link>
               </div>
-              <div className="pt-3 space-y-2">
-                <Link href="/statement-review" className="block w-full text-center btn-outline-white text-sm py-2.5">Free Statement Review</Link>
-                <Link href="/consultation" className="block w-full text-center btn-teal text-sm py-2.5">Get a Quote</Link>
+              <div className="pt-3 space-y-2 border-t border-white/10 mt-2">
+                <a href={SITE.phoneHref} className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-white/20 text-white text-sm font-medium">
+                  <Phone size={14} /> {SITE.phone}
+                </a>
+                <Link href="/consultation" className="btn-gold w-full justify-center py-3 text-sm">
+                  Book a Consultation <ArrowRight size={15} />
+                </Link>
               </div>
             </div>
           </motion.div>

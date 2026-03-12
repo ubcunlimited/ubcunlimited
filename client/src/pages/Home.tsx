@@ -1,57 +1,75 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Phone, TrendingDown, Shield, Clock, Users, Star, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, TrendingDown, Shield, Clock, Users, Star, ChevronRight, MapPin, Award, Handshake } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import TrustBadges from "@/components/sections/TrustBadges";
 import TestimonialBlock from "@/components/sections/TestimonialBlock";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
-import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES } from "@/lib/config";
+import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES, TRUST_SIGNALS } from "@/lib/config";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_02a49aab.jpg";
 const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation_77637e8d.jpg";
 const ABSTRACT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract_ee7158df.jpg";
 
-const stats = [
-  { value: "500+", label: "Utah Businesses Served" },
-  { value: "24/7", label: "Local Support" },
-  { value: "30%", label: "Avg. Savings" },
-  { value: "1 Day", label: "Approval Time" },
-];
-
 const whyUs = [
-  { icon: TrendingDown, title: "Lower Rates", desc: "Interchange-plus pricing with no hidden fees. We show you exactly what you pay." },
-  { icon: Shield, title: "PCI Compliant", desc: "Bank-grade security and full PCI DSS compliance to protect your business and customers." },
-  { icon: Users, title: "Local Utah Team", desc: "Real people who know Utah business. Not a call center — your dedicated local rep." },
-  { icon: Clock, title: "24/7 Support", desc: "Technical issues don't wait for business hours. Neither do we." },
+  { icon: Award, title: "20+ Years of Expertise", desc: "Josh Cornia and the UBC Unlimited team bring over two decades of merchant services experience to every client relationship." },
+  { icon: Handshake, title: "Industry-Specific Solutions", desc: "We don't offer one-size-fits-all packages. Every setup is tailored to your specific industry and business needs." },
+  { icon: MapPin, title: "Local Utah Support", desc: "Real people who know Utah business. Not a call center — your dedicated local rep who answers when you call." },
+  { icon: Clock, title: "Fast Onboarding", desc: "Most businesses are approved and processing within 24–48 hours. We handle the setup so you can focus on your business." },
 ];
 
 const howItWorks = [
-  { step: "01", title: "Free Statement Review", desc: "Submit your current processing statement. We analyze it for free and show you exactly where you're overpaying." },
-  { step: "02", title: "Custom Proposal", desc: "We build a tailored solution with transparent pricing that fits your business type and volume." },
-  { step: "03", title: "Seamless Setup", desc: "Our local team handles everything — equipment, training, and integration. Same-day approval available." },
-  { step: "04", title: "Ongoing Support", desc: "Your dedicated rep is always available. Monthly reviews ensure you're always getting the best rates." },
+  { step: "01", title: "Book a Consultation", desc: "Schedule a free, no-pressure conversation with a local Utah expert. We learn about your business and current setup." },
+  { step: "02", title: "Free Statement Review", desc: "Submit your current processing statement. We analyze it line by line and show you exactly where you can save." },
+  { step: "03", title: "Custom Proposal", desc: "We build a tailored solution with transparent, competitive pricing that fits your business type and volume." },
+  { step: "04", title: "Seamless Setup & Support", desc: "Our local team handles everything — equipment, training, and integration. Ongoing support from a team that knows your name." },
 ];
 
 const homeFAQ = [
-  { question: "How much can I save by switching to UBC Unlimited?", answer: "Most Utah businesses save between 20–40% on their monthly processing costs. Our free statement review will show you exactly how much you can save before you commit to anything." },
-  { question: "How long does it take to get set up?", answer: "Most businesses are approved and processing within 24–48 hours. POS hardware installations are typically completed within 3–5 business days." },
-  { question: "Do you charge cancellation fees?", answer: "We believe in earning your business every month. We offer flexible month-to-month agreements with no long-term lock-in contracts." },
-  { question: "What types of businesses do you serve?", answer: "We serve all types of Utah businesses — restaurants, retail, medical, automotive, salons, eCommerce, and more. If you accept payments, we can help." },
-  { question: "Is the statement review really free?", answer: "Yes, completely free with no obligation. We analyze your current statement, identify overcharges, and present a comparison. You decide if it makes sense to switch." },
+  {
+    question: "What makes UBC Unlimited different from other processors?",
+    answer: "Better service, industry-specific expertise, and local support. With 20+ years in the industry and a wide range of partner relationships, we can tailor solutions to individual needs — something a national call center simply can't do."
+  },
+  {
+    question: "How long does it take to get set up?",
+    answer: "Most businesses are approved and processing within 24–48 hours. POS hardware installations are typically completed within 3–5 business days."
+  },
+  {
+    question: "Do you offer month-to-month agreements?",
+    answer: "Yes. We believe in earning your business every month. We offer flexible month-to-month agreements with no long-term lock-in contracts."
+  },
+  {
+    question: "What types of businesses do you serve?",
+    answer: "We specialize in restaurants, service companies, retail, medical, automotive, salons, eCommerce, and more. If you accept payments, we have a solution for you."
+  },
+  {
+    question: "Is the statement review really free?",
+    answer: "Yes, completely free with no obligation. We analyze your current statement, identify overcharges, and present a comparison. You decide if it makes sense to switch."
+  },
+  {
+    question: "Do you work with SkyTab POS systems?",
+    answer: "Yes — UBC Unlimited is an authorized SkyTab reseller in Utah. SkyTab is one of the most powerful POS systems available for restaurants and bars, and we provide full local installation and support."
+  },
+];
+
+const recentPosts = [
+  { slug: "how-to-lower-credit-card-processing-fees", title: "How to Lower Your Credit Card Processing Fees in 2025", category: "Pricing & Fees", date: "Jan 15, 2025" },
+  { slug: "best-pos-systems-utah-restaurants-2025", title: "Best POS Systems for Utah Restaurants in 2025", category: "POS Systems", date: "Feb 1, 2025" },
+  { slug: "interchange-plus-vs-flat-rate-pricing", title: "Interchange-Plus vs. Flat-Rate Pricing: Which Is Better?", category: "Credit Card Processing", date: "Jan 22, 2025" },
 ];
 
 export default function Home() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#040c1c]">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#0d1b2a]">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-25"
+          className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: `url(${HERO_IMG})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#040c1c] via-[#040c1c]/80 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#040c1c] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/85 to-[#0d1b2a]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-transparent to-transparent" />
 
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
@@ -61,26 +79,29 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <div className="stat-badge mb-5">Utah's Local Merchant Services Experts</div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Accept Payments
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+                Smarter POS &amp; Payment Solutions
                 <br />
-                <span className="gradient-text">Smarter & Cheaper</span>
+                <span className="gradient-text">With Local Expertise</span>
               </h1>
-              <p className="text-white/70 text-lg md:text-xl mb-8 leading-relaxed max-w-xl">
-                Utah's trusted local merchant services provider. Lower rates, better technology, and real human support — from a team that actually knows your business.
+              <p className="text-white/70 text-lg md:text-xl mb-3 leading-relaxed max-w-xl">
+                {SITE.tagline}
+              </p>
+              <p className="text-white/55 text-base mb-8 leading-relaxed max-w-xl">
+                Competitive pricing, fast onboarding, and industry-specific solutions — backed by {SITE.yearsInBusiness} years of experience and a team that knows Utah business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link href="/consultation" className="btn-gold text-base py-3.5 px-8 justify-center">
-                  Get a Free Quote <ArrowRight size={18} />
+                  Book a Consultation <ArrowRight size={18} />
                 </Link>
-                <Link href="/statement-review" className="btn-outline-white text-base py-3.5 px-8 justify-center">
-                  Free Statement Review
+                <Link href="/industries" className="btn-outline-white text-base py-3.5 px-8 justify-center">
+                  See Industries We Serve
                 </Link>
               </div>
               <div className="flex flex-wrap gap-4">
-                {["No hidden fees", "Month-to-month", "Same-day approval", "Local Utah team"].map((item) => (
+                {["Competitive pricing", "Fast onboarding", "Local expertise", "Tailored setups"].map((item) => (
                   <div key={item} className="flex items-center gap-1.5 text-sm text-white/60">
-                    <CheckCircle size={14} className="text-[#169fa8]" />
+                    <CheckCircle size={14} className="text-[#1e6fa8]" />
                     {item}
                   </div>
                 ))}
@@ -95,20 +116,20 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="hidden lg:grid grid-cols-2 gap-3 absolute right-0 top-1/2 -translate-y-1/2 w-64"
           >
-            {stats.map((s) => (
+            {TRUST_SIGNALS.map((s) => (
               <div key={s.label} className="glass-card rounded-xl p-4 text-center">
-                <div className="text-2xl font-extrabold text-[#169fa8] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{s.value}</div>
+                <div className="text-2xl font-extrabold text-[#1e6fa8] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
                 <div className="text-white/60 text-xs">{s.label}</div>
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Phone CTA bar */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#169fa8]/10 border-t border-[#169fa8]/20 backdrop-blur-sm">
+        {/* Bottom phone strip */}
+        <div className="absolute bottom-0 left-0 right-0 bg-[#1e6fa8]/10 border-t border-[#1e6fa8]/20 backdrop-blur-sm">
           <div className="container py-3 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <span className="text-white/60 text-sm">Questions? Talk to a local expert today.</span>
-            <a href={SITE.phoneHref} className="flex items-center gap-2 text-[#d4a843] font-bold text-sm hover:text-[#e8c06a] transition-colors">
+            <span className="text-white/60 text-sm">Questions? Talk to a local Utah expert today.</span>
+            <a href={SITE.phoneHref} className="flex items-center gap-2 text-[#c47c2b] font-bold text-sm hover:text-[#d9973e] transition-colors">
               <Phone size={14} /> {SITE.phone}
             </a>
           </div>
@@ -119,12 +140,12 @@ export default function Home() {
       <TrustBadges dark={false} />
 
       {/* Stats bar */}
-      <div className="bg-[#040c1c] py-10">
+      <div className="bg-[#0d1b2a] py-10 border-t border-white/5">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {stats.map((s) => (
+            {TRUST_SIGNALS.map((s) => (
               <div key={s.label}>
-                <div className="text-3xl font-extrabold text-[#169fa8] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{s.value}</div>
+                <div className="text-3xl font-extrabold text-[#1e6fa8] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
                 <div className="text-white/50 text-sm">{s.label}</div>
               </div>
             ))}
@@ -137,11 +158,11 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#040c1c] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Payment Solutions for Every Business
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
-              From credit card processing to full POS systems, we have everything your Utah business needs to accept payments.
+            <p className="text-gray-500 max-w-xl mx-auto text-sm">
+              From credit card processing to full POS systems — tailored to your industry, backed by local Utah expertise.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -149,13 +170,14 @@ export default function Home() {
               <Link
                 key={sol.href}
                 href={sol.href}
-                className="group p-5 rounded-xl border border-gray-100 hover:border-[#169fa8]/30 hover:shadow-lg transition-all bg-white"
+                className="group p-5 rounded-xl border border-gray-100 hover:border-[#1e6fa8]/30 hover:shadow-lg transition-all bg-white"
               >
                 <div className="text-2xl mb-3">{sol.icon}</div>
-                <div className="font-semibold text-sm text-[#040c1c] group-hover:text-[#169fa8] transition-colors mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <div className="font-semibold text-sm text-[#0d1b2a] group-hover:text-[#1e6fa8] transition-colors mb-1">
                   {sol.label}
                 </div>
-                <div className="flex items-center gap-1 text-xs text-[#169fa8] opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="text-xs text-gray-400 leading-snug mb-2">{sol.desc}</div>
+                <div className="flex items-center gap-1 text-xs text-[#1e6fa8] opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn more <ChevronRight size={12} />
                 </div>
               </Link>
@@ -170,25 +192,25 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-[#f8fafc]">
+      <section className="py-16 bg-[#f4f7fa]">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="teal-divider mb-5" />
-              <h2 className="text-3xl md:text-4xl font-bold text-[#040c1c] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Why Utah Businesses Choose UBC Unlimited
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+                Better Service. Industry Specific. Local Support.
               </h2>
-              <p className="text-gray-500 mb-8">
-                We're not a national call center. We're your local Utah merchant services partner — with real people, real savings, and real accountability.
+              <p className="text-gray-500 mb-8 text-sm leading-relaxed">
+                With {SITE.yearsInBusiness} years in the industry and a wide range of partner relationships, {SITE.founder} and the UBC Unlimited team can tailor solutions to your individual needs — something a national call center simply can't do.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {whyUs.map((item) => (
                   <div key={item.title} className="flex gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#169fa8]/10 flex items-center justify-center shrink-0">
-                      <item.icon size={20} className="text-[#169fa8]" />
+                    <div className="w-10 h-10 rounded-xl bg-[#1e6fa8]/10 flex items-center justify-center shrink-0">
+                      <item.icon size={20} className="text-[#1e6fa8]" />
                     </div>
                     <div>
-                      <div className="font-semibold text-sm text-[#040c1c] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{item.title}</div>
+                      <div className="font-semibold text-sm text-[#0d1b2a] mb-1">{item.title}</div>
                       <div className="text-xs text-gray-500 leading-relaxed">{item.desc}</div>
                     </div>
                   </div>
@@ -203,17 +225,17 @@ export default function Home() {
             <div className="relative">
               <img
                 src={CONSULT_IMG}
-                alt="UBC Unlimited team consultation with Utah business owner"
+                alt="Josh Cornia consulting with a Utah business owner"
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
-              <div className="absolute -bottom-4 -left-4 glass-card-light rounded-xl p-4 shadow-xl border border-[#169fa8]/20">
+              <div className="absolute -bottom-4 -left-4 glass-card-light rounded-xl p-4 shadow-xl border border-[#1e6fa8]/20">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#169fa8] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-[#1e6fa8] flex items-center justify-center">
                     <Star size={16} className="text-white fill-white" />
                   </div>
                   <div>
-                    <div className="font-bold text-sm text-[#040c1c]">5-Star Rated</div>
-                    <div className="text-xs text-gray-500">500+ Utah businesses</div>
+                    <div className="font-bold text-sm text-[#0d1b2a]">5-Star Rated</div>
+                    <div className="text-xs text-gray-500">500+ Utah businesses served</div>
                   </div>
                 </div>
               </div>
@@ -223,110 +245,149 @@ export default function Home() {
       </section>
 
       {/* Industries */}
-      <section className="py-16 bg-[#040c1c]">
+      <section className="py-16 bg-[#0d1b2a]">
         <div className="container">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
-              Built for Your Industry
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              Industry-Specific Solutions
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto">
-              Every industry has unique payment needs. We specialize in solutions tailored to how your business actually works.
+            <p className="text-white/50 max-w-xl mx-auto text-sm">
+              We specialize in restaurants, service companies, and businesses across the Wasatch Front — with solutions tailored to how your industry actually operates.
             </p>
           </div>
-          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
             {NAV_INDUSTRIES.map((ind) => (
               <Link
                 key={ind.href}
                 href={ind.href}
-                className="group flex flex-col items-center gap-2 p-3 rounded-xl border border-white/10 hover:border-[#169fa8]/40 hover:bg-white/5 transition-all text-center"
+                className="group glass-card rounded-xl p-4 text-center hover:bg-white/10 transition-all"
               >
-                <span className="text-2xl">{ind.icon}</span>
-                <span className="text-white/60 group-hover:text-white text-xs font-medium transition-colors leading-tight">{ind.label}</span>
+                <div className="text-2xl mb-2">{ind.icon}</div>
+                <div className="font-medium text-xs text-white/80 group-hover:text-white transition-colors">{ind.label}</div>
               </Link>
             ))}
           </div>
-          <div className="text-center mt-8">
+          <div className="text-center">
             <Link href="/industries" className="btn-outline-white text-sm py-2.5 px-6">
-              View All Industries <ArrowRight size={16} />
+              See Industries We Serve <ArrowRight size={16} />
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-16 bg-white">
-        <div className="container">
-          <div className="text-center mb-12">
-            <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#040c1c] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
-              How It Works
-            </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
-              Getting started with UBC Unlimited is simple. Most businesses are up and running within 24 hours.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {howItWorks.map((step, i) => (
-              <div key={step.step} className="relative">
-                {i < howItWorks.length - 1 && (
-                  <div className="hidden lg:block absolute top-6 left-full w-full h-px bg-gradient-to-r from-[#169fa8]/30 to-transparent -translate-x-4 z-0" />
-                )}
-                <div className="relative z-10">
-                  <div className="text-4xl font-extrabold text-[#169fa8]/20 mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>{step.step}</div>
-                  <h3 className="font-bold text-[#040c1c] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>{step.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link href="/consultation" className="btn-teal text-sm py-3 px-8">
-              Start Your Free Review <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Abstract section */}
-      <section className="relative py-20 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${ABSTRACT_IMG})` }}
-        />
-        <div className="absolute inset-0 bg-[#040c1c]/85" />
-        <div className="container relative z-10 text-center">
-          <div className="teal-divider mx-auto mb-5" />
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
-            Powering Utah's Payment Infrastructure
-          </h2>
-          <p className="text-white/60 max-w-xl mx-auto mb-8">
-            From Salt Lake City to St. George, we connect Utah businesses to the payment networks that keep commerce moving.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-            {[
-              { v: "$50M+", l: "Processed Monthly" },
-              { v: "99.9%", l: "Uptime Guarantee" },
-              { v: "256-bit", l: "Encryption" },
-              { v: "< 2s", l: "Transaction Speed" },
-            ].map((s) => (
-              <div key={s.l} className="glass-card rounded-xl p-4 text-center">
-                <div className="text-xl font-extrabold text-[#169fa8] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{s.v}</div>
-                <div className="text-white/50 text-xs">{s.l}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <TestimonialBlock dark={false} />
+      <TestimonialBlock />
+
+      {/* How It Works */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="text-center mb-10">
+            <div className="teal-divider mx-auto mb-4" />
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              How It Works
+            </h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm">
+              Getting started is simple. Our local team handles everything so you can focus on running your business.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {howItWorks.map((step, i) => (
+              <div key={step.step} className="relative">
+                {i < howItWorks.length - 1 && (
+                  <div className="hidden lg:block absolute top-6 left-full w-full h-px bg-gradient-to-r from-[#1e6fa8]/30 to-transparent z-0" />
+                )}
+                <div className="relative z-10">
+                  <div className="w-12 h-12 rounded-full bg-[#1e6fa8]/10 border-2 border-[#1e6fa8]/20 flex items-center justify-center mb-4">
+                    <span className="text-[#1e6fa8] font-bold text-sm">{step.step}</span>
+                  </div>
+                  <h3 className="font-bold text-[#0d1b2a] mb-2 text-sm">{step.title}</h3>
+                  <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/consultation" className="btn-teal py-3 px-8">
+              Book a Free Consultation <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Preview */}
+      <section className="py-16 bg-[#f4f7fa]">
+        <div className="container">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <div className="teal-divider mb-4" />
+              <h2 className="text-2xl md:text-3xl font-bold text-[#0d1b2a]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+                News &amp; Updates
+              </h2>
+              <p className="text-gray-500 text-sm mt-1">Expert insights for Utah businesses</p>
+            </div>
+            <Link href="/blog" className="hidden sm:flex items-center gap-1 text-[#1e6fa8] text-sm font-medium hover:underline">
+              View all posts <ChevronRight size={14} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {recentPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group bg-white rounded-xl border border-gray-100 hover:border-[#1e6fa8]/30 hover:shadow-lg transition-all p-5"
+              >
+                <div className="text-xs text-[#1e6fa8] font-medium mb-2">{post.category}</div>
+                <h3 className="font-bold text-[#0d1b2a] text-sm leading-snug mb-3 group-hover:text-[#1e6fa8] transition-colors">
+                  {post.title}
+                </h3>
+                <div className="text-xs text-gray-400">{post.date}</div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-6 sm:hidden">
+            <Link href="/blog" className="btn-outline-teal text-sm py-2.5 px-6">
+              View All Posts <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* FAQ */}
-      <FAQ items={homeFAQ} title="Common Questions" subtitle="Everything you need to know about switching to UBC Unlimited" />
+      <section className="py-16 bg-white">
+        <div className="container max-w-3xl">
+          <div className="text-center mb-10">
+            <div className="teal-divider mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-[#0d1b2a] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <FAQ items={homeFAQ} />
+        </div>
+      </section>
 
-      {/* CTA */}
+      {/* CTA Banner */}
       <CTABanner />
+
+      {/* Sticky Mobile CTA Bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#0d1b2a] border-t border-[#1e6fa8]/20 shadow-2xl">
+        <div className="flex">
+          <a
+            href={SITE.phoneHref}
+            className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white bg-[#152234] hover:bg-[#1c2e42] transition-colors border-r border-white/10"
+          >
+            <Phone size={15} /> Call Now
+          </a>
+          <Link
+            href="/consultation"
+            className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white bg-[#1e6fa8] hover:bg-[#2d8fd4] transition-colors"
+          >
+            Book a Consultation <ArrowRight size={15} />
+          </Link>
+        </div>
+      </div>
+      {/* Bottom padding for sticky bar on mobile */}
+      <div className="h-14 md:hidden" />
     </PageLayout>
   );
 }

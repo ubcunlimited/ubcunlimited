@@ -4,10 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================================
-   UBC UNLIMITED — MODERN FINTECH EDGE DESIGN SYSTEM
-   Dark navy hero sections, glassy card components, teal gradient accents
-   Fonts: Sora 800 headings, Inter 400/500 body
-   Primary: Navy #040c1c | Accent: Teal #169fa8 | Gold: #d4a843
+   UBC UNLIMITED — PREMIUM FINANCIAL EXPERT DESIGN SYSTEM
+   Inspired by Mint, Warby Parker, Rookwood: deep slate-navy hero sections,
+   steel-blue accents, warm copper/amber highlights, clean white surfaces.
+   Fonts: DM Serif Display (headings) + Inter (body)
+   Primary: Deep Slate #0d1b2a | Accent: Steel Blue #1e6fa8 | Copper: #c47c2b
    ============================================================ */
 
 @theme inline {
@@ -47,14 +48,14 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  /* UBC Brand Colors */
-  --color-navy: #040c1c;
-  --color-navy-800: #0a1628;
-  --color-navy-700: #0f2040;
-  --color-teal: #169fa8;
-  --color-teal-light: #1dc8d4;
-  --color-gold: #d4a843;
-  --color-gold-light: #e8c06a;
+  /* UBC Brand Colors — Premium Financial Expert Palette */
+  --color-navy: #0d1b2a;
+  --color-navy-800: #152234;
+  --color-navy-700: #1c2e42;
+  --color-teal: #1e6fa8;
+  --color-teal-light: #2d8fd4;
+  --color-gold: #c47c2b;
+  --color-gold-light: #d9973e;
 }
 
 :root {
@@ -65,32 +66,32 @@
   --card-foreground: oklch(0.15 0.02 240);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.02 240);
-  --primary: oklch(0.38 0.12 200);
+  --primary: oklch(0.42 0.14 230);
   --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.96 0.005 240);
-  --secondary-foreground: oklch(0.2 0.02 240);
-  --muted: oklch(0.96 0.005 240);
-  --muted-foreground: oklch(0.5 0.015 240);
-  --accent: oklch(0.96 0.005 240);
-  --accent-foreground: oklch(0.15 0.02 240);
+  --secondary: oklch(0.96 0.004 220);
+  --secondary-foreground: oklch(0.18 0.02 230);
+  --muted: oklch(0.96 0.004 220);
+  --muted-foreground: oklch(0.48 0.012 230);
+  --accent: oklch(0.96 0.004 220);
+  --accent-foreground: oklch(0.13 0.02 230);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.9 0.005 240);
-  --input: oklch(0.9 0.005 240);
-  --ring: oklch(0.38 0.12 200);
-  --chart-1: oklch(0.38 0.12 200);
-  --chart-2: oklch(0.55 0.15 200);
-  --chart-3: oklch(0.65 0.12 200);
-  --chart-4: oklch(0.72 0.18 80);
-  --chart-5: oklch(0.8 0.14 80);
+  --border: oklch(0.88 0.006 220);
+  --input: oklch(0.88 0.006 220);
+  --ring: oklch(0.42 0.14 230);
+  --chart-1: oklch(0.42 0.14 230);
+  --chart-2: oklch(0.55 0.16 230);
+  --chart-3: oklch(0.65 0.13 230);
+  --chart-4: oklch(0.62 0.16 55);
+  --chart-5: oklch(0.75 0.14 55);
   --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.15 0.02 240);
-  --sidebar-primary: oklch(0.38 0.12 200);
+  --sidebar-foreground: oklch(0.13 0.02 230);
+  --sidebar-primary: oklch(0.42 0.14 230);
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.96 0.005 240);
-  --sidebar-accent-foreground: oklch(0.15 0.02 240);
-  --sidebar-border: oklch(0.9 0.005 240);
-  --sidebar-ring: oklch(0.38 0.12 200);
+  --sidebar-accent: oklch(0.96 0.004 220);
+  --sidebar-accent-foreground: oklch(0.13 0.02 230);
+  --sidebar-border: oklch(0.88 0.006 220);
+  --sidebar-ring: oklch(0.42 0.14 230);
 }
 
 @layer base {
@@ -134,20 +135,20 @@
     .container { padding-left: 2rem; padding-right: 2rem; max-width: 1280px; }
   }
 
-  /* UBC Brand Utilities */
-  .bg-navy { background-color: #040c1c; }
-  .bg-navy-800 { background-color: #0a1628; }
-  .bg-navy-700 { background-color: #0f2040; }
-  .text-teal { color: #169fa8; }
-  .text-gold { color: #d4a843; }
-  .bg-teal { background-color: #169fa8; }
-  .bg-gold { background-color: #d4a843; }
-  .border-teal { border-color: #169fa8; }
-  .border-gold { border-color: #d4a843; }
+  /* UBC Brand Utilities — Premium Financial Expert Palette */
+  .bg-navy { background-color: #0d1b2a; }
+  .bg-navy-800 { background-color: #152234; }
+  .bg-navy-700 { background-color: #1c2e42; }
+  .text-teal { color: #1e6fa8; }
+  .text-gold { color: #c47c2b; }
+  .bg-teal { background-color: #1e6fa8; }
+  .bg-gold { background-color: #c47c2b; }
+  .border-teal { border-color: #1e6fa8; }
+  .border-gold { border-color: #c47c2b; }
 
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, #169fa8 0%, #1dc8d4 50%, #d4a843 100%);
+    background: linear-gradient(135deg, #1e6fa8 0%, #2d8fd4 50%, #c47c2b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -162,39 +163,39 @@
   .glass-card-light {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(22, 159, 168, 0.15);
+    border: 1px solid rgba(30, 111, 168, 0.15);
   }
 
-  /* Teal glow effect */
+  /* Blue glow effect */
   .teal-glow {
-    box-shadow: 0 0 20px rgba(22, 159, 168, 0.3), 0 0 60px rgba(22, 159, 168, 0.1);
+    box-shadow: 0 0 20px rgba(30, 111, 168, 0.3), 0 0 60px rgba(30, 111, 168, 0.1);
   }
   .teal-glow-hover:hover {
-    box-shadow: 0 0 20px rgba(22, 159, 168, 0.4), 0 0 60px rgba(22, 159, 168, 0.15);
-    border-color: rgba(22, 159, 168, 0.5) !important;
+    box-shadow: 0 0 20px rgba(30, 111, 168, 0.4), 0 0 60px rgba(30, 111, 168, 0.15);
+    border-color: rgba(30, 111, 168, 0.5) !important;
   }
 
   /* Section patterns */
   .section-dark {
-    background-color: #040c1c;
+    background-color: #0d1b2a;
     color: white;
   }
   .section-navy {
-    background-color: #0a1628;
+    background-color: #152234;
     color: white;
   }
   .section-light {
-    background-color: #f8fafc;
-    color: #040c1c;
+    background-color: #f4f7fa;
+    color: #0d1b2a;
   }
   .section-white {
     background-color: #ffffff;
-    color: #040c1c;
+    color: #0d1b2a;
   }
 
   /* CTA buttons */
   .btn-teal {
-    background: linear-gradient(135deg, #169fa8, #1dc8d4);
+    background: linear-gradient(135deg, #1e6fa8, #2d8fd4);
     color: white;
     font-weight: 600;
     padding: 0.75rem 1.75rem;
@@ -203,16 +204,16 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Inter', sans-serif;
     letter-spacing: -0.01em;
   }
   .btn-teal:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(22, 159, 168, 0.4);
+    box-shadow: 0 8px 25px rgba(30, 111, 168, 0.4);
   }
   .btn-gold {
-    background: linear-gradient(135deg, #d4a843, #e8c06a);
-    color: #040c1c;
+    background: linear-gradient(135deg, #c47c2b, #d9973e);
+    color: white;
     font-weight: 700;
     padding: 0.75rem 1.75rem;
     border-radius: 0.375rem;
@@ -220,12 +221,12 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Inter', sans-serif;
     letter-spacing: -0.01em;
   }
   .btn-gold:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(212, 168, 67, 0.4);
+    box-shadow: 0 8px 25px rgba(196, 124, 43, 0.4);
   }
   .btn-outline-white {
     background: transparent;
@@ -238,7 +239,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Inter', sans-serif;
     letter-spacing: -0.01em;
   }
   .btn-outline-white:hover {
@@ -247,35 +248,35 @@
   }
   .btn-outline-teal {
     background: transparent;
-    color: #169fa8;
+    color: #1e6fa8;
     font-weight: 600;
     padding: 0.75rem 1.75rem;
     border-radius: 0.375rem;
-    border: 1.5px solid #169fa8;
+    border: 1.5px solid #1e6fa8;
     transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: 'Sora', sans-serif;
+    font-family: 'Inter', sans-serif;
     letter-spacing: -0.01em;
   }
   .btn-outline-teal:hover {
-    background: rgba(22, 159, 168, 0.08);
+    background: rgba(30, 111, 168, 0.08);
   }
 
   /* Divider */
   .teal-divider {
     width: 3rem;
     height: 3px;
-    background: linear-gradient(90deg, #169fa8, #d4a843);
+    background: linear-gradient(90deg, #1e6fa8, #c47c2b);
     border-radius: 2px;
   }
 
   /* Stat badge */
   .stat-badge {
-    background: rgba(22, 159, 168, 0.1);
-    border: 1px solid rgba(22, 159, 168, 0.2);
-    color: #169fa8;
+    background: rgba(30, 111, 168, 0.1);
+    border: 1px solid rgba(30, 111, 168, 0.25);
+    color: #1e6fa8;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.75rem;
@@ -284,9 +285,9 @@
     text-transform: uppercase;
   }
   .stat-badge-gold {
-    background: rgba(212, 168, 67, 0.1);
-    border: 1px solid rgba(212, 168, 67, 0.2);
-    color: #d4a843;
+    background: rgba(196, 124, 43, 0.1);
+    border: 1px solid rgba(196, 124, 43, 0.25);
+    color: #c47c2b;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.75rem;

@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { Calendar, CheckCircle, ArrowRight } from "lucide-react";
+import { Calendar, CheckCircle, ArrowRight, Phone } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import { SITE } from "@/lib/config";
 
+const inputClass = "w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#1e6fa8] focus:ring-2 focus:ring-[#1e6fa8]/20 transition-all text-[#0d1b2a] placeholder-gray-400 bg-white";
+const labelClass = "block text-sm font-medium text-[#0d1b2a] mb-1.5";
+
 const benefits = [
   "No-obligation, 100% free consultation",
-  "Review your current processing costs",
-  "Custom solution tailored to your business",
-  "Local Utah expert — not a call center",
+  "Review your current processing costs with a local expert",
+  "Custom solution tailored to your business type and volume",
+  "Local Utah expert — not a national call center",
+  "Get a side-by-side comparison of your current rates",
+  "Receive a clear recommendation with no pressure to commit",
 ];
 
 export default function Consultation() {
@@ -17,20 +22,21 @@ export default function Consultation() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
-    window.location.href = "/thank-you";
+    setTimeout(() => { window.location.href = "/thank-you"; }, 1500);
   };
 
   return (
     <PageLayout>
-      <section className="bg-[#040c1c] py-16">
+      {/* Hero */}
+      <section className="bg-[#0d1b2a] py-16">
         <div className="container">
           <div className="max-w-xl">
             <div className="stat-badge mb-4">Book a Consultation</div>
-            <h1 className="text-4xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h1 className="text-4xl font-extrabold text-white mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Book Your Free Consultation
             </h1>
             <p className="text-white/60 text-lg">
-              Speak with a local Utah merchant services expert. No pressure, no obligation — just honest advice.
+              Speak with {SITE.founder} — a local Utah merchant services expert with {SITE.yearsInBusiness} years of experience. No pressure, no obligation, just honest advice.
             </p>
           </div>
         </div>
@@ -39,84 +45,144 @@ export default function Consultation() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12">
+            {/* Left: Benefits */}
             <div>
-              <h2 className="text-2xl font-bold text-[#040c1c] mb-5" style={{ fontFamily: 'Sora, sans-serif' }}>What to Expect</h2>
-              <div className="space-y-4 mb-8">
+              <h2 className="text-2xl font-bold text-[#0d1b2a] mb-5" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>What to Expect</h2>
+              <div className="space-y-3 mb-8">
                 {benefits.map((b) => (
                   <div key={b} className="flex items-start gap-3">
-                    <CheckCircle size={18} className="text-[#169fa8] mt-0.5 shrink-0" />
+                    <CheckCircle size={17} className="text-[#1e6fa8] mt-0.5 shrink-0" />
                     <span className="text-gray-600 text-sm">{b}</span>
                   </div>
                 ))}
               </div>
-              <div className="bg-[#f8fafc] rounded-xl p-5 border border-gray-100">
-                <div className="flex items-center gap-3 mb-3">
-                  <Calendar size={18} className="text-[#169fa8]" />
-                  <span className="font-semibold text-[#040c1c] text-sm">Available Mon–Fri, 8am–6pm MT</span>
+              <div className="bg-[#f4f7fa] rounded-xl p-5 border border-gray-100 mb-5">
+                <div className="flex items-center gap-3 mb-2">
+                  <Calendar size={17} className="text-[#1e6fa8]" />
+                  <span className="font-semibold text-[#0d1b2a] text-sm">Available Mon–Fri, 8am–6pm MT</span>
                 </div>
-                <p className="text-gray-500 text-sm">Prefer to call? Reach us at <a href={SITE.phoneHref} className="text-[#169fa8] font-medium">{SITE.phone}</a></p>
+                <p className="text-gray-500 text-sm">
+                  Prefer to call directly? Reach {SITE.founder} at{" "}
+                  <a href={SITE.phoneHref} className="text-[#1e6fa8] font-medium hover:underline">{SITE.phone}</a>
+                </p>
+              </div>
+              <div className="bg-[#1e6fa8]/8 rounded-xl p-5 border border-[#1e6fa8]/15">
+                <p className="text-[#0d1b2a] font-semibold text-sm mb-1">Have a current statement?</p>
+                <p className="text-gray-500 text-sm mb-3">
+                  Upload it on our Statement Review page and we'll do a full cost analysis before your consultation.
+                </p>
+                <Link href="/statement-review" className="btn-outline-teal text-sm py-2 px-4">
+                  Submit Statement <ArrowRight size={13} />
+                </Link>
               </div>
             </div>
 
+            {/* Right: Form */}
             <div>
-              <form onSubmit={handleSubmit} data-ghl-form="consultation" className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+              {submitted ? (
+                <div className="bg-[#1e6fa8]/10 border border-[#1e6fa8]/20 rounded-2xl p-10 text-center">
+                  <div className="text-4xl mb-4">✅</div>
+                  <h3 className="text-xl font-bold text-[#0d1b2a] mb-2" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Received!</h3>
+                  <p className="text-gray-500 mb-4">We'll reach out within 1 business hour to confirm your consultation time.</p>
+                  <a href={SITE.phoneHref} className="btn-teal text-sm py-2.5 px-6">
+                    <Phone size={14} /> Or Call Us Now
+                  </a>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} data-ghl-form="consultation" className="space-y-4">
+                  <h2 className="text-xl font-bold text-[#0d1b2a] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Your Free Consultation</h2>
+                  <p className="text-gray-500 text-sm mb-4">Fill out the form below and we'll be in touch within 1 business hour.</p>
+
+                  {/* Business Name */}
                   <div>
-                    <label className="block text-sm font-medium text-[#040c1c] mb-1.5">First Name *</label>
-                    <input type="text" required className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#169fa8] focus:ring-2 focus:ring-[#169fa8]/20" placeholder="John" />
+                    <label className={labelClass}>Business Name <span className="text-red-500">*</span></label>
+                    <input type="text" name="business_name" required className={inputClass} placeholder="Your business name" />
                   </div>
+
+                  {/* Owner Name */}
                   <div>
-                    <label className="block text-sm font-medium text-[#040c1c] mb-1.5">Last Name *</label>
-                    <input type="text" required className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#169fa8] focus:ring-2 focus:ring-[#169fa8]/20" placeholder="Smith" />
+                    <label className={labelClass}>Owner Name <span className="text-red-500">*</span></label>
+                    <input type="text" name="owner_name" required className={inputClass} placeholder="Your full name" />
                   </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[#040c1c] mb-1.5">Business Name *</label>
-                  <input type="text" required className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#169fa8] focus:ring-2 focus:ring-[#169fa8]/20" placeholder="Your Business Name" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[#040c1c] mb-1.5">Business Type</label>
-                  <select className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#169fa8] focus:ring-2 focus:ring-[#169fa8]/20 bg-white">
-                    <option value="restaurant">Restaurant</option>
-                    <option value="retail">Retail</option>
-                    <option value="medical">Medical / Healthcare</option>
-                    <option value="automotive">Automotive</option>
-                    <option value="salon">Salon / Spa</option>
-                    <option value="professional">Professional Services</option>
-                    <option value="ecommerce">eCommerce</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[#040c1c] mb-1.5">Email *</label>
-                  <input type="email" required className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#169fa8] focus:ring-2 focus:ring-[#169fa8]/20" placeholder="john@yourbusiness.com" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[#040c1c] mb-1.5">Phone *</label>
-                  <input type="tel" required className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#169fa8] focus:ring-2 focus:ring-[#169fa8]/20" placeholder="(801) 000-0000" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[#040c1c] mb-1.5">Monthly Processing Volume (approx.)</label>
-                  <select className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#169fa8] focus:ring-2 focus:ring-[#169fa8]/20 bg-white">
-                    <option value="">Select range...</option>
-                    <option value="under5k">Under $5,000</option>
-                    <option value="5k-20k">$5,000 – $20,000</option>
-                    <option value="20k-50k">$20,000 – $50,000</option>
-                    <option value="50k-100k">$50,000 – $100,000</option>
-                    <option value="over100k">Over $100,000</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-[#040c1c] mb-1.5">What are you looking for?</label>
-                  <textarea rows={3} className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#169fa8] focus:ring-2 focus:ring-[#169fa8]/20 resize-none" placeholder="Lower rates, new POS system, online payments..." />
-                </div>
-                <button type="submit" className="btn-teal w-full justify-center py-3">
-                  Book My Free Consultation <ArrowRight size={16} />
-                </button>
-                <p className="text-xs text-gray-400 text-center">
-                  By submitting, you agree to our <Link href="/legal/privacy-policy" className="text-[#169fa8] hover:underline">Privacy Policy</Link>. No spam, ever.
-                </p>
-              </form>
+
+                  {/* Email */}
+                  <div>
+                    <label className={labelClass}>Email Address <span className="text-red-500">*</span></label>
+                    <input type="email" name="email" required className={inputClass} placeholder="you@yourbusiness.com" />
+                  </div>
+
+                  {/* Phone */}
+                  <div>
+                    <label className={labelClass}>Phone Number <span className="text-red-500">*</span></label>
+                    <input type="tel" name="phone" required className={inputClass} placeholder="(801) 000-0000" />
+                  </div>
+
+                  {/* Website */}
+                  <div>
+                    <label className={labelClass}>Business Website</label>
+                    <input type="url" name="website" className={inputClass} placeholder="https://yourbusiness.com" />
+                  </div>
+
+                  {/* Monthly Volume */}
+                  <div>
+                    <label className={labelClass}>Monthly Processing Volume <span className="text-red-500">*</span></label>
+                    <select name="monthly_volume" required className={inputClass}>
+                      <option value="">Select your monthly volume</option>
+                      <option value="under-5k">Under $5,000/month</option>
+                      <option value="5k-15k">$5,000 – $15,000/month</option>
+                      <option value="15k-50k">$15,000 – $50,000/month</option>
+                      <option value="50k-100k">$50,000 – $100,000/month</option>
+                      <option value="100k-plus">$100,000+/month</option>
+                    </select>
+                  </div>
+
+                  {/* Average Ticket */}
+                  <div>
+                    <label className={labelClass}>Average Transaction / Ticket Size</label>
+                    <select name="avg_ticket" className={inputClass}>
+                      <option value="">Select average ticket size</option>
+                      <option value="under-25">Under $25</option>
+                      <option value="25-75">$25 – $75</option>
+                      <option value="75-200">$75 – $200</option>
+                      <option value="200-500">$200 – $500</option>
+                      <option value="500-plus">$500+</option>
+                    </select>
+                  </div>
+
+                  {/* Current Processor */}
+                  <div>
+                    <label className={labelClass}>Current Payment Processor</label>
+                    <input type="text" name="current_processor" className={inputClass} placeholder="e.g. Square, Stripe, Toast, Heartland, First Data..." />
+                  </div>
+
+                  {/* Preferred Contact Method */}
+                  <div>
+                    <label className={labelClass}>Preferred Contact Method <span className="text-red-500">*</span></label>
+                    <select name="preferred_contact" required className={inputClass}>
+                      <option value="">Select preferred method</option>
+                      <option value="phone">Phone Call</option>
+                      <option value="text">Text Message</option>
+                      <option value="email">Email</option>
+                      <option value="video">Video Call (Zoom / Google Meet)</option>
+                    </select>
+                  </div>
+
+                  {/* Current Challenges */}
+                  <div>
+                    <label className={labelClass}>Current Challenges or Goals</label>
+                    <textarea name="challenges" rows={3} className={`${inputClass} resize-none`} placeholder="e.g. High processing fees, need a new POS, adding online payments, switching processors..." />
+                  </div>
+
+                  <button type="submit" className="btn-teal w-full justify-center py-3">
+                    Book My Free Consultation <ArrowRight size={16} />
+                  </button>
+                  <p className="text-xs text-gray-400 text-center">
+                    By submitting, you agree to our{" "}
+                    <Link href="/legal/privacy-policy" className="text-[#1e6fa8] hover:underline">Privacy Policy</Link>.
+                    No spam, ever.
+                  </p>
+                </form>
+              )}
             </div>
           </div>
         </div>
