@@ -46,7 +46,7 @@ const faqCategories: FAQCategory[] = [
     items: [
       {
         question: "How does your pricing work?",
-        answer: "We offer several pricing models including interchange-plus (the most transparent), flat-rate, and tiered pricing depending on your business type and volume. We'll recommend the model that saves you the most money based on your specific transaction mix.",
+        answer: "We work with you to set up pricing that optimizes your profitability. Depending on your business type and volume, we can structure Flat Rate, Multi-Tiered, or Interchange-Plus pricing. We can also set you up to be compliant for surcharging, cash discounting, or dual pricing models — all designed to maximize your profits while minimizing the cost to accept payments. We'll recommend the best model based on your specific transaction mix.",
       },
       {
         question: "Are there hidden fees?",

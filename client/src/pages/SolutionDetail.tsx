@@ -34,9 +34,9 @@ const solutionsData: SolutionData[] = [
       { title: "Detailed Reporting", desc: "Real-time transaction reporting, batch summaries, and monthly statements." },
       { title: "No Hidden Fees", desc: "We show you every fee upfront. No surprises on your monthly statement." },
     ],
-    benefits: ["Lower processing costs than most national processors", "Dedicated local Utah support", "Free equipment with qualifying accounts", "Month-to-month agreements"],
+    benefits: ["Maximize profits while minimizing the cost to accept payments", "Dedicated local Utah support", "Free equipment with qualifying accounts", "Month-to-month agreements"],
     faqs: [
-      { question: "What credit card processing rates do you offer?", answer: "We offer interchange-plus pricing, which is the most transparent model available. Rates vary by business type and volume, but most businesses save 20-40% compared to flat-rate processors." },
+      { question: "What credit card processing rates do you offer?", answer: "We work with you to set up pricing that optimizes your profitability. Depending on your business type and volume, we can structure Flat Rate, Multi-Tiered, or Interchange-Plus pricing. We can also set you up to be compliant for surcharging, cash discounting, or dual pricing models — all designed to maximize your profits while minimizing the cost to accept payments." },
       { question: "How quickly will I receive my funds?", answer: "Standard funding is next business day. Expedited funding may be available for qualifying accounts — ask us about your options." },
       { question: "Do I need new equipment?", answer: "We can often reprogram your existing equipment. If you need new terminals, we offer free equipment with qualifying accounts." },
       { question: "Are there cancellation fees?", answer: "No. We offer month-to-month agreements because we believe in earning your business every month." },
