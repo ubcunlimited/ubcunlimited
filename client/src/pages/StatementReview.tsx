@@ -54,7 +54,7 @@ export default function StatementReview() {
                 <p className="text-white/60 text-sm">That's $4,200/year going back into your business.</p>
               </div>
               <div className="space-y-3">
-                {["No obligation — ever", "Results within 24 hours", "Detailed line-by-line breakdown", "Local Utah expert review"].map((b) => (
+                {["No obligation — ever", "Results within 1 business day", "Detailed line-by-line breakdown", "Local Utah expert review"].map((b) => (
                   <div key={b} className="flex items-center gap-2.5 text-sm text-gray-600">
                     <CheckCircle size={15} className="text-[#169fa8] shrink-0" />
                     {b}

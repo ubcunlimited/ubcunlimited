@@ -43,7 +43,7 @@ export default function Contact() {
                   { icon: Phone, label: "Phone", value: SITE.phone, href: SITE.phoneHref },
                   { icon: Mail, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
                   { icon: MapPin, label: "Location", value: "Serving all of Utah — Wasatch Front & beyond", href: undefined },
-                  { icon: Clock, label: "Hours", value: "Mon–Fri 8am–6pm MT · 24/7 Support", href: undefined },
+                  { icon: Clock, label: "Hours", value: "Mon–Fri 8am–6pm MT · Real person, local team", href: undefined },
                 ].map((item) => (
                   <div key={item.label} className="flex gap-4 items-start">
                     <div className="w-10 h-10 rounded-xl bg-[#1e6fa8]/10 flex items-center justify-center shrink-0">

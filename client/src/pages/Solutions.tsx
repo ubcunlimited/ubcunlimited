@@ -11,7 +11,7 @@ const solutionDetails: Record<string, { desc: string; features: string[] }> = {
   },
   "/solutions/ach-echeck-processing": {
     desc: "Process bank transfers and electronic checks at a fraction of card processing costs.",
-    features: ["Low flat-rate fees", "Recurring billing", "Same-day ACH", "Batch processing"],
+    features: ["Low flat-rate fees", "Recurring billing", "Fast ACH settlement", "Batch processing"],
   },
   "/solutions/check-guarantee": {
     desc: "Accept checks with confidence — we guarantee payment even if the check bounces.",
@@ -27,7 +27,7 @@ const solutionDetails: Record<string, { desc: string; features: string[] }> = {
   },
   "/solutions/mobile-processing": {
     desc: "Accept payments anywhere with mobile card readers and smartphone apps.",
-    features: ["Bluetooth readers", "Offline mode", "Instant deposits", "iOS & Android"],
+    features: ["Bluetooth readers", "Offline mode", "Fast funding options", "iOS & Android"],
   },
   "/solutions/virtual-terminals": {
     desc: "Process card-not-present transactions from any browser — no hardware required.",

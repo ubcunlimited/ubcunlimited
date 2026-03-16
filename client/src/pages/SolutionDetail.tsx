@@ -37,7 +37,7 @@ const solutionsData: SolutionData[] = [
     benefits: ["Lower processing costs than most national processors", "Dedicated local Utah support", "Free equipment with qualifying accounts", "Month-to-month agreements"],
     faqs: [
       { question: "What credit card processing rates do you offer?", answer: "We offer interchange-plus pricing, which is the most transparent model available. Rates vary by business type and volume, but most businesses save 20-40% compared to flat-rate processors." },
-      { question: "How quickly will I receive my funds?", answer: "Standard funding is next business day. Same-day funding is available for qualifying accounts." },
+      { question: "How quickly will I receive my funds?", answer: "Standard funding is next business day. Expedited funding may be available for qualifying accounts — ask us about your options." },
       { question: "Do I need new equipment?", answer: "We can often reprogram your existing equipment. If you need new terminals, we offer free equipment with qualifying accounts." },
       { question: "Are there cancellation fees?", answer: "No. We offer month-to-month agreements because we believe in earning your business every month." },
     ],
@@ -49,11 +49,11 @@ const solutionsData: SolutionData[] = [
     title: "ACH & eCheck Processing",
     subtitle: "Process bank transfers at a fraction of card costs",
     description: "ACH and eCheck processing lets you accept bank transfers directly, bypassing card network fees. Ideal for recurring billing, B2B payments, and high-ticket transactions.",
-    heroPoints: ["Flat-rate low fees", "Recurring billing support", "Same-day ACH available", "No card network fees"],
+    heroPoints: ["Flat-rate low fees", "Recurring billing support", "Fast ACH settlement", "No card network fees"],
     features: [
       { title: "Low Flat-Rate Fees", desc: "ACH transactions cost a fraction of credit card processing — typically $0.25–$0.75 per transaction." },
       { title: "Recurring Billing", desc: "Set up automatic recurring payments for subscriptions, memberships, and installment plans." },
-      { title: "Same-Day ACH", desc: "Faster settlement options available for time-sensitive transactions." },
+      { title: "Fast ACH Settlement", desc: "Faster settlement options available for time-sensitive transactions — ask us about eligibility." },
       { title: "Batch Processing", desc: "Process hundreds of transactions at once with our bulk ACH upload tool." },
       { title: "Bank Verification", desc: "Real-time bank account verification to reduce failed transactions." },
       { title: "Detailed Reporting", desc: "Full transaction history, return reports, and reconciliation tools." },
@@ -61,7 +61,7 @@ const solutionsData: SolutionData[] = [
     benefits: ["Dramatically lower costs for high-volume businesses", "Ideal for B2B and recurring payments", "Reduce chargebacks vs. credit cards", "Seamless integration with your accounting software"],
     faqs: [
       { question: "What is ACH processing?", answer: "ACH (Automated Clearing House) processing allows you to accept electronic bank transfers directly from your customers' bank accounts, bypassing credit card networks and their fees." },
-      { question: "How long does ACH take to settle?", answer: "Standard ACH settles in 1-3 business days. Same-day ACH is available for qualifying transactions." },
+      { question: "How long does ACH take to settle?", answer: "Standard ACH settles in 1-3 business days. Faster settlement options may be available for qualifying transactions." },
       { question: "Can I use ACH for recurring payments?", answer: "Yes. ACH is ideal for recurring billing — subscriptions, memberships, rent payments, and installment plans." },
     ],
     relatedSolutions: ["/solutions/invoicing", "/solutions/virtual-terminals", "/solutions/check-guarantee"],
@@ -94,7 +94,7 @@ const solutionsData: SolutionData[] = [
     title: "POS Systems",
     subtitle: "Full-featured point-of-sale for restaurants, retail & more",
     description: "We offer industry-leading POS systems including SkyTab and Clover, tailored to your business type. From table management to inventory tracking, we have the complete solution.",
-    heroPoints: ["SkyTab & Clover systems", "Restaurant & retail ready", "Inventory management", "24/7 local support"],
+    heroPoints: ["SkyTab & Clover systems", "Restaurant & retail ready", "Inventory management", "Local expert support"],
     features: [
       { title: "SkyTab POS", desc: "The industry's leading restaurant POS with tableside ordering, kitchen display systems, and online ordering integration." },
       { title: "Clover POS", desc: "Flexible POS for retail, service, and quick-service businesses with a rich app marketplace." },
@@ -107,7 +107,7 @@ const solutionsData: SolutionData[] = [
     faqs: [
       { question: "Which POS system is right for my business?", answer: "It depends on your business type. SkyTab is ideal for restaurants and bars. Clover is great for retail, salons, and service businesses. We'll help you choose during a free consultation." },
       { question: "Do you provide training?", answer: "Yes. Our local team provides on-site installation and training for all POS systems." },
-      { question: "What if I have issues after setup?", answer: "We provide 24/7 technical support. For local businesses, we can also dispatch a technician for on-site support." },
+      { question: "What if I have issues after setup?", answer: "We provide ongoing technical support during business hours. For local Utah businesses, we can also dispatch a technician for on-site support when needed." },
     ],
     relatedSolutions: ["/solutions/credit-card-processing", "/solutions/mobile-processing", "/solutions/invoicing"],
   },
@@ -148,7 +148,7 @@ const solutionsData: SolutionData[] = [
       { title: "Tip Management", desc: "Built-in tip prompts and tip reporting for service businesses." },
       { title: "Inventory Tracking", desc: "Manage your product catalog and track sales from your mobile device." },
     ],
-    benefits: ["No monthly fees on basic plans", "Accept all payment types", "Perfect for mobile businesses", "Same-day funding available"],
+    benefits: ["No monthly fees on basic plans", "Accept all payment types", "Perfect for mobile businesses", "Fast funding options available"],
     faqs: [
       { question: "What card reader do you use?", answer: "We offer Bluetooth card readers that accept chip, swipe, and tap-to-pay. They work with both iOS and Android devices." },
       { question: "Can I use it without internet?", answer: "Yes. Our offline mode allows you to accept swiped transactions without internet. They process automatically when you reconnect." },

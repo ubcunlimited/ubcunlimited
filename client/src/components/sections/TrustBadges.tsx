@@ -2,11 +2,11 @@ import { Shield, Clock, Users, Award, HeadphonesIcon, TrendingDown } from "lucid
 
 const badges = [
   { icon: Shield, label: "PCI Compliant", sub: "Secure & certified" },
-  { icon: Clock, label: "24/7 Support", sub: "Always available" },
+  { icon: Clock, label: "Real Person Support", sub: "Business hours, local team" },
   { icon: TrendingDown, label: "Low Rates", sub: "Competitive pricing" },
   { icon: Users, label: "Local Experts", sub: "Utah-based team" },
   { icon: Award, label: "Top Rated", sub: "5-star service" },
-  { icon: HeadphonesIcon, label: "Fast Setup", sub: "Same-day approval" },
+  { icon: HeadphonesIcon, label: "Fast Approval", sub: "As quick as same day" },
 ];
 
 interface TrustBadgesProps {
