@@ -235,7 +235,7 @@ const faqCategories = [
       {
         question: "Can I use mobile processing without internet?",
         answer:
-          "Yes. Our offline mode allows you to accept swiped transactions without internet. They process automatically when you reconnect to a network.",
+          "This varies depending on the individual solution. Some of our mobile processing solutions include an offline mode that allows you to accept swiped transactions without an active internet connection — transactions queue locally and sync automatically when you reconnect. Ask us which solutions support offline mode for your specific setup.",
       },
       {
         question: "What is a virtual terminal?",

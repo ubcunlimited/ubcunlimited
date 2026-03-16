@@ -153,7 +153,7 @@ const solutionsData: SolutionData[] = [
     benefits: ["No monthly fees on basic plans", "Accept all payment types", "Perfect for mobile businesses", "Fast funding options available"],
     faqs: [
       { question: "What card reader do you use?", answer: "We offer Bluetooth card readers that accept chip, swipe, and tap-to-pay. They work with both iOS and Android devices." },
-      { question: "Can I use it without internet?", answer: "Yes. Our offline mode allows you to accept swiped transactions without internet. They process automatically when you reconnect." },
+      { question: "Can I use it without internet?", answer: "This varies depending on the individual solution. Some of our mobile processing solutions include an offline mode that allows you to accept swiped transactions without an active internet connection — transactions queue locally and sync automatically when you reconnect. Ask us which solutions support offline mode for your specific setup." },
     ],
     relatedSolutions: ["/solutions/credit-card-processing", "/solutions/pos-systems"],
   },
