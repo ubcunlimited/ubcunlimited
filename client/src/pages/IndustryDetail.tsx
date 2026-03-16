@@ -189,6 +189,32 @@ const industriesData: IndustryData[] = [
       { question: "What are the fees for ACH rent collection?", answer: "ACH processing is very cost-effective — typically $0.25–$0.75 per transaction, far less than credit card processing fees." },
     ],
   },
+  {
+    slug: "firearms",
+    icon: "🎯",
+    title: "Firearms & Shooting Sports",
+    subtitle: "Compliant payment processing for FFL dealers, gun shops, and shooting ranges",
+    description: "Firearms retailers and shooting ranges operate in a highly regulated industry that many payment processors won't touch. UBC Unlimited works with specialized banking partners to provide reliable, compliant payment processing for FFL dealers, gun shops, ammo retailers, and shooting ranges across Utah.",
+    challenges: [
+      "High-risk merchant account approval",
+      "Processor drop risk and sudden account termination",
+      "Age verification and compliance requirements",
+      "Online sales and FFL transfer payment processing",
+    ],
+    solutions: [
+      { title: "High-Risk Merchant Accounts", desc: "We work with banking partners experienced in firearms retail — no surprise terminations or holds on your funds." },
+      { title: "In-Store POS Systems", desc: "Full POS systems for gun shops with inventory tracking, layaway management, and compliance reporting." },
+      { title: "Online Payment Gateways", desc: "Accept payments on your eCommerce site for accessories, ammo, and FFL transfer fees — with compliant processors." },
+      { title: "Virtual Terminal", desc: "Process phone orders and FFL transfer fees over the phone without hardware." },
+    ],
+    recommendedSolutions: ["/solutions/credit-card-processing", "/solutions/pos-systems", "/solutions/ecommerce-payments"],
+    faqs: [
+      { question: "Can you get a merchant account for a firearms dealer?", answer: "Yes. We work with specialized banking partners who understand and support the firearms industry. We can help FFL dealers, gun shops, ammo retailers, and shooting ranges get approved for reliable merchant accounts." },
+      { question: "Will my account get shut down?", answer: "That's a real concern in this industry. We place firearms businesses with processors who specialize in high-risk retail and have a track record of stable, long-term accounts for gun shops and FFL dealers." },
+      { question: "Can I accept payments online for accessories and ammo?", answer: "Yes. We can set up compliant eCommerce payment gateways for firearms accessories, ammunition, and FFL transfer fees. Physical firearms sales online require additional compliance steps we can walk you through." },
+      { question: "Do you serve shooting ranges?", answer: "Absolutely. Shooting ranges have unique needs — range time booking, membership billing, retail sales, and food & beverage. We can set up a complete payment solution tailored to your range." },
+    ],
+  },
 ];
 
 interface IndustryDetailPageProps {

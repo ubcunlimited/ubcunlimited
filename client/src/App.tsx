@@ -65,6 +65,7 @@ function Router() {
       <Route path="/industries/professional-services">{() => <IndustryDetail slug="professional-services" />}</Route>
       <Route path="/industries/salons-spas">{() => <IndustryDetail slug="salons-spas" />}</Route>
       <Route path="/industries/property-management">{() => <IndustryDetail slug="property-management" />}</Route>
+      <Route path="/industries/firearms">{() => <IndustryDetail slug="firearms" />}</Route>
 
       {/* Blog */}
       <Route path="/blog" component={Blog} />

@@ -51,6 +51,7 @@ export const NAV_INDUSTRIES = [
   { label: "Professional Services", href: "/industries/professional-services", desc: "Law, accounting, consulting & more", icon: "💼" },
   { label: "Salons & Spas", href: "/industries/salons-spas", desc: "Beauty & wellness payment solutions", icon: "💅" },
   { label: "Property Management", href: "/industries/property-management", desc: "Rent & HOA payment processing", icon: "🏢" },
+  { label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions", icon: "🎯" },
 ];
 
 export const BLOG_CATEGORIES = [
@@ -84,8 +85,8 @@ export const UTAH_COUNTIES = [
 export const TRUST_SIGNALS = [
   { value: "20+", label: "Years in Business" },
   { value: "500+", label: "Utah Businesses Served" },
-  { value: "24/7", label: "Local Support" },
-  { value: "1 Day", label: "Approval Time" },
+  { value: "Real Person", label: "Local Support, Business Hours" },
+  { value: "Same Day*", label: "Approval — Varies by Industry" },
 ];
 
 export const TESTIMONIALS = [
