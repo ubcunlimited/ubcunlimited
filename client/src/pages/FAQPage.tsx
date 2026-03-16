@@ -124,7 +124,7 @@ const faqCategories = [
       {
         question: "How long does ACH take to settle?",
         answer:
-          "Standard ACH settles in 1–3 business days. Faster settlement options may be available for qualifying transactions — ask us about your options.",
+          "Standard ACH typically settles in 3–5 business days. Settlement timelines can vary based on your bank and transaction type.",
       },
       {
         question: "Can I use ACH for recurring payments?",

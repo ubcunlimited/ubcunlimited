@@ -11,11 +11,11 @@ const solutionDetails: Record<string, { desc: string; features: string[] }> = {
   },
   "/solutions/ach-echeck-processing": {
     desc: "Process bank transfers and electronic checks at a fraction of card processing costs.",
-    features: ["Low flat-rate fees", "Recurring billing", "Fast ACH settlement", "Batch processing"],
+    features: ["Lower cost than credit cards", "Recurring billing", "Fast ACH settlement", "Batch processing"],
   },
   "/solutions/check-guarantee": {
     desc: "Accept checks with confidence — we guarantee payment even if the check bounces.",
-    features: ["100% guarantee", "Instant verification", "No chargebacks", "Risk-free acceptance"],
+    features: ["100% guarantee", "Check verification service", "No chargebacks", "Risk-free acceptance"],
   },
   "/solutions/pos-systems": {
     desc: "Full-featured POS systems for restaurants, retail, and service businesses.",

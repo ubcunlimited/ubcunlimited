@@ -49,9 +49,9 @@ const solutionsData: SolutionData[] = [
     title: "ACH & eCheck Processing",
     subtitle: "Process bank transfers at a fraction of card costs",
     description: "ACH and eCheck processing lets you accept bank transfers directly, bypassing card network fees. Ideal for recurring billing, B2B payments, and high-ticket transactions.",
-    heroPoints: ["Flat-rate low fees", "Recurring billing support", "Fast ACH settlement", "No card network fees"],
+    heroPoints: ["Lower cost than credit cards", "Recurring billing support", "Fast ACH settlement", "No card network fees"],
     features: [
-      { title: "Low Flat-Rate Fees", desc: "ACH transactions cost a fraction of credit card processing — typically $0.25–$0.75 per transaction." },
+      { title: "Lower Costs Than Credit Cards", desc: "ACH transactions typically cost a fraction of credit card processing fees — a significant savings for businesses with high transaction volumes." },
       { title: "Recurring Billing", desc: "Set up automatic recurring payments for subscriptions, memberships, and installment plans." },
       { title: "Fast ACH Settlement", desc: "Faster settlement options available for time-sensitive transactions — ask us about eligibility." },
       { title: "Batch Processing", desc: "Process hundreds of transactions at once with our bulk ACH upload tool." },
@@ -61,7 +61,7 @@ const solutionsData: SolutionData[] = [
     benefits: ["Dramatically lower costs for high-volume businesses", "Ideal for B2B and recurring payments", "Reduce chargebacks vs. credit cards", "Seamless integration with your accounting software"],
     faqs: [
       { question: "What is ACH processing?", answer: "ACH (Automated Clearing House) processing allows you to accept electronic bank transfers directly from your customers' bank accounts, bypassing credit card networks and their fees." },
-      { question: "How long does ACH take to settle?", answer: "Standard ACH settles in 1-3 business days. Faster settlement options may be available for qualifying transactions." },
+      { question: "How long does ACH take to settle?", answer: "Standard ACH typically settles in 3–5 business days. Settlement timelines can vary based on your bank and transaction type." },
       { question: "Can I use ACH for recurring payments?", answer: "Yes. ACH is ideal for recurring billing — subscriptions, memberships, rent payments, and installment plans." },
     ],
     relatedSolutions: ["/solutions/invoicing", "/solutions/virtual-terminals", "/solutions/check-guarantee"],
@@ -72,9 +72,9 @@ const solutionsData: SolutionData[] = [
     title: "Check Guarantee",
     subtitle: "Accept checks with confidence — guaranteed payment",
     description: "Our check guarantee service eliminates the risk of bounced checks. We verify checks in real-time and guarantee payment, so you can accept checks without worry.",
-    heroPoints: ["100% payment guarantee", "Real-time verification", "No chargeback risk", "Instant approval"],
+    heroPoints: ["100% payment guarantee", "Check verification service", "No chargeback risk", "Instant approval"],
     features: [
-      { title: "Real-Time Verification", desc: "Checks are verified against a national database of bad check writers before you accept them." },
+      { title: "Check Verification Service", desc: "Checks are verified against a database of bad check writers to help reduce your risk before you accept them." },
       { title: "Guaranteed Payment", desc: "If a guaranteed check bounces, we pay you — then we collect from the check writer." },
       { title: "Electronic Check Conversion", desc: "Convert paper checks to electronic transactions for faster processing." },
       { title: "Check Recovery", desc: "We handle all collections on returned items so you don't have to." },
