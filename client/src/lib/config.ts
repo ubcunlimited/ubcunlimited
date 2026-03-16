@@ -86,7 +86,7 @@ export const TRUST_SIGNALS = [
   { value: "20+", label: "Years in Business" },
   { value: "500+", label: "Utah Businesses Served" },
   { value: "1-on-1", label: "Dedicated Local Rep" },
-  { value: "1–2 Days", label: "Approval Time (Most Industries)" },
+  { value: "1 Day", label: "Approval Time (Most Industries)" },
 ];
 
 export const TESTIMONIALS = [

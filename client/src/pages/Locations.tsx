@@ -23,11 +23,14 @@ export default function Locations() {
           <div className="max-w-2xl">
             <div className="stat-badge mb-4">Service Area</div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
-              Merchant Services Across the<br />
-              <span className="gradient-text">Wasatch Front</span>
+              Proudly Serving Utah Businesses<br />
+              <span className="gradient-text">Statewide</span>
             </h1>
-            <p className="text-white/65 text-lg leading-relaxed mb-8">
-              UBC Unlimited serves businesses throughout Utah — from Salt Lake City to Provo, Ogden to Park City, and everywhere in between. Local support, local expertise, local relationships.
+            <p className="text-white/65 text-lg leading-relaxed mb-4">
+              UBC Unlimited is happy to serve Utah businesses all across the state — not just those listed in our locations below. Whether you're in Salt Lake City, St. George, Cedar City, or anywhere in between, we will work with you.
+            </p>
+            <p className="text-white/50 text-base leading-relaxed mb-8">
+              Our team is based along the Wasatch Front, but we provide remote setup, support, and consultation to businesses throughout all of Utah. If you're outside our listed areas, reach out — we'd love to help.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/consultation" className="btn-gold py-3 px-6">
@@ -116,9 +119,11 @@ export default function Locations() {
         <div className="container">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
-              We Also Serve These Utah Counties
+              We Serve All of Utah
             </h2>
-            <p className="text-white/50 text-sm">Don't see your city? We serve businesses statewide — contact us to confirm coverage in your area.</p>
+            <p className="text-white/60 text-base max-w-2xl mx-auto">
+              Don't see your city listed? No problem. We are happy to work with businesses all across Utah — from the Wasatch Front to Southern Utah and everywhere in between. Remote consultation, setup, and support are available statewide.
+            </p>
           </div>
           <div className="flex flex-wrap justify-center gap-3">
             {["Box Elder County", "Cache County", "Sanpete County", "Iron County", "Washington County", "Tooele County", "Juab County", "Millard County"].map((county) => (

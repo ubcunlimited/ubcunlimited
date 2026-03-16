@@ -166,12 +166,41 @@ export default function Header() {
             <Link href="/locations" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive("/locations") ? "text-[#1e6fa8] bg-[#1e6fa8]/10" : "text-white/75 hover:text-white hover:bg-white/5"}`}>
               Locations
             </Link>
-            <Link href="/about" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive("/about") ? "text-[#1e6fa8] bg-[#1e6fa8]/10" : "text-white/75 hover:text-white hover:bg-white/5"}`}>
-              About
-            </Link>
-            <Link href="/contact" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${isActive("/contact") ? "text-[#1e6fa8] bg-[#1e6fa8]/10" : "text-white/75 hover:text-white hover:bg-white/5"}`}>
-              Contact
-            </Link>
+
+            {/* Company dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setOpenMenu(openMenu === "company" ? null : "company")}
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                  isActive("/about") || isActive("/faq") || isActive("/contact") ? "text-[#1e6fa8] bg-[#1e6fa8]/10" : "text-white/75 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                Company <ChevronDown size={14} className={`transition-transform ${openMenu === "company" ? "rotate-180" : ""}`} />
+              </button>
+              <AnimatePresence>
+                {openMenu === "company" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full right-0 mt-1 w-52 bg-[#152234] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden z-50"
+                  >
+                    <div className="p-2">
+                      <Link href="/about" className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm">
+                        About Us
+                      </Link>
+                      <Link href="/faq" className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm">
+                        FAQ's
+                      </Link>
+                      <Link href="/contact" className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm">
+                        Contact Us
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </nav>
 
           {/* Desktop CTAs */}
@@ -221,8 +250,10 @@ export default function Header() {
               <div className="pt-3 border-t border-white/10 mt-3 space-y-1">
                 <Link href="/blog" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">News &amp; Updates</Link>
                 <Link href="/locations" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">Locations</Link>
-                <Link href="/about" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">About</Link>
-                <Link href="/contact" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">Contact</Link>
+                <div className="text-[10px] font-semibold text-[#1e6fa8] uppercase tracking-widest px-3 py-2 mt-2">Company</div>
+                <Link href="/about" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">About Us</Link>
+                <Link href="/faq" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">FAQ's</Link>
+                <Link href="/contact" className="block px-3 py-2.5 text-sm font-medium text-white/75 hover:text-white hover:bg-white/5 rounded-lg">Contact Us</Link>
               </div>
               <div className="pt-3 space-y-2 border-t border-white/10 mt-2">
                 <a href={SITE.phoneHref} className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-white/20 text-white text-sm font-medium">

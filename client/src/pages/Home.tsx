@@ -33,15 +33,15 @@ const homeFAQ = [
   },
   {
     question: "How long does it take to get set up?",
-    answer: "Most businesses are approved and processing within 24–48 hours. POS hardware installations are typically completed within 3–5 business days."
+    answer: "Most low-risk businesses are approved within 24–48 hours and can be approved as quickly as same day. Lead time for most POS system installations requires at least 14 days from complete paperwork submission."
   },
   {
     question: "Do you offer month-to-month agreements?",
-    answer: "Yes. We believe in earning your business every month. We offer flexible month-to-month agreements with no long-term lock-in contracts."
+    answer: "Yes, in most situations we offer a month-to-month agreement because we believe you must set yourself apart with service. We do have certain products that require agreements due to solution requirements, and we do our best to minimize the impact in those situations."
   },
   {
     question: "What types of businesses do you serve?",
-    answer: "We specialize in restaurants, service companies, retail, medical, automotive, salons, eCommerce, and more. If you accept payments, we have a solution for you."
+    answer: "We serve a wide range of businesses including restaurants, retail, medical, automotive, salons, eCommerce, professional services, and more. We can also service medium and high-risk businesses, though those are evaluated on a case-by-case basis. If you accept payments, reach out and we'll find a solution that works for you."
   },
   {
     question: "Is the statement review really free?",
@@ -359,7 +359,7 @@ export default function Home() {
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
             <h2 className="text-3xl font-bold text-[#0d1b2a] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
-              Frequently Asked Questions
+              FAQ's
             </h2>
           </div>
           <FAQ items={homeFAQ} />
