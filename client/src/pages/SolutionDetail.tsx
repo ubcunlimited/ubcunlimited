@@ -326,10 +326,17 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               </div>
               {/* Fluidpay */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-[#0d1b2a] rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
-                  <span className="text-white font-bold text-lg tracking-tight" style={{ fontFamily: 'Sora, sans-serif' }}>Fluid<span className="text-[#169fa8]">pay</span></span>
+                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                  <img src="https://www.fluidpay.com/images/general/logo.svg" alt="Fluidpay" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">Fluidpay</span>
+              </div>
+              {/* iPosPays */}
+              <div className="flex flex-col items-center gap-3 group">
+                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/ipospays-logo_6aaa431d.png" alt="iPosPays" className="max-h-10 max-w-full object-contain" />
+                </div>
+                <span className="text-xs text-gray-400 font-medium">iPosPays</span>
               </div>
               {/* And More */}
               <div className="flex flex-col items-center gap-3 group">

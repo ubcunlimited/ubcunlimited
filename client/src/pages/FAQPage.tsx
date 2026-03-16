@@ -178,11 +178,11 @@ const faqCategories: FAQCategory[] = [
     items: [
       {
         question: "What payment gateways do you support for eCommerce?",
-        answer: "We work with a wide variety of payment gateways to ensure your online store has the right integration for your platform and needs. Our supported gateways include Authorize.net, Fluidpay, Quantum Gateway, NMI, and many more. We work together with you to determine the best gateway option based on your business requirements, shopping cart platform, and transaction volume.",
+        answer: "We work with a wide variety of payment gateways to ensure your online store has the right integration for your platform and needs. Our supported gateways include Authorize.net, Fluidpay, Quantum Gateway, NMI, iPosPays, and many more. We work together with you to determine the best gateway option based on your business requirements, shopping cart platform, and transaction volume.",
       },
       {
         question: "How do I know which gateway is right for my business?",
-        answer: "During your consultation, we'll review your eCommerce platform, expected transaction volume, and any specific integration requirements. From there, we'll recommend the gateway that best fits your needs — whether that's Authorize.net for its widespread compatibility, NMI for advanced features, Fluidpay for high-risk or specialty businesses, Quantum Gateway for specific platform integrations, or another solution entirely.",
+        answer: "During your consultation, we'll review your eCommerce platform, expected transaction volume, and any specific integration requirements. From there, we'll recommend the gateway that best fits your needs — whether that's Authorize.net for its widespread compatibility, NMI for advanced features, Fluidpay for high-risk or specialty businesses, Quantum Gateway for specific platform integrations, iPosPays for modern payment experiences, or another solution entirely.",
       },
       {
         question: "Can you help me switch gateways without disrupting my store?",
