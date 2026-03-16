@@ -116,20 +116,22 @@ const solutionsData: SolutionData[] = [
     icon: "🛒",
     title: "eCommerce Payments",
     subtitle: "Secure online payment gateways for your website",
-    description: "Accept payments on your website with our secure payment gateway solutions. We integrate with all major shopping carts and website platforms.",
-    heroPoints: ["100+ platform integrations", "Advanced fraud protection", "Recurring billing", "Mobile optimized checkout"],
+    description: "Accept payments on your website with our secure payment gateway solutions. We work with a variety of payment gateways — including Authorize.net, Fluidpay, Quantum Gateway, NMI, and many more — to find the best fit for your platform, business type, and transaction volume.",
+    heroPoints: ["Multiple gateway options", "Advanced fraud protection", "Recurring billing", "Mobile optimized checkout"],
     features: [
-      { title: "Payment Gateway", desc: "Secure, PCI-compliant payment gateway that integrates with your existing website." },
-      { title: "Shopping Cart Integration", desc: "Works with WooCommerce, Shopify, Magento, BigCommerce, and 100+ more." },
-      { title: "Fraud Protection", desc: "Advanced fraud screening with customizable rules to protect your business." },
+      { title: "Multiple Gateway Options", desc: "We partner with Authorize.net, Fluidpay, Quantum Gateway, NMI, and many more. We work together to determine the best gateway for your specific needs." },
+      { title: "Shopping Cart Integration", desc: "Works with WooCommerce, Shopify, Magento, BigCommerce, and 100+ more platforms." },
+      { title: "Fraud Protection", desc: "Advanced fraud screening with AVS, CVV, velocity filters, and customizable rules to protect your business." },
       { title: "Recurring Billing", desc: "Subscription management and recurring payment tools built in." },
       { title: "Mobile Checkout", desc: "Optimized checkout experience for mobile shoppers." },
       { title: "Hosted Payment Pages", desc: "Secure, branded payment pages that don't require PCI compliance on your server." },
     ],
-    benefits: ["Reduce cart abandonment with smooth checkout", "Accept international payments", "Lower fraud losses", "Increase conversions with optimized checkout"],
+    benefits: ["Right gateway for your business — not a one-size-fits-all approach", "Accept international payments", "Lower fraud losses", "Increase conversions with optimized checkout"],
     faqs: [
-      { question: "What platforms do you integrate with?", answer: "We integrate with all major eCommerce platforms including WooCommerce, Shopify, Magento, BigCommerce, and custom-built websites via our API." },
-      { question: "How do you handle fraud?", answer: "Our gateway includes AVS verification, CVV checking, velocity filters, and machine learning fraud detection." },
+      { question: "What payment gateways do you support?", answer: "We work with a wide variety of gateways including Authorize.net, Fluidpay, Quantum Gateway, NMI, and many more. During your consultation, we'll evaluate your platform, volume, and business type to recommend the best fit." },
+      { question: "What platforms do you integrate with?", answer: "We integrate with all major eCommerce platforms including WooCommerce, Shopify, Magento, BigCommerce, and custom-built websites via API." },
+      { question: "How do you handle fraud?", answer: "Our gateway options include AVS verification, CVV checking, velocity filters, and machine learning fraud detection to protect your revenue." },
+      { question: "Can you support high-risk eCommerce businesses?", answer: "Yes, on a case-by-case basis. Certain gateways in our network are specifically designed for high-risk and specialty merchants. We'll evaluate your business and connect you with the right solution." },
     ],
     relatedSolutions: ["/solutions/virtual-terminals", "/solutions/invoicing", "/solutions/mobile-processing"],
   },
@@ -290,6 +292,60 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Gateway Logos — eCommerce only */}
+      {data.slug === "ecommerce-payments" && (
+        <section className="py-16 bg-white border-t border-gray-100">
+          <div className="container">
+            <div className="text-center mb-10">
+              <div className="teal-divider mx-auto mb-4" />
+              <h2 className="text-3xl font-bold text-[#040c1c] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Gateway Partners We Work With</h2>
+              <p className="text-gray-500 max-w-2xl mx-auto">We work with a variety of payment gateways and collaborate with you to determine the best option based on your platform, business type, and transaction needs.</p>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+              {/* Authorize.net */}
+              <div className="flex flex-col items-center gap-3 group">
+                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/authorize-net_4b70b746.png" alt="Authorize.net" className="max-h-10 max-w-full object-contain" />
+                </div>
+                <span className="text-xs text-gray-400 font-medium">Authorize.net</span>
+              </div>
+              {/* NMI */}
+              <div className="flex flex-col items-center gap-3 group">
+                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/nmi_cc167af1.png" alt="NMI" className="max-h-10 max-w-full object-contain" />
+                </div>
+                <span className="text-xs text-gray-400 font-medium">NMI</span>
+              </div>
+              {/* Quantum Gateway */}
+              <div className="flex flex-col items-center gap-3 group">
+                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/quantum-gateway_fd6105e8.jpg" alt="Quantum Gateway" className="max-h-10 max-w-full object-contain" />
+                </div>
+                <span className="text-xs text-gray-400 font-medium">Quantum Gateway</span>
+              </div>
+              {/* Fluidpay */}
+              <div className="flex flex-col items-center gap-3 group">
+                <div className="w-44 h-20 bg-[#0d1b2a] rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                  <span className="text-white font-bold text-lg tracking-tight" style={{ fontFamily: 'Sora, sans-serif' }}>Fluid<span className="text-[#169fa8]">pay</span></span>
+                </div>
+                <span className="text-xs text-gray-400 font-medium">Fluidpay</span>
+              </div>
+              {/* And More */}
+              <div className="flex flex-col items-center gap-3 group">
+                <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-dashed border-[#169fa8]/40 shadow-sm flex items-center justify-center p-4 group-hover:bg-[#169fa8]/5 transition-all">
+                  <span className="text-[#169fa8] font-semibold text-sm text-center leading-tight">+ Many More<br /><span className="text-gray-400 font-normal text-xs">Ask us about your platform</span></span>
+                </div>
+                <span className="text-xs text-gray-400 font-medium">And More</span>
+              </div>
+            </div>
+            <div className="text-center mt-10">
+              <p className="text-gray-500 text-sm mb-4">Not sure which gateway is right for you? We'll help you choose.</p>
+              <a href="/consultation" className="btn-teal inline-flex items-center gap-2">Book a Free Consultation <ArrowRight size={15} /></a>
+            </div>
+          </div>
+        </section>
+      )}
 
       <FAQ items={data.faqs} />
 
