@@ -6,9 +6,12 @@ import { SITE } from "@/lib/config";
 
 const inputClass = "w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#1e6fa8] focus:ring-2 focus:ring-[#1e6fa8]/20 transition-all text-[#0d1b2a] placeholder-gray-400";
 const labelClass = "block text-sm font-medium text-[#0d1b2a] mb-1.5";
+const smsConsentLabelClass = "text-xs text-gray-500 leading-relaxed cursor-pointer select-none";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [smsTransactional, setSmsTransactional] = useState(false);
+  const [smsMarketing, setSmsMarketing] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -141,6 +144,40 @@ export default function Contact() {
                   <div>
                     <label className={labelClass}>How Can We Help?</label>
                     <textarea name="message" rows={3} className={`${inputClass} resize-none`} placeholder="Tell us about your current setup or what you're looking for..." />
+                  </div>
+
+                  {/* A2P SMS Consent — Transactional */}
+                  <div className="flex items-start gap-3 pt-1">
+                    <input
+                      type="checkbox"
+                      id="sms_transactional"
+                      name="sms_transactional"
+                      checked={smsTransactional}
+                      onChange={(e) => setSmsTransactional(e.target.checked)}
+                      className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 accent-[#1e6fa8] cursor-pointer"
+                    />
+                    <label htmlFor="sms_transactional" className={smsConsentLabelClass}>
+                      I agree to receive transactional and account-related text messages from UBC Unlimited at the number provided. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to unsubscribe. Reply HELP for assistance. See our{" "}
+                      <Link href="/legal/privacy-policy" className="underline hover:text-[#1e6fa8] transition-colors">Privacy Policy</Link>{" "}and{" "}
+                      <Link href="/legal/terms-of-service" className="underline hover:text-[#1e6fa8] transition-colors">Terms of Service</Link>.
+                    </label>
+                  </div>
+
+                  {/* A2P SMS Consent — Marketing */}
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="sms_marketing"
+                      name="sms_marketing"
+                      checked={smsMarketing}
+                      onChange={(e) => setSmsMarketing(e.target.checked)}
+                      className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 accent-[#1e6fa8] cursor-pointer"
+                    />
+                    <label htmlFor="sms_marketing" className={smsConsentLabelClass}>
+                      I agree to receive marketing and promotional text messages (offers, reminders, announcements, and follow-ups) from UBC Unlimited. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to unsubscribe. Reply HELP for assistance. See our{" "}
+                      <Link href="/legal/privacy-policy" className="underline hover:text-[#1e6fa8] transition-colors">Privacy Policy</Link>{" "}and{" "}
+                      <Link href="/legal/terms-of-service" className="underline hover:text-[#1e6fa8] transition-colors">Terms of Service</Link>.
+                    </label>
                   </div>
 
                   <button type="submit" className="btn-teal w-full justify-center py-3">
