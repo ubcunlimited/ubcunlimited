@@ -75,12 +75,12 @@ const faqCategories: FAQCategory[] = [
         answer: "Yes, in most situations we offer a month-to-month agreement because we believe you must set yourself apart with service. We do have certain products that require agreements due to solution requirements, and we do our best to minimize the impact in those situations.",
       },
       {
-        question: "Are there early termination fees?",
-        answer: "For month-to-month accounts, there are no early termination fees. For solutions that require a term agreement, early termination fees will be clearly disclosed before you sign. We always recommend reading your agreement carefully, and we're happy to walk through it with you.",
+        question: "Are there cancellation fees?",
+        answer: "Generally, no cancellation fees apply — we believe in earning your business every month, not locking you in. However, certain types of businesses or solutions require a formal agreement, and in those cases cancellation fees are based on the terms of the individual agreement. We are always upfront about this before you sign anything.",
       },
       {
         question: "Can I cancel at any time on a month-to-month plan?",
-        answer: "Yes. Month-to-month accounts can be cancelled with standard notice. We don't believe in trapping customers — we believe in earning your business every single month.",
+        answer: "Yes. Month-to-month accounts can be cancelled with standard notice. We don't believe in trapping customers — we believe in earning your business every single month. For accounts that require a term agreement, cancellation terms will be clearly outlined in your individual agreement.",
       },
     ],
   },

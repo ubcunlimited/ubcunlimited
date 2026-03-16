@@ -39,7 +39,7 @@ const solutionsData: SolutionData[] = [
       { question: "What credit card processing rates do you offer?", answer: "We work with you to set up pricing that optimizes your profitability. Depending on your business type and volume, we can structure Flat Rate, Multi-Tiered, or Interchange-Plus pricing. We can also set you up to be compliant for surcharging, cash discounting, or dual pricing models — all designed to maximize your profits while minimizing the cost to accept payments." },
       { question: "How quickly will I receive my funds?", answer: "Standard funding is next business day. Expedited funding may be available for qualifying accounts — ask us about your options." },
       { question: "Do I need new equipment?", answer: "We can often reprogram your existing equipment. If you need new terminals, we offer free equipment with qualifying accounts." },
-      { question: "Are there cancellation fees?", answer: "No. We offer month-to-month agreements because we believe in earning your business every month." },
+      { question: "Are there cancellation fees?", answer: "Generally, no cancellation fees apply — we believe in earning your business every month, not locking you in. However, certain types of businesses or solutions require a formal agreement, and in those cases cancellation fees are based on the terms of the individual agreement. We are upfront about this before you sign anything." },
     ],
     relatedSolutions: ["/solutions/pos-systems", "/solutions/mobile-processing", "/solutions/virtual-terminals"],
   },
