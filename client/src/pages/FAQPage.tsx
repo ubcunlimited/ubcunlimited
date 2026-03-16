@@ -1,144 +1,330 @@
-import { Link } from "wouter";
-import { motion } from "framer-motion";
-import { ChevronDown, Phone, ArrowRight, HelpCircle } from "lucide-react";
+/**
+ * UBC Unlimited — Comprehensive FAQ Page
+ * Design: Modern Fintech Edge — dark navy hero, teal/gold accents, Sora + Inter
+ * All FAQ questions collected from every solution and industry page, organized by category.
+ */
 import { useState } from "react";
+import { Link } from "wouter";
 import PageLayout from "@/components/layout/PageLayout";
-import CTABanner from "@/components/sections/CTABanner";
 import { SITE } from "@/lib/config";
+import { ChevronDown, ChevronUp, Search, Phone, Mail } from "lucide-react";
 
-interface FAQItem {
-  question: string;
-  answer: string;
-}
-
-interface FAQCategory {
-  title: string;
-  icon: string;
-  items: FAQItem[];
-}
-
-const faqCategories: FAQCategory[] = [
+const faqCategories = [
   {
-    title: "Getting Started",
-    icon: "🚀",
-    items: [
+    id: "general",
+    label: "General & Getting Started",
+    icon: "🏢",
+    questions: [
       {
-        question: "How do I get started with UBC Unlimited?",
-        answer: "The easiest way is to book a free consultation or submit your current processing statement for a free review. We'll analyze your current setup, identify savings opportunities, and build a custom proposal — no obligation.",
+        question: "What makes UBC Unlimited different from other processors?",
+        answer:
+          "Better service, industry-specific expertise, and local support. With 20+ years in the industry and a wide range of partner relationships, we can tailor solutions to individual needs — something a national call center simply can't do. You get a dedicated local rep, not a ticket number.",
       },
       {
-        question: "How long does it take to get approved and set up?",
-        answer: "Most low-risk businesses are approved within 24–48 hours and can be approved as quickly as same day. Lead time for most POS system installations requires at least 14 days from complete paperwork submission. High-risk and specialty industries may take longer depending on underwriting requirements.",
+        question: "How long does it take to get set up?",
+        answer:
+          "Most low-risk businesses are approved within 24–48 hours and can be approved as quickly as same day. Lead time for most POS system installations requires at least 14 days from complete paperwork submission. High-risk and specialty industries may have longer timelines depending on the underwriting process.",
       },
-      {
-        question: "What information do I need to apply?",
-        answer: "Typically you'll need your business name, EIN, bank account information for deposits, a voided check, and recent processing statements if you're switching from another processor. We'll walk you through everything during your consultation.",
-      },
-      {
-        question: "Is there a setup fee?",
-        answer: "Setup fees vary by solution. Many of our standard merchant accounts have no setup fee. POS hardware and specialized integrations may have associated costs, which we'll outline clearly in your proposal before you commit to anything.",
-      },
-    ],
-  },
-  {
-    title: "Pricing & Fees",
-    icon: "💰",
-    items: [
-      {
-        question: "How does your pricing work?",
-        answer: "We work with you to set up pricing that optimizes your profitability. Depending on your business type and volume, we can structure Flat Rate, Multi-Tiered, or Interchange-Plus pricing. We can also set you up to be compliant for surcharging, cash discounting, or dual pricing models — all designed to maximize your profits while minimizing the cost to accept payments. We'll recommend the best model based on your specific transaction mix.",
-      },
-      {
-        question: "Are there hidden fees?",
-        answer: "No. We believe in full transparency. Every fee is disclosed upfront in your merchant agreement. We'll also do a line-by-line comparison against your current statement so you can see exactly where you'll save.",
-      },
-      {
-        question: "What is interchange-plus pricing?",
-        answer: "Interchange-plus (also called cost-plus) pricing passes through the actual card network interchange rates plus a fixed markup. It's the most transparent pricing model and typically saves businesses more money than flat-rate or tiered pricing, especially at higher volumes.",
-      },
-      {
-        question: "Can you beat my current rates?",
-        answer: "In most cases, yes. Submit your current processing statement for a free review and we'll show you a side-by-side comparison. We work with multiple processing partners, which allows us to find the most competitive rates for your specific industry and volume.",
-      },
-      {
-        question: "Do you charge for customer support?",
-        answer: "No. Support is included. You'll have direct access to your local rep during business hours at no additional charge.",
-      },
-    ],
-  },
-  {
-    title: "Contracts & Agreements",
-    icon: "📋",
-    items: [
       {
         question: "Do you offer month-to-month agreements?",
-        answer: "Yes, in most situations we offer a month-to-month agreement because we believe you must set yourself apart with service. We do have certain products that require agreements due to solution requirements, and we do our best to minimize the impact in those situations.",
+        answer:
+          "Yes, in most situations we offer a month-to-month agreement because we believe you must set yourself apart with service. We do have certain products that require agreements due to solution requirements, and we do our best to minimize the impact in those situations.",
+      },
+      {
+        question: "What types of businesses do you serve?",
+        answer:
+          "We serve a wide range of businesses including restaurants, retail, medical, automotive, salons, eCommerce, professional services, and more. We can also service medium and high-risk businesses, though those are evaluated on a case-by-case basis. If you accept payments, reach out and we'll find a solution that works for you.",
       },
       {
         question: "Are there cancellation fees?",
-        answer: "Generally, no cancellation fees apply — we believe in earning your business every month, not locking you in. However, certain types of businesses or solutions require a formal agreement, and in those cases cancellation fees are based on the terms of the individual agreement. We are always upfront about this before you sign anything.",
+        answer:
+          "Generally, no cancellation fees apply — we believe in earning your business every month, not locking you in. However, certain types of businesses or solutions require a formal agreement, and in those cases cancellation fees are based on the terms of the individual agreement. We are always upfront about this before you sign anything.",
       },
       {
-        question: "Can I cancel at any time on a month-to-month plan?",
-        answer: "Yes. Month-to-month accounts can be cancelled with standard notice. We don't believe in trapping customers — we believe in earning your business every single month. For accounts that require a term agreement, cancellation terms will be clearly outlined in your individual agreement.",
+        question: "Do you work with businesses outside Utah?",
+        answer:
+          "Our primary focus is serving Utah businesses along the Wasatch Front and across the state. However, we can work with businesses in other states on a case-by-case basis. Contact us to discuss your specific situation.",
       },
     ],
   },
   {
-    title: "Industries & Business Types",
-    icon: "🏢",
-    items: [
+    id: "pricing",
+    label: "Pricing & Rates",
+    icon: "💰",
+    questions: [
       {
-        question: "What types of businesses do you serve?",
-        answer: "We serve a wide range of businesses including restaurants, retail, medical, automotive, salons & spas, eCommerce, professional services, property management, bars & nightclubs, and more. We can also service medium and high-risk businesses, though those are evaluated on a case-by-case basis. If you accept payments, reach out and we'll find a solution that works for you.",
+        question: "What credit card processing rates do you offer?",
+        answer:
+          "We work with you to set up pricing that optimizes your profitability. Depending on your business type and volume, we can structure Flat Rate, Multi-Tiered, or Interchange-Plus pricing. We can also set you up to be compliant for surcharging, cash discounting, or dual pricing models — all designed to maximize your profits while minimizing the cost to accept payments.",
       },
       {
-        question: "Do you work with high-risk businesses?",
-        answer: "Yes, we work with certain medium and high-risk categories including firearms dealers, automotive, and others. High-risk accounts are reviewed on a case-by-case basis and may have different pricing and underwriting requirements. Contact us to discuss your specific situation.",
+        question: "What is interchange-plus pricing?",
+        answer:
+          "Interchange-plus pricing passes the actual interchange cost (set by Visa/Mastercard) directly to you, plus a small fixed markup. It's the most transparent pricing model and is especially beneficial for businesses with high-ticket transactions or a mix of card types.",
       },
       {
-        question: "Do you work with firearms dealers and FFL holders?",
-        answer: "Yes. UBC Unlimited has experience placing firearms retailers, FFL dealers, gun shops, and shooting ranges with processors that specialize in this industry. Firearms is considered high-risk by most banks, but we have the relationships to find compliant, reliable solutions.",
+        question: "What is cash discounting or dual pricing?",
+        answer:
+          "Cash discounting and dual pricing are compliant programs that allow you to pass the cost of credit card acceptance to customers who choose to pay by card, while offering a lower price to cash customers. When set up correctly, these programs can effectively eliminate your processing fees. We ensure full compliance with card network rules.",
       },
       {
-        question: "Can you help eCommerce businesses?",
-        answer: "Absolutely. We offer payment gateway integrations, virtual terminals, and hosted payment pages for online businesses. We work with major shopping cart platforms and can help you find the right gateway for your tech stack.",
+        question: "How quickly will I receive my funds?",
+        answer:
+          "Standard funding is next business day. Expedited funding may be available for qualifying accounts — ask us about your options during your consultation.",
       },
       {
-        question: "Do you serve businesses outside the Wasatch Front?",
-        answer: "Yes — we are happy to serve Utah businesses statewide. While our team is based along the Wasatch Front, we work with businesses all across Utah. Remote setup and support is available for businesses outside our immediate service area.",
+        question: "Is the statement review really free?",
+        answer:
+          "Yes, completely free with no obligation. We analyze your current statement, identify overcharges, and present a clear comparison. You decide if it makes sense to switch — there's no pressure.",
+      },
+      {
+        question: "Do you offer competitive rates for high-ticket transactions?",
+        answer:
+          "Yes. We offer interchange-plus pricing which is especially beneficial for high-ticket transactions where flat-rate processors charge significantly more. We'll show you the exact savings during a free statement review.",
       },
     ],
   },
   {
-    title: "POS Systems & Hardware",
+    id: "credit-card",
+    label: "Credit Card Processing",
+    icon: "💳",
+    questions: [
+      {
+        question: "What card types do you accept?",
+        answer:
+          "We support all major card brands including Visa, Mastercard, American Express, Discover, and contactless payments including Apple Pay, Google Pay, and Samsung Pay.",
+      },
+      {
+        question: "Do I need new equipment?",
+        answer:
+          "We can often reprogram your existing equipment. If you need new terminals, we offer free equipment with qualifying accounts. We'll assess your current setup during the consultation.",
+      },
+      {
+        question: "Is my equipment PCI compliant?",
+        answer:
+          "PCI compliance is required for all businesses that accept card payments. We help you understand your compliance requirements and ensure your equipment and processes meet current standards.",
+      },
+      {
+        question: "What is a chargeback and how do you handle them?",
+        answer:
+          "A chargeback is when a customer disputes a transaction with their bank. We can help you understand the chargeback process, gather the right documentation, and submit your rebuttal. We also offer guidance on best practices to reduce your chargeback rate proactively.",
+      },
+    ],
+  },
+  {
+    id: "ach",
+    label: "ACH & eCheck Processing",
+    icon: "🏦",
+    questions: [
+      {
+        question: "What is ACH processing?",
+        answer:
+          "ACH (Automated Clearing House) processing allows you to accept electronic bank transfers directly from your customers' bank accounts, bypassing credit card networks and their fees. It's ideal for recurring billing, large transactions, and B2B payments.",
+      },
+      {
+        question: "How long does ACH take to settle?",
+        answer:
+          "Standard ACH settles in 1–3 business days. Faster settlement options may be available for qualifying transactions — ask us about your options.",
+      },
+      {
+        question: "Can I use ACH for recurring payments?",
+        answer:
+          "Yes. ACH is ideal for recurring billing — subscriptions, memberships, rent payments, and installment plans. We can set up automatic recurring drafts with customer authorization.",
+      },
+      {
+        question: "What are the fees for ACH processing?",
+        answer:
+          "ACH processing is very cost-effective — typically a fraction of credit card processing fees. Exact pricing depends on your volume and transaction type. Contact us for a custom quote.",
+      },
+    ],
+  },
+  {
+    id: "pos",
+    label: "POS Systems",
     icon: "🖥️",
-    items: [
+    questions: [
       {
-        question: "What POS systems do you offer?",
-        answer: "We are an authorized SkyTab POS reseller in Utah. SkyTab is one of the most powerful restaurant and bar POS systems available, with tableside ordering, online ordering integration, and robust reporting. We also work with other POS solutions depending on your industry and needs.",
+        question: "Which POS system is right for my business?",
+        answer:
+          "It depends on your business type. SkyTab is ideal for restaurants and bars with tableside ordering, kitchen display systems, and online ordering. Clover is great for retail, salons, and service businesses. We'll help you choose during a free consultation.",
+      },
+      {
+        question: "Do you work with SkyTab POS systems?",
+        answer:
+          "Yes — UBC Unlimited is an authorized SkyTab reseller in Utah. SkyTab is one of the most powerful POS systems available for restaurants and bars, and we provide full local installation and support.",
+      },
+      {
+        question: "Do you provide training?",
+        answer:
+          "Yes. Our local team provides on-site installation and training for you and your staff. We also offer ongoing support if you have questions after go-live.",
+      },
+      {
+        question: "What if I have issues after setup?",
+        answer:
+          "We provide ongoing technical support during business hours. For local Utah businesses, we can also dispatch a technician for on-site support when needed. You'll always have a direct contact — not a call center.",
       },
       {
         question: "How long does POS installation take?",
-        answer: "Lead time for most POS system installations requires at least 14 days from complete paperwork submission. This includes equipment procurement, configuration, and scheduling your on-site installation. We handle everything so you can focus on running your business.",
+        answer:
+          "Most POS system installations require at least 14 days from complete paperwork submission. This allows time for hardware delivery, configuration, and scheduling your on-site installation and training.",
       },
       {
-        question: "Do you provide training on new POS systems?",
-        answer: "Yes. Our local team provides hands-on training for you and your staff during installation. We also offer ongoing support if you have questions after go-live.",
+        question: "Can I manage inventory across multiple locations?",
+        answer:
+          "Yes. Our retail POS systems support multi-location inventory management with centralized reporting and consolidated dashboards.",
       },
       {
-        question: "Can you integrate with my existing software?",
-        answer: "In many cases, yes. We work with a variety of accounting, inventory, and reservation systems. During your consultation, we'll review your current tech stack and identify the best integration options.",
+        question: "Do you offer gift card programs?",
+        answer:
+          "Yes. We offer both physical and digital gift card programs that integrate directly with your POS system.",
+      },
+      {
+        question: "Can I pre-authorize cards for tabs?",
+        answer:
+          "Yes. Our bar and restaurant POS systems support pre-authorization holds, so you can hold a card on file and capture the final amount when the customer closes out.",
       },
     ],
   },
   {
-    title: "Support & Service",
+    id: "ecommerce",
+    label: "eCommerce & Payment Gateways",
+    icon: "🛒",
+    questions: [
+      {
+        question: "What payment gateways do you support for eCommerce?",
+        answer:
+          "We work with a wide variety of payment gateways to ensure your online store has the right integration. Our supported gateways include Authorize.net, Fluidpay, Quantum Gateway, NMI, iPosPays, and many more. We work together with you to determine the best gateway option based on your business requirements, shopping cart platform, and transaction volume.",
+      },
+      {
+        question: "How do I know which gateway is right for my business?",
+        answer:
+          "During your consultation, we'll review your eCommerce platform, expected transaction volume, and any specific integration requirements. From there, we'll recommend the gateway that best fits your needs — whether that's Authorize.net for widespread compatibility, NMI for advanced features, Fluidpay for high-risk or specialty businesses, Quantum Gateway for specific platform integrations, iPosPays for modern payment experiences, or another solution entirely.",
+      },
+      {
+        question: "What eCommerce platforms do you integrate with?",
+        answer:
+          "We integrate with all major eCommerce platforms including WooCommerce, Shopify, Magento, BigCommerce, and custom-built websites via API. We also support Shopify, WooCommerce, and other popular platforms for industry-specific merchants.",
+      },
+      {
+        question: "How do you handle fraud prevention?",
+        answer:
+          "Our gateway options include AVS verification, CVV checking, velocity filters, and machine learning fraud detection to protect your revenue and reduce chargebacks.",
+      },
+      {
+        question: "Can you help me switch gateways without disrupting my store?",
+        answer:
+          "Yes. We have experience migrating merchants between gateways with minimal disruption. We'll coordinate the technical setup, test the integration before going live, and ensure your checkout experience remains seamless for your customers.",
+      },
+      {
+        question: "Do you support high-risk eCommerce businesses?",
+        answer:
+          "Yes, on a case-by-case basis. Certain gateways in our network are specifically designed to support high-risk and specialty eCommerce merchants. We'll evaluate your business type and connect you with the right processing and gateway solution.",
+      },
+    ],
+  },
+  {
+    id: "mobile-virtual",
+    label: "Mobile & Virtual Terminals",
+    icon: "📱",
+    questions: [
+      {
+        question: "What card reader do you use for mobile processing?",
+        answer:
+          "We offer Bluetooth card readers that accept chip, swipe, and tap-to-pay. They work with both iOS and Android devices and connect to our mobile app.",
+      },
+      {
+        question: "Can I use mobile processing without internet?",
+        answer:
+          "Yes. Our offline mode allows you to accept swiped transactions without internet. They process automatically when you reconnect to a network.",
+      },
+      {
+        question: "What is a virtual terminal?",
+        answer:
+          "A virtual terminal is a web-based application that lets you manually enter credit card information to process payments — no physical card reader required. It's ideal for phone orders, mail orders, and service businesses that invoice clients.",
+      },
+      {
+        question: "Is the virtual terminal secure?",
+        answer:
+          "Yes. Our virtual terminal is fully PCI DSS compliant with SSL encryption and tokenization to protect cardholder data. No sensitive card data is stored on your device.",
+      },
+      {
+        question: "Can I send invoices with payment links?",
+        answer:
+          "Yes. Our invoicing solution lets you send professional invoices with embedded payment links that accept all major credit cards and ACH bank transfers. Customers can pay in seconds from any device.",
+      },
+      {
+        question: "Does invoicing integrate with my accounting software?",
+        answer:
+          "We integrate with QuickBooks, Xero, FreshBooks, and other popular accounting platforms to keep your books in sync automatically.",
+      },
+    ],
+  },
+  {
+    id: "industry",
+    label: "Industry-Specific Questions",
+    icon: "🏪",
+    questions: [
+      {
+        question: "Do you serve restaurants and bars?",
+        answer:
+          "Yes. We specialize in restaurant and bar payment solutions including SkyTab POS with tableside ordering, kitchen display systems, online ordering integration, tip management, pre-authorization holds for tabs, and chargeback management.",
+      },
+      {
+        question: "Are your payment solutions HIPAA compliant for medical practices?",
+        answer:
+          "Our payment processing solutions are PCI DSS compliant. We recommend working with your compliance officer to ensure your full payment workflow meets HIPAA requirements. We can set up patient payment plans and recurring billing for healthcare providers.",
+      },
+      {
+        question: "Can you get a merchant account for a firearms dealer?",
+        answer:
+          "Yes. We work with specialized banking partners who understand and support the firearms industry. We can help FFL dealers, gun shops, ammo retailers, and shooting ranges get approved for reliable merchant accounts.",
+      },
+      {
+        question: "Will my firearms merchant account get shut down?",
+        answer:
+          "That's a real concern in this industry. We place firearms businesses with processors who specialize in high-risk retail and have a track record of stable, long-term accounts for gun shops and FFL dealers.",
+      },
+      {
+        question: "Can I accept payments online for firearms accessories and ammo?",
+        answer:
+          "Yes. We can set up compliant eCommerce payment gateways for firearms accessories, ammunition, and FFL transfer fees. Physical firearms sales online require additional compliance steps we can walk you through.",
+      },
+      {
+        question: "Do you serve shooting ranges?",
+        answer:
+          "Absolutely. Shooting ranges have unique needs — range time booking, membership billing, retail sales, and food & beverage. We can set up a complete payment solution tailored to your range.",
+      },
+      {
+        question: "Can tenants pay rent online?",
+        answer:
+          "Yes. We provide a branded tenant payment portal where tenants can pay rent by credit card or ACH bank transfer. ACH is especially cost-effective for rent collection at $0.25–$0.75 per transaction.",
+      },
+      {
+        question: "Can I accept payments for retainers and legal services?",
+        answer:
+          "Yes. We offer recurring billing tools specifically designed for retainer-based billing, including automatic charges and balance tracking. We also integrate with many legal practice management platforms.",
+      },
+      {
+        question: "Do you integrate with salon booking software?",
+        answer:
+          "We integrate with many popular salon booking platforms. Contact us to discuss your specific software and we'll confirm compatibility before you commit.",
+      },
+      {
+        question: "Do you serve medium and high-risk businesses?",
+        answer:
+          "Yes. In addition to standard low-risk businesses, we can also service medium and high-risk businesses. These are evaluated on a case-by-case basis. Industries we've helped include firearms, CBD, automotive, and other specialty categories. Reach out and we'll assess your situation.",
+      },
+    ],
+  },
+  {
+    id: "support",
+    label: "Support & Service",
     icon: "🤝",
-    items: [
+    questions: [
       {
         question: "What are your support hours?",
-        answer: "Our local team is available during normal business hours. You'll have a dedicated local rep — a real person who knows your account — not a call center. For after-hours technical emergencies, processor-level support is available 24/7 through your payment processor.",
+        answer:
+          "Our local team is available during normal business hours. You'll have a dedicated local rep — a real person who knows your account — not a call center. For after-hours technical emergencies, processor-level support is available through your payment processor.",
       },
       {
         question: "Who do I call if I have a problem?",
@@ -146,74 +332,74 @@ const faqCategories: FAQCategory[] = [
       },
       {
         question: "What happens if my terminal stops working?",
-        answer: "Contact us immediately. We'll troubleshoot with you over the phone and, if needed, arrange for a replacement terminal as quickly as possible. Downtime costs you money and we take that seriously.",
+        answer:
+          "Contact us immediately. We'll troubleshoot with you over the phone and, if needed, arrange for a replacement terminal as quickly as possible. Downtime costs you money and we take that seriously.",
+      },
+      {
+        question: "Can you integrate with my existing software?",
+        answer:
+          "In many cases, yes. We work with a variety of accounting, inventory, and reservation systems. During your consultation, we'll review your current tech stack and identify the best integration options.",
       },
       {
         question: "Do you help with chargebacks?",
-        answer: "Yes. We can help you understand the chargeback process, gather the right documentation, and submit your rebuttal. We also offer guidance on best practices to reduce your chargeback rate proactively.",
+        answer:
+          "Yes. We can help you understand the chargeback process, gather the right documentation, and submit your rebuttal. We also offer guidance on best practices to reduce your chargeback rate proactively.",
       },
     ],
   },
   {
-    title: "Statement Review",
-    icon: "📊",
-    items: [
+    id: "statement-review",
+    label: "Statement Review & Switching",
+    icon: "📄",
+    questions: [
       {
         question: "What is a free statement review?",
-        answer: "We analyze your current processing statement line by line, identify all fees you're being charged, and compare them against what we can offer. You'll get a clear, honest comparison showing your potential savings — with no obligation to switch.",
+        answer:
+          "We analyze your current processing statement line by line, identify all fees you're being charged, and compare them against what we can offer. You'll get a clear, honest comparison showing your potential savings — with no obligation to switch.",
       },
       {
         question: "How do I submit my statement?",
-        answer: "You can submit your statement through our Statement Review page on this site, email it to us directly, or bring it to a consultation. We'll typically have your analysis back to you within 1 business day.",
+        answer:
+          "You can submit your statement through our Statement Review page on this site, email it to us directly, or bring it to a consultation. We'll typically have your analysis back to you within 1 business day.",
       },
       {
         question: "What if I'm locked into a contract with my current processor?",
-        answer: "We'll review your current agreement and help you understand your options. In some cases, the savings from switching are significant enough to justify an early termination fee. We'll do the math with you so you can make an informed decision.",
-      },
-    ],
-  },
-  {
-    title: "eCommerce & Payment Gateways",
-    icon: "🛒",
-    items: [
-      {
-        question: "What payment gateways do you support for eCommerce?",
-        answer: "We work with a wide variety of payment gateways to ensure your online store has the right integration for your platform and needs. Our supported gateways include Authorize.net, Fluidpay, Quantum Gateway, NMI, iPosPays, and many more. We work together with you to determine the best gateway option based on your business requirements, shopping cart platform, and transaction volume.",
+        answer:
+          "We'll review your current agreement and help you understand your options. In some cases, the savings from switching are significant enough to justify an early termination fee. We'll do the math with you so you can make an informed decision.",
       },
       {
-        question: "How do I know which gateway is right for my business?",
-        answer: "During your consultation, we'll review your eCommerce platform, expected transaction volume, and any specific integration requirements. From there, we'll recommend the gateway that best fits your needs — whether that's Authorize.net for its widespread compatibility, NMI for advanced features, Fluidpay for high-risk or specialty businesses, Quantum Gateway for specific platform integrations, iPosPays for modern payment experiences, or another solution entirely.",
+        question: "How long does it take to switch processors?",
+        answer:
+          "For most businesses, switching is straightforward. Once your application is approved (typically 1 day for low-risk), we'll coordinate equipment setup and ensure you have zero downtime during the transition.",
       },
       {
-        question: "Can you help me switch gateways without disrupting my store?",
-        answer: "Yes. We have experience migrating merchants between gateways with minimal disruption. We'll coordinate the technical setup, test the integration before going live, and ensure your checkout experience remains seamless for your customers.",
-      },
-      {
-        question: "Do you support high-risk eCommerce businesses?",
-        answer: "Yes, on a case-by-case basis. Certain gateways in our network are specifically designed to support high-risk and specialty eCommerce merchants. We'll evaluate your business type and connect you with the right processing and gateway solution.",
+        question: "Will switching processors disrupt my business?",
+        answer:
+          "We plan every transition carefully to minimize disruption. For POS systems, we schedule installation during off-hours when possible. For gateway switches, we test thoroughly before going live. Our goal is a seamless handoff.",
       },
     ],
   },
 ];
 
-function FAQAccordionItem({ item, index }: { item: FAQItem; index: number }) {
+function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border border-gray-200 rounded-lg overflow-hidden">
+    <div className="border border-gray-200 rounded-xl overflow-hidden transition-all hover:border-[#169fa8]/40">
       <button
+        className="w-full text-left flex items-center justify-between gap-4 px-6 py-4 bg-white hover:bg-[#f8fafc] transition-colors"
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-gray-50 transition-colors"
         aria-expanded={open}
       >
-        <span className="font-semibold text-[#0d1b2a] pr-4">{item.question}</span>
-        <ChevronDown
-          size={18}
-          className={`shrink-0 text-[#1e6fa8] transition-transform duration-200 ${open ? "rotate-180" : ""}`}
-        />
+        <span className="font-semibold text-[#0d1b2a] text-base leading-snug pr-4" style={{ fontFamily: "Sora, sans-serif" }}>
+          {question}
+        </span>
+        <span className="flex-shrink-0 text-[#169fa8]">
+          {open ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+        </span>
       </button>
       {open && (
-        <div className="px-5 pb-5 bg-white border-t border-gray-100">
-          <p className="text-gray-600 leading-relaxed pt-4">{item.answer}</p>
+        <div className="px-6 pb-5 pt-1 bg-white border-t border-gray-100">
+          <p className="text-gray-600 leading-relaxed text-sm">{answer}</p>
         </div>
       )}
     </div>
@@ -221,65 +407,77 @@ function FAQAccordionItem({ item, index }: { item: FAQItem; index: number }) {
 }
 
 export default function FAQPage() {
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [search, setSearch] = useState("");
+  const [activeCategory, setActiveCategory] = useState("all");
 
-  const displayed = activeCategory
-    ? faqCategories.filter((c) => c.title === activeCategory)
-    : faqCategories;
+  const filtered = faqCategories
+    .map((cat) => ({
+      ...cat,
+      questions: cat.questions.filter(
+        (q) =>
+          (activeCategory === "all" || activeCategory === cat.id) &&
+          (search === "" ||
+            q.question.toLowerCase().includes(search.toLowerCase()) ||
+            q.answer.toLowerCase().includes(search.toLowerCase()))
+      ),
+    }))
+    .filter((cat) => cat.questions.length > 0);
+
+  const totalQuestions = faqCategories.reduce((sum, cat) => sum + cat.questions.length, 0);
 
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="bg-[#0d1b2a] py-16 md:py-20">
-        <div className="container">
-          <div className="max-w-2xl">
-            <div className="flex items-center gap-2 mb-4">
-              <HelpCircle size={20} className="text-[#1e6fa8]" />
-              <span className="text-[#1e6fa8] text-sm font-semibold uppercase tracking-widest">FAQ's</span>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
-              Frequently Asked Questions
-            </h1>
-            <p className="text-white/65 text-lg leading-relaxed mb-6">
-              Answers to the most common questions about merchant services, payment processing, POS systems, and working with UBC Unlimited.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/consultation" className="btn-gold text-sm py-3 px-6">
-                Book a Free Consultation <ArrowRight size={16} />
-              </Link>
-              <a href={SITE.phoneHref} className="btn-outline-white text-sm py-3 px-6">
-                <Phone size={16} /> Call {SITE.phone}
-              </a>
-            </div>
+      <section className="bg-[#0d1b2a] pt-20 pb-16">
+        <div className="container max-w-4xl mx-auto text-center">
+          <span className="inline-block text-xs font-bold tracking-widest text-[#c9a84c] uppercase mb-4">
+            UBC Unlimited — FAQ's
+          </span>
+          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: "Sora, sans-serif" }}>
+            Frequently Asked Questions
+          </h1>
+          <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+            {totalQuestions} answers across {faqCategories.length} categories — from pricing and setup to industry-specific questions. Can't find what you're looking for? Call us directly.
+          </p>
+          {/* Search */}
+          <div className="relative max-w-xl mx-auto">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+            <input
+              type="text"
+              placeholder="Search all questions..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full pl-11 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#169fa8] transition-colors text-sm"
+            />
           </div>
         </div>
       </section>
 
       {/* Category Filter */}
-      <section className="bg-white border-b border-gray-200 sticky top-[93px] z-30">
-        <div className="container py-3">
-          <div className="flex flex-wrap gap-2">
+      <section className="bg-white border-b border-gray-100 sticky top-[93px] z-30 shadow-sm">
+        <div className="container overflow-x-auto">
+          <div className="flex gap-1 py-3 min-w-max">
             <button
-              onClick={() => setActiveCategory(null)}
-              className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                activeCategory === null
-                  ? "bg-[#1e6fa8] text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              onClick={() => setActiveCategory("all")}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
+                activeCategory === "all"
+                  ? "bg-[#0d1b2a] text-white"
+                  : "text-gray-600 hover:bg-gray-100"
               }`}
             >
-              All Topics
+              All Questions
             </button>
             {faqCategories.map((cat) => (
               <button
-                key={cat.title}
-                onClick={() => setActiveCategory(activeCategory === cat.title ? null : cat.title)}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  activeCategory === cat.title
-                    ? "bg-[#1e6fa8] text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                key={cat.id}
+                onClick={() => setActiveCategory(cat.id)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
+                  activeCategory === cat.id
+                    ? "bg-[#0d1b2a] text-white"
+                    : "text-gray-600 hover:bg-gray-100"
                 }`}
               >
-                {cat.icon} {cat.title}
+                {cat.icon} {cat.label}
               </button>
             ))}
           </div>
@@ -287,51 +485,70 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Content */}
-      <section className="py-14 bg-gray-50">
-        <div className="container max-w-4xl">
-          {displayed.map((category, ci) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, delay: ci * 0.05 }}
-              className="mb-12"
-            >
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-2xl">{category.icon}</span>
-                <h2 className="text-xl font-bold text-[#0d1b2a]" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
-                  {category.title}
-                </h2>
-              </div>
-              <div className="space-y-3">
-                {category.items.map((item, ii) => (
-                  <FAQAccordionItem key={ii} item={item} index={ii} />
-                ))}
-              </div>
-            </motion.div>
-          ))}
-
-          {/* Still have questions */}
-          <div className="bg-[#0d1b2a] rounded-2xl p-8 text-center mt-8">
-            <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
-              Still have questions?
-            </h3>
-            <p className="text-white/60 mb-5">
-              Talk to a real person. Our local Utah team is happy to answer any questions about your specific situation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/consultation" className="btn-gold text-sm py-3 px-6">
-                Book a Free Consultation <ArrowRight size={16} />
-              </Link>
-              <a href={SITE.phoneHref} className="btn-outline-white text-sm py-3 px-6">
-                <Phone size={16} /> {SITE.phone}
-              </a>
+      <section className="py-16 bg-[#f8fafc]">
+        <div className="container max-w-4xl mx-auto">
+          {filtered.length === 0 ? (
+            <div className="text-center py-16">
+              <p className="text-gray-500 text-lg mb-4">No questions match your search.</p>
+              <button
+                onClick={() => { setSearch(""); setActiveCategory("all"); }}
+                className="btn-primary"
+              >
+                Clear Search
+              </button>
             </div>
-          </div>
+          ) : (
+            <div className="space-y-12">
+              {filtered.map((cat) => (
+                <div key={cat.id} id={cat.id}>
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-2xl">{cat.icon}</span>
+                    <h2 className="text-2xl font-bold text-[#0d1b2a]" style={{ fontFamily: "Sora, sans-serif" }}>
+                      {cat.label}
+                    </h2>
+                    <span className="ml-auto text-xs text-gray-400 font-medium bg-gray-100 px-2 py-1 rounded-full">
+                      {cat.questions.length} questions
+                    </span>
+                  </div>
+                  <div className="space-y-3">
+                    {cat.questions.map((item, i) => (
+                      <FAQItem key={i} question={item.question} answer={item.answer} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      <CTABanner />
+      {/* Still Have Questions CTA */}
+      <section className="py-16 bg-[#0d1b2a]">
+        <div className="container max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "Sora, sans-serif" }}>
+            Still Have Questions?
+          </h2>
+          <p className="text-gray-300 mb-8 text-lg">
+            Our local team is here during business hours. You'll speak with a real person who knows Utah businesses — not a call center.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <a href={SITE.phoneHref} className="btn-gold flex items-center gap-2">
+              <Phone size={18} /> {SITE.phone}
+            </a>
+            <a href={`mailto:${SITE.email}`} className="btn-outline-white flex items-center gap-2">
+              <Mail size={18} /> {SITE.email}
+            </a>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/consultation" className="btn-primary">
+              Book a Free Consultation
+            </Link>
+            <Link href="/statement-review" className="btn-outline-white">
+              Get a Free Statement Review
+            </Link>
+          </div>
+        </div>
+      </section>
     </PageLayout>
   );
 }
