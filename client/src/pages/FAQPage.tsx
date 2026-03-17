@@ -229,6 +229,66 @@ const faqCategories = [
         ),
       },
       {
+        question: "How does Shift4Shop compare to Shopify, BigCommerce, Wix, and Squarespace?",
+        answer: (
+          <>
+            <p className="mb-4">Shift4Shop offers two plans: a <strong>free entry-level plan</strong> (enterprise-grade when processing with Shift4/UBC Unlimited) and an <strong>Enterprise plan at $41/month</strong> for businesses using their own payment processor. Here's how it stacks up against the major platforms:</p>
+            <div className="overflow-x-auto mb-4">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="bg-[#0d1b2a] text-white">
+                    <th className="px-3 py-2 text-left font-semibold">Feature</th>
+                    <th className="px-3 py-2 text-center font-semibold text-[#4ade80]">Shift4Shop</th>
+                    <th className="px-3 py-2 text-center font-semibold">Shopify</th>
+                    <th className="px-3 py-2 text-center font-semibold">BigCommerce</th>
+                    <th className="px-3 py-2 text-center font-semibold">Wix</th>
+                    <th className="px-3 py-2 text-center font-semibold">Squarespace</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["Starting Price", "Free / $41/mo", "$39/mo", "$39/mo", "$17/mo", "$23/mo"],
+                    ["Transaction Fees", "✅ None", "❌ 0.5–2%", "✅ None", "✅ None", "✅ None"],
+                    ["Unlimited Products", "✅ All plans", "✅ All plans", "✅ All plans", "⚠️ Limited", "⚠️ Limited"],
+                    ["Unlimited Staff Users", "✅ All plans", "❌ 2–15 users", "⚠️ Varies", "⚠️ Varies", "⚠️ Varies"],
+                    ["Built-in SEO Tools", "✅ Advanced", "⚠️ Basic", "✅ Good", "⚠️ Basic", "⚠️ Basic"],
+                    ["Built-in Blog", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+                    ["Abandoned Cart Recovery", "✅ Free", "❌ Paid plan", "✅ Free", "❌ Paid plan", "❌ Paid plan"],
+                    ["Email Marketing (built-in)", "✅ 25k/mo", "❌ Add-on", "❌ Add-on", "⚠️ Limited", "⚠️ Limited"],
+                    ["Free SSL Certificate", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes", "✅ Yes"],
+                    ["Free Domain Name", "✅ Yes", "❌ No", "❌ No", "❌ No", "❌ No"],
+                    ["Real-Time Shipping Rates", "✅ Yes", "❌ Higher plans", "✅ Yes", "⚠️ Limited", "⚠️ Limited"],
+                    ["API Access", "✅ All plans", "✅ All plans", "✅ All plans", "⚠️ Limited", "❌ No"],
+                    ["PCI Compliance", "✅ Built-in", "✅ Built-in", "✅ Built-in", "✅ Built-in", "✅ Built-in"],
+                    ["24/7 Support", "✅ All plans", "✅ All plans", "✅ All plans", "⚠️ Business hrs", "⚠️ Business hrs"],
+                  ].map(([feature, s4s, shopify, bc, wix, sqsp], idx) => (
+                    <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                      <td className="px-3 py-2 font-medium text-[#0d1b2a] border-b border-gray-100">{feature}</td>
+                      <td className="px-3 py-2 text-center border-b border-gray-100 bg-[#f0fdf4] font-semibold text-[#166534]">{s4s}</td>
+                      <td className="px-3 py-2 text-center border-b border-gray-100 text-gray-600">{shopify}</td>
+                      <td className="px-3 py-2 text-center border-b border-gray-100 text-gray-600">{bc}</td>
+                      <td className="px-3 py-2 text-center border-b border-gray-100 text-gray-600">{wix}</td>
+                      <td className="px-3 py-2 text-center border-b border-gray-100 text-gray-600">{sqsp}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-[#f0fdf4] border border-[#86efac] rounded-lg p-3 mb-3">
+              <p className="text-xs text-[#166534] font-medium">💡 <strong>UBC Unlimited Advantage:</strong> When you process payments through UBC Unlimited using Shift4, you get the full enterprise-grade Shift4Shop plan at <strong>$0/month</strong> — no platform fee, no transaction fees, and no revenue caps. The $41/month plan is available if you prefer to use a different payment processor.</p>
+            </div>
+            <a
+              href="https://launch.shift4shop.com/partners?oid=SS149-149JC"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#169fa8] hover:bg-[#127d85] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+            >
+              Start Your Free Shift4Shop Store →
+            </a>
+          </>
+        ),
+      },
+      {
         question: "What payment gateways do you support for eCommerce?",
         answer:
           "We work with a wide variety of payment gateways to ensure your online store has the right integration. Our supported gateways include Authorize.net, Fluidpay, Quantum Gateway, NMI, iPosPays, and many more. We work together with you to determine the best gateway option based on your business requirements, shopping cart platform, and transaction volume.",
@@ -422,7 +482,7 @@ const faqCategories = [
 function FAQItem({ question, answer }: { question: string; answer: string | React.ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="border border-gray-200 rounded-xl overflow-hidden transition-all hover:border-[#169fa8]/40">
+    <div className={`border rounded-xl overflow-hidden transition-all duration-200 ${open ? 'border-[#169fa8]/60 shadow-sm' : 'border-gray-200 hover:border-[#169fa8]/40'}`}>
       <button
         className="w-full text-left flex items-center justify-between gap-4 px-6 py-4 bg-white hover:bg-[#f8fafc] transition-colors"
         onClick={() => setOpen(!open)}
@@ -431,15 +491,18 @@ function FAQItem({ question, answer }: { question: string; answer: string | Reac
         <span className="font-semibold text-[#0d1b2a] text-base leading-snug pr-4" style={{ fontFamily: "Sora, sans-serif" }}>
           {question}
         </span>
-        <span className="flex-shrink-0 text-[#169fa8]">
-          {open ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+        <span className={`flex-shrink-0 text-[#169fa8] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
+          <ChevronDown size={20} />
         </span>
       </button>
-      {open && (
-        <div className="px-6 pb-5 pt-1 bg-white border-t border-gray-100">
+      <div
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{ maxHeight: open ? '2000px' : '0px', opacity: open ? 1 : 0 }}
+      >
+        <div className="px-6 pb-5 pt-3 bg-white border-t border-gray-100">
           <div className="text-gray-600 leading-relaxed text-sm">{answer}</div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
