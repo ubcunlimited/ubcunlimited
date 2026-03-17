@@ -235,7 +235,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-bold text-sm text-[#0d1b2a]">5-Star Rated</div>
-                    <div className="text-xs text-gray-500">500+ Utah businesses served</div>
+                    <div className="text-xs text-gray-500">1,000's of Utah businesses served</div>
                   </div>
                 </div>
               </div>
