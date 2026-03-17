@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle, ChevronRight } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
+import SkyTabPOSBuilder from "@/components/sections/SkyTabPOSBuilder";
 import { NAV_INDUSTRIES, NAV_SOLUTIONS } from "@/lib/config";
 
 export interface IndustryData {
@@ -318,6 +319,9 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
           </div>
         </div>
       </section>
+
+      {/* SkyTab POS Builder — shown for restaurant & bar industries */}
+      {(data.slug === "restaurants" || data.slug === "bars-nightclubs") && <SkyTabPOSBuilder />}
 
       <FAQ items={data.faqs} />
 

@@ -183,6 +183,19 @@ const faqCategories = [
         answer:
           "Yes. Our bar and restaurant POS systems support pre-authorization holds, so you can hold a card on file and capture the final amount when the customer closes out.",
       },
+      {
+        question: "How does SkyTab compare to Toast, Square, and Clover?",
+        answer:
+          "SkyTab consistently comes out ahead on price, warranty, and features for restaurant operators. Here's how it stacks up:\n\n" +
+          "• Starting price: SkyTab starts at $29.99/mo — significantly less than Toast ($69/mo), Square ($60/mo), and Clover ($44.95/mo).\n" +
+          "• Hardware warranty: SkyTab includes a lifetime warranty. Toast, Square, and Clover offer only 1 year.\n" +
+          "• Online ordering commission: SkyTab charges no commission on online orders. Toast charges a commission on every online order.\n" +
+          "• Built-in loyalty program: Included with SkyTab. Toast, Square, and Clover require add-ons or upgrades.\n" +
+          "• Kitchen display system (KDS): Included with SkyTab. Not standard with Square or Clover.\n" +
+          "• Offline mode: SkyTab keeps processing if your internet goes down. Square and Clover have limited offline capability.\n" +
+          "• Local installation: UBC Unlimited provides onsite installation and support across Utah. Toast, Square, and Clover rely on self-installation or third-party contractors.\n\n" +
+          "Pricing and features are based on publicly available information as of early 2026 and may vary. Contact us for a current side-by-side comparison tailored to your business.",
+      },
     ],
   },
   {
