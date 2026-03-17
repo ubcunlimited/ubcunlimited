@@ -101,7 +101,7 @@ export default function LocationDetail() {
           <div className="flex flex-wrap justify-center gap-6 text-center">
             {[
               { v: SITE.yearsInBusiness, l: "Years in Business" },
-              { v: "1,000's", l: "Utah Businesses Served" },
+              { v: "1000+", l: "Utah Businesses Served" },
               { v: "24–48hr", l: "Average Onboarding" },
               { v: "Local", l: "Utah-Based Support" },
             ].map((s) => (
