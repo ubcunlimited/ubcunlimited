@@ -223,38 +223,92 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
 
   const relatedItems = NAV_SOLUTIONS.filter((s) => data.relatedSolutions?.includes(s.href));
 
+  const TERMINAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_f46e2fbc.jpg";
+  const isCreditCard = data.slug === "credit-card-processing";
+
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="bg-[#040c1c] py-20">
-        <div className="container">
-          <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight size={14} />
-            <Link href="/solutions" className="hover:text-white transition-colors">Solutions</Link>
-            <ChevronRight size={14} />
-            <span className="text-white/70">{data.title}</span>
-          </div>
-          <div className="max-w-2xl">
-            <div className="text-4xl mb-4">{data.icon}</div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
-              {data.title}
-            </h1>
-            <p className="text-white/70 text-lg mb-6">{data.subtitle}</p>
-            <p className="text-white/60 mb-8 leading-relaxed">{data.description}</p>
-            <div className="flex flex-wrap gap-3 mb-8">
-              {data.heroPoints.map((p) => (
-                <div key={p} className="flex items-center gap-1.5 text-sm text-white/70">
-                  <CheckCircle size={14} className="text-[#169fa8]" />
-                  {p}
+      <section className="relative bg-[#040c1c] py-20 overflow-hidden">
+        {isCreditCard && (
+          <>
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${TERMINAL_IMG})`, opacity: 0.18 }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#040c1c] via-[#040c1c]/80 to-[#040c1c]/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#040c1c] via-transparent to-transparent" />
+          </>
+        )}
+        <div className="container relative z-10">
+          {isCreditCard ? (
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
+                  <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                  <ChevronRight size={14} />
+                  <Link href="/solutions" className="hover:text-white transition-colors">Solutions</Link>
+                  <ChevronRight size={14} />
+                  <span className="text-white/70">{data.title}</span>
                 </div>
-              ))}
+                <div className="text-4xl mb-4">{data.icon}</div>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  {data.title}
+                </h1>
+                <p className="text-white/70 text-lg mb-6">{data.subtitle}</p>
+                <p className="text-white/60 mb-8 leading-relaxed">{data.description}</p>
+                <div className="flex flex-wrap gap-3 mb-8">
+                  {data.heroPoints.map((p) => (
+                    <div key={p} className="flex items-center gap-1.5 text-sm text-white/70">
+                      <CheckCircle size={14} className="text-[#169fa8]" />
+                      {p}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  <Link href="/consultation" className="btn-gold">Get a Free Quote <ArrowRight size={16} /></Link>
+                  <Link href="/statement-review" className="btn-outline-white">Free Statement Review</Link>
+                </div>
+              </div>
+              <div className="hidden lg:block">
+                <img
+                  src={TERMINAL_IMG}
+                  alt="Modern credit card terminal with city skyline — UBC Unlimited merchant services"
+                  className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+                />
+              </div>
             </div>
-            <div className="flex gap-4">
-              <Link href="/consultation" className="btn-gold">Get a Free Quote <ArrowRight size={16} /></Link>
-              <Link href="/statement-review" className="btn-outline-white">Free Statement Review</Link>
-            </div>
-          </div>
+          ) : (
+            <>
+              <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
+                <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                <ChevronRight size={14} />
+                <Link href="/solutions" className="hover:text-white transition-colors">Solutions</Link>
+                <ChevronRight size={14} />
+                <span className="text-white/70">{data.title}</span>
+              </div>
+              <div className="max-w-2xl">
+                <div className="text-4xl mb-4">{data.icon}</div>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  {data.title}
+                </h1>
+                <p className="text-white/70 text-lg mb-6">{data.subtitle}</p>
+                <p className="text-white/60 mb-8 leading-relaxed">{data.description}</p>
+                <div className="flex flex-wrap gap-3 mb-8">
+                  {data.heroPoints.map((p) => (
+                    <div key={p} className="flex items-center gap-1.5 text-sm text-white/70">
+                      <CheckCircle size={14} className="text-[#169fa8]" />
+                      {p}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex gap-4">
+                  <Link href="/consultation" className="btn-gold">Get a Free Quote <ArrowRight size={16} /></Link>
+                  <Link href="/statement-review" className="btn-outline-white">Free Statement Review</Link>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </section>
 

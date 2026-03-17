@@ -6,6 +6,7 @@ import TestimonialBlock from "@/components/sections/TestimonialBlock";
 import { SITE, TRUST_SIGNALS } from "@/lib/config";
 
 const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation_77637e8d.jpg";
+const TERMINAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_f46e2fbc.jpg";
 const ABSTRACT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract_ee7158df.jpg";
 
 const values = [
@@ -110,8 +111,8 @@ export default function About() {
             </div>
             <div className="relative">
               <img
-                src={CONSULT_IMG}
-                alt="Josh Cornia, founder of UBC Unlimited, consulting with a Utah business owner"
+                src={TERMINAL_IMG}
+                alt="Modern credit card terminal with Salt Lake City skyline — UBC Unlimited merchant services"
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
               <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-xl border border-[#1e6fa8]/15">
