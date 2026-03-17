@@ -4,6 +4,7 @@
  * All FAQ questions collected from every solution and industry page, organized by category.
  */
 import { useState } from "react";
+import type React from "react";
 import { Link } from "wouter";
 import PageLayout from "@/components/layout/PageLayout";
 import { SITE } from "@/lib/config";
@@ -204,6 +205,30 @@ const faqCategories = [
     icon: "🛒",
     questions: [
       {
+        question: "Do you offer a free eCommerce website solution?",
+        answer: (
+          <>
+            <p className="mb-3">Yes! Through our partnership with Shift4, we offer a <strong>free eCommerce website</strong> powered by <strong>Shift4Shop</strong> — one of the most feature-rich online store platforms available. Shift4Shop is our first recommended eCommerce solution and includes everything you need to sell online:</p>
+            <ul className="list-disc list-inside space-y-1 mb-3">
+              <li>Unlimited products, orders, and bandwidth</li>
+              <li>Built-in SEO tools, marketing, and email campaigns</li>
+              <li>100+ professional themes</li>
+              <li>Integrated payment processing through Shift4 Payments</li>
+              <li>No monthly platform fee when processing with UBC Unlimited</li>
+            </ul>
+            <p className="mb-3">It&apos;s a fully hosted, enterprise-grade platform — completely free when you process payments through us.</p>
+            <a
+              href="https://launch.shift4shop.com/partners?oid=SS149-149JC"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#169fa8] hover:bg-[#127d85] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+            >
+              Get Your Free Shift4Shop Store →
+            </a>
+          </>
+        ),
+      },
+      {
         question: "What payment gateways do you support for eCommerce?",
         answer:
           "We work with a wide variety of payment gateways to ensure your online store has the right integration. Our supported gateways include Authorize.net, Fluidpay, Quantum Gateway, NMI, iPosPays, and many more. We work together with you to determine the best gateway option based on your business requirements, shopping cart platform, and transaction volume.",
@@ -394,7 +419,7 @@ const faqCategories = [
   },
 ];
 
-function FAQItem({ question, answer }: { question: string; answer: string }) {
+function FAQItem({ question, answer }: { question: string; answer: string | React.ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden transition-all hover:border-[#169fa8]/40">
@@ -412,7 +437,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
       </button>
       {open && (
         <div className="px-6 pb-5 pt-1 bg-white border-t border-gray-100">
-          <p className="text-gray-600 leading-relaxed text-sm">{answer}</p>
+          <div className="text-gray-600 leading-relaxed text-sm">{answer}</div>
         </div>
       )}
     </div>
@@ -431,7 +456,7 @@ export default function FAQPage() {
           (activeCategory === "all" || activeCategory === cat.id) &&
           (search === "" ||
             q.question.toLowerCase().includes(search.toLowerCase()) ||
-            q.answer.toLowerCase().includes(search.toLowerCase()))
+            (typeof q.answer === "string" && q.answer.toLowerCase().includes(search.toLowerCase())))
       ),
     }))
     .filter((cat) => cat.questions.length > 0);
