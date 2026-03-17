@@ -1,26 +1,25 @@
 /**
  * SkyTabPOSBuilder — Full 4-step interactive POS configurator
  * Design: Modern Fintech Edge — dark navy/teal, Sora font, UBC Unlimited brand
- * Steps: 1. Bundle  2. Hardware  3. Accessories  4. Processing
- * Pricing matches skytabmountainwest.com configurator exactly
+ * Steps: 1. Bundle  2. Hardware  3. Accessories  4. Processing + Order Form
+ * All product images sourced directly from skytabmountainwest.com / skytab.com
  */
 import { useState } from "react";
-import { CheckCircle, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { Link } from "wouter";
+import { CheckCircle, ArrowRight, ChevronLeft, ChevronRight, Send } from "lucide-react";
 
-// ─── CDN Image URLs ────────────────────────────────────────────────────────────
+// ─── CDN Image URLs (correct sources from skytabmountainwest.com) ──────────────
 const IMG = {
-  tableService: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-table-service-hw_a5dafd96.webp",
-  counterService: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-counter-service-hw_38d22d74.webp",
-  air: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-air-hw_0a0ba3da.webp",
-  glass: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-glass-hw_953104a9.webp",
-  kiosk: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-kiosk-hw_7197fe7e.webp",
-  thermalPrinter: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-thermal-printer_65a20e41.webp",
-  dotMatrix: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-dot-matrix-printer_84477158.webp",
-  kds: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-kds_f2ce3045.webp",
-  kdsBumpBar: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-kds-bump-bar_88ca8f3b.webp",
-  digitalScale: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-digital-scale_755d852e.webp",
-  callerID: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-caller-id_c49bf078.webp",
+  tableService: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-table-service_aef4f9cd.png",
+  counterService: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-counter-service_757ed517.png",
+  air: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-air_24cf047b.webp",
+  glass: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-glass_087fe917.webp",
+  kiosk: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-kiosk_86132708.webp",
+  thermalPrinter: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-thermal-printer_0aeb48b1.png",
+  dotMatrix: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-dot-matrix_87e664b5.png",
+  kds: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-kds_0941eb20.png",
+  kdsBumpBar: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-bump-bar_99d0e5b7.png",
+  digitalScale: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-scale_2bdb67e6.png",
+  callerID: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-caller-id_650fca47.png",
 };
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
@@ -198,6 +197,23 @@ const PROCESSING_PLANS = [
   },
 ];
 
+const BUSINESS_TYPES = [
+  "Full-Service Restaurant", "Quick-Service / Fast Casual", "Bar / Nightclub",
+  "Coffee Shop", "Food Truck", "Pizza / Delivery", "Brewery / Taproom",
+  "Fine Dining", "Catering", "Other",
+];
+
+const US_STATES = [
+  "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut",
+  "Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa",
+  "Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan",
+  "Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire",
+  "New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio",
+  "Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota",
+  "Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia",
+  "Wisconsin","Wyoming",
+];
+
 // ─── Types ─────────────────────────────────────────────────────────────────────
 type BundleId = "table" | "counter";
 type ProcessingId = "standard" | "advantage" | "custom";
@@ -205,10 +221,24 @@ type ProcessingId = "standard" | "advantage" | "custom";
 interface ConfigState {
   bundle: BundleId | null;
   stations: number;
-  hardware: Record<string, number>; // id -> qty
-  accessories: Record<string, number>; // id -> qty
-  accessoryRadio: Record<string, string>; // accessory id -> selected option id
+  hardware: Record<string, number>;
+  accessories: Record<string, number>;
+  accessoryRadio: Record<string, string>;
   processing: ProcessingId | null;
+}
+
+interface FormState {
+  firstName: string;
+  lastName: string;
+  businessName: string;
+  phone: string;
+  email: string;
+  businessType: string;
+  state: string;
+  city: string;
+  currentPOS: string;
+  notes: string;
+  consent: boolean;
 }
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -235,6 +265,33 @@ function calcTotal(state: ConfigState): number {
   return bundleTotal + hwTotal + accTotal;
 }
 
+function buildOrderSummaryText(state: ConfigState, total: number): string {
+  const bundle = BUNDLES.find((b) => b.id === state.bundle);
+  const lines: string[] = [];
+  if (bundle) lines.push(`${bundle.name} × ${state.stations} station(s): $${(bundle.price * state.stations).toFixed(2)}/mo`);
+  HARDWARE_ITEMS.forEach((item) => {
+    const qty = state.hardware[item.id] || 0;
+    if (qty > 0) lines.push(`${item.name} × ${qty}: $${(item.price * qty).toFixed(2)}/mo`);
+  });
+  ACCESSORY_ITEMS.forEach((item) => {
+    if (item.type === "qty") {
+      const qty = state.accessories[item.id] || 0;
+      if (qty > 0) lines.push(`${item.name} × ${qty}: $${((item.price || 0) * qty).toFixed(2)}/mo`);
+    } else {
+      const selectedId = state.accessoryRadio[item.id];
+      const qty = state.accessories[item.id] || 0;
+      if (selectedId && qty > 0) {
+        const opt = item.options?.find((o) => o.id === selectedId);
+        if (opt) lines.push(`${item.name} (${opt.label}) × ${qty}: $${(opt.price * qty).toFixed(2)}/mo`);
+      }
+    }
+  });
+  const proc = PROCESSING_PLANS.find((p) => p.id === state.processing);
+  if (proc) lines.push(`Processing: ${proc.name}`);
+  lines.push(`Est. Monthly Total: $${total.toFixed(2)}/mo`);
+  return lines.join("\n");
+}
+
 // ─── Sub-components ────────────────────────────────────────────────────────────
 function QtyControl({ value, onChange, min = 0, max = 20 }: { value: number; onChange: (v: number) => void; min?: number; max?: number }) {
   return (
@@ -252,7 +309,7 @@ function QtyControl({ value, onChange, min = 0, max = 20 }: { value: number; onC
   );
 }
 
-function StepIndicator({ step, current }: { step: number; current: number }) {
+function StepIndicator({ current }: { current: number }) {
   const labels = ["Bundle", "Hardware", "Accessories", "Processing"];
   return (
     <div className="flex items-center justify-center gap-0 mb-8">
@@ -277,7 +334,6 @@ function StepIndicator({ step, current }: { step: number; current: number }) {
   );
 }
 
-// ─── Order Summary ─────────────────────────────────────────────────────────────
 function OrderSummary({ state, total }: { state: ConfigState; total: number }) {
   const bundle = BUNDLES.find((b) => b.id === state.bundle);
   const lineItems: { label: string; price: number }[] = [];
@@ -328,15 +384,12 @@ function OrderSummary({ state, total }: { state: ConfigState; total: number }) {
           <span className="font-extrabold text-[#169fa8] text-xl">${total.toFixed(2)}</span>
         </div>
       </div>
-      <div className="space-y-1.5 text-xs text-gray-400 mb-4">
+      <div className="space-y-1.5 text-xs text-gray-400">
         <div className="flex items-center gap-1.5"><CheckCircle size={10} className="text-[#22c55e]" /> $0 upfront cost</div>
         <div className="flex items-center gap-1.5"><CheckCircle size={10} className="text-[#22c55e]" /> Lifetime hardware warranty</div>
         <div className="flex items-center gap-1.5"><CheckCircle size={10} className="text-[#22c55e]" /> Local installation included</div>
         <div className="flex items-center gap-1.5"><CheckCircle size={10} className="text-[#22c55e]" /> 24/7 support</div>
       </div>
-      <Link href="/consultation" className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-[#169fa8] hover:bg-[#127d85] text-white font-semibold text-sm transition-colors">
-        Get a Custom Quote <ArrowRight size={14} />
-      </Link>
     </div>
   );
 }
@@ -344,7 +397,10 @@ function OrderSummary({ state, total }: { state: ConfigState; total: number }) {
 // ─── Main Component ────────────────────────────────────────────────────────────
 export default function SkyTabPOSBuilder() {
   const [step, setStep] = useState(1);
-  const [state, setState] = useState<ConfigState>({
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const [config, setConfig] = useState<ConfigState>({
     bundle: null,
     stations: 1,
     hardware: {},
@@ -353,28 +409,108 @@ export default function SkyTabPOSBuilder() {
     processing: null,
   });
 
-  const total = calcTotal(state);
-  const canContinue = step === 1 ? !!state.bundle : step === 4 ? !!state.processing : true;
+  const [form, setForm] = useState<FormState>({
+    firstName: "",
+    lastName: "",
+    businessName: "",
+    phone: "",
+    email: "",
+    businessType: "",
+    state: "",
+    city: "",
+    currentPOS: "",
+    notes: "",
+    consent: false,
+  });
+
+  const total = calcTotal(config);
+  const canContinue = step === 1 ? !!config.bundle : step === 4 ? !!config.processing : true;
 
   const setHwQty = (id: string, qty: number) =>
-    setState((s) => ({ ...s, hardware: { ...s.hardware, [id]: qty } }));
+    setConfig((s) => ({ ...s, hardware: { ...s.hardware, [id]: qty } }));
 
   const setAccQty = (id: string, qty: number) =>
-    setState((s) => ({ ...s, accessories: { ...s.accessories, [id]: qty } }));
+    setConfig((s) => ({ ...s, accessories: { ...s.accessories, [id]: qty } }));
 
   const setAccRadio = (id: string, optId: string) =>
-    setState((s) => ({
+    setConfig((s) => ({
       ...s,
       accessoryRadio: { ...s.accessoryRadio, [id]: optId },
       accessories: { ...s.accessories, [id]: Math.max(1, s.accessories[id] || 1) },
     }));
+
+  const updateForm = (field: keyof FormState, value: string | boolean) =>
+    setForm((f) => ({ ...f, [field]: value }));
+
+  const isFormValid = form.firstName && form.lastName && form.businessName &&
+    form.phone && form.email && form.businessType && form.state && form.city && form.consent;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!isFormValid) return;
+    setSubmitting(true);
+
+    const orderSummary = buildOrderSummaryText(config, total);
+    const proc = PROCESSING_PLANS.find((p) => p.id === config.processing);
+
+    // Build mailto body as fallback (no backend needed)
+    const subject = encodeURIComponent(`SkyTab POS Order — ${form.businessName}`);
+    const body = encodeURIComponent(
+      `NEW SKYTAB POS ORDER\n\n` +
+      `Name: ${form.firstName} ${form.lastName}\n` +
+      `Business: ${form.businessName}\n` +
+      `Phone: ${form.phone}\n` +
+      `Email: ${form.email}\n` +
+      `Business Type: ${form.businessType}\n` +
+      `Location: ${form.city}, ${form.state}\n` +
+      `Current POS: ${form.currentPOS || "None"}\n\n` +
+      `--- ORDER SUMMARY ---\n${orderSummary}\n\n` +
+      `Processing Plan: ${proc?.name || ""}\n\n` +
+      `Additional Notes:\n${form.notes || "None"}`
+    );
+
+    // Simulate a brief submission delay for UX
+    await new Promise((r) => setTimeout(r, 800));
+    window.location.href = `mailto:sales@ubcunlimited.com?subject=${subject}&body=${body}`;
+    setSubmitting(false);
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <section className="py-16 bg-[#f4f7fa]">
+        <div className="container max-w-2xl text-center">
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-12">
+            <div className="w-16 h-16 bg-[#22c55e]/10 rounded-full flex items-center justify-center mx-auto mb-5">
+              <CheckCircle size={32} className="text-[#22c55e]" />
+            </div>
+            <h3 className="text-2xl font-extrabold text-[#0d1b2a] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Order Submitted!</h3>
+            <p className="text-gray-500 text-sm leading-relaxed mb-6">
+              Thank you, <strong>{form.firstName}</strong>! A UBC Unlimited Solution Specialist will reach out within one business day to confirm your order, walk you through agreements, and schedule your local installation.
+            </p>
+            <div className="bg-[#f4f7fa] rounded-xl p-4 text-left text-xs text-gray-500 space-y-1 mb-6">
+              <div className="font-semibold text-[#0d1b2a] mb-2">Your Configuration</div>
+              {buildOrderSummaryText(config, total).split("\n").map((line, i) => (
+                <div key={i}>{line}</div>
+              ))}
+            </div>
+            <button
+              onClick={() => { setSubmitted(false); setStep(1); setConfig({ bundle: null, stations: 1, hardware: {}, accessories: {}, accessoryRadio: {}, processing: null }); setForm({ firstName: "", lastName: "", businessName: "", phone: "", email: "", businessType: "", state: "", city: "", currentPOS: "", notes: "", consent: false }); }}
+              className="text-[#169fa8] text-sm font-semibold hover:underline"
+            >
+              Start a new configuration
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-16 bg-[#f4f7fa]">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="teal-divider mx-auto mb-4" />
           <div className="inline-flex items-center gap-2 bg-[#169fa8]/10 text-[#169fa8] text-xs font-semibold px-3 py-1.5 rounded-full mb-3 uppercase tracking-widest">
             SkyTab POS Configurator
           </div>
@@ -394,7 +530,7 @@ export default function SkyTabPOSBuilder() {
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Left: Configurator */}
           <div className="lg:col-span-2">
-            <StepIndicator step={step} current={step} />
+            <StepIndicator current={step} />
 
             {/* ── Step 1: Bundle ── */}
             {step === 1 && (
@@ -406,16 +542,16 @@ export default function SkyTabPOSBuilder() {
                     {BUNDLES.map((b) => (
                       <button
                         key={b.id}
-                        onClick={() => setState((s) => ({ ...s, bundle: b.id as BundleId }))}
-                        className={`text-left rounded-xl border-2 overflow-hidden transition-all ${state.bundle === b.id ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-200 hover:border-[#169fa8]/40"}`}
+                        onClick={() => setConfig((s) => ({ ...s, bundle: b.id as BundleId }))}
+                        className={`text-left rounded-xl border-2 overflow-hidden transition-all ${config.bundle === b.id ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-200 hover:border-[#169fa8]/40"}`}
                       >
-                        <div className="bg-[#f4f7fa] p-4 flex items-center justify-center h-36">
+                        <div className="bg-[#f4f7fa] p-4 flex items-center justify-center h-40">
                           <img src={b.img} alt={b.name} className="max-h-full max-w-full object-contain" />
                         </div>
                         <div className="p-4">
                           <div className="flex items-center justify-between mb-1">
                             <span className="font-bold text-[#0d1b2a]" style={{ fontFamily: 'Sora, sans-serif' }}>{b.name}</span>
-                            {state.bundle === b.id && <CheckCircle size={15} className="text-[#169fa8]" />}
+                            {config.bundle === b.id && <CheckCircle size={15} className="text-[#169fa8]" />}
                           </div>
                           <p className="text-gray-500 text-xs mb-3 leading-relaxed">{b.desc}</p>
                           <div className="flex flex-wrap gap-1 mb-3">
@@ -444,24 +580,22 @@ export default function SkyTabPOSBuilder() {
                     ))}
                   </div>
 
-                  {/* Station count */}
-                  {state.bundle && (
+                  {config.bundle && (
                     <div className="border-t border-gray-100 pt-5">
                       <div className="flex items-center justify-between mb-3">
                         <div>
                           <div className="font-semibold text-[#0d1b2a] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Number of POS Stations</div>
-                          <div className="text-gray-400 text-xs">{state.stations} station{state.stations > 1 ? "s" : ""} × ${BUNDLES.find(b => b.id === state.bundle)!.price}/mo = <strong className="text-[#169fa8]">${(BUNDLES.find(b => b.id === state.bundle)!.price * state.stations).toFixed(2)}/mo</strong></div>
+                          <div className="text-gray-400 text-xs">{config.stations} station{config.stations > 1 ? "s" : ""} × ${BUNDLES.find(b => b.id === config.bundle)!.price}/mo = <strong className="text-[#169fa8]">${(BUNDLES.find(b => b.id === config.bundle)!.price * config.stations).toFixed(2)}/mo</strong></div>
                         </div>
-                        <QtyControl value={state.stations} onChange={(v) => setState((s) => ({ ...s, stations: v }))} min={1} max={20} />
+                        <QtyControl value={config.stations} onChange={(v) => setConfig((s) => ({ ...s, stations: v }))} min={1} max={20} />
                       </div>
-                      {state.stations >= 20 && (
-                        <p className="text-xs text-gray-400">Need more than 20 stations? <Link href="/consultation" className="text-[#169fa8] underline">Contact us for an enterprise quote.</Link></p>
+                      {config.stations >= 20 && (
+                        <p className="text-xs text-gray-400">Need more than 20 stations? <a href="/contact" className="text-[#169fa8] underline">Contact us for an enterprise quote.</a></p>
                       )}
                     </div>
                   )}
 
-                  {/* Free features */}
-                  {state.bundle && (
+                  {config.bundle && (
                     <div className="mt-5 bg-[#0d1b2a] rounded-xl p-4">
                       <div className="text-white/50 text-[10px] uppercase tracking-widest font-medium mb-2">Included Free with Every Bundle</div>
                       <div className="grid grid-cols-2 gap-1.5">
@@ -484,21 +618,17 @@ export default function SkyTabPOSBuilder() {
                 <p className="text-gray-400 text-xs mb-5">Add mobile devices and self-service kiosks to your setup. All items are billed monthly per unit with $0 upfront.</p>
                 <div className="space-y-4">
                   {HARDWARE_ITEMS.map((item) => {
-                    const qty = state.hardware[item.id] || 0;
+                    const qty = config.hardware[item.id] || 0;
                     return (
                       <div key={item.id} className={`flex gap-4 p-4 rounded-xl border-2 transition-all ${qty > 0 ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-100 hover:border-gray-200"}`}>
                         <div className="w-20 h-20 bg-[#f4f7fa] rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
                           <img src={item.img} alt={item.name} className="max-h-full max-w-full object-contain p-1" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between gap-2">
-                            <div>
-                              <div className="font-bold text-[#0d1b2a] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{item.name}</div>
-                              <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">{item.desc}</p>
-                              <div className="flex flex-wrap gap-1 mt-2">
-                                {item.tags.map((t) => <span key={t} className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded">{t}</span>)}
-                              </div>
-                            </div>
+                          <div className="font-bold text-[#0d1b2a] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{item.name}</div>
+                          <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">{item.desc}</p>
+                          <div className="flex flex-wrap gap-1 mt-2">
+                            {item.tags.map((t) => <span key={t} className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded">{t}</span>)}
                           </div>
                           <div className="flex items-center justify-between mt-3">
                             <span className="text-[#169fa8] font-bold text-sm">${item.price.toFixed(2)}<span className="text-gray-400 font-normal text-xs">/mo each</span></span>
@@ -519,8 +649,8 @@ export default function SkyTabPOSBuilder() {
                 <p className="text-gray-400 text-xs mb-5">Add printers, kitchen displays, and other accessories to complete your setup.</p>
                 <div className="space-y-4">
                   {ACCESSORY_ITEMS.map((item) => {
-                    const qty = state.accessories[item.id] || 0;
-                    const selectedRadio = state.accessoryRadio[item.id];
+                    const qty = config.accessories[item.id] || 0;
+                    const selectedRadio = config.accessoryRadio[item.id];
                     const isActive = item.type === "qty" ? qty > 0 : !!selectedRadio;
                     return (
                       <div key={item.id} className={`p-4 rounded-xl border-2 transition-all ${isActive ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-100 hover:border-gray-200"}`}>
@@ -568,9 +698,10 @@ export default function SkyTabPOSBuilder() {
               </div>
             )}
 
-            {/* ── Step 4: Processing ── */}
+            {/* ── Step 4: Processing + Order Form ── */}
             {step === 4 && (
-              <div className="space-y-4">
+              <div className="space-y-5">
+                {/* Processing selection */}
                 <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
                   <h3 className="font-bold text-[#0d1b2a] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Credit Card Processing</h3>
                   <p className="text-gray-400 text-xs mb-2">Choose how you want to handle payment processing fees. All options are fully compliant and supported by Shift4 Payments.</p>
@@ -583,14 +714,14 @@ export default function SkyTabPOSBuilder() {
                     {PROCESSING_PLANS.map((plan) => (
                       <button
                         key={plan.id}
-                        onClick={() => setState((s) => ({ ...s, processing: plan.id as ProcessingId }))}
-                        className={`text-left p-4 rounded-xl border-2 transition-all ${state.processing === plan.id ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-200 hover:border-[#169fa8]/40"}`}
+                        onClick={() => setConfig((s) => ({ ...s, processing: plan.id as ProcessingId }))}
+                        className={`text-left p-4 rounded-xl border-2 transition-all ${config.processing === plan.id ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-200 hover:border-[#169fa8]/40"}`}
                       >
                         <div className="text-2xl mb-2">{plan.icon}</div>
                         <div className="font-bold text-[#0d1b2a] text-sm mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{plan.name}</div>
                         <p className="text-gray-500 text-xs mb-3 leading-relaxed">{plan.desc}</p>
                         <div className="text-[#169fa8] font-semibold text-xs">{plan.highlight}</div>
-                        {state.processing === plan.id && (
+                        {config.processing === plan.id && (
                           <div className="mt-2 flex items-center gap-1 text-[#169fa8] text-xs font-semibold">
                             <CheckCircle size={11} /> Selected
                           </div>
@@ -600,18 +731,172 @@ export default function SkyTabPOSBuilder() {
                   </div>
                 </div>
 
-                {state.processing && (
-                  <div className="bg-[#0d1b2a] rounded-2xl p-6 text-center">
-                    <div className="text-white font-bold text-lg mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>Ready to Get Started?</div>
-                    <p className="text-white/60 text-sm mb-4">A UBC Unlimited Solution Specialist will reach out within one business day to confirm your order, walk you through agreements, and schedule installation.</p>
-                    <div className="flex flex-wrap gap-3 justify-center text-xs text-white/50 mb-5">
-                      <span className="flex items-center gap-1.5"><CheckCircle size={11} className="text-[#22c55e]" /> No commitment required</span>
-                      <span className="flex items-center gap-1.5"><CheckCircle size={11} className="text-[#22c55e]" /> Local onsite installation</span>
-                      <span className="flex items-center gap-1.5"><CheckCircle size={11} className="text-[#22c55e]" /> Response within 1 business day</span>
-                    </div>
-                    <Link href="/consultation" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#169fa8] hover:bg-[#127d85] text-white font-semibold text-sm transition-colors">
-                      Submit My Order <ArrowRight size={15} />
-                    </Link>
+                {/* Order form — shown once processing is selected */}
+                {config.processing && (
+                  <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+                    <h3 className="font-bold text-[#0d1b2a] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Complete Your Order</h3>
+                    <p className="text-gray-400 text-xs mb-5">A UBC Unlimited Solution Specialist will reach out within one business day to confirm your order, walk you through agreements, and schedule installation.</p>
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">First Name <span className="text-red-400">*</span></label>
+                          <input
+                            type="text"
+                            required
+                            placeholder="Jane"
+                            value={form.firstName}
+                            onChange={(e) => updateForm("firstName", e.target.value)}
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Last Name <span className="text-red-400">*</span></label>
+                          <input
+                            type="text"
+                            required
+                            placeholder="Smith"
+                            value={form.lastName}
+                            onChange={(e) => updateForm("lastName", e.target.value)}
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Restaurant / Business Name <span className="text-red-400">*</span></label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="The Mountain Grill"
+                          value={form.businessName}
+                          onChange={(e) => updateForm("businessName", e.target.value)}
+                          className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                        />
+                      </div>
+
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Phone <span className="text-red-400">*</span></label>
+                          <input
+                            type="tel"
+                            required
+                            placeholder="(801) 555-0100"
+                            value={form.phone}
+                            onChange={(e) => updateForm("phone", e.target.value)}
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Email <span className="text-red-400">*</span></label>
+                          <input
+                            type="email"
+                            required
+                            placeholder="jane@yourrestaurant.com"
+                            value={form.email}
+                            onChange={(e) => updateForm("email", e.target.value)}
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Business Type <span className="text-red-400">*</span></label>
+                          <select
+                            required
+                            value={form.businessType}
+                            onChange={(e) => updateForm("businessType", e.target.value)}
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors bg-white"
+                          >
+                            <option value="">Select type...</option>
+                            {BUSINESS_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">State <span className="text-red-400">*</span></label>
+                          <select
+                            required
+                            value={form.state}
+                            onChange={(e) => updateForm("state", e.target.value)}
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors bg-white"
+                          >
+                            <option value="">Select state...</option>
+                            {US_STATES.map((s) => <option key={s} value={s}>{s}</option>)}
+                          </select>
+                        </div>
+                      </div>
+
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">City <span className="text-red-400">*</span></label>
+                          <input
+                            type="text"
+                            required
+                            placeholder="Salt Lake City"
+                            value={form.city}
+                            onChange={(e) => updateForm("city", e.target.value)}
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Current POS System</label>
+                          <input
+                            type="text"
+                            placeholder="Toast, Square, Clover, None..."
+                            value={form.currentPOS}
+                            onChange={(e) => updateForm("currentPOS", e.target.value)}
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Additional Notes</label>
+                        <textarea
+                          rows={3}
+                          placeholder="Any specific requirements, questions, or details about your setup..."
+                          value={form.notes}
+                          onChange={(e) => updateForm("notes", e.target.value)}
+                          className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors resize-none"
+                        />
+                      </div>
+
+                      {/* Consent */}
+                      <div className={`p-4 rounded-xl border-2 transition-all ${form.consent ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-200"}`}>
+                        <label className="flex items-start gap-3 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={form.consent}
+                            onChange={(e) => updateForm("consent", e.target.checked)}
+                            className="mt-0.5 w-4 h-4 accent-[#169fa8] shrink-0"
+                          />
+                          <span className="text-xs text-gray-600 leading-relaxed">
+                            I Accept — By submitting this form, I agree that I have read and understand the{" "}
+                            <a href="/legal/privacy-policy" className="text-[#169fa8] underline">Privacy Policy</a>{" "}
+                            and give my consent to UBC Unlimited to collect and process the personal information I provide. A{" "}
+                            <a href="https://skytabmountainwest.com/merchant-processing-agreement.pdf" target="_blank" rel="noopener noreferrer" className="text-[#169fa8] underline">Merchant Processing Agreement</a>{" "}
+                            and{" "}
+                            <a href="https://skytabmountainwest.com/pos-service-agreement.pdf" target="_blank" rel="noopener noreferrer" className="text-[#169fa8] underline">POS Service Agreement</a>{" "}
+                            are required to take advantage of the $0 upfront cost for SkyTab equipment and any free services included in this package.
+                          </span>
+                        </label>
+                      </div>
+
+                      <div className="flex flex-wrap gap-4 items-center justify-between pt-2">
+                        <div className="flex flex-wrap gap-4 text-xs text-gray-400">
+                          <span className="flex items-center gap-1.5"><CheckCircle size={11} className="text-[#22c55e]" /> No commitment required</span>
+                          <span className="flex items-center gap-1.5"><CheckCircle size={11} className="text-[#22c55e]" /> Local onsite installation</span>
+                          <span className="flex items-center gap-1.5"><CheckCircle size={11} className="text-[#22c55e]" /> Response within 1 business day</span>
+                        </div>
+                        <button
+                          type="submit"
+                          disabled={!isFormValid || submitting}
+                          className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-colors ${isFormValid && !submitting ? "bg-[#169fa8] hover:bg-[#127d85] text-white" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
+                        >
+                          {submitting ? "Submitting..." : <><Send size={14} /> Submit My Order</>}
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 )}
               </div>
@@ -638,7 +923,7 @@ export default function SkyTabPOSBuilder() {
 
           {/* Right: Order Summary */}
           <div className="lg:col-span-1">
-            <OrderSummary state={state} total={total} />
+            <OrderSummary state={config} total={total} />
           </div>
         </div>
       </div>
