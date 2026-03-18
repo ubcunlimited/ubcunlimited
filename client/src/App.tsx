@@ -68,6 +68,7 @@ function Router() {
         <Route path="/solutions/mobile-processing">{() => <SolutionDetail slug="mobile-processing" />}</Route>
         <Route path="/solutions/virtual-terminals">{() => <SolutionDetail slug="virtual-terminals" />}</Route>
         <Route path="/solutions/invoicing">{() => <SolutionDetail slug="invoicing" />}</Route>
+        <Route path="/solutions/gift-loyalty">{() => <SolutionDetail slug="gift-loyalty" />}</Route>
 
         {/* Industries */}
         <Route path="/industries" component={Industries} />

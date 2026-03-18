@@ -39,6 +39,7 @@ export const NAV_SOLUTIONS = [
   { label: "Mobile Processing", href: "/solutions/mobile-processing", desc: "Accept payments anywhere in Utah", icon: "📱" },
   { label: "Virtual Terminals", href: "/solutions/virtual-terminals", desc: "Phone & mail order payment processing", icon: "💻" },
   { label: "Invoicing", href: "/solutions/invoicing", desc: "Send invoices and get paid faster", icon: "📄" },
+  { label: "Gift Cards & Loyalty", href: "/solutions/gift-loyalty", desc: "Branded gift cards and loyalty rewards programs", icon: "🎁" },
 ];
 
 export const NAV_INDUSTRIES = [
