@@ -186,16 +186,49 @@ const faqCategories = [
       },
       {
         question: "How does SkyTab compare to Toast, Square, and Clover?",
-        answer:
-          "SkyTab consistently comes out ahead on price, warranty, and features for restaurant operators. Here's how it stacks up:\n\n" +
-          "• Starting price: SkyTab starts at $29.99/mo — significantly less than Toast ($69/mo), Square ($60/mo), and Clover ($44.95/mo).\n" +
-          "• Hardware warranty: SkyTab includes a lifetime warranty. Toast, Square, and Clover offer only 1 year.\n" +
-          "• Online ordering commission: SkyTab charges no commission on online orders. Toast charges a commission on every online order.\n" +
-          "• Built-in loyalty program: Included with SkyTab. Toast, Square, and Clover require add-ons or upgrades.\n" +
-          "• Kitchen display system (KDS): Included with SkyTab. Not standard with Square or Clover.\n" +
-          "• Offline mode: SkyTab keeps processing if your internet goes down. Square and Clover have limited offline capability.\n" +
-          "• Local installation: UBC Unlimited provides onsite installation and support across Utah. Toast, Square, and Clover rely on self-installation or third-party contractors.\n\n" +
-          "Pricing and features are based on publicly available information as of early 2026 and may vary. Contact us for a current side-by-side comparison tailored to your business.",
+        answer: (
+          <div className="overflow-x-auto -mx-2">
+            <table className="w-full text-xs border-collapse min-w-[480px]">
+              <thead>
+                <tr className="bg-[#0d1b2a] text-white">
+                  <th className="text-left px-3 py-2 font-semibold">Feature</th>
+                  <th className="px-3 py-2 font-bold text-[#22c55e] text-center">SkyTab<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
+                  <th className="px-3 py-2 font-semibold text-center">Toast</th>
+                  <th className="px-3 py-2 font-semibold text-center">Square</th>
+                  <th className="px-3 py-2 font-semibold text-center">Clover</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ["Starting monthly price", "$29.99/mo", "$69/mo", "$60/mo", "$44.95/mo"],
+                  ["Hardware warranty", "Lifetime", "1 year", "1 year", "1 year"],
+                  ["Tableside ordering (handheld)", "✅", "✅", "⚠️", "⚠️"],
+                  ["Built-in online ordering", "✅", "✅", "✅", "⚠️"],
+                  ["No online ordering commission", "✅", "❌", "❌", "⚠️"],
+                  ["Built-in loyalty program", "✅", "⚠️", "⚠️", "⚠️"],
+                  ["Cloud-based back office", "✅", "✅", "✅", "✅"],
+                  ["Real-time mobile app", "✅", "✅", "✅", "✅"],
+                  ["DoorDash / Uber Eats integration", "✅", "✅", "✅", "⚠️"],
+                  ["Kitchen display system (KDS)", "✅", "✅", "⚠️", "⚠️"],
+                  ["Offline mode", "✅", "✅", "⚠️", "⚠️"],
+                  ["Long-term contract required", "❌", "✅", "❌", "✅"],
+                  ["Local onsite installation (Utah)", "✅", "❌", "❌", "⚠️"],
+                  ["4G LTE handheld POS option", "✅", "⚠️", "❌", "❌"],
+                  ["Brewery & taproom features", "✅", "⚠️", "⚠️", "⚠️"],
+                ].map(([feature, skytab, toast, square, clover], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                    <td className="px-3 py-2 text-gray-700 font-medium">{feature}</td>
+                    <td className="px-3 py-2 text-center font-semibold text-[#169fa8]">{skytab}</td>
+                    <td className="px-3 py-2 text-center text-gray-600">{toast}</td>
+                    <td className="px-3 py-2 text-center text-gray-600">{square}</td>
+                    <td className="px-3 py-2 text-center text-gray-600">{clover}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="text-[10px] text-gray-400 mt-2 italic">✅ Included &nbsp; ⚠️ Limited/add-on &nbsp; ❌ Not available. Pricing and features based on publicly available information as of early 2026 and may vary.</p>
+          </div>
+        ),
       },
     ],
   },
