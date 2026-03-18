@@ -289,6 +289,33 @@ const faqCategories = [
         ),
       },
       {
+        question: "Do you have an end-to-end eCommerce solution that includes both a website builder and a payment gateway?",
+        answer: (
+          <>
+            <p className="mb-3">Yes — we have partnered with <strong>Shift4Shop</strong> to offer a complete end-to-end eCommerce solution that combines a powerful website builder with fully integrated payment processing in a single platform. There is no need to stitch together a separate builder, gateway, and processor — it is all included.</p>
+            <p className="mb-3">Shift4Shop handles your storefront, checkout, inventory, SEO, marketing tools, and payment processing seamlessly. When you process payments through UBC Unlimited, the full enterprise-grade platform is available at <strong>no monthly cost</strong>. An enterprise plan is also available at <strong>$41/month</strong> if you prefer to use a different processor.</p>
+            <div className="flex flex-wrap gap-2 mt-3">
+              <a
+                href="https://launch.shift4shop.com/partners?oid=SS149-149JC"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#169fa8] hover:bg-[#127d85] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+              >
+                Start Your Free Shift4Shop Store →
+              </a>
+              <a
+                href="https://launch.shift4shop.com/partners?oid=SS149-149JC"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border border-[#169fa8] text-[#169fa8] hover:bg-[#169fa8]/10 text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+              >
+                Learn More About Shift4Shop →
+              </a>
+            </div>
+          </>
+        ),
+      },
+      {
         question: "What payment gateways do you support for eCommerce?",
         answer:
           "We work with a wide variety of payment gateways to ensure your online store has the right integration. Our supported gateways include Authorize.net, Fluidpay, Quantum Gateway, NMI, iPosPays, and many more. We work together with you to determine the best gateway option based on your business requirements, shopping cart platform, and transaction volume.",
@@ -301,7 +328,7 @@ const faqCategories = [
       {
         question: "What eCommerce platforms do you integrate with?",
         answer:
-          "We integrate with all major eCommerce platforms including WooCommerce, Shopify, Magento, BigCommerce, and custom-built websites via API. We also support Shopify, WooCommerce, and other popular platforms for industry-specific merchants.",
+          "We integrate with all major eCommerce platforms including Shift4Shop, WooCommerce, Shopify, Magento, BigCommerce, and custom-built websites via API. Shift4Shop is our preferred end-to-end solution — it combines the website builder and payment gateway in one platform with no monthly fee when processing through UBC Unlimited. We also support WooCommerce, Shopify, and other popular platforms for industry-specific merchants.",
       },
       {
         question: "How do you handle fraud prevention?",
