@@ -328,7 +328,7 @@ const faqCategories = [
       {
         question: "What eCommerce platforms do you integrate with?",
         answer:
-          "We integrate with all major eCommerce platforms including Shift4Shop, WooCommerce, Shopify, Magento, BigCommerce, and custom-built websites via API. Shift4Shop is our preferred end-to-end solution — it combines the website builder and payment gateway in one platform with no monthly fee when processing through UBC Unlimited. We also support WooCommerce, Shopify, and other popular platforms for industry-specific merchants.",
+          "We integrate with all major eCommerce platforms including Shift4Shop, WooCommerce, Shopify, Magento, BigCommerce, and custom-built websites via API. Shift4Shop is our preferred end-to-end solution — it combines the website builder and payment gateway in one platform with no monthly fee when processing through UBC Unlimited.",
       },
       {
         question: "How do you handle fraud prevention?",
