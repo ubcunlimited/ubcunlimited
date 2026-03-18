@@ -81,7 +81,7 @@ const industriesData: IndustryData[] = [
                 ["DoorDash / Uber Eats integration", "✅", "✅", "✅", "⚠️"],
                 ["Kitchen display system (KDS)", "✅", "✅", "⚠️", "⚠️"],
                 ["Offline mode", "✅", "✅", "⚠️", "⚠️"],
-                ["Long-term contract required", "❌", "✅", "❌", "✅"],
+                ["Long-term contract required", "✅", "✅", "❌", "✅"],
                 ["Local onsite installation (Utah)", "✅", "❌", "❌", "⚠️"],
                 ["4G LTE handheld POS option", "✅", "⚠️", "❌", "❌"],
                 ["Brewery & taproom features", "✅", "⚠️", "⚠️", "⚠️"],
