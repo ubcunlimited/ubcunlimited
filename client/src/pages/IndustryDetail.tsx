@@ -188,8 +188,7 @@ const industriesData: IndustryData[] = [
     recommendedSolutions: ["/solutions/ach-echeck-processing", "/solutions/invoicing", "/solutions/virtual-terminals"],
     faqs: [
       { question: "Can tenants pay online?", answer: "Yes. We provide a branded tenant payment portal where tenants can pay rent by credit card or ACH bank transfer." },
-      { question: "What are the fees for ACH rent collection?", answer: "ACH processing is very cost-effective — typically $0.25–$0.75 per transaction, far less than credit card processing fees." },
-    ],
+      { question: "Can I use ACH for recurring payments?", answer: "Yes. ACH is ideal for recurring billing \u2014 subscriptions, memberships, rent payments, and installment plans. We can set up automatic recurring drafts with customer authorization." },],
   },
   {
     slug: "firearms",
