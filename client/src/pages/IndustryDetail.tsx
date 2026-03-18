@@ -32,12 +32,14 @@ const industriesData: IndustryData[] = [
       { title: "Tip Management", desc: "Automatic tip prompts, tip pooling, and end-of-day tip reports for your entire staff." },
       { title: "Online Ordering", desc: "Integrated online ordering that flows directly into your kitchen — no third-party tablet chaos." },
       { title: "Table Management", desc: "Visual floor plan, table status tracking, and server assignment from one screen." },
+      { title: "Gift Cards & Loyalty", desc: "Branded physical and digital gift cards plus a points-based loyalty program that rewards repeat diners, drives return visits, and builds a customer database for targeted email and SMS marketing campaigns." },
     ],
-    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/mobile-processing"],
+    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/gift-loyalty"],
     faqs: [
       { question: "What POS system do you recommend for restaurants?", answer: "We typically recommend SkyTab for full-service restaurants. It offers tableside ordering, kitchen display systems, online ordering integration, and robust reporting — all in one system." },
       { question: "Can I accept tips with your system?", answer: "Yes. Our restaurant POS systems include tip prompts on customer-facing screens, tip pooling, and automatic tip reporting for payroll." },
       { question: "Do you integrate with online ordering platforms?", answer: "Yes. We integrate with major online ordering platforms and also offer our own integrated online ordering solution that flows directly into your POS." },
+      { question: "Do you offer gift cards and loyalty programs for restaurants?", answer: "Yes. We offer fully integrated gift card and loyalty solutions that work seamlessly with your POS and payment processing. Branded physical and digital gift cards help you acquire new customers — gift card recipients typically spend 20–40% more than the card's face value. A points-based loyalty program rewards repeat diners, increases visit frequency, and builds a customer database you can market to directly with email and SMS campaigns. No punch cards, no manual tracking — everything runs automatically at the point of sale." },
     ],
   },
   {
@@ -52,10 +54,12 @@ const industriesData: IndustryData[] = [
       { title: "Pre-Auth Holds", desc: "Hold a card on file for a tab and capture the final amount at close — reduce walkouts." },
       { title: "Split Checks", desc: "Split any check by item, by amount, or evenly between multiple cards." },
       { title: "Bar-Specific Reporting", desc: "Track your best-selling drinks, busiest hours, and staff performance." },
+      { title: "Gift Cards & Loyalty", desc: "Branded gift cards and a loyalty rewards program that turns one-time visitors into regulars. Reward frequent guests with points, run targeted promotions during slow nights, and build a customer list for SMS and email marketing." },
     ],
-    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/mobile-processing"],
+    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/gift-loyalty"],
     faqs: [
       { question: "Can I pre-authorize cards for tabs?", answer: "Yes. Our bar POS systems support pre-authorization holds, so you can hold a card on file and capture the final amount when the customer closes out." },
+      { question: "Do you offer gift cards and loyalty programs for bars?", answer: "Yes. Branded gift cards are a proven revenue driver — they're purchased upfront and often never fully redeemed, providing float income. A loyalty program rewards your regulars with points for every visit or dollar spent, encouraging them to choose your bar over competitors. Both integrate directly with your POS so there's no manual tracking or separate system to manage." },
       { question: "How does SkyTab compare to Toast, Square, and Clover?", answer: (
         <div className="overflow-x-auto -mx-2">
           <table className="w-full text-xs border-collapse min-w-[480px]">
@@ -113,11 +117,13 @@ const industriesData: IndustryData[] = [
       { title: "Barcode Scanning", desc: "Fast checkout with barcode scanning and automatic price lookup." },
       { title: "Loyalty Programs", desc: "Built-in customer loyalty points and gift card programs to drive repeat business." },
       { title: "Multi-Location Support", desc: "Manage inventory and reporting across multiple store locations from one dashboard." },
+      { title: "Gift Cards & Loyalty", desc: "Branded physical and digital gift cards plus a customizable loyalty rewards program. Increase average transaction size, drive repeat visits, and build a customer database for targeted promotions — all managed from your POS." },
     ],
-    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/ecommerce-payments"],
+    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/gift-loyalty"],
     faqs: [
       { question: "Can I manage inventory across multiple locations?", answer: "Yes. Our retail POS systems support multi-location inventory management with centralized reporting." },
-      { question: "Do you offer gift card programs?", answer: "Yes. We offer both physical and digital gift card programs that integrate with your POS." },
+      { question: "Do you offer gift card programs?", answer: "Yes. We offer both physical and digital gift card programs that integrate directly with your POS. Customers can purchase, redeem, and check balances at the register or online. Gift cards are one of the highest-margin products a retail store can sell — they bring in new customers and drive incremental spending above the card's face value." },
+      { question: "How does a loyalty program benefit my retail store?", answer: "A points-based loyalty program rewards customers for every purchase, increasing visit frequency and average spend. You can offer bonus points on slow days, birthday rewards, and tiered status levels to keep your best customers engaged. All customer activity is tracked automatically at the POS — no paper punch cards or manual entry required." },
     ],
   },
   {
@@ -211,11 +217,13 @@ const industriesData: IndustryData[] = [
       { title: "Tip Management", desc: "Tip prompts, tip pooling, and automatic tip reporting for your staff." },
       { title: "Gift Cards", desc: "Physical and digital gift cards that drive new customers and repeat visits." },
       { title: "Retail Sales", desc: "Sell retail products alongside services from the same POS system." },
+      { title: "Gift Cards & Loyalty", desc: "Branded gift cards are one of the most effective marketing tools for salons and spas — perfect for holidays, birthdays, and bridal parties. Pair them with a loyalty rewards program that tracks visits, awards points for services and retail purchases, and keeps clients coming back." },
     ],
-    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/invoicing"],
+    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/gift-loyalty"],
     faqs: [
       { question: "Can I integrate with my booking software?", answer: "We integrate with many popular salon booking platforms. Contact us to discuss your specific software." },
       { question: "How do you handle tip distribution?", answer: "Our POS systems include tip pooling, individual tip tracking, and automatic tip reports for payroll processing." },
+      { question: "Do you offer gift cards and loyalty programs for salons and spas?", answer: "Yes. Gift cards are one of the top revenue drivers for salons and spas — especially around holidays, Mother's Day, and bridal season. We offer branded physical and digital gift cards that integrate with your POS for easy redemption and balance tracking. Our loyalty program rewards clients for every service and retail purchase, encouraging rebooking and increasing average ticket size. Everything is tracked automatically — no paper cards, no manual entry." },
     ],
   },
   {
