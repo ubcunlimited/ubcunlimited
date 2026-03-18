@@ -64,9 +64,23 @@ const faqCategories = [
           "Interchange-plus pricing passes the actual interchange cost (set by Visa/Mastercard) directly to you, plus a small fixed markup. It's the most transparent pricing model and is especially beneficial for businesses with high-ticket transactions or a mix of card types.",
       },
       {
-        question: "What is cash discounting or dual pricing?",
-        answer:
-          "Cash discounting and dual pricing are compliant programs that allow you to pass the cost of credit card acceptance to customers who choose to pay by card, while offering a lower price to cash customers. When set up correctly, these programs can effectively eliminate your processing fees. We ensure full compliance with card network rules.",
+        question: "What is dual pricing and how does it work?",
+        answer: (
+          <div className="space-y-3">
+            <p>
+              Dual pricing is a compliant payment strategy where your business displays two prices at the point of sale — a lower price for customers who pay with cash, and a slightly higher price for customers who pay with a credit or debit card. The difference between the two prices reflects your card processing cost, which is passed to the customer transparently before the transaction is completed.
+            </p>
+            <p>
+              Dual pricing is <strong>legal in all 50 states</strong> and applies to all card types — credit, debit, and prepaid. It is distinct from surcharging (which is limited to credit cards only and is prohibited in some states) and from cash discounting (which posts one price and applies a discount at checkout for cash payers). Dual pricing is generally considered the most transparent and consumer-friendly approach because both prices are shown upfront.
+            </p>
+            <p>
+              When implemented correctly with proper signage and receipt language, most businesses report minimal customer pushback. UBC Unlimited provides all required compliance materials, staff training, and compatible hardware or equipment programming as part of our setup.
+            </p>
+            <p>
+              <a href="/solutions/dual-pricing" className="text-[#1e6fa8] font-semibold hover:underline">Learn more about our Dual Pricing &amp; Cash Discount program →</a>
+            </p>
+          </div>
+        ),
       },
       {
         question: "How quickly will I receive my funds?",
