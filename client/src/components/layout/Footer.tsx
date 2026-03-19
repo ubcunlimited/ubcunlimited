@@ -9,7 +9,7 @@ const TOP_INDUSTRIES = NAV_INDUSTRIES.filter((i) => !(i as any).highRisk).slice(
 
 const COMPANY_LINKS = [
   { label: "About Us", href: "/about" },
-  { label: "News & Updates", href: "/blog" },
+  { label: "News & Updates", href: "/news" },
   { label: "Contact", href: "/contact" },
   { label: "Locations", href: "/locations" },
   { label: "Build a POS", href: "/solutions/pos-systems" },

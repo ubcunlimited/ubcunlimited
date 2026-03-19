@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, CheckCircle, Info, TrendingDown, Sliders, DollarSign } from "lucide-react";
+import { ArrowRight, CheckCircle, X, Info, TrendingDown, Sliders, DollarSign, Minus } from "lucide-react";
 
 const models = [
   {
@@ -70,6 +70,86 @@ const cardMixFactors = [
   },
 ];
 
+type CellValue = string | boolean | null;
+
+const comparisonRows: { feature: string; ubc: CellValue; stripe: CellValue; square: CellValue; note?: string }[] = [
+  {
+    feature: "Pricing Model",
+    ubc: "Interchange-Plus, Flat-Rate, or Cash Discount",
+    stripe: "Flat-Rate (2.7–2.9% + $0.05–$0.30)",
+    square: "Flat-Rate (2.6–3.5% + $0.10–$0.15)",
+    note: "UBC tailors the model to your card mix — you're not forced into one structure.",
+  },
+  {
+    feature: "Effective Rate Range",
+    ubc: "As low as 1.2%–2.2% (card-present, high debit)",
+    stripe: "2.7%–3.5%+ blended",
+    square: "2.6%–3.5%+ blended",
+    note: "Interchange-plus pricing can save 0.5–1.5% vs. flat-rate for businesses with favorable card mix.",
+  },
+  {
+    feature: "Cash Discount / Dual Pricing",
+    ubc: true,
+    stripe: false,
+    square: false,
+    note: "Eliminate processing costs entirely — not available through Stripe or Square.",
+  },
+  {
+    feature: "High-Risk Business Support",
+    ubc: true,
+    stripe: false,
+    square: false,
+    note: "Stripe and Square routinely terminate high-risk accounts without warning.",
+  },
+  {
+    feature: "Local Dedicated Rep",
+    ubc: true,
+    stripe: false,
+    square: false,
+    note: "A real Utah-based person who knows your business — not a support ticket.",
+  },
+  {
+    feature: "Month-to-Month Agreement",
+    ubc: true,
+    stripe: true,
+    square: true,
+    note: "All three offer no long-term contract on standard accounts.",
+  },
+  {
+    feature: "Free Statement Review",
+    ubc: true,
+    stripe: false,
+    square: false,
+  },
+  {
+    feature: "POS Hardware Options",
+    ubc: "SkyTab, Dejavoo, PAX + more",
+    stripe: "Stripe Terminal only",
+    square: "Square hardware only",
+    note: "UBC is hardware-agnostic — we find the right fit for your business.",
+  },
+  {
+    feature: "ACH / eCheck Processing",
+    ubc: true,
+    stripe: true,
+    square: false,
+  },
+  {
+    feature: "Chargeback Support",
+    ubc: "Hands-on local assistance",
+    stripe: "Self-serve portal",
+    square: "Self-serve portal",
+    note: "We fight chargebacks with you, not just notify you of them.",
+  },
+];
+
+function Cell({ value }: { value: CellValue }) {
+  if (value === true) return <CheckCircle size={18} className="text-[#2a7a6f] mx-auto" />;
+  if (value === false) return <X size={18} className="text-red-400 mx-auto" />;
+  if (value === null) return <Minus size={16} className="text-gray-300 mx-auto" />;
+  return <span className="text-xs text-gray-700 leading-snug">{value}</span>;
+}
+
 export default function PricingTransparency() {
   return (
     <section className="py-20 bg-white" id="pricing">
@@ -115,7 +195,10 @@ export default function PricingTransparency() {
               </div>
 
               <div className="mb-4">
-                <div className="text-2xl font-extrabold text-[#c9a84c] leading-tight" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
+                <div
+                  className="text-2xl font-extrabold text-[#c9a84c] leading-tight"
+                  style={{ fontFamily: "DM Serif Display, Georgia, serif" }}
+                >
                   {model.range}
                 </div>
                 <div className="text-xs text-gray-400 mt-0.5">{model.rangeNote}</div>
@@ -142,7 +225,7 @@ export default function PricingTransparency() {
         </div>
 
         {/* What affects your rate */}
-        <div className="bg-[#080808] rounded-2xl p-8 md:p-10 mb-10">
+        <div className="bg-[#080808] rounded-2xl p-8 md:p-10 mb-14">
           <div className="text-center mb-8">
             <h3
               className="text-2xl font-bold text-white mb-2"
@@ -167,6 +250,70 @@ export default function PricingTransparency() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Comparison Table */}
+        <div className="mb-14">
+          <div className="text-center mb-8">
+            <h3
+              className="text-2xl md:text-3xl font-bold text-[#080808] mb-2"
+              style={{ fontFamily: "DM Serif Display, Georgia, serif" }}
+            >
+              How We Compare
+            </h3>
+            <p className="text-gray-500 text-sm max-w-xl mx-auto">
+              UBC Unlimited vs. national platforms — on the factors that actually matter to your bottom line.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-[#080808]">
+                  <th className="text-left px-5 py-4 text-white/60 font-medium text-xs w-[30%]">Feature</th>
+                  <th className="px-5 py-4 text-center w-[23%]">
+                    <div className="text-[#c9a84c] font-bold text-sm">UBC Unlimited</div>
+                    <div className="text-white/40 text-xs font-normal">Local Utah Expert</div>
+                  </th>
+                  <th className="px-5 py-4 text-center w-[23%]">
+                    <div className="text-white/70 font-semibold text-sm">Stripe</div>
+                    <div className="text-white/30 text-xs font-normal">National Platform</div>
+                  </th>
+                  <th className="px-5 py-4 text-center w-[23%]">
+                    <div className="text-white/70 font-semibold text-sm">Square</div>
+                    <div className="text-white/30 text-xs font-normal">National Platform</div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonRows.map((row, i) => (
+                  <tr
+                    key={row.feature}
+                    className={i % 2 === 0 ? "bg-white" : "bg-[#fafaf9]"}
+                  >
+                    <td className="px-5 py-4 align-top">
+                      <div className="font-semibold text-[#080808] text-xs mb-0.5">{row.feature}</div>
+                      {row.note && (
+                        <div className="text-gray-400 text-xs leading-snug">{row.note}</div>
+                      )}
+                    </td>
+                    <td className="px-5 py-4 text-center align-middle bg-[#c9a84c]/5 border-x border-[#c9a84c]/10">
+                      <Cell value={row.ubc} />
+                    </td>
+                    <td className="px-5 py-4 text-center align-middle">
+                      <Cell value={row.stripe} />
+                    </td>
+                    <td className="px-5 py-4 text-center align-middle">
+                      <Cell value={row.square} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-gray-400 mt-3 text-center">
+            Competitor data based on publicly available pricing as of 2025. Actual rates vary. UBC Unlimited rates depend on your specific card mix and volume.
+          </p>
         </div>
 
         {/* CTA row */}
