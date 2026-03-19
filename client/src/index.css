@@ -304,6 +304,48 @@
   }
 }
 
+/* ============================================================
+   ADA / WCAG 2.1 AA Accessibility Enhancements
+   ============================================================ */
+
+/* Global focus-visible ring for keyboard navigation */
+:focus-visible {
+  outline: 2px solid #169fa8;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Remove default outline only when using mouse (not keyboard) */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Button focus styles */
+.btn-teal:focus-visible,
+.btn-gold:focus-visible,
+.btn-outline-white:focus-visible,
+.btn-outline-teal:focus-visible {
+  outline: 2px solid #169fa8;
+  outline-offset: 3px;
+}
+
+/* Ensure sufficient color contrast for muted text on white backgrounds */
+/* Gray-500 (#6b7280) on white = 4.6:1 — passes AA */
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .btn-teal,
+  .btn-gold,
+  .btn-outline-white,
+  .btn-outline-teal {
+    forced-color-adjust: none;
+    border: 2px solid ButtonText;
+  }
+  :focus-visible {
+    outline: 3px solid Highlight;
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

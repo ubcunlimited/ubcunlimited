@@ -17,6 +17,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    setTimeout(() => { window.location.href = "/thank-you"; }, 1200);
   };
 
   return (

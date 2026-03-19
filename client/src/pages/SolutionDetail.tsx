@@ -368,40 +368,40 @@ const solutionsData: SolutionData[] = [
   {
     slug: "dual-pricing",
     icon: "💲",
-    title: "Dual Pricing & Cash Discount",
-    subtitle: "Eliminate or dramatically reduce your credit card processing costs",
-    description: "Credit card processing fees are one of the largest operating expenses for many businesses — often 2.5% to 4% of every card transaction. Dual pricing and cash discount programs are legal, compliant strategies that allow you to offset these costs by presenting customers with transparent pricing choices at the point of sale. UBC Unlimited helps you implement the right program for your business, ensuring full compliance with card brand rules and state regulations.",
-    heroPoints: ["Legal in all 50 states", "Eliminate up to 100% of processing fees", "Compliant signage & receipt language included", "Works with most POS systems & terminals"],
+    title: "Cash Discounting, Surcharging & Dual Pricing",
+    subtitle: "Keep more of every sale — legally pass processing costs to the card, not your bottom line",
+    description: "Credit card processing fees quietly drain 2.5% to 4% from every card transaction. UBC Unlimited offers three proven, fully compliant programs — Cash Discounting, Credit Card Surcharging, and Dual Pricing — that let your business recover those costs without raising prices across the board. We'll walk you through each option, show you a real cost comparison, and set up the program that fits your business, your customers, and your state's regulations.",
+    heroPoints: ["Legal in all 50 states (program-dependent)", "Eliminate up to 100% of processing fees", "Compliant signage & receipt language included", "Works with most POS systems & terminals"],
     features: [
-      { title: "Dual Pricing", desc: "Display two prices at the point of sale — a lower cash price and a slightly higher card price. Customers see both prices before they pay and choose their preferred method. This is the most transparent approach, fully compliant in all 50 states, and applies to both credit and debit card transactions." },
-      { title: "Cash Discount Program", desc: "Post a single standard price (which reflects the card price) and apply a discount at checkout when the customer pays with cash. The customer sees the discount applied on their receipt. This model is widely used in retail, restaurants, and service businesses and is legal in all 50 states." },
-      { title: "Compliant Signage & Disclosure", desc: "We provide all required signage, receipt language, and disclosure materials to keep your program fully compliant with Visa, Mastercard, and state regulations. Proper disclosure is the most critical element of a compliant program — we make it easy." },
-      { title: "Compatible Hardware & Software", desc: "Our dual pricing and cash discount programs work with a wide range of countertop terminals, wireless devices, and full POS systems. We can program your existing equipment or provide new hardware configured for your program from day one." },
-      { title: "Applies to All Card Types", desc: "Unlike surcharging (which is limited to credit cards only), dual pricing and cash discount programs apply to all card types — credit, debit, and prepaid. This simplifies the customer experience and ensures you recover costs on every card transaction." },
-      { title: "No Monthly Fees", desc: "Our dual pricing and cash discount programs are available with no monthly program fees for qualifying accounts. You keep more of what you earn without adding new overhead to your operating costs." },
-      { title: "Transparent Customer Experience", desc: "Customers are never surprised. Both prices are shown clearly before the transaction is completed. This transparency builds trust and reduces disputes — customers who understand the pricing model rarely push back." },
-      { title: "Real-Time Reporting", desc: "Track cash vs. card transaction splits, total fee savings, and program performance from your reporting dashboard. See exactly how much your dual pricing or cash discount program is saving your business every month." },
-      { title: "Staff Training & Onboarding", desc: "We provide training materials and onboarding support for your staff so they can confidently explain the program to customers. A well-trained team is the key to a smooth customer experience and high program adoption." },
+      { title: "Cash Discount Program", desc: "Your most customer-friendly option. Post a single standard price — which reflects your card price — and automatically apply a discount at checkout when the customer pays with cash. The discount shows on the receipt, customers feel rewarded for paying cash, and you recover your processing cost on every card transaction. Legal in all 50 states, applies to credit, debit, and prepaid cards." },
+      { title: "Credit Card Surcharging", desc: "Add a clearly disclosed fee to credit card transactions at the point of sale. Surcharging is capped at 3% (or your actual cost, whichever is lower) and must be disclosed before the transaction is completed. It applies to credit cards only — not debit or prepaid — and is currently prohibited in a small number of states. We handle all compliance requirements, signage, and registration with card brands on your behalf." },
+      { title: "Dual Pricing", desc: "Display two prices side by side — a lower cash price and a standard card price — so customers see the difference upfront and choose their payment method before the transaction begins. A straightforward, transparent approach that works well in retail and restaurant environments where customers appreciate having the choice clearly presented." },
+      { title: "Compliant Signage & Disclosure", desc: "Every program requires specific signage, receipt language, and customer-facing disclosures to stay compliant with Visa, Mastercard, and applicable state laws. We provide all of it — professionally designed, ready to post — so you're covered from day one." },
+      { title: "Compatible Hardware & Software", desc: "Our programs work with a wide range of countertop terminals, wireless devices, and full POS systems. In most cases we can reprogram your existing equipment at no charge. If you need new hardware, we'll configure it for your program before it ships." },
+      { title: "Applies to All Card Types (Cash Discount & Dual Pricing)", desc: "Cash discounting and dual pricing recover costs on every card transaction — credit, debit, and prepaid. Surcharging is limited to credit cards only. We'll help you choose the program that gives you the broadest cost recovery for your specific card mix." },
+      { title: "No Monthly Program Fees", desc: "Our cash discount and dual pricing programs are available with no monthly program fees for qualifying accounts. You recover processing costs without adding new overhead to your operating budget." },
+      { title: "Real-Time Savings Reporting", desc: "See exactly how much your program is saving you every month — cash vs. card splits, total fees recovered, and program performance — all from your reporting dashboard." },
+      { title: "Staff Training & Onboarding", desc: "A well-trained team is the difference between a smooth customer experience and unnecessary friction. We provide training materials, talking points, and onboarding support so your staff can explain the program confidently and professionally." },
     ],
     benefits: [
       "Eliminate or dramatically reduce credit card processing costs",
-      "Legal and compliant in all 50 states",
-      "Applies to credit, debit, and prepaid cards (unlike surcharging)",
+      "Cash discounting and dual pricing legal in all 50 states",
+      "Surcharging available in most states with full compliance support",
       "Compliant signage and receipt language provided",
       "Compatible with most existing terminals and POS systems",
       "No monthly program fees for qualifying accounts",
       "Transparent customer experience reduces disputes",
-      "Dedicated local support for setup, training, and compliance",
+      "Dedicated local Utah support for setup, training, and compliance",
     ],
     faqs: [
-      { question: "What is dual pricing?", answer: "Dual pricing is a payment strategy where your business displays two prices for every product or service: a lower price for customers who pay with cash, and a slightly higher price for customers who pay with a credit or debit card. The difference between the two prices reflects your card processing cost, which is passed to the customer transparently. Both prices are shown before the transaction is completed, so customers can make an informed choice. Dual pricing is legal in all 50 states and applies to all card types." },
-      { question: "What is a cash discount program?", answer: "A cash discount program is similar to dual pricing in outcome but different in presentation. Your business posts a single standard price (which reflects the card price) and then applies a discount at checkout when the customer pays with cash. The customer sees the discount on their receipt. The net effect is the same — cash customers pay less and card customers pay the standard price — but the framing is a discount rather than a surcharge. Cash discount programs are legal in all 50 states and apply to all card types." },
-      { question: "What is the difference between dual pricing, cash discounting, and surcharging?", answer: "All three approaches are designed to offset credit card processing costs, but they work differently. Dual pricing shows two prices upfront (cash and card) before the transaction. Cash discounting posts one price and applies a discount at checkout for cash payers. Surcharging adds a fee to the transaction only when a customer pays with a credit card. The key differences: surcharging is prohibited in some states and cannot be applied to debit or prepaid cards; dual pricing and cash discounting are legal in all 50 states and apply to all card types. Dual pricing is generally considered the most transparent and consumer-friendly approach." },
-      { question: "Is dual pricing legal in Utah?", answer: "Yes. Dual pricing and cash discount programs are legal in Utah and in all 50 states. There are no state-level restrictions on these programs in Utah. The key requirement is proper disclosure — customers must be clearly informed of both prices before completing the transaction. We provide all required signage, receipt language, and disclosure materials as part of our program setup." },
-      { question: "Who qualifies for a dual pricing or cash discount program?", answer: "Most businesses qualify. Dual pricing and cash discount programs work well for retail stores, restaurants, bars, auto repair shops, salons and spas, medical and dental offices, service businesses, and many other business types. The program is most effective for businesses where cash payment is a realistic option for customers. Businesses that process exclusively online or in environments where cash is not practical may be better served by other pricing models. We'll assess your specific situation and recommend the right approach during your consultation." },
-      { question: "Will customers react negatively to dual pricing?", answer: "Most businesses that implement dual pricing correctly report minimal customer pushback. The key is transparency and proper signage. When customers can clearly see both prices before they pay, they understand they have a choice — and many appreciate the honesty. Customers who pay with cash feel rewarded. Card customers pay the standard market price. The experience is very different from a surprise surcharge added at the end of a transaction, which is what tends to generate negative reactions. Our team provides signage templates and staff training to ensure your program is presented clearly and professionally." },
-      { question: "How much can I save with dual pricing?", answer: "Savings depend on your current processing rates, monthly volume, and the percentage of your transactions that shift to cash. For many businesses, dual pricing eliminates 80–100% of card processing costs on transactions where customers choose cash. Even if only 20–30% of your customers switch to cash, the savings on those transactions can be significant. We'll provide a clear cost-benefit analysis based on your actual processing history before you make any decision." },
-      { question: "Do I need new equipment to run a dual pricing program?", answer: "In many cases, no. We can reprogram many existing terminals and POS systems to support dual pricing or cash discount programs at no charge. If your current equipment is not compatible, we offer new terminals and devices configured for your program — often at no upfront cost for qualifying accounts. We'll assess your current setup and recommend the most cost-effective path during your consultation." },
+      { question: "What is a cash discount program and how does it work?", answer: "A cash discount program lets you post a single standard price — which reflects your card processing cost — and automatically apply a discount at checkout when the customer pays with cash. The customer sees the discount on their receipt and feels rewarded for paying cash. You recover your processing cost on every card transaction without raising prices for cash customers. Cash discount programs are legal in all 50 states and apply to credit, debit, and prepaid cards." },
+      { question: "What is credit card surcharging?", answer: "Surcharging adds a disclosed fee to a transaction when the customer pays with a credit card. The fee is capped at 3% (or your actual processing cost, whichever is lower) and must be clearly disclosed to the customer before the transaction is completed. Surcharging applies to credit cards only — it cannot be applied to debit or prepaid cards. It is currently prohibited in a small number of states. We handle card brand registration, signage, and all compliance requirements on your behalf." },
+      { question: "What is the difference between cash discounting, surcharging, and dual pricing?", answer: "Cash discounting posts one price and applies a discount when the customer pays with cash — the customer feels rewarded rather than penalized. Surcharging adds a fee to credit card transactions at checkout — the customer sees the fee added to their total. Dual pricing shows two prices upfront (cash and card) before the transaction begins. Cash discounting and dual pricing apply to all card types and are legal everywhere; surcharging is limited to credit cards and is prohibited in certain states. For most businesses, cash discounting is the most customer-friendly and broadly compliant option." },
+      { question: "Is cash discounting legal in Utah?", answer: "Yes. Cash discount programs are legal in Utah and in all 50 states. There are no state-level restrictions. The key requirement is proper disclosure — customers must be clearly informed of the pricing structure before completing the transaction. We provide all required signage, receipt language, and disclosure materials as part of our program setup." },
+      { question: "Who qualifies for these programs?", answer: "Most businesses qualify. Cash discounting and surcharging work well for retail stores, restaurants, bars, auto repair shops, salons and spas, medical and dental offices, service businesses, and many other business types. The programs are most effective where cash payment is a realistic option for customers. Businesses that process exclusively online may be better served by other pricing models. We'll assess your situation and recommend the right program during your consultation." },
+      { question: "Will customers react negatively to these programs?", answer: "When implemented correctly and transparently, most businesses report minimal pushback. The key is clear signage and honest communication. Customers who pay cash feel rewarded. Card customers pay the standard market price — the same price they'd pay at most businesses that have adopted these programs. The experience is very different from a surprise fee added at the end of a transaction. Our team provides signage templates and staff training to ensure your program is presented clearly and professionally." },
+      { question: "How much can I save?", answer: "Savings depend on your current processing rates, monthly volume, and how many customers shift to cash. For many businesses, these programs eliminate 80–100% of card processing costs on cash transactions. Even partial adoption can produce meaningful monthly savings. We'll provide a clear cost-benefit analysis based on your actual processing history before you make any decision." },
+      { question: "Do I need new equipment?", answer: "In many cases, no. We can reprogram existing terminals and POS systems to support cash discounting or surcharging at no charge. If your current equipment is not compatible, we offer new terminals configured for your program — often at no upfront cost for qualifying accounts. We'll assess your current setup and recommend the most cost-effective path during your consultation." },
     ],
     relatedSolutions: ["/solutions/credit-card-processing", "/solutions/pos-systems", "/solutions/mobile-processing"],
   },
@@ -428,7 +428,11 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
   const relatedItems = NAV_SOLUTIONS.filter((s) => data.relatedSolutions?.includes(s.href));
 
   const TERMINAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_f46e2fbc.jpg";
+  const CASH_DISCOUNT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-cash-discount-jfmB57PZVctCXZVaSjpwi2.webp";
   const isCreditCard = data.slug === "credit-card-processing";
+  const isCashDiscount = data.slug === "dual-pricing";
+  const hasHeroImage = isCreditCard || isCashDiscount;
+  const heroImg = isCashDiscount ? CASH_DISCOUNT_IMG : TERMINAL_IMG;
 
   return (
     <PageLayout>
@@ -459,18 +463,18 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
       />
       {/* Hero */}
       <section className="relative bg-[#040c1c] py-20 overflow-hidden">
-        {isCreditCard && (
+        {hasHeroImage && (
           <>
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${TERMINAL_IMG})`, opacity: 0.18 }}
+              style={{ backgroundImage: `url(${heroImg})`, opacity: 0.18 }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-[#040c1c] via-[#040c1c]/80 to-[#040c1c]/30" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#040c1c] via-transparent to-transparent" />
           </>
         )}
         <div className="container relative z-10">
-          {isCreditCard ? (
+          {hasHeroImage ? (
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
@@ -501,8 +505,8 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               </div>
               <div className="hidden lg:block">
                 <img
-                  src={TERMINAL_IMG}
-                  alt="Modern credit card terminal with city skyline — UBC Unlimited merchant services"
+                  src={heroImg}
+                  alt={isCashDiscount ? "Cash discount payment terminal at retail checkout — UBC Unlimited" : "Modern credit card terminal with city skyline — UBC Unlimited merchant services"}
                   className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
                 />
               </div>

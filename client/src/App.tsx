@@ -8,6 +8,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 
 // Core pages
 import Home from "./pages/Home";
+import CookieConsent from "./components/CookieConsent";
 import Locations from "./pages/Locations";
 import LocationDetail from "./pages/LocationDetail";
 import About from "./pages/About";
@@ -122,6 +123,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <CookieConsent />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
