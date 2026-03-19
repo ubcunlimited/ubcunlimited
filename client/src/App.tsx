@@ -35,6 +35,7 @@ import ThankYou from "./pages/ThankYou";
 
 // Legal
 import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
+import AccessibilityStatement from "./pages/legal/AccessibilityStatement";
 import TermsOfService from "./pages/legal/TermsOfService";
 import CookiePolicy from "./pages/legal/CookiePolicy";
 import Disclaimer from "./pages/legal/Disclaimer";
@@ -118,6 +119,12 @@ function Router() {
         <Route path="/legal/terms-of-service" component={TermsOfService} />
         <Route path="/legal/cookie-policy" component={CookiePolicy} />
         <Route path="/legal/disclaimer" component={Disclaimer} />
+        <Route path="/accessibility" component={AccessibilityStatement} />
+        {/* Alias routes — footer links use short paths */}
+        <Route path="/privacy-policy" component={PrivacyPolicy} />
+        <Route path="/terms-of-service" component={TermsOfService} />
+        <Route path="/cookie-policy" component={CookiePolicy} />
+        <Route path="/disclaimer" component={Disclaimer} />
 
         {/* Locations */}
         <Route path="/locations" component={Locations} />

@@ -4,6 +4,20 @@ import { Menu, X, Phone, ChevronDown, ArrowRight } from "lucide-react";
 import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES } from "@/lib/config";
 import { motion, AnimatePresence } from "framer-motion";
 
+// Top 5 highest-converting Solutions for nav dropdown
+const TOP_SOLUTIONS = NAV_SOLUTIONS.slice(0, 5);
+
+// Top 5 highest-traffic Industries for nav dropdown (non-high-risk)
+const TOP_INDUSTRIES = NAV_INDUSTRIES.filter((i) => !(i as any).highRisk).slice(0, 5);
+
+const COMPANY_LINKS = [
+  { href: "/about", label: "About Us" },
+  { href: "/blog", label: "News & Updates" },
+  { href: "/contact", label: "Contact" },
+  { href: "/locations", label: "Locations" },
+  { href: "/solutions/pos-systems", label: "Build a POS" },
+];
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +49,6 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
-  // Close dropdown on Escape key
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === "Escape") {
       setOpenMenu(null);
@@ -54,6 +67,9 @@ export default function Header() {
     setOpenMenu(openMenu === menuId ? null : menuId);
   };
 
+  const menuItemClass =
+    "flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset";
+
   return (
     <header
       role="banner"
@@ -63,13 +79,28 @@ export default function Header() {
           : "bg-[#080808]/95 backdrop-blur-sm"
       }`}
     >
-      {/* Top bar — hides on scroll */}
-      <div className={`bg-[#c9a84c]/10 border-b border-[#c9a84c]/20 hidden md:block overflow-hidden transition-all duration-300 ${scrolled ? 'max-h-0 opacity-0 border-0' : 'max-h-12 opacity-100'}`} aria-hidden="true">
+      {/* Top bar */}
+      <div
+        className={`bg-[#c9a84c]/10 border-b border-[#c9a84c]/20 hidden md:block overflow-hidden transition-all duration-300 ${
+          scrolled ? "max-h-0 opacity-0 border-0" : "max-h-12 opacity-100"
+        }`}
+        aria-hidden="true"
+      >
         <div className="container flex justify-between items-center py-1.5 text-xs text-white/50">
           <span>Utah's Local Merchant Services Experts — {SITE.yearsInBusiness} Years in Business</span>
           <div className="flex items-center gap-4">
-            <a href={`mailto:${SITE.email}`} className="hover:text-white/80 transition-colors" aria-label={`Email us at ${SITE.email}`}>{SITE.email}</a>
-            <a href={SITE.phoneHref} className="flex items-center gap-1.5 text-[#c9a84c] font-semibold hover:text-[#e2c97e] transition-colors" aria-label={`Call us at ${SITE.phone}`}>
+            <a
+              href={`mailto:${SITE.email}`}
+              className="hover:text-white/80 transition-colors"
+              aria-label={`Email us at ${SITE.email}`}
+            >
+              {SITE.email}
+            </a>
+            <a
+              href={SITE.phoneHref}
+              className="flex items-center gap-1.5 text-[#c9a84c] font-semibold hover:text-[#e2c97e] transition-colors"
+              aria-label={`Call us at ${SITE.phone}`}
+            >
               <Phone size={11} aria-hidden="true" /> {SITE.phone}
             </a>
           </div>
@@ -77,20 +108,25 @@ export default function Header() {
       </div>
 
       <div className="container" ref={navRef}>
-        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-36'}`}>
+        <div
+          className={`flex items-center justify-between transition-all duration-300 ${
+            scrolled ? "h-16" : "h-36"
+          }`}
+        >
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group" aria-label="UBC Unlimited — Home">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent3_53cdf614.png"
               alt="UBC Unlimited — Processing Without Limits"
-              className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-12' : 'h-34'}`}
-              style={{ maxWidth: scrolled ? '180px' : '320px' }}
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-12" : "h-34"}`}
+              style={{ maxWidth: scrolled ? "180px" : "320px" }}
             />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-0.5" aria-label="Main navigation">
-            {/* Solutions dropdown */}
+
+            {/* Solutions dropdown — top 5 + See All */}
             <div className="relative">
               <button
                 ref={solutionsBtnRef}
@@ -99,10 +135,17 @@ export default function Header() {
                 aria-haspopup="true"
                 aria-controls="solutions-menu"
                 className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] ${
-                  isActive("/solutions") ? "text-[#c9a84c] bg-[#c9a84c]/10" : "text-white/75 hover:text-white hover:bg-white/5"
+                  isActive("/solutions")
+                    ? "text-[#c9a84c] bg-[#c9a84c]/10"
+                    : "text-white/75 hover:text-white hover:bg-white/5"
                 }`}
               >
-                Solutions <ChevronDown size={14} className={`transition-transform ${openMenu === "solutions" ? "rotate-180" : ""}`} aria-hidden="true" />
+                Solutions{" "}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform ${openMenu === "solutions" ? "rotate-180" : ""}`}
+                  aria-hidden="true"
+                />
               </button>
               <AnimatePresence>
                 {openMenu === "solutions" && (
@@ -114,24 +157,37 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-1 w-[540px] bg-[#111111] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden z-50"
+                    className="absolute top-full left-0 mt-1 w-72 bg-[#111111] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden z-50"
                   >
-                    <div className="p-4">
-                      <div className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest mb-3" aria-hidden="true">Payment Solutions</div>
-                      <div className="grid grid-cols-2 gap-1">
-                        {NAV_SOLUTIONS.map((item) => (
-                          <Link key={item.href} href={item.href} role="menuitem" className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset">
-                            <span className="text-lg mt-0.5" aria-hidden="true">{item.icon}</span>
+                    <div className="p-3">
+                      <div
+                        className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest mb-2 px-1"
+                        aria-hidden="true"
+                      >
+                        Payment Solutions
+                      </div>
+                      <div className="space-y-0.5">
+                        {TOP_SOLUTIONS.map((item) => (
+                          <Link key={item.href} href={item.href} role="menuitem" className={menuItemClass}>
+                            <span className="text-base mt-0.5" aria-hidden="true">
+                              {item.icon}
+                            </span>
                             <div>
-                              <div className="text-white text-sm font-medium group-hover:text-[#c9a84c] transition-colors">{item.label}</div>
+                              <div className="text-white text-sm font-medium group-hover:text-[#c9a84c] transition-colors">
+                                {item.label}
+                              </div>
                               <div className="text-white/40 text-xs mt-0.5">{item.desc}</div>
                             </div>
                           </Link>
                         ))}
                       </div>
-                      <div className="pt-3 mt-2 border-t border-white/10">
-                        <Link href="/solutions" role="menuitem" className="flex items-center gap-1 text-[#c9a84c] text-xs font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
-                          View all solutions <ArrowRight size={12} aria-hidden="true" />
+                      <div className="pt-2.5 mt-2 border-t border-white/10">
+                        <Link
+                          href="/solutions"
+                          role="menuitem"
+                          className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-[#c9a84c] text-sm font-semibold hover:bg-[#c9a84c]/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
+                        >
+                          See All Solutions <ArrowRight size={13} aria-hidden="true" />
                         </Link>
                       </div>
                     </div>
@@ -140,7 +196,7 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
-            {/* Industries dropdown */}
+            {/* Industries dropdown — top 5 + See All */}
             <div className="relative">
               <button
                 ref={industriesBtnRef}
@@ -149,10 +205,17 @@ export default function Header() {
                 aria-haspopup="true"
                 aria-controls="industries-menu"
                 className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] ${
-                  isActive("/industries") ? "text-[#c9a84c] bg-[#c9a84c]/10" : "text-white/75 hover:text-white hover:bg-white/5"
+                  isActive("/industries")
+                    ? "text-[#c9a84c] bg-[#c9a84c]/10"
+                    : "text-white/75 hover:text-white hover:bg-white/5"
                 }`}
               >
-                Industries <ChevronDown size={14} className={`transition-transform ${openMenu === "industries" ? "rotate-180" : ""}`} aria-hidden="true" />
+                Industries{" "}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform ${openMenu === "industries" ? "rotate-180" : ""}`}
+                  aria-hidden="true"
+                />
               </button>
               <AnimatePresence>
                 {openMenu === "industries" && (
@@ -164,53 +227,37 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-1 w-[540px] bg-[#111111] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden z-50"
+                    className="absolute top-full left-0 mt-1 w-72 bg-[#111111] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden z-50"
                   >
-                    <div className="p-4">
-                      {/* Standard industries */}
-                      <div className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest mb-3" aria-hidden="true">Industries We Serve</div>
-                      <div className="grid grid-cols-2 gap-1">
-                        {NAV_INDUSTRIES.filter((i) => !(i as any).highRisk).map((item) => (
-                          <Link key={item.href} href={item.href} role="menuitem" className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset">
-                            <span className="text-lg mt-0.5" aria-hidden="true">{item.icon}</span>
+                    <div className="p-3">
+                      <div
+                        className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest mb-2 px-1"
+                        aria-hidden="true"
+                      >
+                        Industries We Serve
+                      </div>
+                      <div className="space-y-0.5">
+                        {TOP_INDUSTRIES.map((item) => (
+                          <Link key={item.href} href={item.href} role="menuitem" className={menuItemClass}>
+                            <span className="text-base mt-0.5" aria-hidden="true">
+                              {item.icon}
+                            </span>
                             <div>
-                              <div className="text-white text-sm font-medium group-hover:text-[#c9a84c] transition-colors">{item.label}</div>
+                              <div className="text-white text-sm font-medium group-hover:text-[#c9a84c] transition-colors">
+                                {item.label}
+                              </div>
                               <div className="text-white/40 text-xs mt-0.5">{item.desc}</div>
                             </div>
                           </Link>
                         ))}
                       </div>
-                      {/* High-Risk Industries section */}
-                      <div className="mt-4 pt-3 border-t border-white/10">
-                        <div className="flex items-center gap-2 mb-3">
-                          <div className="text-[10px] font-semibold text-[#d4a843] uppercase tracking-widest" aria-hidden="true">High-Risk Industries</div>
-                          <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#d4a843]/20 text-[#d4a843] uppercase tracking-wide">Specialized</span>
-                        </div>
-                        <div className="grid grid-cols-2 gap-1">
-                          {NAV_INDUSTRIES.filter((i) => (i as any).highRisk).map((item) => (
-                            <Link key={item.href} href={item.href} role="menuitem" className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#d4a843]/5 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a843] focus-visible:ring-inset">
-                              <span className="text-lg mt-0.5" aria-hidden="true">{item.icon}</span>
-                              <div>
-                                <div className="text-white text-sm font-medium group-hover:text-[#d4a843] transition-colors">{item.label}</div>
-                                <div className="text-white/40 text-xs mt-0.5">{item.desc}</div>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                        <div className="mt-3">
-                          <Link href="/solutions/high-risk-processing" role="menuitem" className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#d4a843]/10 border border-[#d4a843]/20 hover:bg-[#d4a843]/20 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a843]">
-                            <span aria-hidden="true">🛡️</span>
-                            <div className="flex-1">
-                              <div className="text-[#d4a843] text-sm font-semibold">High-Risk Processing Overview</div>
-                              <div className="text-white/40 text-xs">Rates, reserves & how to get approved</div>
-                            </div>
-                            <ArrowRight size={12} className="text-[#d4a843] group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
-                          </Link>
-                        </div>
-                      </div>
-                      <div className="pt-3 mt-2 border-t border-white/10">
-                        <Link href="/industries" role="menuitem" className="flex items-center gap-1 text-[#c9a84c] text-xs font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
-                          View all industries <ArrowRight size={12} aria-hidden="true" />
+                      <div className="pt-2.5 mt-2 border-t border-white/10">
+                        <Link
+                          href="/industries"
+                          role="menuitem"
+                          className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg text-[#c9a84c] text-sm font-semibold hover:bg-[#c9a84c]/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
+                        >
+                          See All Industries <ArrowRight size={13} aria-hidden="true" />
                         </Link>
                       </div>
                     </div>
@@ -218,13 +265,6 @@ export default function Header() {
                 )}
               </AnimatePresence>
             </div>
-
-            <Link href="/blog" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] ${isActive("/blog") ? "text-[#c9a84c] bg-[#c9a84c]/10" : "text-white/75 hover:text-white hover:bg-white/5"}`}>
-              News &amp; Updates
-            </Link>
-            <Link href="/locations" className={`px-3 py-2 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] ${isActive("/locations") ? "text-[#c9a84c] bg-[#c9a84c]/10" : "text-white/75 hover:text-white hover:bg-white/5"}`}>
-              Locations
-            </Link>
 
             {/* Company dropdown */}
             <div className="relative">
@@ -235,10 +275,17 @@ export default function Header() {
                 aria-haspopup="true"
                 aria-controls="company-menu"
                 className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] ${
-                  isActive("/about") || isActive("/faq") || isActive("/contact") ? "text-[#c9a84c] bg-[#c9a84c]/10" : "text-white/75 hover:text-white hover:bg-white/5"
+                  isActive("/about") || isActive("/blog") || isActive("/contact") || isActive("/locations")
+                    ? "text-[#c9a84c] bg-[#c9a84c]/10"
+                    : "text-white/75 hover:text-white hover:bg-white/5"
                 }`}
               >
-                Company <ChevronDown size={14} className={`transition-transform ${openMenu === "company" ? "rotate-180" : ""}`} aria-hidden="true" />
+                Company{" "}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform ${openMenu === "company" ? "rotate-180" : ""}`}
+                  aria-hidden="true"
+                />
               </button>
               <AnimatePresence>
                 {openMenu === "company" && (
@@ -253,15 +300,16 @@ export default function Header() {
                     className="absolute top-full right-0 mt-1 w-52 bg-[#111111] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden z-50"
                   >
                     <div className="p-2">
-                      <Link href="/about" role="menuitem" className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset">
-                        About Us
-                      </Link>
-                      <Link href="/faq" role="menuitem" className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset">
-                        FAQ's
-                      </Link>
-                      <Link href="/contact" role="menuitem" className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset">
-                        Contact Us
-                      </Link>
+                      {COMPANY_LINKS.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          role="menuitem"
+                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
                     </div>
                   </motion.div>
                 )}
@@ -271,10 +319,17 @@ export default function Header() {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <a href={SITE.phoneHref} className="flex items-center gap-1.5 text-white/55 text-sm hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] rounded" aria-label={`Call UBC Unlimited at ${SITE.phone}`}>
+            <a
+              href={SITE.phoneHref}
+              className="flex items-center gap-1.5 text-white/55 text-sm hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] rounded"
+              aria-label={`Call UBC Unlimited at ${SITE.phone}`}
+            >
               <Phone size={13} aria-hidden="true" /> {SITE.phone}
             </a>
-            <Link href="/consultation" className="btn-gold text-sm py-2 px-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]">
+            <Link
+              href="/consultation"
+              className="btn-gold text-sm py-2 px-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
+            >
               Book a Consultation
             </Link>
           </div>
@@ -306,44 +361,81 @@ export default function Header() {
             className="lg:hidden bg-[#080808] border-t border-white/10 overflow-hidden max-h-[80vh] overflow-y-auto"
           >
             <div className="container py-4 space-y-1">
-              <div className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest px-3 py-2" aria-hidden="true">Solutions</div>
-              {NAV_SOLUTIONS.map((item) => (
-                <Link key={item.href} href={item.href} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset">
-                  <span aria-hidden="true">{item.icon}</span> {item.label}
-                </Link>
-              ))}
-              <div className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest px-3 py-2 pt-4" aria-hidden="true">Industries</div>
-              {NAV_INDUSTRIES.filter((i) => !(i as any).highRisk).map((item) => (
-                <Link key={item.href} href={item.href} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset">
-                  <span aria-hidden="true">{item.icon}</span> {item.label}
-                </Link>
-              ))}
-              <div className="flex items-center gap-2 px-3 py-2 pt-3" aria-hidden="true">
-                <span className="text-[10px] font-semibold text-[#d4a843] uppercase tracking-widest">High-Risk Industries</span>
-                <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#d4a843]/20 text-[#d4a843] uppercase">Specialized</span>
+              {/* Solutions */}
+              <div
+                className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest px-3 py-2"
+                aria-hidden="true"
+              >
+                Solutions
               </div>
-              {NAV_INDUSTRIES.filter((i) => (i as any).highRisk).map((item) => (
-                <Link key={item.href} href={item.href} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#d4a843]/10 transition-colors text-white/75 hover:text-[#d4a843] text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a843] focus-visible:ring-inset">
+              {TOP_SOLUTIONS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset"
+                >
                   <span aria-hidden="true">{item.icon}</span> {item.label}
                 </Link>
               ))}
-              <div className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest px-3 py-2 pt-4" aria-hidden="true">Company</div>
-              {[
-                { href: "/blog", label: "News & Updates" },
-                { href: "/locations", label: "Locations" },
-                { href: "/about", label: "About Us" },
-                { href: "/faq", label: "FAQ" },
-                { href: "/contact", label: "Contact Us" },
-              ].map((item) => (
-                <Link key={item.href} href={item.href} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset">
+              <Link
+                href="/solutions"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-[#c9a84c] text-sm font-semibold hover:bg-[#c9a84c]/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset"
+              >
+                See All Solutions <ArrowRight size={13} aria-hidden="true" />
+              </Link>
+
+              {/* Industries */}
+              <div
+                className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest px-3 py-2 pt-4"
+                aria-hidden="true"
+              >
+                Industries
+              </div>
+              {TOP_INDUSTRIES.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset"
+                >
+                  <span aria-hidden="true">{item.icon}</span> {item.label}
+                </Link>
+              ))}
+              <Link
+                href="/industries"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-[#c9a84c] text-sm font-semibold hover:bg-[#c9a84c]/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset"
+              >
+                See All Industries <ArrowRight size={13} aria-hidden="true" />
+              </Link>
+
+              {/* Company */}
+              <div
+                className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest px-3 py-2 pt-4"
+                aria-hidden="true"
+              >
+                Company
+              </div>
+              {COMPANY_LINKS.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-inset"
+                >
                   {item.label}
                 </Link>
               ))}
+
               <div className="pt-4 border-t border-white/10 space-y-2">
-                <a href={SITE.phoneHref} className="flex items-center justify-center gap-2 py-2.5 text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded" aria-label={`Call UBC Unlimited at ${SITE.phone}`}>
+                <a
+                  href={SITE.phoneHref}
+                  className="flex items-center justify-center gap-2 py-2.5 text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded"
+                  aria-label={`Call UBC Unlimited at ${SITE.phone}`}
+                >
                   <Phone size={14} aria-hidden="true" /> {SITE.phone}
                 </a>
-                <Link href="/consultation" className="btn-gold w-full justify-center py-2.5 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
+                <Link
+                  href="/consultation"
+                  className="btn-gold w-full justify-center py-2.5 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
+                >
                   Book a Free Consultation
                 </Link>
               </div>
