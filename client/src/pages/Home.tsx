@@ -6,6 +6,7 @@ import TrustBadges from "@/components/sections/TrustBadges";
 import TestimonialBlock from "@/components/sections/TestimonialBlock";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
+import PricingTransparency from "@/components/sections/PricingTransparency";
 import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES, TRUST_SIGNALS } from "@/lib/config";
 import SEO from "@/components/SEO";
 
@@ -393,6 +394,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Pricing Transparency */}
+      <PricingTransparency />
 
       {/* Blog Preview */}
       <section className="py-16 bg-[#f7f3ec]">
