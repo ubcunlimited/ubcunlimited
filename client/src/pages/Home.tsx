@@ -65,7 +65,7 @@ export default function Home() {
     <PageLayout>
       <SEO
         canonical="/"
-        description="UBC Unlimited is Utah's local merchant services provider — credit card processing, SkyTab POS systems, ACH payments, and more. Serving Salt Lake City, Provo, Ogden, and all of Utah. Free statement review."
+        description="Utah merchant services provider. Credit card processing, cash discounting, SkyTab POS, ACH payments. Serving Salt Lake City, Provo & statewide. Free statement review."
         schema={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
@@ -252,7 +252,7 @@ export default function Home() {
             <div className="relative">
               <img
                 src={CONSULT_IMG}
-                alt="Josh Cornia consulting with a Utah business owner"
+                alt="UBC Unlimited merchant services consultant reviewing payment processing options with Utah business owner"
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
               <div className="absolute -bottom-4 -left-4 glass-card-light rounded-xl p-4 shadow-xl border border-[#c9a84c]/20">

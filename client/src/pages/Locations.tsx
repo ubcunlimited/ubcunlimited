@@ -20,7 +20,7 @@ export default function Locations() {
     <PageLayout>
       <SEO
         title="Utah Merchant Services Locations — UBC Unlimited"
-        description="UBC Unlimited serves businesses across Utah including Salt Lake City, Provo, Ogden, St. George, Logan, and all surrounding communities. Local payment processing experts."
+        description="Local merchant services across Utah — Salt Lake City, Provo, Ogden, St. George & more. Credit card processing & POS systems from a trusted Utah partner."
         canonical="/locations"
       />
       {/* Hero */}

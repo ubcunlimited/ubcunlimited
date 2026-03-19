@@ -21,6 +21,12 @@ const industryDetails: Record<string, string> = {
   "/industries/adult-entertainment": "Discreet, compliant merchant accounts for adult content platforms, subscription sites, and adult retail.",
   "/industries/travel": "Stable accounts for travel agencies, booking platforms, and tour operators with chargeback prevention.",
   "/industries/online-gaming": "Skill-based gaming, fantasy sports, and esports merchant accounts with advanced fraud prevention.",
+  "/industries/telemarketing": "Stable merchant accounts for outbound sales, call centers, and telemarketing operations with chargeback tools.",
+  "/industries/credit-repair": "Compliant merchant accounts for credit counseling and repair services with recurring billing support.",
+  "/industries/subscription-continuity": "Recurring billing and subscription merchant accounts with chargeback prevention and dunning management.",
+  "/industries/vape-ecig": "Stable accounts for vape shops, e-cigarette retailers, and online vape stores with age-verification tools.",
+  "/industries/online-pharmacy": "Compliant payment solutions for telehealth platforms and online pharmacies with fraud protection.",
+  "/industries/cryptocurrency": "Merchant accounts for crypto exchanges, blockchain businesses, and digital asset platforms.",
 };
 
 const standardIndustries = NAV_INDUSTRIES.filter((i) => !(i as any).highRisk);
@@ -31,7 +37,7 @@ export default function Industries() {
     <PageLayout>
       <SEO
         title="Industries We Serve — Merchant Services for Every Business"
-        description="UBC Unlimited provides tailored payment processing for restaurants, retail, medical, automotive, firearms, CBD, nutraceuticals, travel, adult entertainment, and more across Utah."
+        description="Tailored payment processing for restaurants, retail, medical, automotive, firearms, CBD, nutraceuticals, high-risk & more. Utah merchant services for every industry."
         canonical="/industries"
       />
 

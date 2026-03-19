@@ -10,6 +10,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import CookieConsent from "./components/CookieConsent";
 import LiveChat from "./components/LiveChat";
+import BackToTop from "./components/BackToTop";
 import Locations from "./pages/Locations";
 import LocationDetail from "./pages/LocationDetail";
 import About from "./pages/About";
@@ -141,7 +142,8 @@ function App() {
           <Toaster />
           <Router />
           <CookieConsent />
-      <LiveChat />
+          <LiveChat />
+          <BackToTop />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

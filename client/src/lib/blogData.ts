@@ -72,7 +72,7 @@ export const blogPosts: BlogPostMeta[] = [
     title: "Chargeback Prevention: A Practical Guide for Utah Merchants",
     excerpt:
       "eCommerce chargebacks are projected to cost $33.79 billion in 2025. Every $1 lost to fraud costs merchants $4.61 total. Here's a practical prevention guide for Utah merchants.",
-    category: "Compliance & Security",
+    category: "High-Risk Processing",
     date: "2025-03-08",
     readTime: "8 min read",
   },
@@ -147,6 +147,15 @@ export const blogPosts: BlogPostMeta[] = [
     category: "POS Systems",
     date: "2025-05-08",
     readTime: "10 min read",
+  },
+  {
+    slug: "rolling-reserve-merchant-account",
+    title: "What Is a Rolling Reserve and How Do You Get It Released?",
+    excerpt:
+      "A rolling reserve withholds 5–10% of your daily settlements for 90–180 days. Here's why processors require it, how it works, and the five strategies to get it reduced or eliminated.",
+    category: "High-Risk Processing",
+    date: "2026-03-19",
+    readTime: "8 min read",
   },
   {
     slug: "high-risk-industries-dropped-by-stripe",

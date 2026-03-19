@@ -29,7 +29,7 @@ export default function ThankYou() {
     <PageLayout>
       <SEO
         title="Thank You — We'll Be in Touch | UBC Unlimited"
-        description="Thank you for contacting UBC Unlimited. A local Utah payment specialist will reach out within 1 business hour."
+        description="Your request has been received. A UBC Unlimited Utah payment specialist will contact you within 1 business hour to discuss your merchant services needs."
         canonical="/thank-you"
       />
 

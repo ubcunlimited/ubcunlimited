@@ -60,6 +60,12 @@ export const NAV_INDUSTRIES = [
   { label: "Non-Profit & Charity", href: "/industries/non-profit", desc: "Donation processing & fund management", icon: "🤝" },
   { label: "Travel & Hospitality", href: "/industries/travel", desc: "Travel agencies & booking platforms", icon: "✈️", highRisk: true },
   { label: "Online Gaming & Fantasy Sports", href: "/industries/online-gaming", desc: "Skill-based gaming & fantasy sports platforms", icon: "🎮", highRisk: true },
+  { label: "Telemarketing", href: "/industries/telemarketing", desc: "Outbound sales & call center merchant accounts", icon: "📞", highRisk: true },
+  { label: "Credit Repair", href: "/industries/credit-repair", desc: "Credit counseling & repair service accounts", icon: "📈", highRisk: true },
+  { label: "Subscription & Continuity", href: "/industries/subscription-continuity", desc: "Recurring billing & membership programs", icon: "🔄", highRisk: true },
+  { label: "Vape & E-Cigarettes", href: "/industries/vape-ecig", desc: "Vape shops & e-cigarette retailers", icon: "💨", highRisk: true },
+  { label: "Online Pharmacy", href: "/industries/online-pharmacy", desc: "Telehealth & online pharmacy payment solutions", icon: "💊", highRisk: true },
+  { label: "Cryptocurrency", href: "/industries/cryptocurrency", desc: "Crypto exchange & blockchain business accounts", icon: "₿", highRisk: true },
 ];
 
 export const BLOG_CATEGORIES = [
@@ -71,6 +77,7 @@ export const BLOG_CATEGORIES = [
   "Pricing & Fees",
   "Compliance & Security",
   "Business Growth",
+  "High-Risk Processing",
   "News & Updates",
 ] as const;
 

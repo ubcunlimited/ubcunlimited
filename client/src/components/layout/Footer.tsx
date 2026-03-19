@@ -35,7 +35,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded" aria-label="UBC Unlimited — Home">
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent3_53cdf614.png"
-                alt="UBC Unlimited"
+                alt="UBC Unlimited — Utah Merchant Services & Payment Processing"
                 className="h-10 w-auto object-contain"
                 style={{ maxWidth: '160px' }}
               />

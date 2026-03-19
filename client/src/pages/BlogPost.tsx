@@ -841,6 +841,101 @@ The higher rates reflect the genuine risk that processors take on in these categ
     `,
   },
 
+  "rolling-reserve-merchant-account": {
+    title: "What Is a Rolling Reserve and How Do You Get It Released?",
+    category: "High-Risk Processing",
+    date: "2026-03-19",
+    readTime: "8 min read",
+    content: `
+If you have been approved for a high-risk merchant account, you have almost certainly encountered the term "rolling reserve." For many merchants, it is one of the most frustrating aspects of high-risk processing — a percentage of your daily revenue held back by the processor, sometimes for months, before it is released to you. Understanding what a rolling reserve is, why processors require it, and how to get it reduced or eliminated is essential knowledge for any business operating in a high-risk category.
+
+## What Is a Rolling Reserve?
+
+A rolling reserve is a risk management mechanism used by acquiring banks and payment processors to protect themselves against potential losses from chargebacks, fraud, and merchant insolvency. When a rolling reserve is in place, the processor withholds a percentage of your daily settlement — typically between 5% and 10% — and holds those funds for a defined period, usually 90 to 180 days.
+
+After the holding period expires, the withheld funds are released back to you on a rolling basis. If your reserve rate is 10% with a 90-day holding period, the funds withheld on Day 1 are released on Day 91, funds withheld on Day 2 are released on Day 92, and so on. The reserve is "rolling" because it continuously cycles — new funds are withheld while older funds are released.
+
+## Why Do Processors Require Rolling Reserves?
+
+Processors require rolling reserves because high-risk merchant accounts carry elevated exposure to chargebacks and fraud. When a customer disputes a transaction, the processor is responsible for returning the funds to the cardholder — even if the merchant has already been paid and has spent the money. If the merchant's account has insufficient funds to cover the chargeback, the processor absorbs the loss.
+
+For high-risk industries — CBD, nutraceuticals, travel, subscription billing, online gaming, and others — chargeback rates are statistically higher than for standard industries. The rolling reserve gives the processor a financial buffer to cover potential losses without having to pursue the merchant for repayment.
+
+The reserve requirement is not a punishment or a sign that the processor does not trust your business. It is a standard risk management tool, and most high-risk merchants are subject to it, especially during the first 6–12 months of processing.
+
+## How Rolling Reserves Are Structured
+
+Rolling reserves are typically defined by two parameters:
+
+| Parameter | Typical Range | What It Means |
+|---|---|---|
+| Reserve rate | 5%–10% of daily settlements | The percentage withheld from each batch |
+| Holding period | 90–180 days | How long funds are held before release |
+| Reserve cap | Sometimes applied | Maximum total reserve balance |
+
+For example, if your reserve rate is 8% with a 180-day holding period and you process $50,000 per month, the processor withholds $4,000 per month. After six months, your total reserve balance reaches $24,000 — and then begins releasing $4,000 per month as the oldest withheld funds reach the end of their holding period.
+
+Some processors also apply a reserve cap — a maximum total reserve balance. Once the cap is reached, no further funds are withheld. This is more favorable for merchants and worth negotiating for.
+
+## How to Get Your Rolling Reserve Reduced or Eliminated
+
+The rolling reserve is not permanent. Most processors will reduce or eliminate it once you demonstrate a consistent track record of low chargebacks and responsible processing. Here is how to accelerate that process:
+
+### 1. Keep Your Chargeback Rate Below 1%
+
+The single most important factor in reserve reduction is your chargeback rate. Visa's chargeback monitoring program triggers at 0.9% of monthly transactions, and Mastercard's triggers at 1.5%. Processors watch these numbers closely. If your chargeback rate consistently stays below 0.5%, you are demonstrating exactly the kind of low-risk behavior that justifies reserve reduction.
+
+Implement proactive chargeback prevention measures: clear billing descriptors that customers recognize, pre-billing notifications for subscription charges, easy cancellation processes, and responsive customer service that resolves disputes before they become chargebacks.
+
+### 2. Process Consistently for 6–12 Months
+
+Processors want to see a track record before they reduce reserve requirements. A merchant who has processed cleanly for 12 months with no significant chargeback spikes, no fraud incidents, and no compliance issues is a fundamentally different risk profile than a new merchant with no history.
+
+Consistency matters more than volume. A merchant processing $20,000 per month with a clean 12-month history is more likely to get their reserve reduced than a merchant processing $200,000 per month with a volatile chargeback history.
+
+### 3. Request a Formal Reserve Review
+
+Processors do not automatically review reserve requirements — you typically need to request it. After 6–12 months of clean processing, contact your processor or account manager and formally request a reserve review. Provide supporting documentation:
+
+- Monthly processing statements showing your chargeback rate
+- Bank statements demonstrating financial stability
+- Evidence of chargeback prevention measures you have implemented
+- Any third-party chargeback management tools you are using
+
+A well-documented request is far more likely to succeed than a verbal request with no supporting evidence.
+
+### 4. Work With a Processor That Has Reserve Reduction Pathways
+
+Not all processors are equal when it comes to reserve management. Some processors have formal reserve reduction programs with defined milestones — for example, reducing the reserve rate from 10% to 5% after six months of clean processing, and eliminating it entirely after 12 months. Others have no formal pathway and require individual negotiation.
+
+When evaluating high-risk processors, ask specifically about their reserve reduction policy. A processor that can articulate a clear pathway to reserve elimination is a better long-term partner than one that treats the reserve as a permanent feature of your account.
+
+### 5. Negotiate Reserve Terms at Onboarding
+
+The best time to negotiate reserve terms is before you sign the processing agreement. If you have existing processing history — statements showing a low chargeback rate and consistent volume — use that as leverage. A merchant with two years of clean processing history in a high-risk category has a much stronger negotiating position than a brand-new merchant with no history.
+
+Specific terms worth negotiating include the reserve rate (lower is better), the holding period (shorter is better), and a reserve cap (limits your maximum exposure). Even a small improvement in these terms can have a significant impact on your cash flow over the first year of processing.
+
+## What Happens to Your Reserve If You Switch Processors?
+
+If you switch processors while a rolling reserve is in place, the original processor will continue to hold the reserved funds for the full holding period before releasing them. You cannot transfer the reserve to a new processor or accelerate the release by switching.
+
+This means that switching processors mid-reserve can create a temporary cash flow challenge — you are now funding a new reserve with the new processor while waiting for the old reserve to release. Plan accordingly, and factor this into your timeline if you are considering a processor change.
+
+## Upfront Reserves vs. Rolling Reserves
+
+Some processors require an upfront reserve — a lump-sum deposit made before processing begins — rather than a rolling reserve. Upfront reserves are less common but are sometimes required for merchants with no processing history or very high-risk profiles.
+
+An upfront reserve of $10,000–$25,000 deposited before your first transaction is a significant cash flow commitment. If you are offered this structure, negotiate to convert it to a rolling reserve instead, which spreads the reserve requirement over time and is less disruptive to your cash flow.
+
+## Getting Help With Your Rolling Reserve
+
+Navigating rolling reserve negotiations requires experience with high-risk underwriting and established relationships with acquiring banks. A processor who advocates on your behalf — rather than simply imposing the bank's default terms — can make a meaningful difference in your reserve structure.
+
+[Contact UBC Unlimited](/contact) to discuss your specific situation. We work with multiple acquiring banks and can often negotiate more favorable reserve terms than merchants can achieve on their own — and we will walk you through exactly what to expect before you sign anything.
+    `,
+  },
+
   "growing-business-with-better-payments": {
     title: "How Better Payment Processing Can Help Your Business Grow",
     category: "Business Growth",
@@ -920,7 +1015,13 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
     while (i < lines.length) {
       const line = lines[i];
 
-      if (line.startsWith("## ")) {
+      if (line.startsWith("### ")) {
+        elements.push(
+          <h3 key={i} className="text-lg font-bold text-[#080808] mt-7 mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
+            {line.slice(4)}
+          </h3>
+        );
+      } else if (line.startsWith("## ")) {
         elements.push(
           <h2 key={i} className="text-2xl font-bold text-[#080808] mt-10 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
             {line.slice(3)}
@@ -1007,9 +1108,14 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-4 max-w-3xl leading-tight" style={{ fontFamily: 'Sora, sans-serif' }}>
             {post.title}
           </h1>
-          <div className="flex items-center gap-4 text-white/40 text-xs">
+          <div className="flex flex-wrap items-center gap-4 text-white/40 text-xs">
             <span className="flex items-center gap-1"><Calendar size={12} aria-hidden="true" />{post.date}</span>
             <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" />{post.readTime}</span>
+            <span className="text-white/30">·</span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-5 h-5 rounded-full bg-[#c9a84c]/20 flex items-center justify-center text-[#c9a84c] text-[9px] font-bold">JC</span>
+              <span>By <span className="text-white/60 font-medium">Josh Cornia</span>, UBC Unlimited</span>
+            </span>
           </div>
         </div>
       </section>

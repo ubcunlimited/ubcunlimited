@@ -12,6 +12,7 @@ export interface SolutionData {
   title: string;
   subtitle: string;
   description: string;
+  metaDescription?: string;
   heroPoints: string[];
   features: { title: string; desc: string }[];
   benefits: string[];
@@ -25,6 +26,7 @@ const solutionsData: SolutionData[] = [
     icon: "💳",
     title: "Credit Card Processing",
     subtitle: "Accept all major cards with pricing tailored to your business",
+    metaDescription: "Utah credit card processing with cash discounting, dual pricing & surcharging options. Eliminate processing fees, get next-day funding & local support.",
     description: "UBC Unlimited provides end-to-end credit card processing solutions designed around your business — not a one-size-fits-all rate sheet. We work with you to identify the pricing model and payment infrastructure that best fits your transaction volume, industry, and customer base. Whether you're accepting payments in-person, online, or on the go, we deliver a seamless, secure, and cost-effective solution.",
     heroPoints: ["Pricing tailored to your business", "Next-day funding available", "Visa, MC, Amex, Discover & more", "EMV, NFC & digital wallets"],
     features: [
@@ -66,6 +68,7 @@ const solutionsData: SolutionData[] = [
     icon: "🏦",
     title: "ACH & eCheck Processing",
     subtitle: "Accept bank transfers directly — lower cost, faster reconciliation, fewer chargebacks",
+    metaDescription: "ACH & eCheck processing for Utah businesses. Lower cost than credit cards, same-day settlement, recurring billing & fewer chargebacks. Get a free quote.",
     description: "ACH (Automated Clearing House) and eCheck processing allow businesses to accept electronic bank transfers directly from customers' checking or savings accounts, bypassing card networks and their associated fees. It's one of the most cost-effective payment methods available — especially for recurring billing, high-ticket transactions, B2B payments, and businesses that want to reduce their overall cost of accepting payments.",
     heroPoints: ["Dramatically lower cost than credit cards", "Recurring & subscription billing", "Same-day & next-day ACH options", "Batch & bulk processing"],
     features: [
@@ -107,6 +110,7 @@ const solutionsData: SolutionData[] = [
     icon: "✅",
     title: "Check Guarantee",
     subtitle: "Accept checks risk-free — we guarantee payment so you never absorb a loss",
+    metaDescription: "Check guarantee services for Utah merchants. Accept checks risk-free — we cover returned checks so you never absorb a loss. Fast approval, low cost.",
     description: "Check guarantee services protect merchants from the financial loss of accepting bad, bounced, or returned checks — whether due to insufficient funds (NSF), closed accounts, or stop payment orders. We offer an industry-leading approval rate, nationwide check acceptance across the U.S., Canada, and U.S. territories, and a full suite of services that can be tailored to your business type and volume.",
     heroPoints: ["Nationwide check approval", "Funds deposited in 48–72 hours", "24/7 processing & support", "Loaner equipment at no charge"],
     features: [
@@ -146,6 +150,7 @@ const solutionsData: SolutionData[] = [
     icon: "🖥️",
     title: "POS Systems",
     subtitle: "Industry-leading point-of-sale systems built for restaurants, bars, retail, and beyond",
+    metaDescription: "SkyTab POS systems for Utah restaurants, bars & retail. Built-in payment processing, inventory management, loyalty programs & 24/7 local support.",
     description: "UBC Unlimited partners with SkyTab — powered by Shift4, one of the largest payment technology companies in the world — to deliver a complete, all-in-one POS platform for restaurants, bars, quick-service, and multi-location businesses. From tableside ordering and kitchen display systems to online ordering, loyalty programs, and real-time analytics, our POS solutions are designed to transform your operations from front-of-house to back-of-house. Every system comes with local installation, training, and ongoing support from our Utah-based team.",
     heroPoints: ["SkyTab — powered by Shift4", "Restaurant, bar & quick-service ready", "Online ordering & tableside payments", "Local install, training & support"],
     features: [
@@ -188,6 +193,7 @@ const solutionsData: SolutionData[] = [
     icon: "🛒",
     title: "eCommerce Payments",
     subtitle: "Secure online payment gateways for your website",
+    metaDescription: "eCommerce payment gateway solutions for Utah online stores. Secure checkout, 350+ integrations, fraud protection & no-fee processing options. Get started.",
     description: "Accept payments on your website with our secure payment gateway solutions. We work with a variety of payment gateways — including Authorize.net, Fluidpay, Quantum Gateway, NMI, and many more — to find the best fit for your platform, business type, and transaction volume.",
     heroPoints: ["Multiple gateway options", "Advanced fraud protection", "Recurring billing", "Mobile optimized checkout"],
     features: [
@@ -212,6 +218,7 @@ const solutionsData: SolutionData[] = [
     icon: "📱",
     title: "Mobile Processing",
     subtitle: "Turn your smartphone into a full payment terminal — accept payments anywhere, anytime",
+    metaDescription: "Mobile credit card processing for Utah businesses. Accept payments anywhere with your smartphone — EMV, tap-to-pay & digital wallets. Free equipment available.",
     description: "Mobile processing solutions from UBC Unlimited let you accept payments wherever your business takes you. Whether you're at a farmers market, trade show, customer's home, food truck, or delivering on the road, our mobile solutions give you the same professional payment experience as a countertop terminal — right from your smartphone or tablet. Accept all major cards, contactless payments, and digital wallets with no extra hardware required on qualifying setups.",
     heroPoints: ["No card reader needed on qualifying setups", "iOS & Android compatible", "Offline mode available", "All cards & digital wallets"],
     features: [
@@ -252,6 +259,7 @@ const solutionsData: SolutionData[] = [
     icon: "💻",
     title: "Virtual Terminals",
     subtitle: "Process payments from any browser — no hardware, no limits",
+    metaDescription: "Virtual terminal payment processing for Utah businesses. Accept MOTO, phone & mail-order payments from any browser — no hardware required. Get a free quote.",
     description: "A virtual terminal is a secure, browser-based application that lets you manually enter credit card information and process payments from any computer, tablet, or smartphone — no card reader or physical terminal required. It's the essential tool for businesses that take phone orders, mail orders, and card-not-present transactions, as well as call centers, multi-location operations, and any team that needs a flexible, software-based payment solution.",
     heroPoints: ["Browser-based — any device, anywhere", "Phone & mail order (MOTO)", "Secure card vault & recurring billing", "Multi-user & multi-location"],
     features: [
@@ -292,6 +300,7 @@ const solutionsData: SolutionData[] = [
     icon: "📄",
     title: "Invoicing",
     subtitle: "Send professional invoices and get paid significantly faster",
+    metaDescription: "Digital invoicing & payment links for Utah businesses. Send professional invoices, collect payments online & automate recurring billing. No monthly fees.",
     description: "Stop chasing payments. Our invoicing solutions let you create and send professional, branded invoices with secure online payment links — so customers can pay instantly by credit card, debit card, or ACH bank transfer from any device. With automated reminders, recurring billing, and real-time payment tracking, you spend less time on accounts receivable and more time running your business. Integrates with QuickBooks, Xero, FreshBooks, and 2,000+ other platforms.",
     heroPoints: ["Custom branded invoices", "Pay-by-link — card or ACH", "Automated reminders & recurring billing", "QuickBooks & accounting sync"],
     features: [
@@ -328,10 +337,11 @@ const solutionsData: SolutionData[] = [
     relatedSolutions: ["/solutions/ach-echeck-processing", "/solutions/virtual-terminals", "/solutions/ecommerce-payments"],
   },
   {
-    slug: "gift-loyalty",
+     slug: "gift-loyalty",
     icon: "🎁",
-    title: "Gift Cards & Loyalty Programs",
+    title: "Gift & Loyalty Programs",
     subtitle: "Acquire new customers, maximize return visits, and build lasting brand loyalty",
+    metaDescription: "Gift card & loyalty programs for Utah merchants. Boost repeat visits, increase average ticket & grow revenue with branded gift cards and rewards programs.",
     description: "Gift card and loyalty programs are among the most cost-effective tools a business can use to acquire new customers and maximize revenue from existing ones. UBC Unlimited offers fully integrated gift card and loyalty solutions that work seamlessly with your payment processing and POS system — no separate platform, no manual tracking, and no complicated setup. From branded physical gift cards to digital rewards programs, we'll build a program that fits your business and your customers.",
     heroPoints: ["Branded physical & digital gift cards", "Points, rewards & tier-based loyalty", "Integrated with your POS & payments", "Email & SMS marketing tools included"],
     features: [
@@ -367,9 +377,10 @@ const solutionsData: SolutionData[] = [
   },
   {
     slug: "dual-pricing",
-    icon: "💲",
-    title: "Cash Discounting, Surcharging & Dual Pricing",
+    icon: "💰",
+    title: "Dual Pricing & Surcharging",
     subtitle: "Keep more of every sale — legally pass processing costs to the card, not your bottom line",
+    metaDescription: "Cash discounting, dual pricing & surcharging programs for Utah businesses. Eliminate credit card processing fees legally & keep more of every sale.",
     description: "Credit card processing fees quietly drain 2.5% to 4% from every card transaction. UBC Unlimited offers three proven, fully compliant programs — Cash Discounting, Credit Card Surcharging, and Dual Pricing — that let your business recover those costs without raising prices across the board. We'll walk you through each option, show you a real cost comparison, and set up the program that fits your business, your customers, and your state's regulations.",
     heroPoints: ["Legal in all 50 states (program-dependent)", "Eliminate up to 100% of processing fees", "Compliant signage & receipt language included", "Works with most POS systems & terminals"],
     features: [
@@ -408,8 +419,9 @@ const solutionsData: SolutionData[] = [
   {
     slug: "high-risk-processing",
     icon: "🛡️",
-    title: "High-Risk Merchant Processing",
+    title: "High-Risk Merchant Accounts",
     subtitle: "Approved accounts for businesses other processors decline — with local Utah support",
+    metaDescription: "High-risk merchant accounts for CBD, nutraceuticals, firearms, travel, gaming & more. Utah-based processor — fast approvals, competitive rates, local support.",
     description: "Many legitimate businesses are classified as high-risk by traditional banks and payment processors — not because they are untrustworthy, but because their industry, business model, or transaction profile carries elevated chargeback or regulatory exposure. UBC Unlimited works with specialized acquiring banks and high-risk processing networks to secure merchant accounts for businesses that have been declined, terminated, or placed on the MATCH list. We serve firearms dealers, CBD and hemp retailers, nutraceutical companies, travel agencies, adult entertainment businesses, online gaming platforms, telemarketing operations, and many other high-risk verticals — with the same local Utah service and transparent pricing we bring to every client.",
     heroPoints: ["Approved in 24–72 hours for most verticals", "Competitive rates for high-risk accounts", "Rolling reserve minimized or waived for qualified merchants", "Multiple acquiring bank relationships"],
     features: [
@@ -478,7 +490,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
     <PageLayout>
       <SEO
         title={`${data.title} in Utah`}
-        description={data.description.slice(0, 155)}
+        description={data.metaDescription ?? data.description.slice(0, 155)}
         canonical={`/solutions/${data.slug}`}
         schema={{
           "@context": "https://schema.org",
@@ -633,35 +645,35 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               {/* Authorize.net */}
               <div className="flex flex-col items-center gap-3 group">
                 <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/authorize-net_4b70b746.png" alt="Authorize.net" className="max-h-10 max-w-full object-contain" />
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/authorize-net_4b70b746.png" alt="Authorize.net payment gateway logo — eCommerce payment processing partner" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">Authorize.net</span>
               </div>
               {/* NMI */}
               <div className="flex flex-col items-center gap-3 group">
                 <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/nmi_cc167af1.png" alt="NMI" className="max-h-10 max-w-full object-contain" />
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/nmi_cc167af1.png" alt="NMI payment gateway logo — high-risk & eCommerce payment processing" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">NMI</span>
               </div>
               {/* Quantum Gateway */}
               <div className="flex flex-col items-center gap-3 group">
                 <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/quantum-gateway_fd6105e8.jpg" alt="Quantum Gateway" className="max-h-10 max-w-full object-contain" />
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/quantum-gateway_fd6105e8.jpg" alt="Quantum Gateway logo — payment gateway integration partner" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">Quantum Gateway</span>
               </div>
               {/* Fluidpay */}
               <div className="flex flex-col items-center gap-3 group">
                 <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
-                  <img src="https://www.fluidpay.com/images/general/logo.svg" alt="Fluidpay" className="max-h-10 max-w-full object-contain" />
+                  <img src="https://www.fluidpay.com/images/general/logo.svg" alt="Fluidpay payment gateway logo — online payment processing partner" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">Fluidpay</span>
               </div>
               {/* iPosPays */}
               <div className="flex flex-col items-center gap-3 group">
                 <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/ipospays-logo_6aaa431d.png" alt="iPosPays" className="max-h-10 max-w-full object-contain" />
+                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/ipospays-logo_6aaa431d.png" alt="iPosPays logo — POS payment processing partner" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">iPosPays</span>
               </div>
