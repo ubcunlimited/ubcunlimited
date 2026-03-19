@@ -681,6 +681,56 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
         </section>
       )}
 
+      {/* High-Risk Industries Grid — shown only on high-risk-processing page */}
+      {data.slug === "high-risk-processing" && (
+        <section className="py-16 bg-[#080808]">
+          <div className="container">
+            <div className="text-center mb-10">
+              <div className="teal-divider mx-auto mb-4" />
+              <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
+                High-Risk Industries We Serve
+              </h2>
+              <p className="text-white/50 max-w-2xl mx-auto text-sm">
+                We work with specialized acquiring banks to secure merchant accounts for businesses across all high-risk verticals. Click any industry to learn more about the specific challenges and solutions we provide.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {[
+                { icon: "🌿", label: "CBD & Hemp", href: "/industries/cbd-hemp", desc: "Stable accounts for hemp & CBD retailers" },
+                { icon: "💊", label: "Nutraceuticals & Supplements", href: "/industries/nutraceuticals", desc: "Supplement brands & continuity programs" },
+                { icon: "🔞", label: "Adult Entertainment", href: "/industries/adult-entertainment", desc: "Discreet, compliant adult merchant accounts" },
+                { icon: "✈️", label: "Travel & Hospitality", href: "/industries/travel", desc: "Travel agencies & booking platforms" },
+                { icon: "🎮", label: "Online Gaming & Fantasy Sports", href: "/industries/online-gaming", desc: "Skill-based gaming & fantasy sports platforms" },
+                { icon: "🎯", label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions" },
+                { icon: "📞", label: "Telemarketing & Outbound Sales", href: "/industries/high-risk-processing", desc: "Outbound sales & telemarketing operations" },
+                { icon: "💳", label: "Credit Repair & Debt Settlement", href: "/industries/high-risk-processing", desc: "Credit services & debt relief programs" },
+                { icon: "🔁", label: "Subscription & Continuity", href: "/industries/high-risk-processing", desc: "Subscription box & recurring billing" },
+                { icon: "🚬", label: "E-Cigarettes & Vape", href: "/industries/high-risk-processing", desc: "Vape shops & e-cigarette retailers" },
+                { icon: "💻", label: "Online Pharmacy & Telemedicine", href: "/industries/high-risk-processing", desc: "Online health & telemedicine platforms" },
+                { icon: "₿", label: "Cryptocurrency & Fintech", href: "/industries/high-risk-processing", desc: "Crypto exchanges & fintech platforms" },
+              ].map((ind) => (
+                <Link
+                  key={ind.label}
+                  href={ind.href}
+                  className="group glass-card rounded-xl p-5 hover:bg-white/10 transition-all border border-white/5 hover:border-[#c9a84c]/30"
+                >
+                  <div className="text-3xl mb-3">{ind.icon}</div>
+                  <div className="font-semibold text-white text-sm mb-1 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>{ind.label}</div>
+                  <div className="text-white/40 text-xs leading-relaxed">{ind.desc}</div>
+                  <div className="mt-3 flex items-center gap-1 text-[#c9a84c] text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    Learn more <ChevronRight size={12} />
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <p className="text-white/40 text-sm mb-4">Don't see your industry? We serve many more high-risk verticals — contact us to discuss your situation.</p>
+              <Link href="/consultation" className="btn-gold">Get a Free High-Risk Quote <ArrowRight size={16} /></Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       <FAQ items={data.faqs} />
 
       {/* Related */}
