@@ -22,7 +22,7 @@ const blogPosts = [
   {
     slug: "how-to-lower-credit-card-processing-fees",
     title: "How to Lower Your Credit Card Processing Fees in 2025",
-    excerpt: "Most Utah businesses overpay for credit card processing. Here's a practical guide to understanding your statement and negotiating better rates.",
+    excerpt: "Credit card processing fees typically cost 1.5%–3.5% per transaction. Learn the three fee components, four pricing models, and six proven strategies to reduce what you pay every month.",
     category: "Credit Card Processing",
     date: "2025-01-15",
     readTime: "8 min read",
@@ -31,7 +31,7 @@ const blogPosts = [
   {
     slug: "interchange-plus-vs-flat-rate-pricing",
     title: "Interchange-Plus vs. Flat-Rate Pricing: Which Is Better for Your Business?",
-    excerpt: "Square and Stripe use flat-rate pricing. We use interchange-plus. Here's why the difference matters — and which one saves you more money.",
+    excerpt: "Square charges 2.6% + $0.15 in-person. Interchange-plus passes the real interchange cost plus a transparent markup. For businesses over $5,000/month, the savings are significant.",
     category: "Pricing & Fees",
     date: "2025-01-22",
     readTime: "6 min read",
@@ -40,7 +40,7 @@ const blogPosts = [
   {
     slug: "best-pos-systems-utah-restaurants-2025",
     title: "Best POS Systems for Utah Restaurants in 2025",
-    excerpt: "We've installed hundreds of restaurant POS systems across Utah. Here's our honest breakdown of SkyTab, Clover, Toast, and Square for Restaurants.",
+    excerpt: "SkyTab at $29.99/workstation/month vs. Toast at $69–$110+. We've installed hundreds of Utah restaurant POS systems — here's our honest, side-by-side comparison.",
     category: "POS Systems",
     date: "2025-02-01",
     readTime: "10 min read",
@@ -49,7 +49,7 @@ const blogPosts = [
   {
     slug: "ach-processing-guide-utah-businesses",
     title: "The Complete Guide to ACH Processing for Utah Businesses",
-    excerpt: "ACH bank transfers can save businesses thousands per year in processing fees. Here's everything you need to know to get started.",
+    excerpt: "The ACH Network processed 33.6 billion payments totaling $86.2 trillion in 2024. For Utah businesses with large or recurring transactions, ACH can save thousands per year in fees.",
     category: "ACH Payments",
     date: "2025-02-10",
     readTime: "7 min read",
@@ -58,7 +58,7 @@ const blogPosts = [
   {
     slug: "utah-small-business-payment-trends-2025",
     title: "Utah Small Business Payment Trends to Watch in 2025",
-    excerpt: "From contactless payments to embedded finance, here are the payment trends shaping Utah's small business landscape this year.",
+    excerpt: "Contactless payments, Same-Day ACH growth of 16.7% in 2025, AI fraud prevention, and cash discount programs going mainstream — here's what Utah businesses need to know.",
     category: "News & Updates",
     date: "2025-02-18",
     readTime: "5 min read",
@@ -67,7 +67,7 @@ const blogPosts = [
   {
     slug: "how-to-read-merchant-statement",
     title: "How to Read Your Merchant Processing Statement",
-    excerpt: "Your monthly processing statement is full of fees you may not understand. This guide breaks down every line item so you know exactly what you're paying.",
+    excerpt: "Interchange fees, assessment fees, processor markup, junk fees — your statement has it all. This guide breaks down every line item so you know exactly what you're paying and what's negotiable.",
     category: "Pricing & Fees",
     date: "2025-03-01",
     readTime: "9 min read",
@@ -76,7 +76,7 @@ const blogPosts = [
   {
     slug: "chargeback-prevention-guide",
     title: "Chargeback Prevention: A Practical Guide for Utah Merchants",
-    excerpt: "Chargebacks cost U.S. merchants billions each year. Here's how to prevent them — and what to do when you get one.",
+    excerpt: "eCommerce chargebacks are projected to cost $33.79 billion in 2025. Every $1 lost to fraud costs merchants $4.61 total. Here's a practical prevention guide for Utah merchants.",
     category: "Compliance & Security",
     date: "2025-03-08",
     readTime: "8 min read",
@@ -85,7 +85,7 @@ const blogPosts = [
   {
     slug: "mobile-payment-solutions-utah",
     title: "Mobile Payment Solutions for Utah's On-the-Go Businesses",
-    excerpt: "Farmers markets, food trucks, trade shows — Utah's mobile businesses need reliable payment solutions. Here are the best options.",
+    excerpt: "From farmers markets to trade shows, Utah's mobile businesses need reliable card acceptance. We compare Square, Clover Go, SkyTab Mobile, and merchant-provided solutions.",
     category: "Credit Card Processing",
     date: "2025-03-15",
     readTime: "6 min read",
@@ -94,7 +94,7 @@ const blogPosts = [
   {
     slug: "restaurant-payment-processing-guide",
     title: "The Restaurant Owner's Guide to Payment Processing",
-    excerpt: "Restaurant payment processing has unique challenges — tips, split checks, online ordering. Here's how to optimize your setup.",
+    excerpt: "Tip adjustments, pre-authorizations, split checks, online ordering integration — restaurant payment processing is complex. Here's how to optimize your setup and reduce costs.",
     category: "Industry Guides",
     date: "2025-03-22",
     readTime: "7 min read",
@@ -102,8 +102,8 @@ const blogPosts = [
   },
   {
     slug: "pci-compliance-guide-small-business",
-    title: "PCI Compliance: What Utah Small Businesses Need to Know",
-    excerpt: "PCI DSS compliance isn't optional — but it doesn't have to be complicated. Here's a plain-English guide for small business owners.",
+    title: "PCI DSS 4.0 Compliance: What Utah Small Businesses Need to Know",
+    excerpt: "PCI DSS v4.0 became mandatory April 1, 2024 with 51 new requirements. Here's what Utah small businesses (most are Level 4) need to do to stay compliant.",
     category: "Compliance & Security",
     date: "2025-04-01",
     readTime: "8 min read",
@@ -112,7 +112,7 @@ const blogPosts = [
   {
     slug: "cash-discounting-surcharging-utah",
     title: "Cash Discounting vs. Surcharging: What Utah Businesses Need to Know",
-    excerpt: "Two popular strategies for offsetting processing costs — but they work very differently. Here's how to choose the right approach for your business.",
+    excerpt: "Cash discounting is legal in all 50 states. Surcharging is banned in CT, ME, MA, and OK. Colorado caps surcharges at 2%. Here's how to choose and implement the right program.",
     category: "Pricing & Fees",
     date: "2025-04-08",
     readTime: "7 min read",
@@ -121,7 +121,7 @@ const blogPosts = [
   {
     slug: "ecommerce-payment-gateway-guide",
     title: "Choosing the Right eCommerce Payment Gateway for Your Utah Business",
-    excerpt: "Stripe, Authorize.net, NMI — there are dozens of options. Here's how to choose the right gateway for your online store.",
+    excerpt: "Authorize.net and NMI don't sell directly to merchants — you need a reseller. Stripe does. Here's the gateway vs. processor vs. merchant account distinction every Utah eCommerce business needs to understand.",
     category: "eCommerce Payments",
     date: "2025-04-15",
     readTime: "8 min read",
@@ -130,7 +130,7 @@ const blogPosts = [
   {
     slug: "pos-systems-for-bars-utah",
     title: "Best POS Systems for Bars and Nightclubs in Utah",
-    excerpt: "Bars have unique POS needs — tabs, split bills, fast service, and liquor compliance. Here are the best systems for Utah bar owners.",
+    excerpt: "Tab management, pre-authorizations, split bills, and Utah liquor compliance — bars have unique POS requirements. Here's our honest comparison of SkyTab, Toast, Clover, and Square for Utah bar owners.",
     category: "POS Systems",
     date: "2025-04-22",
     readTime: "9 min read",
@@ -139,7 +139,7 @@ const blogPosts = [
   {
     slug: "merchant-services-utah-county",
     title: "Merchant Services in Utah County: What Local Businesses Need to Know",
-    excerpt: "Utah County is one of the fastest-growing business markets in the country. Here's what Provo, Orem, and Lehi businesses need to know about payment processing.",
+    excerpt: "Utah County's Silicon Slopes corridor is booming. Here's why Provo, Orem, and Lehi businesses should avoid bank-provided merchant accounts and long-term contracts — and what to look for instead.",
     category: "Industry Guides",
     date: "2025-05-01",
     readTime: "6 min read",
@@ -148,7 +148,7 @@ const blogPosts = [
   {
     slug: "skytab-pos-review-utah",
     title: "SkyTab POS Review: Is It the Right System for Your Utah Business?",
-    excerpt: "As an authorized SkyTab reseller in Utah, we know this system inside and out. Here's an honest review of SkyTab's features, pricing, and best use cases.",
+    excerpt: "$29.99/workstation/month includes hardware, software, installation, training, and support. As Utah's authorized SkyTab reseller, we give you the honest review — strengths, limitations, and who it's right for.",
     category: "POS Systems",
     date: "2025-05-08",
     readTime: "10 min read",
@@ -157,7 +157,7 @@ const blogPosts = [
   {
     slug: "growing-business-with-better-payments",
     title: "How Better Payment Processing Can Help Your Business Grow",
-    excerpt: "The right payment setup isn't just about saving money — it's about creating a better customer experience that drives repeat business.",
+    excerpt: "Contactless checkout, ACH for B2B, real-time sales data, loyalty programs, and lower processing costs — here's how modern payment infrastructure drives measurable business growth.",
     category: "Business Growth",
     date: "2025-05-15",
     readTime: "7 min read",
