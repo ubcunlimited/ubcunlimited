@@ -87,7 +87,7 @@ function Router() {
         <Route path="/industries/firearms">{() => <IndustryDetail slug="firearms" />}</Route>
         <Route path="/industries/cbd-hemp">{() => <IndustryDetail slug="cbd-hemp" />}</Route>
         <Route path="/industries/nutraceuticals">{() => <IndustryDetail slug="nutraceuticals" />}</Route>
-        <Route path="/industries/adult-entertainment">{() => <IndustryDetail slug="adult-entertainment" />}</Route>
+        <Route path="/industries/non-profit">{() => <IndustryDetail slug="non-profit" />}</Route>
         <Route path="/industries/travel">{() => <IndustryDetail slug="travel" />}</Route>
         <Route path="/industries/online-gaming">{() => <IndustryDetail slug="online-gaming" />}</Route>
 

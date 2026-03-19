@@ -57,7 +57,7 @@ export const NAV_INDUSTRIES = [
   { label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions", icon: "🎯" },
   { label: "CBD & Hemp", href: "/industries/cbd-hemp", desc: "Stable accounts for hemp & CBD retailers", icon: "🌿", highRisk: true },
   { label: "Nutraceuticals & Supplements", href: "/industries/nutraceuticals", desc: "Supplement brands & continuity programs", icon: "💊", highRisk: true },
-  { label: "Adult Entertainment", href: "/industries/adult-entertainment", desc: "Discreet, compliant adult merchant accounts", icon: "🔞", highRisk: true },
+  { label: "Non-Profit & Charity", href: "/industries/non-profit", desc: "Donation processing & fund management", icon: "🤝" },
   { label: "Travel & Hospitality", href: "/industries/travel", desc: "Travel agencies & booking platforms", icon: "✈️", highRisk: true },
   { label: "Online Gaming & Fantasy Sports", href: "/industries/online-gaming", desc: "Skill-based gaming & fantasy sports platforms", icon: "🎮", highRisk: true },
 ];

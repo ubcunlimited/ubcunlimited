@@ -34,7 +34,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded" aria-label="UBC Unlimited — Home">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogo2_9116849d.png"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent2_1a1158bb.png"
                 alt="UBC Unlimited"
                 className="h-10 w-auto object-contain"
                 style={{ maxWidth: '160px' }}
