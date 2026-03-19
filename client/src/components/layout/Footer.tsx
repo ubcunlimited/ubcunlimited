@@ -209,12 +209,12 @@ export default function Footer() {
 
       {/* Bottom copyright + legal bar */}
       <div className="border-t border-white/5 bg-[#050505]">
-        <div className="container py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/30">
-          <span>© {year} UBC Unlimited. All rights reserved. Utah Merchant Services · Payment Processing · POS Systems</span>
-          <nav aria-label="Legal navigation" className="flex flex-wrap items-center gap-x-4 gap-y-1.5 justify-center sm:justify-end">
+        <div className="container py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-xs text-white/30">
+          <span className="shrink-0">© {year} UBC Unlimited. All rights reserved.</span>
+          <nav aria-label="Legal navigation" className="flex flex-wrap items-center gap-x-1 gap-y-1.5">
             {LEGAL_LINKS.map((item, i) => (
-              <span key={item.href} className="flex items-center gap-4">
-                {i > 0 && <span className="text-white/15" aria-hidden="true">·</span>}
+              <span key={item.href} className="flex items-center">
+                {i > 0 && <span className="mx-2 text-white/15" aria-hidden="true">·</span>}
                 <Link
                   href={item.href}
                   className="text-white/35 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a84c] rounded"
