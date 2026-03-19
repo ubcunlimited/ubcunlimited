@@ -7,6 +7,7 @@ import TestimonialBlock from "@/components/sections/TestimonialBlock";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
 import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES, TRUST_SIGNALS } from "@/lib/config";
+import SEO from "@/components/SEO";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_02a49aab.jpg";
 const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation_77637e8d.jpg";
@@ -62,6 +63,32 @@ const recentPosts = [
 export default function Home() {
   return (
     <PageLayout>
+      <SEO
+        canonical="/"
+        description="UBC Unlimited is Utah's local merchant services provider — credit card processing, SkyTab POS systems, ACH payments, and more. Serving Salt Lake City, Provo, Ogden, and all of Utah. Free statement review."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "UBC Unlimited",
+          "alternateName": "UBC Unlimited Merchant Services",
+          "description": "Utah merchant services provider offering credit card processing, POS systems, ACH payments, and payment gateway solutions for businesses across Utah.",
+          "url": "https://ubcunlimited.com",
+          "telephone": "+1-801-000-0000",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Salt Lake City",
+            "addressRegion": "UT",
+            "addressCountry": "US"
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "Utah"
+          },
+          "serviceType": ["Credit Card Processing", "Merchant Services", "POS Systems", "ACH Processing", "Payment Gateway"],
+          "foundingDate": "2004",
+          "sameAs": []
+        }}
+      />
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#0d1b2a]">
         <div

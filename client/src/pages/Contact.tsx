@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import PageLayout from "@/components/layout/PageLayout";
+import SEO from "@/components/SEO";
 import { SITE } from "@/lib/config";
 
 const inputClass = "w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#1e6fa8] focus:ring-2 focus:ring-[#1e6fa8]/20 transition-all text-[#0d1b2a] placeholder-gray-400";
@@ -20,6 +21,11 @@ export default function Contact() {
 
   return (
     <PageLayout>
+      <SEO
+        title="Contact UBC Unlimited — Utah Merchant Services"
+        description="Get in touch with UBC Unlimited. Schedule a free consultation, request a statement review, or ask questions about merchant services for your Utah business."
+        canonical="/contact"
+      />
       {/* Hero */}
       <section className="bg-[#0d1b2a] py-16">
         <div className="container">

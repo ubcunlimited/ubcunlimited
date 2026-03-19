@@ -5,6 +5,7 @@ import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
 import { getLocationBySlug, UTAH_LOCATIONS } from "@/lib/locations";
 import { SITE } from "@/lib/config";
+import SEO from "@/components/SEO";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_d2cdb0e3.jpg";
 
@@ -58,6 +59,28 @@ export default function LocationDetail() {
 
   return (
     <PageLayout>
+      <SEO
+        title={`Merchant Services in ${location.city}, Utah | UBC Unlimited`}
+        description={`UBC Unlimited provides credit card processing, POS systems, ACH payments, and merchant services to businesses in ${location.city}, ${location.county} County, Utah. Free consultation available.`}
+        canonical={`/locations/${location.slug}`}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "UBC Unlimited",
+          "description": `Merchant services provider serving ${location.city}, Utah`,
+          "url": `https://ubcunlimited.com/locations/${location.slug}`,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": location.city,
+            "addressRegion": "UT",
+            "addressCountry": "US"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": location.city
+          }
+        }}
+      />
       {/* Hero */}
       <section className="relative py-20 bg-[#0d1b2a] overflow-hidden">
         <div

@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { MapPin, ArrowRight, CheckCircle } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
+import SEO from "@/components/SEO";
 import CTABanner from "@/components/sections/CTABanner";
 import { UTAH_LOCATIONS } from "@/lib/locations";
 import { SITE } from "@/lib/config";
@@ -17,6 +18,11 @@ const countyOrder = ["Salt Lake", "Utah", "Davis", "Weber", "Summit", "Wasatch"]
 export default function Locations() {
   return (
     <PageLayout>
+      <SEO
+        title="Utah Merchant Services Locations — UBC Unlimited"
+        description="UBC Unlimited serves businesses across Utah including Salt Lake City, Provo, Ogden, St. George, Logan, and all surrounding communities. Local payment processing experts."
+        canonical="/locations"
+      />
       {/* Hero */}
       <section className="bg-[#0d1b2a] py-16">
         <div className="container">

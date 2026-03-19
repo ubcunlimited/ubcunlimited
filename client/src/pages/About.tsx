@@ -4,6 +4,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import TestimonialBlock from "@/components/sections/TestimonialBlock";
 import { SITE, TRUST_SIGNALS } from "@/lib/config";
+import SEO from "@/components/SEO";
 
 const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation_77637e8d.jpg";
 const TERMINAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_f46e2fbc.jpg";
@@ -46,6 +47,11 @@ const differentiators = [
 export default function About() {
   return (
     <PageLayout>
+      <SEO
+        title="About UBC Unlimited — Utah Merchant Services"
+        description="Meet the team behind UBC Unlimited. 20+ years of merchant services experience, locally owned and operated in Utah. We help Utah businesses save on payment processing."
+        canonical="/about"
+      />
       {/* Hero */}
       <section className="relative py-20 bg-[#0d1b2a] overflow-hidden">
         <div

@@ -4,6 +4,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
 import { NAV_SOLUTIONS } from "@/lib/config";
+import SEO from "@/components/SEO";
 
 export interface SolutionData {
   slug: string;
@@ -431,6 +432,31 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
 
   return (
     <PageLayout>
+      <SEO
+        title={`${data.title} in Utah`}
+        description={data.description.slice(0, 155)}
+        canonical={`/solutions/${data.slug}`}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": data.title,
+          "description": data.description,
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "UBC Unlimited",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Salt Lake City",
+              "addressRegion": "UT",
+              "addressCountry": "US"
+            }
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "Utah"
+          }
+        }}
+      />
       {/* Hero */}
       <section className="relative bg-[#040c1c] py-20 overflow-hidden">
         {isCreditCard && (

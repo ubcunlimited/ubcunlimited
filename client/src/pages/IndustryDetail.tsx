@@ -6,6 +6,7 @@ import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
 import SkyTabPOSBuilder from "@/components/sections/SkyTabPOSBuilder";
 import { NAV_INDUSTRIES, NAV_SOLUTIONS } from "@/lib/config";
+import SEO from "@/components/SEO";
 
 export interface IndustryData {
   slug: string;
@@ -33,13 +34,58 @@ const industriesData: IndustryData[] = [
       { title: "Online Ordering", desc: "Integrated online ordering that flows directly into your kitchen — no third-party tablet chaos." },
       { title: "Table Management", desc: "Visual floor plan, table status tracking, and server assignment from one screen." },
       { title: "Gift Cards & Loyalty", desc: "Branded physical and digital gift cards plus a points-based loyalty program that rewards repeat diners, drives return visits, and builds a customer database for targeted email and SMS marketing campaigns." },
+      { title: "Dual Pricing Program", desc: "Eliminate or significantly reduce your credit card processing costs with our compliant dual pricing program. Display a cash price and a card price at the point of sale — fully legal in Utah and all 50 states — and let your customers choose how they pay." },
     ],
-    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/gift-loyalty"],
+    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/gift-loyalty", "/solutions/dual-pricing"],
     faqs: [
+      { question: "Can I reduce my credit card processing costs as a restaurant?", answer: "Yes. Our dual pricing program lets you display a cash price and a card price at the point of sale. Customers who pay by card cover the processing cost, which can effectively eliminate your fees. The program is fully compliant with card network rules, legal in all 50 states, and includes all required signage and staff training. Most restaurant owners see minimal customer pushback when the pricing is displayed clearly upfront. Learn more at our Dual Pricing & Cash Discount page." },
       { question: "What POS system do you recommend for restaurants?", answer: "We typically recommend SkyTab for full-service restaurants. It offers tableside ordering, kitchen display systems, online ordering integration, and robust reporting — all in one system." },
       { question: "Can I accept tips with your system?", answer: "Yes. Our restaurant POS systems include tip prompts on customer-facing screens, tip pooling, and automatic tip reporting for payroll." },
       { question: "Do you integrate with online ordering platforms?", answer: "Yes. We integrate with major online ordering platforms and also offer our own integrated online ordering solution that flows directly into your POS." },
       { question: "Do you offer gift cards and loyalty programs for restaurants?", answer: "Yes. We offer fully integrated gift card and loyalty solutions that work seamlessly with your POS and payment processing. Branded physical and digital gift cards help you acquire new customers — gift card recipients typically spend 20–40% more than the card's face value. A points-based loyalty program rewards repeat diners, increases visit frequency, and builds a customer database you can market to directly with email and SMS campaigns. No punch cards, no manual tracking — everything runs automatically at the point of sale." },
+      { question: "How does SkyTab compare to Toast, Square, and Clover?", answer: (
+        <div className="overflow-x-auto -mx-2">
+          <table className="w-full text-xs border-collapse min-w-[480px]">
+            <thead>
+              <tr className="bg-[#0d1b2a] text-white">
+                <th className="text-left px-3 py-2 font-semibold">Feature</th>
+                <th className="px-3 py-2 font-bold text-[#22c55e] text-center">SkyTab<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
+                <th className="px-3 py-2 font-semibold text-center">Toast</th>
+                <th className="px-3 py-2 font-semibold text-center">Square</th>
+                <th className="px-3 py-2 font-semibold text-center">Clover</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                ["Starting monthly price", "$29.99/mo", "$69/mo", "$60/mo", "$44.95/mo"],
+                ["Hardware warranty", "Lifetime", "1 year", "1 year", "1 year"],
+                ["Tableside ordering (handheld)", "✅", "✅", "⚠️", "⚠️"],
+                ["Built-in online ordering", "✅", "✅", "✅", "⚠️"],
+                ["No online ordering commission", "✅", "❌", "❌", "⚠️"],
+                ["Built-in loyalty program", "✅", "⚠️", "⚠️", "⚠️"],
+                ["Cloud-based back office", "✅", "✅", "✅", "✅"],
+                ["Real-time mobile app", "✅", "✅", "✅", "✅"],
+                ["DoorDash / Uber Eats integration", "✅", "✅", "✅", "⚠️"],
+                ["Kitchen display system (KDS)", "✅", "✅", "⚠️", "⚠️"],
+                ["Offline mode", "✅", "✅", "⚠️", "⚠️"],
+                ["Long-term contract required", "✅", "✅", "❌", "✅"],
+                ["Local onsite installation (Utah)", "✅", "❌", "❌", "⚠️"],
+                ["4G LTE handheld POS option", "✅", "⚠️", "❌", "❌"],
+                ["Brewery & taproom features", "✅", "⚠️", "⚠️", "⚠️"],
+              ].map(([feature, skytab, toast, square, clover], i) => (
+                <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                  <td className="px-3 py-2 text-gray-700 font-medium">{feature}</td>
+                  <td className="px-3 py-2 text-center font-semibold text-[#169fa8]">{skytab}</td>
+                  <td className="px-3 py-2 text-center text-gray-600">{toast}</td>
+                  <td className="px-3 py-2 text-center text-gray-600">{square}</td>
+                  <td className="px-3 py-2 text-center text-gray-600">{clover}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p className="text-[10px] text-gray-400 mt-2 italic">✅ Included &nbsp; ⚠️ Limited/add-on &nbsp; ❌ Not available. Pricing and features based on publicly available information as of early 2026 and may vary.</p>
+        </div>
+      ) },
     ],
   },
   {
@@ -118,9 +164,11 @@ const industriesData: IndustryData[] = [
       { title: "Loyalty Programs", desc: "Built-in customer loyalty points and gift card programs to drive repeat business." },
       { title: "Multi-Location Support", desc: "Manage inventory and reporting across multiple store locations from one dashboard." },
       { title: "Gift Cards & Loyalty", desc: "Branded physical and digital gift cards plus a customizable loyalty rewards program. Increase average transaction size, drive repeat visits, and build a customer database for targeted promotions — all managed from your POS." },
+      { title: "Dual Pricing Program", desc: "Reduce or eliminate your processing costs with a compliant dual pricing setup. Post both a cash price and a card price — customers who pay by card cover the fee. Works with your existing POS and requires no monthly fee to participate." },
     ],
-    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/gift-loyalty"],
+    recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/gift-loyalty", "/solutions/dual-pricing"],
     faqs: [
+      { question: "Can I reduce my processing costs as a retail store?", answer: "Yes. Our dual pricing program is one of the most effective ways for retail stores to offset or eliminate credit card processing fees. You post two prices — a cash price and a card price — and customers who pay by card cover the processing cost. The program is fully compliant, legal in all 50 states, and we provide all required signage and receipt language. Most retailers report minimal impact on customer experience when pricing is clearly displayed." },
       { question: "Can I manage inventory across multiple locations?", answer: "Yes. Our retail POS systems support multi-location inventory management with centralized reporting." },
       { question: "Do you offer gift card programs?", answer: "Yes. We offer both physical and digital gift card programs that integrate directly with your POS. Customers can purchase, redeem, and check balances at the register or online. Gift cards are one of the highest-margin products a retail store can sell — they bring in new customers and drive incremental spending above the card's face value." },
       { question: "How does a loyalty program benefit my retail store?", answer: "A points-based loyalty program rewards customers for every purchase, increasing visit frequency and average spend. You can offer bonus points on slow days, birthday rewards, and tiered status levels to keep your best customers engaged. All customer activity is tracked automatically at the POS — no paper punch cards or manual entry required." },
@@ -177,10 +225,12 @@ const industriesData: IndustryData[] = [
       { title: "Remote Deposit Capture (RDC)", desc: "Scan and deposit guaranteed checks directly from your dealership via desktop or mobile app. Funds are deposited into your account within 48–72 hours." },
       { title: "Multiple Check Acceptance", desc: "Allow customers to split a down payment across up to four checks deposited over an agreed period (typically 30 days) — each one guaranteed." },
       { title: "COD (Check on Delivery)", desc: "Pre-authorize checks over the phone before delivery occurs. Ideal for parts and service orders — get an authorization number before the driver leaves, then process for guaranteed payment on return." },
+      { title: "Dual Pricing Program", desc: "Offset your credit card processing costs with a compliant dual pricing program. For high-ticket vehicle and service transactions, dual pricing can represent significant monthly savings — display both a cash and card price at checkout and let customers choose." },
     ],
-    recommendedSolutions: ["/solutions/credit-card-processing", "/solutions/virtual-terminals", "/solutions/ach-echeck-processing"],
+    recommendedSolutions: ["/solutions/credit-card-processing", "/solutions/virtual-terminals", "/solutions/ach-echeck-processing", "/solutions/dual-pricing"],
     faqs: [
-      { question: "Do you offer competitive rates for high-ticket transactions?", answer: "Yes. We offer interchange-plus pricing which is especially beneficial for high-ticket transactions where flat-rate processors charge significantly more. For vehicle sales and major repairs, this can represent substantial savings compared to flat-rate processors." },
+      { question: "Can dual pricing help reduce processing costs on high-ticket vehicle sales?", answer: "Yes. For dealerships and auto repair shops, dual pricing can be especially impactful because even a small percentage saved on a $30,000 vehicle transaction adds up quickly. Our dual pricing program displays both a cash price and a card price at the point of sale — customers who pay by card cover the processing cost. The program is fully compliant with card network rules, legal in all 50 states, and we handle all required signage and setup." },
+      { question: "Do you offer competitive rates for high-ticket transactions?", answer: "Yes. We structure pricing specifically around your transaction profile — for high-ticket vehicle sales and major service repairs, the right pricing model can represent substantial savings compared to what most flat-rate national processors charge. We'll analyze your current processing costs and show you a clear comparison before you make any decision." },
       { question: "How does check guarantee work for auto dealerships?", answer: "Our check guarantee service verifies and guarantees customer checks at the point of sale. If a check is returned for any reason, we cover the loss — you keep the funds. Checks are scanned and transmitted electronically via desktop or mobile app, with funds deposited into your dealership account within 48–72 hours. The service includes 24/7 processing, transaction reporting, and tech support, plus paperless recordkeeping." },
       { question: "Can customers split a down payment across multiple checks?", answer: "Yes. Our Multiple Check service allows customers to write up to four checks for a single sale or down payment. The checks are deposited over an agreed period — typically 30 days — on dates set by you and the customer. Each check is individually guaranteed, so you're protected throughout the entire payment schedule." },
       { question: "Can I pre-authorize a check payment before a parts delivery?", answer: "Yes. Our COD (Check on Delivery) service lets you pre-approve a check payment over the phone before the delivery happens. Your parts department enters the estimated sale amount and the customer's phone number to receive an authorization number. The driver delivers the order, collects the check, and you process it for guaranteed payment — eliminating the risk of non-payment on delivery." },
@@ -295,6 +345,31 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
 
   return (
     <PageLayout>
+      <SEO
+        title={`${data.title} Payment Processing in Utah`}
+        description={`${data.description.slice(0, 140)} UBC Unlimited serves Utah ${data.title.toLowerCase()} businesses with tailored payment solutions.`}
+        canonical={`/industries/${data.slug}`}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": `${data.title} Payment Processing`,
+          "description": data.description,
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "UBC Unlimited",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Salt Lake City",
+              "addressRegion": "UT",
+              "addressCountry": "US"
+            }
+          },
+          "areaServed": {
+            "@type": "State",
+            "name": "Utah"
+          }
+        }}
+      />
       {/* Hero */}
       <section className="bg-[#040c1c] py-20">
         <div className="container">

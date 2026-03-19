@@ -7,6 +7,7 @@ import { useState } from "react";
 import type React from "react";
 import { Link } from "wouter";
 import PageLayout from "@/components/layout/PageLayout";
+import SEO from "@/components/SEO";
 import { SITE } from "@/lib/config";
 import { ChevronDown, ChevronUp, Search, Phone, Mail } from "lucide-react";
 
@@ -602,6 +603,16 @@ export default function FAQPage() {
 
   return (
     <PageLayout>
+      <SEO
+        title="FAQ — Merchant Services Questions Answered | UBC Unlimited"
+        description="Answers to common questions about credit card processing, POS systems, ACH payments, dual pricing, eCommerce, and more. Utah's local merchant services experts."
+        canonical="/faq"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "name": "UBC Unlimited FAQ"
+        }}
+      />
       {/* Hero */}
       <section className="bg-[#0d1b2a] pt-20 pb-16">
         <div className="container max-w-4xl mx-auto text-center">

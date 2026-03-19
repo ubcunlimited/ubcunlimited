@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import { Calendar, Clock, Tag, ArrowRight, Search, X } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
+import SEO from "@/components/SEO";
 import CTABanner from "@/components/sections/CTABanner";
 
 // Blog categories from Q35
@@ -204,6 +205,11 @@ export default function Blog() {
 
   return (
     <PageLayout>
+      <SEO
+        title="Blog — Merchant Services Insights for Utah Businesses | UBC Unlimited"
+        description="Expert articles on credit card processing, POS systems, payment gateways, dual pricing, and merchant services tips for Utah business owners."
+        canonical="/blog"
+      />
       {/* Hero */}
       <section className="bg-[#0d1b2a] py-16">
         <div className="container">
