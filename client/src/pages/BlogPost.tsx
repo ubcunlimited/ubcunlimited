@@ -13,7 +13,7 @@ const posts: Record<string, { title: string; category: string; date: string; rea
     date: "2025-01-15",
     readTime: "8 min read",
     content: `
-Most Utah businesses are overpaying for credit card processing — often by 20–40% more than they need to. Credit card processing fees typically cost a business between 1.5% and 3.5% of each transaction's total, but the exact amount you pay depends heavily on your pricing model, card mix, and processor markup. The good news is that with the right knowledge and the right partner, you can significantly reduce what you pay every month.
+Most Utah businesses are overpaying for credit card processing. The exact amount you pay depends heavily on your pricing model, card mix, and processor markup — and the difference between a well-negotiated account and a poorly structured one can be substantial. The good news is that with the right knowledge and the right partner, you can significantly reduce what you pay every month.
 
 ## Understanding the Three Components of Processing Fees
 
@@ -41,7 +41,7 @@ Your monthly processing statement contains three distinct layers of fees, and un
 
 **Implement a cash discount or surcharge program.** A properly structured cash discount program allows you to display a standard price that includes the cost of card acceptance, then offer a discount for customers who pay with cash. This is legal in all 50 states and can effectively eliminate your processing fees entirely. Credit card surcharging — adding a fee for card-paying customers — is also legal in most states, though it requires registration with the card networks and is prohibited in Connecticut, Maine, Massachusetts, and Oklahoma.
 
-**Encourage debit card payments.** Debit cards carry significantly lower interchange rates than credit cards. A standard Visa debit card processed with a PIN costs as little as $0.21 + 0.05% under the Durbin Amendment cap for large issuers. A simple "debit preferred" prompt at checkout can meaningfully reduce your average blended rate.
+**Encourage debit card payments.** Debit cards carry significantly lower interchange rates than credit cards. A standard Visa debit card processed with a PIN carries one of the lowest interchange rates available under the Durbin Amendment cap for large issuers. A simple "debit preferred" prompt at checkout can meaningfully reduce your average blended rate.
 
 **Batch your transactions daily.** Transactions that are not settled within 24 hours of authorization are subject to "downgrade" fees — higher interchange rates that the card networks charge for delayed settlement. Most modern POS systems batch automatically, but it is worth confirming with your processor.
 
@@ -69,15 +69,13 @@ When it comes to credit card processing, the pricing model you choose can make a
 
 Flat-rate pricing bundles the card network's interchange fee, assessment fees, and the processor's markup into a single, predictable percentage. You pay the same rate regardless of what type of card your customer uses.
 
-Square charges 2.6% + $0.15 for in-person transactions, 3.3% + $0.30 for online transactions, and 3.5% + $0.15 for manually keyed transactions. Stripe charges 2.7% + $0.05 for in-person, 2.9% + $0.30 for online, and 3.4% + $0.30 for manually entered cards. PayPal charges 2.29% + $0.09 for in-person QR code transactions and 2.99% + $0.49 for standard online checkout.
-
 The appeal of flat-rate pricing is simplicity. You always know what you will pay per transaction, which makes bookkeeping straightforward. However, this simplicity comes at a cost: the processor is charging you a premium rate on every transaction, including low-cost debit cards and basic consumer credit cards that would cost far less under interchange-plus pricing.
 
 ## What Is Interchange-Plus Pricing?
 
 Interchange-plus pricing separates the card network's actual interchange fee from the processor's markup. You pay the real interchange rate — which varies by card type, transaction method, and merchant category — plus a fixed, transparent markup that the processor charges for their services.
 
-For example, a processor might charge "interchange + 0.30% + $0.10 per transaction." If a customer pays with a standard Visa consumer credit card that carries a 1.80% + $0.10 interchange rate, your total cost would be 2.10% + $0.20. If that same customer paid with a Visa debit card carrying a 0.05% + $0.21 interchange rate, your total cost would be 0.35% + $0.31 — dramatically less.
+For example, a processor might charge "interchange + a small fixed markup per transaction." If a customer pays with a standard consumer credit card, you pay that card's actual interchange rate plus the markup. If that same customer pays with a debit card — which carries a much lower interchange rate — your total cost drops dramatically.
 
 This transparency is the defining advantage of interchange-plus pricing. You can see exactly what the card networks charge versus what your processor charges, and you can hold your processor accountable for their markup.
 
@@ -90,21 +88,19 @@ This transparency is the defining advantage of interchange-plus pricing. You can
 | Cost for debit cards | High — charged at full flat rate | Low — debit interchange is much lower |
 | Cost for rewards cards | Moderate — capped at flat rate | Moderate — rewards cards carry higher interchange |
 | Best for | Very low volume or new businesses | Businesses processing $5,000+/month |
-| Typical monthly savings vs flat rate | — | 15%–40% for most businesses |
+| Typical monthly savings vs flat rate | — | Significant for most businesses |
 
 ## Which Is Right for Your Business?
 
-For businesses processing **under $3,000 per month**, flat-rate pricing is often the simpler and more cost-competitive choice. The savings from interchange-plus are real but modest at low volumes, and the simplicity of a flat rate has genuine value for very small or new operations.
+For very low-volume or brand-new businesses, flat-rate pricing is often the simpler and more cost-competitive choice. The savings from interchange-plus are real but modest at low volumes, and the simplicity of a flat rate has genuine value.
 
-For businesses processing **$5,000 or more per month**, interchange-plus almost always wins. The savings compound quickly at higher volumes, especially if your customer base uses a mix of debit cards and basic credit cards that carry lower interchange rates than premium rewards cards.
+For businesses with meaningful monthly volume, interchange-plus almost always wins. The savings compound quickly, especially if your customer base uses a mix of debit cards and basic credit cards that carry lower interchange rates than premium rewards cards.
 
-There is also a third model worth knowing: **subscription pricing**, offered by processors like Stax. Under this model, you pay a flat monthly membership fee (typically $99–$199/month) and then pay interchange at cost plus a small per-transaction fee (often $0.08–$0.15). For high-volume businesses, this can be the most cost-effective option of all.
+There is also a third model worth knowing: **subscription pricing**, where you pay a flat monthly membership fee and then pay interchange at cost plus a small per-transaction fee. For high-volume businesses, this can be the most cost-effective option of all.
 
 ## The Real Cost of Flat-Rate Pricing at Scale
 
-Consider a restaurant processing $50,000 per month on Square. At 2.6% + $0.15 per transaction (assuming an average ticket of $35, or roughly 1,429 transactions), the monthly fee is approximately $1,514. The same restaurant on interchange-plus pricing — assuming a blended interchange rate of 1.65% and a processor markup of 0.30% + $0.10 — would pay approximately $975–$1,050 per month. That is a savings of $450–$550 per month, or $5,400–$6,600 per year.
-
-These are estimates, and your actual savings will depend on your card mix, average ticket size, and the specific interchange-plus rate you negotiate. The best way to get an accurate picture is to have a qualified processor analyze your current statement.
+The savings from switching to interchange-plus can be substantial for a high-volume business. Your actual savings will depend on your card mix, average ticket size, and the specific rate you negotiate. The best way to get an accurate picture is to have a qualified processor analyze your current statement.
 
 Want to see what you would save? [Request a free statement review](/statement-review) — our Utah team will give you a clear, honest comparison with no obligation.
     `,
@@ -140,24 +136,24 @@ Toast's processing fees are also bundled — you cannot bring your own processor
 
 ## Clover POS
 
-Clover, owned by Fiserv, is a flexible POS platform that works for both restaurants and retail. The hardware is attractive and the app marketplace is extensive, allowing you to add functionality through third-party apps. Clover's restaurant-specific plan (Clover Dining) starts at $84.95/month and includes table management, floor plan customization, and basic kitchen printing.
+Clover, owned by Fiserv, is a flexible POS platform that works for both restaurants and retail. The hardware is attractive and the app marketplace is extensive, allowing you to add functionality through third-party apps. Clover's restaurant-specific plan includes table management, floor plan customization, and basic kitchen printing.
 
 The downside of Clover is that it is sold through banks and ISOs, which means pricing and support quality vary significantly depending on who you buy it from. Clover hardware is also proprietary and must be purchased through an authorized reseller. Monthly software fees, processing rates, and contract terms differ widely between resellers, so it pays to read the fine print carefully.
 
 ## Square for Restaurants
 
-Square for Restaurants is a solid option for quick-service restaurants, cafes, and food trucks — particularly those already in the Square ecosystem. The free plan includes basic POS functionality, and the Plus plan ($60/month per location) adds table management, course management, and kitchen display support.
+Square for Restaurants is a solid option for quick-service restaurants, cafes, and food trucks — particularly those already in the Square ecosystem. The free plan includes basic POS functionality, and the Plus plan adds table management, course management, and kitchen display support.
 
-Square's flat-rate processing (2.6% + $0.15 in-person) is straightforward but expensive for high-volume full-service restaurants. Square also lacks some of the advanced features that full-service restaurants need, such as robust tableside ordering with handheld devices and deep integration with third-party delivery platforms.
+Square's flat-rate processing is straightforward but expensive for high-volume full-service restaurants. Square also lacks some of the advanced features that full-service restaurants need, such as robust tableside ordering with handheld devices and deep integration with third-party delivery platforms.
 
 ## How to Choose the Right System for Your Restaurant
 
 | System | Best For | Monthly Cost (per terminal) | Processing | Local Support |
 |---|---|---|---|---|
-| SkyTab | Full-service, bars, multi-location | $29.99 | Flexible (Shift4) | Yes — UBC Unlimited |
-| Toast | Mid-to-large full-service | $69–$110+ | Toast only (bundled) | Limited in Utah |
-| Clover | Flexible retail/restaurant hybrid | $84.95+ | Varies by reseller | Varies |
-| Square | QSR, cafes, food trucks | $0–$60 | Square only (flat rate) | No local support |
+| SkyTab | Full-service, bars, multi-location | All-inclusive monthly fee | Flexible (Shift4) | Yes — UBC Unlimited |
+| Toast | Mid-to-large full-service | Higher monthly cost + hardware | Toast only (bundled) | Limited in Utah |
+| Clover | Flexible retail/restaurant hybrid | Varies by reseller | Varies by reseller | Varies |
+| Square | QSR, cafes, food trucks | Free to moderate | Square only (flat rate) | No local support |
 
 For most Utah restaurants — whether you are running a full-service dining room in Salt Lake City, a bar in Provo, or a multi-location chain along the Wasatch Front — SkyTab offers the best combination of features, price, and local support. As an authorized SkyTab reseller, UBC Unlimited handles installation, training, and ongoing support for Utah businesses.
 
@@ -181,15 +177,13 @@ ACH payments come in two forms. An ACH debit "pulls" funds from the customer's a
 
 ## Why ACH Is So Much Cheaper Than Credit Cards
 
-The cost difference between ACH and credit card processing is substantial. Credit card processing fees typically range from 1.5% to 3.5% per transaction. ACH processing, by contrast, typically costs $0.26 to $0.50 per transfer, or 0.5% to 1% for percentage-based pricing — often capped at a maximum fee per transaction.
-
-For a $1,000 invoice, a credit card payment might cost $25–$35 in processing fees. The same payment via ACH might cost $0.50 to $1.00. For businesses that regularly process large transactions — contractors, B2B service providers, property managers, healthcare providers — this difference adds up to thousands of dollars per year.
+The cost difference between ACH and credit card processing is substantial. ACH processing costs a fraction of what credit card processing costs per transaction — and for large invoices, the savings are especially significant. For businesses that regularly process large transactions — contractors, B2B service providers, property managers, healthcare providers — switching high-value invoices to ACH can save thousands of dollars per year. [Contact us](/consultation) for a custom comparison based on your transaction mix.
 
 ## Same-Day ACH: Faster Than You Think
 
 One of the most significant developments in ACH in recent years is the growth of Same-Day ACH. In 2025, Same-Day ACH processed 1.4 billion payments valued at $3.9 trillion — a 16.7% increase in volume and 21.4% increase in value from 2024, according to Nacha. Same-Day ACH allows funds to be available the same business day the payment is initiated (for transactions submitted before the cutoff time), making it a viable alternative to wire transfers for time-sensitive payments.
 
-The per-transaction fee for Same-Day ACH is slightly higher than standard ACH — typically an additional $0.05 to $0.10 per transaction — but it is still dramatically cheaper than wire transfers ($25–$50 per transfer) or credit card processing.
+The per-transaction fee for Same-Day ACH is slightly higher than standard ACH, but it is still dramatically cheaper than wire transfers or credit card processing.
 
 ## Best Use Cases for ACH in Your Business
 
@@ -279,37 +273,37 @@ On your statement, interchange fees may appear as a single line item (on flat-ra
 
 **CPS/Retail** — standard consumer credit card, card-present transaction. One of the most common and lowest-cost categories.
 
-**Rewards/Signature** — premium rewards credit cards. These carry higher interchange rates (often 1.95%–2.40% + $0.10) because the card issuer uses the interchange revenue to fund rewards programs.
+**Rewards/Signature** — premium rewards credit cards. These carry higher interchange rates because the card issuer uses the interchange revenue to fund rewards programs.
 
-**Debit/PIN** — PIN debit transactions. Under the Durbin Amendment, large bank-issued debit cards are capped at $0.21 + 0.05% for PIN transactions — among the lowest interchange rates available.
+**Debit/PIN** — PIN debit transactions. Under the Durbin Amendment, large bank-issued debit cards are capped at a regulated rate for PIN transactions — among the lowest interchange rates available.
 
 **Card-Not-Present** — online or phone transactions where the card is not physically present. These carry higher interchange rates than card-present transactions due to higher fraud risk.
 
 ## Assessment Fees: Small but Real
 
-Assessment fees are charged by the card networks (not your processor) and appear as small percentages on your statement. Visa's assessment fee is 0.14% for credit and 0.13% for debit. Mastercard's is 0.1375% for credit and 0.1300% for debit. These are non-negotiable and the same for every processor.
+Assessment fees are charged by the card networks (not your processor) and appear as small percentages on your statement. These are non-negotiable and the same for every processor — no processor can reduce them.
 
-You may also see network fees like Visa's "NABU" (Network Acquirer Business Usage) fee of $0.0195 per transaction, or Mastercard's "Network Access and Brand Usage" fee. These are legitimate card network fees, not processor markups.
+You may also see network fees like Visa's "NABU" (Network Acquirer Business Usage) fee or Mastercard's "Network Access and Brand Usage" fee. These are legitimate card network fees, not processor markups.
 
 ## Processor Markup: Where the Negotiation Happens
 
 The processor markup is the only component of your fees that is negotiable. On an interchange-plus statement, this appears clearly as a separate line item — for example, "Interchange + 0.30% + $0.10 per transaction." On a flat-rate or tiered statement, the markup is hidden inside the blended rate.
 
-Common processor markup fees include a percentage markup per transaction, a per-transaction authorization fee ($0.05–$0.25), and various monthly fees.
+Common processor markup fees include a percentage markup per transaction, a per-transaction authorization fee, and various monthly fees.
 
 ## Monthly Fees to Watch For
 
 Beyond per-transaction fees, your statement likely includes several monthly fees. Some are legitimate; others are negotiable or avoidable.
 
-**Gateway fee** — if you process online transactions, you likely pay a monthly gateway fee ($10–$25/month) for access to the payment gateway software. This is legitimate.
+**Gateway fee** — if you process online transactions, you likely pay a monthly gateway fee for access to the payment gateway software. This is legitimate.
 
-**PCI compliance fee** — a monthly fee ($5–$30) charged to help you maintain PCI DSS compliance. Legitimate, but the amount varies widely.
+**PCI compliance fee** — a monthly fee charged to help you maintain PCI DSS compliance. Legitimate, but the amount varies widely.
 
-**Statement fee** — a fee just for receiving your statement ($5–$15/month). This is a junk fee with no real justification — it is simply extra profit for the processor.
+**Statement fee** — a fee just for receiving your statement. This is a junk fee with no real justification — it is simply extra profit for the processor.
 
 **Regulatory compliance fee / IRS reporting fee** — fees with official-sounding names that are actually processor-invented charges. These are negotiable.
 
-**Early termination fee** — not a monthly fee, but watch for this in your contract. Some processors charge $250–$500 or more if you cancel before your contract term ends.
+**Early termination fee** — not a monthly fee, but watch for this in your contract. Some processors charge a significant fee if you cancel before your contract term ends.
 
 ## Red Flags to Look For
 
@@ -321,7 +315,7 @@ Multiple fees with similar names (e.g., both a "compliance fee" and a "PCI fee")
 
 ## Getting a Better Deal
 
-If your effective rate is above 2.5% and you are not on a cash discount or surcharge program, you are likely overpaying. [Request a free statement review](/statement-review) from our Utah team — we will analyze your statement line by line and show you exactly where you can save.
+If you are not on a cash discount or surcharge program, you may be overpaying. [Request a free statement review](/statement-review) from our Utah team — we will analyze your statement line by line and show you exactly where you can save.
     `,
   },
 
@@ -387,13 +381,13 @@ Utah's diverse business landscape includes thousands of mobile operations — fa
 
 Before comparing specific products, it helps to understand what matters most for mobile payments. Reliability is paramount — a payment solution that fails during a busy farmers market or trade show is worse than no solution at all. Connection flexibility matters too: some solutions work only on Wi-Fi, while others work on cellular data, which is essential for outdoor events. Battery life, card reader durability, and the ability to accept contactless payments (tap-to-pay, Apple Pay, Google Pay) are also important considerations.
 
-Processing fees are a significant factor for mobile businesses, many of which operate on thin margins. Flat-rate processors like Square are simple but expensive at scale. Interchange-plus pricing through a merchant services provider is more cost-effective for businesses processing more than $5,000 per month.
+Processing fees are a significant factor for mobile businesses, many of which operate on thin margins. Flat-rate processors like Square are simple but can become expensive at scale. Interchange-plus pricing through a merchant services provider is often more cost-effective for businesses with meaningful monthly volume.
 
 ## Square Reader and Square Terminal
 
 Square is the most widely recognized mobile payment solution and remains a solid choice for very small or new businesses. The Square Reader (a small card reader that plugs into a smartphone's headphone jack or connects via Bluetooth) is free with a new account. The Square Terminal is a standalone device with a built-in screen, receipt printer, and battery — priced at $299.
 
-Square charges 2.6% + $0.15 for in-person transactions. For a business processing $3,000/month, that is approximately $78 in fees. For a business processing $20,000/month, that is approximately $535 — at which point interchange-plus pricing becomes significantly more attractive.
+Square uses flat-rate pricing for in-person transactions. For lower-volume businesses this is simple and predictable, but as volume grows, interchange-plus pricing through a merchant services provider typically becomes significantly more cost-effective.
 
 Square works on both Wi-Fi and cellular data, accepts all major cards and contactless payments, and integrates with Square's broader ecosystem of invoicing, inventory, and reporting tools. It is a good fit for very small mobile businesses that value simplicity over cost optimization.
 
@@ -443,7 +437,7 @@ Restaurant payment processing is more complex than most industries. Between tips
 
 ## Choosing the Right Pricing Model for Your Restaurant
 
-Most restaurants benefit from interchange-plus pricing rather than flat-rate pricing. Restaurants have a relatively high volume of transactions, which means the savings from interchange-plus compound quickly. A restaurant processing $80,000 per month on flat-rate pricing at 2.6% + $0.15 pays approximately $2,080 in processing fees. The same restaurant on interchange-plus pricing — assuming a blended interchange rate of 1.70% and a processor markup of 0.25% + $0.10 — would pay approximately $1,480, saving $600 per month or $7,200 per year.
+Most restaurants benefit from interchange-plus pricing rather than flat-rate pricing. Restaurants have a relatively high volume of transactions, which means the savings from interchange-plus compound quickly. The difference between flat-rate and interchange-plus pricing can be substantial for a high-volume restaurant — [request a free statement review](/statement-review) to see exactly what you would save.
 
 Cash discount programs are also increasingly popular in the restaurant industry. By pricing your menu to include the cost of card acceptance and offering a discount for cash payments, you can effectively eliminate your processing fees on cash transactions. This approach requires clear signage and customer communication but is legal in all 50 states.
 
@@ -523,7 +517,7 @@ Your payment processor should provide PCI compliance support as part of your mer
     date: "2025-04-08",
     readTime: "8 min read",
     content: `
-Credit card processing fees are a significant expense for most Utah businesses — typically 1.5% to 3.5% of every card transaction. Two strategies have emerged as popular ways to offset or eliminate these costs: cash discounting and credit card surcharging. While they may seem similar on the surface, they work very differently, have different legal requirements, and are better suited to different types of businesses. Understanding the distinction is essential before implementing either program.
+Credit card processing fees are a significant expense for most Utah businesses. Two strategies have emerged as popular ways to offset or eliminate these costs: cash discounting and credit card surcharging. While they may seem similar on the surface, they work very differently, have different legal requirements, and are better suited to different types of businesses. Understanding the distinction is essential before implementing either program.
 
 ## Cash Discounting: Legal in All 50 States
 
@@ -533,7 +527,7 @@ Cash discounting is legal in all 50 states and is permitted by Visa, Mastercard,
 
 One important nuance: the "cash discount" must be a genuine discount from a posted price, not a surcharge rebranded as a discount. Visa and Mastercard have specific rules about how cash discount programs must be structured, and processors who offer cash discount programs are responsible for ensuring their merchants comply with these rules.
 
-The practical benefit of a well-implemented cash discount program is significant. For a business processing $30,000 per month in card transactions at an effective rate of 2.8%, the monthly processing cost is approximately $840. If 30% of customers switch to cash, the effective cost drops to approximately $588 — saving $252 per month.
+The practical benefit of a well-implemented cash discount program is significant. When a meaningful portion of customers switch to cash, the reduction in monthly processing costs can be substantial — [contact us](/consultation) to see what the savings would look like for your specific volume.
 
 ## Credit Card Surcharging: Legal in Most States
 
@@ -583,7 +577,7 @@ Some companies — like Stripe and Square — combine all three functions into a
 
 Stripe is the most widely used payment gateway for online businesses and is particularly popular among technology companies and businesses with development resources. Stripe combines gateway, processing, and merchant account functions into a single platform with a unified API.
 
-Stripe charges 2.9% + $0.30 for standard online card transactions and 2.7% + $0.05 for in-person transactions. There are no monthly fees for the standard plan. Stripe supports virtually every payment method — Visa, Mastercard, American Express, Discover, Apple Pay, Google Pay, ACH, and dozens of international payment methods.
+Stripe uses flat-rate pricing for all transactions with no monthly fees on the standard plan. Stripe supports virtually every payment method — Visa, Mastercard, American Express, Discover, Apple Pay, Google Pay, ACH, and dozens of international payment methods.
 
 The primary advantage of Stripe is its developer-friendly API and extensive documentation, which makes it easy to build custom payment flows. The primary disadvantage is that Stripe's flat-rate pricing becomes expensive at scale, and Stripe's customer support has historically been less responsive than dedicated merchant services providers.
 
@@ -593,7 +587,7 @@ Authorize.net, owned by Visa, is one of the oldest and most widely supported pay
 
 This distinction is important: you cannot sign up for Authorize.net directly as a merchant. You must obtain it through a reseller or your bank. The advantage of this model is that you can negotiate your processing rates separately from your gateway fees, potentially achieving better overall pricing than a bundled solution.
 
-Authorize.net charges a $25/month gateway fee plus $0.10 per transaction (in addition to your processing fees). It integrates with virtually every major shopping cart platform — Shopify, WooCommerce, Magento, BigCommerce, and hundreds of others.
+Authorize.net charges a monthly gateway fee plus a per-transaction fee (in addition to your processing fees). It integrates with virtually every major shopping cart platform — Shopify, WooCommerce, Magento, BigCommerce, and hundreds of others.
 
 ## NMI (Network Merchants Inc.): The Reseller's Gateway
 
@@ -637,7 +631,7 @@ SkyTab is our top recommendation for Utah bars and nightclubs, and it is the sys
 
 With SkyTab, bartenders can open a tab by swiping or tapping a card, add items throughout the evening, and close the tab with a single tap. Pre-authorizations are handled automatically, and the system releases holds promptly after tabs are closed. The mobile handheld units allow servers on the floor to take drink orders and process payments tableside, reducing trips to the bar and increasing efficiency.
 
-SkyTab's back-office reporting gives bar owners real-time visibility into sales, labor costs, and inventory. The cloud-based platform means you can check your numbers from anywhere — at home, on vacation, or at a second location. At $29.99 per workstation per month (including hardware, software, installation, and support), SkyTab offers exceptional value for the feature set.
+SkyTab's back-office reporting gives bar owners real-time visibility into sales, labor costs, and inventory. The cloud-based platform means you can check your numbers from anywhere — at home, on vacation, or at a second location. SkyTab's all-inclusive monthly pricing covers hardware, software, installation, and support — offering exceptional value for the feature set.
 
 ## Toast POS for Bars
 
@@ -653,7 +647,7 @@ As with all Clover deployments, pricing and support quality depend heavily on wh
 
 ## Square for Restaurants (Bar Edition)
 
-Square for Restaurants includes basic tab management and works reasonably well for smaller, lower-volume bars. The free plan is attractive for new operations, and the Plus plan ($60/month) adds table management and more advanced features. However, Square's flat-rate processing (2.6% + $0.15 per transaction) becomes expensive for high-volume bars, and the system lacks some of the advanced tab management features that busy nightclubs need.
+Square for Restaurants includes basic tab management and works reasonably well for smaller, lower-volume bars. The free plan is attractive for new operations, and the Plus plan adds table management and more advanced features. However, Square's flat-rate processing becomes expensive for high-volume bars, and the system lacks some of the advanced tab management features that busy nightclubs need.
 
 ## Key Features to Prioritize for Your Bar
 
@@ -717,9 +711,9 @@ SkyTab was formerly known as HarborTouch POS before Shift4 acquired the company 
 
 ## SkyTab Pricing: What You Actually Pay
 
-SkyTab's pricing model is one of its most compelling advantages. At $29.99 per workstation per month, the fee includes hardware (the terminal and any peripherals included in your package), software, installation, training, and ongoing support. There are no separate software licensing fees, no installation charges, and no training fees.
+SkyTab's pricing model is one of its most compelling advantages. The all-inclusive monthly fee covers hardware (the terminal and any peripherals included in your package), software, installation, training, and ongoing support. There are no separate software licensing fees, no installation charges, and no training fees.
 
-This pricing compares favorably to Toast ($69–$110+ per terminal per month, plus hardware purchase) and Clover ($84.95+ per month for the restaurant plan, plus hardware). For a restaurant with three terminals, SkyTab costs $89.97/month versus $207–$330+/month for Toast.
+This pricing compares favorably to Toast and Clover, which typically charge higher monthly software fees on top of separate hardware purchases. [Contact us](/consultation) for a current pricing comparison tailored to your operation size.
 
 Payment processing fees are separate from the monthly SkyTab fee and are negotiated with your Shift4 reseller (UBC Unlimited, in our case). We offer interchange-plus pricing for SkyTab clients, which means your processing costs are transparent and competitive.
 
@@ -745,7 +739,7 @@ The integration ecosystem, while growing, is not as extensive as Toast's or Clov
 
 ## Our Honest Recommendation
 
-For Utah restaurants, bars, cafes, and food service operations, SkyTab is our top recommendation — and not just because we sell it. The combination of comprehensive features, competitive pricing, and the local support we provide makes it the best value in the market for most food and beverage operations. The $29.99/workstation/month pricing is genuinely hard to beat for what you get.
+For Utah restaurants, bars, cafes, and food service operations, SkyTab is our top recommendation — and not just because we sell it. The combination of comprehensive features, competitive pricing, and the local support we provide makes it the best value in the market for most food and beverage operations.
 
 That said, the right POS system depends on your specific operation. [Book a free consultation](/consultation) with our Utah team — we will assess your needs honestly and recommend the right system, even if that means recommending something other than SkyTab.
     `,
@@ -833,10 +827,10 @@ High-risk merchant accounts are not a last resort — they are the right tool fo
 
 | Feature | Standard Account | High-Risk Account |
 |---|---|---|
-| Processing rates | 1.5%–2.5% | 3.0%–5.5% |
-| Monthly fee | $0–$25 | $25–$100 |
+| Processing rates | Competitive — based on industry & volume | Higher — reflects elevated risk |
+| Monthly fee | Varies | Varies — contact us for a quote |
 | Rolling reserve | Rarely required | Common for new accounts |
-| Chargeback threshold | 1% (Visa) | 1%–2% depending on processor |
+| Chargeback threshold | 1% (Visa) | Varies by processor |
 | Approval time | Instant (aggregators) | 3–7 business days |
 | Account stability | Low for high-risk categories | High with right processor |
 
@@ -874,7 +868,7 @@ Cloud-based POS systems like SkyTab give you real-time access to this data from 
 
 ## Reducing Processing Costs Improves Margins
 
-The direct financial benefit of better payment processing is real and measurable. A business processing $50,000 per month that reduces its effective processing rate from 3.0% to 2.0% saves $500 per month — $6,000 per year. That money can be reinvested in marketing, staff, inventory, or simply kept as profit.
+The direct financial benefit of better payment processing is real and measurable. Reducing your effective processing rate — even by a fraction of a percent — can translate to meaningful savings each month that can be reinvested in marketing, staff, inventory, or kept as profit. [Request a free statement review](/statement-review) to see exactly what you could save.
 
 For businesses with thin margins — restaurants, retail, service businesses — a 1% reduction in processing costs can be the difference between a profitable month and a break-even month. And for businesses that implement a cash discount program, the savings can be even more dramatic.
 
