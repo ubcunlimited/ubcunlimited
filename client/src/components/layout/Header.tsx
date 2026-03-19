@@ -15,7 +15,7 @@ export default function Header() {
   const companyBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -63,8 +63,8 @@ export default function Header() {
           : "bg-[#080808]/95 backdrop-blur-sm"
       }`}
     >
-      {/* Top bar */}
-      <div className="bg-[#c9a84c]/10 border-b border-[#c9a84c]/20 hidden md:block" aria-hidden="true">
+      {/* Top bar — hides on scroll */}
+      <div className={`bg-[#c9a84c]/10 border-b border-[#c9a84c]/20 hidden md:block overflow-hidden transition-all duration-300 ${scrolled ? 'max-h-0 opacity-0 border-0' : 'max-h-12 opacity-100'}`} aria-hidden="true">
         <div className="container flex justify-between items-center py-1.5 text-xs text-white/50">
           <span>Utah's Local Merchant Services Experts — {SITE.yearsInBusiness} Years in Business</span>
           <div className="flex items-center gap-4">
@@ -77,14 +77,14 @@ export default function Header() {
       </div>
 
       <div className="container" ref={navRef}>
-        <div className="flex items-center justify-between h-36">
+        <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-36'}`}>
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group" aria-label="UBC Unlimited — Home">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent3_53cdf614.png"
               alt="UBC Unlimited — Processing Without Limits"
-              className="h-34 w-auto object-contain"
-              style={{ maxWidth: '320px' }}
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? 'h-12' : 'h-34'}`}
+              style={{ maxWidth: scrolled ? '180px' : '320px' }}
             />
           </Link>
 
