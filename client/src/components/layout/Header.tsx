@@ -77,14 +77,14 @@ export default function Header() {
       </div>
 
       <div className="container" ref={navRef}>
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group" aria-label="UBC Unlimited — Home">
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent_15974d2f.png"
               alt="UBC Unlimited — Processing Without Limits"
-              className="h-12 w-auto object-contain"
-              style={{ maxWidth: '200px' }}
+              className="h-16 w-auto object-contain"
+              style={{ maxWidth: '260px' }}
             />
           </Link>
 
