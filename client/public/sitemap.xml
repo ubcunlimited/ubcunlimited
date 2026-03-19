@@ -3,25 +3,25 @@
   <!-- Core Pages -->
   <url><loc>https://ubcunlimited.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://ubcunlimited.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://ubcunlimited.com/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ubcunlimited.com/faq</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ubcunlimited.com/consultation</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://ubcunlimited.com/statement-review</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://ubcunlimited.com/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-
+  <url><loc>https://ubcunlimited.com/skytab-pos-builder</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/accessibility</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <!-- Solutions -->
   <url><loc>https://ubcunlimited.com/solutions</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ubcunlimited.com/solutions/credit-card-processing</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://ubcunlimited.com/solutions/ach-echeck-processing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://ubcunlimited.com/solutions/check-guarantee</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ubcunlimited.com/solutions/pos-systems</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://ubcunlimited.com/solutions/ecommerce-payments</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://ubcunlimited.com/solutions/mobile-processing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://ubcunlimited.com/solutions/virtual-terminals</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/solutions/cash-discounting</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/solutions/high-risk-processing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/solutions/ecommerce-gateway</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/solutions/ach-echeck</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/solutions/mobile-processing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/solutions/virtual-terminal</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ubcunlimited.com/solutions/invoicing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ubcunlimited.com/solutions/gift-loyalty</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ubcunlimited.com/solutions/dual-pricing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-
   <!-- Industries -->
   <url><loc>https://ubcunlimited.com/industries</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ubcunlimited.com/industries/restaurants</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -34,9 +34,44 @@
   <url><loc>https://ubcunlimited.com/industries/salons-spas</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ubcunlimited.com/industries/property-management</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://ubcunlimited.com/industries/firearms</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-
+  <url><loc>https://ubcunlimited.com/industries/cbd-hemp</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/nutraceuticals</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/non-profit</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/hospitality</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/contractors</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/fitness-gyms</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/dental</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/legal-services</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/real-estate</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/adult-entertainment</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/telemarketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/credit-repair</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/subscription-continuity</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/vape-ecig</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/online-pharmacy</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ubcunlimited.com/industries/cryptocurrency</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Blog -->
+  <url><loc>https://ubcunlimited.com/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/how-to-lower-credit-card-processing-fees</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/best-pos-systems-utah-restaurants-2025</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/interchange-plus-vs-flat-rate-pricing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/what-is-cash-discounting</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/high-risk-merchant-account-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/chargeback-prevention-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/ach-vs-credit-card-processing</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/skytab-pos-review-utah-restaurants</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/payment-processing-for-medical-practices</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/ecommerce-payment-gateway-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/mobile-payment-solutions-utah</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/pci-compliance-guide-small-business</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/high-risk-industries-dropped-by-processors</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/merchant-services-utah-small-business</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/dual-pricing-vs-surcharging</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/payment-processing-for-contractors</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/gift-card-loyalty-program-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/growing-business-with-better-payments</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ubcunlimited.com/blog/rolling-reserves-high-risk-merchants</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <!-- Locations -->
-  <url><loc>https://ubcunlimited.com/locations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ubcunlimited.com/locations/salt-lake-city</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://ubcunlimited.com/locations/provo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://ubcunlimited.com/locations/ogden</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -56,10 +91,10 @@
   <url><loc>https://ubcunlimited.com/locations/riverton</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ubcunlimited.com/locations/herriman</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://ubcunlimited.com/locations/spanish-fork</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-
   <!-- Legal -->
   <url><loc>https://ubcunlimited.com/legal/privacy-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://ubcunlimited.com/legal/terms-of-service</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://ubcunlimited.com/legal/cookie-policy</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://ubcunlimited.com/legal/disclaimer</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://ubcunlimited.com/accessibility</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

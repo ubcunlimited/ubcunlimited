@@ -61,33 +61,85 @@ const recentPosts = [
 ];
 
 export default function Home() {
+  // The userAuth hooks provides authentication state
+  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
   return (
     <PageLayout>
       <SEO
         canonical="/"
         description="Utah merchant services provider. Credit card processing, cash discounting, SkyTab POS, ACH payments. Serving Salt Lake City, Provo & statewide. Free statement review."
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          "name": "UBC Unlimited",
-          "alternateName": "UBC Unlimited Merchant Services",
-          "description": "Utah merchant services provider offering credit card processing, POS systems, ACH payments, and payment gateway solutions for businesses across Utah.",
-          "url": "https://ubcunlimited.com",
-          "telephone": "+1-801-000-0000",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Salt Lake City",
-            "addressRegion": "UT",
-            "addressCountry": "US"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "@id": "https://ubcunlimited.com/#business",
+            "name": "UBC Unlimited",
+            "alternateName": "UBC Unlimited Merchant Services",
+            "description": "Utah merchant services provider offering credit card processing, POS systems, ACH payments, cash discounting, and payment gateway solutions for businesses across Utah.",
+            "url": "https://ubcunlimited.com",
+            "telephone": "+18014576500",
+            "email": "sales@ubcunlimited.com",
+            "logo": "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png",
+            "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Salt Lake City",
+              "addressRegion": "UT",
+              "postalCode": "84101",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 40.7608,
+              "longitude": -111.8910
+            },
+            "areaServed": {
+              "@type": "State",
+              "name": "Utah"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+              }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Merchant Services",
+              "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Credit Card Processing"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cash Discounting & Dual Pricing"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "POS Systems"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ACH & eCheck Processing"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "High-Risk Merchant Accounts"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "eCommerce Payment Gateway"}}
+              ]
+            },
+            "priceRange": "$$",
+            "foundingDate": "2004",
+            "founder": {
+              "@type": "Person",
+              "name": "Josh Cornia"
+            },
+            "sameAs": []
           },
-          "areaServed": {
-            "@type": "State",
-            "name": "Utah"
-          },
-          "serviceType": ["Credit Card Processing", "Merchant Services", "POS Systems", "ACH Processing", "Payment Gateway"],
-          "foundingDate": "2004",
-          "sameAs": []
-        }}
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://ubcunlimited.com/#website",
+            "url": "https://ubcunlimited.com",
+            "name": "UBC Unlimited",
+            "description": "Utah merchant services — credit card processing, POS systems, cash discounting, and payment solutions for Utah businesses.",
+            "publisher": {"@id": "https://ubcunlimited.com/#business"},
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {"@type": "EntryPoint", "urlTemplate": "https://ubcunlimited.com/blog?q={search_term_string}"},
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]}
       />
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#080808]">

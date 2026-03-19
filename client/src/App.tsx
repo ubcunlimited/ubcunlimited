@@ -54,8 +54,8 @@ function ScrollToTop() {
   }, [location]);
   return null;
 }
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <>
       <ScrollToTop />
