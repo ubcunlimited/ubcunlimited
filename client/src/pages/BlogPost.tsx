@@ -1043,6 +1043,16 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                     Book a Consultation
                   </Link>
                 </div>
+                <div className="bg-gradient-to-br from-[#c9a84c] to-[#a07830] rounded-xl p-5 text-[#080808]">
+                  <h3 className="font-bold mb-2 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Get My Custom Quote</h3>
+                  <p className="text-[#080808]/70 text-xs mb-4">Every business is different. Get a personalized quote tailored to your volume, industry, and processing needs — no obligation.</p>
+                  <Link
+                    href="/contact"
+                    className="block w-full text-center bg-[#080808] text-[#c9a84c] font-semibold text-sm py-2.5 px-4 rounded-lg hover:bg-[#1a1a1a] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#080808]"
+                  >
+                    Get My Custom Quote
+                  </Link>
+                </div>
                 <div className="bg-[#f8fafc] rounded-xl p-5 border border-gray-100">
                   <h3 className="font-bold text-[#080808] mb-2 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Cash Discount Programs</h3>
                   <p className="text-gray-500 text-xs mb-3">Eliminate your processing fees entirely with a legal cash discount program — available in all 50 states.</p>
