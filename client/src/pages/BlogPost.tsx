@@ -751,6 +751,101 @@ That said, the right POS system depends on your specific operation. [Book a free
     `,
   },
 
+  "high-risk-industries-dropped-by-stripe": {
+    title: "5 Industries That Get Dropped by Stripe (And How to Get a Stable Merchant Account)",
+    category: "High-Risk Processing",
+    date: "2026-03-19",
+    readTime: "9 min read",
+    content: `
+If your business operates in certain industries, you may have already experienced the gut-punch of a Stripe, Square, or PayPal account termination — often with little warning and funds held for weeks. You are not alone. Thousands of legitimate U.S. businesses are terminated by mainstream processors every year, not because they did anything wrong, but because their industry is classified as high-risk.
+
+Understanding why this happens — and what to do about it — can save your business from a payment processing crisis.
+
+## Why Mainstream Processors Terminate High-Risk Accounts
+
+Stripe, Square, and PayPal are aggregated payment facilitators. This means they pool thousands of merchants under a single master merchant account with their acquiring bank. This model allows them to onboard merchants instantly with no underwriting — but it also means they are extremely sensitive to chargeback rates, regulatory exposure, and reputational risk across their entire portfolio.
+
+When a high-risk industry category starts generating elevated chargebacks or regulatory scrutiny, the processor's acquiring bank pressures them to exit that category entirely. The result: mass account terminations, often with no individual review of whether your specific business was actually the problem.
+
+The five industries most commonly affected are:
+
+## 1. CBD and Hemp
+
+Hemp-derived CBD was federally legalized under the 2018 Farm Bill, but Stripe, Square, and PayPal all prohibit CBD sales in their terms of service. This is not a legal requirement — it is a policy decision driven by the regulatory complexity of distinguishing hemp from marijuana, the chargeback risk associated with online CBD sales, and the reputational risk of being associated with cannabis-adjacent products.
+
+CBD businesses that sign up with Stripe or Square often process successfully for weeks or months before their account is flagged during a routine compliance review and terminated without warning. Funds are typically held for 90–180 days during the review period.
+
+**The solution:** Work with a specialized high-risk processor that has underwriting frameworks specifically designed for Farm Bill-compliant CBD. You will need to provide a Certificate of Analysis (COA) from an accredited lab confirming less than 0.3% THC, your business license, and your website. Rates will be higher than standard processing — typically 3.5%–5% — but your account will be stable.
+
+## 2. Nutraceuticals and Dietary Supplements
+
+The supplement industry has historically high chargeback rates, largely driven by subscription and continuity billing models. When customers forget they signed up for a monthly supplement delivery or dispute a charge they do not recognize, the chargeback rate climbs — and processors respond by terminating the account.
+
+The FTC has also brought high-profile enforcement actions against supplement companies for deceptive marketing practices, which makes acquiring banks cautious about the entire category even for brands with clean compliance records.
+
+Stripe's terms of service explicitly prohibit "nutraceuticals, quasi-pharmaceutical products, or other products making health claims that have not been approved or verified by the applicable local and/or national regulatory body." This language is broad enough to capture most supplement brands.
+
+**The solution:** Specialized nutraceutical processors understand the category and can structure accounts with the chargeback management tools you need — pre-dunning notifications, clear billing descriptors, and dispute response workflows. For brands with multiple product lines, a multiple MID structure can isolate chargeback risk across accounts.
+
+## 3. Firearms and Shooting Sports
+
+Firearms retailers and FFL dealers occupy a legally complex space in payment processing. While selling firearms is entirely legal, many payment processors have adopted policies restricting or prohibiting firearms transactions due to political pressure, reputational concerns, and the compliance complexity of age verification and FFL transfer requirements.
+
+Square explicitly prohibits the sale of firearms and ammunition. PayPal and Venmo prohibit firearms transactions. Stripe allows some firearms-related transactions but has been known to terminate accounts without clear explanation.
+
+For FFL dealers, gun shops, and shooting ranges, account stability is a constant concern — a sudden termination can halt all card transactions at the worst possible time.
+
+**The solution:** Specialized firearms processors have established relationships with acquiring banks that understand and support the industry. These processors have a track record of stable, long-term accounts for FFL dealers and gun shops, with no surprise terminations. In-store POS systems, online gateways for accessories and ammo, and virtual terminals for FFL transfer fees are all available through the right processor.
+
+## 4. Adult Entertainment
+
+Adult entertainment is one of the most restricted categories in payment processing. Following Visa and Mastercard's 2020 policy changes — triggered by a New York Times investigation into non-consensual content on Pornhub — both card networks implemented strict content and compliance requirements for adult merchants, and most mainstream processors exited the category entirely.
+
+Stripe, Square, and PayPal all prohibit adult content transactions. Even businesses that are fully compliant with Visa and Mastercard's requirements cannot use these platforms.
+
+The remaining processors active in the adult space require age verification systems, content moderation processes, clear billing descriptors, and easy cancellation mechanisms. Chargeback rates in the adult subscription category are among the highest of any industry, driven primarily by friendly fraud (customers who dispute charges they authorized).
+
+**The solution:** Specialized adult entertainment processors have the compliance infrastructure to support adult content platforms, subscription sites, and adult retail businesses. Discreet billing descriptors, pre-billing notifications, and real-time chargeback monitoring are standard features of a well-structured adult merchant account.
+
+## 5. Travel Agencies and Booking Platforms
+
+Travel businesses are classified as high-risk primarily because of the advance-payment model: customers pay for services weeks or months before they are delivered. If a travel disruption occurs, the business closes, or the customer cancels, the processor is exposed to chargebacks on transactions that may have already been paid out.
+
+High average ticket sizes amplify this exposure — a $5,000 international trip chargeback is far more damaging to a processor's portfolio than a $50 retail transaction. These factors make acquiring banks cautious about the travel category even for established, reputable agencies.
+
+During the COVID-19 pandemic, travel businesses experienced catastrophic chargeback rates as customers sought refunds for cancelled trips. Many mainstream processors permanently restricted or exited the travel category as a result.
+
+**The solution:** Travel-specialist processors understand the advance-payment model and can structure accounts with rolling reserves, chargeback prevention tools, and multi-currency capabilities. Clear cancellation policies, proactive customer communication, and responsive dispute resolution are the most effective chargeback reduction strategies for travel businesses.
+
+## What to Do If Your Account Has Been Terminated
+
+If Stripe, Square, or PayPal has terminated your account, here are the immediate steps to take:
+
+- **Request your funds in writing.** Processors are required to release held funds after the review period (typically 90–180 days). Document all communications.
+- **Do not open another account with the same processor.** A second account opened after a termination will typically be terminated faster than the first.
+- **Apply for a high-risk merchant account immediately.** The longer your business goes without card acceptance, the more revenue you lose. Start the application process as soon as possible.
+- **Gather your documentation.** High-risk underwriting requires processing history (if available), bank statements, your business license, and category-specific documentation (COA for CBD, FFL license for firearms, etc.).
+- **Implement chargeback prevention measures.** Before your new account is approved, review your billing practices, customer communication, and refund policy to address the root cause of any chargeback issues.
+
+## Getting a Stable High-Risk Merchant Account
+
+High-risk merchant accounts are not a last resort — they are the right tool for businesses in high-risk categories. The key differences from standard accounts are:
+
+| Feature | Standard Account | High-Risk Account |
+|---|---|---|
+| Processing rates | 1.5%–2.5% | 3.0%–5.5% |
+| Monthly fee | $0–$25 | $25–$100 |
+| Rolling reserve | Rarely required | Common for new accounts |
+| Chargeback threshold | 1% (Visa) | 1%–2% depending on processor |
+| Approval time | Instant (aggregators) | 3–7 business days |
+| Account stability | Low for high-risk categories | High with right processor |
+
+The higher rates reflect the genuine risk that processors take on in these categories. But the stability, transparency, and dedicated support of a specialized high-risk account are worth the cost — especially compared to the revenue loss and operational disruption of a sudden account termination.
+
+[Contact UBC Unlimited](/contact) to discuss your specific situation. We work with specialized acquiring banks across all five of these categories and can typically get you approved within 3–7 business days.
+    `,
+  },
+
   "growing-business-with-better-payments": {
     title: "How Better Payment Processing Can Help Your Business Grow",
     category: "Business Growth",

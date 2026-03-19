@@ -149,6 +149,16 @@ export const blogPosts: BlogPostMeta[] = [
     readTime: "10 min read",
   },
   {
+    slug: "high-risk-industries-dropped-by-stripe",
+    title: "5 Industries That Get Dropped by Stripe (And How to Get a Stable Merchant Account)",
+    excerpt:
+      "Stripe, Square, and PayPal terminate accounts in CBD, nutraceuticals, firearms, adult entertainment, and travel without warning. Here's why it happens and how to get a stable high-risk merchant account.",
+    category: "High-Risk Processing",
+    date: "2026-03-19",
+    readTime: "9 min read",
+    featured: true,
+  },
+  {
     slug: "growing-business-with-better-payments",
     title: "How Better Payment Processing Can Help Your Business Grow",
     excerpt:
