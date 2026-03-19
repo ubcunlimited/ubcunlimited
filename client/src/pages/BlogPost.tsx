@@ -5,6 +5,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import SEO from "@/components/SEO";
 import { getRelatedPosts } from "@/lib/blogData";
+import ShareBar from "@/components/ShareBar";
 
 const posts: Record<string, { title: string; category: string; date: string; readTime: string; content: string }> = {
   "how-to-lower-credit-card-processing-fees": {
@@ -1024,6 +1025,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
               <div className="prose-content max-w-none">
                 {renderContent(post.content)}
               </div>
+              <ShareBar title={post.title} />
             </article>
 
             {/* Sidebar */}
