@@ -24,7 +24,7 @@ export default function Locations() {
         canonical="/locations"
       />
       {/* Hero */}
-      <section className="bg-[#0d1b2a] py-16">
+      <section className="bg-[#080808] py-16">
         <div className="container">
           <div className="max-w-2xl">
             <div className="stat-badge mb-4">Service Area</div>
@@ -51,7 +51,7 @@ export default function Locations() {
       </section>
 
       {/* Why Local Matters */}
-      <section className="py-12 bg-[#f4f7fa]">
+      <section className="py-12 bg-[#f7f3ec]">
         <div className="container">
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -61,7 +61,7 @@ export default function Locations() {
             ].map((item) => (
               <div key={item.title} className="bg-white rounded-2xl p-6 border border-gray-100 text-center">
                 <div className="text-3xl mb-3">{item.icon}</div>
-                <h3 className="font-bold text-[#0d1b2a] mb-2">{item.title}</h3>
+                <h3 className="font-bold text-[#080808] mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-sm">{item.desc}</p>
               </div>
             ))}
@@ -74,7 +74,7 @@ export default function Locations() {
         <div className="container">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-[#0d1b2a] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Cities We Serve
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm">
@@ -86,8 +86,8 @@ export default function Locations() {
             {countyOrder.filter(c => byCounty[c]).map((county) => (
               <div key={county}>
                 <div className="flex items-center gap-3 mb-5">
-                  <MapPin size={18} className="text-[#1e6fa8]" />
-                  <h3 className="text-xl font-bold text-[#0d1b2a]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+                  <MapPin size={18} className="text-[#c9a84c]" />
+                  <h3 className="text-xl font-bold text-[#080808]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                     {county} County
                   </h3>
                   <div className="flex-1 h-px bg-gray-200" />
@@ -97,18 +97,18 @@ export default function Locations() {
                     <Link
                       key={loc.slug}
                       href={`/locations/${loc.slug}`}
-                      className="group bg-[#f4f7fa] hover:bg-white border border-transparent hover:border-[#1e6fa8]/20 rounded-xl p-5 transition-all hover:shadow-md"
+                      className="group bg-[#f7f3ec] hover:bg-white border border-transparent hover:border-[#c9a84c]/20 rounded-xl p-5 transition-all hover:shadow-md"
                     >
                       <div className="flex items-start justify-between mb-2">
-                        <h4 className="font-bold text-[#0d1b2a] group-hover:text-[#1e6fa8] transition-colors">
+                        <h4 className="font-bold text-[#080808] group-hover:text-[#c9a84c] transition-colors">
                           {loc.city}, UT
                         </h4>
-                        <ArrowRight size={15} className="text-gray-300 group-hover:text-[#1e6fa8] transition-colors mt-0.5" />
+                        <ArrowRight size={15} className="text-gray-300 group-hover:text-[#c9a84c] transition-colors mt-0.5" />
                       </div>
                       <p className="text-gray-500 text-xs leading-relaxed mb-3 line-clamp-2">{loc.description}</p>
                       <div className="flex flex-wrap gap-1">
                         {loc.industries.slice(0, 3).map((ind) => (
-                          <span key={ind} className="text-[10px] bg-[#1e6fa8]/8 text-[#1e6fa8] px-2 py-0.5 rounded-full font-medium">{ind}</span>
+                          <span key={ind} className="text-[10px] bg-[#c9a84c]/8 text-[#c9a84c] px-2 py-0.5 rounded-full font-medium">{ind}</span>
                         ))}
                       </div>
                     </Link>
@@ -121,7 +121,7 @@ export default function Locations() {
       </section>
 
       {/* Additional Counties */}
-      <section className="py-12 bg-[#0d1b2a]">
+      <section className="py-12 bg-[#080808]">
         <div className="container">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-white mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
@@ -134,7 +134,7 @@ export default function Locations() {
           <div className="flex flex-wrap justify-center gap-3">
             {["Box Elder County", "Cache County", "Sanpete County", "Iron County", "Washington County", "Tooele County", "Juab County", "Millard County"].map((county) => (
               <div key={county} className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2">
-                <CheckCircle size={13} className="text-[#1e6fa8]" />
+                <CheckCircle size={13} className="text-[#c9a84c]" />
                 <span className="text-white/70 text-sm">{county}</span>
               </div>
             ))}

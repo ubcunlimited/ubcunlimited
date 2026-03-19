@@ -8,8 +8,8 @@ export default function NotFound() {
       <section className="py-24 bg-white">
         <div className="container">
           <div className="max-w-lg mx-auto text-center">
-            <div className="text-8xl font-extrabold text-[#169fa8]/20 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>404</div>
-            <h1 className="text-3xl font-extrabold text-[#040c1c] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <div className="text-8xl font-extrabold text-[#c9a84c]/20 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>404</div>
+            <h1 className="text-3xl font-extrabold text-[#080808] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
               Page Not Found
             </h1>
             <p className="text-gray-500 mb-8">

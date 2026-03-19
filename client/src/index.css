@@ -4,11 +4,12 @@
 @custom-variant dark (&:is(.dark *));
 
 /* ============================================================
-   UBC UNLIMITED — PREMIUM FINANCIAL EXPERT DESIGN SYSTEM
-   Inspired by Mint, Warby Parker, Rookwood: deep slate-navy hero sections,
-   steel-blue accents, warm copper/amber highlights, clean white surfaces.
-   Fonts: DM Serif Display (headings) + Inter (body)
-   Primary: Deep Slate #0d1b2a | Accent: Steel Blue #1e6fa8 | Copper: #c47c2b
+   UBC UNLIMITED — BLACK & GOLD PREMIUM DESIGN SYSTEM
+   Inspired by the UBC shield logo: deep charcoal/black backgrounds,
+   rich metallic gold accents, crisp white text.
+   Logo palette: #0a0a0a (near-black), #c9a84c (gold mid), #b8972a (gold dark),
+                 #e2c97e (gold light), #1a1a1a (charcoal card)
+   Fonts: Sora (headings) + Inter (body)
    ============================================================ */
 
 @theme inline {
@@ -48,50 +49,51 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  /* UBC Brand Colors — Premium Financial Expert Palette */
-  --color-navy: #0d1b2a;
-  --color-navy-800: #152234;
-  --color-navy-700: #1c2e42;
-  --color-teal: #1e6fa8;
-  --color-teal-light: #2d8fd4;
-  --color-gold: #c47c2b;
-  --color-gold-light: #d9973e;
+  /* UBC Brand Colors — Black & Gold Shield Palette */
+  --color-black-deep: #080808;
+  --color-black-card: #111111;
+  --color-black-surface: #1a1a1a;
+  --color-black-border: #2a2a2a;
+  --color-gold: #c9a84c;
+  --color-gold-dark: #b8972a;
+  --color-gold-light: #e2c97e;
+  --color-gold-pale: #f5e9c4;
 }
 
 :root {
   --radius: 0.5rem;
-  --background: oklch(0.12 0.025 240);
-  --foreground: oklch(0.15 0.02 240);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.02 240);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.02 240);
-  --primary: oklch(0.42 0.14 230);
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.96 0.004 220);
-  --secondary-foreground: oklch(0.18 0.02 230);
-  --muted: oklch(0.96 0.004 220);
-  --muted-foreground: oklch(0.48 0.012 230);
-  --accent: oklch(0.96 0.004 220);
-  --accent-foreground: oklch(0.13 0.02 230);
+  --background: oklch(0.07 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.11 0 0);
+  --card-foreground: oklch(0.97 0 0);
+  --popover: oklch(0.11 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+  --primary: oklch(0.72 0.12 75);
+  --primary-foreground: oklch(0.08 0 0);
+  --secondary: oklch(0.16 0 0);
+  --secondary-foreground: oklch(0.97 0 0);
+  --muted: oklch(0.16 0 0);
+  --muted-foreground: oklch(0.60 0 0);
+  --accent: oklch(0.72 0.12 75);
+  --accent-foreground: oklch(0.08 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.88 0.006 220);
-  --input: oklch(0.88 0.006 220);
-  --ring: oklch(0.42 0.14 230);
-  --chart-1: oklch(0.42 0.14 230);
-  --chart-2: oklch(0.55 0.16 230);
-  --chart-3: oklch(0.65 0.13 230);
-  --chart-4: oklch(0.62 0.16 55);
-  --chart-5: oklch(0.75 0.14 55);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.13 0.02 230);
-  --sidebar-primary: oklch(0.42 0.14 230);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.96 0.004 220);
-  --sidebar-accent-foreground: oklch(0.13 0.02 230);
-  --sidebar-border: oklch(0.88 0.006 220);
-  --sidebar-ring: oklch(0.42 0.14 230);
+  --border: oklch(0.22 0 0);
+  --input: oklch(0.22 0 0);
+  --ring: oklch(0.72 0.12 75);
+  --chart-1: oklch(0.72 0.12 75);
+  --chart-2: oklch(0.62 0.10 75);
+  --chart-3: oklch(0.52 0.08 75);
+  --chart-4: oklch(0.82 0.14 75);
+  --chart-5: oklch(0.90 0.10 75);
+  --sidebar: oklch(0.09 0 0);
+  --sidebar-foreground: oklch(0.97 0 0);
+  --sidebar-primary: oklch(0.72 0.12 75);
+  --sidebar-primary-foreground: oklch(0.08 0 0);
+  --sidebar-accent: oklch(0.16 0 0);
+  --sidebar-accent-foreground: oklch(0.97 0 0);
+  --sidebar-border: oklch(0.22 0 0);
+  --sidebar-ring: oklch(0.72 0.12 75);
 }
 
 @layer base {
@@ -99,16 +101,16 @@
     @apply border-border outline-ring/50;
   }
   html {
-    background-color: #0d1b2a;
+    background-color: #080808;
   }
   body {
     @apply bg-background text-foreground;
-    background-color: #0d1b2a;
+    background-color: #080808;
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
   #root {
-    background-color: #0d1b2a;
+    background-color: #080808;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Sora', 'Inter', system-ui, sans-serif;
@@ -142,20 +144,20 @@
     .container { padding-left: 2rem; padding-right: 2rem; max-width: 1280px; }
   }
 
-  /* UBC Brand Utilities — Premium Financial Expert Palette */
-  .bg-navy { background-color: #0d1b2a; }
-  .bg-navy-800 { background-color: #152234; }
-  .bg-navy-700 { background-color: #1c2e42; }
-  .text-teal { color: #1e6fa8; }
-  .text-gold { color: #c47c2b; }
-  .bg-teal { background-color: #1e6fa8; }
-  .bg-gold { background-color: #c47c2b; }
-  .border-teal { border-color: #1e6fa8; }
-  .border-gold { border-color: #c47c2b; }
+  /* UBC Brand Utilities — Black & Gold Shield Palette */
+  .bg-navy        { background-color: #080808; }
+  .bg-navy-800    { background-color: #111111; }
+  .bg-navy-700    { background-color: #1a1a1a; }
+  .text-teal      { color: #c9a84c; }
+  .text-gold      { color: #c9a84c; }
+  .bg-teal        { background-color: #c9a84c; }
+  .bg-gold        { background-color: #c9a84c; }
+  .border-teal    { border-color: #c9a84c; }
+  .border-gold    { border-color: #c9a84c; }
 
-  /* Gradient text */
+  /* Gradient text — gold shimmer */
   .gradient-text {
-    background: linear-gradient(135deg, #1e6fa8 0%, #2d8fd4 50%, #c47c2b 100%);
+    background: linear-gradient(135deg, #c9a84c 0%, #e2c97e 50%, #b8972a 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -163,48 +165,48 @@
 
   /* Glass card effect */
   .glass-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(201, 168, 76, 0.15);
   }
   .glass-card-light {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(30, 111, 168, 0.15);
+    border: 1px solid rgba(201, 168, 76, 0.2);
   }
 
-  /* Blue glow effect */
+  /* Gold glow effect */
   .teal-glow {
-    box-shadow: 0 0 20px rgba(30, 111, 168, 0.3), 0 0 60px rgba(30, 111, 168, 0.1);
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.25), 0 0 60px rgba(201, 168, 76, 0.08);
   }
   .teal-glow-hover:hover {
-    box-shadow: 0 0 20px rgba(30, 111, 168, 0.4), 0 0 60px rgba(30, 111, 168, 0.15);
-    border-color: rgba(30, 111, 168, 0.5) !important;
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.35), 0 0 60px rgba(201, 168, 76, 0.12);
+    border-color: rgba(201, 168, 76, 0.5) !important;
   }
 
   /* Section patterns */
   .section-dark {
-    background-color: #0d1b2a;
+    background-color: #080808;
     color: white;
   }
   .section-navy {
-    background-color: #152234;
+    background-color: #111111;
     color: white;
   }
   .section-light {
-    background-color: #f4f7fa;
-    color: #0d1b2a;
+    background-color: #f5f0e8;
+    color: #111111;
   }
   .section-white {
     background-color: #ffffff;
-    color: #0d1b2a;
+    color: #111111;
   }
 
-  /* CTA buttons */
+  /* CTA buttons — gold primary */
   .btn-teal {
-    background: linear-gradient(135deg, #1e6fa8, #2d8fd4);
-    color: white;
-    font-weight: 600;
+    background: linear-gradient(135deg, #b8972a, #c9a84c);
+    color: #080808;
+    font-weight: 700;
     padding: 0.75rem 1.75rem;
     border-radius: 0.375rem;
     transition: all 0.2s ease;
@@ -216,11 +218,12 @@
   }
   .btn-teal:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(30, 111, 168, 0.4);
+    box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
+    background: linear-gradient(135deg, #c9a84c, #e2c97e);
   }
   .btn-gold {
-    background: linear-gradient(135deg, #c47c2b, #d9973e);
-    color: white;
+    background: linear-gradient(135deg, #b8972a, #c9a84c);
+    color: #080808;
     font-weight: 700;
     padding: 0.75rem 1.75rem;
     border-radius: 0.375rem;
@@ -233,7 +236,8 @@
   }
   .btn-gold:hover {
     transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(196, 124, 43, 0.4);
+    box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
+    background: linear-gradient(135deg, #c9a84c, #e2c97e);
   }
   .btn-outline-white {
     background: transparent;
@@ -241,7 +245,7 @@
     font-weight: 600;
     padding: 0.75rem 1.75rem;
     border-radius: 0.375rem;
-    border: 1.5px solid rgba(255,255,255,0.4);
+    border: 1.5px solid rgba(255,255,255,0.35);
     transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
@@ -250,16 +254,16 @@
     letter-spacing: -0.01em;
   }
   .btn-outline-white:hover {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.6);
   }
   .btn-outline-teal {
     background: transparent;
-    color: #1e6fa8;
+    color: #c9a84c;
     font-weight: 600;
     padding: 0.75rem 1.75rem;
     border-radius: 0.375rem;
-    border: 1.5px solid #1e6fa8;
+    border: 1.5px solid #c9a84c;
     transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
@@ -268,22 +272,22 @@
     letter-spacing: -0.01em;
   }
   .btn-outline-teal:hover {
-    background: rgba(30, 111, 168, 0.08);
+    background: rgba(201, 168, 76, 0.1);
   }
 
   /* Divider */
   .teal-divider {
     width: 3rem;
     height: 3px;
-    background: linear-gradient(90deg, #1e6fa8, #c47c2b);
+    background: linear-gradient(90deg, #b8972a, #e2c97e);
     border-radius: 2px;
   }
 
   /* Stat badge */
   .stat-badge {
-    background: rgba(30, 111, 168, 0.1);
-    border: 1px solid rgba(30, 111, 168, 0.25);
-    color: #1e6fa8;
+    background: rgba(201, 168, 76, 0.1);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    color: #c9a84c;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.75rem;
@@ -292,9 +296,9 @@
     text-transform: uppercase;
   }
   .stat-badge-gold {
-    background: rgba(196, 124, 43, 0.1);
-    border: 1px solid rgba(196, 124, 43, 0.25);
-    color: #c47c2b;
+    background: rgba(201, 168, 76, 0.12);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    color: #c9a84c;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.75rem;
@@ -308,9 +312,9 @@
    ADA / WCAG 2.1 AA Accessibility Enhancements
    ============================================================ */
 
-/* Global focus-visible ring for keyboard navigation */
+/* Global focus-visible ring for keyboard navigation — gold to match brand */
 :focus-visible {
-  outline: 2px solid #169fa8;
+  outline: 2px solid #c9a84c;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -325,12 +329,12 @@
 .btn-gold:focus-visible,
 .btn-outline-white:focus-visible,
 .btn-outline-teal:focus-visible {
-  outline: 2px solid #169fa8;
+  outline: 2px solid #c9a84c;
   outline-offset: 3px;
 }
 
-/* Ensure sufficient color contrast for muted text on white backgrounds */
-/* Gray-500 (#6b7280) on white = 4.6:1 — passes AA */
+/* Ensure sufficient color contrast for muted text on dark backgrounds */
+/* #c9a84c on #080808 = ~7.5:1 — passes AAA */
 
 /* High contrast mode support */
 @media (forced-colors: active) {

@@ -53,12 +53,12 @@ export default function About() {
         canonical="/about"
       />
       {/* Hero */}
-      <section className="relative py-20 bg-[#0d1b2a] overflow-hidden">
+      <section className="relative py-20 bg-[#080808] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-10"
           style={{ backgroundImage: `url(${ABSTRACT_IMG})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d1b2a]/60 to-[#0d1b2a]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/60 to-[#080808]" />
         <div className="container relative z-10 text-center max-w-3xl mx-auto">
           <div className="stat-badge mx-auto mb-5 inline-block">About UBC Unlimited</div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
@@ -72,12 +72,12 @@ export default function About() {
       </section>
 
       {/* Stats */}
-      <div className="bg-[#152234] border-y border-white/5">
+      <div className="bg-[#111111] border-y border-white/5">
         <div className="container py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {TRUST_SIGNALS.map((s) => (
               <div key={s.label}>
-                <div className="text-3xl font-extrabold text-[#1e6fa8] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
+                <div className="text-3xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
                 <div className="text-white/50 text-sm">{s.label}</div>
               </div>
             ))}
@@ -91,7 +91,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="teal-divider mb-5" />
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 The UBC Unlimited Story
               </h2>
               <p className="text-gray-600 mb-5 leading-relaxed">
@@ -121,13 +121,13 @@ export default function About() {
                 alt="Modern credit card terminal with Salt Lake City skyline — UBC Unlimited merchant services"
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
-              <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-xl border border-[#1e6fa8]/15">
+              <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-xl border border-[#c9a84c]/15">
                 <div className="flex items-center gap-1 mb-1">
-                  {[1,2,3,4,5].map(i => <Star key={i} size={13} className="text-[#c47c2b] fill-[#c47c2b]" />)}
+                  {[1,2,3,4,5].map(i => <Star key={i} size={13} className="text-[#c9a84c] fill-[#c9a84c]" />)}
                 </div>
-                <div className="font-bold text-sm text-[#0d1b2a]">{SITE.founder}</div>
+                <div className="font-bold text-sm text-[#080808]">{SITE.founder}</div>
                 <div className="text-xs text-gray-500">Founder, UBC Unlimited</div>
-                <div className="text-xs text-[#1e6fa8] mt-1">{SITE.yearsInBusiness} Years in Merchant Services</div>
+                <div className="text-xs text-[#c9a84c] mt-1">{SITE.yearsInBusiness} Years in Merchant Services</div>
               </div>
             </div>
           </div>
@@ -135,11 +135,11 @@ export default function About() {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 bg-[#f4f7fa]">
+      <section className="py-16 bg-[#f7f3ec]">
         <div className="container">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-[#0d1b2a] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               What We Stand For
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm">
@@ -148,11 +148,11 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {values.map((v) => (
-              <div key={v.title} className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#1e6fa8]/20 hover:shadow-lg transition-all">
-                <div className="w-12 h-12 rounded-xl bg-[#1e6fa8]/10 flex items-center justify-center mb-4">
-                  <v.icon size={22} className="text-[#1e6fa8]" />
+              <div key={v.title} className="bg-white rounded-2xl p-6 border border-gray-100 hover:border-[#c9a84c]/20 hover:shadow-lg transition-all">
+                <div className="w-12 h-12 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center mb-4">
+                  <v.icon size={22} className="text-[#c9a84c]" />
                 </div>
-                <h3 className="font-bold text-[#0d1b2a] mb-2">{v.title}</h3>
+                <h3 className="font-bold text-[#080808] mb-2">{v.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
@@ -161,7 +161,7 @@ export default function About() {
       </section>
 
       {/* Why Choose UBC */}
-      <section className="py-16 bg-[#0d1b2a]">
+      <section className="py-16 bg-[#080808]">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -175,7 +175,7 @@ export default function About() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {differentiators.map((item) => (
                   <div key={item} className="flex items-start gap-2.5">
-                    <CheckCircle size={15} className="text-[#1e6fa8] mt-0.5 shrink-0" />
+                    <CheckCircle size={15} className="text-[#c9a84c] mt-0.5 shrink-0" />
                     <span className="text-white/70 text-sm">{item}</span>
                   </div>
                 ))}

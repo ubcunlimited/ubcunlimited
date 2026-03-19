@@ -49,10 +49,10 @@ export default function CookieConsent() {
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
           className="fixed bottom-0 left-0 right-0 z-[200] p-4 sm:p-6"
         >
-          <div className="max-w-4xl mx-auto bg-[#0d1b2a] border border-[#169fa8]/30 rounded-2xl shadow-2xl shadow-black/50 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="max-w-4xl mx-auto bg-[#080808] border border-[#c9a84c]/30 rounded-2xl shadow-2xl shadow-black/50 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4">
             {/* Icon */}
-            <div className="w-10 h-10 rounded-xl bg-[#169fa8]/10 flex items-center justify-center shrink-0" aria-hidden="true">
-              <Cookie size={20} className="text-[#169fa8]" />
+            <div className="w-10 h-10 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center shrink-0" aria-hidden="true">
+              <Cookie size={20} className="text-[#c9a84c]" />
             </div>
 
             {/* Text */}
@@ -61,14 +61,14 @@ export default function CookieConsent() {
                 <strong className="font-semibold">We use cookies</strong> to improve your experience, analyze site traffic, and support our marketing. By clicking "Accept All," you consent to our use of cookies.{" "}
                 <Link
                   href="/legal/cookie-policy"
-                  className="text-[#169fa8] underline hover:text-[#2d8fd4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded"
+                  className="text-[#c9a84c] underline hover:text-[#e2c97e] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded"
                 >
                   Cookie Policy
                 </Link>
                 {" "}·{" "}
                 <Link
                   href="/legal/privacy-policy"
-                  className="text-[#169fa8] underline hover:text-[#2d8fd4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded"
+                  className="text-[#c9a84c] underline hover:text-[#e2c97e] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded"
                 >
                   Privacy Policy
                 </Link>
@@ -79,21 +79,21 @@ export default function CookieConsent() {
             <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto">
               <button
                 onClick={handleDecline}
-                className="flex-1 sm:flex-none px-4 py-2 text-sm font-medium text-white/60 hover:text-white border border-white/20 hover:border-white/40 rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1b2a]"
+                className="flex-1 sm:flex-none px-4 py-2 text-sm font-medium text-white/60 hover:text-white border border-white/20 hover:border-white/40 rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
                 aria-label="Decline non-essential cookies"
               >
                 Decline
               </button>
               <button
                 onClick={handleAccept}
-                className="flex-1 sm:flex-none px-4 py-2 text-sm font-semibold text-white bg-[#169fa8] hover:bg-[#1e6fa8] rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1b2a]"
+                className="flex-1 sm:flex-none px-4 py-2 text-sm font-semibold text-white bg-[#c9a84c] hover:bg-[#c9a84c] rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
                 aria-label="Accept all cookies"
               >
                 Accept All
               </button>
               <button
                 onClick={handleDecline}
-                className="p-2 text-white/40 hover:text-white transition-colors rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0d1b2a]"
+                className="p-2 text-white/40 hover:text-white transition-colors rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
                 aria-label="Close cookie banner"
               >
                 <X size={16} aria-hidden="true" />

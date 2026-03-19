@@ -458,7 +458,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
     return (
       <PageLayout>
         <div className="container py-20 text-center">
-          <h1 className="text-2xl font-bold text-[#040c1c]">Solution not found</h1>
+          <h1 className="text-2xl font-bold text-[#080808]">Solution not found</h1>
           <Link href="/solutions" className="btn-teal mt-4 inline-flex">Back to Solutions</Link>
         </div>
       </PageLayout>
@@ -502,15 +502,15 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
         }}
       />
       {/* Hero */}
-      <section className="relative bg-[#040c1c] py-20 overflow-hidden">
+      <section className="relative bg-[#080808] py-20 overflow-hidden">
         {hasHeroImage && (
           <>
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${heroImg})`, opacity: 0.18 }}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#040c1c] via-[#040c1c]/80 to-[#040c1c]/30" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#040c1c] via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/80 to-[#080808]/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
           </>
         )}
         <div className="container relative z-10">
@@ -533,7 +533,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 <div className="flex flex-wrap gap-3 mb-8">
                   {data.heroPoints.map((p) => (
                     <div key={p} className="flex items-center gap-1.5 text-sm text-white/70">
-                      <CheckCircle size={14} className="text-[#169fa8]" />
+                      <CheckCircle size={14} className="text-[#c9a84c]" />
                       {p}
                     </div>
                   ))}
@@ -570,7 +570,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 <div className="flex flex-wrap gap-3 mb-8">
                   {data.heroPoints.map((p) => (
                     <div key={p} className="flex items-center gap-1.5 text-sm text-white/70">
-                      <CheckCircle size={14} className="text-[#169fa8]" />
+                      <CheckCircle size={14} className="text-[#c9a84c]" />
                       {p}
                     </div>
                   ))}
@@ -590,12 +590,12 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
         <div className="container">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-[#040c1c]" style={{ fontFamily: 'Sora, sans-serif' }}>Features & Capabilities</h2>
+            <h2 className="text-3xl font-bold text-[#080808]" style={{ fontFamily: 'Sora, sans-serif' }}>Features & Capabilities</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {data.features.map((f) => (
-              <div key={f.title} className="p-5 rounded-xl border border-gray-100 hover:border-[#169fa8]/30 hover:shadow-md transition-all">
-                <h3 className="font-bold text-[#040c1c] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>{f.title}</h3>
+              <div key={f.title} className="p-5 rounded-xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-md transition-all">
+                <h3 className="font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>{f.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
               </div>
             ))}
@@ -607,11 +607,11 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
       <section className="py-14 bg-[#f8fafc]">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-[#040c1c] mb-6" style={{ fontFamily: 'Sora, sans-serif' }}>Why Choose UBC Unlimited</h2>
+            <h2 className="text-2xl font-bold text-[#080808] mb-6" style={{ fontFamily: 'Sora, sans-serif' }}>Why Choose UBC Unlimited</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {data.benefits.map((b) => (
-                <div key={b} className="flex items-center gap-2.5 bg-white rounded-lg p-3.5 border border-gray-100 text-sm text-[#040c1c]">
-                  <CheckCircle size={16} className="text-[#169fa8] shrink-0" />
+                <div key={b} className="flex items-center gap-2.5 bg-white rounded-lg p-3.5 border border-gray-100 text-sm text-[#080808]">
+                  <CheckCircle size={16} className="text-[#c9a84c] shrink-0" />
                   {b}
                 </div>
               ))}
@@ -626,49 +626,49 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
           <div className="container">
             <div className="text-center mb-10">
               <div className="teal-divider mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-[#040c1c] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Gateway Partners We Work With</h2>
+              <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Gateway Partners We Work With</h2>
               <p className="text-gray-500 max-w-2xl mx-auto">We work with a variety of payment gateways and collaborate with you to determine the best option based on your platform, business type, and transaction needs.</p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               {/* Authorize.net */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
                   <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/authorize-net_4b70b746.png" alt="Authorize.net" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">Authorize.net</span>
               </div>
               {/* NMI */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
                   <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/nmi_cc167af1.png" alt="NMI" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">NMI</span>
               </div>
               {/* Quantum Gateway */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
                   <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/quantum-gateway_fd6105e8.jpg" alt="Quantum Gateway" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">Quantum Gateway</span>
               </div>
               {/* Fluidpay */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
                   <img src="https://www.fluidpay.com/images/general/logo.svg" alt="Fluidpay" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">Fluidpay</span>
               </div>
               {/* iPosPays */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#169fa8]/40 group-hover:shadow-md transition-all">
+                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
                   <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/ipospays-logo_6aaa431d.png" alt="iPosPays" className="max-h-10 max-w-full object-contain" />
                 </div>
                 <span className="text-xs text-gray-400 font-medium">iPosPays</span>
               </div>
               {/* And More */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-dashed border-[#169fa8]/40 shadow-sm flex items-center justify-center p-4 group-hover:bg-[#169fa8]/5 transition-all">
-                  <span className="text-[#169fa8] font-semibold text-sm text-center leading-tight">+ Many More<br /><span className="text-gray-400 font-normal text-xs">Ask us about your platform</span></span>
+                <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-dashed border-[#c9a84c]/40 shadow-sm flex items-center justify-center p-4 group-hover:bg-[#c9a84c]/5 transition-all">
+                  <span className="text-[#c9a84c] font-semibold text-sm text-center leading-tight">+ Many More<br /><span className="text-gray-400 font-normal text-xs">Ask us about your platform</span></span>
                 </div>
                 <span className="text-xs text-gray-400 font-medium">And More</span>
               </div>
@@ -687,11 +687,11 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
       {relatedItems.length > 0 && (
         <section className="py-12 bg-white">
           <div className="container">
-            <h2 className="text-xl font-bold text-[#040c1c] mb-5" style={{ fontFamily: 'Sora, sans-serif' }}>Related Solutions</h2>
+            <h2 className="text-xl font-bold text-[#080808] mb-5" style={{ fontFamily: 'Sora, sans-serif' }}>Related Solutions</h2>
             <div className="flex flex-wrap gap-3">
               {relatedItems.map((item) => (
-                <Link key={item.href} href={item.href} className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-200 hover:border-[#169fa8]/40 hover:bg-[#169fa8]/5 transition-all text-sm font-medium text-[#040c1c]">
-                  <span>{item.icon}</span> {item.label} <ChevronRight size={13} className="text-[#169fa8]" />
+                <Link key={item.href} href={item.href} className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-200 hover:border-[#c9a84c]/40 hover:bg-[#c9a84c]/5 transition-all text-sm font-medium text-[#080808]">
+                  <span>{item.icon}</span> {item.label} <ChevronRight size={13} className="text-[#c9a84c]" />
                 </Link>
               ))}
             </div>

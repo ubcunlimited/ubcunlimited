@@ -78,7 +78,7 @@ const faqCategories = [
               When implemented correctly with proper signage and receipt language, most businesses report minimal customer pushback. UBC Unlimited provides all required compliance materials, staff training, and compatible hardware or equipment programming as part of our setup.
             </p>
             <p>
-              <a href="/solutions/dual-pricing" className="text-[#1e6fa8] font-semibold hover:underline">Learn more about our Dual Pricing &amp; Cash Discount program →</a>
+              <a href="/solutions/dual-pricing" className="text-[#c9a84c] font-semibold hover:underline">Learn more about our Dual Pricing &amp; Cash Discount program →</a>
             </p>
           </div>
         ),
@@ -205,7 +205,7 @@ const faqCategories = [
           <div className="overflow-x-auto -mx-2">
             <table className="w-full text-xs border-collapse min-w-[480px]">
               <thead>
-                <tr className="bg-[#0d1b2a] text-white">
+                <tr className="bg-[#080808] text-white">
                   <th className="text-left px-3 py-2 font-semibold">Feature</th>
                   <th className="px-3 py-2 font-bold text-[#22c55e] text-center">SkyTab<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
                   <th className="px-3 py-2 font-semibold text-center">Toast</th>
@@ -233,7 +233,7 @@ const faqCategories = [
                 ].map(([feature, skytab, toast, square, clover], i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                     <td className="px-3 py-2 text-gray-700 font-medium">{feature}</td>
-                    <td className="px-3 py-2 text-center font-semibold text-[#169fa8]">{skytab}</td>
+                    <td className="px-3 py-2 text-center font-semibold text-[#c9a84c]">{skytab}</td>
                     <td className="px-3 py-2 text-center text-gray-600">{toast}</td>
                     <td className="px-3 py-2 text-center text-gray-600">{square}</td>
                     <td className="px-3 py-2 text-center text-gray-600">{clover}</td>
@@ -269,7 +269,7 @@ const faqCategories = [
               href="https://launch.shift4shop.com/partners?oid=SS149-149JC"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#169fa8] hover:bg-[#127d85] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-[#c9a84c] hover:bg-[#127d85] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
             >
               Get Your Free Shift4Shop Store →
             </a>
@@ -284,7 +284,7 @@ const faqCategories = [
             <div className="overflow-x-auto mb-4">
               <table className="w-full text-xs border-collapse">
                 <thead>
-                  <tr className="bg-[#0d1b2a] text-white">
+                  <tr className="bg-[#080808] text-white">
                     <th className="px-3 py-2 text-left font-semibold">Feature</th>
                     <th className="px-3 py-2 text-center font-semibold text-[#4ade80]">Shift4Shop</th>
                     <th className="px-3 py-2 text-center font-semibold">Shopify</th>
@@ -311,7 +311,7 @@ const faqCategories = [
                     ["24/7 Support", "✅ All plans", "✅ All plans", "✅ All plans", "⚠️ Business hrs", "⚠️ Business hrs"],
                   ].map(([feature, s4s, shopify, bc, wix, sqsp], idx) => (
                     <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                      <td className="px-3 py-2 font-medium text-[#0d1b2a] border-b border-gray-100">{feature}</td>
+                      <td className="px-3 py-2 font-medium text-[#080808] border-b border-gray-100">{feature}</td>
                       <td className="px-3 py-2 text-center border-b border-gray-100 bg-[#f0fdf4] font-semibold text-[#166534]">{s4s}</td>
                       <td className="px-3 py-2 text-center border-b border-gray-100 text-gray-600">{shopify}</td>
                       <td className="px-3 py-2 text-center border-b border-gray-100 text-gray-600">{bc}</td>
@@ -329,7 +329,7 @@ const faqCategories = [
               href="https://launch.shift4shop.com/partners?oid=SS149-149JC"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#169fa8] hover:bg-[#127d85] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-[#c9a84c] hover:bg-[#127d85] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
             >
               Start Your Free Shift4Shop Store →
             </a>
@@ -347,7 +347,7 @@ const faqCategories = [
                 href="https://launch.shift4shop.com/partners?oid=SS149-149JC"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#169fa8] hover:bg-[#127d85] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+                className="inline-flex items-center gap-2 bg-[#c9a84c] hover:bg-[#127d85] text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
               >
                 Start Your Free Shift4Shop Store →
               </a>
@@ -355,7 +355,7 @@ const faqCategories = [
                 href="https://launch.shift4shop.com/partners?oid=SS149-149JC"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-[#169fa8] text-[#169fa8] hover:bg-[#169fa8]/10 text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
+                className="inline-flex items-center gap-2 border border-[#c9a84c] text-[#c9a84c] hover:bg-[#c9a84c]/10 text-xs font-semibold px-4 py-2 rounded-lg transition-colors"
               >
                 Learn More About Shift4Shop →
               </a>
@@ -557,16 +557,16 @@ const faqCategories = [
 function FAQItem({ question, answer }: { question: string; answer: string | React.ReactNode }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className={`border rounded-xl overflow-hidden transition-all duration-200 ${open ? 'border-[#169fa8]/60 shadow-sm' : 'border-gray-200 hover:border-[#169fa8]/40'}`}>
+    <div className={`border rounded-xl overflow-hidden transition-all duration-200 ${open ? 'border-[#c9a84c]/60 shadow-sm' : 'border-gray-200 hover:border-[#c9a84c]/40'}`}>
       <button
         className="w-full text-left flex items-center justify-between gap-4 px-6 py-4 bg-white hover:bg-[#f8fafc] transition-colors"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
       >
-        <span className="font-semibold text-[#0d1b2a] text-base leading-snug pr-4" style={{ fontFamily: "Sora, sans-serif" }}>
+        <span className="font-semibold text-[#080808] text-base leading-snug pr-4" style={{ fontFamily: "Sora, sans-serif" }}>
           {question}
         </span>
-        <span className={`flex-shrink-0 text-[#169fa8] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
+        <span className={`flex-shrink-0 text-[#c9a84c] transition-transform duration-200 ${open ? 'rotate-180' : ''}`}>
           <ChevronDown size={20} />
         </span>
       </button>
@@ -614,7 +614,7 @@ export default function FAQPage() {
         }}
       />
       {/* Hero */}
-      <section className="bg-[#0d1b2a] pt-20 pb-16">
+      <section className="bg-[#080808] pt-20 pb-16">
         <div className="container max-w-4xl mx-auto text-center">
           <span className="inline-block text-xs font-bold tracking-widest text-[#c9a84c] uppercase mb-4">
             UBC Unlimited — FAQ's
@@ -633,7 +633,7 @@ export default function FAQPage() {
               placeholder="Search all questions..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-11 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#169fa8] transition-colors text-sm"
+              className="w-full pl-11 pr-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-[#c9a84c] transition-colors text-sm"
             />
           </div>
         </div>
@@ -647,7 +647,7 @@ export default function FAQPage() {
               onClick={() => setActiveCategory("all")}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
                 activeCategory === "all"
-                  ? "bg-[#0d1b2a] text-white"
+                  ? "bg-[#080808] text-white"
                   : "text-gray-600 hover:bg-gray-100"
               }`}
             >
@@ -659,7 +659,7 @@ export default function FAQPage() {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
                   activeCategory === cat.id
-                    ? "bg-[#0d1b2a] text-white"
+                    ? "bg-[#080808] text-white"
                     : "text-gray-600 hover:bg-gray-100"
                 }`}
               >
@@ -689,7 +689,7 @@ export default function FAQPage() {
                 <div key={cat.id} id={cat.id}>
                   <div className="flex items-center gap-3 mb-6">
                     <span className="text-2xl">{cat.icon}</span>
-                    <h2 className="text-2xl font-bold text-[#0d1b2a]" style={{ fontFamily: "Sora, sans-serif" }}>
+                    <h2 className="text-2xl font-bold text-[#080808]" style={{ fontFamily: "Sora, sans-serif" }}>
                       {cat.label}
                     </h2>
                     <span className="ml-auto text-xs text-gray-400 font-medium bg-gray-100 px-2 py-1 rounded-full">
@@ -709,7 +709,7 @@ export default function FAQPage() {
       </section>
 
       {/* Still Have Questions CTA */}
-      <section className="py-16 bg-[#0d1b2a]">
+      <section className="py-16 bg-[#080808]">
         <div className="container max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: "Sora, sans-serif" }}>
             Still Have Questions?

@@ -904,7 +904,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
     return (
       <PageLayout>
         <SEO title="Article Not Found" noIndex />
-        <section className="bg-[#040c1c] py-14">
+        <section className="bg-[#080808] py-14">
           <div className="container">
             <h1 className="text-3xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>Article Not Found</h1>
             <p className="text-white/60 mb-6">This article does not exist or may have been moved.</p>
@@ -927,7 +927,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
 
       if (line.startsWith("## ")) {
         elements.push(
-          <h2 key={i} className="text-2xl font-bold text-[#040c1c] mt-10 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 key={i} className="text-2xl font-bold text-[#080808] mt-10 mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
             {line.slice(3)}
           </h2>
         );
@@ -945,9 +945,9 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           <div key={`table-${i}`} className="overflow-x-auto my-6">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-[#0d1b2a] text-white">
+                <tr className="bg-[#080808] text-white">
                   {headers.map((h, hi) => (
-                    <th key={hi} className="px-4 py-3 text-left font-semibold border border-[#1e3a5f]">{h}</th>
+                    <th key={hi} className="px-4 py-3 text-left font-semibold border border-[#2a2a2a]">{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -977,7 +977,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         // skip blank lines
       } else {
         const withLinks = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, href) => {
-          return `<a href="${href}" class="text-[#169fa8] font-medium hover:underline">${text}</a>`;
+          return `<a href="${href}" class="text-[#c9a84c] font-medium hover:underline">${text}</a>`;
         });
         const withBold = withLinks.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
         elements.push(
@@ -996,7 +996,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         description={post.content.trim().split("\n")[0].slice(0, 160)}
         canonical={`/blog/${slug}`}
       />
-      <section className="bg-[#040c1c] py-14">
+      <section className="bg-[#080808] py-14">
         <div className="container">
           <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -1006,8 +1006,8 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             <span className="text-white/70 truncate max-w-xs">{post.title}</span>
           </div>
           <div className="flex items-center gap-3 mb-4">
-            <Tag size={13} className="text-[#169fa8]" aria-hidden="true" />
-            <span className="text-[#169fa8] text-sm font-medium">{post.category}</span>
+            <Tag size={13} className="text-[#c9a84c]" aria-hidden="true" />
+            <span className="text-[#c9a84c] text-sm font-medium">{post.category}</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-4 max-w-3xl leading-tight" style={{ fontFamily: 'Sora, sans-serif' }}>
             {post.title}
@@ -1024,7 +1024,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main content */}
             <article className="lg:col-span-2">
-              <Link href="/blog" className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#169fa8] transition-colors mb-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded">
+              <Link href="/blog" className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#c9a84c] transition-colors mb-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded">
                 <ArrowLeft size={14} aria-hidden="true" /> Back to Blog
               </Link>
               <div className="prose-content max-w-none">
@@ -1035,24 +1035,24 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             {/* Sidebar */}
             <aside aria-label="Related actions">
               <div className="space-y-5 sticky top-28">
-                <div className="bg-gradient-to-br from-[#040c1c] to-[#0f2040] rounded-2xl p-6 text-white">
+                <div className="bg-gradient-to-br from-[#080808] to-[#0f2040] rounded-2xl p-6 text-white">
                   <h3 className="font-bold mb-2 text-lg" style={{ fontFamily: 'Sora, sans-serif' }}>Free Statement Review</h3>
                   <p className="text-white/60 text-sm mb-4">See exactly how much you can save on processing fees. No obligation, no pressure.</p>
-                  <Link href="/statement-review" className="btn-teal text-sm py-2.5 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8]">
+                  <Link href="/statement-review" className="btn-teal text-sm py-2.5 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
                     Get My Free Review
                   </Link>
                 </div>
                 <div className="bg-[#f8fafc] rounded-xl p-5 border border-gray-100">
-                  <h3 className="font-bold text-[#040c1c] mb-2 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Talk to a Local Expert</h3>
+                  <h3 className="font-bold text-[#080808] mb-2 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Talk to a Local Expert</h3>
                   <p className="text-gray-500 text-xs mb-3">Our Utah team is ready to answer your questions and provide personalized recommendations.</p>
-                  <Link href="/consultation" className="btn-outline-teal text-sm py-2 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8]">
+                  <Link href="/consultation" className="btn-outline-teal text-sm py-2 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
                     Book a Consultation
                   </Link>
                 </div>
                 <div className="bg-[#f8fafc] rounded-xl p-5 border border-gray-100">
-                  <h3 className="font-bold text-[#040c1c] mb-2 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Cash Discount Programs</h3>
+                  <h3 className="font-bold text-[#080808] mb-2 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Cash Discount Programs</h3>
                   <p className="text-gray-500 text-xs mb-3">Eliminate your processing fees entirely with a legal cash discount program — available in all 50 states.</p>
-                  <Link href="/solutions/dual-pricing" className="btn-outline-teal text-sm py-2 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8]">
+                  <Link href="/solutions/dual-pricing" className="btn-outline-teal text-sm py-2 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
                     Learn More
                   </Link>
                 </div>
@@ -1067,14 +1067,14 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         const related = getRelatedPosts(slug, post.category, 3);
         if (related.length === 0) return null;
         return (
-          <section className="py-14 bg-[#f4f7fa] border-t border-gray-100" aria-labelledby="related-articles-heading">
+          <section className="py-14 bg-[#f7f3ec] border-t border-gray-100" aria-labelledby="related-articles-heading">
             <div className="container">
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <p className="text-[#169fa8] text-xs font-semibold uppercase tracking-widest mb-1">Keep Reading</p>
+                  <p className="text-[#c9a84c] text-xs font-semibold uppercase tracking-widest mb-1">Keep Reading</p>
                   <h2
                     id="related-articles-heading"
-                    className="text-2xl font-extrabold text-[#040c1c]"
+                    className="text-2xl font-extrabold text-[#080808]"
                     style={{ fontFamily: 'Sora, sans-serif' }}
                   >
                     Related Articles
@@ -1082,7 +1082,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                 </div>
                 <Link
                   href="/blog"
-                  className="hidden sm:flex items-center gap-1.5 text-sm text-[#169fa8] font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded"
+                  className="hidden sm:flex items-center gap-1.5 text-sm text-[#c9a84c] font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded"
                 >
                   View all articles <ArrowRight size={14} aria-hidden="true" />
                 </Link>
@@ -1092,17 +1092,17 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                   <Link
                     key={rp.slug}
                     href={`/blog/${rp.slug}`}
-                    className="group block bg-white rounded-xl border border-gray-100 hover:border-[#169fa8]/40 hover:shadow-lg transition-all overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8]"
+                    className="group block bg-white rounded-xl border border-gray-100 hover:border-[#c9a84c]/40 hover:shadow-lg transition-all overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
                   >
                     <div className="p-5">
                       <div className="flex items-center gap-2 mb-3">
-                        <Tag size={11} className="text-[#169fa8]" aria-hidden="true" />
-                        <span className="text-xs font-medium text-[#169fa8] bg-[#169fa8]/10 px-2 py-0.5 rounded-full">
+                        <Tag size={11} className="text-[#c9a84c]" aria-hidden="true" />
+                        <span className="text-xs font-medium text-[#c9a84c] bg-[#c9a84c]/10 px-2 py-0.5 rounded-full">
                           {rp.category}
                         </span>
                       </div>
                       <h3
-                        className="font-bold text-[#040c1c] mb-2 group-hover:text-[#169fa8] transition-colors leading-snug text-[15px]"
+                        className="font-bold text-[#080808] mb-2 group-hover:text-[#c9a84c] transition-colors leading-snug text-[15px]"
                         style={{ fontFamily: 'Sora, sans-serif' }}
                       >
                         {rp.title}
@@ -1115,7 +1115,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                         </div>
                         <ArrowRight
                           size={13}
-                          className="text-[#169fa8] opacity-0 group-hover:opacity-100 transition-opacity"
+                          className="text-[#c9a84c] opacity-0 group-hover:opacity-100 transition-opacity"
                           aria-hidden="true"
                         />
                       </div>
@@ -1126,7 +1126,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
               <div className="mt-6 text-center sm:hidden">
                 <Link
                   href="/blog"
-                  className="text-sm text-[#169fa8] font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded"
+                  className="text-sm text-[#c9a84c] font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded"
                 >
                   View all articles →
                 </Link>

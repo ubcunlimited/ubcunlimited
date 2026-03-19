@@ -42,7 +42,7 @@ const solutionDetails: Record<string, { desc: string; features: string[] }> = {
 export default function Solutions() {
   return (
     <PageLayout>
-      <section className="bg-[#040c1c] py-20">
+      <section className="bg-[#080808] py-20">
         <div className="container">
           <div className="max-w-2xl">
             <div className="stat-badge mb-5">Payment Solutions</div>
@@ -65,10 +65,10 @@ export default function Solutions() {
                 <Link
                   key={sol.href}
                   href={sol.href}
-                  className="group block p-6 rounded-2xl border border-gray-100 hover:border-[#169fa8]/30 hover:shadow-xl transition-all bg-white"
+                  className="group block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-xl transition-all bg-white"
                 >
                   <div className="text-3xl mb-4">{sol.icon}</div>
-                  <h2 className="text-lg font-bold text-[#040c1c] mb-2 group-hover:text-[#169fa8] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>
+                  <h2 className="text-lg font-bold text-[#080808] mb-2 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>
                     {sol.label}
                   </h2>
                   {detail && (
@@ -77,14 +77,14 @@ export default function Solutions() {
                       <ul className="space-y-1.5 mb-5">
                         {detail.features.map((f) => (
                           <li key={f} className="flex items-center gap-2 text-xs text-gray-500">
-                            <div className="w-1.5 h-1.5 rounded-full bg-[#169fa8]" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#c9a84c]" />
                             {f}
                           </li>
                         ))}
                       </ul>
                     </>
                   )}
-                  <div className="flex items-center gap-1 text-sm font-semibold text-[#169fa8]">
+                  <div className="flex items-center gap-1 text-sm font-semibold text-[#c9a84c]">
                     Learn more <ChevronRight size={14} />
                   </div>
                 </Link>

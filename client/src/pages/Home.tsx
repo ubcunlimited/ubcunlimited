@@ -90,13 +90,13 @@ export default function Home() {
         }}
       />
       {/* Hero */}
-      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#0d1b2a]">
+      <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#080808]">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ backgroundImage: `url(${HERO_IMG})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/85 to-[#0d1b2a]/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d1b2a] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/85 to-[#080808]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
 
         <div className="container relative z-10 py-20">
           <div className="max-w-2xl">
@@ -128,7 +128,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 {["Competitive pricing", "Fast onboarding", "Local expertise", "Tailored setups"].map((item) => (
                   <div key={item} className="flex items-center gap-1.5 text-sm text-white/60">
-                    <CheckCircle size={14} className="text-[#1e6fa8]" />
+                    <CheckCircle size={14} className="text-[#c9a84c]" />
                     {item}
                   </div>
                 ))}
@@ -145,7 +145,7 @@ export default function Home() {
           >
             {TRUST_SIGNALS.map((s) => (
               <div key={s.label} className="glass-card rounded-xl p-4 text-center">
-                <div className="text-2xl font-extrabold text-[#1e6fa8] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
+                <div className="text-2xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
                 <div className="text-white/60 text-xs">{s.label}</div>
               </div>
             ))}
@@ -153,10 +153,10 @@ export default function Home() {
         </div>
 
         {/* Bottom phone strip */}
-        <div className="absolute bottom-0 left-0 right-0 bg-[#1e6fa8]/10 border-t border-[#1e6fa8]/20 backdrop-blur-sm">
+        <div className="absolute bottom-0 left-0 right-0 bg-[#c9a84c]/10 border-t border-[#c9a84c]/20 backdrop-blur-sm">
           <div className="container py-3 flex flex-col sm:flex-row items-center justify-between gap-2">
             <span className="text-white/60 text-sm">Questions? Talk to a local Utah expert today.</span>
-            <a href={SITE.phoneHref} className="flex items-center gap-2 text-[#c47c2b] font-bold text-sm hover:text-[#d9973e] transition-colors">
+            <a href={SITE.phoneHref} className="flex items-center gap-2 text-[#c9a84c] font-bold text-sm hover:text-[#e2c97e] transition-colors">
               <Phone size={14} /> {SITE.phone}
             </a>
           </div>
@@ -167,12 +167,12 @@ export default function Home() {
       <TrustBadges dark={false} />
 
       {/* Stats bar */}
-      <div className="bg-[#0d1b2a] py-10 border-t border-white/5">
+      <div className="bg-[#080808] py-10 border-t border-white/5">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {TRUST_SIGNALS.map((s) => (
               <div key={s.label}>
-                <div className="text-3xl font-extrabold text-[#1e6fa8] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
+                <div className="text-3xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
                 <div className="text-white/50 text-sm">{s.label}</div>
               </div>
             ))}
@@ -185,7 +185,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Payment Solutions for Every Business
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm">
@@ -197,14 +197,14 @@ export default function Home() {
               <Link
                 key={sol.href}
                 href={sol.href}
-                className="group p-5 rounded-xl border border-gray-100 hover:border-[#1e6fa8]/30 hover:shadow-lg transition-all bg-white"
+                className="group p-5 rounded-xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-lg transition-all bg-white"
               >
                 <div className="text-2xl mb-3">{sol.icon}</div>
-                <div className="font-semibold text-sm text-[#0d1b2a] group-hover:text-[#1e6fa8] transition-colors mb-1">
+                <div className="font-semibold text-sm text-[#080808] group-hover:text-[#c9a84c] transition-colors mb-1">
                   {sol.label}
                 </div>
                 <div className="text-xs text-gray-400 leading-snug mb-2">{sol.desc}</div>
-                <div className="flex items-center gap-1 text-xs text-[#1e6fa8] opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="flex items-center gap-1 text-xs text-[#c9a84c] opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn more <ChevronRight size={12} />
                 </div>
               </Link>
@@ -219,12 +219,12 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-[#f4f7fa]">
+      <section className="py-16 bg-[#f7f3ec]">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="teal-divider mb-5" />
-              <h2 className="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 Better Service. Industry Specific. Local Support.
               </h2>
               <p className="text-gray-500 mb-8 text-sm leading-relaxed">
@@ -233,11 +233,11 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {whyUs.map((item) => (
                   <div key={item.title} className="flex gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#1e6fa8]/10 flex items-center justify-center shrink-0">
-                      <item.icon size={20} className="text-[#1e6fa8]" />
+                    <div className="w-10 h-10 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center shrink-0">
+                      <item.icon size={20} className="text-[#c9a84c]" />
                     </div>
                     <div>
-                      <div className="font-semibold text-sm text-[#0d1b2a] mb-1">{item.title}</div>
+                      <div className="font-semibold text-sm text-[#080808] mb-1">{item.title}</div>
                       <div className="text-xs text-gray-500 leading-relaxed">{item.desc}</div>
                     </div>
                   </div>
@@ -255,13 +255,13 @@ export default function Home() {
                 alt="Josh Cornia consulting with a Utah business owner"
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
-              <div className="absolute -bottom-4 -left-4 glass-card-light rounded-xl p-4 shadow-xl border border-[#1e6fa8]/20">
+              <div className="absolute -bottom-4 -left-4 glass-card-light rounded-xl p-4 shadow-xl border border-[#c9a84c]/20">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#1e6fa8] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-[#c9a84c] flex items-center justify-center">
                     <Star size={16} className="text-white fill-white" />
                   </div>
                   <div>
-                    <div className="font-bold text-sm text-[#0d1b2a]">5-Star Rated</div>
+                    <div className="font-bold text-sm text-[#080808]">5-Star Rated</div>
                     <div className="text-xs text-gray-500">1000+ of Utah businesses served</div>
                   </div>
                 </div>
@@ -272,7 +272,7 @@ export default function Home() {
       </section>
 
       {/* Industries */}
-      <section className="py-16 bg-[#0d1b2a]">
+      <section className="py-16 bg-[#080808]">
         <div className="container">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
@@ -311,7 +311,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0d1b2a] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               How It Works
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm">
@@ -322,13 +322,13 @@ export default function Home() {
             {howItWorks.map((step, i) => (
               <div key={step.step} className="relative">
                 {i < howItWorks.length - 1 && (
-                  <div className="hidden lg:block absolute top-6 left-full w-full h-px bg-gradient-to-r from-[#1e6fa8]/30 to-transparent z-0" />
+                  <div className="hidden lg:block absolute top-6 left-full w-full h-px bg-gradient-to-r from-[#c9a84c]/30 to-transparent z-0" />
                 )}
                 <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-[#1e6fa8]/10 border-2 border-[#1e6fa8]/20 flex items-center justify-center mb-4">
-                    <span className="text-[#1e6fa8] font-bold text-sm">{step.step}</span>
+                  <div className="w-12 h-12 rounded-full bg-[#c9a84c]/10 border-2 border-[#c9a84c]/20 flex items-center justify-center mb-4">
+                    <span className="text-[#c9a84c] font-bold text-sm">{step.step}</span>
                   </div>
-                  <h3 className="font-bold text-[#0d1b2a] mb-2 text-sm">{step.title}</h3>
+                  <h3 className="font-bold text-[#080808] mb-2 text-sm">{step.title}</h3>
                   <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
                 </div>
               </div>
@@ -343,17 +343,17 @@ export default function Home() {
       </section>
 
       {/* Blog Preview */}
-      <section className="py-16 bg-[#f4f7fa]">
+      <section className="py-16 bg-[#f7f3ec]">
         <div className="container">
           <div className="flex items-end justify-between mb-8">
             <div>
               <div className="teal-divider mb-4" />
-              <h2 className="text-2xl md:text-3xl font-bold text-[#0d1b2a]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              <h2 className="text-2xl md:text-3xl font-bold text-[#080808]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 News &amp; Updates
               </h2>
               <p className="text-gray-500 text-sm mt-1">Expert insights for Utah businesses</p>
             </div>
-            <Link href="/blog" className="hidden sm:flex items-center gap-1 text-[#1e6fa8] text-sm font-medium hover:underline">
+            <Link href="/blog" className="hidden sm:flex items-center gap-1 text-[#c9a84c] text-sm font-medium hover:underline">
               View all posts <ChevronRight size={14} />
             </Link>
           </div>
@@ -362,10 +362,10 @@ export default function Home() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group bg-white rounded-xl border border-gray-100 hover:border-[#1e6fa8]/30 hover:shadow-lg transition-all p-5"
+                className="group bg-white rounded-xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-lg transition-all p-5"
               >
-                <div className="text-xs text-[#1e6fa8] font-medium mb-2">{post.category}</div>
-                <h3 className="font-bold text-[#0d1b2a] text-sm leading-snug mb-3 group-hover:text-[#1e6fa8] transition-colors">
+                <div className="text-xs text-[#c9a84c] font-medium mb-2">{post.category}</div>
+                <h3 className="font-bold text-[#080808] text-sm leading-snug mb-3 group-hover:text-[#c9a84c] transition-colors">
                   {post.title}
                 </h3>
                 <div className="text-xs text-gray-400">{post.date}</div>
@@ -385,7 +385,7 @@ export default function Home() {
         <div className="container max-w-3xl">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-[#0d1b2a] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               FAQ's
             </h2>
           </div>
@@ -397,17 +397,17 @@ export default function Home() {
       <CTABanner />
 
       {/* Sticky Mobile CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#0d1b2a] border-t border-[#1e6fa8]/20 shadow-2xl">
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#080808] border-t border-[#c9a84c]/20 shadow-2xl">
         <div className="flex">
           <a
             href={SITE.phoneHref}
-            className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white bg-[#152234] hover:bg-[#1c2e42] transition-colors border-r border-white/10"
+            className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white bg-[#111111] hover:bg-[#1a1a1a] transition-colors border-r border-white/10"
           >
             <Phone size={15} /> Call Now
           </a>
           <Link
             href="/consultation"
-            className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white bg-[#1e6fa8] hover:bg-[#2d8fd4] transition-colors"
+            className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white bg-[#c9a84c] hover:bg-[#e2c97e] transition-colors"
           >
             Book a Consultation <ArrowRight size={15} />
           </Link>

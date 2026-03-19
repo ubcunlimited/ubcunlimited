@@ -26,7 +26,7 @@ export default function LocationDetail() {
     return (
       <PageLayout>
         <div className="container py-20 text-center">
-          <h1 className="text-3xl font-bold text-[#0d1b2a] mb-4">Location Not Found</h1>
+          <h1 className="text-3xl font-bold text-[#080808] mb-4">Location Not Found</h1>
           <p className="text-gray-500 mb-6">We couldn't find that location page.</p>
           <Link href="/locations" className="btn-teal py-3 px-6">View All Locations</Link>
         </div>
@@ -82,12 +82,12 @@ export default function LocationDetail() {
         }}
       />
       {/* Hero */}
-      <section className="relative py-20 bg-[#0d1b2a] overflow-hidden">
+      <section className="relative py-20 bg-[#080808] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-15"
           style={{ backgroundImage: `url(${HERO_IMG})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] via-[#0d1b2a]/90 to-[#0d1b2a]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/90 to-[#080808]/60" />
         <div className="container relative z-10">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
@@ -96,8 +96,8 @@ export default function LocationDetail() {
               <span className="text-white/60 text-sm">{location.city}, UT</span>
             </div>
             <div className="flex items-center gap-2 mb-4">
-              <MapPin size={16} className="text-[#1e6fa8]" />
-              <span className="text-[#1e6fa8] text-sm font-medium">{location.county} County, Utah</span>
+              <MapPin size={16} className="text-[#c9a84c]" />
+              <span className="text-[#c9a84c] text-sm font-medium">{location.county} County, Utah</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Merchant Services in<br />
@@ -119,7 +119,7 @@ export default function LocationDetail() {
       </section>
 
       {/* Trust bar */}
-      <div className="bg-[#152234] border-y border-white/5 py-5">
+      <div className="bg-[#111111] border-y border-white/5 py-5">
         <div className="container">
           <div className="flex flex-wrap justify-center gap-6 text-center">
             {[
@@ -129,7 +129,7 @@ export default function LocationDetail() {
               { v: "Local", l: "Utah-Based Support" },
             ].map((s) => (
               <div key={s.l} className="px-4">
-                <div className="text-2xl font-extrabold text-[#1e6fa8]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.v}</div>
+                <div className="text-2xl font-extrabold text-[#c9a84c]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.v}</div>
                 <div className="text-white/45 text-xs mt-0.5">{s.l}</div>
               </div>
             ))}
@@ -142,7 +142,7 @@ export default function LocationDetail() {
         <div className="container">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-[#0d1b2a] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Payment Solutions for {location.city} Businesses
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm">
@@ -151,9 +151,9 @@ export default function LocationDetail() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((s) => (
-              <div key={s.title} className="bg-[#f4f7fa] rounded-xl p-5 border border-gray-100 hover:border-[#1e6fa8]/20 hover:shadow-md transition-all">
+              <div key={s.title} className="bg-[#f7f3ec] rounded-xl p-5 border border-gray-100 hover:border-[#c9a84c]/20 hover:shadow-md transition-all">
                 <div className="text-2xl mb-3">{s.icon}</div>
-                <h3 className="font-bold text-[#0d1b2a] mb-1.5">{s.title}</h3>
+                <h3 className="font-bold text-[#080808] mb-1.5">{s.title}</h3>
                 <p className="text-gray-500 text-sm">{s.desc}</p>
               </div>
             ))}
@@ -162,16 +162,16 @@ export default function LocationDetail() {
       </section>
 
       {/* Industries */}
-      <section className="py-12 bg-[#f4f7fa]">
+      <section className="py-12 bg-[#f7f3ec]">
         <div className="container">
-          <h2 className="text-2xl font-bold text-[#0d1b2a] mb-6 text-center" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+          <h2 className="text-2xl font-bold text-[#080808] mb-6 text-center" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
             Industries We Serve in {location.city}
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
             {location.industries.map((ind) => (
-              <div key={ind} className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 hover:border-[#1e6fa8]/30 transition-colors">
-                <CheckCircle size={14} className="text-[#1e6fa8]" />
-                <span className="text-[#0d1b2a] text-sm font-medium">{ind}</span>
+              <div key={ind} className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 hover:border-[#c9a84c]/30 transition-colors">
+                <CheckCircle size={14} className="text-[#c9a84c]" />
+                <span className="text-[#080808] text-sm font-medium">{ind}</span>
               </div>
             ))}
           </div>
@@ -179,7 +179,7 @@ export default function LocationDetail() {
       </section>
 
       {/* Why Local */}
-      <section className="py-16 bg-[#0d1b2a]">
+      <section className="py-16 bg-[#080808]">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -200,7 +200,7 @@ export default function LocationDetail() {
                   "Free statement review — see exactly where you can save",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">
-                    <CheckCircle size={15} className="text-[#1e6fa8] mt-0.5 shrink-0" />
+                    <CheckCircle size={15} className="text-[#c9a84c] mt-0.5 shrink-0" />
                     <span className="text-white/70 text-sm">{item.replace("{location.city}", location.city)}</span>
                   </div>
                 ))}
@@ -208,7 +208,7 @@ export default function LocationDetail() {
             </div>
             <div className="glass-card rounded-2xl p-8">
               <div className="flex items-center gap-1 mb-4">
-                {[1,2,3,4,5].map(i => <Star key={i} size={16} className="text-[#c47c2b] fill-[#c47c2b]" />)}
+                {[1,2,3,4,5].map(i => <Star key={i} size={16} className="text-[#c9a84c] fill-[#c9a84c]" />)}
               </div>
               <blockquote className="text-white/80 text-sm leading-relaxed mb-4 italic">
                 "UBC Unlimited helped us switch processors and saved our restaurant over $400 a month. The setup was fast and {SITE.founder} was available every step of the way. I recommend them to every business owner I know."
@@ -232,9 +232,9 @@ export default function LocationDetail() {
 
       {/* Nearby Cities */}
       {nearbyLocations.length > 0 && (
-        <section className="py-12 bg-[#f4f7fa]">
+        <section className="py-12 bg-[#f7f3ec]">
           <div className="container">
-            <h2 className="text-xl font-bold text-[#0d1b2a] mb-5" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-xl font-bold text-[#080808] mb-5" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Also Serving Nearby {location.county} County Cities
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -242,10 +242,10 @@ export default function LocationDetail() {
                 <Link
                   key={loc.slug}
                   href={`/locations/${loc.slug}`}
-                  className="flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-[#1e6fa8]/30 hover:shadow-sm transition-all group"
+                  className="flex items-center gap-2 bg-white border border-gray-200 rounded-xl px-4 py-3 hover:border-[#c9a84c]/30 hover:shadow-sm transition-all group"
                 >
-                  <MapPin size={14} className="text-[#1e6fa8] shrink-0" />
-                  <span className="text-[#0d1b2a] text-sm font-medium group-hover:text-[#1e6fa8] transition-colors">{loc.city}</span>
+                  <MapPin size={14} className="text-[#c9a84c] shrink-0" />
+                  <span className="text-[#080808] text-sm font-medium group-hover:text-[#c9a84c] transition-colors">{loc.city}</span>
                 </Link>
               ))}
             </div>

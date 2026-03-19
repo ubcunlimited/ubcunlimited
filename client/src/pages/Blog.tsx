@@ -68,7 +68,7 @@ export default function Blog() {
       />
 
       {/* Hero */}
-      <section className="bg-[#0d1b2a] py-16">
+      <section className="bg-[#080808] py-16">
         <div className="container">
           <div className="max-w-2xl">
             <div className="stat-badge mb-4">News &amp; Updates</div>
@@ -80,7 +80,7 @@ export default function Blog() {
             </h1>
             <p className="text-white/60 text-lg">
               Practical guides, industry news, and expert tips from{" "}
-              <span className="text-[#1e6fa8] font-medium">UBC Unlimited</span> — Utah's local merchant services experts.
+              <span className="text-[#c9a84c] font-medium">UBC Unlimited</span> — Utah's local merchant services experts.
             </p>
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function Blog() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search articles..."
-                className="w-full pl-9 pr-9 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#1e6fa8] focus:ring-2 focus:ring-[#1e6fa8]/20 transition-all"
+                className="w-full pl-9 pr-9 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 transition-all"
               />
               {searchQuery && (
                 <button
@@ -119,9 +119,9 @@ export default function Blog() {
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
                   aria-pressed={activeCategory === cat}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e6fa8] ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] ${
                     activeCategory === cat
-                      ? "bg-[#1e6fa8] text-white shadow-sm"
+                      ? "bg-[#c9a84c] text-white shadow-sm"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                   }`}
                 >
@@ -135,14 +135,14 @@ export default function Blog() {
           {featured && activeCategory === "All" && !searchQuery.trim() && (
             <Link
               href={`/blog/${featured.slug}`}
-              className="group block mb-10 rounded-2xl border border-gray-100 hover:border-[#1e6fa8]/30 hover:shadow-xl transition-all overflow-hidden bg-gradient-to-br from-[#0d1b2a] to-[#152234] p-8 md:p-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e6fa8]"
+              className="group block mb-10 rounded-2xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-xl transition-all overflow-hidden bg-gradient-to-br from-[#080808] to-[#111111] p-8 md:p-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
             >
               <div className="flex items-center gap-2 mb-4">
-                <span className="bg-[#c47c2b] text-white text-xs font-bold px-2.5 py-1 rounded-full">Featured</span>
-                <span className="text-[#1e6fa8] text-xs font-medium">{featured.category}</span>
+                <span className="bg-[#c9a84c] text-white text-xs font-bold px-2.5 py-1 rounded-full">Featured</span>
+                <span className="text-[#c9a84c] text-xs font-medium">{featured.category}</span>
               </div>
               <h2
-                className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-[#1e6fa8] transition-colors"
+                className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-[#c9a84c] transition-colors"
                 style={{ fontFamily: "DM Serif Display, Georgia, serif" }}
               >
                 {featured.title}
@@ -151,7 +151,7 @@ export default function Blog() {
               <div className="flex items-center gap-4 text-white/40 text-xs">
                 <span className="flex items-center gap-1"><Calendar size={12} aria-hidden="true" />{featured.date}</span>
                 <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" />{featured.readTime}</span>
-                <span className="flex items-center gap-1 text-[#1e6fa8] font-medium ml-auto">
+                <span className="flex items-center gap-1 text-[#c9a84c] font-medium ml-auto">
                   Read article <ArrowRight size={13} aria-hidden="true" />
                 </span>
               </div>
@@ -173,17 +173,17 @@ export default function Blog() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block rounded-xl border border-gray-100 hover:border-[#1e6fa8]/30 hover:shadow-lg transition-all overflow-hidden bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e6fa8]"
+                className="group block rounded-xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-lg transition-all overflow-hidden bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
               >
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-3">
-                    <Tag size={11} className="text-[#1e6fa8]" aria-hidden="true" />
+                    <Tag size={11} className="text-[#c9a84c]" aria-hidden="true" />
                     <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${categoryColors[post.category] || "bg-gray-100 text-gray-600"}`}>
                       {post.category}
                     </span>
                   </div>
                   <h3
-                    className="font-bold text-[#0d1b2a] mb-2 group-hover:text-[#1e6fa8] transition-colors leading-snug"
+                    className="font-bold text-[#080808] mb-2 group-hover:text-[#c9a84c] transition-colors leading-snug"
                     style={{ fontFamily: "DM Serif Display, Georgia, serif" }}
                   >
                     {post.title}
@@ -194,7 +194,7 @@ export default function Blog() {
                       <span className="flex items-center gap-1"><Calendar size={11} aria-hidden="true" />{post.date}</span>
                       <span className="flex items-center gap-1"><Clock size={11} aria-hidden="true" />{post.readTime}</span>
                     </div>
-                    <ArrowRight size={13} className="text-[#1e6fa8] opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                    <ArrowRight size={13} className="text-[#c9a84c] opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                   </div>
                 </div>
               </Link>
@@ -204,7 +204,7 @@ export default function Blog() {
           {filtered.length === 0 && (
             <div className="text-center py-16">
               <div className="text-4xl mb-4" aria-hidden="true">🔍</div>
-              <h3 className="text-lg font-bold text-[#0d1b2a] mb-2">No articles found</h3>
+              <h3 className="text-lg font-bold text-[#080808] mb-2">No articles found</h3>
               <p className="text-gray-400 text-sm mb-5">
                 {searchQuery
                   ? `No results for "${searchQuery}". Try a different search term.`
@@ -212,7 +212,7 @@ export default function Blog() {
               </p>
               <button
                 onClick={() => { setSearchQuery(""); setActiveCategory("All"); }}
-                className="btn-outline-teal text-sm py-2 px-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e6fa8]"
+                className="btn-outline-teal text-sm py-2 px-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
               >
                 Clear Filters
               </button>

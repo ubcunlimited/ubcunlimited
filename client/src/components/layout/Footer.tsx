@@ -6,9 +6,9 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer role="contentinfo" className="bg-[#040c1c] border-t border-white/10">
+    <footer role="contentinfo" className="bg-[#080808] border-t border-white/10">
       {/* CTA Strip */}
-      <div className="bg-gradient-to-r from-[#0f2040] via-[#0a1628] to-[#0f2040] border-b border-white/10">
+      <div className="bg-gradient-to-r from-[#111111] via-[#1a1a1a] to-[#111111] border-b border-[#c9a84c]/15">
         <div className="container py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-white text-xl font-bold mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>
@@ -17,10 +17,10 @@ export default function Footer() {
             <p className="text-white/60 text-sm">Get a free statement review and see exactly how much you can save.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-            <Link href="/statement-review" className="btn-outline-white text-sm py-2.5 px-5 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1628]">
+            <Link href="/statement-review" className="btn-outline-white text-sm py-2.5 px-5 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]">
               Free Statement Review
             </Link>
-            <Link href="/consultation" className="btn-teal text-sm py-2.5 px-5 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a1628]">
+            <Link href="/consultation" className="btn-teal text-sm py-2.5 px-5 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]">
               Book a Consultation
             </Link>
           </div>
@@ -32,40 +32,39 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded" aria-label="UBC Unlimited — Home">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#169fa8] to-[#0f2040] flex items-center justify-center" aria-hidden="true">
-                <CreditCard size={18} className="text-white" />
-              </div>
-              <div>
-                <div className="text-white font-bold text-base" style={{ fontFamily: 'Sora, sans-serif' }}>UBC Unlimited</div>
-                <div className="text-[#169fa8] text-[10px] font-medium tracking-widest uppercase">Merchant Services</div>
-              </div>
+            <Link href="/" className="flex items-center mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded" aria-label="UBC Unlimited — Home">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent_15974d2f.png"
+                alt="UBC Unlimited"
+                className="h-10 w-auto object-contain"
+                style={{ maxWidth: '160px' }}
+              />
             </Link>
             <p className="text-white/50 text-sm leading-relaxed mb-5">
               Utah's trusted local merchant services provider. Helping businesses accept payments smarter since day one.
             </p>
             <address className="not-italic space-y-2.5">
-              <a href={SITE.phoneHref} className="flex items-center gap-2 text-sm text-white/60 hover:text-[#169fa8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded" aria-label={`Call UBC Unlimited at ${SITE.phone}`}>
-                <Phone size={14} className="text-[#169fa8]" aria-hidden="true" />
+              <a href={SITE.phoneHref} className="flex items-center gap-2 text-sm text-white/60 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded" aria-label={`Call UBC Unlimited at ${SITE.phone}`}>
+                <Phone size={14} className="text-[#c9a84c]" aria-hidden="true" />
                 {SITE.phone}
               </a>
-              <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 text-sm text-white/60 hover:text-[#169fa8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded" aria-label={`Email UBC Unlimited at ${SITE.email}`}>
-                <Mail size={14} className="text-[#169fa8]" aria-hidden="true" />
+              <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 text-sm text-white/60 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded" aria-label={`Email UBC Unlimited at ${SITE.email}`}>
+                <Mail size={14} className="text-[#c9a84c]" aria-hidden="true" />
                 {SITE.email}
               </a>
               <div className="flex items-center gap-2 text-sm text-white/60">
-                <MapPin size={14} className="text-[#169fa8]" aria-hidden="true" />
+                <MapPin size={14} className="text-[#c9a84c]" aria-hidden="true" />
                 <span>Salt Lake City, Utah</span>
               </div>
             </address>
             <div className="flex gap-3 mt-5" aria-label="Social media links">
-              <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#169fa8]/20 flex items-center justify-center text-white/50 hover:text-[#169fa8] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8]" aria-label="UBC Unlimited on Facebook">
+              <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c9a84c]/20 flex items-center justify-center text-white/50 hover:text-[#c9a84c] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]" aria-label="UBC Unlimited on Facebook">
                 <Facebook size={15} aria-hidden="true" />
               </a>
-              <a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#169fa8]/20 flex items-center justify-center text-white/50 hover:text-[#169fa8] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8]" aria-label="UBC Unlimited on LinkedIn">
+              <a href={SITE.social.linkedin} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c9a84c]/20 flex items-center justify-center text-white/50 hover:text-[#c9a84c] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]" aria-label="UBC Unlimited on LinkedIn">
                 <Linkedin size={15} aria-hidden="true" />
               </a>
-              <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#169fa8]/20 flex items-center justify-center text-white/50 hover:text-[#169fa8] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8]" aria-label="UBC Unlimited on Instagram">
+              <a href={SITE.social.instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c9a84c]/20 flex items-center justify-center text-white/50 hover:text-[#c9a84c] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]" aria-label="UBC Unlimited on Instagram">
                 <Instagram size={15} aria-hidden="true" />
               </a>
             </div>
@@ -77,7 +76,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {NAV_SOLUTIONS.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-white/50 hover:text-[#169fa8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded">
+                  <Link href={item.href} className="text-sm text-white/50 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded">
                     {item.label}
                   </Link>
                 </li>
@@ -91,7 +90,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {NAV_INDUSTRIES.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-white/50 hover:text-[#169fa8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded">
+                  <Link href={item.href} className="text-sm text-white/50 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded">
                     {item.label}
                   </Link>
                 </li>
@@ -113,7 +112,7 @@ export default function Footer() {
                 { label: "Free Statement Review", href: "/statement-review" },
               ].map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-white/50 hover:text-[#169fa8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded">
+                  <Link href={item.href} className="text-sm text-white/50 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded">
                     {item.label}
                   </Link>
                 </li>
@@ -128,7 +127,7 @@ export default function Footer() {
                 { label: "Disclaimer", href: "/legal/disclaimer" },
               ].map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-white/50 hover:text-[#169fa8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded">
+                  <Link href={item.href} className="text-sm text-white/50 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded">
                     {item.label}
                   </Link>
                 </li>

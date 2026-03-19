@@ -4,8 +4,8 @@ import { Calendar, CheckCircle, ArrowRight, Phone } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import { SITE } from "@/lib/config";
 
-const inputClass = "w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#1e6fa8] focus:ring-2 focus:ring-[#1e6fa8]/20 transition-all text-[#0d1b2a] placeholder-gray-400 bg-white";
-const labelClass = "block text-sm font-medium text-[#0d1b2a] mb-1.5";
+const inputClass = "w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 transition-all text-[#080808] placeholder-gray-400 bg-white";
+const labelClass = "block text-sm font-medium text-[#080808] mb-1.5";
 
 const benefits = [
   "No-obligation, 100% free consultation",
@@ -28,7 +28,7 @@ export default function Consultation() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="bg-[#0d1b2a] py-16">
+      <section className="bg-[#080808] py-16">
         <div className="container">
           <div className="max-w-xl">
             <div className="stat-badge mb-4">Book a Consultation</div>
@@ -47,27 +47,27 @@ export default function Consultation() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left: Benefits */}
             <div>
-              <h2 className="text-2xl font-bold text-[#0d1b2a] mb-5" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>What to Expect</h2>
+              <h2 className="text-2xl font-bold text-[#080808] mb-5" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>What to Expect</h2>
               <div className="space-y-3 mb-8">
                 {benefits.map((b) => (
                   <div key={b} className="flex items-start gap-3">
-                    <CheckCircle size={17} className="text-[#1e6fa8] mt-0.5 shrink-0" />
+                    <CheckCircle size={17} className="text-[#c9a84c] mt-0.5 shrink-0" />
                     <span className="text-gray-600 text-sm">{b}</span>
                   </div>
                 ))}
               </div>
-              <div className="bg-[#f4f7fa] rounded-xl p-5 border border-gray-100 mb-5">
+              <div className="bg-[#f7f3ec] rounded-xl p-5 border border-gray-100 mb-5">
                 <div className="flex items-center gap-3 mb-2">
-                  <Calendar size={17} className="text-[#1e6fa8]" />
-                  <span className="font-semibold text-[#0d1b2a] text-sm">Available Mon–Fri, 8am–6pm MT</span>
+                  <Calendar size={17} className="text-[#c9a84c]" />
+                  <span className="font-semibold text-[#080808] text-sm">Available Mon–Fri, 8am–6pm MT</span>
                 </div>
                 <p className="text-gray-500 text-sm">
                   Prefer to call directly? Reach {SITE.founder} at{" "}
-                  <a href={SITE.phoneHref} className="text-[#1e6fa8] font-medium hover:underline">{SITE.phone}</a>
+                  <a href={SITE.phoneHref} className="text-[#c9a84c] font-medium hover:underline">{SITE.phone}</a>
                 </p>
               </div>
-              <div className="bg-[#1e6fa8]/8 rounded-xl p-5 border border-[#1e6fa8]/15">
-                <p className="text-[#0d1b2a] font-semibold text-sm mb-1">Have a current statement?</p>
+              <div className="bg-[#c9a84c]/8 rounded-xl p-5 border border-[#c9a84c]/15">
+                <p className="text-[#080808] font-semibold text-sm mb-1">Have a current statement?</p>
                 <p className="text-gray-500 text-sm mb-3">
                   Upload it on our Statement Review page and we'll do a full cost analysis before your consultation.
                 </p>
@@ -80,9 +80,9 @@ export default function Consultation() {
             {/* Right: Form */}
             <div>
               {submitted ? (
-                <div className="bg-[#1e6fa8]/10 border border-[#1e6fa8]/20 rounded-2xl p-10 text-center">
+                <div className="bg-[#c9a84c]/10 border border-[#c9a84c]/20 rounded-2xl p-10 text-center">
                   <div className="text-4xl mb-4">✅</div>
-                  <h3 className="text-xl font-bold text-[#0d1b2a] mb-2" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Received!</h3>
+                  <h3 className="text-xl font-bold text-[#080808] mb-2" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Received!</h3>
                   <p className="text-gray-500 mb-4">We'll reach out within 1 business hour to confirm your consultation time.</p>
                   <a href={SITE.phoneHref} className="btn-teal text-sm py-2.5 px-6">
                     <Phone size={14} /> Or Call Us Now
@@ -90,7 +90,7 @@ export default function Consultation() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} data-ghl-form="consultation" className="space-y-4">
-                  <h2 className="text-xl font-bold text-[#0d1b2a] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Your Free Consultation</h2>
+                  <h2 className="text-xl font-bold text-[#080808] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Your Free Consultation</h2>
                   <p className="text-gray-500 text-sm mb-4">Fill out the form below and we'll be in touch within 1 business hour.</p>
 
                   {/* Business Name */}
@@ -178,7 +178,7 @@ export default function Consultation() {
                   </button>
                   <p className="text-xs text-gray-400 text-center">
                     By submitting, you agree to our{" "}
-                    <Link href="/legal/privacy-policy" className="text-[#1e6fa8] hover:underline">Privacy Policy</Link>.
+                    <Link href="/legal/privacy-policy" className="text-[#c9a84c] hover:underline">Privacy Policy</Link>.
                     No spam, ever.
                   </p>
                 </form>

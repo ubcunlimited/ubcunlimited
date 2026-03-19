@@ -298,12 +298,12 @@ function QtyControl({ value, onChange, min = 0, max = 20 }: { value: number; onC
     <div className="flex items-center gap-2">
       <button
         onClick={() => onChange(Math.max(min, value - 1))}
-        className="w-8 h-8 rounded-lg border border-gray-200 text-[#0d1b2a] font-bold hover:border-[#169fa8] hover:text-[#169fa8] transition-colors flex items-center justify-center text-lg leading-none"
+        className="w-8 h-8 rounded-lg border border-gray-200 text-[#080808] font-bold hover:border-[#c9a84c] hover:text-[#c9a84c] transition-colors flex items-center justify-center text-lg leading-none"
       >−</button>
-      <span className="w-7 text-center font-bold text-[#0d1b2a]" style={{ fontFamily: 'Sora, sans-serif' }}>{value}</span>
+      <span className="w-7 text-center font-bold text-[#080808]" style={{ fontFamily: 'Sora, sans-serif' }}>{value}</span>
       <button
         onClick={() => onChange(Math.min(max, value + 1))}
-        className="w-8 h-8 rounded-lg border border-gray-200 text-[#0d1b2a] font-bold hover:border-[#169fa8] hover:text-[#169fa8] transition-colors flex items-center justify-center text-lg leading-none"
+        className="w-8 h-8 rounded-lg border border-gray-200 text-[#080808] font-bold hover:border-[#c9a84c] hover:text-[#c9a84c] transition-colors flex items-center justify-center text-lg leading-none"
       >+</button>
     </div>
   );
@@ -318,12 +318,12 @@ function StepIndicator({ current }: { current: number }) {
           <div className="flex flex-col items-center">
             <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all ${
               s < current ? "bg-[#22c55e] text-white" :
-              s === current ? "bg-[#169fa8] text-white" :
+              s === current ? "bg-[#c9a84c] text-white" :
               "bg-gray-200 text-gray-400"
             }`}>
               {s < current ? <CheckCircle size={14} /> : s}
             </div>
-            <span className={`text-xs mt-1 font-medium ${s === current ? "text-[#169fa8]" : "text-gray-400"}`}>{labels[i]}</span>
+            <span className={`text-xs mt-1 font-medium ${s === current ? "text-[#c9a84c]" : "text-gray-400"}`}>{labels[i]}</span>
           </div>
           {i < 3 && (
             <div className={`w-12 sm:w-20 h-0.5 mb-5 mx-1 transition-all ${s < current ? "bg-[#22c55e]" : "bg-gray-200"}`} />
@@ -361,7 +361,7 @@ function OrderSummary({ state, total }: { state: ConfigState; total: number }) {
 
   return (
     <div className="sticky top-24 bg-white rounded-2xl border border-gray-100 shadow-lg p-5">
-      <div className="text-[#0d1b2a] font-bold text-sm mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Your Order</div>
+      <div className="text-[#080808] font-bold text-sm mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Your Order</div>
       {lineItems.length === 0 ? (
         <div className="text-center py-6 text-gray-400 text-xs">Select a bundle to see your estimate</div>
       ) : (
@@ -377,11 +377,11 @@ function OrderSummary({ state, total }: { state: ConfigState; total: number }) {
       <div className="border-t border-gray-100 pt-3 mb-4">
         <div className="flex justify-between items-center mb-1">
           <span className="text-xs text-gray-500">Due Today</span>
-          <span className="font-bold text-[#0d1b2a] text-sm">$0.00</span>
+          <span className="font-bold text-[#080808] text-sm">$0.00</span>
         </div>
         <div className="flex justify-between items-center">
           <span className="text-xs text-gray-500">Est. Monthly</span>
-          <span className="font-extrabold text-[#169fa8] text-xl">${total.toFixed(2)}</span>
+          <span className="font-extrabold text-[#c9a84c] text-xl">${total.toFixed(2)}</span>
         </div>
       </div>
       <div className="space-y-1.5 text-xs text-gray-400">
@@ -480,25 +480,25 @@ export default function SkyTabPOSBuilder() {
 
   if (submitted) {
     return (
-      <section className="py-16 bg-[#f4f7fa]">
+      <section className="py-16 bg-[#f7f3ec]">
         <div className="container max-w-2xl text-center">
           <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-12">
             <div className="w-16 h-16 bg-[#22c55e]/10 rounded-full flex items-center justify-center mx-auto mb-5">
               <CheckCircle size={32} className="text-[#22c55e]" />
             </div>
-            <h3 className="text-2xl font-extrabold text-[#0d1b2a] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Order Submitted!</h3>
+            <h3 className="text-2xl font-extrabold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Order Submitted!</h3>
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
               Thank you, <strong>{form.firstName}</strong>! A UBC Unlimited Solution Specialist will reach out within one business day to confirm your order, walk you through agreements, and schedule your local installation.
             </p>
-            <div className="bg-[#f4f7fa] rounded-xl p-4 text-left text-xs text-gray-500 space-y-1 mb-6">
-              <div className="font-semibold text-[#0d1b2a] mb-2">Your Configuration</div>
+            <div className="bg-[#f7f3ec] rounded-xl p-4 text-left text-xs text-gray-500 space-y-1 mb-6">
+              <div className="font-semibold text-[#080808] mb-2">Your Configuration</div>
               {buildOrderSummaryText(config, total).split("\n").map((line, i) => (
                 <div key={i}>{line}</div>
               ))}
             </div>
             <button
               onClick={() => { setSubmitted(false); setStep(1); setConfig({ bundle: null, stations: 1, hardware: {}, accessories: {}, accessoryRadio: {}, processing: null }); setForm({ firstName: "", lastName: "", businessName: "", phone: "", email: "", businessType: "", state: "", city: "", currentPOS: "", notes: "", consent: false }); }}
-              className="text-[#169fa8] text-sm font-semibold hover:underline"
+              className="text-[#c9a84c] text-sm font-semibold hover:underline"
             >
               Start a new configuration
             </button>
@@ -509,23 +509,23 @@ export default function SkyTabPOSBuilder() {
   }
 
   return (
-    <section className="py-16 bg-[#f4f7fa]">
+    <section className="py-16 bg-[#f7f3ec]">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-[#169fa8]/10 text-[#169fa8] text-xs font-semibold px-3 py-1.5 rounded-full mb-3 uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 bg-[#c9a84c]/10 text-[#c9a84c] text-xs font-semibold px-3 py-1.5 rounded-full mb-3 uppercase tracking-widest">
             SkyTab POS Configurator
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0d1b2a] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
             Build Your SkyTab POS System
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
             Select a bundle, customize your hardware and accessories, and get a UBC Unlimited Solution Specialist to handle installation and onboarding.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-5 mt-4 text-xs text-gray-500">
-            <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-[#169fa8]" /> $0 Upfront Cost</span>
-            <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-[#169fa8]" /> Local Installation</span>
-            <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-[#169fa8]" /> Lifetime Hardware Warranty</span>
+            <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-[#c9a84c]" /> $0 Upfront Cost</span>
+            <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-[#c9a84c]" /> Local Installation</span>
+            <span className="flex items-center gap-1.5"><CheckCircle size={13} className="text-[#c9a84c]" /> Lifetime Hardware Warranty</span>
           </div>
         </div>
 
@@ -538,27 +538,27 @@ export default function SkyTabPOSBuilder() {
             {step === 1 && (
               <div className="space-y-5">
                 <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-                  <h3 className="font-bold text-[#0d1b2a] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Choose Your Service Type</h3>
+                  <h3 className="font-bold text-[#080808] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Choose Your Service Type</h3>
                   <p className="text-gray-400 text-xs mb-5">Select the service style that best fits your restaurant, then set how many POS stations you need.</p>
                   <div className="grid sm:grid-cols-2 gap-4 mb-6">
                     {BUNDLES.map((b) => (
                       <button
                         key={b.id}
                         onClick={() => setConfig((s) => ({ ...s, bundle: b.id as BundleId }))}
-                        className={`text-left rounded-xl border-2 overflow-hidden transition-all ${config.bundle === b.id ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-200 hover:border-[#169fa8]/40"}`}
+                        className={`text-left rounded-xl border-2 overflow-hidden transition-all ${config.bundle === b.id ? "border-[#c9a84c] bg-[#c9a84c]/5" : "border-gray-200 hover:border-[#c9a84c]/40"}`}
                       >
-                        <div className="bg-[#f4f7fa] p-4 flex items-center justify-center h-40">
+                        <div className="bg-[#f7f3ec] p-4 flex items-center justify-center h-40">
                           <img src={b.img} alt={b.name} className="max-h-full max-w-full object-contain" />
                         </div>
                         <div className="p-4">
                           <div className="flex items-center justify-between mb-1">
-                            <span className="font-bold text-[#0d1b2a]" style={{ fontFamily: 'Sora, sans-serif' }}>{b.name}</span>
-                            {config.bundle === b.id && <CheckCircle size={15} className="text-[#169fa8]" />}
+                            <span className="font-bold text-[#080808]" style={{ fontFamily: 'Sora, sans-serif' }}>{b.name}</span>
+                            {config.bundle === b.id && <CheckCircle size={15} className="text-[#c9a84c]" />}
                           </div>
                           <p className="text-gray-500 text-xs mb-3 leading-relaxed">{b.desc}</p>
                           <div className="flex flex-wrap gap-1 mb-3">
                             {b.bestFor.map((tag) => (
-                              <span key={tag} className="text-[10px] bg-[#169fa8]/10 text-[#169fa8] px-2 py-0.5 rounded-full">{tag}</span>
+                              <span key={tag} className="text-[10px] bg-[#c9a84c]/10 text-[#c9a84c] px-2 py-0.5 rounded-full">{tag}</span>
                             ))}
                           </div>
                           <div className="border-t border-gray-100 pt-3">
@@ -566,13 +566,13 @@ export default function SkyTabPOSBuilder() {
                             <div className="space-y-1">
                               {b.includes.map((item) => (
                                 <div key={item} className="flex items-center gap-1.5 text-xs text-gray-600">
-                                  <CheckCircle size={10} className="text-[#169fa8] shrink-0" /> {item}
+                                  <CheckCircle size={10} className="text-[#c9a84c] shrink-0" /> {item}
                                 </div>
                               ))}
                             </div>
                           </div>
                           <div className="mt-3 pt-3 border-t border-gray-100">
-                            <span className="text-[#169fa8] font-extrabold text-lg">${b.price}</span>
+                            <span className="text-[#c9a84c] font-extrabold text-lg">${b.price}</span>
                             <span className="text-gray-400 text-xs ml-1">{b.priceNote}</span>
                             {b.subNote && <div className="text-gray-400 text-[10px] mt-0.5">{b.subNote}</div>}
                             <div className="text-[#22c55e] text-xs font-semibold mt-0.5">$0 upfront cost</div>
@@ -586,19 +586,19 @@ export default function SkyTabPOSBuilder() {
                     <div className="border-t border-gray-100 pt-5">
                       <div className="flex items-center justify-between mb-3">
                         <div>
-                          <div className="font-semibold text-[#0d1b2a] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Number of POS Stations</div>
-                          <div className="text-gray-400 text-xs">{config.stations} station{config.stations > 1 ? "s" : ""} × ${BUNDLES.find(b => b.id === config.bundle)!.price}/mo = <strong className="text-[#169fa8]">${(BUNDLES.find(b => b.id === config.bundle)!.price * config.stations).toFixed(2)}/mo</strong></div>
+                          <div className="font-semibold text-[#080808] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Number of POS Stations</div>
+                          <div className="text-gray-400 text-xs">{config.stations} station{config.stations > 1 ? "s" : ""} × ${BUNDLES.find(b => b.id === config.bundle)!.price}/mo = <strong className="text-[#c9a84c]">${(BUNDLES.find(b => b.id === config.bundle)!.price * config.stations).toFixed(2)}/mo</strong></div>
                         </div>
                         <QtyControl value={config.stations} onChange={(v) => setConfig((s) => ({ ...s, stations: v }))} min={1} max={20} />
                       </div>
                       {config.stations >= 20 && (
-                        <p className="text-xs text-gray-400">Need more than 20 stations? <a href="/contact" className="text-[#169fa8] underline">Contact us for an enterprise quote.</a></p>
+                        <p className="text-xs text-gray-400">Need more than 20 stations? <a href="/contact" className="text-[#c9a84c] underline">Contact us for an enterprise quote.</a></p>
                       )}
                     </div>
                   )}
 
                   {config.bundle && (
-                    <div className="mt-5 bg-[#0d1b2a] rounded-xl p-4">
+                    <div className="mt-5 bg-[#080808] rounded-xl p-4">
                       <div className="text-white/50 text-[10px] uppercase tracking-widest font-medium mb-2">Included Free with Every Bundle</div>
                       <div className="grid grid-cols-2 gap-1.5">
                         {FREE_FEATURES.map((f) => (
@@ -616,24 +616,24 @@ export default function SkyTabPOSBuilder() {
             {/* ── Step 2: Hardware ── */}
             {step === 2 && (
               <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-                <h3 className="font-bold text-[#0d1b2a] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Add Hardware</h3>
+                <h3 className="font-bold text-[#080808] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Add Hardware</h3>
                 <p className="text-gray-400 text-xs mb-5">Add mobile devices and self-service kiosks to your setup. All items are billed monthly per unit with $0 upfront.</p>
                 <div className="space-y-4">
                   {HARDWARE_ITEMS.map((item) => {
                     const qty = config.hardware[item.id] || 0;
                     return (
-                      <div key={item.id} className={`flex gap-4 p-4 rounded-xl border-2 transition-all ${qty > 0 ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-100 hover:border-gray-200"}`}>
-                        <div className="w-20 h-20 bg-[#f4f7fa] rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
+                      <div key={item.id} className={`flex gap-4 p-4 rounded-xl border-2 transition-all ${qty > 0 ? "border-[#c9a84c] bg-[#c9a84c]/5" : "border-gray-100 hover:border-gray-200"}`}>
+                        <div className="w-20 h-20 bg-[#f7f3ec] rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
                           <img src={item.img} alt={item.name} className="max-h-full max-w-full object-contain p-1" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-bold text-[#0d1b2a] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{item.name}</div>
+                          <div className="font-bold text-[#080808] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{item.name}</div>
                           <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">{item.desc}</p>
                           <div className="flex flex-wrap gap-1 mt-2">
                             {item.tags.map((t) => <span key={t} className="text-[10px] bg-gray-100 text-gray-500 px-1.5 py-0.5 rounded">{t}</span>)}
                           </div>
                           <div className="flex items-center justify-between mt-3">
-                            <span className="text-[#169fa8] font-bold text-sm">${item.price.toFixed(2)}<span className="text-gray-400 font-normal text-xs">/mo each</span></span>
+                            <span className="text-[#c9a84c] font-bold text-sm">${item.price.toFixed(2)}<span className="text-gray-400 font-normal text-xs">/mo each</span></span>
                             <QtyControl value={qty} onChange={(v) => setHwQty(item.id, v)} />
                           </div>
                         </div>
@@ -647,7 +647,7 @@ export default function SkyTabPOSBuilder() {
             {/* ── Step 3: Accessories ── */}
             {step === 3 && (
               <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-                <h3 className="font-bold text-[#0d1b2a] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Back-of-House & Accessories</h3>
+                <h3 className="font-bold text-[#080808] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Back-of-House & Accessories</h3>
                 <p className="text-gray-400 text-xs mb-5">Add printers, kitchen displays, and other accessories to complete your setup.</p>
                 <div className="space-y-4">
                   {ACCESSORY_ITEMS.map((item) => {
@@ -655,20 +655,20 @@ export default function SkyTabPOSBuilder() {
                     const selectedRadio = config.accessoryRadio[item.id];
                     const isActive = item.type === "qty" ? qty > 0 : !!selectedRadio;
                     return (
-                      <div key={item.id} className={`p-4 rounded-xl border-2 transition-all ${isActive ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-100 hover:border-gray-200"}`}>
+                      <div key={item.id} className={`p-4 rounded-xl border-2 transition-all ${isActive ? "border-[#c9a84c] bg-[#c9a84c]/5" : "border-gray-100 hover:border-gray-200"}`}>
                         <div className="flex gap-4">
-                          <div className="w-16 h-16 bg-[#f4f7fa] rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
+                          <div className="w-16 h-16 bg-[#f7f3ec] rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
                             <img src={item.img} alt={item.name} className="max-h-full max-w-full object-contain p-1" />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="font-bold text-[#0d1b2a] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{item.name}</div>
+                            <div className="font-bold text-[#080808] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{item.name}</div>
                             <p className="text-gray-500 text-xs mt-0.5 leading-relaxed">{item.desc}</p>
                           </div>
                         </div>
                         <div className="mt-3">
                           {item.type === "qty" && (
                             <div className="flex items-center justify-between">
-                              <span className="text-[#169fa8] font-bold text-sm">${item.price!.toFixed(2)}<span className="text-gray-400 font-normal text-xs">/mo each</span></span>
+                              <span className="text-[#c9a84c] font-bold text-sm">${item.price!.toFixed(2)}<span className="text-gray-400 font-normal text-xs">/mo each</span></span>
                               <QtyControl value={qty} onChange={(v) => setAccQty(item.id, v)} />
                             </div>
                           )}
@@ -678,7 +678,7 @@ export default function SkyTabPOSBuilder() {
                                 <button
                                   key={opt.id}
                                   onClick={() => setAccRadio(item.id, opt.id)}
-                                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg border text-sm transition-all ${selectedRadio === opt.id ? "border-[#169fa8] bg-[#169fa8]/10 text-[#169fa8] font-semibold" : "border-gray-200 text-gray-600 hover:border-[#169fa8]/40"}`}
+                                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg border text-sm transition-all ${selectedRadio === opt.id ? "border-[#c9a84c] bg-[#c9a84c]/10 text-[#c9a84c] font-semibold" : "border-gray-200 text-gray-600 hover:border-[#c9a84c]/40"}`}
                                 >
                                   <span>{opt.label}</span>
                                   <span className="font-bold">${opt.price.toFixed(2)}/mo each</span>
@@ -705,7 +705,7 @@ export default function SkyTabPOSBuilder() {
               <div className="space-y-5">
                 {/* Processing selection */}
                 <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-                  <h3 className="font-bold text-[#0d1b2a] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Credit Card Processing</h3>
+                  <h3 className="font-bold text-[#080808] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Credit Card Processing</h3>
                   <p className="text-gray-400 text-xs mb-2">Choose how you want to handle payment processing fees. All options are fully compliant and supported by Shift4 Payments.</p>
                   <div className="flex flex-wrap gap-2 mb-5 text-xs text-gray-500">
                     {["Visa", "Mastercard", "AMEX", "Discover", "Apple Pay", "Google Pay", "Crypto"].map((c) => (
@@ -717,14 +717,14 @@ export default function SkyTabPOSBuilder() {
                       <button
                         key={plan.id}
                         onClick={() => setConfig((s) => ({ ...s, processing: plan.id as ProcessingId }))}
-                        className={`text-left p-4 rounded-xl border-2 transition-all ${config.processing === plan.id ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-200 hover:border-[#169fa8]/40"}`}
+                        className={`text-left p-4 rounded-xl border-2 transition-all ${config.processing === plan.id ? "border-[#c9a84c] bg-[#c9a84c]/5" : "border-gray-200 hover:border-[#c9a84c]/40"}`}
                       >
                         <div className="text-2xl mb-2">{plan.icon}</div>
-                        <div className="font-bold text-[#0d1b2a] text-sm mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{plan.name}</div>
+                        <div className="font-bold text-[#080808] text-sm mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{plan.name}</div>
                         <p className="text-gray-500 text-xs mb-3 leading-relaxed">{plan.desc}</p>
-                        <div className="text-[#169fa8] font-semibold text-xs">{plan.highlight}</div>
+                        <div className="text-[#c9a84c] font-semibold text-xs">{plan.highlight}</div>
                         {config.processing === plan.id && (
-                          <div className="mt-2 flex items-center gap-1 text-[#169fa8] text-xs font-semibold">
+                          <div className="mt-2 flex items-center gap-1 text-[#c9a84c] text-xs font-semibold">
                             <CheckCircle size={11} /> Selected
                           </div>
                         )}
@@ -736,91 +736,91 @@ export default function SkyTabPOSBuilder() {
                 {/* Order form — shown once processing is selected */}
                 {config.processing && (
                   <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
-                    <h3 className="font-bold text-[#0d1b2a] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Complete Your Order</h3>
+                    <h3 className="font-bold text-[#080808] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>Complete Your Order</h3>
                     <p className="text-gray-400 text-xs mb-5">A UBC Unlimited Solution Specialist will reach out within one business day to confirm your order, walk you through agreements, and schedule installation.</p>
                     <form onSubmit={handleSubmit} className="space-y-4">
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">First Name <span className="text-red-400">*</span></label>
+                          <label className="block text-xs font-semibold text-[#080808] mb-1 uppercase tracking-wider">First Name <span className="text-red-400">*</span></label>
                           <input
                             type="text"
                             required
                             placeholder="Jane"
                             value={form.firstName}
                             onChange={(e) => updateForm("firstName", e.target.value)}
-                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#080808] focus:outline-none focus:border-[#c9a84c] transition-colors"
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Last Name <span className="text-red-400">*</span></label>
+                          <label className="block text-xs font-semibold text-[#080808] mb-1 uppercase tracking-wider">Last Name <span className="text-red-400">*</span></label>
                           <input
                             type="text"
                             required
                             placeholder="Smith"
                             value={form.lastName}
                             onChange={(e) => updateForm("lastName", e.target.value)}
-                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#080808] focus:outline-none focus:border-[#c9a84c] transition-colors"
                           />
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Restaurant / Business Name <span className="text-red-400">*</span></label>
+                        <label className="block text-xs font-semibold text-[#080808] mb-1 uppercase tracking-wider">Restaurant / Business Name <span className="text-red-400">*</span></label>
                         <input
                           type="text"
                           required
                           placeholder="The Mountain Grill"
                           value={form.businessName}
                           onChange={(e) => updateForm("businessName", e.target.value)}
-                          className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                          className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#080808] focus:outline-none focus:border-[#c9a84c] transition-colors"
                         />
                       </div>
 
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Phone <span className="text-red-400">*</span></label>
+                          <label className="block text-xs font-semibold text-[#080808] mb-1 uppercase tracking-wider">Phone <span className="text-red-400">*</span></label>
                           <input
                             type="tel"
                             required
                             placeholder="(801) 555-0100"
                             value={form.phone}
                             onChange={(e) => updateForm("phone", e.target.value)}
-                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#080808] focus:outline-none focus:border-[#c9a84c] transition-colors"
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Email <span className="text-red-400">*</span></label>
+                          <label className="block text-xs font-semibold text-[#080808] mb-1 uppercase tracking-wider">Email <span className="text-red-400">*</span></label>
                           <input
                             type="email"
                             required
                             placeholder="jane@yourrestaurant.com"
                             value={form.email}
                             onChange={(e) => updateForm("email", e.target.value)}
-                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#080808] focus:outline-none focus:border-[#c9a84c] transition-colors"
                           />
                         </div>
                       </div>
 
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Business Type <span className="text-red-400">*</span></label>
+                          <label className="block text-xs font-semibold text-[#080808] mb-1 uppercase tracking-wider">Business Type <span className="text-red-400">*</span></label>
                           <select
                             required
                             value={form.businessType}
                             onChange={(e) => updateForm("businessType", e.target.value)}
-                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors bg-white"
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#080808] focus:outline-none focus:border-[#c9a84c] transition-colors bg-white"
                           >
                             <option value="">Select type...</option>
                             {BUSINESS_TYPES.map((t) => <option key={t} value={t}>{t}</option>)}
                           </select>
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">State <span className="text-red-400">*</span></label>
+                          <label className="block text-xs font-semibold text-[#080808] mb-1 uppercase tracking-wider">State <span className="text-red-400">*</span></label>
                           <select
                             required
                             value={form.state}
                             onChange={(e) => updateForm("state", e.target.value)}
-                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors bg-white"
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#080808] focus:outline-none focus:border-[#c9a84c] transition-colors bg-white"
                           >
                             <option value="">Select state...</option>
                             {US_STATES.map((s) => <option key={s} value={s}>{s}</option>)}
@@ -830,55 +830,55 @@ export default function SkyTabPOSBuilder() {
 
                       <div className="grid sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">City <span className="text-red-400">*</span></label>
+                          <label className="block text-xs font-semibold text-[#080808] mb-1 uppercase tracking-wider">City <span className="text-red-400">*</span></label>
                           <input
                             type="text"
                             required
                             placeholder="Salt Lake City"
                             value={form.city}
                             onChange={(e) => updateForm("city", e.target.value)}
-                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#080808] focus:outline-none focus:border-[#c9a84c] transition-colors"
                           />
                         </div>
                         <div>
-                          <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Current POS System</label>
+                          <label className="block text-xs font-semibold text-[#080808] mb-1 uppercase tracking-wider">Current POS System</label>
                           <input
                             type="text"
                             placeholder="Toast, Square, Clover, None..."
                             value={form.currentPOS}
                             onChange={(e) => updateForm("currentPOS", e.target.value)}
-                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors"
+                            className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#080808] focus:outline-none focus:border-[#c9a84c] transition-colors"
                           />
                         </div>
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold text-[#0d1b2a] mb-1 uppercase tracking-wider">Additional Notes</label>
+                        <label className="block text-xs font-semibold text-[#080808] mb-1 uppercase tracking-wider">Additional Notes</label>
                         <textarea
                           rows={3}
                           placeholder="Any specific requirements, questions, or details about your setup..."
                           value={form.notes}
                           onChange={(e) => updateForm("notes", e.target.value)}
-                          className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#0d1b2a] focus:outline-none focus:border-[#169fa8] transition-colors resize-none"
+                          className="w-full px-3 py-2.5 rounded-lg border border-gray-200 text-sm text-[#080808] focus:outline-none focus:border-[#c9a84c] transition-colors resize-none"
                         />
                       </div>
 
                       {/* Consent */}
-                      <div className={`p-4 rounded-xl border-2 transition-all ${form.consent ? "border-[#169fa8] bg-[#169fa8]/5" : "border-gray-200"}`}>
+                      <div className={`p-4 rounded-xl border-2 transition-all ${form.consent ? "border-[#c9a84c] bg-[#c9a84c]/5" : "border-gray-200"}`}>
                         <label className="flex items-start gap-3 cursor-pointer">
                           <input
                             type="checkbox"
                             checked={form.consent}
                             onChange={(e) => updateForm("consent", e.target.checked)}
-                            className="mt-0.5 w-4 h-4 accent-[#169fa8] shrink-0"
+                            className="mt-0.5 w-4 h-4 accent-[#c9a84c] shrink-0"
                           />
                           <span className="text-xs text-gray-600 leading-relaxed">
                             I Accept — By submitting this form, I agree that I have read and understand the{" "}
-                            <a href="/legal/privacy-policy" className="text-[#169fa8] underline">Privacy Policy</a>{" "}
+                            <a href="/legal/privacy-policy" className="text-[#c9a84c] underline">Privacy Policy</a>{" "}
                             and give my consent to UBC Unlimited to collect and process the personal information I provide. A{" "}
-                            <a href="https://skytabmountainwest.com/merchant-processing-agreement.pdf" target="_blank" rel="noopener noreferrer" className="text-[#169fa8] underline">Merchant Processing Agreement</a>{" "}
+                            <a href="https://skytabmountainwest.com/merchant-processing-agreement.pdf" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] underline">Merchant Processing Agreement</a>{" "}
                             and{" "}
-                            <a href="https://skytabmountainwest.com/pos-service-agreement.pdf" target="_blank" rel="noopener noreferrer" className="text-[#169fa8] underline">POS Service Agreement</a>{" "}
+                            <a href="https://skytabmountainwest.com/pos-service-agreement.pdf" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] underline">POS Service Agreement</a>{" "}
                             are required to take advantage of the $0 upfront cost for SkyTab equipment and any free services included in this package.
                           </span>
                         </label>
@@ -893,7 +893,7 @@ export default function SkyTabPOSBuilder() {
                         <button
                           type="submit"
                           disabled={!isFormValid || submitting}
-                          className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-colors ${isFormValid && !submitting ? "bg-[#169fa8] hover:bg-[#127d85] text-white" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
+                          className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm transition-colors ${isFormValid && !submitting ? "bg-[#c9a84c] hover:bg-[#127d85] text-white" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
                         >
                           {submitting ? "Submitting..." : <><Send size={14} /> Submit My Order</>}
                         </button>
@@ -907,7 +907,7 @@ export default function SkyTabPOSBuilder() {
             {/* Navigation */}
             <div className="flex items-center justify-between mt-5">
               {step > 1 ? (
-                <button onClick={() => setStep((s) => s - 1)} className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-gray-200 text-[#0d1b2a] text-sm font-medium hover:border-[#169fa8]/40 transition-colors">
+                <button onClick={() => setStep((s) => s - 1)} className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-gray-200 text-[#080808] text-sm font-medium hover:border-[#c9a84c]/40 transition-colors">
                   <ChevronLeft size={15} /> Back
                 </button>
               ) : <div />}
@@ -915,7 +915,7 @@ export default function SkyTabPOSBuilder() {
                 <button
                   onClick={() => canContinue && setStep((s) => s + 1)}
                   disabled={!canContinue}
-                  className={`flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors ${canContinue ? "bg-[#169fa8] hover:bg-[#127d85] text-white" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
+                  className={`flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors ${canContinue ? "bg-[#c9a84c] hover:bg-[#127d85] text-white" : "bg-gray-200 text-gray-400 cursor-not-allowed"}`}
                 >
                   Continue <ChevronRight size={15} />
                 </button>

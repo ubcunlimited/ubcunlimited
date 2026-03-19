@@ -47,7 +47,7 @@ const industriesData: IndustryData[] = [
         <div className="overflow-x-auto -mx-2">
           <table className="w-full text-xs border-collapse min-w-[480px]">
             <thead>
-              <tr className="bg-[#0d1b2a] text-white">
+              <tr className="bg-[#080808] text-white">
                 <th className="text-left px-3 py-2 font-semibold">Feature</th>
                 <th className="px-3 py-2 font-bold text-[#22c55e] text-center">SkyTab<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
                 <th className="px-3 py-2 font-semibold text-center">Toast</th>
@@ -75,7 +75,7 @@ const industriesData: IndustryData[] = [
               ].map(([feature, skytab, toast, square, clover], i) => (
                 <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                   <td className="px-3 py-2 text-gray-700 font-medium">{feature}</td>
-                  <td className="px-3 py-2 text-center font-semibold text-[#169fa8]">{skytab}</td>
+                  <td className="px-3 py-2 text-center font-semibold text-[#c9a84c]">{skytab}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{toast}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{square}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{clover}</td>
@@ -110,7 +110,7 @@ const industriesData: IndustryData[] = [
         <div className="overflow-x-auto -mx-2">
           <table className="w-full text-xs border-collapse min-w-[480px]">
             <thead>
-              <tr className="bg-[#0d1b2a] text-white">
+              <tr className="bg-[#080808] text-white">
                 <th className="text-left px-3 py-2 font-semibold">Feature</th>
                 <th className="px-3 py-2 font-bold text-[#22c55e] text-center">SkyTab<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
                 <th className="px-3 py-2 font-semibold text-center">Toast</th>
@@ -138,7 +138,7 @@ const industriesData: IndustryData[] = [
               ].map(([feature, skytab, toast, square, clover], i) => (
                 <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                   <td className="px-3 py-2 text-gray-700 font-medium">{feature}</td>
-                  <td className="px-3 py-2 text-center font-semibold text-[#169fa8]">{skytab}</td>
+                  <td className="px-3 py-2 text-center font-semibold text-[#c9a84c]">{skytab}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{toast}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{square}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{clover}</td>
@@ -473,7 +473,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
     return (
       <PageLayout>
         <div className="container py-20 text-center">
-          <h1 className="text-2xl font-bold text-[#040c1c]">Industry page not found</h1>
+          <h1 className="text-2xl font-bold text-[#080808]">Industry page not found</h1>
           <Link href="/industries" className="btn-teal mt-4 inline-flex">Back to Industries</Link>
         </div>
       </PageLayout>
@@ -511,7 +511,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
         }}
       />
       {/* Hero */}
-      <section className="bg-[#040c1c] py-20">
+      <section className="bg-[#080808] py-20">
         <div className="container">
           <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -541,7 +541,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <div className="teal-divider mb-5" />
-              <h2 className="text-2xl font-bold text-[#040c1c] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="text-2xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
                 Common {data.title} Payment Challenges
               </h2>
               <div className="space-y-3">
@@ -554,15 +554,15 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
               </div>
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-[#040c1c] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className="text-2xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
                 How We Solve Them
               </h2>
               <div className="space-y-4">
                 {data.solutions.map((s) => (
-                  <div key={s.title} className="bg-white rounded-xl p-4 border border-gray-100 hover:border-[#169fa8]/30 transition-all">
+                  <div key={s.title} className="bg-white rounded-xl p-4 border border-gray-100 hover:border-[#c9a84c]/30 transition-all">
                     <div className="flex items-center gap-2 mb-1.5">
-                      <CheckCircle size={15} className="text-[#169fa8]" />
-                      <span className="font-semibold text-sm text-[#040c1c]" style={{ fontFamily: 'Sora, sans-serif' }}>{s.title}</span>
+                      <CheckCircle size={15} className="text-[#c9a84c]" />
+                      <span className="font-semibold text-sm text-[#080808]" style={{ fontFamily: 'Sora, sans-serif' }}>{s.title}</span>
                     </div>
                     <p className="text-gray-500 text-sm pl-5">{s.desc}</p>
                   </div>
@@ -576,13 +576,13 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
       {/* Recommended Solutions */}
       <section className="py-12 bg-white">
         <div className="container">
-          <h2 className="text-xl font-bold text-[#040c1c] mb-5" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-xl font-bold text-[#080808] mb-5" style={{ fontFamily: 'Sora, sans-serif' }}>
             Recommended Solutions for {data.title}
           </h2>
           <div className="flex flex-wrap gap-3">
             {recommendedItems.map((item) => (
-              <Link key={item.href} href={item.href} className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-200 hover:border-[#169fa8]/40 hover:bg-[#169fa8]/5 transition-all text-sm font-medium text-[#040c1c]">
-                <span>{item.icon}</span> {item.label} <ChevronRight size={13} className="text-[#169fa8]" />
+              <Link key={item.href} href={item.href} className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-200 hover:border-[#c9a84c]/40 hover:bg-[#c9a84c]/5 transition-all text-sm font-medium text-[#080808]">
+                <span>{item.icon}</span> {item.label} <ChevronRight size={13} className="text-[#c9a84c]" />
               </Link>
             ))}
           </div>
@@ -597,10 +597,10 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
       {/* Related Industries */}
       <section className="py-12 bg-[#f8fafc]">
         <div className="container">
-          <h2 className="text-xl font-bold text-[#040c1c] mb-5" style={{ fontFamily: 'Sora, sans-serif' }}>Other Industries We Serve</h2>
+          <h2 className="text-xl font-bold text-[#080808] mb-5" style={{ fontFamily: 'Sora, sans-serif' }}>Other Industries We Serve</h2>
           <div className="flex flex-wrap gap-3">
             {relatedIndustries.map((item) => (
-              <Link key={item.href} href={item.href} className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-200 hover:border-[#169fa8]/40 hover:bg-[#169fa8]/5 transition-all text-sm font-medium text-[#040c1c]">
+              <Link key={item.href} href={item.href} className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-200 hover:border-[#c9a84c]/40 hover:bg-[#c9a84c]/5 transition-all text-sm font-medium text-[#080808]">
                 <span>{item.icon}</span> {item.label}
               </Link>
             ))}

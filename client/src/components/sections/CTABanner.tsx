@@ -22,7 +22,7 @@ export default function CTABanner({
   dark = true,
 }: CTABannerProps) {
   return (
-    <section className={`py-16 ${dark ? "bg-gradient-to-br from-[#040c1c] via-[#0a1628] to-[#0f2040]" : "bg-gradient-to-br from-[#169fa8] to-[#0f6b72]"}`}>
+    <section className={`py-16 ${dark ? "bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a]" : "bg-gradient-to-br from-[#b8972a] via-[#c9a84c] to-[#e2c97e]"}`}>
       <div className="container text-center">
         <div className="max-w-2xl mx-auto">
           <div className="teal-divider mx-auto mb-6" />

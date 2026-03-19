@@ -34,14 +34,14 @@ export default function ThankYou() {
       />
 
       {/* Hero */}
-      <section className="relative bg-[#040c1c] py-24 overflow-hidden">
+      <section className="relative bg-[#080808] py-24 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${HERO_IMG})`, opacity: 0.15 }}
           aria-hidden="true"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#040c1c] via-[#040c1c]/85 to-[#040c1c]/40" aria-hidden="true" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#040c1c] via-transparent to-transparent" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/85 to-[#080808]/40" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" aria-hidden="true" />
 
         <div className="container relative z-10">
           <div className="max-w-2xl">
@@ -86,7 +86,7 @@ export default function ThankYou() {
             <div className="teal-divider mx-auto mb-4" aria-hidden="true" />
             <h2
               id="next-steps-heading"
-              className="text-3xl font-bold text-[#040c1c]"
+              className="text-3xl font-bold text-[#080808]"
               style={{ fontFamily: "Sora, sans-serif" }}
             >
               What Happens Next
@@ -100,16 +100,16 @@ export default function ThankYou() {
             {NEXT_STEPS.map((step, i) => (
               <div
                 key={step.title}
-                className="p-6 rounded-xl border border-gray-100 hover:border-[#169fa8]/30 hover:shadow-md transition-all"
+                className="p-6 rounded-xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-md transition-all"
               >
-                <div className="w-10 h-10 rounded-lg bg-[#169fa8]/10 flex items-center justify-center mb-4" aria-hidden="true">
-                  <step.icon size={20} className="text-[#169fa8]" />
+                <div className="w-10 h-10 rounded-lg bg-[#c9a84c]/10 flex items-center justify-center mb-4" aria-hidden="true">
+                  <step.icon size={20} className="text-[#c9a84c]" />
                 </div>
-                <div className="text-xs font-bold text-[#169fa8] uppercase tracking-wider mb-2">
+                <div className="text-xs font-bold text-[#c9a84c] uppercase tracking-wider mb-2">
                   Step {i + 1}
                 </div>
                 <h3
-                  className="font-bold text-[#040c1c] mb-2"
+                  className="font-bold text-[#080808] mb-2"
                   style={{ fontFamily: "Sora, sans-serif" }}
                 >
                   {step.title}
@@ -127,7 +127,7 @@ export default function ThankYou() {
           <div className="text-center mb-10">
             <h2
               id="explore-heading"
-              className="text-2xl font-bold text-[#040c1c]"
+              className="text-2xl font-bold text-[#080808]"
               style={{ fontFamily: "Sora, sans-serif" }}
             >
               While You Wait, Explore Our Resources
@@ -136,14 +136,14 @@ export default function ThankYou() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
             <Link
               href="/solutions"
-              className="group p-5 rounded-xl bg-white border border-gray-100 hover:border-[#169fa8]/40 hover:shadow-md transition-all flex items-start gap-4"
+              className="group p-5 rounded-xl bg-white border border-gray-100 hover:border-[#c9a84c]/40 hover:shadow-md transition-all flex items-start gap-4"
               aria-label="Browse all payment solutions"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#169fa8]/10 flex items-center justify-center shrink-0" aria-hidden="true">
+              <div className="w-10 h-10 rounded-lg bg-[#c9a84c]/10 flex items-center justify-center shrink-0" aria-hidden="true">
                 <span className="text-xl">💳</span>
               </div>
               <div>
-                <div className="font-bold text-[#040c1c] mb-1 group-hover:text-[#169fa8] transition-colors" style={{ fontFamily: "Sora, sans-serif" }}>
+                <div className="font-bold text-[#080808] mb-1 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: "Sora, sans-serif" }}>
                   Browse Solutions
                 </div>
                 <p className="text-gray-500 text-sm">Explore all our payment processing options.</p>
@@ -152,14 +152,14 @@ export default function ThankYou() {
 
             <Link
               href="/industries"
-              className="group p-5 rounded-xl bg-white border border-gray-100 hover:border-[#169fa8]/40 hover:shadow-md transition-all flex items-start gap-4"
+              className="group p-5 rounded-xl bg-white border border-gray-100 hover:border-[#c9a84c]/40 hover:shadow-md transition-all flex items-start gap-4"
               aria-label="Find solutions for your industry"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#169fa8]/10 flex items-center justify-center shrink-0" aria-hidden="true">
+              <div className="w-10 h-10 rounded-lg bg-[#c9a84c]/10 flex items-center justify-center shrink-0" aria-hidden="true">
                 <span className="text-xl">🏪</span>
               </div>
               <div>
-                <div className="font-bold text-[#040c1c] mb-1 group-hover:text-[#169fa8] transition-colors" style={{ fontFamily: "Sora, sans-serif" }}>
+                <div className="font-bold text-[#080808] mb-1 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: "Sora, sans-serif" }}>
                   Your Industry
                 </div>
                 <p className="text-gray-500 text-sm">See solutions tailored to your business type.</p>
@@ -168,14 +168,14 @@ export default function ThankYou() {
 
             <Link
               href="/faq"
-              className="group p-5 rounded-xl bg-white border border-gray-100 hover:border-[#169fa8]/40 hover:shadow-md transition-all flex items-start gap-4"
+              className="group p-5 rounded-xl bg-white border border-gray-100 hover:border-[#c9a84c]/40 hover:shadow-md transition-all flex items-start gap-4"
               aria-label="Read frequently asked questions"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#169fa8]/10 flex items-center justify-center shrink-0" aria-hidden="true">
+              <div className="w-10 h-10 rounded-lg bg-[#c9a84c]/10 flex items-center justify-center shrink-0" aria-hidden="true">
                 <span className="text-xl">❓</span>
               </div>
               <div>
-                <div className="font-bold text-[#040c1c] mb-1 group-hover:text-[#169fa8] transition-colors" style={{ fontFamily: "Sora, sans-serif" }}>
+                <div className="font-bold text-[#080808] mb-1 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: "Sora, sans-serif" }}>
                   FAQ
                 </div>
                 <p className="text-gray-500 text-sm">Answers to the most common questions we receive.</p>

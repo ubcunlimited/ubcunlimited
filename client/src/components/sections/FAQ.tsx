@@ -19,13 +19,13 @@ export default function FAQ({ items, title = "Frequently Asked Questions", subti
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className={`py-16 ${dark ? "bg-[#0a1628]" : "bg-[#f8fafc]"}`}>
+    <section className={`py-16 ${dark ? "bg-[#080808]" : "bg-[#f8fafc]"}`}>
       <div className="container">
         <div className="max-w-3xl mx-auto">
           {title && (
             <div className="text-center mb-10">
               <div className="teal-divider mx-auto mb-4" />
-              <h2 className={`text-3xl font-bold mb-3 ${dark ? "text-white" : "text-[#040c1c]"}`} style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h2 className={`text-3xl font-bold mb-3 ${dark ? "text-white" : "text-[#080808]"}`} style={{ fontFamily: 'Sora, sans-serif' }}>
                 {title}
               </h2>
               {subtitle && <p className={`text-base ${dark ? "text-white/60" : "text-gray-500"}`}>{subtitle}</p>}
@@ -42,14 +42,14 @@ export default function FAQ({ items, title = "Frequently Asked Questions", subti
                 }`}
               >
                 <button
-                  className={`w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-sm ${dark ? "text-white" : "text-[#040c1c]"}`}
+                  className={`w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-sm ${dark ? "text-white" : "text-[#080808]"}`}
                   onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   aria-expanded={openIndex === i}
                 >
                   <span>{item.question}</span>
                   <ChevronDown
                     size={18}
-                    className={`shrink-0 ml-4 transition-transform text-[#169fa8] ${openIndex === i ? "rotate-180" : ""}`}
+                    className={`shrink-0 ml-4 transition-transform text-[#c9a84c] ${openIndex === i ? "rotate-180" : ""}`}
                   />
                 </button>
                 <AnimatePresence>

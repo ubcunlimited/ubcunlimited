@@ -36,7 +36,7 @@ export default function Industries() {
       />
 
       {/* Hero */}
-      <section className="bg-[#040c1c] py-20">
+      <section className="bg-[#080808] py-20">
         <div className="container">
           <div className="max-w-2xl">
             <div className="stat-badge mb-5">Industries We Serve</div>
@@ -54,7 +54,7 @@ export default function Industries() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="teal-divider mb-4" />
-          <h2 className="text-2xl font-bold text-[#040c1c] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-2xl font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>
             Standard Industries
           </h2>
           <p className="text-gray-500 text-sm mb-8">Competitive rates and tailored solutions for businesses across all major sectors.</p>
@@ -63,14 +63,14 @@ export default function Industries() {
               <Link
                 key={ind.href}
                 href={ind.href}
-                className="group block p-6 rounded-2xl border border-gray-100 hover:border-[#169fa8]/30 hover:shadow-xl transition-all bg-white"
+                className="group block p-6 rounded-2xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-xl transition-all bg-white"
               >
                 <div className="text-3xl mb-4">{ind.icon}</div>
-                <h3 className="text-lg font-bold text-[#040c1c] mb-2 group-hover:text-[#169fa8] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <h3 className="text-lg font-bold text-[#080808] mb-2 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>
                   {ind.label}
                 </h3>
                 <p className="text-gray-500 text-sm mb-4 leading-relaxed">{industryDetails[ind.href]}</p>
-                <div className="flex items-center gap-1 text-sm font-semibold text-[#169fa8]">
+                <div className="flex items-center gap-1 text-sm font-semibold text-[#c9a84c]">
                   Learn more <ChevronRight size={14} />
                 </div>
               </Link>
@@ -80,7 +80,7 @@ export default function Industries() {
       </section>
 
       {/* High-Risk Industries */}
-      <section className="py-16 bg-[#0d1b2a]" aria-labelledby="high-risk-heading">
+      <section className="py-16 bg-[#080808]" aria-labelledby="high-risk-heading">
         <div className="container">
           <div className="flex items-center gap-3 mb-2">
             <ShieldAlert size={22} className="text-[#d4a843]" aria-hidden="true" />
@@ -111,7 +111,7 @@ export default function Industries() {
               <Link
                 key={ind.href}
                 href={ind.href}
-                className="group block p-6 rounded-2xl border border-white/10 hover:border-[#d4a843]/40 hover:shadow-xl transition-all bg-[#152234]"
+                className="group block p-6 rounded-2xl border border-white/10 hover:border-[#d4a843]/40 hover:shadow-xl transition-all bg-[#111111]"
               >
                 <div className="text-3xl mb-4">{ind.icon}</div>
                 <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#d4a843] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>
