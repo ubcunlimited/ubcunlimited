@@ -81,9 +81,9 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group" aria-label="UBC Unlimited — Home">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent2_1a1158bb.png"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent3_53cdf614.png"
               alt="UBC Unlimited — Processing Without Limits"
-              className="h-32 w-auto object-contain"
+              className="h-34 w-auto object-contain"
               style={{ maxWidth: '320px' }}
             />
           </Link>
