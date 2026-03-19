@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Phone, TrendingDown, Shield, Clock, Users, Star, ChevronRight, MapPin, Award, Handshake } from "lucide-react";
+import { ArrowRight, CheckCircle, Phone, TrendingDown, Shield, Clock, Users, Star, ChevronRight, MapPin, Award, Handshake, Loader2 } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 import PageLayout from "@/components/layout/PageLayout";
 import TrustBadges from "@/components/sections/TrustBadges";
 import TestimonialBlock from "@/components/sections/TestimonialBlock";
@@ -61,9 +63,45 @@ const recentPosts = [
   { slug: "interchange-plus-vs-flat-rate-pricing", title: "Interchange-Plus vs. Flat-Rate Pricing: Which Is Better?", category: "Credit Card Processing", date: "Jan 22, 2025" },
 ];
 
+const BUSINESS_TYPES = [
+  "Restaurant / Bar",
+  "Retail Store",
+  "Medical / Healthcare",
+  "Automotive",
+  "eCommerce",
+  "Professional Services",
+  "Salon / Spa",
+  "High-Risk Business",
+  "Other",
+];
+
 export default function Home() {
-  // The userAuth hooks provides authentication state
-  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
+  const [heroName, setHeroName] = useState("");
+  const [heroPhone, setHeroPhone] = useState("");
+  const [heroType, setHeroType] = useState("");
+  const [heroSubmitted, setHeroSubmitted] = useState(false);
+  const [heroError, setHeroError] = useState("");
+
+  const heroMutation = trpc.forms.submitHeroLead.useMutation({
+    onSuccess: () => {
+      setHeroSubmitted(true);
+      setHeroError("");
+    },
+    onError: () => {
+      setHeroError("Something went wrong. Please call us directly.");
+    },
+  });
+
+  const handleHeroSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!heroName.trim() || !heroPhone.trim() || !heroType) {
+      setHeroError("Please fill in all three fields.");
+      return;
+    }
+    setHeroError("");
+    heroMutation.mutate({ name: heroName.trim(), phone: heroPhone.trim(), businessType: heroType });
+  };
+
   return (
     <PageLayout>
       <SEO
@@ -170,11 +208,70 @@ export default function Home() {
               <p className="text-white/55 text-base mb-8 leading-relaxed max-w-xl">
                 Competitive pricing, fast onboarding, and industry-specific solutions — backed by {SITE.yearsInBusiness} years of experience and a team that knows Utah business.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                <Link href="/consultation" className="btn-gold text-base py-3.5 px-8 justify-center">
-                  Book a Consultation <ArrowRight size={18} />
+              {/* Hero micro-form */}
+              {heroSubmitted ? (
+                <div className="mb-10 bg-[#c9a84c]/10 border border-[#c9a84c]/30 rounded-2xl px-6 py-5 max-w-md">
+                  <div className="flex items-center gap-3 mb-1">
+                    <CheckCircle size={20} className="text-[#c9a84c]" />
+                    <span className="text-white font-bold text-sm">We'll be in touch shortly!</span>
+                  </div>
+                  <p className="text-white/60 text-xs pl-8">Our team typically responds within one business hour. You can also call us directly at <a href="tel:+18013096988" className="text-[#c9a84c] hover:underline">(801) 309-6988</a>.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleHeroSubmit} className="mb-10 max-w-md" aria-label="Get a free quote">
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
+                    <p className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-3">Get a Free Quote — No Obligation</p>
+                    <div className="space-y-2.5 mb-3">
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        value={heroName}
+                        onChange={(e) => setHeroName(e.target.value)}
+                        className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+                        aria-label="Your name"
+                      />
+                      <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        value={heroPhone}
+                        onChange={(e) => setHeroPhone(e.target.value)}
+                        className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+                        aria-label="Phone number"
+                      />
+                      <select
+                        value={heroType}
+                        onChange={(e) => setHeroType(e.target.value)}
+                        className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#c9a84c]/60 transition-colors appearance-none"
+                        aria-label="Business type"
+                      >
+                        <option value="" disabled className="bg-[#1a1a1a]">Business Type</option>
+                        {BUSINESS_TYPES.map((t) => (
+                          <option key={t} value={t} className="bg-[#1a1a1a]">{t}</option>
+                        ))}
+                      </select>
+                    </div>
+                    {heroError && (
+                      <p className="text-red-400 text-xs mb-2">{heroError}</p>
+                    )}
+                    <button
+                      type="submit"
+                      disabled={heroMutation.isPending}
+                      className="w-full btn-gold py-2.5 justify-center text-sm font-bold disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {heroMutation.isPending ? (
+                        <><Loader2 size={15} className="animate-spin" /> Sending...</>
+                      ) : (
+                        <>Get My Free Quote <ArrowRight size={15} /></>
+                      )}
+                    </button>
+                  </div>
+                </form>
+              )}
+              <div className="flex flex-col sm:flex-row gap-3 mb-10">
+                <Link href="/consultation" className="btn-outline-white text-sm py-2.5 px-6 justify-center">
+                  Book a Consultation <ArrowRight size={16} />
                 </Link>
-                <Link href="/industries" className="btn-outline-white text-base py-3.5 px-8 justify-center">
+                <Link href="/industries" className="btn-outline-white text-sm py-2.5 px-6 justify-center opacity-70 hover:opacity-100">
                   See Industries We Serve
                 </Link>
               </div>

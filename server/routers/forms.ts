@@ -54,9 +54,36 @@ const statementReviewSchema = z.object({
   fileType: z.string().optional(),
 });
 
+// ─── Hero Lead ─────────────────────────────────────────────────────────────
+
+const heroLeadSchema = z.object({
+  name: z.string().min(1),
+  phone: z.string().min(7),
+  businessType: z.string().min(1),
+});
+
 // ─── Router ──────────────────────────────────────────────────────────────────
 
 export const formsRouter = router({
+  submitHeroLead: publicProcedure
+    .input(heroLeadSchema)
+    .mutation(async ({ input }) => {
+      const lines = [
+        `**New Homepage Lead — UBC Unlimited**`,
+        ``,
+        `**Name:** ${input.name}`,
+        `**Phone:** ${input.phone}`,
+        `**Business Type:** ${input.businessType}`,
+        ``,
+        `Source: Homepage hero micro-form. Follow up promptly.`,
+      ].join("\n");
+      await notifyOwner({
+        title: `New Homepage Lead — ${input.name}`,
+        content: lines,
+      });
+      return { success: true };
+    }),
+
   submitConsultation: publicProcedure
     .input(consultationSchema)
     .mutation(async ({ input }) => {
