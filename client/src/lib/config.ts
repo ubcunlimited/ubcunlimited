@@ -54,7 +54,7 @@ export const NAV_INDUSTRIES = [
   { label: "Professional Services", href: "/industries/professional-services", desc: "Law, accounting, consulting & more", icon: "💼" },
   { label: "Salons & Spas", href: "/industries/salons-spas", desc: "Beauty & wellness payment solutions", icon: "💅" },
   { label: "Property Management", href: "/industries/property-management", desc: "Rent & HOA payment processing", icon: "🏢" },
-  { label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions", icon: "🎯", highRisk: true },
+  { label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions", icon: "🎯" },
   { label: "CBD & Hemp", href: "/industries/cbd-hemp", desc: "Stable accounts for hemp & CBD retailers", icon: "🌿", highRisk: true },
   { label: "Nutraceuticals & Supplements", href: "/industries/nutraceuticals", desc: "Supplement brands & continuity programs", icon: "💊", highRisk: true },
   { label: "Adult Entertainment", href: "/industries/adult-entertainment", desc: "Discreet, compliant adult merchant accounts", icon: "🔞", highRisk: true },
