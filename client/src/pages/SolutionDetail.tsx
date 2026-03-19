@@ -702,12 +702,12 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 { icon: "✈️", label: "Travel & Hospitality", href: "/industries/travel", desc: "Travel agencies & booking platforms" },
                 { icon: "🎮", label: "Online Gaming & Fantasy Sports", href: "/industries/online-gaming", desc: "Skill-based gaming & fantasy sports platforms" },
                 { icon: "🎯", label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions" },
-                { icon: "📞", label: "Telemarketing & Outbound Sales", href: "/industries/high-risk-processing", desc: "Outbound sales & telemarketing operations" },
-                { icon: "💳", label: "Credit Repair & Debt Settlement", href: "/industries/high-risk-processing", desc: "Credit services & debt relief programs" },
-                { icon: "🔁", label: "Subscription & Continuity", href: "/industries/high-risk-processing", desc: "Subscription box & recurring billing" },
-                { icon: "🚬", label: "E-Cigarettes & Vape", href: "/industries/high-risk-processing", desc: "Vape shops & e-cigarette retailers" },
-                { icon: "💻", label: "Online Pharmacy & Telemedicine", href: "/industries/high-risk-processing", desc: "Online health & telemedicine platforms" },
-                { icon: "₿", label: "Cryptocurrency & Fintech", href: "/industries/high-risk-processing", desc: "Crypto exchanges & fintech platforms" },
+                { icon: "📞", label: "Telemarketing & Outbound Sales", href: "/industries/telemarketing", desc: "Outbound sales & telemarketing operations" },
+                { icon: "💳", label: "Credit Repair & Debt Settlement", href: "/industries/credit-repair", desc: "Credit services & debt relief programs" },
+                { icon: "🔄", label: "Subscription & Continuity", href: "/industries/subscription-continuity", desc: "Subscription box & recurring billing" },
+                { icon: "💨", label: "E-Cigarettes & Vape", href: "/industries/vape-ecig", desc: "Vape shops & e-cigarette retailers" },
+                { icon: "💊", label: "Online Pharmacy & Telemedicine", href: "/industries/online-pharmacy", desc: "Online health & telemedicine platforms" },
+                { icon: "₿", label: "Cryptocurrency & Fintech", href: "/industries/cryptocurrency", desc: "Crypto exchanges & fintech platforms" },
               ].map((ind) => (
                 <Link
                   key={ind.label}

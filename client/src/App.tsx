@@ -95,6 +95,12 @@ function Router() {
         <Route path="/industries/adult-entertainment">{() => <IndustryDetail slug="adult-entertainment" />}</Route>
         <Route path="/industries/travel">{() => <IndustryDetail slug="travel" />}</Route>
         <Route path="/industries/online-gaming">{() => <IndustryDetail slug="online-gaming" />}</Route>
+        <Route path="/industries/telemarketing">{() => <IndustryDetail slug="telemarketing" />}</Route>
+        <Route path="/industries/credit-repair">{() => <IndustryDetail slug="credit-repair" />}</Route>
+        <Route path="/industries/subscription-continuity">{() => <IndustryDetail slug="subscription-continuity" />}</Route>
+        <Route path="/industries/vape-ecig">{() => <IndustryDetail slug="vape-ecig" />}</Route>
+        <Route path="/industries/online-pharmacy">{() => <IndustryDetail slug="online-pharmacy" />}</Route>
+        <Route path="/industries/cryptocurrency">{() => <IndustryDetail slug="cryptocurrency" />}</Route>
 
         {/* Blog */}
         <Route path="/blog" component={Blog} />
