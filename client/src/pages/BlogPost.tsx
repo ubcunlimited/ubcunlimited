@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
 import { Link } from "wouter";
-import { Calendar, Clock, Tag, ChevronRight, ArrowLeft } from "lucide-react";
+import { Calendar, Clock, Tag, ChevronRight, ArrowLeft, ArrowRight } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import SEO from "@/components/SEO";
+import { getRelatedPosts } from "@/lib/blogData";
 
 const posts: Record<string, { title: string; category: string; date: string; readTime: string; content: string }> = {
   "how-to-lower-credit-card-processing-fees": {
@@ -965,6 +966,80 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           </div>
         </div>
       </section>
+
+      {/* Related Articles */}
+      {(() => {
+        const related = getRelatedPosts(slug, post.category, 3);
+        if (related.length === 0) return null;
+        return (
+          <section className="py-14 bg-[#f4f7fa] border-t border-gray-100" aria-labelledby="related-articles-heading">
+            <div className="container">
+              <div className="flex items-center justify-between mb-8">
+                <div>
+                  <p className="text-[#169fa8] text-xs font-semibold uppercase tracking-widest mb-1">Keep Reading</p>
+                  <h2
+                    id="related-articles-heading"
+                    className="text-2xl font-extrabold text-[#040c1c]"
+                    style={{ fontFamily: 'Sora, sans-serif' }}
+                  >
+                    Related Articles
+                  </h2>
+                </div>
+                <Link
+                  href="/blog"
+                  className="hidden sm:flex items-center gap-1.5 text-sm text-[#169fa8] font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded"
+                >
+                  View all articles <ArrowRight size={14} aria-hidden="true" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {related.map((rp) => (
+                  <Link
+                    key={rp.slug}
+                    href={`/blog/${rp.slug}`}
+                    className="group block bg-white rounded-xl border border-gray-100 hover:border-[#169fa8]/40 hover:shadow-lg transition-all overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8]"
+                  >
+                    <div className="p-5">
+                      <div className="flex items-center gap-2 mb-3">
+                        <Tag size={11} className="text-[#169fa8]" aria-hidden="true" />
+                        <span className="text-xs font-medium text-[#169fa8] bg-[#169fa8]/10 px-2 py-0.5 rounded-full">
+                          {rp.category}
+                        </span>
+                      </div>
+                      <h3
+                        className="font-bold text-[#040c1c] mb-2 group-hover:text-[#169fa8] transition-colors leading-snug text-[15px]"
+                        style={{ fontFamily: 'Sora, sans-serif' }}
+                      >
+                        {rp.title}
+                      </h3>
+                      <p className="text-gray-500 text-sm mb-4 leading-relaxed line-clamp-3">{rp.excerpt}</p>
+                      <div className="flex items-center justify-between text-gray-400 text-xs">
+                        <div className="flex items-center gap-3">
+                          <span className="flex items-center gap-1"><Calendar size={11} aria-hidden="true" />{rp.date}</span>
+                          <span className="flex items-center gap-1"><Clock size={11} aria-hidden="true" />{rp.readTime}</span>
+                        </div>
+                        <ArrowRight
+                          size={13}
+                          className="text-[#169fa8] opacity-0 group-hover:opacity-100 transition-opacity"
+                          aria-hidden="true"
+                        />
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <div className="mt-6 text-center sm:hidden">
+                <Link
+                  href="/blog"
+                  className="text-sm text-[#169fa8] font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] rounded"
+                >
+                  View all articles →
+                </Link>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       <CTABanner />
     </PageLayout>

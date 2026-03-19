@@ -1,11 +1,14 @@
+// Design: UBC Unlimited — deep navy / steel-blue / copper accent palette, Sora + DM Serif Display
+// Blog listing page — post metadata now lives in @/lib/blogData.ts (shared with BlogPost related articles)
+
 import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import { Calendar, Clock, Tag, ArrowRight, Search, X } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import SEO from "@/components/SEO";
 import CTABanner from "@/components/sections/CTABanner";
+import { blogPosts } from "@/lib/blogData";
 
-// Blog categories from Q35
 const BLOG_CATEGORIES = [
   "Credit Card Processing",
   "POS Systems",
@@ -16,153 +19,6 @@ const BLOG_CATEGORIES = [
   "Compliance & Security",
   "Business Growth",
   "News & Updates",
-];
-
-const blogPosts = [
-  {
-    slug: "how-to-lower-credit-card-processing-fees",
-    title: "How to Lower Your Credit Card Processing Fees in 2025",
-    excerpt: "Credit card processing fees typically cost 1.5%–3.5% per transaction. Learn the three fee components, four pricing models, and six proven strategies to reduce what you pay every month.",
-    category: "Credit Card Processing",
-    date: "2025-01-15",
-    readTime: "8 min read",
-    featured: true,
-  },
-  {
-    slug: "interchange-plus-vs-flat-rate-pricing",
-    title: "Interchange-Plus vs. Flat-Rate Pricing: Which Is Better for Your Business?",
-    excerpt: "Square charges 2.6% + $0.15 in-person. Interchange-plus passes the real interchange cost plus a transparent markup. For businesses over $5,000/month, the savings are significant.",
-    category: "Pricing & Fees",
-    date: "2025-01-22",
-    readTime: "6 min read",
-    featured: false,
-  },
-  {
-    slug: "best-pos-systems-utah-restaurants-2025",
-    title: "Best POS Systems for Utah Restaurants in 2025",
-    excerpt: "SkyTab at $29.99/workstation/month vs. Toast at $69–$110+. We've installed hundreds of Utah restaurant POS systems — here's our honest, side-by-side comparison.",
-    category: "POS Systems",
-    date: "2025-02-01",
-    readTime: "10 min read",
-    featured: false,
-  },
-  {
-    slug: "ach-processing-guide-utah-businesses",
-    title: "The Complete Guide to ACH Processing for Utah Businesses",
-    excerpt: "The ACH Network processed 33.6 billion payments totaling $86.2 trillion in 2024. For Utah businesses with large or recurring transactions, ACH can save thousands per year in fees.",
-    category: "ACH Payments",
-    date: "2025-02-10",
-    readTime: "7 min read",
-    featured: false,
-  },
-  {
-    slug: "utah-small-business-payment-trends-2025",
-    title: "Utah Small Business Payment Trends to Watch in 2025",
-    excerpt: "Contactless payments, Same-Day ACH growth of 16.7% in 2025, AI fraud prevention, and cash discount programs going mainstream — here's what Utah businesses need to know.",
-    category: "News & Updates",
-    date: "2025-02-18",
-    readTime: "5 min read",
-    featured: false,
-  },
-  {
-    slug: "how-to-read-merchant-statement",
-    title: "How to Read Your Merchant Processing Statement",
-    excerpt: "Interchange fees, assessment fees, processor markup, junk fees — your statement has it all. This guide breaks down every line item so you know exactly what you're paying and what's negotiable.",
-    category: "Pricing & Fees",
-    date: "2025-03-01",
-    readTime: "9 min read",
-    featured: false,
-  },
-  {
-    slug: "chargeback-prevention-guide",
-    title: "Chargeback Prevention: A Practical Guide for Utah Merchants",
-    excerpt: "eCommerce chargebacks are projected to cost $33.79 billion in 2025. Every $1 lost to fraud costs merchants $4.61 total. Here's a practical prevention guide for Utah merchants.",
-    category: "Compliance & Security",
-    date: "2025-03-08",
-    readTime: "8 min read",
-    featured: false,
-  },
-  {
-    slug: "mobile-payment-solutions-utah",
-    title: "Mobile Payment Solutions for Utah's On-the-Go Businesses",
-    excerpt: "From farmers markets to trade shows, Utah's mobile businesses need reliable card acceptance. We compare Square, Clover Go, SkyTab Mobile, and merchant-provided solutions.",
-    category: "Credit Card Processing",
-    date: "2025-03-15",
-    readTime: "6 min read",
-    featured: false,
-  },
-  {
-    slug: "restaurant-payment-processing-guide",
-    title: "The Restaurant Owner's Guide to Payment Processing",
-    excerpt: "Tip adjustments, pre-authorizations, split checks, online ordering integration — restaurant payment processing is complex. Here's how to optimize your setup and reduce costs.",
-    category: "Industry Guides",
-    date: "2025-03-22",
-    readTime: "7 min read",
-    featured: false,
-  },
-  {
-    slug: "pci-compliance-guide-small-business",
-    title: "PCI DSS 4.0 Compliance: What Utah Small Businesses Need to Know",
-    excerpt: "PCI DSS v4.0 became mandatory April 1, 2024 with 51 new requirements. Here's what Utah small businesses (most are Level 4) need to do to stay compliant.",
-    category: "Compliance & Security",
-    date: "2025-04-01",
-    readTime: "8 min read",
-    featured: false,
-  },
-  {
-    slug: "cash-discounting-surcharging-utah",
-    title: "Cash Discounting vs. Surcharging: What Utah Businesses Need to Know",
-    excerpt: "Cash discounting is legal in all 50 states. Surcharging is banned in CT, ME, MA, and OK. Colorado caps surcharges at 2%. Here's how to choose and implement the right program.",
-    category: "Pricing & Fees",
-    date: "2025-04-08",
-    readTime: "7 min read",
-    featured: false,
-  },
-  {
-    slug: "ecommerce-payment-gateway-guide",
-    title: "Choosing the Right eCommerce Payment Gateway for Your Utah Business",
-    excerpt: "Authorize.net and NMI don't sell directly to merchants — you need a reseller. Stripe does. Here's the gateway vs. processor vs. merchant account distinction every Utah eCommerce business needs to understand.",
-    category: "eCommerce Payments",
-    date: "2025-04-15",
-    readTime: "8 min read",
-    featured: false,
-  },
-  {
-    slug: "pos-systems-for-bars-utah",
-    title: "Best POS Systems for Bars and Nightclubs in Utah",
-    excerpt: "Tab management, pre-authorizations, split bills, and Utah liquor compliance — bars have unique POS requirements. Here's our honest comparison of SkyTab, Toast, Clover, and Square for Utah bar owners.",
-    category: "POS Systems",
-    date: "2025-04-22",
-    readTime: "9 min read",
-    featured: false,
-  },
-  {
-    slug: "merchant-services-utah-county",
-    title: "Merchant Services in Utah County: What Local Businesses Need to Know",
-    excerpt: "Utah County's Silicon Slopes corridor is booming. Here's why Provo, Orem, and Lehi businesses should avoid bank-provided merchant accounts and long-term contracts — and what to look for instead.",
-    category: "Industry Guides",
-    date: "2025-05-01",
-    readTime: "6 min read",
-    featured: false,
-  },
-  {
-    slug: "skytab-pos-review-utah",
-    title: "SkyTab POS Review: Is It the Right System for Your Utah Business?",
-    excerpt: "$29.99/workstation/month includes hardware, software, installation, training, and support. As Utah's authorized SkyTab reseller, we give you the honest review — strengths, limitations, and who it's right for.",
-    category: "POS Systems",
-    date: "2025-05-08",
-    readTime: "10 min read",
-    featured: false,
-  },
-  {
-    slug: "growing-business-with-better-payments",
-    title: "How Better Payment Processing Can Help Your Business Grow",
-    excerpt: "Contactless checkout, ACH for B2B, real-time sales data, loyalty programs, and lower processing costs — here's how modern payment infrastructure drives measurable business growth.",
-    category: "Business Growth",
-    date: "2025-05-15",
-    readTime: "7 min read",
-    featured: false,
-  },
 ];
 
 const categoryColors: Record<string, string> = {
@@ -207,19 +63,23 @@ export default function Blog() {
     <PageLayout>
       <SEO
         title="Blog — Merchant Services Insights for Utah Businesses | UBC Unlimited"
-        description="Expert articles on credit card processing, POS systems, payment gateways, dual pricing, and merchant services tips for Utah business owners."
+        description="Expert articles on credit card processing, POS systems, payment gateways, cash discounting, surcharging, and merchant services tips for Utah business owners."
         canonical="/blog"
       />
+
       {/* Hero */}
       <section className="bg-[#0d1b2a] py-16">
         <div className="container">
           <div className="max-w-2xl">
             <div className="stat-badge mb-4">News &amp; Updates</div>
-            <h1 className="text-4xl font-extrabold text-white mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h1
+              className="text-4xl font-extrabold text-white mb-4"
+              style={{ fontFamily: "DM Serif Display, Georgia, serif" }}
+            >
               Merchant Services Insights<br />for Utah Businesses
             </h1>
             <p className="text-white/60 text-lg">
-              Practical guides, industry news, and expert tips from {" "}
+              Practical guides, industry news, and expert tips from{" "}
               <span className="text-[#1e6fa8] font-medium">UBC Unlimited</span> — Utah's local merchant services experts.
             </p>
           </div>
@@ -230,11 +90,12 @@ export default function Blog() {
         <div className="container">
           {/* Search + Filter Bar */}
           <div className="flex flex-col md:flex-row gap-4 mb-8">
-            {/* Search */}
             <div className="relative flex-1 max-w-sm">
-              <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true" />
+              <label htmlFor="blog-search" className="sr-only">Search articles</label>
               <input
-                type="text"
+                id="blog-search"
+                type="search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search articles..."
@@ -243,20 +104,22 @@ export default function Blog() {
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
+                  aria-label="Clear search"
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                 >
-                  <X size={14} />
+                  <X size={14} aria-hidden="true" />
                 </button>
               )}
             </div>
 
             {/* Category Pills */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by category">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
+                  aria-pressed={activeCategory === cat}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e6fa8] ${
                     activeCategory === cat
                       ? "bg-[#1e6fa8] text-white shadow-sm"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-200"
@@ -272,27 +135,32 @@ export default function Blog() {
           {featured && activeCategory === "All" && !searchQuery.trim() && (
             <Link
               href={`/blog/${featured.slug}`}
-              className="group block mb-10 rounded-2xl border border-gray-100 hover:border-[#1e6fa8]/30 hover:shadow-xl transition-all overflow-hidden bg-gradient-to-br from-[#0d1b2a] to-[#152234] p-8 md:p-10"
+              className="group block mb-10 rounded-2xl border border-gray-100 hover:border-[#1e6fa8]/30 hover:shadow-xl transition-all overflow-hidden bg-gradient-to-br from-[#0d1b2a] to-[#152234] p-8 md:p-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e6fa8]"
             >
               <div className="flex items-center gap-2 mb-4">
                 <span className="bg-[#c47c2b] text-white text-xs font-bold px-2.5 py-1 rounded-full">Featured</span>
                 <span className="text-[#1e6fa8] text-xs font-medium">{featured.category}</span>
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-[#1e6fa8] transition-colors" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              <h2
+                className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-[#1e6fa8] transition-colors"
+                style={{ fontFamily: "DM Serif Display, Georgia, serif" }}
+              >
                 {featured.title}
               </h2>
               <p className="text-white/60 mb-5 leading-relaxed max-w-2xl">{featured.excerpt}</p>
               <div className="flex items-center gap-4 text-white/40 text-xs">
-                <span className="flex items-center gap-1"><Calendar size={12} />{featured.date}</span>
-                <span className="flex items-center gap-1"><Clock size={12} />{featured.readTime}</span>
-                <span className="flex items-center gap-1 text-[#1e6fa8] font-medium ml-auto">Read article <ArrowRight size={13} /></span>
+                <span className="flex items-center gap-1"><Calendar size={12} aria-hidden="true" />{featured.date}</span>
+                <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" />{featured.readTime}</span>
+                <span className="flex items-center gap-1 text-[#1e6fa8] font-medium ml-auto">
+                  Read article <ArrowRight size={13} aria-hidden="true" />
+                </span>
               </div>
             </Link>
           )}
 
           {/* Search Results Info */}
           {searchQuery.trim() && (
-            <div className="mb-6 text-sm text-gray-500">
+            <div className="mb-6 text-sm text-gray-500" role="status" aria-live="polite">
               {filtered.length > 0
                 ? `Found ${filtered.length} article${filtered.length !== 1 ? "s" : ""} matching "${searchQuery}"`
                 : `No articles found for "${searchQuery}"`}
@@ -305,25 +173,28 @@ export default function Blog() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block rounded-xl border border-gray-100 hover:border-[#1e6fa8]/30 hover:shadow-lg transition-all overflow-hidden bg-white"
+                className="group block rounded-xl border border-gray-100 hover:border-[#1e6fa8]/30 hover:shadow-lg transition-all overflow-hidden bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e6fa8]"
               >
                 <div className="p-5">
                   <div className="flex items-center gap-2 mb-3">
-                    <Tag size={11} className="text-[#1e6fa8]" />
+                    <Tag size={11} className="text-[#1e6fa8]" aria-hidden="true" />
                     <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${categoryColors[post.category] || "bg-gray-100 text-gray-600"}`}>
                       {post.category}
                     </span>
                   </div>
-                  <h3 className="font-bold text-[#0d1b2a] mb-2 group-hover:text-[#1e6fa8] transition-colors leading-snug" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+                  <h3
+                    className="font-bold text-[#0d1b2a] mb-2 group-hover:text-[#1e6fa8] transition-colors leading-snug"
+                    style={{ fontFamily: "DM Serif Display, Georgia, serif" }}
+                  >
                     {post.title}
                   </h3>
                   <p className="text-gray-500 text-sm mb-4 leading-relaxed line-clamp-3">{post.excerpt}</p>
                   <div className="flex items-center justify-between text-gray-400 text-xs">
                     <div className="flex items-center gap-3">
-                      <span className="flex items-center gap-1"><Calendar size={11} />{post.date}</span>
-                      <span className="flex items-center gap-1"><Clock size={11} />{post.readTime}</span>
+                      <span className="flex items-center gap-1"><Calendar size={11} aria-hidden="true" />{post.date}</span>
+                      <span className="flex items-center gap-1"><Clock size={11} aria-hidden="true" />{post.readTime}</span>
                     </div>
-                    <ArrowRight size={13} className="text-[#1e6fa8] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight size={13} className="text-[#1e6fa8] opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                   </div>
                 </div>
               </Link>
@@ -332,14 +203,16 @@ export default function Blog() {
 
           {filtered.length === 0 && (
             <div className="text-center py-16">
-              <div className="text-4xl mb-4">🔍</div>
+              <div className="text-4xl mb-4" aria-hidden="true">🔍</div>
               <h3 className="text-lg font-bold text-[#0d1b2a] mb-2">No articles found</h3>
               <p className="text-gray-400 text-sm mb-5">
-                {searchQuery ? `No results for "${searchQuery}". Try a different search term.` : "No posts in this category yet — check back soon."}
+                {searchQuery
+                  ? `No results for "${searchQuery}". Try a different search term.`
+                  : "No posts in this category yet — check back soon."}
               </p>
               <button
                 onClick={() => { setSearchQuery(""); setActiveCategory("All"); }}
-                className="btn-outline-teal text-sm py-2 px-5"
+                className="btn-outline-teal text-sm py-2 px-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1e6fa8]"
               >
                 Clear Filters
               </button>
