@@ -92,7 +92,7 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
   // ACH / eCheck
   if (/ach|echeck|e-check|bank\s*transfer|bank\s*draft|check\s*processing/.test(q)) {
     return {
-      text: "Our **ACH & eCheck processing** lets you accept bank-to-bank payments at a fraction of the cost of credit cards — typically $0.25–$0.75 per transaction. It's ideal for B2B payments, large invoices, recurring billing, and any situation where you want to avoid card processing fees.",
+      text: "Our **ACH & eCheck processing** lets you accept bank-to-bank payments at a fraction of the cost of credit cards. It's ideal for B2B payments, large invoices, recurring billing, and any situation where you want to avoid card processing fees. Contact us for a personalized quote.",
       links: [{ label: "ACH & eCheck Processing", href: "/solutions/ach-echeck-processing" }],
     };
   }
@@ -100,7 +100,7 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
   // Rates / fees / pricing
   if (/rate|fee|cost|pric|how much|interchange|flat.?rate|tiered/.test(q)) {
     return {
-      text: "Processing rates vary based on your industry, monthly volume, card mix, and the pricing model that fits your business best. We offer flat-rate, interchange-plus, and tiered pricing — as well as cost-elimination programs like cash discounting and surcharging. The best way to get an accurate quote is a **free statement review** — we'll analyze your current processing costs and show you exactly what you'd pay with us.",
+      text: "Processing is priced based on your industry, monthly volume, card mix, and the pricing model that fits your business best. We offer several pricing structures — as well as cost-elimination programs like cash discounting and surcharging. The best way to get an accurate quote is a **free statement review** — we'll analyze your current processing costs and show you exactly what you'd pay with us.",
       links: [
         { label: "Free Statement Review", href: "/statement-review" },
         { label: "Get a Quote", href: "/consultation" },

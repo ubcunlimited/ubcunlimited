@@ -470,7 +470,7 @@ const faqCategories = [
       {
         question: "Can tenants pay rent online?",
         answer:
-          "Yes. We provide a branded tenant payment portal where tenants can pay rent by credit card or ACH bank transfer. ACH is especially cost-effective for rent collection at $0.25–$0.75 per transaction.",
+          "Yes. We provide a branded tenant payment portal where tenants can pay rent by credit card or ACH bank transfer. ACH is especially cost-effective for rent collection, with significantly lower per-transaction costs than credit cards.",
       },
       {
         question: "Can I accept payments for retainers and legal services?",
