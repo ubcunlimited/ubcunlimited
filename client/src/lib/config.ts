@@ -41,6 +41,7 @@ export const NAV_SOLUTIONS = [
   { label: "Invoicing", href: "/solutions/invoicing", desc: "Send invoices and get paid faster", icon: "📄" },
   { label: "Gift Cards & Loyalty", href: "/solutions/gift-loyalty", desc: "Branded gift cards and loyalty rewards programs", icon: "🎁" },
   { label: "Dual Pricing & Cash Discount", href: "/solutions/dual-pricing", desc: "Eliminate or reduce credit card processing costs", icon: "💲" },
+  { label: "High-Risk Processing", href: "/solutions/high-risk-processing", desc: "Approved accounts for businesses other processors decline", icon: "🛡️", highRisk: true },
 ];
 
 export const NAV_INDUSTRIES = [
@@ -53,7 +54,12 @@ export const NAV_INDUSTRIES = [
   { label: "Professional Services", href: "/industries/professional-services", desc: "Law, accounting, consulting & more", icon: "💼" },
   { label: "Salons & Spas", href: "/industries/salons-spas", desc: "Beauty & wellness payment solutions", icon: "💅" },
   { label: "Property Management", href: "/industries/property-management", desc: "Rent & HOA payment processing", icon: "🏢" },
-  { label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions", icon: "🎯" },
+  { label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions", icon: "🎯", highRisk: true },
+  { label: "CBD & Hemp", href: "/industries/cbd-hemp", desc: "Stable accounts for hemp & CBD retailers", icon: "🌿", highRisk: true },
+  { label: "Nutraceuticals & Supplements", href: "/industries/nutraceuticals", desc: "Supplement brands & continuity programs", icon: "💊", highRisk: true },
+  { label: "Adult Entertainment", href: "/industries/adult-entertainment", desc: "Discreet, compliant adult merchant accounts", icon: "🔞", highRisk: true },
+  { label: "Travel & Hospitality", href: "/industries/travel", desc: "Travel agencies & booking platforms", icon: "✈️", highRisk: true },
+  { label: "Online Gaming & Fantasy Sports", href: "/industries/online-gaming", desc: "Skill-based gaming & fantasy sports platforms", icon: "🎮", highRisk: true },
 ];
 
 export const BLOG_CATEGORIES = [

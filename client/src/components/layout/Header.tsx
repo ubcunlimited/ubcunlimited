@@ -172,9 +172,10 @@ export default function Header() {
                     className="absolute top-full left-0 mt-1 w-[540px] bg-[#152234] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden z-50"
                   >
                     <div className="p-4">
+                      {/* Standard industries */}
                       <div className="text-[10px] font-semibold text-[#1e6fa8] uppercase tracking-widest mb-3" aria-hidden="true">Industries We Serve</div>
                       <div className="grid grid-cols-2 gap-1">
-                        {NAV_INDUSTRIES.map((item) => (
+                        {NAV_INDUSTRIES.filter((i) => !(i as any).highRisk).map((item) => (
                           <Link key={item.href} href={item.href} role="menuitem" className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] focus-visible:ring-inset">
                             <span className="text-lg mt-0.5" aria-hidden="true">{item.icon}</span>
                             <div>
@@ -183,6 +184,34 @@ export default function Header() {
                             </div>
                           </Link>
                         ))}
+                      </div>
+                      {/* High-Risk Industries section */}
+                      <div className="mt-4 pt-3 border-t border-white/10">
+                        <div className="flex items-center gap-2 mb-3">
+                          <div className="text-[10px] font-semibold text-[#d4a843] uppercase tracking-widest" aria-hidden="true">High-Risk Industries</div>
+                          <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#d4a843]/20 text-[#d4a843] uppercase tracking-wide">Specialized</span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-1">
+                          {NAV_INDUSTRIES.filter((i) => (i as any).highRisk).map((item) => (
+                            <Link key={item.href} href={item.href} role="menuitem" className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#d4a843]/5 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a843] focus-visible:ring-inset">
+                              <span className="text-lg mt-0.5" aria-hidden="true">{item.icon}</span>
+                              <div>
+                                <div className="text-white text-sm font-medium group-hover:text-[#d4a843] transition-colors">{item.label}</div>
+                                <div className="text-white/40 text-xs mt-0.5">{item.desc}</div>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                        <div className="mt-3">
+                          <Link href="/solutions/high-risk-processing" role="menuitem" className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#d4a843]/10 border border-[#d4a843]/20 hover:bg-[#d4a843]/20 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a843]">
+                            <span aria-hidden="true">🛡️</span>
+                            <div className="flex-1">
+                              <div className="text-[#d4a843] text-sm font-semibold">High-Risk Processing Overview</div>
+                              <div className="text-white/40 text-xs">Rates, reserves & how to get approved</div>
+                            </div>
+                            <ArrowRight size={12} className="text-[#d4a843] group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                          </Link>
+                        </div>
                       </div>
                       <div className="pt-3 mt-2 border-t border-white/10">
                         <Link href="/industries" role="menuitem" className="flex items-center gap-1 text-[#1e6fa8] text-xs font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8]">
@@ -289,8 +318,17 @@ export default function Header() {
                 </Link>
               ))}
               <div className="text-[10px] font-semibold text-[#1e6fa8] uppercase tracking-widest px-3 py-2 pt-4" aria-hidden="true">Industries</div>
-              {NAV_INDUSTRIES.map((item) => (
+              {NAV_INDUSTRIES.filter((i) => !(i as any).highRisk).map((item) => (
                 <Link key={item.href} href={item.href} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors text-white/75 hover:text-white text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#169fa8] focus-visible:ring-inset">
+                  <span aria-hidden="true">{item.icon}</span> {item.label}
+                </Link>
+              ))}
+              <div className="flex items-center gap-2 px-3 py-2 pt-3" aria-hidden="true">
+                <span className="text-[10px] font-semibold text-[#d4a843] uppercase tracking-widest">High-Risk Industries</span>
+                <span className="px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#d4a843]/20 text-[#d4a843] uppercase">Specialized</span>
+              </div>
+              {NAV_INDUSTRIES.filter((i) => (i as any).highRisk).map((item) => (
+                <Link key={item.href} href={item.href} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-[#d4a843]/10 transition-colors text-white/75 hover:text-[#d4a843] text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a843] focus-visible:ring-inset">
                   <span aria-hidden="true">{item.icon}</span> {item.label}
                 </Link>
               ))}

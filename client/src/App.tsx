@@ -71,6 +71,7 @@ function Router() {
         <Route path="/solutions/invoicing">{() => <SolutionDetail slug="invoicing" />}</Route>
         <Route path="/solutions/gift-loyalty">{() => <SolutionDetail slug="gift-loyalty" />}</Route>
         <Route path="/solutions/dual-pricing">{() => <SolutionDetail slug="dual-pricing" />}</Route>
+        <Route path="/solutions/high-risk-processing">{() => <SolutionDetail slug="high-risk-processing" />}</Route>
 
         {/* Industries */}
         <Route path="/industries" component={Industries} />
@@ -84,6 +85,11 @@ function Router() {
         <Route path="/industries/salons-spas">{() => <IndustryDetail slug="salons-spas" />}</Route>
         <Route path="/industries/property-management">{() => <IndustryDetail slug="property-management" />}</Route>
         <Route path="/industries/firearms">{() => <IndustryDetail slug="firearms" />}</Route>
+        <Route path="/industries/cbd-hemp">{() => <IndustryDetail slug="cbd-hemp" />}</Route>
+        <Route path="/industries/nutraceuticals">{() => <IndustryDetail slug="nutraceuticals" />}</Route>
+        <Route path="/industries/adult-entertainment">{() => <IndustryDetail slug="adult-entertainment" />}</Route>
+        <Route path="/industries/travel">{() => <IndustryDetail slug="travel" />}</Route>
+        <Route path="/industries/online-gaming">{() => <IndustryDetail slug="online-gaming" />}</Route>
 
         {/* Blog */}
         <Route path="/blog" component={Blog} />
