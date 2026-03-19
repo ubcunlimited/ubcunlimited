@@ -9,6 +9,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 // Core pages
 import Home from "./pages/Home";
 import CookieConsent from "./components/CookieConsent";
+import LiveChat from "./components/LiveChat";
 import Locations from "./pages/Locations";
 import LocationDetail from "./pages/LocationDetail";
 import About from "./pages/About";
@@ -134,6 +135,7 @@ function App() {
           <Toaster />
           <Router />
           <CookieConsent />
+      <LiveChat />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
