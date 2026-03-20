@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle, ChevronRight, Clock, Phone, Shield, TrendingUp, Zap, Star, AlertCircle } from "lucide-react";
 import { SOLUTION_PAIRS } from "@/lib/solutionPairs";
+import { getSolutionPath } from "@/lib/solutionTagMap";
 import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
@@ -783,7 +784,20 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
                         <p className="font-bold text-sm text-white leading-snug" style={{ fontFamily: 'Sora, sans-serif' }}>{pair.solution}</p>
-                        <span className="text-[10px] font-bold uppercase tracking-wider bg-[#c9a84c]/20 text-[#c9a84c] px-2 py-0.5 rounded-full">{pair.solutionTag}</span>
+                        {(() => {
+                          const tagPath = getSolutionPath(pair.solutionTag);
+                          return tagPath ? (
+                            <Link
+                              href={tagPath}
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-[10px] font-bold uppercase tracking-wider bg-[#c9a84c]/20 text-[#c9a84c] px-2 py-0.5 rounded-full hover:bg-[#c9a84c]/40 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a84c]"
+                            >
+                              {pair.solutionTag}
+                            </Link>
+                          ) : (
+                            <span className="text-[10px] font-bold uppercase tracking-wider bg-[#c9a84c]/20 text-[#c9a84c] px-2 py-0.5 rounded-full">{pair.solutionTag}</span>
+                          );
+                        })()}
                       </div>
                       {pair.solutionDetail && <p className="text-white/60 text-xs leading-relaxed">{pair.solutionDetail}</p>}
                     </div>
