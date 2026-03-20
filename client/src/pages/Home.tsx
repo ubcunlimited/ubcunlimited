@@ -191,11 +191,12 @@ export default function Home() {
 
         <div className="container relative z-10 py-16 pb-20">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
-            {/* Left column — headline + stats + CTAs */}
+            {/* Left column — headline + stats + CTAs (second on mobile, first on desktop) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
+              className="order-2 lg:order-1"
             >
               <div className="stat-badge mb-4">Utah's Local Merchant Services Experts</div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
@@ -236,11 +237,12 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Right column — lead capture form (always visible) */}
+            {/* Right column — lead capture form (first on mobile, second on desktop) */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="order-1 lg:order-2"
             >
               {heroSubmitted ? (
                 <div className="bg-[#c9a84c]/10 border border-[#c9a84c]/30 rounded-2xl px-8 py-10 text-center">

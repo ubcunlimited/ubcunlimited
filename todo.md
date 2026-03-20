@@ -6,3 +6,4 @@
 - [x] Add depth to SolutionDetail template: stats bar, how-it-works steps, pull quote, process timeline, richer hero
 - [x] Add depth to IndustryDetail template: stats bar, pain-point callouts, process steps, testimonial, richer hero with two-column layout
 - [x] Home page hero: show contact form at all screen sizes (remove hidden lg:block, stack below headline on mobile)\n
+- [x] Home hero: on mobile/tablet, show form above stat cards (order-first on small screens)
