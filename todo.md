@@ -26,3 +26,4 @@
 - [x] Roll out Option B paired card layout to all 21 IndustryDetail pages with expanded challenge-solution data
 - [x] Roll out Option B paired card layout to all 11 SolutionDetail pages with expanded challenge-solution data
 - [x] Add 4 more challenge-solution pairs to Restaurants, Retail, Auto Repair, and Medical in industryPairs.ts
+- [x] Add 4-5 more challenge-solution pairs to Bars & Nightclubs, Salons & Spas, and Professional Services in industryPairs.ts
