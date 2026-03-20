@@ -210,7 +210,7 @@ const industriesData: IndustryData[] = [
     ],
     recommendedSolutions: ["/solutions/ecommerce-payments", "/solutions/virtual-terminals", "/solutions/invoicing"],
     faqs: [
-      { question: "What payment gateways do you support for eCommerce?", answer: "We work with a wide variety of payment gateways to ensure your online store has the right integration. Our supported gateways include Authorize.net, Fluidpay, Quantum Gateway, NMI, iPosPays, and many more. We work together with you to determine the best gateway option based on your business requirements, shopping cart platform, and transaction volume." },
+      { question: "What payment gateways do you support for eCommerce?", answer: "We work with a wide variety of payment gateways to ensure your online store has the right integration. We collaborate with you to determine the best gateway option based on your business requirements, shopping cart platform, and transaction volume." },
       { question: "What eCommerce platforms do you support?", answer: "We support Shift4Shop, Shopify, WooCommerce, Magento, BigCommerce, and custom platforms via our API. Shift4Shop is our preferred end-to-end solution — it combines the website builder and payment gateway in one platform with no monthly fee when processing through UBC Unlimited." },
       { question: "How do you reduce chargebacks?", answer: "We use AVS verification, CVV checking, velocity filters, and machine learning fraud detection to minimize chargebacks." },
     ],
@@ -327,7 +327,7 @@ const industriesData: IndustryData[] = [
     icon: "🌿",
     title: "CBD & Hemp",
     subtitle: "Stable, compliant merchant accounts for CBD and hemp retailers",
-    description: "CBD and hemp businesses face one of the most challenging payment processing environments of any retail category. Most major banks and processors — including Square, Stripe, and PayPal — prohibit CBD sales outright, leaving merchants scrambling for accounts that don't get shut down without warning. UBC Unlimited works with specialized acquiring banks that have deep experience in the hemp and CBD space, providing stable, compliant merchant accounts for CBD retailers, hemp product manufacturers, online CBD stores, and wellness brands across Utah and nationwide.",
+    description: "CBD and hemp businesses face one of the most challenging payment processing environments of any retail category. Most standard banks and processors prohibit CBD sales outright, leaving merchants scrambling for accounts that don't get shut down without warning. UBC Unlimited works with specialized acquiring banks that have deep experience in the hemp and CBD space, providing stable, compliant merchant accounts for CBD retailers, hemp product manufacturers, online CBD stores, and wellness brands across Utah and nationwide.",
     challenges: [
       "Frequent account terminations from mainstream processors",
       "Difficulty distinguishing hemp-derived CBD from marijuana for bank underwriting",
@@ -344,7 +344,7 @@ const industriesData: IndustryData[] = [
     ],
     recommendedSolutions: ["/solutions/high-risk-processing", "/solutions/ecommerce-payments", "/solutions/credit-card-processing", "/solutions/dual-pricing"],
     faqs: [
-      { question: "Why do most processors decline CBD businesses?", answer: "Most mainstream processors — including Square, Stripe, and PayPal — prohibit CBD sales in their terms of service due to the regulatory complexity of hemp-derived cannabidiol, the risk of chargebacks from online sales, and the reputational risk associated with cannabis-adjacent products. This is a policy decision, not a legal requirement. Specialized high-risk processors have underwriting frameworks specifically designed for the CBD category and can provide stable, long-term accounts." },
+      { question: "Why do most processors decline CBD businesses?", answer: "Most mainstream processors prohibit CBD sales in their terms of service due to the regulatory complexity of hemp-derived cannabidiol, the risk of chargebacks from online sales, and the reputational risk associated with cannabis-adjacent products. This is a policy decision, not a legal requirement. Specialized high-risk processors have underwriting frameworks specifically designed for the CBD category and can provide stable, long-term accounts." },
       { question: "Is CBD processing legal?", answer: "Yes. Hemp-derived CBD with less than 0.3% THC was federally legalized under the 2018 Farm Bill. Selling CBD products and accepting payment for them is legal at the federal level. However, individual states have varying regulations on CBD sales, and payment processors have their own policies that may be more restrictive than the law. We work with processors who are comfortable with Farm Bill-compliant CBD products." },
       { question: "What documentation do I need to apply?", answer: "High-risk underwriting for CBD typically requires: proof of Farm Bill compliance (Certificate of Analysis from an accredited lab showing <0.3% THC), your business license, a copy of your website and product descriptions, processing history (if available), and your EIN and bank statements. We'll walk you through the complete documentation checklist during your application." },
       { question: "Can I accept payments on my CBD website?", answer: "Yes. We work with CBD-friendly payment gateways that integrate with major eCommerce platforms. Depending on your platform, the integration may require a third-party checkout or a direct API connection — we handle the technical setup on your behalf." },
@@ -368,7 +368,7 @@ const industriesData: IndustryData[] = [
       { title: "Subscription & Continuity Billing", desc: "Compliant recurring billing with pre-dunning notifications, clear billing descriptors, and flexible retry logic to reduce chargebacks from subscription disputes." },
       { title: "Chargeback Prevention & Monitoring", desc: "Real-time chargeback alerts, dispute response tools, and proactive fraud screening to keep your chargeback ratio below the 1% threshold." },
       { title: "Multiple MID Structure", desc: "For brands with multiple product lines, we can structure separate merchant accounts by product category to isolate chargeback risk and protect your highest-volume accounts." },
-      { title: "eCommerce & Funnel Integration", desc: "Compatible with leading supplement sales funnels, shopping carts, and order management systems including NMI, Authorize.net, and USAePay gateways." },
+      { title: "eCommerce & Funnel Integration", desc: "Compatible with leading supplement sales funnels, shopping carts, and order management systems through our supported payment gateways." },
     ],
     recommendedSolutions: ["/solutions/high-risk-processing", "/solutions/ecommerce-payments", "/solutions/virtual-terminals"],
     faqs: [
@@ -480,7 +480,7 @@ const industriesData: IndustryData[] = [
       { title: "Fraud Prevention & Velocity Controls", desc: "Advanced fraud detection tools calibrated for high-velocity gaming transactions, including velocity limits, device fingerprinting, and behavioral analytics." },
       { title: "Chargeback Management", desc: "Real-time chargeback monitoring and dispute response tools to manage the elevated chargeback exposure common in gaming and fantasy sports." },
       { title: "Recurring & Subscription Billing", desc: "Compliant subscription billing for gaming memberships, season passes, and premium content — with transparent billing descriptors and easy cancellation." },
-      { title: "eCommerce & In-App Payments", desc: "Payment gateway integration for gaming merchandise, in-app purchases, and digital content sales — compatible with NMI, Authorize.net, and custom API integrations." },
+      { title: "eCommerce & In-App Payments", desc: "Payment gateway integration for gaming merchandise, in-app purchases, and digital content sales — compatible with leading gateways and custom API integrations." },
     ],
     recommendedSolutions: ["/solutions/high-risk-processing", "/solutions/ecommerce-payments", "/solutions/virtual-terminals"],
     faqs: [
@@ -497,7 +497,7 @@ const industriesData: IndustryData[] = [
     subtitle: "Stable payment processing for outbound and inbound call center businesses",
     description: "Telemarketing businesses face unique payment processing challenges — high chargeback exposure, regulatory scrutiny under the FTC Telemarketing Sales Rule, and blanket rejection from most standard processors. UBC Unlimited connects telemarketing and call center businesses with specialized high-risk processors who understand the industry and offer stable, long-term merchant accounts.",
     challenges: [
-      "Blanket rejection from Stripe, Square, and most standard processors",
+      "Blanket rejection from most standard processors",
       "High chargeback rates from card-not-present transactions",
       "FTC Telemarketing Sales Rule compliance requirements",
       "Rolling reserves and higher processing fees from risk-averse banks",
@@ -526,7 +526,7 @@ const industriesData: IndustryData[] = [
     subtitle: "Payment solutions for credit repair, counseling, and financial coaching businesses",
     description: "Credit repair and credit counseling businesses are among the most heavily scrutinized industries in payment processing. The Credit Repair Organizations Act (CROA) prohibits advance fees before services are rendered, and most standard processors refuse to work with credit repair companies entirely. UBC Unlimited connects compliant credit repair businesses with specialized processors who understand the regulatory framework and offer stable merchant accounts.",
     challenges: [
-      "Near-universal rejection from standard processors including Stripe, Square, and PayPal",
+      "Near-universal rejection from standard processors",
       "CROA compliance requirements prohibiting advance fee collection",
       "High chargeback rates from dissatisfied clients",
       "Regulatory scrutiny from the FTC and CFPB",
@@ -582,9 +582,9 @@ const industriesData: IndustryData[] = [
     icon: "💨",
     title: "Vape & E-Cigarettes",
     subtitle: "Payment processing for vape shops, e-liquid brands, and online vape retailers",
-    description: "Vape shops, e-cigarette retailers, and e-liquid manufacturers face significant payment processing obstacles. Most standard processors including Stripe, Square, and PayPal explicitly prohibit tobacco and vape products in their terms of service. UBC Unlimited connects vape businesses with specialized processors who support both retail and online vape sales, including age verification compliance.",
+    description: "Vape shops, e-cigarette retailers, and e-liquid manufacturers face significant payment processing obstacles. Most standard processors explicitly prohibit tobacco and vape products in their terms of service. UBC Unlimited connects vape businesses with specialized processors who support both retail and online vape sales, including age verification compliance.",
     challenges: [
-      "Explicit prohibition by Stripe, Square, PayPal, and most standard processors",
+      "Explicit prohibition by most standard processors",
       "FDA regulatory oversight of tobacco and nicotine products",
       "Age verification requirements for online sales",
       "PACT Act compliance for online nicotine product sales",
@@ -600,7 +600,7 @@ const industriesData: IndustryData[] = [
     ],
     recommendedSolutions: ["/solutions/high-risk-processing", "/solutions/ecommerce-payments", "/solutions/credit-card-processing"],
     faqs: [
-      { question: "Why won't Stripe or Square process vape sales?", answer: "Stripe, Square, and most standard payment processors explicitly prohibit tobacco, nicotine, and vape products in their acceptable use policies. This is primarily a risk management decision — vape businesses face regulatory uncertainty from the FDA, elevated chargeback rates, and potential legal liability that standard processors are not willing to underwrite. Specialized high-risk processors who focus on tobacco and vape have the underwriting expertise and banking relationships to support these businesses." },
+      { question: "Why won't standard processors handle vape sales?", answer: "Most standard payment processors explicitly prohibit tobacco, nicotine, and vape products in their acceptable use policies. This is primarily a risk management decision — vape businesses face regulatory uncertainty from the FDA, elevated chargeback rates, and potential legal liability that standard processors are not willing to underwrite. Specialized high-risk processors who focus on tobacco and vape have the underwriting expertise and banking relationships to support these businesses." },
       { question: "What is the PACT Act and does it affect my vape business?", answer: "The Prevent All Cigarette Trafficking (PACT) Act was amended in 2021 to include e-cigarettes and vaping products. It requires online sellers of nicotine products to: verify the age of buyers; use carriers that verify age at delivery; collect and remit applicable state and local taxes; and register with the ATF and state tobacco tax administrators. Non-compliance can result in significant fines. We work with processors and fulfillment partners who understand PACT Act requirements." },
       { question: "Can I sell CBD vape products through your processing?", answer: "CBD vape products occupy a complex regulatory space — they are subject to both FDA oversight of vaping products and the regulatory framework for CBD/hemp-derived products. We can discuss your specific product line and connect you with processors who have experience in both categories. Proper product labeling, third-party lab testing documentation, and a compliant website are important factors in the underwriting process." },
       { question: "Do you support both retail vape shops and online vape stores?", answer: "Yes. We support both brick-and-mortar vape shops with in-store POS and card terminal solutions, and online vape retailers with eCommerce payment gateway integration. For online sales, we can help you implement age verification workflows and connect you with PACT Act compliant shipping solutions." },

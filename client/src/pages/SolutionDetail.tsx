@@ -131,7 +131,7 @@ const solutionsData: SolutionData[] = [
       { title: "EMV, Contactless & Digital Wallets", desc: "Full support for chip cards, tap-to-pay, Apple Pay, Google Pay, Samsung Pay, and all modern payment methods — keeping you current with how customers want to pay." },
       { title: "Next-Day Funding", desc: "Get your money faster. Funds deposited directly to your business bank account the next business day for most qualifying accounts." },
       { title: "Advanced Fraud & Chargeback Protection", desc: "Multi-layer fraud detection, real-time transaction monitoring, and dedicated chargeback management tools to protect your revenue and reduce dispute losses. Includes up to $100,000 in data breach protection coverage for qualifying accounts." },
-      { title: "Payment Gateway Integration", desc: "Seamlessly connect to 350+ software platforms, shopping carts, and business systems through leading payment gateways including Quantum Gateway, Authorize.net, NMI, and others — with no gateway fees on qualifying accounts." },
+      { title: "Payment Gateway Integration", desc: "Seamlessly connect to 350+ software platforms, shopping carts, and business systems through our supported payment gateways — with no gateway fees on qualifying accounts." },
       { title: "Recurring Billing & Invoicing", desc: "Automate subscription billing, installment plans, and recurring charges. Send professional digital invoices with embedded payment links for fast, frictionless collection." },
       { title: "Reporting & Business Intelligence", desc: "Real-time transaction reporting, batch summaries, reconciliation tools, and actionable business analytics — all accessible from a single dashboard, anytime and anywhere." },
       { title: "PCI DSS Compliance Support", desc: "Full suite of PCI security tools and compliance resources to keep your business protected and audit-ready, with dedicated support to guide you through the process." },
@@ -290,10 +290,10 @@ const solutionsData: SolutionData[] = [
     title: "eCommerce Payments",
     subtitle: "Secure online payment gateways for your website",
     metaDescription: "eCommerce payment gateway solutions for Utah online stores. Secure checkout, 350+ integrations, fraud protection & no-fee processing options. Get started.",
-    description: "Accept payments on your website with our secure payment gateway solutions. We work with a variety of payment gateways — including Authorize.net, Fluidpay, Quantum Gateway, NMI, and many more — to find the best fit for your platform, business type, and transaction volume.",
+    description: "Accept payments on your website with our secure payment gateway solutions. We work with a variety of payment gateways to find the best fit for your platform, business type, and transaction volume.",
     heroPoints: ["Multiple gateway options", "Advanced fraud protection", "Recurring billing", "Mobile optimized checkout"],
     features: [
-      { title: "Multiple Gateway Options", desc: "We partner with Authorize.net, Fluidpay, Quantum Gateway, NMI, and many more. We work together to determine the best gateway for your specific needs." },
+      { title: "Multiple Gateway Options", desc: "We work with a wide range of payment gateways and collaborate with you to determine the best option based on your platform, business type, and transaction needs." },
       { title: "Shopping Cart Integration", desc: "Works with WooCommerce, Shopify, Magento, BigCommerce, and 100+ more platforms." },
       { title: "Fraud Protection", desc: "Advanced fraud screening with AVS, CVV, velocity filters, and customizable rules to protect your business." },
       { title: "Recurring Billing", desc: "Subscription management and recurring payment tools built in." },
@@ -302,7 +302,7 @@ const solutionsData: SolutionData[] = [
     ],
     benefits: ["Right gateway for your business — not a one-size-fits-all approach", "Accept international payments", "Lower fraud losses", "Increase conversions with optimized checkout"],
     faqs: [
-      { question: "What payment gateways do you support?", answer: "We work with a wide variety of gateways including Authorize.net, Fluidpay, Quantum Gateway, NMI, and many more. During your consultation, we'll evaluate your platform, volume, and business type to recommend the best fit." },
+      { question: "What payment gateways do you support?", answer: "We work with a wide variety of payment gateways. During your consultation, we'll evaluate your platform, volume, and business type to recommend the best fit for your specific setup." },
       { question: "What platforms do you integrate with?", answer: "We integrate with all major eCommerce platforms including WooCommerce, Shopify, Magento, BigCommerce, and custom-built websites via API." },
       { question: "How do you handle fraud?", answer: "Our gateway options include AVS verification, CVV checking, velocity filters, and machine learning fraud detection to protect your revenue." },
       { question: "Can you support high-risk eCommerce businesses?", answer: "Yes, on a case-by-case basis. Certain gateways in our network are specifically designed for high-risk and specialty merchants. We'll evaluate your business and connect you with the right solution." },
@@ -527,7 +527,7 @@ const solutionsData: SolutionData[] = [
       { title: "Rolling Reserve Negotiation", desc: "Many high-risk accounts require a rolling reserve — a percentage of daily transactions held for 90–180 days as a risk buffer for the acquiring bank. We negotiate reserve requirements on your behalf and work to reduce or eliminate the reserve as your account establishes a clean processing history." },
       { title: "Multi-Currency & International Processing", desc: "High-risk processors typically offer broader international processing capabilities than standard accounts. If your business sells to customers outside the United States, we can structure your account for multi-currency acceptance and cross-border transaction support." },
       { title: "Recurring Billing & Subscription Support", desc: "Subscription-based businesses are frequently classified as high-risk due to elevated chargeback rates from billing disputes. We work with processors that specialize in subscription billing and provide the tools — including pre-dunning notifications, flexible retry logic, and transparent billing descriptors — to reduce disputes before they become chargebacks." },
-      { title: "Payment Gateway Integration", desc: "High-risk accounts are compatible with leading payment gateways including NMI, Authorize.net, and USAePay. We handle gateway configuration, shopping cart integration, and API setup so your checkout experience is seamless for customers regardless of your risk classification." },
+      { title: "Payment Gateway Integration", desc: "High-risk accounts are compatible with leading payment gateways. We handle gateway configuration, shopping cart integration, and API setup so your checkout experience is seamless for customers regardless of your risk classification." },
       { title: "Offshore & Domestic Account Options", desc: "Depending on your industry and processing history, a domestic or offshore acquiring bank may be the better fit. We evaluate both options and recommend the structure that gives you the best combination of approval likelihood, rate, reserve requirement, and stability." },
       { title: "MATCH List Recovery Assistance", desc: "If your business has been placed on the Terminated Merchant File (TMF/MATCH list) due to excessive chargebacks or other issues, processing options are significantly limited — but not impossible. We work with acquiring banks that accept MATCH-listed merchants in certain circumstances and help you build the case for reinstatement." },
       { title: "Transparent Pricing — No Hidden Fees", desc: "High-risk processing is more expensive than standard processing — typically 3.5%–5.5% per transaction plus a monthly account fee — but the exact cost depends heavily on your industry, volume, and chargeback history. We provide a full fee disclosure before you sign anything, so you know exactly what you're paying and why." },
@@ -538,7 +538,7 @@ const solutionsData: SolutionData[] = [
       "Dedicated local Utah rep — not a call center",
       "Rolling reserve minimized or waived for qualified accounts",
       "Chargeback monitoring and dispute tools included",
-      "Compatible with NMI, Authorize.net, and USAePay gateways",
+      "Compatible with leading payment gateways",
       "Multi-currency and international processing available",
       "Full fee transparency — no surprises on your statement",
     ],
@@ -911,40 +911,33 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               <p className="text-gray-500 max-w-2xl mx-auto">We work with a variety of payment gateways and collaborate with you to determine the best option based on your platform, business type, and transaction needs.</p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-              {/* Authorize.net */}
+              {/* Secure Gateway */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/authorize-net_4b70b746.png" alt="Authorize.net payment gateway logo — eCommerce payment processing partner" className="max-h-10 max-w-full object-contain" />
+                <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
+                  <span className="text-[#080808] font-semibold text-sm text-center leading-tight">Secure<br />Checkout</span>
                 </div>
-                <span className="text-xs text-gray-400 font-medium">Authorize.net</span>
+                <span className="text-xs text-gray-400 font-medium">Secure Checkout</span>
               </div>
-              {/* NMI */}
+              {/* Recurring Billing */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/nmi_cc167af1.png" alt="NMI payment gateway logo — high-risk & eCommerce payment processing" className="max-h-10 max-w-full object-contain" />
+                <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
+                  <span className="text-[#080808] font-semibold text-sm text-center leading-tight">Recurring<br />Billing</span>
                 </div>
-                <span className="text-xs text-gray-400 font-medium">NMI</span>
+                <span className="text-xs text-gray-400 font-medium">Recurring Billing</span>
               </div>
-              {/* Quantum Gateway */}
+              {/* Fraud Protection */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/quantum-gateway_fd6105e8.jpg" alt="Quantum Gateway logo — payment gateway integration partner" className="max-h-10 max-w-full object-contain" />
+                <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
+                  <span className="text-[#080808] font-semibold text-sm text-center leading-tight">Fraud<br />Protection</span>
                 </div>
-                <span className="text-xs text-gray-400 font-medium">Quantum Gateway</span>
+                <span className="text-xs text-gray-400 font-medium">Fraud Protection</span>
               </div>
-              {/* Fluidpay */}
+              {/* Platform Integrations */}
               <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
-                  <img src="https://www.fluidpay.com/images/general/logo.svg" alt="Fluidpay payment gateway logo — online payment processing partner" className="max-h-10 max-w-full object-contain" />
+                <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
+                  <span className="text-[#080808] font-semibold text-sm text-center leading-tight">350+<br />Integrations</span>
                 </div>
-                <span className="text-xs text-gray-400 font-medium">Fluidpay</span>
-              </div>
-              {/* iPosPays */}
-              <div className="flex flex-col items-center gap-3 group">
-                <div className="w-44 h-20 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
-                  <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/ipospays-logo_6aaa431d.png" alt="iPosPays logo — POS payment processing partner" className="max-h-10 max-w-full object-contain" />
-                </div>
-                <span className="text-xs text-gray-400 font-medium">iPosPays</span>
+                <span className="text-xs text-gray-400 font-medium">Platform Integrations</span>
               </div>
               {/* And More */}
               <div className="flex flex-col items-center gap-3 group">

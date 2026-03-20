@@ -1393,7 +1393,7 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     },
     {
       challenge: "Online vape store payment gateway",
-      challengeDetail: "Most standard eCommerce payment gateways (Stripe, Square) refuse vape and e-cigarette businesses, leaving online retailers without a payment solution.",
+      challengeDetail: "Most standard eCommerce payment gateways refuse vape and e-cigarette businesses outright, leaving online retailers without a payment solution.",
       solution: "Vape-friendly eCommerce payment gateway",
       solutionDetail: "A payment gateway that supports online vape sales with age verification integration, fraud detection, and support for major card brands. Works with popular eCommerce platforms.",
       solutionTag: "eCommerce Payments",

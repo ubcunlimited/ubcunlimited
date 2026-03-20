@@ -215,11 +215,11 @@ export const SOLUTION_PAIRS: Record<string, SolutionChallengePair[]> = {
     },
     {
       challenge: "Your mobile payment solution charges too much per transaction",
-      challengeDetail: "Square and PayPal charge 2.6–2.9% per swipe for mobile transactions — significantly more than what's available through a dedicated merchant account.",
+      challengeDetail: "Flat-rate mobile processors typically charge 2.6–2.9% per swipe — significantly more than what's available through a dedicated merchant account.",
       solution: "Competitive mobile processing rates",
-      solutionDetail: "A dedicated merchant account through UBC Unlimited typically offers lower per-transaction rates than Square or PayPal for businesses with consistent monthly volume. We analyze your volume and recommend the most cost-effective solution.",
+      solutionDetail: "A dedicated merchant account through UBC Unlimited typically offers lower per-transaction rates than flat-rate mobile processors for businesses with consistent monthly volume. We analyze your volume and recommend the most cost-effective solution.",
       solutionTag: "Rate Optimization",
-      impact: "Lower cost than Square/PayPal",
+      impact: "Lower cost than flat-rate processors",
     },
     {
       challenge: "No reporting or inventory management for mobile sales",

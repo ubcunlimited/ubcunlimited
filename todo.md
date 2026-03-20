@@ -36,3 +36,4 @@
 - [x] Write new blog post: "How Interchange Rates Work" with cited industry data
 - [x] Add email capture form to blog sidebar: name + email, stored in DB, owner notification on submission
 - [x] Remove partner network disclosures from About page
+- [x] Remove non-equipment brand names from solution/industry pages; keep only SkyTab, PAX, Clover (hardware/POS brands)
