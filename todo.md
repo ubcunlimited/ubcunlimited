@@ -25,3 +25,4 @@
 - [x] Build challenge-solution proof-of-concept page (Restaurants industry) and present to user for feedback
 - [x] Roll out Option B paired card layout to all 21 IndustryDetail pages with expanded challenge-solution data
 - [x] Roll out Option B paired card layout to all 11 SolutionDetail pages with expanded challenge-solution data
+- [x] Add 4 more challenge-solution pairs to Restaurants, Retail, Auto Repair, and Medical in industryPairs.ts
