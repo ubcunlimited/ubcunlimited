@@ -91,6 +91,9 @@ import Disclaimer from "./pages/legal/Disclaimer";
 // FAQ
 import FAQPage from "./pages/FAQPage";
 
+// POC
+import RestaurantsPOC from "./pages/RestaurantsPOC";
+
 // Counties & Cities
 import Counties from "./pages/Counties";
 import CountyDetail from "./pages/CountyDetail";
@@ -132,6 +135,9 @@ function Router() {
         <Route path="/solutions/gift-loyalty">{() => <SolutionDetail slug="gift-loyalty" />}</Route>
         <Route path="/solutions/dual-pricing">{() => <SolutionDetail slug="dual-pricing" />}</Route>
         <Route path="/solutions/high-risk-processing">{() => <SolutionDetail slug="high-risk-processing" />}</Route>
+
+        {/* POC */}
+        <Route path="/poc/restaurants" component={RestaurantsPOC} />
 
         {/* Industries */}
         <Route path="/industries" component={Industries} />

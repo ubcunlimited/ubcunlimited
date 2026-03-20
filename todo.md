@@ -22,3 +22,4 @@
 - [x] Rebuild Utah county SVG map with accurate GeoJSON-derived paths from US Census TIGER data
 - [x] Fix nested <a> inside <a> error in Home.tsx service area section (county cards have child Link elements)
 - [x] Add unified search bar to Counties and Cities pages with live dropdown results
+- [x] Build challenge-solution proof-of-concept page (Restaurants industry) and present to user for feedback
