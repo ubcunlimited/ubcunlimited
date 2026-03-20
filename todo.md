@@ -28,3 +28,5 @@
 - [x] Add 4 more challenge-solution pairs to Restaurants, Retail, Auto Repair, and Medical in industryPairs.ts
 - [x] Add 4-5 more challenge-solution pairs to Bars & Nightclubs, Salons & Spas, and Professional Services in industryPairs.ts
 - [x] Expand remaining 14 industry pages to 8-10 challenge-solution pairs each in industryPairs.ts
+- [ ] Make solution tag badges on challenge-solution cards clickable links to corresponding solution pages
+- [x] Rebuild Blog.tsx with two-column layout: sidebar with categories, archive by month/year, sort control (Newest/Oldest)
