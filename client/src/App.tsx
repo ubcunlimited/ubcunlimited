@@ -13,6 +13,7 @@ import LiveChat from "./components/LiveChat";
 import BackToTop from "./components/BackToTop";
 import Locations from "./pages/Locations";
 import LocationDetail from "./pages/LocationDetail";
+import SaltLakeCity from "./pages/locations/SaltLakeCity";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -132,6 +133,7 @@ function Router() {
 
         {/* Locations */}
         <Route path="/locations" component={Locations} />
+        <Route path="/locations/salt-lake-city" component={SaltLakeCity} />
         <Route path="/locations/:slug" component={LocationDetail} />
 
         {/* Company */}
