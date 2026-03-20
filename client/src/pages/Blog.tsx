@@ -7,6 +7,7 @@ import { Calendar, Clock, Tag, ArrowRight, Search, X, ChevronDown, ChevronRight,
 import PageLayout from "@/components/layout/PageLayout";
 import SEO from "@/components/SEO";
 import CTABanner from "@/components/sections/CTABanner";
+import BlogLeadCapture from "@/components/BlogLeadCapture";
 import { blogPosts } from "@/lib/blogData";
 
 const BLOG_CATEGORIES = [
@@ -399,6 +400,9 @@ export default function Blog() {
                   </div>
                 )}
               </div>
+
+              {/* Email Capture */}
+              <BlogLeadCapture />
 
               {/* CTA Card */}
               <div className="rounded-xl bg-gradient-to-br from-[#080808] to-[#1a1a1a] p-5 border border-[#c9a84c]/20">

@@ -34,3 +34,4 @@
 - [x] Audit and rewrite all site content for originality: blog excerpts, industry/solution page copy, challenge-solution pairs, homepage, county/city templates
 - [x] Restore removed third-party statistics with proper inline citations and clickable source links; add Sources section to each blog post
 - [x] Write new blog post: "How Interchange Rates Work" with cited industry data
+- [x] Add email capture form to blog sidebar: name + email, stored in DB, owner notification on submission

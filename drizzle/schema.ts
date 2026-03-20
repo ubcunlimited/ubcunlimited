@@ -26,3 +26,19 @@ export type User = typeof users.$inferSelect;
 export type InsertUser = typeof users.$inferInsert;
 
 // TODO: Add your tables here
+
+/**
+ * Blog sidebar email capture leads.
+ * Stores name + email from visitors who opt in via the blog sidebar form.
+ */
+export const blogLeads = mysqlTable("blog_leads", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 128 }).notNull(),
+  email: varchar("email", { length: 320 }).notNull(),
+  /** The blog post slug the visitor was reading when they submitted, if known. */
+  sourcePage: varchar("source_page", { length: 256 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type BlogLead = typeof blogLeads.$inferSelect;
+export type InsertBlogLead = typeof blogLeads.$inferInsert;

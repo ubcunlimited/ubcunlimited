@@ -3,6 +3,7 @@ import { publicProcedure, router } from "../_core/trpc";
 import { notifyOwner } from "../_core/notification";
 import { storagePut } from "../storage";
 import { nanoid } from "nanoid";
+import { insertBlogLead } from "../db";
 
 // ─── Consultation ────────────────────────────────────────────────────────────
 
@@ -65,6 +66,43 @@ const heroLeadSchema = z.object({
 // ─── Router ──────────────────────────────────────────────────────────────────
 
 export const formsRouter = router({
+  submitBlogLead: publicProcedure
+    .input(
+      z.object({
+        name: z.string().min(1, "Name is required").max(128),
+        email: z.string().email("Please enter a valid email address"),
+        sourcePage: z.string().max(256).optional(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      // Persist to database
+      await insertBlogLead({
+        name: input.name,
+        email: input.email,
+        sourcePage: input.sourcePage ?? null,
+      });
+
+      // Notify owner
+      const lines = [
+        `**New Blog Email Lead — UBC Unlimited**`,
+        ``,
+        `**Name:** ${input.name}`,
+        `**Email:** ${input.email}`,
+        input.sourcePage ? `**Source Page:** ${input.sourcePage}` : null,
+        ``,
+        `This visitor opted in to receive the free processing fee guide from the blog sidebar.`,
+      ]
+        .filter(Boolean)
+        .join("\n");
+
+      await notifyOwner({
+        title: `New Blog Lead — ${input.name}`,
+        content: lines,
+      });
+
+      return { success: true };
+    }),
+
   submitAgentLead: publicProcedure
     .input(
       z.object({
