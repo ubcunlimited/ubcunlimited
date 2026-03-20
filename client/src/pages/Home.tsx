@@ -110,6 +110,7 @@ export default function Home() {
   return (
     <PageLayout>
       <SEO
+        title="Utah Merchant Services & Payment Processing | UBC Unlimited"
         canonical="/"
         description="Utah merchant services provider. Credit card processing, cash discounting, SkyTab POS, ACH payments. Serving Salt Lake City, Provo & statewide. Free statement review."
         schema={[

@@ -1209,8 +1209,44 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
     <PageLayout>
       <SEO
         title={post.title}
-        description={post.content.trim().split("\n")[0].slice(0, 160)}
+        description={post.content.trim().split("\n").find(l => l.trim() && !l.startsWith("#"))?.slice(0, 160) ?? post.title}
         canonical={`/blog/${slug}`}
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.title,
+            "description": post.content.trim().split("\n").find((l: string) => l.trim() && !l.startsWith("#"))?.slice(0, 160) ?? post.title,
+            "datePublished": new Date(post.date).toISOString(),
+            "dateModified": new Date(post.date).toISOString(),
+            "author": {
+              "@type": "Person",
+              "name": "Josh Cornia",
+              "url": "https://ubcunlimited.com/about"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "UBC Unlimited",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png"
+              }
+            },
+            "url": `https://ubcunlimited.com/blog/${slug}`,
+            "mainEntityOfPage": { "@type": "WebPage", "@id": `https://ubcunlimited.com/blog/${slug}` },
+            "articleSection": post.category,
+            "keywords": `${post.category}, merchant services Utah, payment processing Utah, UBC Unlimited`
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ubcunlimited.com" },
+              { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://ubcunlimited.com/blog" },
+              { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://ubcunlimited.com/blog/${slug}` }
+            ]
+          }
+        ]}
       />
       <section className="bg-[#080808] py-14">
         <div className="container">

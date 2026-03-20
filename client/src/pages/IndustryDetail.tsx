@@ -753,26 +753,48 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
         title={`${data.title} Payment Processing in Utah`}
         description={`${data.description.slice(0, 140)} UBC Unlimited serves Utah ${data.title.toLowerCase()} businesses with tailored payment solutions.`}
         canonical={`/industries/${data.slug}`}
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": `${data.title} Payment Processing`,
-          "description": data.description,
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "UBC Unlimited",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Salt Lake City",
-              "addressRegion": "UT",
-              "addressCountry": "US"
-            }
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": `${data.title} Payment Processing`,
+            "description": data.description,
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "UBC Unlimited",
+              "url": "https://ubcunlimited.com",
+              "telephone": "+18014576500",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Salt Lake City",
+                "addressRegion": "UT",
+                "addressCountry": "US"
+              }
+            },
+            "areaServed": { "@type": "State", "name": "Utah" },
+            "url": `https://ubcunlimited.com/industries/${data.slug}`
           },
-          "areaServed": {
-            "@type": "State",
-            "name": "Utah"
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": data.faqs
+              .filter((f) => typeof f.answer === "string")
+              .map((f) => ({
+                "@type": "Question",
+                "name": f.question,
+                "acceptedAnswer": { "@type": "Answer", "text": f.answer as string }
+              }))
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ubcunlimited.com" },
+              { "@type": "ListItem", "position": 2, "name": "Industries", "item": "https://ubcunlimited.com/industries" },
+              { "@type": "ListItem", "position": 3, "name": `${data.title} Payment Processing`, "item": `https://ubcunlimited.com/industries/${data.slug}` }
+            ]
           }
-        }}
+        ]}
       />
       {/* ── Hero ── */}
       <section className="bg-[#080808] py-20">

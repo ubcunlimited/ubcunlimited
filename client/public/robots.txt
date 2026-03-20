@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# Disallow private/admin paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/oauth/
+
+# Sitemap
 Sitemap: https://ubcunlimited.com/sitemap.xml

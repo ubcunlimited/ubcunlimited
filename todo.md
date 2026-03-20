@@ -41,3 +41,4 @@
 - [x] Create Terms of Service page (/terms-of-service)
 - [x] Add acceptance checkbox with inline links to all lead capture and consultation forms
 - [x] Add Privacy Policy and Terms of Service links to site footer
+- [x] SEO audit and optimization: meta tags, schema markup, sitemap, robots.txt, heading structure, canonical URLs, internal linking, image alt text

@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
+import SEO from "@/components/SEO";
 import { NAV_SOLUTIONS } from "@/lib/config";
 
 const solutionDetails: Record<string, { desc: string; features: string[] }> = {
@@ -42,6 +43,23 @@ const solutionDetails: Record<string, { desc: string; features: string[] }> = {
 export default function Solutions() {
   return (
     <PageLayout>
+      <SEO
+        title="Payment Processing Solutions for Utah Businesses | UBC Unlimited"
+        description="Credit card processing, POS systems, cash discounting, ACH, ecommerce gateways, and more. UBC Unlimited offers tailored payment solutions for Utah businesses of every size."
+        canonical="/solutions"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Payment Processing Solutions",
+          "description": "UBC Unlimited offers a full suite of payment processing solutions for Utah businesses including credit card processing, POS systems, cash discounting, ACH, and ecommerce gateways.",
+          "url": "https://ubcunlimited.com/solutions",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "UBC Unlimited",
+            "url": "https://ubcunlimited.com"
+          }
+        }}
+      />
       <section className="bg-[#080808] py-20">
         <div className="container">
           <div className="max-w-2xl">

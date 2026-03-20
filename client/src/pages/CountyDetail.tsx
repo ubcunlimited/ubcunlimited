@@ -68,6 +68,38 @@ export default function CountyDetail() {
       <SEO
         title={`Merchant Services in ${county.name} | UBC Unlimited`}
         description={`UBC Unlimited provides merchant services, POS systems, and payment processing to businesses in ${county.name}, Utah. Local support, competitive rates, fast setup.`}
+        canonical={`/locations/${county.slug}`}
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "UBC Unlimited",
+            "url": "https://ubcunlimited.com",
+            "telephone": "+18014576500",
+            "description": `UBC Unlimited provides merchant services, POS systems, and payment processing to businesses in ${county.name}, Utah.`,
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Salt Lake City",
+              "addressRegion": "UT",
+              "postalCode": "84101",
+              "addressCountry": "US"
+            },
+            "areaServed": [
+              { "@type": "AdministrativeArea", "name": `${county.name}, Utah` },
+              { "@type": "State", "name": "Utah" }
+            ],
+            "sameAs": ["https://ubcunlimited.com"]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ubcunlimited.com" },
+              { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://ubcunlimited.com/locations" },
+              { "@type": "ListItem", "position": 3, "name": `${county.name}`, "item": `https://ubcunlimited.com/locations/${county.slug}` }
+            ]
+          }
+        ]}
       />
 
       {/* Hero */}
