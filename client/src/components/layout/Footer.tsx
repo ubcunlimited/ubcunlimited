@@ -39,14 +39,14 @@ export default function Footer() {
             <h3 className="text-white text-xl font-bold mb-1" style={{ fontFamily: "Sora, sans-serif" }}>
               Ready to lower your processing costs?
             </h3>
-            <p className="text-white/60 text-sm">Get a free statement review and see exactly how much you can save.</p>
+            <p className="text-white/60 text-sm">Get a statement review and see exactly how much you can save.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 shrink-0">
             <Link
               href="/statement-review"
               className="btn-outline-white text-sm py-2.5 px-5 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
             >
-              Free Statement Review
+              Statement Review
             </Link>
             <Link
               href="/consultation"

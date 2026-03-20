@@ -25,7 +25,7 @@ const DEFAULT_LEFT: AudiencePanel = {
   icon: <Store size={28} />,
   eyebrow: "For Merchants",
   headline: "Start Saving on Payment Processing",
-  body: "Get a free, no-obligation statement review and see exactly how much you can save with UBC Unlimited's transparent, local merchant services.",
+  body: "Get a no-obligation statement review and see exactly how much you can save with UBC Unlimited's transparent, local merchant services.",
   ctaLabel: "Become a Merchant",
   ctaHref: "/contact",
   variant: "gold",

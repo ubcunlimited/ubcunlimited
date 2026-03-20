@@ -59,7 +59,7 @@ const WEST_JORDAN_BENEFITS = [
   {
     icon: TrendingDown,
     title: "Lower Rates Than National Processors",
-    desc: "Most West Jordan businesses overpay Stripe, Square, or their bank. Our free statement review shows you exactly where you're losing money — and how much you can save.",
+    desc: "Most West Jordan businesses overpay Stripe, Square, or their bank. Our statement review shows you exactly where you're losing money — and how much you can save.",
   },
   {
     icon: Clock,
@@ -90,7 +90,7 @@ const WEST_JORDAN_FAQS = [
   },
   {
     q: "How much does merchant services cost for a West Jordan business?",
-    a: "Rates are tailored to your card mix and volume. Most West Jordan businesses qualify for interchange-plus pricing ranging from interchange + 0.10% to 0.50% — significantly lower than Stripe (2.9% + $0.30) or Square (2.6%–3.5%). We offer a free statement review to show your exact savings.",
+    a: "Rates are tailored to your card mix and volume. Most West Jordan businesses qualify for interchange-plus pricing ranging from interchange + 0.10% to 0.50% — significantly lower than Stripe (2.9% + $0.30) or Square (2.6%–3.5%). We offer a statement review to show your exact savings.",
   },
   {
     q: "What POS systems do you offer for West Jordan restaurants and retailers?",
@@ -176,7 +176,7 @@ export default function WestJordan() {
     <PageLayout>
       <SEO
         title="Merchant Services West Jordan, Utah | UBC Unlimited"
-        description="UBC Unlimited provides credit card processing, POS systems, and merchant services to West Jordan, Utah businesses. Local support, no contracts, free statement review."
+        description="UBC Unlimited provides credit card processing, POS systems, and merchant services to West Jordan, Utah businesses. Local support, no contracts, statement review."
         canonical="/locations/west-jordan"
         schema={schema}
       />
@@ -211,8 +211,8 @@ export default function WestJordan() {
                 ))}
               </ul>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/contact" className="btn-gold text-sm py-3 px-7 justify-center">Get a Free Quote <ArrowRight size={15} /></Link>
-                <Link href="/statement-review" className="btn-outline-white text-sm py-3 px-7 justify-center">Free Statement Review</Link>
+                <Link href="/contact" className="btn-gold text-sm py-3 px-7 justify-center">Request a Quote <ArrowRight size={15} /></Link>
+                <Link href="/statement-review" className="btn-outline-white text-sm py-3 px-7 justify-center">Statement Review</Link>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="space-y-4">
@@ -404,10 +404,10 @@ export default function WestJordan() {
 
       <CTABanner
         title="Ready to Lower Your Processing Costs in West Jordan?"
-        subtitle="Get a free statement review and see exactly how much your West Jordan business can save. Most businesses save 20–40% on processing fees."
-        primaryLabel="Get a Free Quote"
+        subtitle="Get a statement review and see exactly how much your West Jordan business can save. Most businesses save 20–40% on processing fees."
+        primaryLabel="Request a Quote"
         primaryHref="/contact"
-        secondaryLabel="Free Statement Review"
+        secondaryLabel="Statement Review"
         secondaryHref="/statement-review"
       />
     </PageLayout>

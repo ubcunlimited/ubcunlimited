@@ -25,7 +25,7 @@ const whyUs = [
 
 const howItWorks = [
   { step: "01", title: "Book a Consultation", desc: "Schedule a free, no-pressure conversation with a local Utah expert. We learn about your business and current setup." },
-  { step: "02", title: "Free Statement Review", desc: "Submit your current processing statement. We analyze it line by line and show you exactly where you can save." },
+  { step: "02", title: "Statement Review", desc: "Submit your current processing statement. We analyze it line by line and show you exactly where you can save." },
   { step: "03", title: "Custom Proposal", desc: "We build a tailored solution with transparent, competitive pricing that fits your business type and volume." },
   { step: "04", title: "Seamless Setup & Support", desc: "Our local team handles everything — equipment, training, and integration. Ongoing support from a team that knows your name." },
 ];
@@ -190,7 +190,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
 
         <div className="container relative z-10 py-20">
-          <div className="max-w-2xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left column — headline + stats + CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -205,73 +206,23 @@ export default function Home() {
               <p className="text-white/70 text-lg md:text-xl mb-3 leading-relaxed max-w-xl">
                 {SITE.tagline}
               </p>
-              <p className="text-white/55 text-base mb-8 leading-relaxed max-w-xl">
+              <p className="text-white/55 text-base mb-6 leading-relaxed">
                 Competitive pricing, fast onboarding, and industry-specific solutions — backed by {SITE.yearsInBusiness} years of experience and a team that knows Utah business.
               </p>
-              {/* Hero micro-form */}
-              {heroSubmitted ? (
-                <div className="mb-10 bg-[#c9a84c]/10 border border-[#c9a84c]/30 rounded-2xl px-6 py-5 max-w-md">
-                  <div className="flex items-center gap-3 mb-1">
-                    <CheckCircle size={20} className="text-[#c9a84c]" />
-                    <span className="text-white font-bold text-sm">We'll be in touch shortly!</span>
+              {/* Stats row — 4 trust signals below the tagline */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+                {TRUST_SIGNALS.map((s) => (
+                  <div key={s.label} className="glass-card rounded-xl p-3 text-center">
+                    <div className="text-xl font-extrabold text-[#c9a84c] mb-0.5" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
+                    <div className="text-white/55 text-xs leading-tight">{s.label}</div>
                   </div>
-                  <p className="text-white/60 text-xs pl-8">Our team typically responds within one business hour. You can also call us directly at <a href="tel:+18013096988" className="text-[#c9a84c] hover:underline">(801) 309-6988</a>.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleHeroSubmit} className="mb-10 max-w-md" aria-label="Get a free quote">
-                  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
-                    <p className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-3">Get a Free Quote — No Obligation</p>
-                    <div className="space-y-2.5 mb-3">
-                      <input
-                        type="text"
-                        placeholder="Your Name"
-                        value={heroName}
-                        onChange={(e) => setHeroName(e.target.value)}
-                        className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
-                        aria-label="Your name"
-                      />
-                      <input
-                        type="tel"
-                        placeholder="Phone Number"
-                        value={heroPhone}
-                        onChange={(e) => setHeroPhone(e.target.value)}
-                        className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
-                        aria-label="Phone number"
-                      />
-                      <select
-                        value={heroType}
-                        onChange={(e) => setHeroType(e.target.value)}
-                        className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[#c9a84c]/60 transition-colors appearance-none"
-                        aria-label="Business type"
-                      >
-                        <option value="" disabled className="bg-[#1a1a1a]">Business Type</option>
-                        {BUSINESS_TYPES.map((t) => (
-                          <option key={t} value={t} className="bg-[#1a1a1a]">{t}</option>
-                        ))}
-                      </select>
-                    </div>
-                    {heroError && (
-                      <p className="text-red-400 text-xs mb-2">{heroError}</p>
-                    )}
-                    <button
-                      type="submit"
-                      disabled={heroMutation.isPending}
-                      className="w-full btn-gold py-2.5 justify-center text-sm font-bold disabled:opacity-60 disabled:cursor-not-allowed"
-                    >
-                      {heroMutation.isPending ? (
-                        <><Loader2 size={15} className="animate-spin" /> Sending...</>
-                      ) : (
-                        <>Get My Free Quote <ArrowRight size={15} /></>
-                      )}
-                    </button>
-                  </div>
-                </form>
-              )}
-              <div className="flex flex-col sm:flex-row gap-3 mb-10">
-                <Link href="/consultation" className="btn-outline-white text-sm py-2.5 px-6 justify-center">
+                ))}
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <Link href="/consultation" className="btn-gold text-sm py-2.5 px-6 justify-center">
                   Book a Consultation <ArrowRight size={16} />
                 </Link>
-                <Link href="/industries" className="btn-outline-white text-sm py-2.5 px-6 justify-center opacity-70 hover:opacity-100">
+                <Link href="/industries" className="btn-outline-white text-sm py-2.5 px-6 justify-center opacity-80 hover:opacity-100">
                   See Industries We Serve
                 </Link>
               </div>
@@ -284,22 +235,72 @@ export default function Home() {
                 ))}
               </div>
             </motion.div>
-          </div>
 
-          {/* Floating stats */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="hidden lg:grid grid-cols-2 gap-3 absolute right-0 top-1/2 -translate-y-1/2 w-64"
-          >
-            {TRUST_SIGNALS.map((s) => (
-              <div key={s.label} className="glass-card rounded-xl p-4 text-center">
-                <div className="text-2xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
-                <div className="text-white/60 text-xs">{s.label}</div>
-              </div>
-            ))}
-          </motion.div>
+            {/* Right column — lead capture form */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:block"
+            >
+              {heroSubmitted ? (
+                <div className="bg-[#c9a84c]/10 border border-[#c9a84c]/30 rounded-2xl px-8 py-10 text-center">
+                  <CheckCircle size={40} className="text-[#c9a84c] mx-auto mb-4" />
+                  <p className="text-white font-bold text-lg mb-2">We'll be in touch shortly!</p>
+                  <p className="text-white/60 text-sm">Our team typically responds within one business hour. You can also call us directly at <a href="tel:+18013096988" className="text-[#c9a84c] hover:underline">(801) 309-6988</a>.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleHeroSubmit} aria-label="Request a consultation" className="bg-white/5 border border-white/10 rounded-2xl p-7 backdrop-blur-sm">
+                  <p className="text-white font-bold text-lg mb-1">Request a Consultation</p>
+                  <p className="text-white/50 text-sm mb-5">Tell us about your business and we'll reach out with a tailored solution — no obligation.</p>
+                  <div className="space-y-3 mb-4">
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      value={heroName}
+                      onChange={(e) => setHeroName(e.target.value)}
+                      className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+                      aria-label="Your name"
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      value={heroPhone}
+                      onChange={(e) => setHeroPhone(e.target.value)}
+                      className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+                      aria-label="Phone number"
+                    />
+                    <select
+                      value={heroType}
+                      onChange={(e) => setHeroType(e.target.value)}
+                      className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#c9a84c]/60 transition-colors appearance-none"
+                      aria-label="Business type"
+                    >
+                      <option value="" disabled className="bg-[#1a1a1a]">Business Type</option>
+                      {BUSINESS_TYPES.map((t) => (
+                        <option key={t} value={t} className="bg-[#1a1a1a]">{t}</option>
+                      ))}
+                    </select>
+                  </div>
+                  {heroError && (
+                    <p className="text-red-400 text-xs mb-3">{heroError}</p>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={heroMutation.isPending}
+                    className="w-full btn-gold py-3 justify-center text-sm font-bold disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {heroMutation.isPending ? (
+                      <><Loader2 size={15} className="animate-spin" /> Sending...</>
+                    ) : (
+                      <>Get Started <ArrowRight size={15} /></>
+                    )}
+                  </button>
+                  <p className="text-white/30 text-xs text-center mt-4">No contracts. No pressure. Just honest advice from a local Utah team.</p>
+                </form>
+              )}
+            </motion.div>
+          </div>
         </div>
 
         {/* Bottom phone strip */}
@@ -486,7 +487,7 @@ export default function Home() {
           </div>
           <div className="text-center mt-10">
             <Link href="/consultation" className="btn-teal py-3 px-8">
-              Book a Free Consultation <ArrowRight size={16} />
+              Book a Consultation <ArrowRight size={16} />
             </Link>
           </div>
         </div>

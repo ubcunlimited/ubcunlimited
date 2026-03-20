@@ -22,7 +22,7 @@ export default function StatementReview() {
       <section className="bg-[#080808] py-16">
         <div className="container">
           <div className="max-w-xl">
-            <div className="stat-badge mb-4">Free Statement Review</div>
+            <div className="stat-badge mb-4">Statement Review</div>
             <h1 className="text-4xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
               See Exactly How Much You're Overpaying
             </h1>

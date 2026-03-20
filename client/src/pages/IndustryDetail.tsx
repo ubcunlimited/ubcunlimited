@@ -730,8 +730,8 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
             <p className="text-white/70 text-lg mb-4">{data.subtitle}</p>
             <p className="text-white/60 mb-8 leading-relaxed">{data.description}</p>
             <div className="flex gap-4">
-              <Link href="/consultation" className="btn-gold">Get a Free Quote <ArrowRight size={16} /></Link>
-              <Link href="/statement-review" className="btn-outline-white">Free Statement Review</Link>
+              <Link href="/consultation" className="btn-gold">Request a Quote <ArrowRight size={16} /></Link>
+              <Link href="/statement-review" className="btn-outline-white">Statement Review</Link>
             </div>
           </div>
         </div>
@@ -810,7 +810,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
         </div>
       </section>
 
-      <CTABanner title={`Ready to Upgrade Your ${data.title} Payment System?`} subtitle="Get a free consultation and see how UBC Unlimited can save you money and improve your operations." />
+      <CTABanner title={`Ready to Upgrade Your ${data.title} Payment System?`} subtitle="Get a consultation and see how UBC Unlimited can save you money and improve your operations." />
     </PageLayout>
   );
 }

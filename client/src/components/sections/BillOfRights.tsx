@@ -26,7 +26,7 @@ const DEFAULT_MERCHANT_RIGHTS: RightsItem[] = [
   { title: "Free Equipment for Qualified Merchants", description: "You deserve the right tools. Qualified merchants receive free terminals and POS hardware." },
   { title: "Dedicated Local Support", description: "You get a real person — a local Utah rep with a direct number who knows your business." },
   { title: "Same Day & Next Day Funding Options", description: "Your money is your money. Qualified merchants can access funds the same or next business day." },
-  { title: "Right to a Free Statement Review", description: "Any merchant can request a free, no-obligation analysis of their current processing statement at any time." },
+  { title: "Right to a Statement Review", description: "Any merchant can request a no-obligation analysis of their current processing statement at any time." },
   { title: "Right to Cancel Without Penalty", description: "If you're ever unsatisfied, you can cancel without early termination fees or penalties." },
 ];
 

@@ -1,5 +1,5 @@
 // Contact — UBC Unlimited
-// Three distinct CTAs: Book a Consultation | Request a Quote | Free Statement Review (with file upload)
+// Three distinct CTAs: Book a Consultation | Request a Quote | Statement Review (with file upload)
 import { useState, useRef } from "react";
 import { Phone, Mail, MapPin, Clock, CalendarCheck, FileText, Upload, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { Link } from "wouter";
@@ -67,7 +67,7 @@ function ConsultationForm({ onSuccess }: { onSuccess: () => void }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <h2 className="text-2xl font-bold text-[#080808] mb-1" style={{ fontFamily: "Sora, sans-serif" }}>Book a Free Consultation</h2>
+      <h2 className="text-2xl font-bold text-[#080808] mb-1" style={{ fontFamily: "Sora, sans-serif" }}>Book a Consultation</h2>
       <p className="text-gray-500 text-sm mb-5">Schedule a no-obligation call with {SITE.founder} to discuss your business's payment processing needs and explore your options.</p>
       <div className="grid sm:grid-cols-2 gap-4">
         <div><label className={labelClass} htmlFor="c-fname">First Name <span className="text-red-500">*</span></label><input id="c-fname" type="text" required value={form.firstName} onChange={set("firstName")} placeholder="Jane" className={inputClass} /></div>
@@ -227,7 +227,7 @@ function StatementReviewForm({ onSuccess }: { onSuccess: () => void }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <h2 className="text-2xl font-bold text-[#080808] mb-1" style={{ fontFamily: "Sora, sans-serif" }}>Free Statement Review</h2>
+      <h2 className="text-2xl font-bold text-[#080808] mb-1" style={{ fontFamily: "Sora, sans-serif" }}>Statement Review</h2>
       <p className="text-gray-500 text-sm mb-2">Upload your most recent processing statement and we'll do a line-by-line analysis to show you exactly what you're paying — and how much you could save with UBC Unlimited.</p>
       <div className="bg-[#f8fafc] border border-gray-100 rounded-xl p-4 flex flex-wrap gap-4 mb-2">
         {["No obligation", "Results in 1–2 business days", "Confidential & secure", "Real savings numbers"].map((item) => (
@@ -290,7 +290,7 @@ export default function Contact() {
   const tabs: { id: Tab; label: string; icon: React.ReactNode; desc: string }[] = [
     { id: "consultation", label: "Book a Consultation", icon: <CalendarCheck size={18} />, desc: "Schedule a free, no-pressure call with a local Utah expert." },
     { id: "quote", label: "Request a Quote", icon: <FileText size={18} />, desc: "Tell us about your business and get a custom pricing proposal." },
-    { id: "statement", label: "Free Statement Review", icon: <Upload size={18} />, desc: "Upload your statement and see exactly how much you can save." },
+    { id: "statement", label: "Statement Review", icon: <Upload size={18} />, desc: "Upload your statement and see exactly how much you can save." },
   ];
 
   const handleTabChange = (tab: Tab) => {
@@ -301,8 +301,8 @@ export default function Contact() {
   return (
     <PageLayout>
       <SEO
-        title="Contact UBC Unlimited — Book a Consultation, Get a Quote, Free Statement Review"
-        description="Contact UBC Unlimited to book a free consultation, request a custom merchant services quote, or upload your processing statement for a free savings analysis. Utah's local payment experts."
+        title="Contact UBC Unlimited — Book a Consultation, Get a Quote, Statement Review"
+        description="Contact UBC Unlimited to book a consultation, request a custom merchant services quote, or upload your processing statement for a complimentary savings analysis. Utah's local payment experts."
         canonical="/contact"
       />
 
@@ -382,7 +382,7 @@ export default function Contact() {
             )
           )}
 
-          {/* Free Statement Review */}
+          {/* Statement Review */}
           {activeTab === "statement" && (
             submitted === "statement" ? (
               <SuccessCard title="Statement Review Submitted!" message="We'll analyze your statement and send you a detailed savings breakdown within 1–2 business days. No obligation — just real numbers." />

@@ -48,13 +48,13 @@ Your monthly processing statement contains three distinct layers of fees, and un
 
 **Eliminate junk fees.** Review your statement line by line for fees with vague names like "regulatory compliance fee," "network access fee," "IRS reporting fee," or "statement fee." Many of these are processor-invented fees that have nothing to do with the card networks and are often negotiable or removable entirely.
 
-**Get a free statement review.** A qualified merchant services provider can analyze your current statement and identify exactly where you are overpaying. At UBC Unlimited, we provide free, no-obligation statement reviews for Utah businesses and show you a side-by-side comparison before you make any changes.
+**Get a statement review.** A qualified merchant services provider can analyze your current statement and identify exactly where you are overpaying. At UBC Unlimited, we provide complimentary statement reviews for Utah businesses and show you a side-by-side comparison before you make any changes.
 
 ## What to Expect in Savings
 
 The amount you can save depends on your current pricing model, monthly volume, and card mix. Businesses on flat-rate pricing with moderate-to-high volumes typically see the most dramatic reductions when switching to interchange-plus. Businesses that implement a cash discount program can reduce their effective processing cost to near zero on cash transactions.
 
-Ready to find out exactly how much your business could save? [Request a free statement review](/statement-review) — no obligation, no pressure, just a clear picture of your current costs and what better options look like.
+Ready to find out exactly how much your business could save? [Request a statement review](/statement-review) — no obligation, no pressure, just a clear picture of your current costs and what better options look like.
     `,
   },
 
@@ -103,7 +103,7 @@ There is also a third model worth knowing: **subscription pricing**, where you p
 
 The savings from switching to interchange-plus can be substantial for a high-volume business. Your actual savings will depend on your card mix, average ticket size, and the specific rate you negotiate. The best way to get an accurate picture is to have a qualified processor analyze your current statement.
 
-Want to see what you would save? [Request a free statement review](/statement-review) — our Utah team will give you a clear, honest comparison with no obligation.
+Want to see what you would save? [Request a statement review](/statement-review) — our Utah team will give you a clear, honest comparison with no obligation.
     `,
   },
 
@@ -158,7 +158,7 @@ Square's flat-rate processing is straightforward but expensive for high-volume f
 
 For most Utah restaurants — whether you are running a full-service dining room in Salt Lake City, a bar in Provo, or a multi-location chain along the Wasatch Front — SkyTab offers the best combination of features, price, and local support. As an authorized SkyTab reseller, UBC Unlimited handles installation, training, and ongoing support for Utah businesses.
 
-[Book a free consultation](/consultation) to discuss which system is right for your restaurant.
+[Book a consultation](/consultation) to discuss which system is right for your restaurant.
     `,
   },
 
@@ -202,7 +202,7 @@ To mitigate return risk, verify bank account information before initiating large
 
 Adding ACH payment capability to your business is straightforward. UBC Unlimited can set up ACH processing as part of your merchant services account, allowing you to accept ACH payments online, via invoice, or through your existing billing system. We can also help you set up recurring billing for subscription-based businesses.
 
-[Book a free consultation](/consultation) to learn how ACH processing can reduce your payment costs.
+[Book a consultation](/consultation) to learn how ACH processing can reduce your payment costs.
     `,
   },
 
@@ -248,7 +248,7 @@ For Utah businesses, this means that the right payment processor can help you de
 
 The common thread running through all of these trends is that payment technology is becoming both more sophisticated and more accessible. The businesses that will thrive are those that embrace modern payment infrastructure — NFC terminals, flexible pricing models, ACH for B2B transactions, and integrated fraud prevention — rather than sticking with legacy systems because change feels complicated.
 
-If you are not sure whether your current payment setup is keeping pace with these trends, [book a free consultation](/consultation) with our Utah team. We will review your current setup and recommend practical upgrades that make sense for your business.
+If you are not sure whether your current payment setup is keeping pace with these trends, [book a consultation](/consultation) with our Utah team. We will review your current setup and recommend practical upgrades that make sense for your business.
     `,
   },
 
@@ -316,7 +316,7 @@ Multiple fees with similar names (e.g., both a "compliance fee" and a "PCI fee")
 
 ## Getting a Better Deal
 
-If you are not on a cash discount or surcharge program, you may be overpaying. [Request a free statement review](/statement-review) from our Utah team — we will analyze your statement line by line and show you exactly where you can save.
+If you are not on a cash discount or surcharge program, you may be overpaying. [Request a statement review](/statement-review) from our Utah team — we will analyze your statement line by line and show you exactly where you can save.
     `,
   },
 
@@ -438,7 +438,7 @@ Restaurant payment processing is more complex than most industries. Between tips
 
 ## Choosing the Right Pricing Model for Your Restaurant
 
-Most restaurants benefit from interchange-plus pricing rather than flat-rate pricing. Restaurants have a relatively high volume of transactions, which means the savings from interchange-plus compound quickly. The difference between flat-rate and interchange-plus pricing can be substantial for a high-volume restaurant — [request a free statement review](/statement-review) to see exactly what you would save.
+Most restaurants benefit from interchange-plus pricing rather than flat-rate pricing. Restaurants have a relatively high volume of transactions, which means the savings from interchange-plus compound quickly. The difference between flat-rate and interchange-plus pricing can be substantial for a high-volume restaurant — [request a statement review](/statement-review) to see exactly what you would save.
 
 Cash discount programs are also increasingly popular in the restaurant industry. By pricing your menu to include the cost of card acceptance and offering a discount for cash payments, you can effectively eliminate your processing fees on cash transactions. This approach requires clear signage and customer communication but is legal in all 50 states.
 
@@ -458,7 +458,7 @@ Most Utah restaurant owners use QuickBooks or a similar accounting platform. You
 
 ## Getting the Right Setup for Your Restaurant
 
-The right payment processing setup for your restaurant depends on your volume, your concept (quick-service vs. full-service), your current pain points, and your growth plans. [Book a free consultation](/consultation) with our Utah team — we work exclusively with local businesses and can recommend the right combination of POS system and payment processing for your specific situation.
+The right payment processing setup for your restaurant depends on your volume, your concept (quick-service vs. full-service), your current pain points, and your growth plans. [Book a consultation](/consultation) with our Utah team — we work exclusively with local businesses and can recommend the right combination of POS system and payment processing for your specific situation.
     `,
   },
 
@@ -556,7 +556,7 @@ Dual pricing is generally considered the most transparent approach, since custom
 
 For most Utah businesses, a cash discount program is the simpler and more customer-friendly option. Surcharging can be appropriate for businesses where customers are less price-sensitive and where the transparency of a disclosed fee is acceptable. Dual pricing works well for businesses that want maximum transparency.
 
-[Book a free consultation](/consultation) to discuss which approach makes the most sense for your business and how to implement it correctly.
+[Book a consultation](/consultation) to discuss which approach makes the most sense for your business and how to implement it correctly.
     `,
   },
 
@@ -654,7 +654,7 @@ Square for Restaurants includes basic tab management and works reasonably well f
 
 When evaluating POS systems for your bar, prioritize these capabilities: fast tab opening and closing, reliable pre-authorization handling, split bill functionality, real-time inventory tracking for liquor and beer, staff performance reporting, and integration with your accounting software. If you have a kitchen, kitchen display system integration is also important.
 
-[Book a free consultation](/consultation) with our Utah team to discuss the best POS solution for your bar or nightclub.
+[Book a consultation](/consultation) with our Utah team to discuss the best POS solution for your bar or nightclub.
     `,
   },
 
@@ -676,7 +676,7 @@ This diversity means that merchant services needs in Utah County vary widely. A 
 
 The most important factor in choosing a merchant services provider is not the rate — it is the combination of rate, service, and local accountability. A processor that offers a slightly lower rate but provides no local support is often a worse deal than a local provider with competitive rates and a team that can be on-site within hours if something goes wrong.
 
-Look for a provider that offers transparent interchange-plus pricing (not flat-rate or tiered pricing), local installation and support, no long-term contracts or early termination fees, and a free statement review process that shows you exactly what you are currently paying and what you would pay with them.
+Look for a provider that offers transparent interchange-plus pricing (not flat-rate or tiered pricing), local installation and support, no long-term contracts or early termination fees, and a statement review process that shows you exactly what you are currently paying and what you would pay with them.
 
 ## Common Payment Processing Mistakes Utah County Businesses Make
 
@@ -692,7 +692,7 @@ Look for a provider that offers transparent interchange-plus pricing (not flat-r
 
 UBC Unlimited works with businesses across Utah County, including restaurants and food service, retail and specialty shops, professional services (attorneys, accountants, consultants), healthcare and dental practices, automotive and repair shops, contractors and construction companies, and technology and SaaS companies. Our local team is based in Utah and can provide on-site support throughout the county.
 
-[Contact our team](/contact) to discuss your specific payment processing needs, or [book a free consultation](/consultation) to get a personalized recommendation.
+[Contact our team](/contact) to discuss your specific payment processing needs, or [book a consultation](/consultation) to get a personalized recommendation.
     `,
   },
 
@@ -742,7 +742,7 @@ The integration ecosystem, while growing, is not as extensive as Toast's or Clov
 
 For Utah restaurants, bars, cafes, and food service operations, SkyTab is our top recommendation — and not just because we sell it. The combination of comprehensive features, competitive pricing, and the local support we provide makes it the best value in the market for most food and beverage operations.
 
-That said, the right POS system depends on your specific operation. [Book a free consultation](/consultation) with our Utah team — we will assess your needs honestly and recommend the right system, even if that means recommending something other than SkyTab.
+That said, the right POS system depends on your specific operation. [Book a consultation](/consultation) with our Utah team — we will assess your needs honestly and recommend the right system, even if that means recommending something other than SkyTab.
     `,
   },
 
@@ -964,7 +964,7 @@ Cloud-based POS systems like SkyTab give you real-time access to this data from 
 
 ## Reducing Processing Costs Improves Margins
 
-The direct financial benefit of better payment processing is real and measurable. Reducing your effective processing rate — even by a fraction of a percent — can translate to meaningful savings each month that can be reinvested in marketing, staff, inventory, or kept as profit. [Request a free statement review](/statement-review) to see exactly what you could save.
+The direct financial benefit of better payment processing is real and measurable. Reducing your effective processing rate — even by a fraction of a percent — can translate to meaningful savings each month that can be reinvested in marketing, staff, inventory, or kept as profit. [Request a statement review](/statement-review) to see exactly what you could save.
 
 For businesses with thin margins — restaurants, retail, service businesses — a 1% reduction in processing costs can be the difference between a profitable month and a break-even month. And for businesses that implement a cash discount program, the savings can be even more dramatic.
 
@@ -978,7 +978,7 @@ Gift card programs are another growth tool built into modern POS systems. Gift c
 
 Payment processing is not just a cost of doing business — it is an infrastructure investment that affects your customer experience, your operational efficiency, your data quality, and your bottom line. The businesses that treat payment infrastructure as a strategic asset consistently outperform those that treat it as a commodity.
 
-[Book a free consultation](/consultation) with our Utah team to discuss how better payment processing can support your specific growth goals.
+[Book a consultation](/consultation) with our Utah team to discuss how better payment processing can support your specific growth goals.
     `,
   },
 };
@@ -1138,7 +1138,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             <aside aria-label="Related actions">
               <div className="space-y-5 sticky top-28">
                 <div className="bg-gradient-to-br from-[#080808] to-[#0f2040] rounded-2xl p-6 text-white">
-                  <h3 className="font-bold mb-2 text-lg" style={{ fontFamily: 'Sora, sans-serif' }}>Free Statement Review</h3>
+                  <h3 className="font-bold mb-2 text-lg" style={{ fontFamily: 'Sora, sans-serif' }}>Statement Review</h3>
                   <p className="text-white/60 text-sm mb-4">See exactly how much you can save on processing fees. No obligation, no pressure.</p>
                   <Link href="/statement-review" className="btn-teal text-sm py-2.5 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
                     Get My Free Review

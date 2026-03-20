@@ -10,7 +10,7 @@ const testimonials = [
   {
     name: "Mike T.",
     role: "Manager, Wasatch Auto Group",
-    text: "We were skeptical at first, but after the free statement review we saw we were overpaying by nearly 30%. UBC Unlimited made the transition painless.",
+    text: "We were skeptical at first, but after the statement review we saw we were overpaying by nearly 30%. UBC Unlimited made the transition painless.",
     rating: 5,
   },
   {

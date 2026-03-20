@@ -116,7 +116,7 @@ const comparisonRows: { feature: string; ubc: CellValue; stripe: CellValue; squa
     note: "All three offer no long-term contract on standard accounts.",
   },
   {
-    feature: "Free Statement Review",
+    feature: "Statement Review",
     ubc: true,
     stripe: false,
     square: false,
@@ -176,7 +176,7 @@ export default function PricingTransparency() {
           <p className="text-xs text-gray-600 leading-relaxed">
             <strong className="text-[#080808]">Ranges shown are illustrative.</strong> Your actual effective rate is
             determined by your unique card mix, industry classification, transaction type (card-present vs. card-not-present),
-            and monthly volume. A free statement review gives you exact numbers — no obligation.
+            and monthly volume. A statement review gives you exact numbers — no obligation.
           </p>
         </div>
 
@@ -234,7 +234,7 @@ export default function PricingTransparency() {
               What Actually Determines Your Rate
             </h3>
             <p className="text-white/50 text-sm max-w-xl mx-auto">
-              Understanding these three factors is why a free statement review is worth more than any rate quote we could give you upfront.
+              Understanding these three factors is why a statement review is worth more than any rate quote we could give you upfront.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -319,7 +319,7 @@ export default function PricingTransparency() {
         {/* CTA row */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
           <Link href="/contact" className="btn-gold text-sm py-3 px-8 justify-center">
-            Get My Free Statement Review <ArrowRight size={16} />
+            Get My Statement Review <ArrowRight size={16} />
           </Link>
           <Link href="/contact" className="btn-outline-teal text-sm py-3 px-8 justify-center">
             Request a Custom Quote

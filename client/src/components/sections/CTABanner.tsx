@@ -14,8 +14,8 @@ interface CTABannerProps {
 
 export default function CTABanner({
   title = "Ready to Start Saving on Payment Processing?",
-  subtitle = "Get a free, no-obligation statement review and see exactly how much you can save with UBC Unlimited.",
-  primaryLabel = "Get a Free Quote",
+  subtitle = "Get a no-obligation statement review and see exactly how much you can save with UBC Unlimited.",
+  primaryLabel = "Request a Quote",
   primaryHref = "/consultation",
   secondaryLabel = "Call Us Now",
   secondaryHref,

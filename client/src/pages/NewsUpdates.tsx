@@ -37,8 +37,8 @@ const companyAnnouncements = [
   },
   {
     date: "January 2026",
-    title: "New: Free Statement Review Now Available Online",
-    body: "Our free statement review is now available directly through the website. Upload your current processing statement securely and receive a line-by-line savings analysis within one business day — no phone call required to get started.",
+    title: "New: Statement Review Now Available Online",
+    body: "Our statement review is now available directly through the website. Upload your current processing statement securely and receive a line-by-line savings analysis within one business day — no phone call required to get started.",
     tag: "Feature Launch",
   },
   {

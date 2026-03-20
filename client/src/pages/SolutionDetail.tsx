@@ -44,7 +44,7 @@ const solutionsData: SolutionData[] = [
     benefits: [
       "Pricing structured to maximize your profitability",
       "Dedicated local Utah support — a real person, not a call center",
-      "Free or low-cost equipment with qualifying accounts",
+      "Complimentary or low-cost equipment with qualifying accounts",
       "Month-to-month agreements for most business types",
       "Eliminate or reduce processing fees with cost-pass-through programs",
       "Accept every payment type your customers use",
@@ -55,7 +55,7 @@ const solutionsData: SolutionData[] = [
       { question: "What credit card processing rates do you offer?", answer: "We tailor pricing to each business individually — there is no single rate that applies to everyone. Factors like your industry, monthly volume, average ticket size, and card mix all influence the best pricing structure for your account. We offer flat rate, tiered, and pass-through pricing models. We can also structure your account for surcharging, dual pricing, or cash discounting programs that shift processing costs to the cardholder — legally and compliantly — which can reduce or eliminate your out-of-pocket processing expense entirely. We'll walk you through every option and show you a clear cost comparison before you make any decision." },
       { question: "What is dual pricing and how is it different from surcharging?", answer: "Dual pricing displays two prices at the point of sale — one for cash and one for card — so customers can see the difference and choose their preferred payment method. Surcharging adds a fee to credit card transactions at checkout. Cash discounting posts a single (card) price and then applies a discount when the customer pays with cash. All three approaches are designed to offset processing costs, but they operate differently and have distinct compliance requirements. Dual pricing and cash discounting apply to all card types; surcharging is limited to credit cards only and is prohibited in certain states. We'll help you determine which model is right for your business and ensure you're fully compliant." },
       { question: "How quickly will I receive my funds?", answer: "Most qualifying accounts receive next-business-day funding, with deposits going directly to your business bank account. Settlement timelines can vary based on your industry, processing history, and account type. We'll be transparent about your specific funding schedule before you get started." },
-      { question: "Do I need to buy new equipment?", answer: "Not necessarily. We can often reprogram your existing terminals and equipment at no charge. If you do need new hardware — whether a countertop terminal, wireless device, or full POS system — we offer free and low-cost equipment options with qualifying accounts. We'll assess what you currently have and recommend the most cost-effective path forward." },
+      { question: "Do I need to buy new equipment?", answer: "Not necessarily. We can often reprogram your existing terminals and equipment at no charge. If you do need new hardware — whether a countertop terminal, wireless device, or full POS system — we offer complimentary and low-cost equipment options with qualifying accounts. We'll assess what you currently have and recommend the most cost-effective path forward." },
       { question: "What payment types can I accept?", answer: "With our solutions you can accept all major credit and debit cards (Visa, Mastercard, American Express, Discover), contactless and tap-to-pay, Apple Pay, Google Pay, Samsung Pay, digital wallets, ACH/eCheck bank transfers, and alternative payment methods. We also support corporate and purchasing cards, which are common in B2B environments." },
       { question: "What is PCI compliance and do I need it?", answer: "PCI DSS (Payment Card Industry Data Security Standard) compliance is a set of security standards required of all businesses that accept, store, or transmit cardholder data. Every merchant that accepts credit cards is required to be PCI compliant. Non-compliance can result in fines, higher processing rates, and increased liability in the event of a data breach. We provide a full suite of PCI compliance tools, annual questionnaire support, and up to $100,000 in breach protection coverage for qualifying accounts." },
       { question: "What is a chargeback and how do you help?", answer: "A chargeback occurs when a customer disputes a transaction with their card-issuing bank, resulting in the funds being reversed from your account. Chargebacks can be costly — not just in the disputed amount, but in fees and potential account penalties. We provide chargeback management tools, dispute response support, and proactive fraud detection to help you minimize chargebacks and win disputes when they do occur." },
@@ -68,7 +68,7 @@ const solutionsData: SolutionData[] = [
     icon: "🏦",
     title: "ACH & eCheck Processing",
     subtitle: "Accept bank transfers directly — lower cost, faster reconciliation, fewer chargebacks",
-    metaDescription: "ACH & eCheck processing for Utah businesses. Lower cost than credit cards, same-day settlement, recurring billing & fewer chargebacks. Get a free quote.",
+    metaDescription: "ACH & eCheck processing for Utah businesses. Lower cost than credit cards, same-day settlement, recurring billing & fewer chargebacks. Request a quote.",
     description: "ACH (Automated Clearing House) and eCheck processing allow businesses to accept electronic bank transfers directly from customers' checking or savings accounts, bypassing card networks and their associated fees. It's one of the most cost-effective payment methods available — especially for recurring billing, high-ticket transactions, B2B payments, and businesses that want to reduce their overall cost of accepting payments.",
     heroPoints: ["Dramatically lower cost than credit cards", "Recurring & subscription billing", "Same-day & next-day ACH options", "Batch & bulk processing"],
     features: [
@@ -178,7 +178,7 @@ const solutionsData: SolutionData[] = [
       "Local Utah installation, training, and ongoing support from our team",
     ],
     faqs: [
-      { question: "What types of businesses is SkyTab POS designed for?", answer: "SkyTab is purpose-built for food and beverage operations: full-service restaurants, quick-service and fast casual restaurants, bars and nightclubs, pizza shops, coffee shops, food trucks, and multi-location enterprise operations. It's specifically designed for the demands of the restaurant industry — high transaction volume, complex menu management, tableside service, and kitchen coordination. For retail, salon, and service businesses, we offer additional POS options tailored to those environments. We'll help you identify the right system during a free consultation." },
+      { question: "What types of businesses is SkyTab POS designed for?", answer: "SkyTab is purpose-built for food and beverage operations: full-service restaurants, quick-service and fast casual restaurants, bars and nightclubs, pizza shops, coffee shops, food trucks, and multi-location enterprise operations. It's specifically designed for the demands of the restaurant industry — high transaction volume, complex menu management, tableside service, and kitchen coordination. For retail, salon, and service businesses, we offer additional POS options tailored to those environments. We'll help you identify the right system during a consultation." },
       { question: "Does SkyTab come with a hardware warranty?", answer: "Yes. SkyTab is the only POS system in the industry to offer a lifetime hardware warranty on its commercial-grade equipment. If your hardware fails, it's replaced — no questions asked, no repair fees. This eliminates the risk of unexpected hardware replacement costs that can run $500–$2,000+ per terminal with other systems." },
       { question: "How does online ordering work with SkyTab?", answer: "SkyTab includes a built-in online ordering platform that lets customers place orders directly from your website or a branded ordering page. Orders flow directly into your POS and kitchen display system in real time — no manual re-entry required. Critically, SkyTab charges zero commission on online orders. By contrast, third-party platforms like DoorDash, Uber Eats, and Grubhub charge 15–30% commission per order. For a restaurant doing $10,000/month in online orders, that's $1,500–$3,000/month saved." },
       { question: "What is the Lighthouse back office and what can I do with it?", answer: "Lighthouse is SkyTab's cloud-based back-office management platform. It gives you real-time access to sales reports, labor cost analysis, menu performance data, and business trend insights from any computer, tablet, or smartphone. You can update your menu remotely, push changes to all locations simultaneously, manage employee schedules and permissions, and monitor your business from anywhere using the InCharge mobile app. It's a complete business intelligence tool, not just a reporting dashboard." },
@@ -218,7 +218,7 @@ const solutionsData: SolutionData[] = [
     icon: "📱",
     title: "Mobile Processing",
     subtitle: "Turn your smartphone into a full payment terminal — accept payments anywhere, anytime",
-    metaDescription: "Mobile credit card processing for Utah businesses. Accept payments anywhere with your smartphone — EMV, tap-to-pay & digital wallets. Free equipment available.",
+    metaDescription: "Mobile credit card processing for Utah businesses. Accept payments anywhere with your smartphone — EMV, tap-to-pay & digital wallets. Equipment options available.",
     description: "Mobile processing solutions from UBC Unlimited let you accept payments wherever your business takes you. Whether you're at a farmers market, trade show, customer's home, food truck, or delivering on the road, our mobile solutions give you the same professional payment experience as a countertop terminal — right from your smartphone or tablet. Accept all major cards, contactless payments, and digital wallets with no extra hardware required on qualifying setups.",
     heroPoints: ["No card reader needed on qualifying setups", "iOS & Android compatible", "Offline mode available", "All cards & digital wallets"],
     features: [
@@ -259,7 +259,7 @@ const solutionsData: SolutionData[] = [
     icon: "💻",
     title: "Virtual Terminals",
     subtitle: "Process payments from any browser — no hardware, no limits",
-    metaDescription: "Virtual terminal payment processing for Utah businesses. Accept MOTO, phone & mail-order payments from any browser — no hardware required. Get a free quote.",
+    metaDescription: "Virtual terminal payment processing for Utah businesses. Accept MOTO, phone & mail-order payments from any browser — no hardware required. Request a quote.",
     description: "A virtual terminal is a secure, browser-based application that lets you manually enter credit card information and process payments from any computer, tablet, or smartphone — no card reader or physical terminal required. It's the essential tool for businesses that take phone orders, mail orders, and card-not-present transactions, as well as call centers, multi-location operations, and any team that needs a flexible, software-based payment solution.",
     heroPoints: ["Browser-based — any device, anywhere", "Phone & mail order (MOTO)", "Secure card vault & recurring billing", "Multi-user & multi-location"],
     features: [
@@ -449,7 +449,7 @@ const solutionsData: SolutionData[] = [
     faqs: [
       { question: "What makes a business 'high-risk'?", answer: "A business is classified as high-risk when payment processors or acquiring banks determine that the account carries elevated exposure to chargebacks, fraud, regulatory scrutiny, or financial loss. The classification can be triggered by your industry (firearms, CBD, adult entertainment, travel, nutraceuticals, etc.), your business model (subscription billing, high-ticket items, card-not-present transactions), your processing history (previous chargebacks, terminated accounts, MATCH list placement), your credit score, or the countries where you do business. Being labeled high-risk does not mean your business is untrustworthy — it simply means you need a processor that specializes in your category." },
       { question: "What industries do you serve under high-risk processing?", answer: "We work with a wide range of high-risk verticals including: firearms and FFL dealers, CBD and hemp retailers, nutraceuticals and dietary supplements, adult entertainment, travel agencies and booking platforms, online gaming and fantasy sports, telemarketing and outbound sales, credit repair and debt settlement, subscription box and continuity programs, e-cigarettes and vape shops, online pharmacies and telemedicine, cryptocurrency exchanges, and more. If you've been declined by a standard processor, contact us — we can usually find a path forward." },
-      { question: "How much does high-risk processing cost?", answer: "High-risk processing is priced based on your specific industry, monthly volume, chargeback history, and the acquiring bank we place you with — so there is no one-size-fits-all rate. We provide a full, itemized fee disclosure before you sign anything, so you know exactly what you're paying and why. The best way to get an accurate quote is to book a free consultation." },
+      { question: "How much does high-risk processing cost?", answer: "High-risk processing is priced based on your specific industry, monthly volume, chargeback history, and the acquiring bank we place you with — so there is no one-size-fits-all rate. We provide a full, itemized fee disclosure before you sign anything, so you know exactly what you're paying and why. The best way to get an accurate quote is to book a consultation." },
       { question: "What is a rolling reserve and how does it work?", answer: "A rolling reserve is a risk management tool used by acquiring banks for high-risk merchant accounts. A portion of your daily transaction volume is held in a reserve account for a set period. After the hold period, the funds are released on a rolling basis. The reserve protects the bank against potential chargebacks or account closure losses. We negotiate reserve requirements on your behalf and work to reduce or eliminate the reserve as your account establishes a clean processing history." },
       { question: "Can you help if I've been terminated or placed on the MATCH list?", answer: "Yes, in many cases. The MATCH list (formerly the Terminated Merchant File) is a database maintained by Mastercard that flags merchants whose accounts were terminated for cause — typically excessive chargebacks, fraud, or PCI violations. Being on the MATCH list severely limits your processing options, but it does not make processing impossible. We work with acquiring banks that accept MATCH-listed merchants in certain circumstances and can help you understand your options and build a case for reinstatement." },
       { question: "How long does approval take for a high-risk account?", answer: "Most high-risk accounts are approved within 24–72 business hours once we have a complete application package. The underwriting process for high-risk accounts is more thorough than standard accounts — the bank will review your business model, processing history, chargeback rates, website, and supporting documents. We guide you through every step and help you prepare the strongest possible application." },
@@ -551,8 +551,8 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <Link href="/consultation" className="btn-gold">Get a Free Quote <ArrowRight size={16} /></Link>
-                  <Link href="/statement-review" className="btn-outline-white">Free Statement Review</Link>
+                  <Link href="/consultation" className="btn-gold">Request a Quote <ArrowRight size={16} /></Link>
+                  <Link href="/statement-review" className="btn-outline-white">Statement Review</Link>
                 </div>
               </div>
               <div className="hidden lg:block">
@@ -588,8 +588,8 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                   ))}
                 </div>
                 <div className="flex gap-4">
-                  <Link href="/consultation" className="btn-gold">Get a Free Quote <ArrowRight size={16} /></Link>
-                  <Link href="/statement-review" className="btn-outline-white">Free Statement Review</Link>
+                  <Link href="/consultation" className="btn-gold">Request a Quote <ArrowRight size={16} /></Link>
+                  <Link href="/statement-review" className="btn-outline-white">Statement Review</Link>
                 </div>
               </div>
             </>
@@ -687,7 +687,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
             </div>
             <div className="text-center mt-10">
               <p className="text-gray-500 text-sm mb-4">Not sure which gateway is right for you? We'll help you choose.</p>
-              <a href="/consultation" className="btn-teal inline-flex items-center gap-2">Book a Free Consultation <ArrowRight size={15} /></a>
+              <a href="/consultation" className="btn-teal inline-flex items-center gap-2">Book a Consultation <ArrowRight size={15} /></a>
             </div>
           </div>
         </section>
@@ -737,7 +737,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
             </div>
             <div className="text-center mt-10">
               <p className="text-white/40 text-sm mb-4">Don't see your industry? We serve many more high-risk verticals — contact us to discuss your situation.</p>
-              <Link href="/consultation" className="btn-gold">Get a Free High-Risk Quote <ArrowRight size={16} /></Link>
+              <Link href="/consultation" className="btn-gold">Get a High-Risk Quote <ArrowRight size={16} /></Link>
             </div>
           </div>
         </section>

@@ -8,7 +8,7 @@ const inputClass = "w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm
 const labelClass = "block text-sm font-medium text-[#080808] mb-1.5";
 
 const benefits = [
-  "No-obligation, 100% free consultation",
+  "No-obligation, 100% consultation",
   "Review your current processing costs with a local expert",
   "Custom solution tailored to your business type and volume",
   "Local Utah expert — not a national call center",
@@ -33,7 +33,7 @@ export default function Consultation() {
           <div className="max-w-xl">
             <div className="stat-badge mb-4">Book a Consultation</div>
             <h1 className="text-4xl font-extrabold text-white mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
-              Book Your Free Consultation
+              Book Your Consultation
             </h1>
             <p className="text-white/60 text-lg">
               Speak with {SITE.founder} — a local Utah merchant services expert with {SITE.yearsInBusiness} years of experience. No pressure, no obligation, just honest advice.
@@ -90,7 +90,7 @@ export default function Consultation() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} data-ghl-form="consultation" className="space-y-4">
-                  <h2 className="text-xl font-bold text-[#080808] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Your Free Consultation</h2>
+                  <h2 className="text-xl font-bold text-[#080808] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Your Consultation</h2>
                   <p className="text-gray-500 text-sm mb-4">Fill out the form below and we'll be in touch within 1 business hour.</p>
 
                   {/* Business Name */}
@@ -174,7 +174,7 @@ export default function Consultation() {
                   </div>
 
                   <button type="submit" className="btn-teal w-full justify-center py-3">
-                    Book My Free Consultation <ArrowRight size={16} />
+                    Book My Consultation <ArrowRight size={16} />
                   </button>
                   <p className="text-xs text-gray-400 text-center">
                     By submitting, you agree to our{" "}

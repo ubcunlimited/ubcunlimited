@@ -107,7 +107,6 @@ const AGENT_RIGHTS: import("@/components/sections/BillOfRights").RightsItem[] = 
 
 const AGENT_STATS = [
   { value: "20+", label: "Years in Business" },
-  { value: "50+", label: "Active Agent Partners" },
   { value: "$500M+", label: "Annual Volume Processed" },
   { value: "24h", label: "Avg. Merchant Approval" },
   { value: "100%", label: "Residual Transparency" },
@@ -523,7 +522,7 @@ export default function AgentISO() {
       {/* ── Bottom CTA ── */}
       <CTABanner
         title="Ready to Build Your Residual Income?"
-        subtitle="Join 50+ active agent partners earning monthly residuals with UBC Unlimited. Apply today and start selling within 48 hours."
+        subtitle="Join a growing network of agent partners with UBC Unlimited. Apply today and start selling within 48 hours."
         primaryLabel="Apply Now"
         primaryHref="#apply"
         secondaryLabel="Call Us"

@@ -36,7 +36,7 @@ export default function WeberCounty() {
     <PageLayout>
       <SEO
         title="Merchant Services Weber County, Utah | UBC Unlimited"
-        description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Weber County, Utah. Local support, no contracts, free statement review."
+        description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Weber County, Utah. Local support, no contracts, statement review."
         canonical="/locations/weber-county"
         schema={schema}
       />
@@ -63,8 +63,8 @@ export default function WeberCounty() {
               <p className="text-white/60 text-lg leading-relaxed mb-4">Weber County anchors Northern Utah with a revitalized downtown Ogden, diverse manufacturing base, outdoor recreation economy, and growing retail and restaurant scene.</p>
               <p className="text-white/50 text-base leading-relaxed mb-8">UBC Unlimited serves every city and community in Weber County with credit card processing, POS systems, cash discount programs, and merchant accounts — backed by local Utah support that national processors can't match.</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Link href="/contact" className="btn-gold text-sm py-3 px-7 justify-center">Get a Free Quote</Link>
-                <Link href="/statement-review" className="btn-outline-gold text-sm py-3 px-7 justify-center">Free Statement Review</Link>
+                <Link href="/contact" className="btn-gold text-sm py-3 px-7 justify-center">Request a Quote</Link>
+                <Link href="/statement-review" className="btn-outline-gold text-sm py-3 px-7 justify-center">Statement Review</Link>
               </div>
             </motion.div>
           </div>
@@ -121,7 +121,7 @@ export default function WeberCounty() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
               { icon: MapPin, title: "Truly Local — Utah Based", desc: "We're not a national call center. UBC Unlimited serves Weber County businesses with a local rep who knows the Utah market." },
-              { icon: TrendingDown, title: "Lower Rates Than National Processors", desc: "Most Weber County businesses overpay Stripe, Square, or their bank. Our free statement review shows you exactly where you can save." },
+              { icon: TrendingDown, title: "Lower Rates Than National Processors", desc: "Most Weber County businesses overpay Stripe, Square, or their bank. Our statement review shows you exactly where you can save." },
               { icon: Clock, title: "Approved & Processing in 24–48 Hours", desc: "Most Weber County businesses are live and processing within one to two business days. We handle setup, equipment, and training." },
               { icon: ShieldCheck, title: "No Contracts, No Rate Increases", desc: "Month-to-month agreements only. Your rate is your rate — we never raise fees after you sign up." },
               { icon: Users, title: "Dedicated Local Account Rep", desc: "You get a direct line to a real person who knows your account. Not a ticket queue. Not a chatbot." },
@@ -149,7 +149,7 @@ export default function WeberCounty() {
           <div className="space-y-3">
             {[
               { q: "Does UBC Unlimited serve businesses in Weber County?", a: "Yes — UBC Unlimited serves businesses throughout Weber County, including Ogden and all surrounding communities. We offer on-site consultations and local support." },
-              { q: "How much does merchant services cost for a Weber County business?", a: "Rates are tailored to your card mix and volume. Most Weber County businesses qualify for interchange-plus pricing ranging from interchange + 0.10% to 0.50% — significantly lower than Stripe (2.9% + $0.30) or Square (2.6%–3.5%). We offer a free statement review to show your exact savings." },
+              { q: "How much does merchant services cost for a Weber County business?", a: "Rates are tailored to your card mix and volume. Most Weber County businesses qualify for interchange-plus pricing ranging from interchange + 0.10% to 0.50% — significantly lower than Stripe (2.9% + $0.30) or Square (2.6%–3.5%). We offer a statement review to show your exact savings." },
               { q: "What POS systems do you offer for Weber County businesses?", a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval." },
               { q: "Do you offer a cash discount program for Weber County businesses?", a: "Yes. Utah law permits cash discount programs, which allow businesses to pass the processing fee to card-paying customers. This effectively eliminates your processing costs. We handle the full setup and compliance documentation." },
               { q: "How quickly can a Weber County business get approved and start processing?", a: "Most Weber County businesses are approved and live within 24–48 hours. We handle the setup, equipment, and training so you can focus on running your business." },
@@ -167,10 +167,10 @@ export default function WeberCounty() {
 
       <CTABanner
         title="Ready to Lower Your Processing Costs in Weber County?"
-        subtitle="Get a free statement review and see exactly how much your Weber County business can save. Most businesses save 20–40% on processing fees."
-        primaryLabel="Get a Free Quote"
+        subtitle="Get a statement review and see exactly how much your Weber County business can save. Most businesses save 20–40% on processing fees."
+        primaryLabel="Request a Quote"
         primaryHref="/contact"
-        secondaryLabel="Free Statement Review"
+        secondaryLabel="Statement Review"
         secondaryHref="/statement-review"
       />
     </PageLayout>

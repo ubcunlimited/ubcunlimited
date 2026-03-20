@@ -52,8 +52,8 @@ export default function LocationDetail() {
       answer: `Most businesses in ${location.city} are live and processing within 24–48 hours of approval. We handle the setup, training, and onboarding so you can focus on running your business.`,
     },
     {
-      question: `Do you offer free consultations for ${location.city} businesses?`,
-      answer: `Absolutely. We offer a free, no-obligation consultation for any business in ${location.city} or the surrounding ${location.county} County area. We'll review your current processing costs and recommend the best solution for your needs.`,
+      question: `Do you offer consultations for ${location.city} businesses?`,
+      answer: `Absolutely. We offer a no-obligation consultation for any business in ${location.city} or the surrounding ${location.county} County area. We'll review your current processing costs and recommend the best solution for your needs.`,
     },
   ];
 
@@ -108,7 +108,7 @@ export default function LocationDetail() {
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/consultation" className="btn-gold py-3 px-6">
-                Book a Free Consultation <ArrowRight size={16} />
+                Book a Consultation <ArrowRight size={16} />
               </Link>
               <a href={SITE.phoneHref} className="btn-outline-white py-3 px-6">
                 <Phone size={15} /> {SITE.phone}
@@ -216,7 +216,7 @@ export default function LocationDetail() {
               <div className="text-white/50 text-xs">— Local Utah Restaurant Owner</div>
               <div className="mt-6 pt-6 border-t border-white/10">
                 <Link href="/consultation" className="btn-gold w-full justify-center py-3 text-sm">
-                  Book a Free Consultation <ArrowRight size={15} />
+                  Book a Consultation <ArrowRight size={15} />
                 </Link>
               </div>
             </div>
@@ -255,7 +255,7 @@ export default function LocationDetail() {
 
       <CTABanner
         title={`Ready to Get Started in ${location.city}?`}
-        subtitle={`Book a free, no-obligation consultation with our local Utah team. We'll review your current setup and show you exactly how we can help your ${location.city} business save money and process payments more efficiently.`}
+        subtitle={`Book a no-obligation consultation with our local Utah team. We'll review your current setup and show you exactly how we can help your ${location.city} business save money and process payments more efficiently.`}
       />
     </PageLayout>
   );

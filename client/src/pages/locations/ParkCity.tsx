@@ -59,7 +59,7 @@ const PARK_CITY_BENEFITS = [
   {
     icon: TrendingDown,
     title: "Lower Rates Than National Processors",
-    desc: "Most Park City businesses overpay Stripe, Square, or their bank. Our free statement review shows you exactly where you're losing money — and how much you can save.",
+    desc: "Most Park City businesses overpay Stripe, Square, or their bank. Our statement review shows you exactly where you're losing money — and how much you can save.",
   },
   {
     icon: Clock,
@@ -90,7 +90,7 @@ const PARK_CITY_FAQS = [
   },
   {
     q: "How much does merchant services cost for a Park City business?",
-    a: "Rates are tailored to your card mix and volume. Most Park City businesses qualify for interchange-plus pricing ranging from interchange + 0.10% to 0.50% — significantly lower than Stripe (2.9% + $0.30) or Square (2.6%–3.5%). We offer a free statement review to show your exact savings.",
+    a: "Rates are tailored to your card mix and volume. Most Park City businesses qualify for interchange-plus pricing ranging from interchange + 0.10% to 0.50% — significantly lower than Stripe (2.9% + $0.30) or Square (2.6%–3.5%). We offer a statement review to show your exact savings.",
   },
   {
     q: "What POS systems do you offer for Park City restaurants and ski shops?",
@@ -176,7 +176,7 @@ export default function ParkCity() {
     <PageLayout>
       <SEO
         title="Merchant Services Park City, Utah | UBC Unlimited"
-        description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Park City, Utah businesses. Local support, no contracts, free statement review."
+        description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Park City, Utah businesses. Local support, no contracts, statement review."
         canonical="/locations/park-city"
         schema={schema}
       />
@@ -211,8 +211,8 @@ export default function ParkCity() {
                 ))}
               </ul>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/contact" className="btn-gold text-sm py-3 px-7 justify-center">Get a Free Quote <ArrowRight size={15} /></Link>
-                <Link href="/statement-review" className="btn-outline-white text-sm py-3 px-7 justify-center">Free Statement Review</Link>
+                <Link href="/contact" className="btn-gold text-sm py-3 px-7 justify-center">Request a Quote <ArrowRight size={15} /></Link>
+                <Link href="/statement-review" className="btn-outline-white text-sm py-3 px-7 justify-center">Statement Review</Link>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="space-y-4">
@@ -404,10 +404,10 @@ export default function ParkCity() {
 
       <CTABanner
         title="Ready to Lower Your Processing Costs in Park City?"
-        subtitle="Get a free statement review and see exactly how much your Park City business can save. Most businesses save 20–40% on processing fees."
-        primaryLabel="Get a Free Quote"
+        subtitle="Get a statement review and see exactly how much your Park City business can save. Most businesses save 20–40% on processing fees."
+        primaryLabel="Request a Quote"
         primaryHref="/contact"
-        secondaryLabel="Free Statement Review"
+        secondaryLabel="Statement Review"
         secondaryHref="/statement-review"
       />
     </PageLayout>

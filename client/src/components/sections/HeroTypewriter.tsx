@@ -35,7 +35,7 @@ export default function HeroTypewriter({
   ],
   headline = "Merchant Services Done Right",
   subheadline = "Transparent pricing, local support, and payment solutions tailored to your Utah business.",
-  primaryLabel = "Get a Free Quote",
+  primaryLabel = "Request a Quote",
   primaryHref = "/contact",
   secondaryLabel = "See Our Solutions",
   secondaryHref = "/solutions",

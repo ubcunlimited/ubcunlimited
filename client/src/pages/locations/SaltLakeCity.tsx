@@ -77,7 +77,7 @@ const SLC_BENEFITS = [
   {
     icon: TrendingDown,
     title: "Lower Rates Than National Processors",
-    desc: "Most SLC businesses overpay Stripe, Square, or their bank. Our free statement review shows you exactly where you're losing money — and how much you can save.",
+    desc: "Most SLC businesses overpay Stripe, Square, or their bank. Our statement review shows you exactly where you're losing money — and how much you can save.",
   },
   {
     icon: Clock,
@@ -108,7 +108,7 @@ const SLC_FAQS = [
   },
   {
     q: "How much does merchant services cost for a Salt Lake City business?",
-    a: "Rates are tailored to your card mix, average ticket size, and monthly volume. Most SLC businesses qualify for interchange-plus pricing ranging from interchange + 0.10% to 0.50%, which is significantly lower than flat-rate processors like Stripe (2.9% + $0.30) or Square (2.6%–3.5%). We offer a free statement review to show you your exact savings.",
+    a: "Rates are tailored to your card mix, average ticket size, and monthly volume. Most SLC businesses qualify for interchange-plus pricing ranging from interchange + 0.10% to 0.50%, which is significantly lower than flat-rate processors like Stripe (2.9% + $0.30) or Square (2.6%–3.5%). We offer a statement review to show you your exact savings.",
   },
   {
     q: "What POS systems do you offer for Salt Lake City businesses?",
@@ -119,8 +119,8 @@ const SLC_FAQS = [
     a: "Yes. We specialize in high-risk merchant accounts for industries that national processors often decline — including CBD, firearms, supplement companies, and more. Salt Lake City has a growing number of businesses in these verticals, and we have direct relationships with processors that specialize in high-risk approvals.",
   },
   {
-    q: "Do you offer a free consultation for SLC businesses?",
-    a: "Absolutely. We offer a free, no-obligation consultation for any business in Salt Lake City or the surrounding area. We'll review your current processing statement, identify savings opportunities, and recommend the best solution for your business type and volume.",
+    q: "Do you offer a consultation for SLC businesses?",
+    a: "Absolutely. We offer a no-obligation consultation for any business in Salt Lake City or the surrounding area. We'll review your current processing statement, identify savings opportunities, and recommend the best solution for your business type and volume.",
   },
   {
     q: "How does the cash discount program work in Utah?",
@@ -220,7 +220,7 @@ export default function SaltLakeCity() {
     <PageLayout>
       <SEO
         title="Merchant Services Salt Lake City, Utah | UBC Unlimited"
-        description="UBC Unlimited provides credit card processing, POS systems, cash discount programs, and merchant services to Salt Lake City businesses. Local support, no contracts, free statement review."
+        description="UBC Unlimited provides credit card processing, POS systems, cash discount programs, and merchant services to Salt Lake City businesses. Local support, no contracts, statement review."
         canonical="/locations/salt-lake-city"
         schema={schema}
       />
@@ -284,10 +284,10 @@ export default function SaltLakeCity() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/contact" className="btn-gold text-sm py-3 px-7 justify-center">
-                  Get a Free Quote <ArrowRight size={15} />
+                  Request a Quote <ArrowRight size={15} />
                 </Link>
                 <Link href="/statement-review" className="btn-outline-white text-sm py-3 px-7 justify-center">
-                  Free Statement Review
+                  Statement Review
                 </Link>
               </div>
             </motion.div>
@@ -556,10 +556,10 @@ export default function SaltLakeCity() {
       {/* ── Bottom CTA ── */}
       <CTABanner
         title="Ready to Lower Your Processing Costs in Salt Lake City?"
-        subtitle="Get a free statement review and see exactly how much your Salt Lake City business can save. Most businesses save 20–40% on processing fees."
-        primaryLabel="Get a Free Quote"
+        subtitle="Get a statement review and see exactly how much your Salt Lake City business can save. Most businesses save 20–40% on processing fees."
+        primaryLabel="Request a Quote"
         primaryHref="/contact"
-        secondaryLabel="Free Statement Review"
+        secondaryLabel="Statement Review"
         secondaryHref="/statement-review"
       />
     </PageLayout>

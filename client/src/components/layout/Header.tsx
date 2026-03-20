@@ -437,7 +437,7 @@ export default function Header() {
                   href="/consultation"
                   className="btn-gold w-full justify-center py-2.5 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
                 >
-                  Book a Free Consultation
+                  Book a Consultation
                 </Link>
               </div>
             </div>

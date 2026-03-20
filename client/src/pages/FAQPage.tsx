@@ -96,7 +96,7 @@ const faqCategories = [
       {
         question: "Do you offer competitive rates for high-ticket transactions?",
         answer:
-          "Yes. We offer interchange-plus pricing which is especially beneficial for high-ticket transactions where flat-rate processors charge significantly more. We'll show you the exact savings during a free statement review.",
+          "Yes. We offer interchange-plus pricing which is especially beneficial for high-ticket transactions where flat-rate processors charge significantly more. We'll show you the exact savings during a statement review.",
       },
     ],
   },
@@ -162,7 +162,7 @@ const faqCategories = [
       {
         question: "Which POS system is right for my business?",
         answer:
-          "It depends on your business type. SkyTab is ideal for restaurants and bars with tableside ordering, kitchen display systems, and online ordering. Clover is great for retail, salons, and service businesses. We'll help you choose during a free consultation.",
+          "It depends on your business type. SkyTab is ideal for restaurants and bars with tableside ordering, kitchen display systems, and online ordering. Clover is great for retail, salons, and service businesses. We'll help you choose during a consultation.",
       },
       {
         question: "Do you work with SkyTab POS systems?",
@@ -526,7 +526,7 @@ const faqCategories = [
     icon: "📄",
     questions: [
       {
-        question: "What is a free statement review?",
+        question: "What is a statement review?",
         answer:
           "We analyze your current processing statement line by line, identify all fees you're being charged, and compare them against what we can offer. You'll get a clear, honest comparison showing your potential savings — with no obligation to switch.",
       },
@@ -738,10 +738,10 @@ export default function FAQPage() {
           </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/consultation" className="btn-primary">
-              Book a Free Consultation
+              Book a Consultation
             </Link>
             <Link href="/statement-review" className="btn-outline-white">
-              Get a Free Statement Review
+              Get a Statement Review
             </Link>
           </div>
         </div>

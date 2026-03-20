@@ -22,7 +22,7 @@ const inputClass =
 
 export default function LeadCaptureForm({
   title = "Ready to Transform Your Business?",
-  subtitle = "Get in touch today. We're happy to answer any questions and provide a free, no-obligation quote.",
+  subtitle = "Get in touch today. We're happy to answer any questions and provide a no-obligation quote.",
   ctaLabel = "Submit",
   showLocation = true,
   showNewsletter = false,
