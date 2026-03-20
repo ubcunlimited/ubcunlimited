@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import type React from "react";
-import { ArrowRight, CheckCircle, ChevronRight, Clock, Phone, Shield, TrendingUp, Zap, Star, MapPin, Award } from "lucide-react";
+import { ArrowRight, CheckCircle, ChevronRight, Clock, Phone, Shield, TrendingUp, Zap, Star, MapPin, Award, AlertCircle } from "lucide-react";
+import { INDUSTRY_PAIRS } from "@/lib/industryPairs";
 import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
@@ -839,7 +840,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
         </div>
       </div>
 
-      {/* ── Challenges & Solutions ── */}
+      {/* ── Challenges & Solutions (Option B: Paired Card Rows) ── */}
       <section className="py-16 bg-[#f8fafc]">
         <div className="container">
           <div className="text-center mb-12">
@@ -847,42 +848,65 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
             <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
               Challenges We Solve for {data.title} Businesses
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm">We've worked with hundreds of Utah {data.title.toLowerCase()} businesses. Here are the problems we hear most — and exactly how we solve them.</p>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm">We've worked with hundreds of Utah {data.title.toLowerCase()} businesses. Here are the problems we hear most — and exactly how we solve them.</p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Challenges */}
-            <div>
-              <h3 className="text-base font-bold text-[#080808] mb-4 flex items-center gap-2" style={{ fontFamily: 'Sora, sans-serif' }}>
-                <span className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center text-red-500 text-xs font-bold">!</span>
-                Common Pain Points
-              </h3>
-              <div className="space-y-3">
-                {data.challenges.map((c, i) => (
-                  <div key={c} className="flex items-start gap-3 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
-                    <div className="w-6 h-6 rounded-full bg-[#c9a84c]/10 flex items-center justify-center text-[#c9a84c] text-xs font-bold shrink-0 mt-0.5">{i + 1}</div>
-                    <span className="text-sm text-gray-700 leading-relaxed">{c}</span>
-                  </div>
-                ))}
-              </div>
+          {/* Column headers — desktop only */}
+          <div className="hidden md:grid md:grid-cols-2 gap-6 mb-3 px-1">
+            <div className="flex items-center gap-2">
+              <AlertCircle size={14} className="text-red-400" />
+              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400">The Challenge</span>
             </div>
-            {/* Solutions */}
-            <div>
-              <h3 className="text-base font-bold text-[#080808] mb-4 flex items-center gap-2" style={{ fontFamily: 'Sora, sans-serif' }}>
-                <CheckCircle size={16} className="text-[#c9a84c]" />
-                Our Solutions
-              </h3>
-              <div className="space-y-4">
-                {data.solutions.map((s) => (
-                  <div key={s.title} className="group bg-white rounded-xl p-5 border border-gray-100 hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="w-2 h-2 rounded-full bg-[#c9a84c] shrink-0" />
-                      <span className="font-bold text-sm text-[#080808] group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>{s.title}</span>
+            <div className="flex items-center gap-2">
+              <CheckCircle size={14} className="text-[#c9a84c]" />
+              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400">Our Solution</span>
+            </div>
+          </div>
+          {/* Paired rows */}
+          <div className="space-y-3">
+            {(INDUSTRY_PAIRS[data.slug] ?? data.challenges.map((c, i) => ({
+              challenge: c,
+              challengeDetail: '',
+              solution: data.solutions[i]?.title ?? 'Custom Solution',
+              solutionDetail: data.solutions[i]?.desc ?? '',
+              solutionTag: 'Solution',
+              impact: '',
+            }))).map((pair, i) => (
+              <div key={i} className="grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                {/* Challenge card */}
+                <div className="bg-white p-5 border-b md:border-b-0 md:border-r border-gray-100 flex flex-col gap-2">
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="text-red-400 text-xs font-bold">{i + 1}</span>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed pl-4">{s.desc}</p>
+                    <div>
+                      <p className="font-bold text-sm text-[#080808] leading-snug mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{pair.challenge}</p>
+                      {pair.challengeDetail && <p className="text-gray-500 text-xs leading-relaxed">{pair.challengeDetail}</p>}
+                    </div>
                   </div>
-                ))}
+                </div>
+                {/* Solution card */}
+                <div className="bg-[#080808] p-5 flex flex-col gap-2">
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-[#c9a84c]/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle size={13} className="text-[#c9a84c]" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <p className="font-bold text-sm text-white leading-snug" style={{ fontFamily: 'Sora, sans-serif' }}>{pair.solution}</p>
+                        <span className="text-[10px] font-bold uppercase tracking-wider bg-[#c9a84c]/20 text-[#c9a84c] px-2 py-0.5 rounded-full">{pair.solutionTag}</span>
+                      </div>
+                      {pair.solutionDetail && <p className="text-white/60 text-xs leading-relaxed">{pair.solutionDetail}</p>}
+                    </div>
+                  </div>
+                  {pair.impact && (
+                    <div className="ml-10 flex items-center gap-1.5">
+                      <TrendingUp size={11} className="text-[#c9a84c] shrink-0" />
+                      <span className="text-[#c9a84c] text-[11px] font-semibold">{pair.impact}</span>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

@@ -23,3 +23,5 @@
 - [x] Fix nested <a> inside <a> error in Home.tsx service area section (county cards have child Link elements)
 - [x] Add unified search bar to Counties and Cities pages with live dropdown results
 - [x] Build challenge-solution proof-of-concept page (Restaurants industry) and present to user for feedback
+- [x] Roll out Option B paired card layout to all 21 IndustryDetail pages with expanded challenge-solution data
+- [x] Roll out Option B paired card layout to all 11 SolutionDetail pages with expanded challenge-solution data

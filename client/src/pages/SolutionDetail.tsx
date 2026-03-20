@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { ArrowRight, CheckCircle, ChevronRight, Clock, Phone, Shield, TrendingUp, Zap, Star } from "lucide-react";
+import { ArrowRight, CheckCircle, ChevronRight, Clock, Phone, Shield, TrendingUp, Zap, Star, AlertCircle } from "lucide-react";
+import { SOLUTION_PAIRS } from "@/lib/solutionPairs";
 import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
@@ -731,25 +732,89 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
       </section>
 
       {/* ── Features ── */}
+      {/* ── Challenges & Solutions (Option B: Paired Card Rows) ── */}
       <section className="py-16 bg-white">
         <div className="container">
           <div className="text-center mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Features & Capabilities</h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm">Everything included in your {data.title} solution — built around your business, not a generic rate sheet.</p>
+            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Common Problems We Solve</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm">Real challenges Utah businesses face with payment processing — and exactly how our {data.title} solution addresses each one.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {data.features.map((f, i) => (
-              <div key={f.title} className="group p-6 rounded-xl border border-gray-100 hover:border-[#c9a84c]/40 hover:shadow-lg transition-all relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-[#c9a84c]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-l-xl" />
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-7 h-7 rounded-lg bg-[#c9a84c]/10 flex items-center justify-center text-xs font-bold text-[#c9a84c]">{i + 1}</div>
-                  <h3 className="font-bold text-[#080808] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{f.title}</h3>
+          {/* Column headers — desktop only */}
+          <div className="hidden md:grid md:grid-cols-2 gap-6 mb-3 px-1">
+            <div className="flex items-center gap-2">
+              <AlertCircle size={14} className="text-red-400" />
+              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400">The Problem</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle size={14} className="text-[#c9a84c]" />
+              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400">Our Solution</span>
+            </div>
+          </div>
+          {/* Paired rows */}
+          <div className="space-y-3">
+            {(SOLUTION_PAIRS[data.slug] ?? data.features.map((f, i) => ({
+              challenge: f.title,
+              challengeDetail: '',
+              solution: f.title,
+              solutionDetail: f.desc,
+              solutionTag: 'Feature',
+              impact: '',
+            }))).map((pair, i) => (
+              <div key={i} className="grid md:grid-cols-2 gap-0 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                {/* Challenge card */}
+                <div className="bg-[#f8fafc] p-5 border-b md:border-b-0 md:border-r border-gray-100 flex flex-col gap-2">
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-red-50 flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="text-red-400 text-xs font-bold">{i + 1}</span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm text-[#080808] leading-snug mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{pair.challenge}</p>
+                      {pair.challengeDetail && <p className="text-gray-500 text-xs leading-relaxed">{pair.challengeDetail}</p>}
+                    </div>
+                  </div>
                 </div>
-                <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+                {/* Solution card */}
+                <div className="bg-[#080808] p-5 flex flex-col gap-2">
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-[#c9a84c]/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle size={13} className="text-[#c9a84c]" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <p className="font-bold text-sm text-white leading-snug" style={{ fontFamily: 'Sora, sans-serif' }}>{pair.solution}</p>
+                        <span className="text-[10px] font-bold uppercase tracking-wider bg-[#c9a84c]/20 text-[#c9a84c] px-2 py-0.5 rounded-full">{pair.solutionTag}</span>
+                      </div>
+                      {pair.solutionDetail && <p className="text-white/60 text-xs leading-relaxed">{pair.solutionDetail}</p>}
+                    </div>
+                  </div>
+                  {pair.impact && (
+                    <div className="ml-10 flex items-center gap-1.5">
+                      <TrendingUp size={11} className="text-[#c9a84c] shrink-0" />
+                      <span className="text-[#c9a84c] text-[11px] font-semibold">{pair.impact}</span>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
+          {/* Features grid below the pairs — still show all features */}
+          {data.features.length > 0 && (
+            <div className="mt-12">
+              <h3 className="text-lg font-bold text-[#080808] mb-6 text-center" style={{ fontFamily: 'Sora, sans-serif' }}>All Features & Capabilities</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {data.features.map((f, i) => (
+                  <div key={f.title} className="group p-5 rounded-xl border border-gray-100 hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-6 h-6 rounded-lg bg-[#c9a84c]/10 flex items-center justify-center text-xs font-bold text-[#c9a84c]">{i + 1}</div>
+                      <h4 className="font-bold text-[#080808] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{f.title}</h4>
+                    </div>
+                    <p className="text-gray-500 text-xs leading-relaxed">{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 
