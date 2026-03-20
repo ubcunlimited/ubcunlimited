@@ -8,6 +8,7 @@ import { SITE } from "@/lib/config";
 import SEO from "@/components/SEO";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import LocationSearch from "@/components/LocationSearch";
 
 export default function Cities() {
   const [search, setSearch] = useState("");
@@ -49,7 +50,15 @@ export default function Cities() {
               UBC Unlimited provides local payment processing support to businesses in cities throughout Utah. Find your city below, or let us know where you're located and we'll reach out.
             </p>
             {/* Search / finder */}
-            <div className="max-w-md mx-auto relative">
+            <div className="max-w-lg mx-auto">
+              <LocationSearch
+                filter="cities"
+                placeholder="Search for your city, county, or industry..."
+                maxResults={8}
+              />
+            </div>
+            {/* Legacy filter for card grid */}
+            <div className="max-w-md mx-auto mt-3 relative">
               <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" />
               <input
                 type="text"
@@ -58,8 +67,8 @@ export default function Cities() {
                   setSearch(e.target.value);
                   setShowUnlistedForm(false);
                 }}
-                placeholder="Search for your city..."
-                className="w-full bg-white/8 border border-white/15 rounded-xl pl-10 pr-4 py-3.5 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+                placeholder="Filter city cards below..."
+                className="w-full bg-white/8 border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white/70 placeholder-white/25 focus:outline-none focus:border-[#c9a84c]/40 transition-colors"
               />
             </div>
             {/* No results prompt */}

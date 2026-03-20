@@ -7,6 +7,7 @@ import { FEATURED_COUNTIES, COUNTIES } from "@/lib/utahLocations";
 import { SITE } from "@/lib/config";
 import SEO from "@/components/SEO";
 import UtahCountyMap from "@/components/UtahCountyMap";
+import LocationSearch from "@/components/LocationSearch";
 
 export default function Counties() {
   const [search, setSearch] = useState("");
@@ -41,13 +42,20 @@ export default function Counties() {
               UBC Unlimited provides local payment processing support to businesses in all 29 Utah counties. Find your county below to learn how we can reduce your processing costs and improve your payment experience.
             </p>
             {/* Search / finder */}
-            <div className="max-w-md mx-auto relative">
-              <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" />
+            <div className="max-w-lg mx-auto">
+              <LocationSearch
+                filter="counties"
+                placeholder="Search for your county, city, or industry..."
+                maxResults={8}
+              />
+            </div>
+            {/* Legacy filter for card grid below */}
+            <div className="max-w-md mx-auto mt-3 relative hidden">
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search for your county..."
+                placeholder="Filter county cards below..."
                 className="w-full bg-white/8 border border-white/15 rounded-xl pl-10 pr-4 py-3.5 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
               />
             </div>
