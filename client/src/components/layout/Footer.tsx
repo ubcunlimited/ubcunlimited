@@ -71,7 +71,7 @@ export default function Footer() {
               <img
                 src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent3_53cdf614.png"
                 alt="UBC Unlimited — Utah Merchant Services & Payment Processing"
-                className="h-10 w-auto object-contain"
+                className="h-28 w-auto object-contain"
                 style={{ maxWidth: "160px" }}
               />
             </Link>
