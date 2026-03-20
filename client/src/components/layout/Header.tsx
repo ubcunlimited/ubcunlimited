@@ -111,7 +111,7 @@ export default function Header() {
       <div className="container" ref={navRef}>
         <div
           className={`flex items-center justify-between transition-all duration-300 ${
-            scrolled ? "h-16" : "h-36"
+            scrolled ? "h-16" : "h-16 lg:h-36"
           }`}
         >
           {/* Logo */}
@@ -119,8 +119,8 @@ export default function Header() {
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent3_53cdf614.png"
               alt="UBC Unlimited — Processing Without Limits"
-              className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-12" : "h-34"}`}
-              style={{ maxWidth: scrolled ? "180px" : "320px" }}
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-12" : "h-12 lg:h-34"}`}
+              style={{ maxWidth: scrolled ? "180px" : "160px" }}
             />
           </Link>
 

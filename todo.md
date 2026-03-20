@@ -6,3 +6,4 @@
 - [x] Add depth to SolutionDetail template: stats bar, how-it-works steps, pull quote, process timeline, richer hero
 - [x] Add depth to IndustryDetail template: stats bar, pain-point callouts, process steps, testimonial, richer hero with two-column layout
 - [x] Home page hero: show contact form at all screen sizes (remove hidden lg:block, stack below headline on mobile)\n
+- [x] Fix mobile: announcement bar hidden behind fixed nav — add correct top offset to hero section

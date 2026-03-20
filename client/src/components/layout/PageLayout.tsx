@@ -13,7 +13,8 @@ export default function PageLayout({ children }: PageLayoutProps) {
         Skip to main content
       </a>
       <Header />
-      <main id="main-content" className="flex-1 pt-[93px]">
+      {/* pt-16 = 64px matches mobile nav h-16; lg:pt-[192px] covers top bar + h-36 nav on desktop */}
+      <main id="main-content" className="flex-1 pt-16 lg:pt-[192px]">
         {children}
       </main>
       <Footer />
