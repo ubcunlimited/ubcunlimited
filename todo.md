@@ -37,3 +37,7 @@
 - [x] Add email capture form to blog sidebar: name + email, stored in DB, owner notification on submission
 - [x] Remove partner network disclosures from About page
 - [x] Remove non-equipment brand names from solution/industry pages; keep only SkyTab, PAX, Clover (hardware/POS brands)
+- [x] Create Privacy Policy page (/privacy-policy)
+- [x] Create Terms of Service page (/terms-of-service)
+- [x] Add acceptance checkbox with inline links to all lead capture and consultation forms
+- [x] Add Privacy Policy and Terms of Service links to site footer

@@ -81,6 +81,7 @@ export default function Home() {
   const [heroType, setHeroType] = useState("");
   const [heroSubmitted, setHeroSubmitted] = useState(false);
   const [heroError, setHeroError] = useState("");
+  const [heroAgreed, setHeroAgreed] = useState(false);
 
   const heroMutation = trpc.forms.submitHeroLead.useMutation({
     onSuccess: () => {
@@ -96,6 +97,10 @@ export default function Home() {
     e.preventDefault();
     if (!heroName.trim() || !heroPhone.trim() || !heroType) {
       setHeroError("Please fill in all three fields.");
+      return;
+    }
+    if (!heroAgreed) {
+      setHeroError("Please accept the Privacy Policy and Terms of Service to continue.");
       return;
     }
     setHeroError("");
@@ -281,6 +286,24 @@ export default function Home() {
                       ))}
                     </select>
                   </div>
+                  {/* Acceptance checkbox */}
+                  <label className="flex items-start gap-2.5 cursor-pointer mb-3">
+                    <input
+                      type="checkbox"
+                      checked={heroAgreed}
+                      onChange={(e) => {
+                        setHeroAgreed(e.target.checked);
+                        if (heroError.includes("Privacy")) setHeroError("");
+                      }}
+                      className="mt-0.5 w-4 h-4 rounded border-white/20 bg-white/10 accent-[#c9a84c] cursor-pointer flex-shrink-0"
+                    />
+                    <span className="text-white/40 text-[11px] leading-relaxed">
+                      I agree to the{" "}
+                      <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>Privacy Policy</Link>{" "}
+                      and{" "}
+                      <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>Terms of Service</Link>.
+                    </span>
+                  </label>
                   {heroError && (
                     <p className="text-red-400 text-xs mb-3">{heroError}</p>
                   )}

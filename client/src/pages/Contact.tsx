@@ -15,19 +15,41 @@ const labelClass = "block text-sm font-medium text-[#080808] mb-1.5";
 
 type Tab = "consultation" | "quote" | "statement";
 
-function SmsConsent({ checked, onChange }: { checked: boolean; onChange: (v: boolean) => void }) {
+function LegalConsent({ smsChecked, onSmsChange, termsChecked, onTermsChange, termsError }: {
+  smsChecked: boolean; onSmsChange: (v: boolean) => void;
+  termsChecked: boolean; onTermsChange: (v: boolean) => void;
+  termsError?: string;
+}) {
   return (
-    <div className="pt-1">
+    <div className="pt-1 space-y-3">
+      {/* Terms & Privacy acceptance */}
+      <div>
+        <label className="flex items-start gap-3 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={termsChecked}
+            onChange={(e) => onTermsChange(e.target.checked)}
+            className="mt-0.5 accent-[#c9a84c]"
+          />
+          <span className="text-xs text-gray-500 leading-relaxed">
+            I agree to the{" "}
+            <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#c9a84c]">Privacy Policy</Link>{" "}
+            and{" "}
+            <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#c9a84c]">Terms of Service</Link>.
+          </span>
+        </label>
+        {termsError && <p className="text-red-500 text-xs mt-1 ml-6">{termsError}</p>}
+      </div>
+      {/* SMS consent */}
       <label className="flex items-start gap-3 cursor-pointer select-none">
         <input
           type="checkbox"
-          checked={checked}
-          onChange={(e) => onChange(e.target.checked)}
+          checked={smsChecked}
+          onChange={(e) => onSmsChange(e.target.checked)}
           className="mt-0.5 accent-[#c9a84c]"
         />
         <span className="text-xs text-gray-500 leading-relaxed">
-          I consent to receive transactional SMS messages (appointment confirmations, follow-ups) from UBC Unlimited at the number provided. Message &amp; data rates may apply. Reply STOP to opt out. See our{" "}
-          <Link href="/privacy-policy" className="underline hover:text-[#c9a84c]">Privacy Policy</Link>.
+          I consent to receive transactional SMS messages (appointment confirmations, follow-ups) from UBC Unlimited at the number provided. Message &amp; data rates may apply. Reply STOP to opt out.
         </span>
       </label>
     </div>
@@ -52,6 +74,8 @@ function ConsultationForm({ onSuccess }: { onSuccess: () => void }) {
     firstName: "", lastName: "", email: "", phone: "",
     businessName: "", businessType: "Restaurant", preferredTime: "", message: "", smsConsent: false,
   });
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [termsError, setTermsError] = useState("");
   const mutation = trpc.forms.submitConsultation.useMutation({
     onSuccess: () => onSuccess(),
     onError: () => toast.error("Something went wrong. Please try again or call us directly."),
@@ -62,6 +86,8 @@ function ConsultationForm({ onSuccess }: { onSuccess: () => void }) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!termsAccepted) { setTermsError("Please accept the Privacy Policy and Terms of Service."); return; }
+    setTermsError("");
     mutation.mutate(form);
   };
 
@@ -96,7 +122,11 @@ function ConsultationForm({ onSuccess }: { onSuccess: () => void }) {
         </select>
       </div>
       <div><label className={labelClass} htmlFor="c-notes">What would you like to discuss?</label><textarea id="c-notes" rows={3} value={form.message} onChange={set("message")} placeholder="e.g., I want to reduce my processing fees, explore POS options, or learn about high-risk accounts..." className={inputClass} /></div>
-      <SmsConsent checked={form.smsConsent} onChange={(v) => setForm((f) => ({ ...f, smsConsent: v }))} />
+      <LegalConsent
+        smsChecked={form.smsConsent} onSmsChange={(v) => setForm((f) => ({ ...f, smsConsent: v }))}
+        termsChecked={termsAccepted} onTermsChange={(v) => { setTermsAccepted(v); if (v) setTermsError(""); }}
+        termsError={termsError}
+      />
       <button type="submit" disabled={mutation.isPending} className="btn-gold w-full sm:w-auto px-8 py-3 text-sm font-semibold flex items-center gap-2">
         {mutation.isPending ? <><Loader2 size={15} className="animate-spin" /> Sending…</> : <>Book My Consultation <ArrowRight size={15} /></>}
       </button>
@@ -125,8 +155,13 @@ function QuoteForm({ onSuccess }: { onSuccess: () => void }) {
       solutions: f.solutions.includes(sol) ? f.solutions.filter((s) => s !== sol) : [...f.solutions, sol],
     }));
 
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [termsError, setTermsError] = useState("");
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!termsAccepted) { setTermsError("Please accept the Privacy Policy and Terms of Service."); return; }
+    setTermsError("");
     mutation.mutate(form);
   };
 
@@ -176,7 +211,11 @@ function QuoteForm({ onSuccess }: { onSuccess: () => void }) {
         </div>
       </div>
       <div><label className={labelClass} htmlFor="q-notes">Additional Notes</label><textarea id="q-notes" rows={3} value={form.message} onChange={set("message")} placeholder="Anything else we should know about your business or current setup?" className={inputClass} /></div>
-      <SmsConsent checked={form.smsConsent} onChange={(v) => setForm((f) => ({ ...f, smsConsent: v }))} />
+      <LegalConsent
+        smsChecked={form.smsConsent} onSmsChange={(v) => setForm((f) => ({ ...f, smsConsent: v }))}
+        termsChecked={termsAccepted} onTermsChange={(v) => { setTermsAccepted(v); if (v) setTermsError(""); }}
+        termsError={termsError}
+      />
       <button type="submit" disabled={mutation.isPending} className="btn-gold w-full sm:w-auto px-8 py-3 text-sm font-semibold flex items-center gap-2">
         {mutation.isPending ? <><Loader2 size={15} className="animate-spin" /> Sending…</> : <>Request My Quote <ArrowRight size={15} /></>}
       </button>
@@ -217,8 +256,13 @@ function StatementReviewForm({ onSuccess }: { onSuccess: () => void }) {
     reader.readAsDataURL(file);
   };
 
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [termsError, setTermsError] = useState("");
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!termsAccepted) { setTermsError("Please accept the Privacy Policy and Terms of Service."); return; }
+    setTermsError("");
     mutation.mutate({
       ...form,
       ...(fileData && fileName && fileType ? { fileData, fileName, fileType } : {}),
@@ -274,7 +318,11 @@ function StatementReviewForm({ onSuccess }: { onSuccess: () => void }) {
         <p className="text-xs text-gray-400 mt-2">Don't have a digital copy? Describe your current processor and monthly volume in the notes field below and we'll still provide an estimate.</p>
       </div>
       <div><label className={labelClass} htmlFor="s-notes">Current Processor / Notes</label><textarea id="s-notes" rows={3} value={form.message} onChange={set("message")} placeholder="e.g., Currently with Square, processing about $30k/month, mostly card-present transactions..." className={inputClass} /></div>
-      <SmsConsent checked={form.smsConsent} onChange={(v) => setForm((f) => ({ ...f, smsConsent: v }))} />
+      <LegalConsent
+        smsChecked={form.smsConsent} onSmsChange={(v) => setForm((f) => ({ ...f, smsConsent: v }))}
+        termsChecked={termsAccepted} onTermsChange={(v) => { setTermsAccepted(v); if (v) setTermsError(""); }}
+        termsError={termsError}
+      />
       <button type="submit" disabled={mutation.isPending} className="btn-gold w-full sm:w-auto px-8 py-3 text-sm font-semibold flex items-center gap-2">
         {mutation.isPending ? <><Loader2 size={15} className="animate-spin" /> Uploading…</> : <>Submit for Free Review <ArrowRight size={15} /></>}
       </button>

@@ -155,6 +155,7 @@ export default function AgentISO() {
   const [experience, setExperience] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
+  const [termsAgreed, setTermsAgreed] = useState(false);
 
   const agentMutation = trpc.forms.submitAgentLead.useMutation({
     onSuccess: () => {
@@ -170,6 +171,10 @@ export default function AgentISO() {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !phone.trim() || !agentType) {
       setFormError("Please fill in all required fields.");
+      return;
+    }
+    if (!termsAgreed) {
+      setFormError("Please accept the Privacy Policy and Terms of Service to continue.");
       return;
     }
     setFormError("");
@@ -475,6 +480,22 @@ export default function AgentISO() {
                   className="w-full bg-white/8 border border-white/12 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors resize-none"
                 />
               </div>
+
+              {/* Acceptance checkbox */}
+              <label className="flex items-start gap-2.5 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={termsAgreed}
+                  onChange={(e) => { setTermsAgreed(e.target.checked); if (formError.includes("Privacy")) setFormError(""); }}
+                  className="mt-0.5 w-4 h-4 rounded border-white/20 bg-white/10 accent-[#c9a84c] cursor-pointer flex-shrink-0"
+                />
+                <span className="text-white/40 text-[11px] leading-relaxed">
+                  I agree to the{" "}
+                  <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>Privacy Policy</Link>{" "}
+                  and{" "}
+                  <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>Terms of Service</Link>.
+                </span>
+              </label>
 
               {formError && <p className="text-red-400 text-xs">{formError}</p>}
 

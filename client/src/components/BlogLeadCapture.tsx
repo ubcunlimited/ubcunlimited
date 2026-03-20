@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { Mail, CheckCircle, Loader2 } from "lucide-react";
 
@@ -10,8 +11,9 @@ interface BlogLeadCaptureProps {
 export default function BlogLeadCapture({ sourcePage }: BlogLeadCaptureProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [agreed, setAgreed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [fieldErrors, setFieldErrors] = useState<{ name?: string; email?: string }>({});
+  const [fieldErrors, setFieldErrors] = useState<{ name?: string; email?: string; agreed?: string }>({});
 
   const submitLead = trpc.forms.submitBlogLead.useMutation({
     onSuccess: () => {
@@ -20,11 +22,12 @@ export default function BlogLeadCapture({ sourcePage }: BlogLeadCaptureProps) {
   });
 
   const validate = () => {
-    const errors: { name?: string; email?: string } = {};
+    const errors: { name?: string; email?: string; agreed?: string } = {};
     if (!name.trim()) errors.name = "Please enter your name.";
     if (!email.trim()) errors.email = "Please enter your email.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       errors.email = "Please enter a valid email address.";
+    if (!agreed) errors.agreed = "Please accept the terms to continue.";
     return errors;
   };
 
@@ -116,6 +119,47 @@ export default function BlogLeadCapture({ sourcePage }: BlogLeadCaptureProps) {
           />
           {fieldErrors.email && (
             <p className="text-red-400 text-xs mt-1">{fieldErrors.email}</p>
+          )}
+        </div>
+
+        {/* Acceptance checkbox */}
+        <div>
+          <label className="flex items-start gap-2.5 cursor-pointer group">
+            <input
+              type="checkbox"
+              checked={agreed}
+              onChange={(e) => {
+                setAgreed(e.target.checked);
+                if (fieldErrors.agreed) setFieldErrors((prev) => ({ ...prev, agreed: undefined }));
+              }}
+              className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#111] accent-[#c9a84c] cursor-pointer flex-shrink-0"
+            />
+            <span className="text-gray-400 text-[11px] leading-relaxed">
+              I agree to the{" "}
+              <Link
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c9a84c] hover:underline"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Privacy Policy
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/terms-of-service"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#c9a84c] hover:underline"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Terms of Service
+              </Link>
+              .
+            </span>
+          </label>
+          {fieldErrors.agreed && (
+            <p className="text-red-400 text-xs mt-1 ml-6">{fieldErrors.agreed}</p>
           )}
         </div>
 
