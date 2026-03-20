@@ -260,7 +260,7 @@ export default function AgentISO() {
               </div>
             </motion.div>
 
-            {/* Right — income estimator card */}
+            {/* Right — partner highlights card */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -269,39 +269,34 @@ export default function AgentISO() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-[#c9a84c]/15 flex items-center justify-center">
-                  <DollarSign size={20} className="text-[#c9a84c]" />
+                  <Handshake size={20} className="text-[#c9a84c]" />
                 </div>
                 <div>
-                  <p className="text-white font-bold text-sm">Residual Income Potential</p>
-                  <p className="text-white/40 text-xs">Based on typical agent portfolios</p>
+                  <p className="text-white font-bold text-sm">Why Partner With UBC Unlimited</p>
+                  <p className="text-white/40 text-xs">Built for serious agent partners</p>
                 </div>
               </div>
 
               <div className="space-y-4 mb-6">
                 {[
-                  { merchants: "10 merchants", volume: "$500K/mo volume", residual: "$500–$1,200/mo" },
-                  { merchants: "25 merchants", volume: "$1.5M/mo volume", residual: "$1,500–$3,500/mo" },
-                  { merchants: "50 merchants", volume: "$3M/mo volume", residual: "$3,000–$7,000/mo" },
-                  { merchants: "100 merchants", volume: "$6M+/mo volume", residual: "$6,000–$15,000+/mo" },
-                ].map((row) => (
-                  <div
-                    key={row.merchants}
-                    className="flex items-center justify-between bg-white/4 rounded-xl px-4 py-3"
-                  >
+                  { icon: ShieldCheck, title: "High-Risk Merchant Access", desc: "Verticals most ISOs won't touch — CBD, firearms, nutraceuticals, and more." },
+                  { icon: Clock, title: "Fast Merchant Approvals", desc: "Most merchants approved and processing within 24–48 hours." },
+                  { icon: Users, title: "Dedicated Agent Support", desc: "A real team behind every deal — underwriting, tech, and training included." },
+                  { icon: Award, title: "Transparent Monthly Statements", desc: "Clear, itemized statements every month with no hidden deductions." },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-3 bg-white/4 rounded-xl px-4 py-3">
+                    <item.icon size={18} className="text-[#c9a84c] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-white text-sm font-semibold">{row.merchants}</p>
-                      <p className="text-white/40 text-xs">{row.volume}</p>
+                      <p className="text-white text-sm font-semibold">{item.title}</p>
+                      <p className="text-white/45 text-xs leading-relaxed">{item.desc}</p>
                     </div>
-                    <span className="text-[#c9a84c] font-bold text-sm">{row.residual}</span>
                   </div>
                 ))}
               </div>
 
-              <p className="text-white/30 text-xs leading-relaxed">
-                Estimates based on interchange-plus pricing and typical card mix. Actual residuals
-                vary by merchant volume, pricing model, and split agreement. Contact us for your
-                personalized projection.
-              </p>
+              <a href="#apply" className="btn-gold w-full text-sm py-3 flex items-center justify-center gap-2">
+                Apply to Partner Today <ArrowRight size={15} />
+              </a>
             </motion.div>
           </div>
         </div>
