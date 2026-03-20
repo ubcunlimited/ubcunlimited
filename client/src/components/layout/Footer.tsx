@@ -13,6 +13,7 @@ const COMPANY_LINKS = [
   { label: "Contact", href: "/contact" },
   { label: "Locations", href: "/locations" },
   { label: "Build a POS", href: "/solutions/pos-systems" },
+  { label: "Agent / ISO Program", href: "/agent-iso" },
 ];
 
 const LEGAL_LINKS = [

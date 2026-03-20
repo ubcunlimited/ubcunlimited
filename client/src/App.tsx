@@ -27,6 +27,7 @@ import IndustryDetail from "./pages/IndustryDetail";
 // Blog
 import Blog from "./pages/Blog";
 import NewsUpdates from "./pages/NewsUpdates";
+import AgentISO from "./pages/AgentISO";
 import BlogPost from "./pages/BlogPost";
 
 // Forms
@@ -108,6 +109,7 @@ function Router() {
         {/* Blog */}
         <Route path="/blog" component={Blog} />
         <Route path="/news" component={NewsUpdates} />
+        <Route path="/agent-iso" component={AgentISO} />
         <Route path="/blog/:slug">{(params) => <BlogPost slug={params.slug} />}</Route>
 
         {/* Forms */}

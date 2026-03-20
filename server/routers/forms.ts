@@ -65,6 +65,37 @@ const heroLeadSchema = z.object({
 // ─── Router ──────────────────────────────────────────────────────────────────
 
 export const formsRouter = router({
+  submitAgentLead: publicProcedure
+    .input(
+      z.object({
+        name: z.string().min(1),
+        email: z.string().email(),
+        phone: z.string().min(7),
+        agentType: z.string().min(1),
+        experience: z.string().optional(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const lines = [
+        `**New Agent/ISO Partner Application — UBC Unlimited**`,
+        ``,
+        `**Name:** ${input.name}`,
+        `**Email:** ${input.email}`,
+        `**Phone:** ${input.phone}`,
+        `**Role:** ${input.agentType}`,
+        input.experience ? `**Experience:** ${input.experience}` : null,
+        ``,
+        `Source: /agent-iso partner application form.`,
+      ]
+        .filter(Boolean)
+        .join("\n");
+      await notifyOwner({
+        title: `New Agent Application — ${input.name}`,
+        content: lines,
+      });
+      return { success: true };
+    }),
+
   submitHeroLead: publicProcedure
     .input(heroLeadSchema)
     .mutation(async ({ input }) => {

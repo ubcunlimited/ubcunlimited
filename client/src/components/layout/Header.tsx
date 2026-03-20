@@ -16,6 +16,7 @@ const COMPANY_LINKS = [
   { href: "/contact", label: "Contact" },
   { href: "/locations", label: "Locations" },
   { href: "/solutions/pos-systems", label: "Build a POS" },
+  { href: "/agent-iso", label: "Agent / ISO Program" },
 ];
 
 export default function Header() {
