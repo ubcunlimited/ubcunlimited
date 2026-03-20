@@ -39,8 +39,7 @@ const differentiators = [
   "Local, dedicated support — not a national call center",
   "Tailored setups based on your industry and volume",
   "Industry-specific recommendations from real experience",
-  "Broad partner relationships across processors and hardware",
-  "Authorized SkyTab reseller in Utah",
+  "Access to a wide range of payment technology solutions",
   "Month-to-month agreements — no long-term lock-in",
 ];
 
@@ -98,7 +97,7 @@ export default function About() {
                 UBC Unlimited was founded by <strong>{SITE.founder}</strong> on a simple but powerful belief: the value that matters most is to <em>set yourself apart with service</em>.
               </p>
               <p className="text-gray-600 mb-5 leading-relaxed">
-                With {SITE.yearsInBusiness} years in the merchant services industry and a wide range of partner relationships, {SITE.founder} built UBC Unlimited to give Utah businesses something they rarely find from a payment processor — a real partner who takes the time to understand your business before recommending anything.
+                With {SITE.yearsInBusiness} years in the merchant services industry, {SITE.founder} built UBC Unlimited to give Utah businesses something they rarely find from a payment processor — a real partner who takes the time to understand your business before recommending anything.
               </p>
               <p className="text-gray-600 mb-5 leading-relaxed">
                 That means industry-specific solutions, not one-size-fits-all packages. It means local support from someone who answers when you call. And it means honest, transparent pricing — because you deserve to know exactly what you're paying and why.
@@ -182,20 +181,23 @@ export default function About() {
               </div>
             </div>
             <div className="glass-card rounded-2xl p-8">
-              <div className="text-white/40 text-xs uppercase tracking-widest font-medium mb-6">Our Partner Network</div>
-              <p className="text-white/70 text-sm leading-relaxed mb-6">
-                UBC Unlimited maintains relationships with a broad range of processors, hardware manufacturers, and software platforms — giving us the flexibility to recommend the right solution for your specific business, not just the one we're incentivized to sell.
-              </p>
-              <div className="grid grid-cols-2 gap-3">
-                {["SkyTab POS", "Clover", "Dejavoo", "PAX", "CDG Commerce", "Coastal Pay", "GoPayBright", "NMI Gateway"].map((partner) => (
-                  <div key={partner} className="bg-white/5 rounded-lg px-3 py-2 text-white/60 text-xs font-medium text-center border border-white/10">
-                    {partner}
+              <div className="text-white/40 text-xs uppercase tracking-widest font-medium mb-6">Our Commitment to You</div>
+              <div className="space-y-5">
+                {[
+                  { title: "Independent Advice", desc: "We evaluate your business needs first, then recommend the solution that fits — not the one that benefits us most." },
+                  { title: "Transparent Pricing", desc: "No hidden fees, no surprise rate increases. You'll always know exactly what you're paying and why." },
+                  { title: "Local Accountability", desc: "We're a Utah business serving Utah businesses. When you call, a real person who knows your account answers." },
+                  { title: "Long-Term Partnership", desc: "Our goal isn't a one-time sale. We're here to grow with your business and adjust your setup as your needs change." },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#c9a84c] mt-2 shrink-0" />
+                    <div>
+                      <div className="text-white font-semibold text-sm mb-0.5">{item.title}</div>
+                      <div className="text-white/60 text-sm leading-relaxed">{item.desc}</div>
+                    </div>
                   </div>
                 ))}
               </div>
-              <p className="text-white/35 text-xs mt-4">
-                * Processor and equipment brand usage follows partner guidelines.
-              </p>
             </div>
           </div>
         </div>
