@@ -19,3 +19,4 @@
 - [x] Add /counties and /cities routes to App.tsx
 - [x] Add counties/cities links to nav and homepage service area section
 - [x] Add clickable SVG map of Utah counties to the Counties service area page
+- [x] Rebuild Utah county SVG map with accurate GeoJSON-derived paths from US Census TIGER data
