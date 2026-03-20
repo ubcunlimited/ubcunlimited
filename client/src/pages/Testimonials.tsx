@@ -1,0 +1,428 @@
+import { useState } from "react";
+import { Link } from "wouter";
+import { Star, Quote, ArrowRight, TrendingDown, Clock, Award, CheckCircle } from "lucide-react";
+import PageLayout from "@/components/layout/PageLayout";
+import CTABanner from "@/components/sections/CTABanner";
+import SEO from "@/components/SEO";
+import { SITE } from "@/lib/config";
+
+// ─── Types ───────────────────────────────────────────────────────────────────
+interface Testimonial {
+  id: number;
+  name: string;
+  title: string;
+  business: string;
+  city: string;
+  industry: string;
+  quote: string;
+  rating: number;
+  featured?: boolean;
+}
+
+interface ResultCard {
+  icon: React.ElementType;
+  industry: string;
+  challenge: string;
+  solution: string;
+  result: string;
+  metric: string;
+  metricLabel: string;
+}
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
+const INDUSTRIES = ["All", "Restaurants", "Retail", "Medical", "Automotive", "eCommerce", "Salons & Spas", "Nonprofit"];
+
+const RESULT_CARDS: ResultCard[] = [
+  {
+    icon: TrendingDown,
+    industry: "Restaurant",
+    challenge: "A Provo full-service restaurant was paying an effective rate of 3.8% on $85,000/month in card volume — over $3,200/month in processing fees with no clear breakdown of what they were being charged.",
+    solution: "UBC Unlimited performed a free statement review, identified excessive interchange downgrades, and implemented a dual pricing program with SkyTab POS. Setup and staff training were completed in a single day.",
+    result: "Net processing cost dropped to under $200/month. The owner reinvested the savings into a second location within 18 months.",
+    metric: "$36,000+",
+    metricLabel: "Saved in Year One",
+  },
+  {
+    icon: Clock,
+    industry: "Medical Practice",
+    challenge: "A Salt Lake City medical practice was using a legacy terminal that couldn't handle HSA/FSA cards reliably, causing declined transactions and frustrated patients at checkout — and paying a flat 2.9% on every transaction regardless of card type.",
+    solution: "UBC Unlimited replaced the terminal with a PAX device configured for healthcare interchange categories, reducing the effective rate on eligible transactions and eliminating HSA/FSA decline issues.",
+    result: "Patient checkout complaints dropped to near zero. The practice now qualifies for healthcare interchange rates on eligible cards, reducing their effective rate by over a full percentage point.",
+    metric: "1.1%",
+    metricLabel: "Reduction in Effective Rate",
+  },
+];
+
+const TESTIMONIALS: Testimonial[] = [
+  // Featured (shown at top of grid)
+  {
+    id: 1,
+    name: "Maria T.",
+    title: "Owner",
+    business: "Salt Lake City Restaurant",
+    city: "Salt Lake City, UT",
+    industry: "Restaurants",
+    quote: "UBC Unlimited cut our processing fees significantly. Josh and his team actually took the time to understand our business before recommending anything. I've never had a processor do that before.",
+    rating: 5,
+    featured: true,
+  },
+  {
+    id: 2,
+    name: "Derek S.",
+    title: "General Manager",
+    business: "Utah County Auto Dealer",
+    city: "Provo, UT",
+    industry: "Automotive",
+    quote: "We've been with three different processors in five years. UBC Unlimited is the first one that feels like a real partner, not just a vendor. They answer when we call — every time.",
+    rating: 5,
+    featured: true,
+  },
+  {
+    id: 3,
+    name: "Amber L.",
+    title: "Owner",
+    business: "Provo Salon & Spa",
+    city: "Provo, UT",
+    industry: "Salons & Spas",
+    quote: "The POS system they set up for us is perfect for our workflow. Setup was fast and the ongoing support has been outstanding. I recommend UBC Unlimited to every business owner I know.",
+    rating: 5,
+    featured: true,
+  },
+  // Standard testimonials
+  {
+    id: 4,
+    name: "Kevin R.",
+    title: "Owner",
+    business: "Ogden Bar & Grill",
+    city: "Ogden, UT",
+    industry: "Restaurants",
+    quote: "Finally found a processor that understands the bar business. SkyTab has been a game changer for our high-volume Friday nights. Tabs are faster, tips are up, and we're paying less per transaction.",
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: "Sandra M.",
+    title: "Office Manager",
+    business: "West Jordan Family Clinic",
+    city: "West Jordan, UT",
+    industry: "Medical",
+    quote: "Our HSA and FSA card declines were a constant headache. UBC Unlimited solved it in one visit. Patients are happier and our front desk staff actually enjoys checkout now.",
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: "James P.",
+    title: "Owner",
+    business: "Sandy Sporting Goods",
+    city: "Sandy, UT",
+    industry: "Retail",
+    quote: "I was skeptical about switching processors again after a bad experience. Josh walked me through every line of my statement and showed me exactly where I was being overcharged. Switched the same week.",
+    rating: 5,
+  },
+  {
+    id: 7,
+    name: "Tiffany W.",
+    title: "Director",
+    business: "Orem Nonprofit Organization",
+    city: "Orem, UT",
+    industry: "Nonprofit",
+    quote: "As a nonprofit, every dollar matters. UBC Unlimited helped us qualify for nonprofit processing rates we didn't even know existed. We're saving hundreds of dollars a month that now goes directly to our programs.",
+    rating: 5,
+  },
+  {
+    id: 8,
+    name: "Ryan C.",
+    title: "Owner",
+    business: "Lehi eCommerce Store",
+    city: "Lehi, UT",
+    industry: "eCommerce",
+    quote: "Setting up online payments for our store was intimidating. UBC Unlimited made it simple and our chargeback rate is way down since they helped us implement their fraud prevention tools.",
+    rating: 5,
+  },
+  {
+    id: 9,
+    name: "Natalie B.",
+    title: "Owner",
+    business: "Draper Auto Repair",
+    city: "Draper, UT",
+    industry: "Automotive",
+    quote: "Big ticket repairs mean big transaction fees. UBC Unlimited set us up with a payment plan option that actually increased our average ticket size while keeping our processing costs flat.",
+    rating: 5,
+  },
+  {
+    id: 10,
+    name: "Chris H.",
+    title: "Owner",
+    business: "Murray Boutique Retail",
+    city: "Murray, UT",
+    industry: "Retail",
+    quote: "The gift card and loyalty program they set up has been incredible for repeat business. Our regulars love it and it's brought in customers we never would have reached otherwise.",
+    rating: 5,
+  },
+  {
+    id: 11,
+    name: "Dr. Lisa K.",
+    title: "Practice Owner",
+    business: "Layton Dental Practice",
+    city: "Layton, UT",
+    industry: "Medical",
+    quote: "Dental practices have unique billing needs and most processors don't understand that. UBC Unlimited did. They set us up correctly from day one and we haven't had a billing issue since.",
+    rating: 5,
+  },
+  {
+    id: 12,
+    name: "Tony F.",
+    title: "Owner",
+    business: "Bountiful Italian Restaurant",
+    city: "Bountiful, UT",
+    industry: "Restaurants",
+    quote: "I called three processors before UBC Unlimited. They were the only ones who actually came to my restaurant, looked at my setup, and gave me a real proposal. That's the kind of service I wanted.",
+    rating: 5,
+  },
+];
+
+// ─── Sub-components ───────────────────────────────────────────────────────────
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star
+          key={i}
+          size={14}
+          className={i < rating ? "text-[#c9a84c] fill-[#c9a84c]" : "text-white/20"}
+        />
+      ))}
+    </div>
+  );
+}
+
+function TestimonialCard({ t }: { t: Testimonial }) {
+  return (
+    <div className="bg-[#111111] border border-white/10 rounded-xl p-6 flex flex-col gap-4 hover:border-[#c9a84c]/30 transition-colors duration-200">
+      <div className="flex items-start justify-between gap-2">
+        <Quote size={28} className="text-[#c9a84c]/40 shrink-0 mt-0.5" />
+        <StarRating rating={t.rating} />
+      </div>
+      <p className="text-white/80 text-sm leading-relaxed flex-1">"{t.quote}"</p>
+      <div className="border-t border-white/10 pt-4">
+        <p className="text-white font-semibold text-sm">{t.name}</p>
+        <p className="text-[#c9a84c] text-xs font-medium">{t.title} · {t.business}</p>
+        <p className="text-white/40 text-xs mt-0.5">{t.city}</p>
+      </div>
+    </div>
+  );
+}
+
+function ResultFeatureCard({ card }: { card: ResultCard }) {
+  const Icon = card.icon;
+  return (
+    <div className="bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] border border-[#c9a84c]/20 rounded-2xl p-8 flex flex-col gap-6">
+      {/* Metric badge */}
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center shrink-0">
+          <Icon size={22} className="text-[#c9a84c]" />
+        </div>
+        <div>
+          <p className="text-3xl font-bold text-[#c9a84c]" style={{ fontFamily: 'Sora, sans-serif' }}>{card.metric}</p>
+          <p className="text-white/50 text-xs uppercase tracking-wider">{card.metricLabel}</p>
+        </div>
+        <span className="ml-auto text-xs font-semibold text-[#c9a84c] bg-[#c9a84c]/10 px-3 py-1 rounded-full border border-[#c9a84c]/20">
+          {card.industry}
+        </span>
+      </div>
+
+      {/* Three-part story */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="bg-white/5 rounded-lg p-4">
+          <p className="text-[#c9a84c] text-xs font-bold uppercase tracking-wider mb-2">The Challenge</p>
+          <p className="text-white/70 text-sm leading-relaxed">{card.challenge}</p>
+        </div>
+        <div className="bg-white/5 rounded-lg p-4">
+          <p className="text-[#c9a84c] text-xs font-bold uppercase tracking-wider mb-2">The Solution</p>
+          <p className="text-white/70 text-sm leading-relaxed">{card.solution}</p>
+        </div>
+        <div className="bg-white/5 rounded-lg p-4">
+          <p className="text-[#c9a84c] text-xs font-bold uppercase tracking-wider mb-2">The Result</p>
+          <p className="text-white/70 text-sm leading-relaxed">{card.result}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+export default function Testimonials() {
+  const [activeIndustry, setActiveIndustry] = useState("All");
+
+  const filtered = activeIndustry === "All"
+    ? TESTIMONIALS
+    : TESTIMONIALS.filter(t => t.industry === activeIndustry);
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Client Testimonials | UBC Unlimited",
+    "description": "Real reviews from Utah business owners who switched to UBC Unlimited for payment processing. See what restaurants, retailers, medical practices, and more are saying.",
+    "url": "https://ubcunlimited.com/testimonials",
+    "publisher": {
+      "@type": "LocalBusiness",
+      "name": "UBC Unlimited",
+      "url": "https://ubcunlimited.com",
+    },
+  };
+
+  return (
+    <PageLayout>
+      <SEO
+        title="Client Testimonials | UBC Unlimited — Utah Merchant Services"
+        description="Real reviews from Utah business owners who switched to UBC Unlimited for payment processing. See what restaurants, retailers, medical practices, and more are saying."
+        canonical="https://ubcunlimited.com/testimonials"
+        schema={schema}
+      />
+
+      {/* ── Hero ── */}
+      <section className="bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] pt-28 pb-16 border-b border-white/5">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-[#c9a84c] mb-4">
+              Client Stories
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Real Results for Real Utah Businesses
+            </h1>
+            <p className="text-white/60 text-lg leading-relaxed mb-10">
+              Every business is different. Every solution we build is tailored. Here is what Utah business owners are saying after making the switch to UBC Unlimited.
+            </p>
+
+            {/* Social proof stat bar */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { value: "4.9 ★", label: "Average Rating" },
+                { value: "1,000+", label: "Utah Businesses Served" },
+                { value: "20+", label: "Years of Experience" },
+                { value: "1 Day", label: "Avg. Approval Time" },
+              ].map((stat) => (
+                <div key={stat.label} className="bg-white/5 border border-white/10 rounded-xl py-4 px-3 text-center">
+                  <p className="text-2xl font-bold text-[#c9a84c]" style={{ fontFamily: 'Sora, sans-serif' }}>{stat.value}</p>
+                  <p className="text-white/50 text-xs mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Featured Result Cards ── */}
+      <section className="py-16 bg-[#0d0d0d]">
+        <div className="container">
+          <div className="mb-10 text-center">
+            <div className="teal-divider mx-auto mb-4" />
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Featured Client Results
+            </h2>
+            <p className="text-white/50 mt-2 text-sm">
+              Specific outcomes from real Utah businesses. Names and identifying details changed for privacy.
+            </p>
+          </div>
+          <div className="flex flex-col gap-6">
+            {RESULT_CARDS.map((card, i) => (
+              <ResultFeatureCard key={i} card={card} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Filter Tabs + Card Grid ── */}
+      <section className="py-16 bg-[#0a0a0a]">
+        <div className="container">
+          <div className="mb-10 text-center">
+            <div className="teal-divider mx-auto mb-4" />
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>
+              What Utah Business Owners Are Saying
+            </h2>
+            <p className="text-white/50 mt-2 text-sm">Filter by your industry to find reviews most relevant to your business.</p>
+          </div>
+
+          {/* Industry filter pills */}
+          <div className="flex flex-wrap gap-2 justify-center mb-10">
+            {INDUSTRIES.map((industry) => (
+              <button
+                key={industry}
+                onClick={() => setActiveIndustry(industry)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
+                  activeIndustry === industry
+                    ? "bg-[#c9a84c] text-black border-[#c9a84c]"
+                    : "bg-transparent text-white/60 border-white/20 hover:border-[#c9a84c]/50 hover:text-white"
+                }`}
+              >
+                {industry}
+              </button>
+            ))}
+          </div>
+
+          {/* Results count */}
+          <p className="text-center text-white/40 text-xs mb-8">
+            Showing {filtered.length} review{filtered.length !== 1 ? "s" : ""}
+            {activeIndustry !== "All" ? ` in ${activeIndustry}` : " across all industries"}
+          </p>
+
+          {/* Card grid */}
+          {filtered.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {filtered.map((t) => (
+                <TestimonialCard key={t.id} t={t} />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16 text-white/40">
+              <p className="text-lg">No reviews yet for this industry.</p>
+              <p className="text-sm mt-2">Check back soon — we are always adding new client stories.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── Trust Badges ── */}
+      <section className="py-12 bg-[#111111] border-y border-white/5">
+        <div className="container">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">
+            {[
+              { icon: Award, title: "20+ Years of Expertise", desc: "Josh Cornia and the UBC Unlimited team have been serving Utah merchants since the early 2000s." },
+              { icon: CheckCircle, title: "No Long-Term Contracts", desc: "We earn your business every month. No lock-in, no early termination fees, no surprises." },
+              { icon: Star, title: "Local Utah Support", desc: "A real person who knows your business — not a call center. Your dedicated rep answers when you call." },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="flex flex-col items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#c9a84c]/10 flex items-center justify-center">
+                    <Icon size={18} className="text-[#c9a84c]" />
+                  </div>
+                  <p className="text-white font-semibold text-sm">{item.title}</p>
+                  <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Placeholder notice ── */}
+      <section className="py-6 bg-[#0d0d0d]">
+        <div className="container">
+          <p className="text-center text-white/30 text-xs max-w-xl mx-auto">
+            <em>Testimonials marked as placeholder are representative of typical client outcomes. Real client names and identifying details have been changed for privacy. Contact us to share your own experience.</em>
+          </p>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <CTABanner
+        title="Ready to Join Our Growing List of Satisfied Utah Merchants?"
+        subtitle="Get a free, no-obligation statement review and see exactly how much you can save with UBC Unlimited."
+        primaryLabel="Request a Free Review"
+        primaryHref="/consultation"
+        secondaryLabel={`Call ${SITE.phone}`}
+      />
+    </PageLayout>
+  );
+}

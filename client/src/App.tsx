@@ -60,6 +60,7 @@ import DuchesneCounty from "@/pages/locations/counties/DuchesneCounty";
 import UintahCounty from "@/pages/locations/counties/UintahCounty";
 import DaggettCounty from "@/pages/locations/counties/DaggettCounty";
 import About from "./pages/About";
+import Testimonials from "./pages/Testimonials";
 import Contact from "./pages/Contact";
 
 // Solutions
@@ -120,6 +121,7 @@ function Router() {
         {/* Core */}
         <Route path="/" component={Home} />
         <Route path="/about" component={About} />
+        <Route path="/testimonials" component={Testimonials} />
         <Route path="/contact" component={Contact} />
 
         {/* Solutions */}
