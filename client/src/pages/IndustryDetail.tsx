@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import type React from "react";
-import { ArrowRight, CheckCircle, ChevronRight } from "lucide-react";
+import { ArrowRight, CheckCircle, ChevronRight, Clock, Phone, Shield, TrendingUp, Zap, Star, MapPin, Award } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
@@ -668,6 +668,65 @@ interface IndustryDetailPageProps {
   slug: string;
 }
 
+// Per-industry stats
+const INDUSTRY_STATS: Record<string, { value: string; label: string }[]> = {
+  restaurants: [
+    { value: "0%", label: "Online Order Commission" },
+    { value: "Lifetime", label: "Hardware Warranty" },
+    { value: "24–48h", label: "Setup & Training" },
+    { value: "$0", label: "Dual Pricing Program Fee" },
+  ],
+  "bars-nightclubs": [
+    { value: "Pre-Auth", label: "Tab Management" },
+    { value: "24/7", label: "Processing Uptime" },
+    { value: "Instant", label: "Tip Adjustment" },
+    { value: "$0", label: "Dual Pricing Program Fee" },
+  ],
+  retail: [
+    { value: "350+", label: "POS Integrations" },
+    { value: "Next Day", label: "Funding" },
+    { value: "$0", label: "Gateway Fees (Qualifying)" },
+    { value: "24–48h", label: "Activation" },
+  ],
+  "auto-repair": [
+    { value: "Up to 100%", label: "Fees Eliminated" },
+    { value: "Next Day", label: "Funding" },
+    { value: "$0", label: "Virtual Terminal" },
+    { value: "24–48h", label: "Activation" },
+  ],
+  "medical-dental": [
+    { value: "HIPAA", label: "Compliant Processing" },
+    { value: "Next Day", label: "Funding" },
+    { value: "$0", label: "Virtual Terminal" },
+    { value: "24–48h", label: "Activation" },
+  ],
+  "cbd-hemp": [
+    { value: "24–72h", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Stable", label: "Long-Term Accounts" },
+  ],
+  firearms: [
+    { value: "FFL", label: "Dealer Approved" },
+    { value: "24–72h", label: "Approval Time" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Compliant", label: "Card Brand Rules" },
+  ],
+  default: [
+    { value: "20+", label: "Years in Business" },
+    { value: "Next Day", label: "Funding Available" },
+    { value: "24–48h", label: "Avg. Activation" },
+    { value: "Local", label: "Utah Support" },
+  ],
+};
+
+// Onboarding process steps (shared)
+const ONBOARDING_STEPS = [
+  { step: "01", title: "Statement Review", desc: "Submit your current processing statement. We analyze it line by line and identify exactly where you're overpaying — at no cost to you." },
+  { step: "02", title: "Custom Proposal", desc: "We build a tailored proposal with transparent pricing, the right hardware, and the integrations your business actually needs. No generic rate sheets." },
+  { step: "03", title: "Setup & Go Live", desc: "Our local Utah team handles equipment, training, and integration. Most businesses are live and processing within 24–48 hours." },
+];
+
 export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
   const data = industriesData.find((i) => i.slug === slug);
 
@@ -684,6 +743,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
 
   const recommendedItems = NAV_SOLUTIONS.filter((s) => data.recommendedSolutions.includes(s.href));
   const relatedIndustries = NAV_INDUSTRIES.filter((i) => !i.href.endsWith(slug)).slice(0, 4);
+  const industryStats = INDUSTRY_STATS[data.slug] ?? INDUSTRY_STATS["default"];
 
   return (
     <PageLayout>
@@ -712,9 +772,10 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
           }
         }}
       />
-      {/* Hero */}
+      {/* ── Hero ── */}
       <section className="bg-[#080808] py-20">
-        <div className="container">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#c9a84c]/5 via-transparent to-transparent pointer-events-none" />
+        <div className="container relative z-10">
           <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={14} />
@@ -722,51 +783,102 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
             <ChevronRight size={14} />
             <span className="text-white/70">{data.title}</span>
           </div>
-          <div className="max-w-2xl">
-            <div className="text-4xl mb-4">{data.icon}</div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
-              {data.title}
-            </h1>
-            <p className="text-white/70 text-lg mb-4">{data.subtitle}</p>
-            <p className="text-white/60 mb-8 leading-relaxed">{data.description}</p>
-            <div className="flex gap-4">
-              <Link href="/consultation" className="btn-gold">Request a Quote <ArrowRight size={16} /></Link>
-              <Link href="/statement-review" className="btn-outline-white">Statement Review</Link>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left — copy */}
+            <div>
+              <div className="text-5xl mb-4">{data.icon}</div>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+                {data.title} Payment Processing
+              </h1>
+              <p className="text-white/70 text-lg mb-3">{data.subtitle}</p>
+              <p className="text-white/55 mb-7 leading-relaxed text-sm">{data.description}</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href="/consultation" className="btn-gold text-sm py-3 px-7 justify-center">Request a Consultation <ArrowRight size={16} /></Link>
+                <Link href="/statement-review" className="btn-outline-white text-sm py-3 px-7 justify-center">Statement Review</Link>
+              </div>
+            </div>
+            {/* Right — stats card */}
+            <div className="hidden lg:flex flex-col gap-4">
+              <div className="bg-white/4 border border-white/10 rounded-2xl p-7">
+                <div className="flex items-center gap-2 mb-5">
+                  <MapPin size={16} className="text-[#c9a84c]" />
+                  <span className="text-white/60 text-xs uppercase tracking-widest font-semibold">Utah {data.title} Specialists</span>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  {industryStats.map((s) => (
+                    <div key={s.label} className="bg-white/4 rounded-xl p-4 border border-white/6">
+                      <div className="text-2xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{s.value}</div>
+                      <div className="text-white/50 text-xs leading-tight">{s.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-[#c9a84c]/8 border border-[#c9a84c]/20 rounded-2xl p-5 flex items-start gap-4">
+                <Award size={20} className="text-[#c9a84c] shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-white font-semibold text-sm">20+ Years Serving Utah Businesses</p>
+                  <p className="text-white/50 text-xs leading-relaxed mt-1">Local expertise, dedicated reps, and industry-specific solutions — not a one-size-fits-all rate sheet.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Challenges */}
-      <section className="py-14 bg-[#f8fafc]">
+      {/* ── Stats Bar ── */}
+      <div className="bg-[#c9a84c] py-8">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {industryStats.map((s) => (
+              <div key={s.label}>
+                <div className="text-2xl font-extrabold text-[#080808] mb-0.5" style={{ fontFamily: 'Sora, sans-serif' }}>{s.value}</div>
+                <div className="text-[#080808]/65 text-xs font-medium">{s.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Challenges & Solutions ── */}
+      <section className="py-16 bg-[#f8fafc]">
+        <div className="container">
+          <div className="text-center mb-12">
+            <div className="teal-divider mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Challenges We Solve for {data.title} Businesses
+            </h2>
+            <p className="text-gray-500 max-w-xl mx-auto text-sm">We've worked with hundreds of Utah {data.title.toLowerCase()} businesses. Here are the problems we hear most — and exactly how we solve them.</p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            {/* Challenges */}
             <div>
-              <div className="teal-divider mb-5" />
-              <h2 className="text-2xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Common {data.title} Payment Challenges
-              </h2>
+              <h3 className="text-base font-bold text-[#080808] mb-4 flex items-center gap-2" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <span className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center text-red-500 text-xs font-bold">!</span>
+                Common Pain Points
+              </h3>
               <div className="space-y-3">
-                {data.challenges.map((c) => (
-                  <div key={c} className="flex items-start gap-3 bg-white rounded-lg p-3.5 border border-gray-100">
-                    <div className="w-2 h-2 rounded-full bg-[#d4a843] mt-1.5 shrink-0" />
-                    <span className="text-sm text-gray-600">{c}</span>
+                {data.challenges.map((c, i) => (
+                  <div key={c} className="flex items-start gap-3 bg-white rounded-xl p-4 border border-gray-100 shadow-sm">
+                    <div className="w-6 h-6 rounded-full bg-[#c9a84c]/10 flex items-center justify-center text-[#c9a84c] text-xs font-bold shrink-0 mt-0.5">{i + 1}</div>
+                    <span className="text-sm text-gray-700 leading-relaxed">{c}</span>
                   </div>
                 ))}
               </div>
             </div>
+            {/* Solutions */}
             <div>
-              <h2 className="text-2xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
-                How We Solve Them
-              </h2>
+              <h3 className="text-base font-bold text-[#080808] mb-4 flex items-center gap-2" style={{ fontFamily: 'Sora, sans-serif' }}>
+                <CheckCircle size={16} className="text-[#c9a84c]" />
+                Our Solutions
+              </h3>
               <div className="space-y-4">
                 {data.solutions.map((s) => (
-                  <div key={s.title} className="bg-white rounded-xl p-4 border border-gray-100 hover:border-[#c9a84c]/30 transition-all">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <CheckCircle size={15} className="text-[#c9a84c]" />
-                      <span className="font-semibold text-sm text-[#080808]" style={{ fontFamily: 'Sora, sans-serif' }}>{s.title}</span>
+                  <div key={s.title} className="group bg-white rounded-xl p-5 border border-gray-100 hover:border-[#c9a84c]/40 hover:shadow-md transition-all">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-2 h-2 rounded-full bg-[#c9a84c] shrink-0" />
+                      <span className="font-bold text-sm text-[#080808] group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>{s.title}</span>
                     </div>
-                    <p className="text-gray-500 text-sm pl-5">{s.desc}</p>
+                    <p className="text-gray-500 text-sm leading-relaxed pl-4">{s.desc}</p>
                   </div>
                 ))}
               </div>
@@ -775,18 +887,96 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
         </div>
       </section>
 
-      {/* Recommended Solutions */}
-      <section className="py-12 bg-white">
+      {/* ── What to Expect ── */}
+      <section className="py-16 bg-[#080808]">
         <div className="container">
-          <h2 className="text-xl font-bold text-[#080808] mb-5" style={{ fontFamily: 'Sora, sans-serif' }}>
-            Recommended Solutions for {data.title}
-          </h2>
-          <div className="flex flex-wrap gap-3">
-            {recommendedItems.map((item) => (
-              <Link key={item.href} href={item.href} className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-200 hover:border-[#c9a84c]/40 hover:bg-[#c9a84c]/5 transition-all text-sm font-medium text-[#080808]">
-                <span>{item.icon}</span> {item.label} <ChevronRight size={13} className="text-[#c9a84c]" />
-              </Link>
+          <div className="text-center mb-12">
+            <div className="teal-divider mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>What to Expect When You Work With Us</h2>
+            <p className="text-white/50 max-w-xl mx-auto text-sm">From your first call to going live — here's the process for Utah {data.title.toLowerCase()} businesses.</p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {ONBOARDING_STEPS.map((step, i) => (
+              <div key={step.step} className="bg-white/4 border border-white/8 rounded-2xl p-7 flex flex-col gap-3">
+                <span className="text-5xl font-extrabold text-[#c9a84c]/20 leading-none" style={{ fontFamily: 'Sora, sans-serif' }}>{step.step}</span>
+                <div className="w-8 h-8 rounded-full bg-[#c9a84c] flex items-center justify-center text-[#080808] font-bold text-sm shrink-0">{i + 1}</div>
+                <h3 className="text-white font-bold text-base" style={{ fontFamily: 'Sora, sans-serif' }}>{step.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
+              </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why UBC + Recommended Solutions ── */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left — trust block */}
+            <div>
+              <div className="teal-divider mb-5" />
+              <h2 className="text-2xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Why Utah {data.title} Businesses Choose UBC Unlimited</h2>
+              <p className="text-gray-500 text-sm mb-6 leading-relaxed">We're not a national call center. We're a local Utah team that specializes in {data.title.toLowerCase()} payment processing — with dedicated reps, industry-specific solutions, and transparent pricing.</p>
+              {/* Pull quote */}
+              <div className="bg-[#080808] rounded-2xl p-6 relative overflow-hidden mb-5">
+                <div className="absolute top-3 right-4 text-5xl text-[#c9a84c]/10 font-serif leading-none select-none">&ldquo;</div>
+                <p className="text-white/80 text-sm leading-relaxed mb-4 italic">
+                  "UBC Unlimited saved us over $600 a month on processing. They reviewed our statement, explained every line, and had us set up with a new system in two days. The local support alone is worth it."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#c9a84c]/20 flex items-center justify-center">
+                    <span className="text-[#c9a84c] font-bold text-xs">SR</span>
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold text-xs">Sarah R.</p>
+                    <p className="text-white/40 text-xs">Utah Business Owner</p>
+                  </div>
+                  <div className="ml-auto flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={11} className="text-[#c9a84c] fill-[#c9a84c]" />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {/* Quick stats */}
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { icon: Clock, label: "24–48h", sub: "Avg. Activation" },
+                  { icon: TrendingUp, label: "20+", sub: "Years Experience" },
+                  { icon: Zap, label: "Local", sub: "Utah Support" },
+                ].map((item) => (
+                  <div key={item.label} className="bg-[#f8fafc] rounded-xl border border-gray-100 p-4 text-center">
+                    <item.icon size={16} className="text-[#c9a84c] mx-auto mb-2" />
+                    <div className="font-extrabold text-[#080808] text-base" style={{ fontFamily: 'Sora, sans-serif' }}>{item.label}</div>
+                    <div className="text-gray-400 text-xs">{item.sub}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Right — recommended solutions */}
+            <div>
+              <h3 className="text-lg font-bold text-[#080808] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>Recommended Solutions for {data.title}</h3>
+              <div className="space-y-3 mb-6">
+                {recommendedItems.map((item) => (
+                  <Link key={item.href} href={item.href} className="group flex items-center gap-3 p-4 rounded-xl border border-gray-100 hover:border-[#c9a84c]/40 hover:bg-[#c9a84c]/5 transition-all">
+                    <span className="text-2xl">{item.icon}</span>
+                    <div className="flex-1">
+                      <div className="font-semibold text-sm text-[#080808] group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>{item.label}</div>
+                    </div>
+                    <ChevronRight size={14} className="text-[#c9a84c] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                ))}
+              </div>
+              {/* CTA card */}
+              <div className="bg-[#c9a84c]/8 border border-[#c9a84c]/25 rounded-xl p-5 flex items-center gap-4">
+                <Phone size={20} className="text-[#c9a84c] shrink-0" />
+                <div className="flex-1">
+                  <p className="text-[#080808] font-semibold text-sm">Talk to a local expert today</p>
+                  <p className="text-gray-500 text-xs">No obligation. No pressure. Just honest advice.</p>
+                </div>
+                <a href="tel:+18013096988" className="btn-gold text-xs py-2 px-4 shrink-0">Call Now</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
