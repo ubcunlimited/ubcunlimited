@@ -189,28 +189,28 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/85 to-[#080808]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
 
-        <div className="container relative z-10 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container relative z-10 py-16 pb-20">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left column — headline + stats + CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="stat-badge mb-5">Utah's Local Merchant Services Experts</div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              <div className="stat-badge mb-4">Utah's Local Merchant Services Experts</div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 Smarter POS &amp; Payment Solutions
                 <br />
                 <span className="gradient-text">With Local Expertise</span>
               </h1>
-              <p className="text-white/70 text-lg md:text-xl mb-3 leading-relaxed max-w-xl">
+              <p className="text-white/70 text-base md:text-lg mb-3 leading-relaxed">
                 {SITE.tagline}
               </p>
-              <p className="text-white/55 text-base mb-6 leading-relaxed">
+              <p className="text-white/55 text-sm mb-5 leading-relaxed">
                 Competitive pricing, fast onboarding, and industry-specific solutions — backed by {SITE.yearsInBusiness} years of experience and a team that knows Utah business.
               </p>
-              {/* Stats row — 4 trust signals below the tagline */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+              {/* Stats row — hidden on mobile to keep hero compact; form takes priority */}
+              <div className="hidden sm:grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
                 {TRUST_SIGNALS.map((s) => (
                   <div key={s.label} className="glass-card rounded-xl p-3 text-center">
                     <div className="text-xl font-extrabold text-[#c9a84c] mb-0.5" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
@@ -218,7 +218,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <div className="hidden sm:flex flex-col sm:flex-row gap-3 mb-5">
                 <Link href="/consultation" className="btn-gold text-sm py-2.5 px-6 justify-center">
                   Book a Consultation <ArrowRight size={16} />
                 </Link>
@@ -226,7 +226,7 @@ export default function Home() {
                   See Industries We Serve
                 </Link>
               </div>
-              <div className="flex flex-wrap gap-4">
+              <div className="hidden sm:flex flex-wrap gap-4">
                 {["Competitive pricing", "Fast onboarding", "Local expertise", "Tailored setups"].map((item) => (
                   <div key={item} className="flex items-center gap-1.5 text-sm text-white/60">
                     <CheckCircle size={14} className="text-[#c9a84c]" />
@@ -236,12 +236,11 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Right column — lead capture form */}
+            {/* Right column — lead capture form (always visible) */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden lg:block"
             >
               {heroSubmitted ? (
                 <div className="bg-[#c9a84c]/10 border border-[#c9a84c]/30 rounded-2xl px-8 py-10 text-center">
