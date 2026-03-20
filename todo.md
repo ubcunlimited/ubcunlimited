@@ -9,3 +9,4 @@
 - [x] Fix mobile: announcement bar hidden behind fixed nav — add correct top offset to hero section
 - [x] Add "Call Now" tap-to-call button to mobile nav bar alongside hamburger menu
 - [x] Add sticky bottom call bar on mobile (fixed, always visible, tap-to-call + Get Started CTA)
+- [x] Animate mobile call bar: slide in after user scrolls past hero section
