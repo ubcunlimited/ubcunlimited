@@ -97,4 +97,49 @@
   <url><loc>https://ubcunlimited.com/legal/cookie-policy</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://ubcunlimited.com/legal/disclaimer</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://ubcunlimited.com/accessibility</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/provo</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/orem</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/lehi</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/american-fork</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/draper</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/south-jordan</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/west-jordan</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/sandy</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/murray</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/layton</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/bountiful</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/ogden</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/springville</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/spanish-fork</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/park-city</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/heber-city</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/salt-lake-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/utah-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/davis-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/weber-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/washington-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/cache-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/summit-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/tooele-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/box-elder-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/iron-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/sanpete-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/sevier-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/carbon-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/emery-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/grand-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/san-juan-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/kane-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/garfield-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/beaver-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/millard-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/juab-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/piute-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/wayne-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/rich-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/morgan-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/wasatch-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/duchesne-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/uintah-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ubcunlimited.com/locations/daggett-county</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

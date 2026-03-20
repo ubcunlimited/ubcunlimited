@@ -14,6 +14,51 @@ import BackToTop from "./components/BackToTop";
 import Locations from "./pages/Locations";
 import LocationDetail from "./pages/LocationDetail";
 import SaltLakeCity from "./pages/locations/SaltLakeCity";
+import Provo from "@/pages/locations/Provo";
+import Orem from "@/pages/locations/Orem";
+import Lehi from "@/pages/locations/Lehi";
+import AmericanFork from "@/pages/locations/AmericanFork";
+import Draper from "@/pages/locations/Draper";
+import SouthJordan from "@/pages/locations/SouthJordan";
+import WestJordan from "@/pages/locations/WestJordan";
+import Sandy from "@/pages/locations/Sandy";
+import Murray from "@/pages/locations/Murray";
+import Layton from "@/pages/locations/Layton";
+import Bountiful from "@/pages/locations/Bountiful";
+import Ogden from "@/pages/locations/Ogden";
+import Springville from "@/pages/locations/Springville";
+import SpanishFork from "@/pages/locations/SpanishFork";
+import ParkCity from "@/pages/locations/ParkCity";
+import HeberCity from "@/pages/locations/HeberCity";
+import SaltLakeCounty from "@/pages/locations/counties/SaltLakeCounty";
+import UtahCounty from "@/pages/locations/counties/UtahCounty";
+import DavisCounty from "@/pages/locations/counties/DavisCounty";
+import WeberCounty from "@/pages/locations/counties/WeberCounty";
+import WashingtonCounty from "@/pages/locations/counties/WashingtonCounty";
+import CacheCounty from "@/pages/locations/counties/CacheCounty";
+import SummitCounty from "@/pages/locations/counties/SummitCounty";
+import TooeleCounty from "@/pages/locations/counties/TooeleCounty";
+import BoxElderCounty from "@/pages/locations/counties/BoxElderCounty";
+import IronCounty from "@/pages/locations/counties/IronCounty";
+import SanpeteCounty from "@/pages/locations/counties/SanpeteCounty";
+import SevierCounty from "@/pages/locations/counties/SevierCounty";
+import CarbonCounty from "@/pages/locations/counties/CarbonCounty";
+import EmeryCounty from "@/pages/locations/counties/EmeryCounty";
+import GrandCounty from "@/pages/locations/counties/GrandCounty";
+import SanJuanCounty from "@/pages/locations/counties/SanJuanCounty";
+import KaneCounty from "@/pages/locations/counties/KaneCounty";
+import GarfieldCounty from "@/pages/locations/counties/GarfieldCounty";
+import BeaverCounty from "@/pages/locations/counties/BeaverCounty";
+import MillardCounty from "@/pages/locations/counties/MillardCounty";
+import JuabCounty from "@/pages/locations/counties/JuabCounty";
+import PiuteCounty from "@/pages/locations/counties/PiuteCounty";
+import WayneCounty from "@/pages/locations/counties/WayneCounty";
+import RichCounty from "@/pages/locations/counties/RichCounty";
+import MorganCounty from "@/pages/locations/counties/MorganCounty";
+import WasatchCounty from "@/pages/locations/counties/WasatchCounty";
+import DuchesneCounty from "@/pages/locations/counties/DuchesneCounty";
+import UintahCounty from "@/pages/locations/counties/UintahCounty";
+import DaggettCounty from "@/pages/locations/counties/DaggettCounty";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
@@ -134,6 +179,51 @@ function Router() {
         {/* Locations */}
         <Route path="/locations" component={Locations} />
         <Route path="/locations/salt-lake-city" component={SaltLakeCity} />
+        <Route path="/locations/provo" component={Provo} />
+        <Route path="/locations/orem" component={Orem} />
+        <Route path="/locations/lehi" component={Lehi} />
+        <Route path="/locations/american-fork" component={AmericanFork} />
+        <Route path="/locations/draper" component={Draper} />
+        <Route path="/locations/south-jordan" component={SouthJordan} />
+        <Route path="/locations/west-jordan" component={WestJordan} />
+        <Route path="/locations/sandy" component={Sandy} />
+        <Route path="/locations/murray" component={Murray} />
+        <Route path="/locations/layton" component={Layton} />
+        <Route path="/locations/bountiful" component={Bountiful} />
+        <Route path="/locations/ogden" component={Ogden} />
+        <Route path="/locations/springville" component={Springville} />
+        <Route path="/locations/spanish-fork" component={SpanishFork} />
+        <Route path="/locations/park-city" component={ParkCity} />
+        <Route path="/locations/heber-city" component={HeberCity} />
+        <Route path="/locations/salt-lake-county" component={SaltLakeCounty} />
+        <Route path="/locations/utah-county" component={UtahCounty} />
+        <Route path="/locations/davis-county" component={DavisCounty} />
+        <Route path="/locations/weber-county" component={WeberCounty} />
+        <Route path="/locations/washington-county" component={WashingtonCounty} />
+        <Route path="/locations/cache-county" component={CacheCounty} />
+        <Route path="/locations/summit-county" component={SummitCounty} />
+        <Route path="/locations/tooele-county" component={TooeleCounty} />
+        <Route path="/locations/box-elder-county" component={BoxElderCounty} />
+        <Route path="/locations/iron-county" component={IronCounty} />
+        <Route path="/locations/sanpete-county" component={SanpeteCounty} />
+        <Route path="/locations/sevier-county" component={SevierCounty} />
+        <Route path="/locations/carbon-county" component={CarbonCounty} />
+        <Route path="/locations/emery-county" component={EmeryCounty} />
+        <Route path="/locations/grand-county" component={GrandCounty} />
+        <Route path="/locations/san-juan-county" component={SanJuanCounty} />
+        <Route path="/locations/kane-county" component={KaneCounty} />
+        <Route path="/locations/garfield-county" component={GarfieldCounty} />
+        <Route path="/locations/beaver-county" component={BeaverCounty} />
+        <Route path="/locations/millard-county" component={MillardCounty} />
+        <Route path="/locations/juab-county" component={JuabCounty} />
+        <Route path="/locations/piute-county" component={PiuteCounty} />
+        <Route path="/locations/wayne-county" component={WayneCounty} />
+        <Route path="/locations/rich-county" component={RichCounty} />
+        <Route path="/locations/morgan-county" component={MorganCounty} />
+        <Route path="/locations/wasatch-county" component={WasatchCounty} />
+        <Route path="/locations/duchesne-county" component={DuchesneCounty} />
+        <Route path="/locations/uintah-county" component={UintahCounty} />
+        <Route path="/locations/daggett-county" component={DaggettCounty} />
         <Route path="/locations/:slug" component={LocationDetail} />
 
         {/* Company */}
