@@ -91,6 +91,12 @@ import Disclaimer from "./pages/legal/Disclaimer";
 // FAQ
 import FAQPage from "./pages/FAQPage";
 
+// Counties & Cities
+import Counties from "./pages/Counties";
+import CountyDetail from "./pages/CountyDetail";
+import Cities from "./pages/Cities";
+import CityDetail from "./pages/CityDetail";
+
 // Scroll to top on every route change
 function ScrollToTop() {
   const [location] = useLocation();
@@ -225,6 +231,14 @@ function Router() {
         <Route path="/locations/uintah-county" component={UintahCounty} />
         <Route path="/locations/daggett-county" component={DaggettCounty} />
         <Route path="/locations/:slug" component={LocationDetail} />
+
+        {/* Counties */}
+        <Route path="/counties" component={Counties} />
+        <Route path="/counties/:slug">{(params) => <CountyDetail />}</Route>
+
+        {/* Cities */}
+        <Route path="/cities" component={Cities} />
+        <Route path="/cities/:slug">{(params) => <CityDetail />}</Route>
 
         {/* Company */}
         <Route path="/faq" component={FAQPage} />

@@ -10,3 +10,11 @@
 - [x] Add "Call Now" tap-to-call button to mobile nav bar alongside hamburger menu
 - [x] Add sticky bottom call bar on mobile (fixed, always visible, tap-to-call + Get Started CTA)
 - [x] Animate mobile call bar: slide in after user scrolls past hero section
+- [x] Build Utah county data (all 29 counties, featured top 8 by population)
+- [x] Build CountyDetail page template with local SEO content
+- [x] Build Counties index page with featured county cards + county finder/search
+- [x] Build Utah city data (featured top ~20 cities + all cities list)
+- [x] Build CityDetail page template with local SEO content
+- [x] Build Cities index page with featured city cards + city finder + unlisted-city form
+- [x] Add /counties and /cities routes to App.tsx
+- [x] Add counties/cities links to nav and homepage service area section

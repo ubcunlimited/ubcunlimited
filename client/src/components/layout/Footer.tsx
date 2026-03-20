@@ -11,7 +11,8 @@ const COMPANY_LINKS = [
   { label: "About Us", href: "/about" },
   { label: "News & Updates", href: "/news" },
   { label: "Contact", href: "/contact" },
-  { label: "Locations", href: "/locations" },
+  { label: "Counties We Serve", href: "/counties" },
+  { label: "Cities We Serve", href: "/cities" },
   { label: "Build a POS", href: "/solutions/pos-systems" },
   { label: "Agent / ISO Program", href: "/agent-iso" },
 ];

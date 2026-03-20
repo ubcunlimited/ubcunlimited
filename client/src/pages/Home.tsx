@@ -546,6 +546,75 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Service Area — Counties & Cities */}
+      <section className="bg-[#111] py-14 border-t border-white/5">
+        <div className="container">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
+              <MapPin size={12} /> Statewide Coverage
+            </div>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
+              Serving Businesses Across All of Utah
+            </h2>
+            <p className="text-white/55 max-w-xl mx-auto text-sm">
+              From Salt Lake City to rural communities — our local Utah team provides merchant services and payment processing in every county and city across the state.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {/* Counties card */}
+            <Link href="/counties" className="group block bg-white/5 hover:bg-[#c9a84c]/8 border border-white/10 hover:border-[#c9a84c]/30 rounded-2xl p-6 transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-[#c9a84c]/15 flex items-center justify-center">
+                  <MapPin size={18} className="text-[#c9a84c]" />
+                </div>
+                <div>
+                  <div className="text-white font-bold text-base group-hover:text-[#c9a84c] transition-colors">Browse by County</div>
+                  <div className="text-white/45 text-xs">All 29 Utah counties covered</div>
+                </div>
+              </div>
+              <p className="text-white/55 text-sm mb-4 leading-relaxed">
+                Find dedicated service information for your county — including local industry insights, featured cities, and tailored solutions for your area.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {["Salt Lake", "Utah", "Davis", "Weber", "Washington", "Cache"].map((c) => (
+                  <Link key={c} href={`/counties/${c.toLowerCase().replace(" ", "-")}`} onClick={(e) => e.stopPropagation()} className="text-xs text-white/55 bg-white/5 hover:bg-[#c9a84c]/15 border border-white/10 hover:border-[#c9a84c]/30 px-3 py-1 rounded-full transition-colors">
+                    {c} County
+                  </Link>
+                ))}
+              </div>
+              <div className="flex items-center gap-1 text-[#c9a84c] text-xs font-semibold">
+                View all counties <ArrowRight size={11} />
+              </div>
+            </Link>
+            {/* Cities card */}
+            <Link href="/cities" className="group block bg-white/5 hover:bg-[#c9a84c]/8 border border-white/10 hover:border-[#c9a84c]/30 rounded-2xl p-6 transition-all">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-[#c9a84c]/15 flex items-center justify-center">
+                  <Users size={18} className="text-[#c9a84c]" />
+                </div>
+                <div>
+                  <div className="text-white font-bold text-base group-hover:text-[#c9a84c] transition-colors">Browse by City</div>
+                  <div className="text-white/45 text-xs">20+ featured Utah cities</div>
+                </div>
+              </div>
+              <p className="text-white/55 text-sm mb-4 leading-relaxed">
+                Find merchant services information specific to your city — or use our city finder to request a consultation if your city isn't listed.
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {["Salt Lake City", "Provo", "Ogden", "St. George", "Lehi", "Sandy"].map((c) => (
+                  <Link key={c} href={`/cities/${c.toLowerCase().replace(/[. ]/g, "-").replace(/--/g, "-")}`} onClick={(e) => e.stopPropagation()} className="text-xs text-white/55 bg-white/5 hover:bg-[#c9a84c]/15 border border-white/10 hover:border-[#c9a84c]/30 px-3 py-1 rounded-full transition-colors">
+                    {c}
+                  </Link>
+                ))}
+              </div>
+              <div className="flex items-center gap-1 text-[#c9a84c] text-xs font-semibold">
+                View all cities <ArrowRight size={11} />
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner */}
       <CTABanner />
 
