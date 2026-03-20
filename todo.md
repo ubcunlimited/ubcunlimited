@@ -18,3 +18,4 @@
 - [x] Build Cities index page with featured city cards + city finder + unlisted-city form
 - [x] Add /counties and /cities routes to App.tsx
 - [x] Add counties/cities links to nav and homepage service area section
+- [x] Add clickable SVG map of Utah counties to the Counties service area page
