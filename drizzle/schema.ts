@@ -42,3 +42,35 @@ export const blogLeads = mysqlTable("blog_leads", {
 
 export type BlogLead = typeof blogLeads.$inferSelect;
 export type InsertBlogLead = typeof blogLeads.$inferInsert;
+
+/**
+ * Client testimonial submissions awaiting admin review.
+ * Submitted via the public form on /testimonials.
+ * Only approved submissions are shown on the live page.
+ */
+export const testimonialSubmissions = mysqlTable("testimonial_submissions", {
+  id: int("id").autoincrement().primaryKey(),
+  /** Reviewer's full name */
+  name: varchar("name", { length: 128 }).notNull(),
+  /** Business name or title (e.g. "Owner · Salt Lake City Restaurant") */
+  businessName: varchar("business_name", { length: 256 }).notNull(),
+  /** City, UT */
+  location: varchar("location", { length: 128 }).notNull(),
+  /** Industry tag for filter pill (e.g. "Restaurants", "Retail") */
+  industry: varchar("industry", { length: 64 }).notNull(),
+  /** The testimonial quote text */
+  quote: text("quote").notNull(),
+  /** Star rating 1–5 */
+  rating: int("rating").notNull().default(5),
+  /** Contact email (not shown publicly, for admin follow-up only) */
+  email: varchar("email", { length: 320 }),
+  /** Review status: pending → approved or rejected */
+  status: mysqlEnum("status", ["pending", "approved", "rejected"]).default("pending").notNull(),
+  /** Admin notes on the review decision */
+  adminNotes: text("admin_notes"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  reviewedAt: timestamp("reviewedAt"),
+});
+
+export type TestimonialSubmission = typeof testimonialSubmissions.$inferSelect;
+export type InsertTestimonialSubmission = typeof testimonialSubmissions.$inferInsert;

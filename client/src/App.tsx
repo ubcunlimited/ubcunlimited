@@ -92,6 +92,9 @@ import Disclaimer from "./pages/legal/Disclaimer";
 // FAQ
 import FAQPage from "./pages/FAQPage";
 
+// Admin
+import AdminTestimonials from "./pages/admin/AdminTestimonials";
+
 // POC
 import RestaurantsPOC from "./pages/RestaurantsPOC";
 
@@ -247,6 +250,9 @@ function Router() {
         {/* Cities */}
         <Route path="/cities" component={Cities} />
         <Route path="/cities/:slug">{(params) => <CityDetail />}</Route>
+
+        {/* Admin */}
+        <Route path="/admin/testimonials" component={AdminTestimonials} />
 
         {/* Company */}
         <Route path="/faq" component={FAQPage} />

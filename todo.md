@@ -43,3 +43,4 @@
 - [x] Add Privacy Policy and Terms of Service links to site footer
 - [x] SEO audit and optimization: meta tags, schema markup, sitemap, robots.txt, heading structure, canonical URLs, internal linking, image alt text
 - [x] Build testimonials page at /testimonials: hero + stat bar, featured result cards, pill filter tabs, dark card grid, CTA banner
+- [x] Add testimonial submission form to Testimonials page with DB storage, admin review queue, approve/reject controls, and owner notifications

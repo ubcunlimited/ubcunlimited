@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import { Star, Quote, ArrowRight, TrendingDown, Clock, Award, CheckCircle } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import SEO from "@/components/SEO";
+import TestimonialSubmissionForm from "@/components/TestimonialSubmissionForm";
 import { SITE } from "@/lib/config";
+import { trpc } from "@/lib/trpc";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 interface Testimonial {
@@ -254,9 +256,27 @@ function ResultFeatureCard({ card }: { card: ResultCard }) {
 export default function Testimonials() {
   const [activeIndustry, setActiveIndustry] = useState("All");
 
+  // Fetch approved testimonials from the database
+  const { data: approvedSubmissions } = trpc.testimonials.listApproved.useQuery();
+
+  // Merge static placeholder testimonials with approved DB submissions
+  const allTestimonials = useMemo<Testimonial[]>(() => {
+    const dbTestimonials: Testimonial[] = (approvedSubmissions ?? []).map((sub) => ({
+      id: sub.id + 10000, // Offset to avoid ID collision with static data
+      name: sub.name,
+      title: "Client",
+      business: sub.businessName,
+      city: sub.location,
+      industry: sub.industry,
+      quote: sub.quote,
+      rating: sub.rating,
+    }));
+    return [...TESTIMONIALS, ...dbTestimonials];
+  }, [approvedSubmissions]);
+
   const filtered = activeIndustry === "All"
-    ? TESTIMONIALS
-    : TESTIMONIALS.filter(t => t.industry === activeIndustry);
+    ? allTestimonials
+    : allTestimonials.filter(t => t.industry === activeIndustry);
 
   const schema = {
     "@context": "https://schema.org",
@@ -412,6 +432,22 @@ export default function Testimonials() {
           <p className="text-center text-white/30 text-xs max-w-xl mx-auto">
             <em>Testimonials marked as placeholder are representative of typical client outcomes. Real client names and identifying details have been changed for privacy. Contact us to share your own experience.</em>
           </p>
+        </div>
+      </section>
+
+      {/* ── Submit Your Testimonial ── */}
+      <section className="py-20 bg-[#111111] border-t border-white/5">
+        <div className="container">
+          <div className="text-center mb-10">
+            <div className="teal-divider mx-auto mb-4" />
+            <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>
+              Share Your Experience
+            </h2>
+            <p className="text-white/50 mt-2 text-sm max-w-lg mx-auto">
+              Are you a UBC Unlimited client? We would love to hear your story. Approved testimonials are published on this page.
+            </p>
+          </div>
+          <TestimonialSubmissionForm />
         </div>
       </section>
 

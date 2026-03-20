@@ -1,6 +1,13 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { blogLeads, InsertBlogLead, InsertUser, users } from "../drizzle/schema";
+import {
+  blogLeads,
+  InsertBlogLead,
+  InsertTestimonialSubmission,
+  InsertUser,
+  testimonialSubmissions,
+  users,
+} from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -98,4 +105,52 @@ export async function insertBlogLead(lead: InsertBlogLead): Promise<void> {
     return;
   }
   await db.insert(blogLeads).values(lead);
+}
+
+// ─── Testimonial Submissions ──────────────────────────────────────────────────
+
+export async function insertTestimonialSubmission(
+  submission: InsertTestimonialSubmission
+): Promise<void> {
+  const db = await getDb();
+  if (!db) {
+    console.warn("[Database] Cannot insert testimonial: database not available");
+    return;
+  }
+  await db.insert(testimonialSubmissions).values(submission);
+}
+
+export async function getTestimonialSubmissions(
+  status?: "pending" | "approved" | "rejected"
+) {
+  const db = await getDb();
+  if (!db) return [];
+  if (status) {
+    return db
+      .select()
+      .from(testimonialSubmissions)
+      .where(eq(testimonialSubmissions.status, status))
+      .orderBy(testimonialSubmissions.createdAt);
+  }
+  return db
+    .select()
+    .from(testimonialSubmissions)
+    .orderBy(testimonialSubmissions.createdAt);
+}
+
+export async function updateTestimonialStatus(
+  id: number,
+  status: "approved" | "rejected",
+  adminNotes?: string
+): Promise<void> {
+  const db = await getDb();
+  if (!db) return;
+  await db
+    .update(testimonialSubmissions)
+    .set({
+      status,
+      adminNotes: adminNotes ?? null,
+      reviewedAt: new Date(),
+    })
+    .where(eq(testimonialSubmissions.id, id));
 }
