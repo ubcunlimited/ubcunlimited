@@ -260,7 +260,7 @@ export const SOLUTION_PAIRS: Record<string, SolutionChallengePair[]> = {
       challenge: "Gift card revenue that doesn't show up until redemption",
       challengeDetail: "Gift cards are purchased upfront but redeemed later — often months later, or never. This creates positive cash flow and breakage income that many businesses don't fully account for.",
       solution: "Gift card program with breakage tracking",
-      solutionDetail: "Our gift card program tracks outstanding balances, redemption rates, and breakage income. Gift card recipients frequently spend more than the card's face value when they redeem it, making gift cards one of the highest-ROI marketing tools available to local businesses.",
+      solutionDetail: "Our gift card program tracks outstanding balances, redemption rates, and breakage income. According to research from Capital One Shopping, 61% of consumers spend more than a gift card's face value when redeeming — an average of $31.75 more — making gift cards one of the highest-ROI marketing tools available to local businesses.",
       solutionTag: "Gift Cards",
       impact: "Higher spend at redemption",
     },

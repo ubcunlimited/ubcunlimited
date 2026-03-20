@@ -63,12 +63,12 @@ const industryNews = [
   {
     date: "January 2026",
     headline: "Same-Day ACH Adoption Continues to Accelerate",
-    summary: "Same-Day ACH volume has grown substantially year over year as businesses shift large and recurring payments away from checks and wire transfers. For Utah businesses with high-value invoices or subscription billing, ACH remains one of the most cost-effective payment methods available.",
+    summary: "According to Nacha, Same-Day ACH volume grew 22.3% in 2023 to 853.4 million payments worth $2.4 trillion, and growth has continued into 2024 and beyond. As businesses shift large and recurring payments away from checks and wire transfers, Same-Day ACH remains one of the most cost-effective options for Utah businesses with high-value invoices or subscription billing.",
   },
   {
     date: "December 2025",
     headline: "eCommerce Chargebacks Remain a Growing Challenge for Online Sellers",
-    summary: "Friendly fraud and subscription billing disputes continue to drive chargeback rates higher for online merchants. High-risk businesses and eCommerce sellers should review their chargeback prevention protocols and ensure billing descriptors, cancellation flows, and dispute response processes are up to date.",
+    summary: "According to Chargeflow's 2024 State of Chargebacks Report, friendly fraud accounts for 40–80% of all fraud losses for eCommerce merchants, and chargeback rates increased 59% from 2023 to 2024. High-risk businesses and eCommerce sellers should review their chargeback prevention protocols and ensure billing descriptors, cancellation flows, and dispute response processes are up to date.",
   },
 ];
 

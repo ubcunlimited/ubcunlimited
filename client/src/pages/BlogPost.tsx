@@ -168,7 +168,7 @@ For most Utah restaurants — whether you are running a full-service dining room
     date: "2025-02-10",
     readTime: "8 min read",
     content: `
-ACH (Automated Clearing House) payments are one of the most cost-effective payment methods available to businesses — yet many Utah business owners either do not offer them or do not fully understand how they work. The ACH Network moves trillions of dollars annually across billions of transactions, making it one of the most widely used payment rails in the country. For businesses that handle large transactions, recurring billing, or B2B payments, ACH can save thousands of dollars per year in processing fees.
+ACH (Automated Clearing House) payments are one of the most cost-effective payment methods available to businesses — yet many Utah business owners either do not offer them or do not fully understand how they work. According to [Nacha](https://www.nacha.org/news/ach-network-records-strong-growth-2023-same-day-ach-surpasses-3-billion-payments-inception), the ACH Network processed more than 31.5 billion payments valued at $80.1 trillion in 2023 alone — making it one of the most widely used payment rails in the country. For businesses that handle large transactions, recurring billing, or B2B payments, ACH can save thousands of dollars per year in processing fees.
 
 ## What Is ACH and How Does It Work?
 
@@ -182,7 +182,7 @@ The cost difference between ACH and credit card processing is substantial. ACH p
 
 ## Same-Day ACH: Faster Than You Think
 
-One of the most significant developments in ACH in recent years is the growth of Same-Day ACH. Adoption has grown substantially year over year as businesses discover that funds can be available the same business day the payment is initiated — for transactions submitted before the cutoff time. This makes Same-Day ACH a practical alternative to wire transfers for time-sensitive payments, at a fraction of the wire transfer cost.
+One of the most significant developments in ACH in recent years is the growth of Same-Day ACH. According to [Nacha](https://www.nacha.org/news/ach-network-records-strong-growth-2023-same-day-ach-surpasses-3-billion-payments-inception), Same-Day ACH volume increased 22.3% in 2023 to reach 853.4 million payments worth $2.4 trillion — and growth has continued into 2024 and beyond. Funds can be available the same business day the payment is initiated, for transactions submitted before the cutoff time. This makes Same-Day ACH a practical alternative to wire transfers for time-sensitive payments, at a fraction of the wire transfer cost.
 
 The per-transaction fee for Same-Day ACH is slightly higher than standard ACH, but it is still dramatically cheaper than wire transfers or credit card processing.
 
@@ -203,6 +203,13 @@ To mitigate return risk, verify bank account information before initiating large
 Adding ACH payment capability to your business is straightforward. UBC Unlimited can set up ACH processing as part of your merchant services account, allowing you to accept ACH payments online, via invoice, or through your existing billing system. We can also help you set up recurring billing for subscription-based businesses.
 
 [Book a consultation](/consultation) to learn how ACH processing can reduce your payment costs.
+
+---
+
+## Sources
+
+1. [Nacha — ACH Network Records Strong Growth in 2023; Same Day ACH Surpasses 3 Billion Payments Since Inception](https://www.nacha.org/news/ach-network-records-strong-growth-2023-same-day-ach-surpasses-3-billion-payments-inception)
+2. [Nacha — ACH Network Volume and Value Statistics](https://www.nacha.org/content/ach-network-volume-and-value-statistics)
     `,
   },
 
@@ -326,13 +333,13 @@ If you are not on a cash discount or surcharge program, you may be overpaying. [
     date: "2025-03-08",
     readTime: "9 min read",
     content: `
-Chargebacks are one of the most costly and frustrating challenges facing merchants today. The true cost of a chargeback goes well beyond the disputed transaction amount — when you factor in the chargeback fee, lost merchandise, staff time spent on disputes, and the risk of account penalties if your chargeback rate climbs too high, a single dispute can cost several times the original sale. Understanding how chargebacks work — and how to prevent them — is essential for protecting your business.
+Chargebacks are one of the most costly and frustrating challenges facing merchants today. According to the [Nilson Report](https://nilsonreport.com/articles/card-fraud-losses-worldwide-in-2023/), payment card fraud losses worldwide reached $33.83 billion in 2023 — and chargebacks are a significant driver of that figure. The true cost of a chargeback goes well beyond the disputed transaction amount: when you factor in the chargeback fee, lost merchandise, staff time spent on disputes, and the risk of account penalties if your chargeback rate climbs too high, a single dispute can cost several times the original sale. Understanding how chargebacks work — and how to prevent them — is essential for protecting your business.
 
 ## What Is a Chargeback?
 
 A chargeback occurs when a cardholder contacts their bank to dispute a transaction and request a reversal of the charge. Unlike a refund (which you initiate), a chargeback is initiated by the customer's bank and results in the funds being pulled from your merchant account — often before you even have a chance to respond.
 
-Chargebacks were originally designed to protect consumers from fraud and merchant misconduct. However, the system is frequently abused. "Friendly fraud" — where a customer makes a legitimate purchase and then disputes the charge to get their money back while keeping the goods or services — accounts for a significant and growing share of chargebacks. Friendly fraud — where a customer makes a legitimate purchase and then disputes the charge — has become one of the most common chargeback categories, and it is growing.
+Chargebacks were originally designed to protect consumers from fraud and merchant misconduct. However, the system is frequently abused. According to [Chargeflow's 2024 State of Chargebacks Report](https://www.chargeflow.io/blog/navigating-ecommerce-resilience-insights-from-chargeflows-2024-chargeback-report), friendly fraud — where a customer makes a legitimate purchase and then disputes the charge to get their money back while keeping the goods or services — accounts for 40–80% of all fraud losses for eCommerce merchants. It has become one of the most common chargeback categories, and it continues to grow year over year.
 
 ## The Three Types of Chargebacks
 
@@ -367,6 +374,14 @@ For "item not received" chargebacks, provide delivery confirmation and tracking 
 Winning chargeback disputes requires documentation and persistence. Merchants who respond with well-organized evidence win a meaningful percentage of their disputes — but only if they respond at all.
 
 [Contact our team](/contact) if you have questions about chargeback prevention or need help understanding your options.
+
+---
+
+## Sources
+
+1. [Nilson Report — Card Fraud Losses Worldwide in 2023](https://nilsonreport.com/articles/card-fraud-losses-worldwide-in-2023/)
+2. [Chargeflow — 2024 State of Chargebacks Report](https://www.chargeflow.io/blog/navigating-ecommerce-resilience-insights-from-chargeflows-2024-chargeback-report)
+3. [Chargeflow — The Ultimate Chargeback Statistics 2025](https://www.chargeflow.io/blog/chargeback-statistics-trends-costs-solutions)
     `,
   },
 
@@ -1015,7 +1030,9 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
     while (i < lines.length) {
       const line = lines[i];
 
-      if (line.startsWith("### ")) {
+      if (line.startsWith("---")) {
+        elements.push(<hr key={i} className="my-8 border-gray-200" />);
+      } else if (line.startsWith("### ")) {
         elements.push(
           <h3 key={i} className="text-lg font-bold text-[#080808] mt-7 mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
             {line.slice(4)}
@@ -1073,7 +1090,9 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         // skip blank lines
       } else {
         const withLinks = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, href) => {
-          return `<a href="${href}" class="text-[#c9a84c] font-medium hover:underline">${text}</a>`;
+          const isExternal = href.startsWith('http://') || href.startsWith('https://');
+          const target = isExternal ? ' target="_blank" rel="noopener noreferrer"' : '';
+          return `<a href="${href}"${target} class="text-[#c9a84c] font-medium hover:underline">${text}</a>`;
         });
         const withBold = withLinks.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
         elements.push(
