@@ -404,7 +404,7 @@ export default function Orem() {
 
       <CTABanner
         title="Ready to Lower Your Processing Costs in Orem?"
-        subtitle="Get a statement review and see exactly how much your Orem business can save. Most businesses save 20–40% on processing fees."
+        subtitle="Get a statement review and see exactly how much your Orem business can save. Most businesses find meaningful savings on their processing costs after a statement review."
         primaryLabel="Request a Quote"
         primaryHref="/contact"
         secondaryLabel="Statement Review"

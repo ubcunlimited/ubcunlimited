@@ -62,13 +62,13 @@ const industryNews = [
   },
   {
     date: "January 2026",
-    headline: "Same-Day ACH Volume Grew 16.7% in 2025",
-    summary: "Nacha reported that Same-Day ACH processed 1.3 billion transactions in 2025, up 16.7% year-over-year. For Utah businesses with large or recurring payments, ACH remains one of the most cost-effective payment methods available.",
+    headline: "Same-Day ACH Adoption Continues to Accelerate",
+    summary: "Same-Day ACH volume has grown substantially year over year as businesses shift large and recurring payments away from checks and wire transfers. For Utah businesses with high-value invoices or subscription billing, ACH remains one of the most cost-effective payment methods available.",
   },
   {
     date: "December 2025",
-    headline: "Chargeback Rates Rising in eCommerce — What Merchants Need to Know",
-    summary: "Industry data shows eCommerce chargeback rates increased 23% in 2025, driven by friendly fraud and subscription billing disputes. High-risk businesses and online sellers should review their chargeback prevention protocols heading into 2026.",
+    headline: "eCommerce Chargebacks Remain a Growing Challenge for Online Sellers",
+    summary: "Friendly fraud and subscription billing disputes continue to drive chargeback rates higher for online merchants. High-risk businesses and eCommerce sellers should review their chargeback prevention protocols and ensure billing descriptors, cancellation flows, and dispute response processes are up to date.",
   },
 ];
 

@@ -168,7 +168,7 @@ For most Utah restaurants — whether you are running a full-service dining room
     date: "2025-02-10",
     readTime: "8 min read",
     content: `
-ACH (Automated Clearing House) payments are one of the most cost-effective payment methods available to businesses — yet many Utah business owners either do not offer them or do not fully understand how they work. The ACH Network processed 33.6 billion payments in 2024, totaling $86.2 trillion in value, according to Nacha, the organization that governs the ACH Network. For businesses that handle large transactions, recurring billing, or B2B payments, ACH can save thousands of dollars per year in processing fees.
+ACH (Automated Clearing House) payments are one of the most cost-effective payment methods available to businesses — yet many Utah business owners either do not offer them or do not fully understand how they work. The ACH Network moves trillions of dollars annually across billions of transactions, making it one of the most widely used payment rails in the country. For businesses that handle large transactions, recurring billing, or B2B payments, ACH can save thousands of dollars per year in processing fees.
 
 ## What Is ACH and How Does It Work?
 
@@ -182,7 +182,7 @@ The cost difference between ACH and credit card processing is substantial. ACH p
 
 ## Same-Day ACH: Faster Than You Think
 
-One of the most significant developments in ACH in recent years is the growth of Same-Day ACH. In 2025, Same-Day ACH processed 1.4 billion payments valued at $3.9 trillion — a 16.7% increase in volume and 21.4% increase in value from 2024, according to Nacha. Same-Day ACH allows funds to be available the same business day the payment is initiated (for transactions submitted before the cutoff time), making it a viable alternative to wire transfers for time-sensitive payments.
+One of the most significant developments in ACH in recent years is the growth of Same-Day ACH. Adoption has grown substantially year over year as businesses discover that funds can be available the same business day the payment is initiated — for transactions submitted before the cutoff time. This makes Same-Day ACH a practical alternative to wire transfers for time-sensitive payments, at a fraction of the wire transfer cost.
 
 The per-transaction fee for Same-Day ACH is slightly higher than standard ACH, but it is still dramatically cheaper than wire transfers or credit card processing.
 
@@ -216,7 +216,7 @@ The payments landscape is evolving faster than at any point in recent history. F
 
 ## Contactless Payments Have Become the Expectation
 
-Contactless payments — tap-to-pay cards, Apple Pay, Google Pay, and Samsung Pay — have moved from novelty to expectation in just a few years. The U.S. contactless payment market was valued at approximately $15.98 billion in 2024 and is growing rapidly. According to industry data, nearly 88% of POS terminal manufacturers were building NFC (near-field communication) capability into their hardware by 2024.
+Contactless payments — tap-to-pay cards, Apple Pay, Google Pay, and Samsung Pay — have moved from novelty to expectation in just a few years. NFC-capable terminals are now the industry standard, and the vast majority of new hardware shipped today supports tap-to-pay out of the box.
 
 For Utah businesses, this means that if your payment terminal does not support tap-to-pay, you are creating friction for a growing segment of your customers — particularly younger shoppers who rarely carry physical cards and expect to pay with their phone. Modern terminals from Shift4, Clover, and other providers support all major contactless payment methods out of the box.
 
@@ -234,13 +234,13 @@ Credit card surcharging, which adds a fee for card-paying customers, is legal in
 
 ## Same-Day ACH Is Changing B2B Payments
 
-For Utah businesses that deal with other businesses — contractors, wholesalers, service providers — Same-Day ACH is transforming how payments move. The ability to send and receive business payments the same day, at a fraction of the cost of wire transfers, is driving significant adoption. Nacha reported 1.4 billion Same-Day ACH payments in 2025, up 16.7% from 2024.
+For Utah businesses that deal with other businesses — contractors, wholesalers, service providers — Same-Day ACH is transforming how payments move. The ability to send and receive business payments the same day, at a fraction of the cost of wire transfers, is driving significant adoption among businesses that previously relied on checks or wire transfers for large B2B transactions.
 
 For businesses that have historically relied on checks or wire transfers for large B2B payments, Same-Day ACH offers a compelling combination of speed, cost, and security.
 
 ## AI-Powered Fraud Prevention Is Becoming Accessible
 
-Fraud is a growing challenge for businesses of all sizes. The cost of fraud to U.S. merchants is significant — every dollar lost to fraud is estimated to cost merchants $4.61 when you factor in chargebacks, fees, and operational costs. Historically, sophisticated fraud prevention tools were only available to large enterprises, but AI-powered fraud detection is now built into many payment platforms and merchant services offerings.
+Fraud is a growing challenge for businesses of all sizes. The true cost of fraud to merchants goes well beyond the disputed transaction amount — when you factor in chargeback fees, lost merchandise, staff time, and potential account penalties, the total cost of a single fraud incident can be many times the original transaction value. Historically, sophisticated fraud prevention tools were only available to large enterprises, but AI-powered fraud detection is now built into many payment platforms and merchant services offerings.
 
 For Utah businesses, this means that the right payment processor can help you detect and prevent fraudulent transactions in real time, reducing chargebacks and protecting your bottom line.
 
@@ -326,13 +326,13 @@ If you are not on a cash discount or surcharge program, you may be overpaying. [
     date: "2025-03-08",
     readTime: "9 min read",
     content: `
-Chargebacks are one of the most costly and frustrating challenges facing merchants today. eCommerce chargebacks alone are projected to cost businesses $33.79 billion in 2025, according to Chargeflow, with that figure expected to reach $41.69 billion by 2028. For every dollar lost to fraud, U.S. merchants pay an estimated $4.61 in total costs when you factor in the chargeback fee, lost merchandise, operational costs, and the time spent fighting disputes. Understanding how chargebacks work — and how to prevent them — is essential for protecting your business.
+Chargebacks are one of the most costly and frustrating challenges facing merchants today. The true cost of a chargeback goes well beyond the disputed transaction amount — when you factor in the chargeback fee, lost merchandise, staff time spent on disputes, and the risk of account penalties if your chargeback rate climbs too high, a single dispute can cost several times the original sale. Understanding how chargebacks work — and how to prevent them — is essential for protecting your business.
 
 ## What Is a Chargeback?
 
 A chargeback occurs when a cardholder contacts their bank to dispute a transaction and request a reversal of the charge. Unlike a refund (which you initiate), a chargeback is initiated by the customer's bank and results in the funds being pulled from your merchant account — often before you even have a chance to respond.
 
-Chargebacks were originally designed to protect consumers from fraud and merchant misconduct. However, the system is frequently abused. "Friendly fraud" — where a customer makes a legitimate purchase and then disputes the charge to get their money back while keeping the goods or services — accounts for a significant and growing share of chargebacks. Studies suggest that friendly fraud represents 60–80% of all chargebacks.
+Chargebacks were originally designed to protect consumers from fraud and merchant misconduct. However, the system is frequently abused. "Friendly fraud" — where a customer makes a legitimate purchase and then disputes the charge to get their money back while keeping the goods or services — accounts for a significant and growing share of chargebacks. Friendly fraud — where a customer makes a legitimate purchase and then disputes the charge — has become one of the most common chargeback categories, and it is growing.
 
 ## The Three Types of Chargebacks
 
@@ -412,7 +412,7 @@ This approach is particularly valuable for contractors, service businesses, and 
 
 ## Contactless Payments Are Essential
 
-Regardless of which mobile solution you choose, make sure it supports contactless payments — NFC tap-to-pay, Apple Pay, and Google Pay. Contactless payment adoption has grown dramatically, and customers increasingly expect to be able to tap their phone or watch to pay. Nearly 88% of POS terminal manufacturers were building NFC capability into their hardware by 2024, and the trend is accelerating.
+Regardless of which mobile solution you choose, make sure it supports contactless payments — NFC tap-to-pay, Apple Pay, and Google Pay. Contactless payment adoption has grown dramatically, and customers increasingly expect to be able to tap their phone or watch to pay. NFC-capable hardware is now the industry standard, and customer expectations for tap-to-pay have grown accordingly.
 
 [Contact our Utah team](/contact) to discuss the best mobile payment solution for your specific business.
     `,

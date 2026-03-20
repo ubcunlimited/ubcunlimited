@@ -50,9 +50,9 @@ const PAIRS = [
     challenge: "Building customer loyalty and driving repeat visits",
     challengeDetail: "Without a loyalty program, you have no way to identify your best customers, reward them, or bring them back when business is slow.",
     solution: "Integrated gift cards & loyalty program",
-    solutionDetail: "Branded physical and digital gift cards plus a points-based loyalty program that runs automatically at the POS. Build a customer database for targeted email and SMS campaigns. Gift card recipients spend 20–40% more than the card's face value.",
+    solutionDetail: "Branded physical and digital gift cards plus a points-based loyalty program that runs automatically at the POS. Build a customer database for targeted email and SMS campaigns. Gift card recipients frequently spend more than the card's face value when they redeem it.",
     solutionTag: "Gift & Loyalty",
-    impact: "20–40% higher gift card spend",
+    impact: "Higher spend per gift card visit",
   },
 ];
 

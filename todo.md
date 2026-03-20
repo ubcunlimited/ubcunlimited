@@ -31,3 +31,4 @@
 - [x] Make solution tag badges on challenge-solution cards clickable links to corresponding solution pages
 - [x] Rebuild Blog.tsx with two-column layout: sidebar with categories, archive by month/year, sort control (Newest/Oldest)
 - [x] Make solution tag badges on challenge-solution cards clickable links to corresponding solution pages (IndustryDetail + SolutionDetail)
+- [x] Audit and rewrite all site content for originality: blog excerpts, industry/solution page copy, challenge-solution pairs, homepage, county/city templates

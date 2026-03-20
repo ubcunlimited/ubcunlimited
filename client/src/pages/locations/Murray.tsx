@@ -404,7 +404,7 @@ export default function Murray() {
 
       <CTABanner
         title="Ready to Lower Your Processing Costs in Murray?"
-        subtitle="Get a statement review and see exactly how much your Murray business can save. Most businesses save 20–40% on processing fees."
+        subtitle="Get a statement review and see exactly how much your Murray business can save. Most businesses find meaningful savings on their processing costs after a statement review."
         primaryLabel="Request a Quote"
         primaryHref="/contact"
         secondaryLabel="Statement Review"
