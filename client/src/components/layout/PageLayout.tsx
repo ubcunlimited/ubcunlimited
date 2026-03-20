@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import MobileCallBar from "./MobileCallBar";
 
 interface PageLayoutProps {
   children: ReactNode;
@@ -14,10 +15,12 @@ export default function PageLayout({ children }: PageLayoutProps) {
       </a>
       <Header />
       {/* pt-16 = 64px matches mobile nav h-16; lg:pt-[192px] covers top bar + h-36 nav on desktop */}
-      <main id="main-content" className="flex-1 pt-16 lg:pt-[192px]">
+      {/* pb-[76px] on mobile reserves space so footer content isn't hidden behind the sticky call bar */}
+      <main id="main-content" className="flex-1 pt-16 lg:pt-[192px] pb-[76px] lg:pb-0">
         {children}
       </main>
       <Footer />
+      <MobileCallBar />
     </div>
   );
 }

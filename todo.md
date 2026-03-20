@@ -8,3 +8,4 @@
 - [x] Home page hero: show contact form at all screen sizes (remove hidden lg:block, stack below headline on mobile)\n
 - [x] Fix mobile: announcement bar hidden behind fixed nav — add correct top offset to hero section
 - [x] Add "Call Now" tap-to-call button to mobile nav bar alongside hamburger menu
+- [x] Add sticky bottom call bar on mobile (fixed, always visible, tap-to-call + Get Started CTA)
