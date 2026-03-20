@@ -20,3 +20,4 @@
 - [x] Add counties/cities links to nav and homepage service area section
 - [x] Add clickable SVG map of Utah counties to the Counties service area page
 - [x] Rebuild Utah county SVG map with accurate GeoJSON-derived paths from US Census TIGER data
+- [x] Fix nested <a> inside <a> error in Home.tsx service area section (county cards have child Link elements)

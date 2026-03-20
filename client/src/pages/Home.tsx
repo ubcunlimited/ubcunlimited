@@ -577,9 +577,9 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["Salt Lake", "Utah", "Davis", "Weber", "Washington", "Cache"].map((c) => (
-                  <Link key={c} href={`/counties/${c.toLowerCase().replace(" ", "-")}`} onClick={(e) => e.stopPropagation()} className="text-xs text-white/55 bg-white/5 hover:bg-[#c9a84c]/15 border border-white/10 hover:border-[#c9a84c]/30 px-3 py-1 rounded-full transition-colors">
+                  <span key={c} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/counties/${c.toLowerCase().replace(" ", "-")}`; }} className="text-xs text-white/55 bg-white/5 hover:bg-[#c9a84c]/15 border border-white/10 hover:border-[#c9a84c]/30 px-3 py-1 rounded-full transition-colors cursor-pointer">
                     {c} County
-                  </Link>
+                  </span>
                 ))}
               </div>
               <div className="flex items-center gap-1 text-[#c9a84c] text-xs font-semibold">
@@ -602,9 +602,9 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["Salt Lake City", "Provo", "Ogden", "St. George", "Lehi", "Sandy"].map((c) => (
-                  <Link key={c} href={`/cities/${c.toLowerCase().replace(/[. ]/g, "-").replace(/--/g, "-")}`} onClick={(e) => e.stopPropagation()} className="text-xs text-white/55 bg-white/5 hover:bg-[#c9a84c]/15 border border-white/10 hover:border-[#c9a84c]/30 px-3 py-1 rounded-full transition-colors">
+                  <span key={c} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/cities/${c.toLowerCase().replace(/[. ]/g, "-").replace(/--/g, "-")}`; }} className="text-xs text-white/55 bg-white/5 hover:bg-[#c9a84c]/15 border border-white/10 hover:border-[#c9a84c]/30 px-3 py-1 rounded-full transition-colors cursor-pointer">
                     {c}
-                  </Link>
+                  </span>
                 ))}
               </div>
               <div className="flex items-center gap-1 text-[#c9a84c] text-xs font-semibold">
