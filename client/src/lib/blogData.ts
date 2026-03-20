@@ -168,6 +168,16 @@ export const blogPosts: BlogPostMeta[] = [
     featured: true,
   },
   {
+    slug: "how-interchange-rates-work",
+    title: "How Interchange Rates Work: A Plain-English Guide for Utah Merchants",
+    excerpt:
+      "Interchange fees are the largest single component of your credit card processing costs — yet most business owners have never had them explained clearly. This guide breaks down exactly what interchange is, who sets the rates, why they vary so widely by card type, and how your pricing model determines whether you see the real cost or a hidden markup.",
+    category: "Pricing & Fees",
+    date: "2026-03-20",
+    readTime: "10 min read",
+    featured: true,
+  },
+  {
     slug: "growing-business-with-better-payments",
     title: "How Better Payment Processing Can Help Your Business Grow",
     excerpt:

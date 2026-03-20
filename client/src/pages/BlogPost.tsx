@@ -996,6 +996,107 @@ Payment processing is not just a cost of doing business — it is an infrastruct
 [Book a consultation](/consultation) with our Utah team to discuss how better payment processing can support your specific growth goals.
     `,
   },
+  "how-interchange-rates-work": {
+    title: "How Interchange Rates Work: A Plain-English Guide for Utah Merchants",
+    category: "Pricing & Fees",
+    date: "2026-03-20",
+    readTime: "10 min read",
+    content: `
+If you have ever looked at your monthly processing statement and wondered why you are paying different rates for different cards, the answer is interchange. Interchange fees are the foundation of the entire credit card processing system — and they are also the largest single component of what you pay every month. According to the [Nilson Report](https://nilsonreport.com/articles/merchant-processing-fees-in-the-united-states-2023/), U.S. merchants paid $172 billion in total card processing fees in 2023, up 7.1% from the prior year. Understanding how interchange works is the first step toward understanding — and reducing — your processing costs.
+
+## What Is Interchange?
+
+Interchange is a fee paid by your bank (the acquiring bank) to the cardholder's bank (the issuing bank) every time a card transaction is processed. It is not a fee your processor invented — it is a fee set by the card networks (Visa, Mastercard, Discover, and American Express) and published publicly twice a year, typically in April and October.
+
+The interchange fee compensates the issuing bank for the cost of extending credit, managing fraud risk, funding rewards programs, and processing the transaction. From the merchant's perspective, interchange is a pass-through cost — your processor collects it from you and passes it to the issuing bank. No processor can reduce interchange; they can only add their own markup on top of it.
+
+The three-party flow looks like this:
+
+1. Your customer pays with a Visa credit card at your register.
+2. Your acquiring bank (your processor's bank) pays the interchange fee to the customer's issuing bank.
+3. Your processor passes that interchange cost to you, plus their own markup.
+
+## Why Do Interchange Rates Vary So Much?
+
+This is the question most merchants have after seeing their first interchange-plus statement: why does one card cost 0.05% + $0.22 while another costs 2.40% + $0.10? The answer comes down to four factors.
+
+**Card type.** Debit cards carry lower interchange rates than credit cards because the funds are drawn directly from the cardholder's bank account — there is no credit risk. Regulated debit cards (issued by banks with more than $10 billion in assets) are subject to a Federal Reserve cap under the [Durbin Amendment](https://www.federalregister.gov/documents/2023/11/14/2023-24034/debit-card-interchange-fees-and-routing), currently set at $0.21 + 0.05% per transaction. Unregulated debit cards and credit cards are not subject to this cap.
+
+**Rewards level.** Premium rewards credit cards — the ones that offer airline miles, hotel points, or cash back — carry higher interchange rates than basic cards. The issuing bank uses the interchange revenue to fund the rewards program. A standard Visa consumer credit card (CPS Retail) carries an interchange rate of 1.51% + $0.10. A Visa Signature Preferred rewards card carries 2.10% + $0.10. A Visa Purchasing card (corporate) carries 2.40% + $0.10.
+
+**Transaction type.** Card-present transactions (where the physical card is swiped, dipped, or tapped at a terminal) carry lower interchange rates than card-not-present transactions (online or phone orders). This is because card-present transactions have lower fraud rates — the physical card was present and authenticated. A Visa debit card processed in person carries 0.80% + $0.15; the same card keyed in manually carries 1.65% + $0.15.
+
+**Industry category.** Visa and Mastercard publish special interchange rates for certain industries — restaurants, supermarkets, utilities, healthcare, education, and others. These rates can be lower than standard retail rates as an incentive for those industries to accept cards. For example, Visa's restaurant interchange for a consumer credit card is 2.10% + $0.00, while the standard retail rate for the same card type is 1.51% + $0.10.
+
+## A Reference Table of Common Interchange Rates
+
+The following rates reflect [Visa's and Mastercard's published schedules](https://usa.visa.com/support/small-business/regulations-fees.html) as of 2026. These are the actual interchange rates — not what your processor charges you.
+
+| Card Type | Transaction Type | Interchange Rate |
+|---|---|---|
+| Visa Debit (Regulated) | Card Present | 0.05% + $0.22 |
+| Visa Debit (Unregulated) | Card Present | 0.80% + $0.15 |
+| Mastercard Debit (Regulated) | Card Present | 0.05% + $0.22 |
+| Mastercard Debit (Unregulated) | Card Present | 1.05% + $0.15 |
+| Visa Credit — CPS Retail | Card Present | 1.51% + $0.10 |
+| Visa Credit — Rewards Traditional | Card Present | 1.65% + $0.10 |
+| Visa Credit — Rewards Signature | Card Present | 2.30% + $0.10 |
+| Visa Credit — Purchasing (Corporate) | Card Present | 2.40% + $0.10 |
+| Mastercard Credit — Consumer | Card Present | 1.58% + $0.10 |
+| Mastercard Credit — World Elite | Card Present | 2.30% + $0.10 |
+| Visa Debit (Unregulated) | Card Not Present | 1.65% + $0.15 |
+| Visa Credit — CPS | Card Not Present | Higher than card-present |
+
+The gap between the lowest rate (regulated debit, card-present: 0.05% + $0.22) and the highest common rate (Visa Purchasing card: 2.40% + $0.10) is substantial. On a $100 transaction, the difference is $0.27 vs. $2.50 — nearly 10x.
+
+## How Your Pricing Model Determines What You Actually See
+
+Here is where it gets important for your business: your pricing model determines whether you see the actual interchange cost or a blended rate that hides it.
+
+**Flat-rate pricing** bundles interchange, assessments, and the processor's markup into a single rate. Square charges 2.6% + $0.10 for in-person transactions regardless of card type. This means you pay the same rate whether a customer uses a regulated debit card (actual cost: ~$0.27 on a $100 sale) or a premium rewards card (actual cost: ~$2.50 on a $100 sale). For businesses with a high mix of debit cards and basic credit cards, flat-rate pricing is almost always more expensive than interchange-plus.
+
+**Tiered pricing** groups transactions into "qualified," "mid-qualified," and "non-qualified" buckets. The processor decides which tier each transaction falls into, which creates an incentive to downgrade transactions to higher-cost tiers. This model is the least transparent and is widely considered the most expensive for merchants.
+
+**Interchange-plus pricing** passes the actual interchange cost through to you and adds a fixed, transparent markup on top — for example, interchange + 0.30% + $0.10 per transaction. You see exactly what each card type costs, and your processor's profit is clearly visible. This model is almost always the most cost-effective for businesses processing more than $5,000 per month.
+
+**Subscription pricing** charges a flat monthly fee plus a small per-transaction fee, with interchange passed through at cost. This can be very cost-effective for high-volume businesses.
+
+## The Visa and Mastercard Settlement: What It Means for Merchants
+
+In November 2025, Visa and Mastercard reached a revised settlement with U.S. merchants that includes a reduction in credit card interchange rates by approximately 0.10 percentage points (10 basis points) for five years, along with a cap on rate increases for the same period. According to [CNBC's reporting on the settlement](https://www.cnbc.com/2025/11/10/visa-mastercard-reach-revised-swipe-fee-settlement-with-merchants-.html), the settlement also gives merchants more flexibility in how they route transactions.
+
+While a 0.10% reduction may sound small, it represents meaningful savings for high-volume merchants. For a business processing $500,000 per year in credit card volume, a 0.10% rate reduction saves $500 per year — without any other changes to your setup.
+
+The settlement does not change the fundamental structure of interchange — rates still vary by card type, transaction type, and industry. But it does represent the first significant downward movement in U.S. credit card interchange rates in many years.
+
+## What You Can Do With This Knowledge
+
+Understanding interchange gives you three practical advantages.
+
+**You can evaluate pricing models accurately.** When a processor quotes you a flat rate of 2.6%, you now know that rate includes a significant markup over the actual interchange cost for most card types — especially debit cards. Interchange-plus pricing at 0.30% + $0.10 over interchange will almost always be cheaper for a business with a typical card mix.
+
+**You can optimize your card mix.** Encouraging customers to pay with debit rather than premium rewards credit cards reduces your interchange cost. A simple prompt at checkout — "Debit or credit?" — can meaningfully shift your card mix over time.
+
+**You can spot downgrade fees.** If you are on interchange-plus pricing and see transactions categorized at unusually high interchange rates, it may indicate that transactions are being "downgraded" — charged at a higher interchange category than they should be. Common causes include not settling transactions within 24 hours, missing required data fields, or processing card-not-present transactions without proper authentication.
+
+## The Bottom Line
+
+Interchange is not a mystery — it is a published, publicly available fee schedule that every processor in the country uses. The difference between processors is not the interchange rate (which is the same for everyone) but the markup they add on top, the pricing model they use to present it to you, and the quality of support they provide when you have questions.
+
+If you have never had your processing statement reviewed by someone who can explain every line item, [request a free statement review](/statement-review) from our Utah team. We will show you exactly what you are paying in interchange, what your processor is marking up, and whether there is a better structure for your business.
+
+---
+
+**Sources**
+
+1. [Nilson Report — Merchant Processing Fees in the United States 2023](https://nilsonreport.com/articles/merchant-processing-fees-in-the-united-states-2023/)
+2. [Visa — Interchange Reimbursement Fees (Published Schedule)](https://usa.visa.com/support/small-business/regulations-fees.html)
+3. [Mastercard — Interchange Rates Explained](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html)
+4. [Federal Register — Debit Card Interchange Fees and Routing (Durbin Amendment)](https://www.federalregister.gov/documents/2023/11/14/2023-24034/debit-card-interchange-fees-and-routing)
+5. [CNBC — Visa, Mastercard Reach Revised Swipe Fee Settlement with Merchants (November 2025)](https://www.cnbc.com/2025/11/10/visa-mastercard-reach-revised-swipe-fee-settlement-with-merchants-.html)
+6. [Merchants Payments Coalition — Swipe Fees Hit Record $187.2 Billion in 2024](https://www.merchantspaymentscoalition.com/credit-and-debit-card-swipe-fees-hit-new-record-1872-billion-driving-prices-american-families)
+    `,
+  },
 };
 
 interface BlogPostPageProps {
