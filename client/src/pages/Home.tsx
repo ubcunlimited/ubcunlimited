@@ -203,7 +203,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="stat-badge mb-4">Utah's Local Merchant Services Experts</div>
+              <div className="stat-badge mb-4">Local Expertise &middot; Nationwide Reach</div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 Smarter POS &amp; Payment Solutions
                 <br />
