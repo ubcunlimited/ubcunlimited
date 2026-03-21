@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     name: "JoAnn G.",
-    role: "Waxing Studio Owner",
+    role: "Waxing Studio Owner · Wasatch Front & St. George",
     text: JOANN_SHORT_QUOTE,
     fullText: JOANN_FULL_QUOTE,
     rating: 5,
@@ -33,7 +33,7 @@ const testimonials = [
   },
   {
     name: "Cory D.",
-    role: "Night Club & Bar Owner",
+    role: "Night Club & Bar Owner · Salt Lake City",
     text: "Working with UBC Unlimited has been a great experience for our business. Their service is exceptional, and they are always available when we need support or have questions.",
     rating: 5,
     readMore: true,
