@@ -17,11 +17,11 @@ const testimonials = [
     readMore: false,
   },
   {
-    name: "Mike T.",
-    role: "Manager, Wasatch Auto Group",
-    text: "We were skeptical at first, but after the statement review we saw we were overpaying by nearly 30%. UBC Unlimited made the transition painless.",
+    name: "Dan C.",
+    role: "CFO, Medical Supply Company · 4 States",
+    text: "UBC Unlimited has been an invaluable partner for our company. They have delivered thousands in cost savings while providing a level of customer service that has consistently exceeded expectations.",
     rating: 5,
-    readMore: false,
+    readMore: true,
   },
   {
     name: "JoAnn G.",

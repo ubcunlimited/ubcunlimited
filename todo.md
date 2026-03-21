@@ -46,3 +46,4 @@
 - [x] Add testimonial submission form to Testimonials page with DB storage, admin review queue, approve/reject controls, and owner notifications
 - [x] Replace Amber L. (Provo Salon & Spa) testimonial with JoAnn G. (Owner / 6 Salons) real testimonial; add truncated version with "Read full" link on homepage
 - [x] Add Cory D. (Night Club & Bar Owner) real testimonial — full version on /testimonials page, truncated preview with "Read full" link on homepage
+- [x] Add Dan C. (CFO, Medical Supply Company) real testimonial — full version on /testimonials, shortened homepage card preview
