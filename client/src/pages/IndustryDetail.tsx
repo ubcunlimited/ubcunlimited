@@ -722,6 +722,47 @@ const INDUSTRY_STATS: Record<string, { value: string; label: string }[]> = {
   ],
 };
 
+// Per-industry pull quotes — real client testimonials
+const INDUSTRY_PULL_QUOTES: Record<string, { quote: string; name: string; role: string; initials: string }> = {
+  "salons-spas": {
+    quote: "Since the day we opened our doors, Josh has been there to provide reliable credit card processing and truly outstanding service. He is always helpful, responsive, and someone we know we can count on. His loyalty and commitment to our business are a big part of why we continue to trust him.",
+    name: "JoAnn G.",
+    role: "Waxing Studio Owner · Wasatch Front & St. George",
+    initials: "JG",
+  },
+  "bars-nightclubs": {
+    quote: "Working with UBC Unlimited has been a great experience for our business. Their service is exceptional, and they are always available when we need support or have questions. They have also taken the time to train our staff, which has helped every part of our business operate more efficiently and with more confidence.",
+    name: "Cory D.",
+    role: "Night Club & Bar Owner · Salt Lake City",
+    initials: "CD",
+  },
+  medical: {
+    quote: "UBC Unlimited has been an invaluable partner for our company. They have delivered thousands in cost savings while providing a level of customer service that has consistently exceeded expectations. Their responsiveness, expertise, and commitment to our success have made them a trusted resource for our business.",
+    name: "Dan C.",
+    role: "CFO, Medical Supply Company · UT, ID, CO & AZ",
+    initials: "DC",
+  },
+  retail: {
+    quote: "Working with UBC Unlimited over the past two years has been an outstanding experience. They have helped save our business tens of thousands of dollars annually compared to our previous processor. It's rare to find a company that delivers both meaningful cost savings and such a high level of personal service.",
+    name: "Jess W.",
+    role: "Accountant, Firearms Store · Wasatch Front",
+    initials: "JW",
+  },
+  firearms: {
+    quote: "Working with UBC Unlimited over the past two years has been an outstanding experience. They have helped save our business tens of thousands of dollars annually compared to our previous processor. I would confidently recommend UBC Unlimited to any business looking for a better processing partner.",
+    name: "Jess W.",
+    role: "Accountant, Firearms Store (Online & Storefront) · Wasatch Front",
+    initials: "JW",
+  },
+};
+
+const DEFAULT_PULL_QUOTE = {
+  quote: "UBC Unlimited saved us over $600 a month on processing. They reviewed our statement, explained every line, and had us set up with a new system in two days. The local support alone is worth it.",
+  name: "Sarah R.",
+  role: "Utah Business Owner",
+  initials: "SR",
+};
+
 // Onboarding process steps (shared)
 const ONBOARDING_STEPS = [
   { step: "01", title: "Statement Review", desc: "Submit your current processing statement. We analyze it line by line and identify exactly where you're overpaying — at no cost to you." },
@@ -746,6 +787,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
   const recommendedItems = NAV_SOLUTIONS.filter((s) => data.recommendedSolutions.includes(s.href));
   const relatedIndustries = NAV_INDUSTRIES.filter((i) => !i.href.endsWith(slug)).slice(0, 4);
   const industryStats = INDUSTRY_STATS[data.slug] ?? INDUSTRY_STATS["default"];
+  const pullQuote = INDUSTRY_PULL_QUOTES[data.slug] ?? DEFAULT_PULL_QUOTE;
 
   return (
     <PageLayout>
@@ -977,19 +1019,19 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
               <div className="teal-divider mb-5" />
               <h2 className="text-2xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Why Utah {data.title} Businesses Choose UBC Unlimited</h2>
               <p className="text-gray-500 text-sm mb-6 leading-relaxed">We're not a national call center. We're a local Utah team that specializes in {data.title.toLowerCase()} payment processing — with dedicated reps, industry-specific solutions, and transparent pricing.</p>
-              {/* Pull quote */}
+              {/* Pull quote — real client testimonial per industry */}
               <div className="bg-[#080808] rounded-2xl p-6 relative overflow-hidden mb-5">
                 <div className="absolute top-3 right-4 text-5xl text-[#c9a84c]/10 font-serif leading-none select-none">&ldquo;</div>
                 <p className="text-white/80 text-sm leading-relaxed mb-4 italic">
-                  "UBC Unlimited saved us over $600 a month on processing. They reviewed our statement, explained every line, and had us set up with a new system in two days. The local support alone is worth it."
+                  &ldquo;{pullQuote.quote}&rdquo;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#c9a84c]/20 flex items-center justify-center">
-                    <span className="text-[#c9a84c] font-bold text-xs">SR</span>
+                    <span className="text-[#c9a84c] font-bold text-xs">{pullQuote.initials}</span>
                   </div>
                   <div>
-                    <p className="text-white font-semibold text-xs">Sarah R.</p>
-                    <p className="text-white/40 text-xs">Utah Business Owner</p>
+                    <p className="text-white font-semibold text-xs">{pullQuote.name}</p>
+                    <p className="text-white/40 text-xs">{pullQuote.role}</p>
                   </div>
                   <div className="ml-auto flex gap-0.5">
                     {[...Array(5)].map((_, i) => (

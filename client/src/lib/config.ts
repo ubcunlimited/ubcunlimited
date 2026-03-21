@@ -99,7 +99,7 @@ export const UTAH_COUNTIES = [
 
 export const TRUST_SIGNALS = [
   { value: "20+", label: "Years in Business" },
-  { value: "1000+", label: "Utah Businesses Served" },
+  { value: "All 50", label: "States Served" },
   { value: "1-on-1", label: "Dedicated Local Rep" },
   { value: "1 Day", label: "Approval Time (Most Industries)" },
 ];
