@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     name: "JoAnn G.",
-    role: "Owner, 6 Salons",
+    role: "Waxing Studio Owner",
     text: JOANN_SHORT_QUOTE,
     fullText: JOANN_FULL_QUOTE,
     rating: 5,

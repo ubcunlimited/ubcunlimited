@@ -82,8 +82,8 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 3,
     name: "JoAnn G.",
-    title: "Owner",
-    business: "6 Salons",
+    title: "Waxing Studio Owner",
+    business: "Waxing Studio",
     city: "Utah",
     industry: "Salons & Spas",
     quote: "Since the day we opened our doors, Josh has been there to provide reliable credit card processing and truly outstanding service. He is always helpful, responsive, and someone we know we can count on. His loyalty and commitment to our business are a big part of why we continue to trust him.",
