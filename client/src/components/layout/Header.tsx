@@ -89,7 +89,7 @@ export default function Header() {
         aria-hidden="true"
       >
         <div className="container flex justify-between items-center py-1.5 text-xs text-white/50">
-          <span>Utah's Local Merchant Services Experts — {SITE.yearsInBusiness} Years in Business</span>
+          <span>Local Expertise &middot; Nationwide Reach &mdash; {SITE.yearsInBusiness} Years in Business</span>
           <div className="flex items-center gap-4">
             <a
               href={`mailto:${SITE.email}`}
