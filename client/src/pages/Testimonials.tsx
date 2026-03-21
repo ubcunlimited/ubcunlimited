@@ -107,7 +107,7 @@ const TESTIMONIALS: Testimonial[] = [
     name: "Dan C.",
     title: "CFO",
     business: "Medical Supply Company",
-    city: "Multi-State (4 States)",
+    city: "Utah, Idaho, Colorado & Arizona",
     industry: "Medical",
     quote: "UBC Unlimited has been an invaluable partner for our company. They have delivered thousands in cost savings while providing a level of customer service that has consistently exceeded expectations. What has made the biggest difference for us is their ability to help guide our transition between different software platforms while keeping operations running smoothly across our multiple locations in four different states. Their responsiveness, expertise, and commitment to our success have made them a trusted resource for our business.",
     rating: 5,

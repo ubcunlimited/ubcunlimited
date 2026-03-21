@@ -18,7 +18,7 @@ const testimonials = [
   },
   {
     name: "Dan C.",
-    role: "CFO, Medical Supply Company · 4 States",
+    role: "CFO, Medical Supply Company · UT, ID, CO & AZ",
     text: "UBC Unlimited has been an invaluable partner for our company. They have delivered thousands in cost savings while providing a level of customer service that has consistently exceeded expectations.",
     rating: 5,
     readMore: true,
