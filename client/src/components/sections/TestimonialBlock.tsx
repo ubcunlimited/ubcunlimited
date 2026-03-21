@@ -25,7 +25,7 @@ const testimonials = [
   },
   {
     name: "JoAnn G.",
-    role: "Waxing Studio Owner · Wasatch Front & St. George",
+    role: "Owner · Wasatch Front & St. George",
     text: JOANN_SHORT_QUOTE,
     fullText: JOANN_FULL_QUOTE,
     rating: 5,

@@ -727,7 +727,7 @@ const INDUSTRY_PULL_QUOTES: Record<string, { quote: string; name: string; role: 
   "salons-spas": {
     quote: "Since the day we opened our doors, Josh has been there to provide reliable credit card processing and truly outstanding service. He is always helpful, responsive, and someone we know we can count on. His loyalty and commitment to our business are a big part of why we continue to trust him.",
     name: "JoAnn G.",
-    role: "Waxing Studio Owner · Wasatch Front & St. George",
+    role: "Owner · Wasatch Front & St. George",
     initials: "JG",
   },
   "bars-nightclubs": {

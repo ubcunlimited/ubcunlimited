@@ -82,7 +82,7 @@ const TESTIMONIALS: Testimonial[] = [
   {
     id: 3,
     name: "JoAnn G.",
-    title: "Waxing Studio Owner",
+    title: "Owner",
     business: "Waxing Studio",
     city: "Wasatch Front & St. George, UT",
     industry: "Salons & Spas",
