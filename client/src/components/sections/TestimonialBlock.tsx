@@ -10,11 +10,11 @@ const JOANN_SHORT_QUOTE =
 
 const testimonials = [
   {
-    name: "Sarah M.",
-    role: "Owner, Salt Lake Bistro",
-    text: "UBC Unlimited saved us over $400/month in processing fees. The switch was seamless and their local team was incredibly helpful throughout the whole process.",
+    name: "Jess W.",
+    role: "Accountant, Firearms Store · Wasatch Front",
+    text: "Working with UBC Unlimited over the past two years has been an outstanding experience. They have helped save our business tens of thousands of dollars annually compared to our previous processor.",
     rating: 5,
-    readMore: false,
+    readMore: true,
   },
   {
     name: "Dan C.",
