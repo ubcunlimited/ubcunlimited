@@ -205,15 +205,15 @@ export default function Home() {
             >
               <div className="stat-badge mb-4">Local Expertise &middot; Nationwide Reach</div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
-                Smarter POS &amp; Payment Solutions
+                Your Local Merchant
                 <br />
-                <span className="gradient-text">With Local Expertise</span>
+                <span className="gradient-text">Services Expert</span>
               </h1>
               <p className="text-white/70 text-base md:text-lg mb-3 leading-relaxed">
-                {SITE.tagline}
+                Personal service from a Utah team that knows your industry — wherever you do business.
               </p>
               <p className="text-white/55 text-sm mb-5 leading-relaxed">
-                Competitive pricing, fast onboarding, and industry-specific solutions — backed by {SITE.yearsInBusiness} years of experience and a team that knows Utah business.
+                Competitive pricing, fast onboarding, and industry-specific solutions — backed by {SITE.yearsInBusiness} years of experience and a dedicated rep who answers when you call.
               </p>
               {/* Stats row — hidden on mobile to keep hero compact; form takes priority */}
               <div className="hidden sm:grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">

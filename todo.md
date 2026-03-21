@@ -53,3 +53,4 @@
 - [x] Remove "Book a Consultation" and "See Industries We Serve" buttons from homepage hero
 - [x] Update hero badge text to "Local Expertise · Nationwide Reach"
 - [x] Update top announcement bar to "Local Expertise · Nationwide Reach — 20+ Years in Business"
+- [x] Update hero headline to "Your Local Merchant Services Expert" with matching subheading (Option 4)
