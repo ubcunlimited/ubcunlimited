@@ -90,16 +90,17 @@ const TESTIMONIALS: Testimonial[] = [
     rating: 5,
     featured: true,
   },
-  // Standard testimonials
+  // Real client testimonials
   {
     id: 4,
-    name: "Kevin R.",
+    name: "Cory D.",
     title: "Owner",
-    business: "Ogden Bar & Grill",
-    city: "Ogden, UT",
+    business: "Night Club & Bar",
+    city: "Utah",
     industry: "Restaurants",
-    quote: "Finally found a processor that understands the bar business. SkyTab has been a game changer for our high-volume Friday nights. Tabs are faster, tips are up, and we're paying less per transaction.",
+    quote: "Working with UBC Unlimited has been a great experience for our business. Their service is exceptional, and they are always available when we need support or have questions. They go above and beyond to make sure everything is running smoothly, and that kind of dependability means a lot. They have also taken the time to train our staff, which has helped every part of our business operate more efficiently and with more confidence. It is clear they genuinely care about the success of their clients, and we truly value having them as a trusted partner.",
     rating: 5,
+    featured: true,
   },
   {
     id: 5,

@@ -32,11 +32,11 @@ const testimonials = [
     readMore: true,
   },
   {
-    name: "David R.",
-    role: "Owner, Ogden Retail Co.",
-    text: "What sets UBC apart is the local support. When I have a question, I call and get a real person who knows my business. That's rare in this industry.",
+    name: "Cory D.",
+    role: "Night Club & Bar Owner",
+    text: "Working with UBC Unlimited has been a great experience for our business. Their service is exceptional, and they are always available when we need support or have questions.",
     rating: 5,
-    readMore: false,
+    readMore: true,
   },
 ];
 
