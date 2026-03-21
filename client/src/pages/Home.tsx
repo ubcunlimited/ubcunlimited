@@ -224,14 +224,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <div className="hidden sm:flex flex-col sm:flex-row gap-3 mb-5">
-                <Link href="/consultation" className="btn-gold text-sm py-2.5 px-6 justify-center">
-                  Book a Consultation <ArrowRight size={16} />
-                </Link>
-                <Link href="/industries" className="btn-outline-white text-sm py-2.5 px-6 justify-center opacity-80 hover:opacity-100">
-                  See Industries We Serve
-                </Link>
-              </div>
+
               <div className="hidden sm:flex flex-wrap gap-4">
                 {["Competitive pricing", "Fast onboarding", "Local expertise", "Tailored setups"].map((item) => (
                   <div key={item} className="flex items-center gap-1.5 text-sm text-white/60">

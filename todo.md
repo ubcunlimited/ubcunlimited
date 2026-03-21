@@ -50,3 +50,4 @@
 - [x] Add Jess W. (Accountant, Firearms Store, Wasatch Front) real testimonial — full version on /testimonials, shortened homepage card preview
 - [x] Add real client testimonials as pull quotes on matching industry pages (JoAnn → Salons, Cory → Bars, Dan → Medical, Jess → Retail+Firearms)
 - [x] Update homepage hero stat bar: changed to "All 50 States Served"
+- [x] Remove "Book a Consultation" and "See Industries We Serve" buttons from homepage hero
