@@ -86,3 +86,4 @@
 - [x] Virtual Terminals page: replace "$0 Gateway Fees" stat with a more compelling differentiator
 - [x] Virtual Terminals page: remove "Are there gateway fees for using a virtual terminal?" FAQ entry
 - [x] Replace inaccurate clickable county map with accurate SVG Utah county map
+- [x] Invoicing page: remove "Are there gateway fees for invoicing?" FAQ entry
