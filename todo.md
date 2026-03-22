@@ -96,3 +96,5 @@
 - [x] Surcharge & Cash Discount page: update feature #6 label and body to reference Dual Pricing
 - [x] Surcharge & Cash Discount page: update feature #7 description to reference "Dual Pricing & Cash Discount solutions"
 - [x] Surcharge & Cash Discount page: update FAQ "What is the difference" question and answer with user-provided copy
+- [x] Surcharge & Cash Discount page: rename Utah FAQ to "Is Cash Discount compliant in Utah?"
+- [x] Surcharge & Cash Discount page: rewrite equipment FAQ to emphasize case-by-case compliance assessment
