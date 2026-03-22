@@ -246,7 +246,7 @@ const solutionsData: SolutionData[] = [
     icon: "🖥️",
     title: "POS Systems",
     subtitle: "Industry-leading point-of-sale systems built for restaurants, bars, retail, and beyond",
-    metaDescription: "SkyTab POS systems for Utah restaurants, bars & retail. Built-in payment processing, inventory management, loyalty programs & 24/7 local support.",
+    metaDescription: "SkyTab POS systems for Utah restaurants, bars & retail. Built-in payment processing, online ordering, loyalty programs & local support — go-live target 14 days from approval.",
     description: "UBC Unlimited partners with SkyTab — powered by Shift4, one of the largest payment technology companies in the world — to deliver a complete, all-in-one POS platform for restaurants, bars, quick-service, and multi-location businesses. From tableside ordering and kitchen display systems to online ordering, loyalty programs, and real-time analytics, our POS solutions are designed to transform your operations from front-of-house to back-of-house. Every system comes with local installation, training, and ongoing support from our Utah-based team.",
     heroPoints: ["SkyTab — powered by Shift4", "Restaurant, bar & quick-service ready", "Online ordering & tableside payments", "Go-live target: 14 days from approval"],
     features: [
