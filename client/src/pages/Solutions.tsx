@@ -38,6 +38,18 @@ const solutionDetails: Record<string, { desc: string; features: string[] }> = {
     desc: "Send professional invoices and get paid faster with online payment links.",
     features: ["Custom branding", "Auto-reminders", "Payment links", "Recurring invoices"],
   },
+  "/solutions/gift-loyalty": {
+    desc: "Increase repeat visits and average ticket size with branded gift cards and a built-in loyalty rewards program — all integrated directly with your POS.",
+    features: ["Branded physical & digital gift cards", "Points, rewards & tier-based loyalty", "POS-integrated — no manual tracking", "Email & SMS marketing tools", "$0 annual program fees"],
+  },
+  "/solutions/surcharge-cash-discount": {
+    desc: "Legally eliminate up to 100% of your credit card processing fees with a compliant surcharge or cash discount program — available in all 50 states.",
+    features: ["Up to 100% of fees eliminated", "Legal in all 50 states (program-dependent)", "Compliant signage & receipt language included", "Works with most POS systems & terminals", "$0 monthly program fee"],
+  },
+  "/solutions/high-risk-processing": {
+    desc: "Secure a stable merchant account for your high-risk or hard-to-place business — with competitive rates, multiple acquiring bank relationships, and a dedicated local Utah rep.",
+    features: ["50+ high-risk verticals supported", "Multiple acquiring bank options", "Competitive rates for high-risk accounts", "Rolling reserve minimized for qualified merchants", "Local Utah rep assigned"],
+  },
 };
 
 export default function Solutions() {

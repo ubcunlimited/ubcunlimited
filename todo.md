@@ -79,3 +79,6 @@
 - [x] POS page: add "Lifetime hardware warranty included" as sixth hero bullet
 - [x] Quick-stat widget: show "24–48h / Launch" on all non-POS solution pages (currently shows 14-Day)
 - [x] Fraud FAQ: add 3D Secure availability to the "How do you handle fraud" answer
+- [x] Solutions page: add blurb and bullets to Gift Cards & Loyalty card
+- [x] Solutions page: add blurb and bullets to Surcharge & Cash Discount Solutions card
+- [x] Solutions page: add blurb and bullets to High-Risk Processing card
