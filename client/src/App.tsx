@@ -98,6 +98,9 @@ import AdminTestimonials from "./pages/admin/AdminTestimonials";
 // POC
 import RestaurantsPOC from "./pages/RestaurantsPOC";
 
+// POS Configurator
+import BuildAPOS from "./pages/BuildAPOS";
+
 // Counties & Cities
 import Counties from "./pages/Counties";
 import CountyDetail from "./pages/CountyDetail";
@@ -141,6 +144,9 @@ function Router() {
         <Route path="/solutions/surcharge-cash-discount">{() => <SolutionDetail slug="surcharge-cash-discount" />}</Route>
         <Route path="/solutions/surcharge-cash-discount">{() => { window.location.replace("/solutions/surcharge-cash-discount"); return null; }}</Route>
         <Route path="/solutions/high-risk-processing">{() => <SolutionDetail slug="high-risk-processing" />}</Route>
+
+        {/* POS Configurator */}
+        <Route path="/build-a-pos" component={BuildAPOS} />
 
         {/* POC */}
         <Route path="/poc/restaurants" component={RestaurantsPOC} />

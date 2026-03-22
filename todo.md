@@ -103,3 +103,7 @@
 - [x] Cities page: show all Utah cities in search results; non-featured cities link to consultation request page
 - [x] Homepage: update service area stat to "134+ cities across all 29 counties"
 - [x] CityDetail page: pre-fill city name in consultation form for non-featured cities
+- [x] Build SkyTab POS Configurator component (multi-step: business type → core hardware → add-ons → summary/quote)
+- [x] Create /build-a-pos page with SkyTab POS Configurator
+- [x] Add SkyTab POS Configurator section to /solutions/pos-systems page
+- [x] Add /build-a-pos route to App.tsx and nav links

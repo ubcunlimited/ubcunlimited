@@ -16,7 +16,7 @@ const COMPANY_LINKS = [
   { href: "/news", label: "News & Updates" },
   { href: "/contact", label: "Contact" },
   { href: "/locations", label: "Locations" },
-  { href: "/solutions/pos-systems", label: "Build a POS" },
+  { href: "/build-a-pos", label: "Build a POS" },
   { href: "/agent-iso", label: "Agent / ISO Program" },
 ];
 
