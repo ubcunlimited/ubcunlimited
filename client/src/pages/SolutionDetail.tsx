@@ -906,7 +906,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               {/* Quick stats */}
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { icon: Clock, label: data.slug === "pos-systems" ? "14-Day" : "24–48h", sub: data.slug === "pos-systems" ? "Launch From Approval" : "Launch" },
+                  { icon: Clock, label: data.slug === "pos-systems" ? "14-Day" : "24–48h", sub: data.slug === "pos-systems" ? "Launch From Approval" : "Launch (Most Low Risk Businesses)" },
                   { icon: TrendingUp, label: "20+", sub: "Years Experience" },
                   { icon: Zap, label: "Local", sub: "Utah Support" },
                 ].map((item) => (
