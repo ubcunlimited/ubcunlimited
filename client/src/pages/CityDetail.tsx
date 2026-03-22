@@ -344,6 +344,9 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
     },
   });
 
+  // Keep city in sync if cityName prop changes (e.g. navigation)
+  const cityDisplay = form.city || cityName;
+
   if (submitted) {
     return (
       <div className="text-center py-6">
@@ -358,10 +361,16 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        submit.mutate({ name: form.name, phone: form.phone, businessType: form.businessType || "Not specified" });
+        submit.mutate({ name: form.name, phone: form.phone, businessType: `${form.businessType || "Not specified"} — ${cityDisplay}, Utah` });
       }}
       className="space-y-3"
     >
+      {/* Pre-filled city field */}
+      <div className="w-full bg-[#c9a84c]/10 border border-[#c9a84c]/30 rounded-xl px-4 py-3 text-sm flex items-center gap-2">
+        <MapPin size={13} className="text-[#c9a84c] shrink-0" />
+        <span className="text-[#c9a84c] font-semibold">{cityDisplay}, Utah</span>
+        <span className="text-white/40 text-xs ml-auto">Pre-filled</span>
+      </div>
       <input
         type="text"
         required

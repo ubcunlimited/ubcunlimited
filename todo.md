@@ -102,3 +102,4 @@
 - [x] About page: add asterisk and footnote to month-to-month agreements reference
 - [x] Cities page: show all Utah cities in search results; non-featured cities link to consultation request page
 - [x] Homepage: update service area stat to "134+ cities across all 29 counties"
+- [x] CityDetail page: pre-fill city name in consultation form for non-featured cities
