@@ -90,3 +90,7 @@
 - [x] Invoicing page: generate branded invoice mockup and add to hero section
 - [x] Surcharge & Cash Discount page: update hero title to "Surcharge & Cash Discount Solutions"
 - [x] Surcharge & Cash Discount page: fix program names and rephrase description to emphasize offsetting costs and maximizing customer savings
+- [x] Surcharge & Cash Discount page: update description with user-provided exact copy
+- [x] Surcharge & Cash Discount page: fix challenge #3 compliance text
+- [x] Surcharge & Cash Discount page: rename feature #3 to "Dual Pricing"
+- [x] Surcharge & Cash Discount page: update feature #6 label and body to reference Dual Pricing

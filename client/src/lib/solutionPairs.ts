@@ -109,10 +109,10 @@ export const SOLUTION_PAIRS: Record<string, SolutionChallengePair[]> = {
       impact: "Minimal customer pushback",
     },
     {
-      challenge: "Uncertainty about whether surcharge & cash discount solutions is legal and compliant",
+      challenge: "Uncertainty about whether surcharge & cash discount solutions are legal and compliant",
       challengeDetail: "Surcharging rules vary by state and card network. Implementing a non-compliant program can result in fines or processor termination.",
       solution: "Fully compliant program setup and ongoing support",
-      solutionDetail: "Our surcharge & cash discount solutions is fully compliant with Visa, Mastercard, and Discover rules, and legal in all 50 states. We handle the setup, signage, and compliance documentation so you don't have to worry.",
+      solutionDetail: "Our surcharge & cash discount solutions are fully compliant with Visa, Mastercard, and Discover rules, and legal in all 50 states. We handle the setup, signage, and compliance documentation so you don't have to worry.",
       solutionTag: "Compliance",
       impact: "Zero compliance risk",
     },
