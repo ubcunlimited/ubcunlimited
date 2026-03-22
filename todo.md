@@ -69,3 +69,4 @@
 - [x] Fix /solutions/ach-echeck-processing: update NSF stat, add rate comparison highlight, remove clearing time refs, update settlement timeframe to 3-5 days, replace Features item 5
 - [x] Fix ACH page stat label: "NSF Risk w/ Verification" → "NSF Risk w/ Guarantee"
 - [x] Fix ACH page cost comparison: $40–$60 → $20–$40
+- [x] Add low-risk merchant disclaimer to "24–48h Avg. Activation" stat on credit card processing page

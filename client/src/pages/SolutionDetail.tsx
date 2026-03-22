@@ -28,7 +28,7 @@ const SOLUTION_STATS: Record<string, { value: string; label: string }[]> = {
     { value: "20+", label: "Years in Business" },
     { value: "Next Day", label: "Funding Available" },
     { value: "$0", label: "Setup Fees on Qualifying Accounts" },
-    { value: "24–48h", label: "Avg. Approval (Low Risk)" },
+    { value: "24–48h", label: "Avg. Activation (Low Risk)¹" },
   ],
   "ach-echeck-processing": [
     { value: "60–80%", label: "Lower Cost vs. Cards" },
@@ -723,6 +723,11 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               </div>
             ))}
           </div>
+          {data.slug === "credit-card-processing" && (
+            <p className="text-center text-[#080808]/50 text-[11px] mt-4">
+              ¹ Activation timeframe applies to low-risk merchant accounts. High-risk or complex accounts may require additional review time.
+            </p>
+          )}
         </div>
       </div>
 
