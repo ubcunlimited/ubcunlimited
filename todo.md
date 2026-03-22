@@ -64,3 +64,4 @@
 - [x] Add month-to-month agreement note: certain solutions require an agreement
 - [x] Rename "Cash Discount & Surcharging" and "Cash Discounting" to "Surcharging & Cash Discount Solutions" site-wide
 - [x] Fix doubled "Surcharging & Cash Discount Solutions & Cash Discount" label — change to "Surcharge & Cash Discount Solutions" site-wide
+- [x] Audit and update all URL slugs, nav labels, and page descriptions for clarity and brand consistency

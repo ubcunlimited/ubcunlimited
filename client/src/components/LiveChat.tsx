@@ -34,7 +34,7 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
     return {
       text: "Our **Cash Discount Program** allows you to eliminate credit card processing fees entirely by offering a small discount to customers who pay with cash. Most businesses see their effective processing cost drop to near zero. It's fully compliant with Visa/Mastercard rules and requires no changes to your existing pricing — just a small discount for cash payers.",
       links: [
-        { label: "Learn about Surcharge & Cash Discount Solutions", href: "/solutions/dual-pricing" },
+        { label: "Learn about Surcharge & Cash Discount Solutions", href: "/solutions/surcharge-cash-discount" },
         { label: "Request a Quote", href: "/consultation" },
       ],
     };
@@ -45,7 +45,7 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
     return {
       text: "**Credit Card Surcharging** lets you pass your processing fees directly to customers who pay by credit card, while debit card and cash transactions remain fee-free. Surcharging is legal in most U.S. states (with a few exceptions) and must follow Visa/Mastercard disclosure rules. We handle all the compliance setup for you.",
       links: [
-        { label: "Surcharging & Surcharge & Cash Discount Solutions", href: "/solutions/dual-pricing" },
+        { label: "Surcharging & Surcharge & Cash Discount Solutions", href: "/solutions/surcharge-cash-discount" },
         { label: "Book a Consultation", href: "/consultation" },
       ],
     };
@@ -55,7 +55,7 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
   if (/dual.?pric/.test(q)) {
     return {
       text: "**Surcharge & Cash Discount Solutions** displays two prices at the point of sale — a cash price and a card price — so customers can choose how they want to pay. It's a transparent, compliant way to offset processing costs. We can set up surcharge & cash discount solutions on most POS systems and terminals.",
-      links: [{ label: "Surcharge & Cash Discount Solutions Details", href: "/solutions/dual-pricing" }],
+      links: [{ label: "Surcharge & Cash Discount Solutions Details", href: "/solutions/surcharge-cash-discount" }],
     };
   }
 

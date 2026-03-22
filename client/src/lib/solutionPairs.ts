@@ -99,7 +99,7 @@ export const SOLUTION_PAIRS: Record<string, SolutionChallengePair[]> = {
     },
   ],
 
-  "dual-pricing": [
+  "surcharge-cash-discount": [
     {
       challenge: "Paying 2–3% in processing fees on every card transaction",
       challengeDetail: "For a business doing $1M in annual card volume, that's $20,000–$30,000 per year going to your processor instead of your bottom line.",
@@ -169,7 +169,7 @@ export const SOLUTION_PAIRS: Record<string, SolutionChallengePair[]> = {
     },
   ],
 
-  "ach-processing": [
+  "ach-echeck-processing": [
     {
       challenge: "Paying 2–3% credit card fees on large recurring payments",
       challengeDetail: "For rent collection, B2B invoices, and high-ticket recurring services, credit card fees are disproportionately expensive compared to the value of the transaction.",

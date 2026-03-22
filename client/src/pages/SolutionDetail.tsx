@@ -78,7 +78,7 @@ const SOLUTION_STATS: Record<string, { value: string; label: string }[]> = {
     { value: "$0", label: "Annual Program Fees" },
     { value: "POS", label: "Integrated — No Manual Tracking" },
   ],
-  "dual-pricing": [
+  "surcharge-cash-discount": [
     { value: "Up to 100%", label: "Fees Eliminated" },
     { value: "All 50", label: "States (Cash Discount)" },
     { value: "$0", label: "Monthly Program Fee" },
@@ -109,7 +109,7 @@ const SOLUTION_HOW_IT_WORKS: Record<string, { step: string; title: string; desc:
     { step: "02", title: "Application & Underwriting", desc: "We guide you through the documentation requirements and advocate on your behalf with the acquiring bank to maximize approval odds." },
     { step: "03", title: "Approval & Activation", desc: "Most high-risk accounts are approved within 24–72 hours. We handle gateway setup, integration, and ongoing account management." },
   ],
-  "dual-pricing": [
+  "surcharge-cash-discount": [
     { step: "01", title: "Program Selection", desc: "We review your business type, card mix, and customer base to recommend the right program — cash discount, surcharging, or surcharge & cash discount solutions." },
     { step: "02", title: "Equipment & Compliance Setup", desc: "We configure your terminals or POS, provide all required signage and receipt language, and ensure full card brand compliance." },
     { step: "03", title: "Training & Launch", desc: "We train your staff on how to explain the program to customers and monitor your first month of savings to confirm performance." },
@@ -472,7 +472,7 @@ const solutionsData: SolutionData[] = [
     relatedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/mobile-processing"],
   },
   {
-    slug: "dual-pricing",
+    slug: "surcharge-cash-discount",
     icon: "💰",
     title: "Surcharge & Cash Discount Solutions & Surcharging",
     subtitle: "Keep more of every sale — legally pass processing costs to the card, not your bottom line",
@@ -578,7 +578,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
   const TERMINAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_f46e2fbc.jpg";
   const CASH_DISCOUNT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-cash-discount-jfmB57PZVctCXZVaSjpwi2.webp";
   const isCreditCard = data.slug === "credit-card-processing";
-  const isCashDiscount = data.slug === "dual-pricing";
+  const isCashDiscount = data.slug === "surcharge-cash-discount";
   const hasHeroImage = isCreditCard || isCashDiscount;
   const heroImg = isCashDiscount ? CASH_DISCOUNT_IMG : TERMINAL_IMG;
 

@@ -1320,7 +1320,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                 <div className="bg-[#f8fafc] rounded-xl p-5 border border-gray-100">
                   <h3 className="font-bold text-[#080808] mb-2 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Cash Discount Programs</h3>
                   <p className="text-gray-500 text-xs mb-3">Eliminate your processing fees entirely with a legal cash discount program — available in all 50 states.</p>
-                  <Link href="/solutions/dual-pricing" className="btn-outline-teal text-sm py-2 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
+                  <Link href="/solutions/surcharge-cash-discount" className="btn-outline-teal text-sm py-2 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
                     Learn More
                   </Link>
                 </div>

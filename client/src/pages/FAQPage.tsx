@@ -78,7 +78,7 @@ const faqCategories = [
               When implemented correctly with proper signage and receipt language, most businesses report minimal customer pushback. UBC Unlimited provides all required compliance materials, staff training, and compatible hardware or equipment programming as part of our setup.
             </p>
             <p>
-              <a href="/solutions/dual-pricing" className="text-[#c9a84c] font-semibold hover:underline">Learn more about our Surcharge & Cash Discount Solutions &amp; Cash Discount program →</a>
+              <a href="/solutions/surcharge-cash-discount" className="text-[#c9a84c] font-semibold hover:underline">Learn more about our Surcharge & Cash Discount Solutions &amp; Cash Discount program →</a>
             </p>
           </div>
         ),

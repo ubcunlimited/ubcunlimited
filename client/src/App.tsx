@@ -138,7 +138,8 @@ function Router() {
         <Route path="/solutions/virtual-terminals">{() => <SolutionDetail slug="virtual-terminals" />}</Route>
         <Route path="/solutions/invoicing">{() => <SolutionDetail slug="invoicing" />}</Route>
         <Route path="/solutions/gift-loyalty">{() => <SolutionDetail slug="gift-loyalty" />}</Route>
-        <Route path="/solutions/dual-pricing">{() => <SolutionDetail slug="dual-pricing" />}</Route>
+        <Route path="/solutions/surcharge-cash-discount">{() => <SolutionDetail slug="surcharge-cash-discount" />}</Route>
+        <Route path="/solutions/surcharge-cash-discount">{() => { window.location.replace("/solutions/surcharge-cash-discount"); return null; }}</Route>
         <Route path="/solutions/high-risk-processing">{() => <SolutionDetail slug="high-risk-processing" />}</Route>
 
         {/* POC */}
