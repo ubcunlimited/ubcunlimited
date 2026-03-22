@@ -75,3 +75,4 @@
 - [x] POS page: update "Ready to go in 24–48 hours" impact line in challenge-solution pairs to 14-day language
 - [x] POS page: update hero points to reflect 14-day go-live target from approval
 - [x] POS page: update meta description to include 14-day launch timeline
+- [x] POS page: add "Local install, training & support" back as fifth hero bullet
