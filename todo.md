@@ -95,3 +95,4 @@
 - [x] Surcharge & Cash Discount page: rename feature #3 to "Dual Pricing"
 - [x] Surcharge & Cash Discount page: update feature #6 label and body to reference Dual Pricing
 - [x] Surcharge & Cash Discount page: update feature #7 description to reference "Dual Pricing & Cash Discount solutions"
+- [x] Surcharge & Cash Discount page: update FAQ "What is the difference" question and answer with user-provided copy
