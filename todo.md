@@ -98,3 +98,4 @@
 - [x] Surcharge & Cash Discount page: update FAQ "What is the difference" question and answer with user-provided copy
 - [x] Surcharge & Cash Discount page: rename Utah FAQ to "Is Cash Discount compliant in Utah?"
 - [x] Surcharge & Cash Discount page: rewrite equipment FAQ to emphasize case-by-case compliance assessment
+- [x] High-Risk Processing page: remove 24-72h approval time references and replace with accurate underwriting timeline messaging
