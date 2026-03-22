@@ -83,3 +83,4 @@
 - [x] Solutions page: add blurb and bullets to Surcharge & Cash Discount Solutions card
 - [x] Solutions page: add blurb and bullets to High-Risk Processing card
 - [x] Quick-stat widget: update non-POS sub-label to "Launch (Most Low Risk Businesses)"
+- [x] Virtual Terminals page: replace "$0 Gateway Fees" stat with a more compelling differentiator

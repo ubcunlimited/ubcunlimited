@@ -63,7 +63,7 @@ const SOLUTION_STATS: Record<string, { value: string; label: string }[]> = {
   "virtual-terminals": [
     { value: "Browser", label: "Based — No Install" },
     { value: "Unlimited", label: "Users & Locations" },
-    { value: "$0", label: "Gateway Fees (Qualifying)" },
+    { value: "Any Device", label: "No Hardware Required" },
     { value: "PCI", label: "DSS Compliant" },
   ],
   "invoicing": [
