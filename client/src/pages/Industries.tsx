@@ -478,7 +478,7 @@ export default function Industries() {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {[
               { value: "22+", label: "Industries Served", sub: "From restaurants to high-risk verticals" },
-              { value: "20+", label: "Years of Experience", sub: "Josh Cornia & the UBC Unlimited team" },
+              { value: "20+", label: "Years of Experience", sub: "the UBC Unlimited team" },
               { value: "24–48h", label: "Typical Approval Time", sub: "Most accounts approved and processing" },
             ].map((stat) => (
               <div key={stat.label}>

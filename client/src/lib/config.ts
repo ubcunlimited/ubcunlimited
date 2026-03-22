@@ -40,7 +40,7 @@ export const NAV_SOLUTIONS = [
   { label: "Virtual Terminals", href: "/solutions/virtual-terminals", desc: "Phone & mail order payment processing", icon: "💻" },
   { label: "Invoicing", href: "/solutions/invoicing", desc: "Send invoices and get paid faster", icon: "📄" },
   { label: "Gift Cards & Loyalty", href: "/solutions/gift-loyalty", desc: "Branded gift cards and loyalty rewards programs", icon: "🎁" },
-  { label: "Dual Pricing & Cash Discount", href: "/solutions/dual-pricing", desc: "Eliminate or reduce credit card processing costs", icon: "💲" },
+  { label: "Cash Discount & Surcharging & Cash Discount", href: "/solutions/dual-pricing", desc: "Eliminate or reduce credit card processing costs", icon: "💲" },
   { label: "High-Risk Processing", href: "/solutions/high-risk-processing", desc: "Approved accounts for businesses other processors decline", icon: "🛡️", highRisk: true },
 ];
 
@@ -108,7 +108,7 @@ export const TESTIMONIALS = [
   {
     name: "Maria T.",
     business: "Salt Lake City Restaurant",
-    quote: "UBC Unlimited cut our processing fees significantly. Josh and his team actually took the time to understand our business before recommending anything.",
+    quote: "UBC Unlimited cut our processing fees significantly. The UBC Unlimited team actually took the time to understand our business before recommending anything.",
     rating: 5,
   },
   {

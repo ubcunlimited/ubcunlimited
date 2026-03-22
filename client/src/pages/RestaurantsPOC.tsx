@@ -41,9 +41,9 @@ const PAIRS = [
   {
     challenge: "High credit card processing fees eating into thin margins",
     challengeDetail: "Restaurant margins average 3–9%. Credit card fees of 2.5–3.5% per transaction can represent 30–40% of your net profit.",
-    solution: "Dual Pricing / Cash Discount Program",
+    solution: "Cash Discount & Surcharging / Cash Discount Program",
     solutionDetail: "Display a cash price and a card price at the point of sale. Customers who pay by card cover the processing cost — effectively eliminating your fees. Fully compliant with card network rules, legal in all 50 states, with all required signage included.",
-    solutionTag: "Dual Pricing",
+    solutionTag: "Cash Discount & Surcharging",
     impact: "Up to 100% fee elimination",
   },
   {

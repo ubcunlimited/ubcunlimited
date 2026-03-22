@@ -18,7 +18,7 @@ const HOW_IT_WORKS = [
 const SOLUTIONS = [
   { href: "/solutions/credit-card-processing", label: "Credit Card Processing", desc: "Competitive rates with transparent pricing and no hidden fees." },
   { href: "/solutions/pos-systems", label: "POS Systems", desc: "SkyTab and other industry-leading POS solutions, fully configured." },
-  { href: "/solutions/dual-pricing", label: "Dual Pricing / Cash Discount", desc: "Eliminate up to 100% of processing fees legally and transparently." },
+  { href: "/solutions/dual-pricing", label: "Cash Discount & Surcharging / Cash Discount", desc: "Eliminate up to 100% of processing fees legally and transparently." },
   { href: "/solutions/high-risk-processing", label: "High-Risk Processing", desc: "Approved accounts for industries other processors decline." },
 ];
 

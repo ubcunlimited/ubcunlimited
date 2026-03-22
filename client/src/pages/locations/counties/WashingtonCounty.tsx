@@ -125,7 +125,7 @@ export default function WashingtonCounty() {
               { icon: Clock, title: "Approved & Processing in 24–48 Hours", desc: "Most Washington County businesses are live and processing within one to two business days. We handle setup, equipment, and training." },
               { icon: ShieldCheck, title: "No Contracts*, No Rate Increases", desc: "Month-to-month agreements only. Your rate is your rate — we never raise fees after you sign up." },
               { icon: Users, title: "Dedicated Local Account Rep", desc: "You get a direct line to a real person who knows your account. Not a ticket queue. Not a chatbot." },
-              { icon: DollarSign, title: "Cash Discount & Dual Pricing Available", desc: "Eliminate processing fees entirely with our cash discount program — popular with Washington County restaurants, retail, and service businesses." },
+              { icon: DollarSign, title: "Cash Discount & Surcharging Available", desc: "Eliminate processing fees entirely with our cash discount program — popular with Washington County restaurants, retail, and service businesses." },
             ].map((benefit, i) => (
               <motion.div key={benefit.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }} className="bg-white/4 border border-white/8 rounded-2xl p-6">
                 <div className="w-10 h-10 rounded-xl bg-[#c9a84c]/12 flex items-center justify-center mb-4">

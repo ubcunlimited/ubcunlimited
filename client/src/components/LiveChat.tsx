@@ -54,8 +54,8 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
   // Dual pricing
   if (/dual.?pric/.test(q)) {
     return {
-      text: "**Dual Pricing** displays two prices at the point of sale — a cash price and a card price — so customers can choose how they want to pay. It's a transparent, compliant way to offset processing costs. We can set up dual pricing on most POS systems and terminals.",
-      links: [{ label: "Dual Pricing Details", href: "/solutions/dual-pricing" }],
+      text: "**Cash Discount & Surcharging** displays two prices at the point of sale — a cash price and a card price — so customers can choose how they want to pay. It's a transparent, compliant way to offset processing costs. We can set up cash discount & surcharging on most POS systems and terminals.",
+      links: [{ label: "Cash Discount & Surcharging Details", href: "/solutions/dual-pricing" }],
     };
   }
 

@@ -49,9 +49,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "High credit card processing fees eating into thin margins",
       challengeDetail: "Restaurant margins average 3–9%. Credit card fees of 2.5–3.5% per transaction can represent a significant portion of your net profit.",
-      solution: "Dual Pricing / Cash Discount Program",
+      solution: "Cash Discount & Surcharging / Cash Discount Program",
       solutionDetail: "Display a cash price and a card price at the point of sale. Customers who pay by card cover the processing cost — effectively eliminating your fees. Fully compliant with card network rules, legal in all 50 states, with all required signage included.",
-      solutionTag: "Dual Pricing",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Up to 100% fee elimination",
     },
     {
@@ -132,9 +132,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "Processing fees cutting into already-thin bar margins",
       challengeDetail: "With high card transaction volumes and low average ticket sizes, processing fees can significantly impact profitability.",
-      solution: "Dual Pricing / Cash Discount Program",
+      solution: "Cash Discount & Surcharging / Cash Discount Program",
       solutionDetail: "Offer a cash price and a card price at the point of sale. Customers who pay by card cover the processing fee, effectively eliminating your cost. Compliant, legal in all 50 states, and easy to implement.",
-      solutionTag: "Dual Pricing",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Eliminate processing fees",
     },
     {
@@ -207,9 +207,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "High processing fees reducing retail margins",
       challengeDetail: "Retail margins are already under pressure from online competition. Processing fees of 2–3% per transaction add up fast.",
-      solution: "Dual Pricing / Cash Discount Program",
+      solution: "Cash Discount & Surcharging / Cash Discount Program",
       solutionDetail: "Display a cash price and a card price. Customers who pay by card cover the fee — you keep more of every sale. Compliant signage and staff training included.",
-      solutionTag: "Dual Pricing",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Recover 2–3% on every card sale",
     },
     {
@@ -290,9 +290,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "High processing fees on medical card transactions",
       challengeDetail: "Medical practices often process large transactions (procedures, equipment, specialist visits) where a 2.5–3.5% processing fee represents a significant cost that erodes already-thin practice margins.",
-      solution: "Dual Pricing / Cash Discount Program for medical",
+      solution: "Cash Discount & Surcharging / Cash Discount Program for medical",
       solutionDetail: "Offer a cash/check price and a card price for out-of-pocket patient payments. Patients who pay by card cover the processing fee. Fully compliant, with patient-facing signage and staff scripts included. Many practices save $500–2,000+ per month.",
-      solutionTag: "Dual Pricing",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Save $500–2,000+ per month",
     },
     {
@@ -365,9 +365,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "Processing fees eating into thin eCommerce margins",
       challengeDetail: "Online retail margins are already thin. Paying 2.5–3.5% in processing fees on every order compounds the problem, especially on high-volume, low-margin SKUs.",
-      solution: "Dual Pricing / Cash Discount for eCommerce",
+      solution: "Cash Discount & Surcharging / Cash Discount for eCommerce",
       solutionDetail: "Offer a standard price and a card-price at checkout. Customers who pay by card cover the processing fee. On high-volume stores, this can save thousands per month without reducing conversions.",
-      solutionTag: "Dual Pricing",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Recover thousands in monthly fees",
     },
     {
@@ -432,9 +432,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "Processing fees on high-value transactions",
       challengeDetail: "A 2.5% processing fee on a $30,000 vehicle sale is $750. Multiply that across your monthly volume and the cost is significant.",
-      solution: "Dual Pricing / Cash Discount Program",
+      solution: "Cash Discount & Surcharging / Cash Discount Program",
       solutionDetail: "Offer a cash/check price and a card price. Customers who pay by card cover the processing fee. On high-ticket transactions, this can save thousands per month.",
-      solutionTag: "Dual Pricing",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Save thousands per month on fees",
     },
     {
@@ -507,9 +507,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "High processing fees on large professional service invoices",
       challengeDetail: "A 2.5% processing fee on a $5,000 legal or consulting invoice is $125. For firms processing $50,000+ per month in card payments, fees become a significant operating cost.",
-      solution: "Dual Pricing / Cash Discount Program for professional services",
+      solution: "Cash Discount & Surcharging / Cash Discount Program for professional services",
       solutionDetail: "Offer clients a cash/check price and a card price. Clients who pay by card cover the processing fee. For firms with high average invoice values, this can save $1,000–3,000+ per month. Fully compliant with card network rules.",
-      solutionTag: "Dual Pricing",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Save $1,000–3,000+ per month",
     },
     {
@@ -582,9 +582,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "High processing fees on service and retail transactions",
       challengeDetail: "Salons and spas process hundreds of transactions per month. Processing fees of 2.5–3.5% on every haircut, facial, and retail product sale add up to thousands per year.",
-      solution: "Dual Pricing / Cash Discount Program",
+      solution: "Cash Discount & Surcharging / Cash Discount Program",
       solutionDetail: "Display a cash price and a card price at checkout. Clients who pay by card cover the processing fee — you keep your full service revenue. Compliant signage and staff scripts included. Most salons save $300–$800 per month.",
-      solutionTag: "Dual Pricing",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Save $300–$800 per month",
     },
     {
@@ -740,9 +740,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "Processing fees on high-ticket firearms purchases",
       challengeDetail: "A 2.5% fee on a $2,000 firearm is $50. For a high-volume retailer, processing fees on premium firearms significantly erode margins.",
-      solution: "Dual Pricing / Cash Discount Program",
+      solution: "Cash Discount & Surcharging / Cash Discount Program",
       solutionDetail: "Offer a cash price and a card price. Customers who pay by card cover the processing fee. On high-ticket firearms, this can save $25–$75 per transaction.",
-      solutionTag: "Dual Pricing",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Recover fees on high-ticket sales",
     },
   ],
@@ -799,9 +799,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "Processing fees on high-volume CBD sales",
       challengeDetail: "High-risk CBD processing rates are often 3–4% or higher. For a business doing $50,000/month, that's $1,500–$2,000 in fees.",
-      solution: "Dual Pricing to offset processing costs",
-      solutionDetail: "Offer a cash/check price and a card price. Customers who pay by card cover the processing fee. On high-risk accounts where rates are elevated, dual pricing can save $1,000+ per month.",
-      solutionTag: "Dual Pricing",
+      solution: "Cash Discount & Surcharging to offset processing costs",
+      solutionDetail: "Offer a cash/check price and a card price. Customers who pay by card cover the processing fee. On high-risk accounts where rates are elevated, cash discount & surcharging can save $1,000+ per month.",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Offset elevated high-risk rates",
     },
     {
@@ -874,9 +874,9 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "Processing fees on high-volume supplement subscriptions",
       challengeDetail: "High-risk supplement processors charge elevated rates — often 3–4%. For a subscription business doing $100,000/month, that's $3,000–$4,000 in fees.",
-      solution: "Rate optimization and dual pricing",
-      solutionDetail: "We negotiate the lowest possible rates for your volume and risk profile. For businesses with a retail component, dual pricing can offset a significant portion of processing costs.",
-      solutionTag: "Dual Pricing",
+      solution: "Rate optimization and cash discount & surcharging",
+      solutionDetail: "We negotiate the lowest possible rates for your volume and risk profile. For businesses with a retail component, cash discount & surcharging can offset a significant portion of processing costs.",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Lower effective processing rate",
     },
   ],
@@ -1412,7 +1412,7 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
       challengeDetail: "Vape retailers operating on thin margins feel the impact of processing fees acutely. A 2.5% fee on every sale adds up quickly.",
       solution: "Dual pricing program",
       solutionDetail: "Display a cash price and a card price at the register. Customers who pay cash get the lower price; card-paying customers pay a slightly higher price that covers the processing fee. Fully compliant and transparent.",
-      solutionTag: "Dual Pricing",
+      solutionTag: "Cash Discount & Surcharging",
       impact: "Eliminate or reduce processing fees",
     },
   ],

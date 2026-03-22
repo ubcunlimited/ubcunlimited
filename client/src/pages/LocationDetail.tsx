@@ -49,7 +49,7 @@ export default function LocationDetail() {
     },
     {
       question: `How quickly can a ${location.city} business get set up?`,
-      answer: `Most businesses in ${location.city} are live and processing within 24–48 hours of approval. We handle the setup, training, and onboarding so you can focus on running your business.`,
+      answer: `Depending on the solution, businesses in ${location.city} can be up and processing as fast as same day. We handle the setup, training, and onboarding so you can focus on running your business.`,
     },
     {
       question: `Do you offer consultations for ${location.city} businesses?`,
@@ -195,7 +195,7 @@ export default function LocationDetail() {
                   `Local {location.city} support — we're in your community`,
                   "Industry-specific solutions tailored to your business type",
                   "Transparent pricing with no hidden fees",
-                  "Fast onboarding — most businesses live in 24–48 hours",
+                  "Fast onboarding — as fast as same day, depending on the solution",
                   "Authorized SkyTab reseller serving all of Utah",
                   "Free statement review — see exactly where you can save",
                 ].map((item, i) => (

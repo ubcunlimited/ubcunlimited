@@ -28,7 +28,7 @@ export const SOLUTION_TAG_SLUG: Record<string, string | null> = {
   "Gift Cards": "gift-loyalty",
   "Loyalty Program": "gift-loyalty",
   "Tip & Loyalty": "gift-loyalty",
-  "Dual Pricing": "dual-pricing",
+  "Cash Discount & Surcharging": "dual-pricing",
   "Transparent Pricing": "dual-pricing",
   "Rate Optimization": "dual-pricing",
   "Rate Negotiation": "dual-pricing",

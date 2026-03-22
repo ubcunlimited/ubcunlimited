@@ -17,14 +17,14 @@ const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BU
 const ABSTRACT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract_ee7158df.jpg";
 
 const whyUs = [
-  { icon: Award, title: "20+ Years of Expertise", desc: "Josh Cornia and the UBC Unlimited team bring over two decades of merchant services experience to every client relationship." },
+  { icon: Award, title: "20+ Years of Expertise", desc: "The UBC Unlimited team brings over two decades of merchant services experience to every client relationship." },
   { icon: Handshake, title: "Industry-Specific Solutions", desc: "We don't offer one-size-fits-all packages. Every setup is tailored to your specific industry and business needs." },
   { icon: MapPin, title: "Local Utah Support", desc: "Real people who know Utah business. Not a call center — your dedicated local rep who answers when you call." },
-  { icon: Clock, title: "Fast Onboarding", desc: "Most businesses are approved and processing within 24–48 hours. We handle the setup so you can focus on your business." },
+  { icon: Clock, title: "Fast Onboarding", desc: "Depending on the solution, businesses can be up and processing as fast as same day. We handle the setup so you can focus on your business." },
 ];
 
 const howItWorks = [
-  { step: "01", title: "Book a Consultation", desc: "Schedule a free, no-pressure conversation with a local Utah expert. We learn about your business and current setup." },
+  { step: "01", title: "Book a Consultation", desc: "Schedule an in-depth, no-pressure conversation with a local Utah expert. We will take time to learn about your setup and help find a solution that is right for you." },
   { step: "02", title: "Statement Review", desc: "Submit your current processing statement. We analyze it line by line and show you exactly where you can save." },
   { step: "03", title: "Custom Proposal", desc: "We build a tailored solution with transparent, competitive pricing that fits your business type and volume." },
   { step: "04", title: "Seamless Setup & Support", desc: "Our local team handles everything — equipment, training, and integration. Ongoing support from a team that knows your name." },
@@ -155,7 +155,7 @@ export default function Home() {
               "name": "Merchant Services",
               "itemListElement": [
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Credit Card Processing"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cash Discounting & Dual Pricing"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cash Discount & Surcharging"}},
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "POS Systems"}},
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ACH & eCheck Processing"}},
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "High-Risk Merchant Accounts"}},
@@ -396,7 +396,7 @@ export default function Home() {
                 Better Service. Industry Specific. Local Support.
               </h2>
               <p className="text-gray-500 mb-8 text-sm leading-relaxed">
-                With {SITE.yearsInBusiness} years in the industry and a wide range of partner relationships, {SITE.founder} and the UBC Unlimited team can tailor solutions to your individual needs — something a national call center simply can't do.
+                With {SITE.yearsInBusiness} years in the industry and a wide range of partner relationships, the UBC Unlimited team can tailor solutions to your individual needs — something a national call center simply can't do.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {whyUs.map((item) => (

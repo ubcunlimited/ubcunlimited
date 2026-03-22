@@ -35,7 +35,7 @@ const values = [
 
 const differentiators = [
   "Competitive pricing with transparent fee structures",
-  "Fast onboarding — most businesses live within 24–48 hours",
+  "Fast onboarding — businesses can be up and processing as fast as same day, depending on the solution",
   "Local, dedicated support — not a national call center",
   "Tailored setups based on your industry and volume",
   "Industry-specific recommendations from real experience",

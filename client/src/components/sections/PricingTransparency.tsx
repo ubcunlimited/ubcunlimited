@@ -35,7 +35,7 @@ const models = [
     ctaColor: "text-[#2a7a6f]",
   },
   {
-    name: "Cash Discount / Dual Pricing",
+    name: "Cash Discount / Cash Discount & Surcharging",
     badge: "Zero-Cost Option",
     badgeColor: "bg-[#080808] text-[#c9a84c] border border-[#c9a84c]/30",
     range: "0% to you",
@@ -82,13 +82,13 @@ const comparisonRows: { feature: string; ubc: CellValue; stripe: CellValue; squa
   },
   {
     feature: "Effective Rate Range",
-    ubc: "As low as 1.2%–2.2% (card-present, high debit)",
+    ubc: "As low as 1.2%–2.2%¹ (card-present, high debit)",
     stripe: "2.7%–3.5%+ blended",
     square: "2.6%–3.5%+ blended",
     note: "Interchange-plus pricing can save 0.5–1.5% vs. flat-rate for businesses with favorable card mix.",
   },
   {
-    feature: "Cash Discount / Dual Pricing",
+    feature: "Cash Discount / Cash Discount & Surcharging",
     ubc: true,
     stripe: false,
     square: false,
@@ -109,11 +109,11 @@ const comparisonRows: { feature: string; ubc: CellValue; stripe: CellValue; squa
     note: "A real Utah-based person who knows your business — not a support ticket.",
   },
   {
-    feature: "Month-to-Month Agreement",
+    feature: "Month-to-Month Agreement²",
     ubc: true,
     stripe: true,
     square: true,
-    note: "All three offer no long-term contract on standard accounts.",
+    note: "Standard accounts are month-to-month. Certain solutions and equipment programs may require an agreement.",
   },
   {
     feature: "Statement Review",
@@ -314,6 +314,10 @@ export default function PricingTransparency() {
           <p className="text-xs text-gray-400 mt-3 text-center">
             Competitor data based on publicly available pricing as of 2025. Actual rates vary. UBC Unlimited rates depend on your specific card mix and volume.
           </p>
+          <div className="mt-4 space-y-1">
+            <p className="text-xs text-gray-400"><sup>1</sup> Rates shown reflect low-risk merchants. Medium- and high-risk businesses may see different costs based on industry classification and risk profile.</p>
+            <p className="text-xs text-gray-400"><sup>2</sup> Certain solutions and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.</p>
+          </div>
         </div>
 
         {/* CTA row */}

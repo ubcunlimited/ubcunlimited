@@ -56,3 +56,9 @@
 - [x] Update hero headline to "Your Local Merchant Services Expert" with matching subheading (Option 4)
 - [x] Add asterisk to all "no contract" mentions site-wide and add footnote: certain platforms require a contract, disclosed prior to agreement
 - [x] Add asterisk to all "no contract" mentions site-wide and add footnote: certain platforms require a contract, disclosed prior to agreement
+- [x] Rename "Dual Pricing" / "Cash Discount" to "Cash Discount & Surcharging" site-wide
+- [x] Remove Josh Cornia name references — replace with "UBC Unlimited Team" or similar
+- [x] Update Fast Onboarding copy: businesses can be up and processing as fast as same day depending on solution and individual needs
+- [x] Update Book a Consultation copy to "Schedule an in-depth, no-pressure conversation..." with full new text
+- [x] Add pricing asterisk: rates reflect low-risk merchants; medium/high-risk may differ
+- [x] Add month-to-month agreement note: certain solutions require an agreement

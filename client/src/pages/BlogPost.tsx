@@ -553,15 +553,15 @@ As of 2025, credit card surcharging is prohibited in four states: Connecticut, M
 
 The card network requirements for surcharging are specific and must be followed carefully. Merchants must register their intent to surcharge with Mastercard at least 30 days before implementing the program. Signage must be posted at the entrance of the business and near the point of sale, clearly disclosing the surcharge percentage. The surcharge must be disclosed on the customer's receipt. Surcharges may only be applied to credit cards — not debit cards or prepaid cards. The surcharge cannot exceed 3% (or the merchant's actual cost of acceptance, whichever is lower). Merchants cannot combine surcharging with a cash discount program.
 
-## Dual Pricing: A Related Approach
+## Cash Discount & Surcharging: A Related Approach
 
-Dual pricing is a third approach that is related to both cash discounting and surcharging. Under dual pricing, the merchant displays two prices simultaneously — a cash price and a card price — for every item or service. This is different from cash discounting (which shows one price and applies a discount at checkout) and from surcharging (which shows one price and adds a fee at checkout).
+Dual pricing is a third approach that is related to both cash discounting and surcharging. Under cash discount & surcharging, the merchant displays two prices simultaneously — a cash price and a card price — for every item or service. This is different from cash discounting (which shows one price and applies a discount at checkout) and from surcharging (which shows one price and adds a fee at checkout).
 
 Dual pricing is generally considered the most transparent approach, since customers can see both prices before they decide how to pay. It is legal in most states and is supported by most major payment processors. The operational requirement is that your POS system must be capable of displaying and processing two prices for each item.
 
 ## Which Approach Is Right for Your Business?
 
-| Factor | Cash Discounting | Surcharging | Dual Pricing |
+| Factor | Cash Discounting | Surcharging | Cash Discount & Surcharging |
 |---|---|---|---|
 | Legal in all 50 states | Yes | No (banned in 4 states) | Most states |
 | Applies to debit cards | No (discount applies to cash only) | No (cannot surcharge debit) | Varies |
@@ -1221,7 +1221,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             "dateModified": new Date(post.date).toISOString(),
             "author": {
               "@type": "Person",
-              "name": "Josh Cornia",
+              "name": "UBC Unlimited Team",
               "url": "https://ubcunlimited.com/about"
             },
             "publisher": {
@@ -1270,7 +1270,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             <span className="text-white/30">·</span>
             <span className="flex items-center gap-1.5">
               <span className="w-5 h-5 rounded-full bg-[#c9a84c]/20 flex items-center justify-center text-[#c9a84c] text-[9px] font-bold">JC</span>
-              <span>By <span className="text-white/60 font-medium">Josh Cornia</span>, UBC Unlimited</span>
+              <span>By <span className="text-white/60 font-medium">UBC Unlimited Team</span></span>
             </span>
           </div>
         </div>

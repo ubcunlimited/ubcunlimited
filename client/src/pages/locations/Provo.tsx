@@ -78,7 +78,7 @@ const PROVO_BENEFITS = [
   },
   {
     icon: DollarSign,
-    title: "Cash Discount & Dual Pricing Available",
+    title: "Cash Discount & Surcharging Available",
     desc: "Eliminate processing fees entirely with our cash discount program — popular with Provo restaurants, retail, and service businesses looking to protect margins.",
   }
 ];

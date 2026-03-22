@@ -39,7 +39,7 @@ const RESULT_CARDS: ResultCard[] = [
     icon: TrendingDown,
     industry: "Restaurant",
     challenge: "A Provo full-service restaurant was paying an effective rate of 3.8% on $85,000/month in card volume — over $3,200/month in processing fees with no clear breakdown of what they were being charged.",
-    solution: "UBC Unlimited performed a free statement review, identified excessive interchange downgrades, and implemented a dual pricing program with SkyTab POS. Setup and staff training were completed in a single day.",
+    solution: "UBC Unlimited performed a free statement review, identified excessive interchange downgrades, and implemented a cash discount & surcharging program with SkyTab POS. Setup and staff training were completed in a single day.",
     result: "Net processing cost dropped to under $200/month. The owner reinvested the savings into a second location within 18 months.",
     metric: "$36,000+",
     metricLabel: "Saved in Year One",
@@ -64,7 +64,7 @@ const TESTIMONIALS: Testimonial[] = [
     business: "Salt Lake City Restaurant",
     city: "Salt Lake City, UT",
     industry: "Restaurants",
-    quote: "UBC Unlimited cut our processing fees significantly. Josh and his team actually took the time to understand our business before recommending anything. I've never had a processor do that before.",
+    quote: "UBC Unlimited cut our processing fees significantly. The UBC Unlimited team actually took the time to understand our business before recommending anything. I've never had a processor do that before.",
     rating: 5,
     featured: true,
   },
@@ -410,7 +410,7 @@ export default function Testimonials() {
         <div className="container">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-center">
             {[
-              { icon: Award, title: "20+ Years of Expertise", desc: "Josh Cornia and the UBC Unlimited team have been serving Utah merchants since the early 2000s." },
+              { icon: Award, title: "20+ Years of Expertise", desc: "the UBC Unlimited team have been serving Utah merchants since the early 2000s." },
               { icon: CheckCircle, title: "No Long-Term Contracts", desc: "We earn your business every month. No lock-in, no early termination fees, no surprises." },
               { icon: Star, title: "Local Utah Support", desc: "A real person who knows your business — not a call center. Your dedicated rep answers when you call." },
             ].map((item) => {

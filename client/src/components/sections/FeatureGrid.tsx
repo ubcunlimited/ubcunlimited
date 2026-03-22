@@ -36,7 +36,7 @@ const DEFAULT_FEATURES: Feature[] = [
   {
     icon: ShieldCheck,
     title: "No Contracts*",
-    body: "We don't lock you in. UBC Unlimited operates on simple month-to-month agreements because we earn your business through service, not fine print.",
+    body: "We don't lock you in. UBC Unlimited operates on simple month-to-month agreements because we earn your business through service, not fine print. Certain solutions may require an agreement, which will be disclosed upfront.",
   },
   {
     icon: Zap,

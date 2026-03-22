@@ -165,7 +165,7 @@ function QuoteForm({ onSuccess }: { onSuccess: () => void }) {
     mutation.mutate(form);
   };
 
-  const solutionOptions = ["Credit Card Processing", "Cash Discounting / Dual Pricing", "POS System", "eCommerce / Payment Gateway", "ACH / eCheck", "Mobile Processing", "Virtual Terminal", "Gift & Loyalty", "High-Risk Processing"];
+  const solutionOptions = ["Credit Card Processing", "Cash Discounting / Cash Discount & Surcharging", "POS System", "eCommerce / Payment Gateway", "ACH / eCheck", "Mobile Processing", "Virtual Terminal", "Gift & Loyalty", "High-Risk Processing"];
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
@@ -336,7 +336,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState<Tab | null>(null);
 
   const tabs: { id: Tab; label: string; icon: React.ReactNode; desc: string }[] = [
-    { id: "consultation", label: "Book a Consultation", icon: <CalendarCheck size={18} />, desc: "Schedule a free, no-pressure call with a local Utah expert." },
+    { id: "consultation", label: "Book a Consultation", icon: <CalendarCheck size={18} />, desc: "Schedule an in-depth, no-pressure conversation with a local Utah expert. We will take time to learn about your setup and help find a solution that is right for you." },
     { id: "quote", label: "Request a Quote", icon: <FileText size={18} />, desc: "Tell us about your business and get a custom pricing proposal." },
     { id: "statement", label: "Statement Review", icon: <Upload size={18} />, desc: "Upload your statement and see exactly how much you can save." },
   ];
