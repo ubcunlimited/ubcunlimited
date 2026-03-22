@@ -575,10 +575,12 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
 
   const TERMINAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_f46e2fbc.jpg";
   const CASH_DISCOUNT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-cash-discount-jfmB57PZVctCXZVaSjpwi2.webp";
+  const INVOICE_MOCKUP_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/invoice-mockup-S7V7Gu45yZi4Lx5S8PuZPJ.webp";
   const isCreditCard = data.slug === "credit-card-processing";
   const isCashDiscount = data.slug === "surcharge-cash-discount";
-  const hasHeroImage = isCreditCard || isCashDiscount;
-  const heroImg = isCashDiscount ? CASH_DISCOUNT_IMG : TERMINAL_IMG;
+  const isInvoicing = data.slug === "invoicing";
+  const hasHeroImage = isCreditCard || isCashDiscount || isInvoicing;
+  const heroImg = isCashDiscount ? CASH_DISCOUNT_IMG : isInvoicing ? INVOICE_MOCKUP_IMG : TERMINAL_IMG;
 
   const solutionStats = SOLUTION_STATS[data.slug] ?? SOLUTION_STATS["credit-card-processing"];
   const howItWorks = SOLUTION_HOW_IT_WORKS[data.slug] ?? SOLUTION_HOW_IT_WORKS["default"];
@@ -675,7 +677,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               <div className="hidden lg:block">
                 <img
                   src={heroImg}
-                  alt={isCashDiscount ? "Cash discount payment terminal at retail checkout — UBC Unlimited" : "Modern credit card terminal — UBC Unlimited merchant services"}
+                  alt={isCashDiscount ? "Cash discount payment terminal at retail checkout — UBC Unlimited" : isInvoicing ? "Branded digital invoice with Pay Now button — UBC Unlimited invoicing" : "Modern credit card terminal — UBC Unlimited merchant services"}
                   className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
                 />
               </div>
