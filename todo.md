@@ -77,3 +77,5 @@
 - [x] POS page: update meta description to include 14-day launch timeline
 - [x] POS page: add "Local install, training & support" back as fifth hero bullet
 - [x] POS page: add "Lifetime hardware warranty included" as sixth hero bullet
+- [x] Quick-stat widget: show "24–48h / Launch" on all non-POS solution pages (currently shows 14-Day)
+- [x] Fraud FAQ: add 3D Secure availability to the "How do you handle fraud" answer

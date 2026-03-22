@@ -304,7 +304,7 @@ const solutionsData: SolutionData[] = [
     faqs: [
       { question: "What payment gateways do you support?", answer: "We work with a wide variety of payment gateways. During your consultation, we'll evaluate your platform, volume, and business type to recommend the best fit for your specific setup." },
       { question: "What platforms do you integrate with?", answer: "We integrate with all major eCommerce platforms including WooCommerce, Shopify, Magento, BigCommerce, and custom-built websites via API." },
-      { question: "How do you handle fraud?", answer: "Our gateway options include AVS verification, CVV checking, velocity filters, and machine learning fraud detection to protect your revenue." },
+      { question: "How do you handle fraud?", answer: "Our gateway options include AVS verification, CVV checking, velocity filters, and machine learning fraud detection to protect your revenue. We also support 3D Secure (3DS2) authentication — an additional layer of cardholder verification that shifts chargeback liability to the issuing bank on qualifying transactions, significantly reducing your fraud exposure on online orders." },
       { question: "Can you support high-risk eCommerce businesses?", answer: "Yes, on a case-by-case basis. Certain gateways in our network are specifically designed for high-risk and specialty merchants. We'll evaluate your business and connect you with the right solution." },
     ],
     relatedSolutions: ["/solutions/virtual-terminals", "/solutions/invoicing", "/solutions/mobile-processing"],
@@ -906,7 +906,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               {/* Quick stats */}
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { icon: Clock, label: "14-Day", sub: "Launch From Approval" },
+                  { icon: Clock, label: data.slug === "pos-systems" ? "14-Day" : "24–48h", sub: data.slug === "pos-systems" ? "Launch From Approval" : "Launch" },
                   { icon: TrendingUp, label: "20+", sub: "Years Experience" },
                   { icon: Zap, label: "Local", sub: "Utah Support" },
                 ].map((item) => (
