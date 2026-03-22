@@ -71,3 +71,5 @@
 - [x] Fix ACH page cost comparison: $40–$60 → $20–$40
 - [x] Add low-risk merchant disclaimer to "24–48h Avg. Activation" stat on credit card processing page
 - [x] POS Systems page: change "24–48h Installation" stat to "14-Day Launch / From Approval" and add matching disclaimer
+- [x] POS page: update "On-Site Installation" How It Works step to reference 14-day go-live target
+- [x] POS page: update "Ready to go in 24–48 hours" impact line in challenge-solution pairs to 14-day language

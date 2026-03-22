@@ -122,7 +122,7 @@ export const SOLUTION_PAIRS: Record<string, SolutionChallengePair[]> = {
       solution: "Dual-pricing-ready POS and terminal hardware",
       solutionDetail: "We supply terminals and POS systems pre-configured for surcharge & cash discount solutions. Customer-facing screens show both prices clearly, receipts are compliant, and reporting separates cash and card transactions automatically.",
       solutionTag: "Hardware & Setup",
-      impact: "Ready to go in 24–48 hours",
+      impact: "Go-live target: 14 days from approval",
     },
   ],
 

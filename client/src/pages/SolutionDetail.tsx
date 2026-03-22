@@ -102,7 +102,7 @@ const SOLUTION_HOW_IT_WORKS: Record<string, { step: string; title: string; desc:
   "pos-systems": [
     { step: "01", title: "Consultation & Demo", desc: "We walk you through SkyTab's features and configure a demo around your specific menu, floor plan, and service model." },
     { step: "02", title: "Custom Configuration", desc: "We build your menu, set up your floor plan, configure staff permissions, and integrate your online ordering before installation day." },
-    { step: "03", title: "On-Site Installation", desc: "Our Utah-based team installs your hardware, trains your staff, and stays until everything is running smoothly." },
+    { step: "03", title: "On-Site Installation & Go-Live", desc: "Our Utah-based team installs your hardware, trains your staff, and stays until everything is running smoothly — targeting a full go-live within 14 days of approval." },
   ],
   "high-risk-processing": [
     { step: "01", title: "Consultation & Assessment", desc: "We evaluate your business model, processing history, and risk profile to identify the best acquiring bank partners for your situation." },
