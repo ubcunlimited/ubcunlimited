@@ -62,3 +62,4 @@
 - [x] Update Book a Consultation copy to "Schedule an in-depth, no-pressure conversation..." with full new text
 - [x] Add pricing asterisk: rates reflect low-risk merchants; medium/high-risk may differ
 - [x] Add month-to-month agreement note: certain solutions require an agreement
+- [x] Rename "Cash Discount & Surcharging" and "Cash Discounting" to "Surcharging & Cash Discount Solutions" site-wide

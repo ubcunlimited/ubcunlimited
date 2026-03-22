@@ -14,7 +14,7 @@ interface KeywordTickerProps {
 const DEFAULT_ITEMS = [
   "Credit Card Processing",
   "Cash Discount",
-  "Cash Discount & Surcharging",
+  "Surcharging & Cash Discount Solutions",
   "Same Day Funding",
   "ACH Processing",
   "Payment Gateway",

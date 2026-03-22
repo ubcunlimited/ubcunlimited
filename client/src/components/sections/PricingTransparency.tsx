@@ -35,7 +35,7 @@ const models = [
     ctaColor: "text-[#2a7a6f]",
   },
   {
-    name: "Cash Discount / Cash Discount & Surcharging",
+    name: "Cash Discount / Surcharging & Cash Discount Solutions",
     badge: "Zero-Cost Option",
     badgeColor: "bg-[#080808] text-[#c9a84c] border border-[#c9a84c]/30",
     range: "0% to you",
@@ -88,7 +88,7 @@ const comparisonRows: { feature: string; ubc: CellValue; stripe: CellValue; squa
     note: "Interchange-plus pricing can save 0.5–1.5% vs. flat-rate for businesses with favorable card mix.",
   },
   {
-    feature: "Cash Discount / Cash Discount & Surcharging",
+    feature: "Cash Discount / Surcharging & Cash Discount Solutions",
     ubc: true,
     stripe: false,
     square: false,

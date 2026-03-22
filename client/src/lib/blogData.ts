@@ -105,9 +105,9 @@ export const blogPosts: BlogPostMeta[] = [
   },
   {
     slug: "cash-discounting-surcharging-utah",
-    title: "Cash Discounting vs. Surcharging: What Utah Businesses Need to Know",
+    title: "Surcharging & Cash Discount Solutions vs. Surcharging: What Utah Businesses Need to Know",
     excerpt:
-      "Both cash discounting and surcharging can help offset processing costs, but they work differently and carry different rules. Utah businesses have more flexibility than most states, but getting the implementation wrong can create compliance problems. Here's a clear breakdown of both options and how to choose the right one.",
+      "Both surcharging & cash discount solutions and surcharging can help offset processing costs, but they work differently and carry different rules. Utah businesses have more flexibility than most states, but getting the implementation wrong can create compliance problems. Here's a clear breakdown of both options and how to choose the right one.",
     category: "Pricing & Fees",
     date: "2025-04-08",
     readTime: "7 min read",

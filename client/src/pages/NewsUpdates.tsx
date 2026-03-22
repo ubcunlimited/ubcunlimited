@@ -58,7 +58,7 @@ const industryNews = [
   {
     date: "February 2026",
     headline: "FTC Issues New Guidance on Cash Discount Program Disclosures",
-    summary: "The FTC clarified disclosure requirements for businesses using cash discount & surcharging programs. All signage must clearly state the cash price and the card price at the point of sale. UBC Unlimited clients are already compliant under our standard implementation.",
+    summary: "The FTC clarified disclosure requirements for businesses using surcharging & cash discount programs. All signage must clearly state the cash price and the card price at the point of sale. UBC Unlimited clients are already compliant under our standard implementation.",
   },
   {
     date: "January 2026",

@@ -34,7 +34,7 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
     return {
       text: "Our **Cash Discount Program** allows you to eliminate credit card processing fees entirely by offering a small discount to customers who pay with cash. Most businesses see their effective processing cost drop to near zero. It's fully compliant with Visa/Mastercard rules and requires no changes to your existing pricing — just a small discount for cash payers.",
       links: [
-        { label: "Learn about Cash Discounting", href: "/solutions/dual-pricing" },
+        { label: "Learn about Surcharging & Cash Discount Solutions", href: "/solutions/dual-pricing" },
         { label: "Request a Quote", href: "/consultation" },
       ],
     };
@@ -45,7 +45,7 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
     return {
       text: "**Credit Card Surcharging** lets you pass your processing fees directly to customers who pay by credit card, while debit card and cash transactions remain fee-free. Surcharging is legal in most U.S. states (with a few exceptions) and must follow Visa/Mastercard disclosure rules. We handle all the compliance setup for you.",
       links: [
-        { label: "Surcharging & Cash Discounting", href: "/solutions/dual-pricing" },
+        { label: "Surcharging & Surcharging & Cash Discount Solutions", href: "/solutions/dual-pricing" },
         { label: "Book a Consultation", href: "/consultation" },
       ],
     };
@@ -54,8 +54,8 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
   // Dual pricing
   if (/dual.?pric/.test(q)) {
     return {
-      text: "**Cash Discount & Surcharging** displays two prices at the point of sale — a cash price and a card price — so customers can choose how they want to pay. It's a transparent, compliant way to offset processing costs. We can set up cash discount & surcharging on most POS systems and terminals.",
-      links: [{ label: "Cash Discount & Surcharging Details", href: "/solutions/dual-pricing" }],
+      text: "**Surcharging & Cash Discount Solutions** displays two prices at the point of sale — a cash price and a card price — so customers can choose how they want to pay. It's a transparent, compliant way to offset processing costs. We can set up surcharging & cash discount solutions on most POS systems and terminals.",
+      links: [{ label: "Surcharging & Cash Discount Solutions Details", href: "/solutions/dual-pricing" }],
     };
   }
 
@@ -100,7 +100,7 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
   // Rates / fees / pricing
   if (/rate|fee|cost|pric|how much|interchange|flat.?rate|tiered/.test(q)) {
     return {
-      text: "Processing is priced based on your industry, monthly volume, card mix, and the pricing model that fits your business best. We offer several pricing structures — as well as cost-elimination programs like cash discounting and surcharging. The best way to get an accurate quote is a **statement review** — we'll analyze your current processing costs and show you exactly what you'd pay with us.",
+      text: "Processing is priced based on your industry, monthly volume, card mix, and the pricing model that fits your business best. We offer several pricing structures — as well as cost-elimination programs like surcharging & cash discount solutions and surcharging. The best way to get an accurate quote is a **statement review** — we'll analyze your current processing costs and show you exactly what you'd pay with us.",
       links: [
         { label: "Statement Review", href: "/statement-review" },
         { label: "Get a Quote", href: "/consultation" },
@@ -194,7 +194,7 @@ export default function LiveChat() {
     {
       id: 0,
       from: "bot",
-      text: "Hi! 👋 I'm the UBC Unlimited virtual assistant. Ask me about cash discounting, surcharging, high-risk processing, POS systems, rates, or anything else — or type **contact** to reach our team directly.",
+      text: "Hi! 👋 I'm the UBC Unlimited virtual assistant. Ask me about surcharging & cash discount solutions, surcharging, high-risk processing, POS systems, rates, or anything else — or type **contact** to reach our team directly.",
       timestamp: new Date(),
     },
   ]);
