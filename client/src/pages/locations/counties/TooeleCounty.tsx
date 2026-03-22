@@ -36,7 +36,7 @@ export default function TooeleCounty() {
     <PageLayout>
       <SEO
         title="Merchant Services Tooele County, Utah | UBC Unlimited"
-        description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Tooele County, Utah. Local support, no contracts, statement review."
+        description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Tooele County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/tooele-county"
         schema={schema}
       />
@@ -123,7 +123,7 @@ export default function TooeleCounty() {
               { icon: MapPin, title: "Truly Local — Utah Based", desc: "We're not a national call center. UBC Unlimited serves Tooele County businesses with a local rep who knows the Utah market." },
               { icon: TrendingDown, title: "Lower Rates Than National Processors", desc: "Most Tooele County businesses overpay Stripe, Square, or their bank. Our statement review shows you exactly where you can save." },
               { icon: Clock, title: "Approved & Processing in 24–48 Hours", desc: "Most Tooele County businesses are live and processing within one to two business days. We handle setup, equipment, and training." },
-              { icon: ShieldCheck, title: "No Contracts, No Rate Increases", desc: "Month-to-month agreements only. Your rate is your rate — we never raise fees after you sign up." },
+              { icon: ShieldCheck, title: "No Contracts*, No Rate Increases", desc: "Month-to-month agreements only. Your rate is your rate — we never raise fees after you sign up." },
               { icon: Users, title: "Dedicated Local Account Rep", desc: "You get a direct line to a real person who knows your account. Not a ticket queue. Not a chatbot." },
               { icon: DollarSign, title: "Cash Discount & Dual Pricing Available", desc: "Eliminate processing fees entirely with our cash discount program — popular with Tooele County restaurants, retail, and service businesses." },
             ].map((benefit, i) => (
@@ -137,6 +137,7 @@ export default function TooeleCounty() {
             ))}
           </div>
         </div>
+          <p className="text-white/25 text-xs mt-6">* Certain platforms and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.</p>
       </section>
 
       {/* FAQ */}

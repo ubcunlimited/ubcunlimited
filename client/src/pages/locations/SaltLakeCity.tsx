@@ -86,7 +86,7 @@ const SLC_BENEFITS = [
   },
   {
     icon: ShieldCheck,
-    title: "No Contracts, No Rate Increases",
+    title: "No Contracts*, No Rate Increases",
     desc: "Month-to-month agreements only. Your rate is your rate — we never raise fees after you sign up, unlike many national processors.",
   },
   {
@@ -220,7 +220,7 @@ export default function SaltLakeCity() {
     <PageLayout>
       <SEO
         title="Merchant Services Salt Lake City, Utah | UBC Unlimited"
-        description="UBC Unlimited provides credit card processing, POS systems, cash discount programs, and merchant services to Salt Lake City businesses. Local support, no contracts, statement review."
+        description="UBC Unlimited provides credit card processing, POS systems, cash discount programs, and merchant services to Salt Lake City businesses. Local support, no contracts*, statement review."
         canonical="/locations/salt-lake-city"
         schema={schema}
       />
@@ -272,7 +272,7 @@ export default function SaltLakeCity() {
                   "Local Utah rep — not a call center",
                   "Most SLC businesses approved in 24–48 hours",
                   "Free statement review — see your exact savings",
-                  "No contracts, no rate increases, ever",
+                  "No contracts*, no rate increases, ever",
                   "Cash discount program available — eliminate fees entirely",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-white/70 text-sm">
@@ -415,6 +415,7 @@ export default function SaltLakeCity() {
               </motion.div>
             ))}
           </div>
+          <p className="text-white/25 text-xs mt-6">* Certain platforms and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.</p>
         </div>
       </section>
 

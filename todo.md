@@ -54,3 +54,5 @@
 - [x] Update hero badge text to "Local Expertise · Nationwide Reach"
 - [x] Update top announcement bar to "Local Expertise · Nationwide Reach — 20+ Years in Business"
 - [x] Update hero headline to "Your Local Merchant Services Expert" with matching subheading (Option 4)
+- [x] Add asterisk to all "no contract" mentions site-wide and add footnote: certain platforms require a contract, disclosed prior to agreement
+- [x] Add asterisk to all "no contract" mentions site-wide and add footnote: certain platforms require a contract, disclosed prior to agreement

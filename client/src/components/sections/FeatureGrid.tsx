@@ -35,7 +35,7 @@ interface FeatureGridProps {
 const DEFAULT_FEATURES: Feature[] = [
   {
     icon: ShieldCheck,
-    title: "No Contracts",
+    title: "No Contracts*",
     body: "We don't lock you in. UBC Unlimited operates on simple month-to-month agreements because we earn your business through service, not fine print.",
   },
   {
@@ -133,6 +133,12 @@ export default function FeatureGrid({
             );
           })}
         </div>
+        {/* Contract footnote — shown whenever the feature list includes a No Contracts* item */}
+        {features.some(f => f.title.toLowerCase().includes("no contracts")) && (
+          <p className={`text-xs mt-6 ${dark ? "text-white/30" : "text-gray-400"}`}>
+            * Certain platforms and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.
+          </p>
+        )}
       </div>
     </section>
   );

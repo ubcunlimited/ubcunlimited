@@ -68,7 +68,7 @@ const OREM_BENEFITS = [
   },
   {
     icon: ShieldCheck,
-    title: "No Contracts, No Rate Increases",
+    title: "No Contracts*, No Rate Increases",
     desc: "Month-to-month agreements only. Your rate is your rate — we never raise fees after you sign up, unlike many national processors.",
   },
   {
@@ -176,7 +176,7 @@ export default function Orem() {
     <PageLayout>
       <SEO
         title="Merchant Services Orem, Utah | UBC Unlimited"
-        description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Orem, Utah businesses. Local support, no contracts, statement review."
+        description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Orem, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/orem"
         schema={schema}
       />
@@ -204,12 +204,13 @@ export default function Orem() {
               <p className="text-white/60 text-lg leading-relaxed mb-4 max-w-xl">UBC Unlimited serves Orem businesses with credit card processing, POS systems, cash discount programs, and merchant accounts — with local Utah support that national processors simply can't match.</p>
               <p className="text-white/45 text-sm leading-relaxed mb-8 max-w-xl">From the retail corridor on State Street to the restaurants and medical practices near UVU, we help Orem businesses accept payments smarter, save on processing costs, and grow with confidence.</p>
               <ul className="space-y-2.5 mb-8">
-                {["Local Utah rep — not a call center","Most businesses approved in 24–48 hours","Free statement review — see your exact savings","No contracts, no rate increases, ever","Cash discount program available — eliminate fees entirely"].map((item) => (
+                {["Local Utah rep — not a call center","Most businesses approved in 24–48 hours","Free statement review — see your exact savings","No contracts*, no rate increases, ever","Cash discount program available — eliminate fees entirely"].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-white/70 text-sm">
                     <CheckCircle size={15} className="text-[#c9a84c] mt-0.5 shrink-0" />{item}
                   </li>
                 ))}
               </ul>
+              <p className="text-white/25 text-xs mt-3">* Certain platforms and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/contact" className="btn-gold text-sm py-3 px-7 justify-center">Request a Quote <ArrowRight size={15} /></Link>
                 <Link href="/statement-review" className="btn-outline-white text-sm py-3 px-7 justify-center">Statement Review</Link>

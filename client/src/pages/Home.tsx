@@ -312,7 +312,8 @@ export default function Home() {
                       <>Get Started <ArrowRight size={15} /></>
                     )}
                   </button>
-                  <p className="text-white/30 text-xs text-center mt-4">No contracts. No pressure. Just honest advice from a local Utah team.</p>
+                  <p className="text-white/30 text-xs text-center mt-4">No contracts*. No pressure. Just honest advice from a local Utah team.</p>
+                  <p className="text-white/20 text-xs text-center mt-1">* Certain platforms may require a contract. This will be disclosed prior to any agreement.</p>
                 </form>
               )}
             </motion.div>
