@@ -96,7 +96,7 @@ const SLC_BENEFITS = [
   },
   {
     icon: DollarSign,
-    title: "Surcharging & Cash Discount Available",
+    title: "Surcharge & Cash Discount Solutions Available",
     desc: "Eliminate processing fees entirely with our cash discount program — popular with SLC restaurants, retail, and service businesses looking to protect margins.",
   },
 ];

@@ -45,13 +45,13 @@ export default function Solutions() {
     <PageLayout>
       <SEO
         title="Payment Processing Solutions for Utah Businesses | UBC Unlimited"
-        description="Credit card processing, POS systems, surcharging & cash discount solutions, ACH, ecommerce gateways, and more. UBC Unlimited offers tailored payment solutions for Utah businesses of every size."
+        description="Credit card processing, POS systems, surcharge & cash discount solutions, ACH, ecommerce gateways, and more. UBC Unlimited offers tailored payment solutions for Utah businesses of every size."
         canonical="/solutions"
         schema={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           "name": "Payment Processing Solutions",
-          "description": "UBC Unlimited offers a full suite of payment processing solutions for Utah businesses including credit card processing, POS systems, surcharging & cash discount solutions, ACH, and ecommerce gateways.",
+          "description": "UBC Unlimited offers a full suite of payment processing solutions for Utah businesses including credit card processing, POS systems, surcharge & cash discount solutions, ACH, and ecommerce gateways.",
           "url": "https://ubcunlimited.com/solutions",
           "provider": {
             "@type": "LocalBusiness",
