@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle, ChevronRight, Clock, Phone, Shield, TrendingUp, Zap, Star, AlertCircle } from "lucide-react";
-import SkyTabConfigurator from "@/components/SkyTabConfigurator";
+import SkyTabPOSBuilder from "@/components/sections/SkyTabPOSBuilder";
 import { SOLUTION_PAIRS } from "@/lib/solutionPairs";
 import { getSolutionPath } from "@/lib/solutionTagMap";
 import PageLayout from "@/components/layout/PageLayout";
@@ -932,28 +932,8 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
         </div>
       </section>
 
-      {/* ── SkyTab POS Configurator — POS Systems page only ── */}
-      {data.slug === "pos-systems" && (
-        <section className="py-16 bg-[#0a0a0a]">
-          <div className="container">
-            <div className="text-center mb-8">
-              <div className="teal-divider mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
-                Build Your SkyTab POS System
-              </h2>
-              <p className="text-white/50 max-w-2xl mx-auto text-sm">
-                Use our interactive configurator to select the right hardware and features for your business. A local Utah expert will follow up with a custom quote.
-              </p>
-            </div>
-            <SkyTabConfigurator compact={true} />
-            <div className="text-center mt-8">
-              <Link href="/build-a-pos" className="inline-flex items-center gap-2 text-[#c9a84c] text-sm font-semibold hover:underline">
-                Open Full Configurator <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* ── SkyTab POS Builder — POS Systems page only ── */}
+      {data.slug === "pos-systems" && <SkyTabPOSBuilder />}
 
       {/* Gateway Logos — eCommerce only */}
       {data.slug === "ecommerce-payments" && (
