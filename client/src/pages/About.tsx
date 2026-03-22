@@ -40,7 +40,7 @@ const differentiators = [
   "Tailored setups based on your industry and volume",
   "Industry-specific recommendations from real experience",
   "Access to a wide range of payment technology solutions",
-  "Month-to-month agreements — no long-term lock-in",
+  "Month-to-month agreements — no long-term lock-in*",
 ];
 
 export default function About() {
@@ -179,6 +179,9 @@ export default function About() {
                   </div>
                 ))}
               </div>
+              <p className="text-white/40 text-xs mt-4 leading-relaxed">
+                * Month-to-month agreements apply to most standard accounts. Certain solutions or equipment financing programs may require a formal agreement with specific terms. All such terms will be clearly disclosed before you sign anything.
+              </p>
             </div>
             <div className="glass-card rounded-2xl p-8">
               <div className="text-white/40 text-xs uppercase tracking-widest font-medium mb-6">Our Commitment to You</div>
