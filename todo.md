@@ -89,3 +89,4 @@
 - [x] Invoicing page: remove "Are there gateway fees for invoicing?" FAQ entry
 - [x] Invoicing page: generate branded invoice mockup and add to hero section
 - [x] Surcharge & Cash Discount page: update hero title to "Surcharge & Cash Discount Solutions"
+- [x] Surcharge & Cash Discount page: fix program names and rephrase description to emphasize offsetting costs and maximizing customer savings
