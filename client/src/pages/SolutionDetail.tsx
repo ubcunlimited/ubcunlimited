@@ -472,7 +472,7 @@ const solutionsData: SolutionData[] = [
   {
     slug: "surcharge-cash-discount",
     icon: "💰",
-    title: "Surcharge & Cash Discount Solutions & Surcharging",
+    title: "Surcharge & Cash Discount Solutions",
     subtitle: "Keep more of every sale — legally pass processing costs to the card, not your bottom line",
     metaDescription: "Cash discounting, surcharge & cash discount solutions & surcharging programs for Utah businesses. Eliminate credit card processing fees legally & keep more of every sale.",
     description: "Credit card processing fees quietly drain 2.5% to 4% from every card transaction. UBC Unlimited offers three proven, fully compliant programs — Surcharge & Cash Discount Solutions, Credit Card Surcharging, and Surcharge & Cash Discount Solutions — that let your business recover those costs without raising prices across the board. We'll walk you through each option, show you a real cost comparison, and set up the program that fits your business, your customers, and your state's regulations.",
