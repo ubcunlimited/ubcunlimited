@@ -612,7 +612,7 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-base group-hover:text-[#c9a84c] transition-colors">Browse by City</div>
-                  <div className="text-white/45 text-xs">20+ featured Utah cities</div>
+                  <div className="text-white/45 text-xs">134+ cities across all 29 counties</div>
                 </div>
               </div>
               <p className="text-white/55 text-sm mb-4 leading-relaxed">
