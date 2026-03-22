@@ -46,7 +46,7 @@ const SOLUTION_STATS: Record<string, { value: string; label: string }[]> = {
     { value: "Lifetime", label: "Hardware Warranty" },
     { value: "0%", label: "Online Order Commission" },
     { value: "24/7", label: "Local Support" },
-    { value: "24–48h", label: "Installation" },
+    { value: "14-Day", label: "Launch From Approval¹" },
   ],
   "ecommerce-payments": [
     { value: "350+", label: "Platform Integrations" },
@@ -728,6 +728,11 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               ¹ Activation timeframe applies to low-risk merchant accounts. High-risk or complex accounts may require additional review time.
             </p>
           )}
+          {data.slug === "pos-systems" && (
+            <p className="text-center text-[#080808]/50 text-[11px] mt-4">
+              ¹ 14-day launch timeline is a target from approval to go-live. Actual timeline depends on system complexity, menu size, and installation scope.
+            </p>
+          )}
         </div>
       </div>
 
@@ -901,7 +906,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               {/* Quick stats */}
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { icon: Clock, label: "24–48h", sub: "Avg. Activation" },
+                  { icon: Clock, label: "14-Day", sub: "Launch From Approval" },
                   { icon: TrendingUp, label: "20+", sub: "Years Experience" },
                   { icon: Zap, label: "Local", sub: "Utah Support" },
                 ].map((item) => (
