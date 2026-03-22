@@ -166,7 +166,7 @@ export const SOLUTION_PAIRS: Record<string, SolutionChallengePair[]> = {
       challenge: "Paying 2–3% credit card fees on large recurring payments",
       challengeDetail: "For rent collection, B2B invoices, and high-ticket recurring services, credit card fees are disproportionately expensive compared to the value of the transaction.",
       solution: "ACH bank transfer processing at a fraction of the cost",
-      solutionDetail: "ACH typically runs between 0.35%–0.90% — compared to 2–3% for credit cards. On a $2,000 rent payment, that difference can be $40–$60 saved per transaction. For businesses with high volume or large average tickets, the annual savings are substantial.",
+      solutionDetail: "ACH typically runs between 0.35%–0.90% — compared to 2–3% for credit cards. On a $2,000 rent payment, that difference can be $20–$40 saved per transaction. For businesses with high volume or large average tickets, the annual savings are substantial.",
       solutionTag: "ACH Processing",
       impact: "Dramatic cost savings on large payments",
     },

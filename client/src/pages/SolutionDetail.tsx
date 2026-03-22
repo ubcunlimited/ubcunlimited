@@ -33,7 +33,7 @@ const SOLUTION_STATS: Record<string, { value: string; label: string }[]> = {
   "ach-echeck-processing": [
     { value: "60–80%", label: "Lower Cost vs. Cards" },
     { value: "Same Day", label: "ACH Available" },
-    { value: "$0", label: "NSF Risk w/ Verification" },
+    { value: "$0", label: "NSF Risk w/ Guarantee" },
     { value: "Unlimited", label: "Batch Size" },
   ],
   "check-guarantee": [

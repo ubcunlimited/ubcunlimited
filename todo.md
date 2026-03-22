@@ -67,3 +67,5 @@
 - [x] Audit and update all URL slugs, nav labels, and page descriptions for clarity and brand consistency
 - [x] Fix /solutions/credit-card-processing page: rename $0 Gateway Fees, update activation label, remove problem item 2, add flexible terms asterisk, fix surcharge redundancy in pricing model and FAQ, rename dual pricing FAQ question
 - [x] Fix /solutions/ach-echeck-processing: update NSF stat, add rate comparison highlight, remove clearing time refs, update settlement timeframe to 3-5 days, replace Features item 5
+- [x] Fix ACH page stat label: "NSF Risk w/ Verification" → "NSF Risk w/ Guarantee"
+- [x] Fix ACH page cost comparison: $40–$60 → $20–$40
