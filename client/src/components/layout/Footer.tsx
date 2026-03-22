@@ -14,7 +14,6 @@ const COMPANY_LINKS = [
   { label: "Counties We Serve", href: "/counties" },
   { label: "Cities We Serve", href: "/cities" },
   { label: "Build a POS", href: "/solutions/pos-systems" },
-  { label: "Agent / ISO Program", href: "/agent-iso" },
 ];
 
 const LEGAL_LINKS = [

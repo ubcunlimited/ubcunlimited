@@ -193,6 +193,7 @@ export default function AgentISO() {
         title="Agent & ISO Partner Program"
         description="Join UBC Unlimited's Agent & ISO partner program. Earn lifetime residuals, competitive splits, and high-risk merchant access. Utah's top merchant services ISO opportunity."
         canonical="/agent-iso"
+        noIndex={true}
         schema={{
           "@context": "https://schema.org",
           "@type": "WebPage",

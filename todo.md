@@ -108,3 +108,5 @@
 - [x] Add SkyTab POS Configurator section to /solutions/pos-systems page
 - [x] Add /build-a-pos route to App.tsx and nav links
 - [x] Replace SkyTabConfigurator on /build-a-pos and /solutions/pos-systems with the existing configurator from /industries/bars-nightclubs
+- [x] Remove Agent / ISO Program link from all nav menus and footer
+- [x] Add noindex/nofollow meta tags to the Agent / ISO Program page
