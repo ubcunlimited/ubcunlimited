@@ -102,7 +102,7 @@ export default function Cities() {
         <div className="container py-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
-              { value: "20+", label: "Featured Utah Cities" },
+              { value: `${CITIES.length}+`, label: "Utah Cities We Serve" },
               { value: "All 29", label: "Counties Covered" },
               { value: "1,000+", label: "Utah Businesses Served" },
               { value: `${SITE.yearsInBusiness}+`, label: "Years of Local Experience" },
@@ -162,8 +162,8 @@ export default function Cities() {
         </section>
       )}
 
-      {/* Non-featured cities */}
-      {!noResults && nonFeaturedFiltered.length > 0 && (
+      {/* Non-featured cities — always visible */}
+      {!noResults && (
         <section className="bg-[#111] py-12 border-t border-white/5">
           <div className="container">
             <h2 className="text-xl font-extrabold text-white mb-2" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
@@ -173,7 +173,7 @@ export default function Cities() {
               We service businesses in these cities too. Click any city to request a consultation, or call us directly.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-              {nonFeaturedFiltered.map((city) => (
+              {(search ? nonFeaturedFiltered : CITIES.filter(c => !c.featured).sort((a,b) => b.population - a.population)).map((city) => (
                 <Link
                   key={city.slug}
                   href={`/cities/${city.slug}`}

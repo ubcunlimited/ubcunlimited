@@ -100,3 +100,4 @@
 - [x] Surcharge & Cash Discount page: rewrite equipment FAQ to emphasize case-by-case compliance assessment
 - [x] High-Risk Processing page: remove 24-72h approval time references and replace with accurate underwriting timeline messaging
 - [x] About page: add asterisk and footnote to month-to-month agreements reference
+- [x] Cities page: show all Utah cities in search results; non-featured cities link to consultation request page
