@@ -96,30 +96,38 @@ export default function Counties() {
               </p>
               <UtahCountyMap className="rounded-2xl overflow-hidden border border-white/10" />
             </div>
-            {/* County list / quick links */}
+            {/* County list / quick links — top 10 by population */}
             <div>
               <h2 className="text-xl md:text-2xl font-extrabold text-white mb-2" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
-                All 29 Utah Counties
+                Most Populated Counties
               </h2>
               <p className="text-white/50 text-sm mb-5">
-                Every county in Utah is served by UBC Unlimited. Featured counties have dedicated pages with local industry insights and tailored solutions.
+                Utah's top counties by population — each with a dedicated service page. Gold-starred counties have full local industry insights.
               </p>
-              <div className="grid grid-cols-2 gap-2 max-h-[520px] overflow-y-auto pr-1">
-                {COUNTIES.sort((a, b) => b.population - a.population).map((county) => (
-                  <Link
-                    key={county.slug}
-                    href={`/counties/${county.slug}`}
-                    className="group flex items-center gap-2 bg-white/5 hover:bg-[#c9a84c]/10 border border-white/10 hover:border-[#c9a84c]/30 rounded-xl px-3 py-2.5 transition-all"
-                  >
-                    <MapPin size={11} className={county.featured ? "text-[#c9a84c]" : "text-white/30"} />
-                    <div className="min-w-0">
-                      <div className="text-white/80 group-hover:text-white text-xs font-medium transition-colors truncate">{county.name}</div>
-                      <div className="text-white/30 text-[10px]">{county.population.toLocaleString()}</div>
-                    </div>
-                    {county.featured && <span className="ml-auto text-[#c9a84c] text-[9px] font-bold shrink-0">★</span>}
-                  </Link>
-                ))}
+              <div className="grid grid-cols-2 gap-2">
+                {COUNTIES
+                  .slice()
+                  .sort((a, b) => b.population - a.population)
+                  .slice(0, 10)
+                  .map((county) => (
+                    <Link
+                      key={county.slug}
+                      href={`/counties/${county.slug}`}
+                      className="group flex items-center gap-2 bg-white/5 hover:bg-[#c9a84c]/10 border border-white/10 hover:border-[#c9a84c]/30 rounded-xl px-3 py-2.5 transition-all"
+                    >
+                      <MapPin size={11} className={county.featured ? "text-[#c9a84c]" : "text-white/30"} />
+                      <div className="min-w-0">
+                        <div className="text-white/80 group-hover:text-white text-xs font-medium transition-colors truncate">{county.name}</div>
+                        <div className="text-white/30 text-[10px]">{county.population.toLocaleString()} pop.</div>
+                      </div>
+                      {county.featured && <span className="ml-auto text-[#c9a84c] text-[9px] font-bold shrink-0">★</span>}
+                    </Link>
+                  ))}
               </div>
+              <p className="text-white/35 text-xs mt-4">
+                Showing top 10 of 29 counties.{" "}
+                <a href="#all-counties" className="text-[#c9a84c] hover:underline">View all 29 counties ↓</a>
+              </p>
             </div>
           </div>
         </div>
@@ -172,7 +180,7 @@ export default function Counties() {
       )}
 
       {/* All counties finder */}
-      <section className="bg-[#111] py-16 border-t border-white/5">
+      <section id="all-counties" className="bg-[#111] py-16 border-t border-white/5">
         <div className="container">
           <h2 className="text-2xl font-extrabold text-white mb-2" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
             {search ? `Search Results for "${search}"` : "All 29 Utah Counties"}

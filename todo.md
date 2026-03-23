@@ -130,3 +130,4 @@
 - [x] high-risk-industries-dropped-by-stripe blog: replace "pre-dunning" with "pre-billing"
 - [x] Wire all site forms to LeadConnector webhook (consultation, statement review, contact, SkyTab configurator quote)
 - [x] Verify server CORS configuration allows frontend to reach tRPC API and webhook calls are server-side only
+- [x] Counties page map: only highlight/list the most populated counties (not all 29)
