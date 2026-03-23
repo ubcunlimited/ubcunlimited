@@ -139,3 +139,4 @@
 - [x] P1 perf: add fetchpriority="high" to hero LCP image
 - [x] P1 perf: add explicit width/height to logo image
 - [x] P1 perf: add preconnect hints for analytics domains
+- [x] Compress and convert all images on About, Solutions, and Industry pages to WebP

@@ -574,7 +574,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
 
   const relatedItems = NAV_SOLUTIONS.filter((s) => data.relatedSolutions?.includes(s.href));
 
-  const TERMINAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_f46e2fbc.jpg";
+  const TERMINAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-v2_1e6bdb8d.webp";
   const CASH_DISCOUNT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-cash-discount-jfmB57PZVctCXZVaSjpwi2.webp";
   const INVOICE_MOCKUP_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/invoice-mockup-S7V7Gu45yZi4Lx5S8PuZPJ.webp";
   const isCreditCard = data.slug === "credit-card-processing";

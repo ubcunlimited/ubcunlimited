@@ -9,17 +9,17 @@ import { CheckCircle, ArrowRight, ChevronLeft, ChevronRight, Send } from "lucide
 
 // ─── CDN Image URLs (correct sources from skytabmountainwest.com) ──────────────
 const IMG = {
-  tableService: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-table-service_aef4f9cd.png",
-  counterService: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-counter-service_757ed517.png",
+  tableService: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-table-service_78712795.webp",
+  counterService: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-counter-service_47ad432d.webp",
   air: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-air_24cf047b.webp",
   glass: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-glass_087fe917.webp",
   kiosk: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-kiosk_86132708.webp",
-  thermalPrinter: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-thermal-printer_0aeb48b1.png",
-  dotMatrix: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-dot-matrix_87e664b5.png",
-  kds: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-kds_0941eb20.png",
-  kdsBumpBar: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-bump-bar_99d0e5b7.png",
-  digitalScale: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-scale_2bdb67e6.png",
-  callerID: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-caller-id_650fca47.png",
+  thermalPrinter: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-thermal-printer_dc8f7da3.webp",
+  dotMatrix: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-dot-matrix_c9dd8b23.webp",
+  kds: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-kds_06721bca.webp",
+  kdsBumpBar: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-bump-bar_27f738b6.webp",
+  digitalScale: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-scale_6f31b37c.webp",
+  callerID: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-caller-id_02cee2cf.webp",
 };
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
