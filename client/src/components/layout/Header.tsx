@@ -117,10 +117,12 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group" aria-label="UBC Unlimited — Home">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_c7383863.webp"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_160w_103ef5b7.webp"
+              srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_160w_103ef5b7.webp 160w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_320w_8374c64a.webp 320w"
+              sizes="160px"
               alt="UBC Unlimited — Processing Without Limits"
-              width={320}
-              height={213}
+              width={160}
+              height={106}
               className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-12" : "h-12 lg:h-34"}`}
               style={{ maxWidth: scrolled ? "180px" : "160px" }}
             />

@@ -451,7 +451,7 @@ export default function Home() {
               <img
                 src={CONSULT_IMG}
                 srcSet={CONSULT_SRCSET}
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 587px"
                 alt="UBC Unlimited merchant services consultant reviewing payment processing options with Utah business owner"
                 loading="lazy"
                 decoding="async"

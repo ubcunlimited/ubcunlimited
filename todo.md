@@ -152,3 +152,10 @@
 - [x] Reduce space between hero content and navigation bar
 - [x] Further reduce gap between hero content and navigation bar
 - [x] Identify and fix all current project errors (blank screen on live site caused by manual chunk splitting race condition — removed manualChunks, kept content-hash filenames)
+- [x] Fix viewport meta: remove maximum-scale=1 (accessibility: allows user zoom)
+- [x] Add preconnect for plausible.io with crossorigin attribute
+- [x] Plausible analytics script already has defer — no change needed
+- [x] Fix footer touch targets: add py-2 px-1 min-h-[44px] to Privacy Policy / Disclaimer links
+- [x] Fix logo image: add srcset (160w/320w), correct width/height attrs, sizes=160px
+- [x] Fix consultation image: tighten sizes attribute to match actual display dimensions
+- [x] Make Google Fonts non-render-blocking via rel=preload + onload swap trick

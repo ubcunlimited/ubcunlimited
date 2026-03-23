@@ -220,7 +220,7 @@ export default function Footer() {
                 {i > 0 && <span className="mx-2 text-white/15" aria-hidden="true">·</span>}
                 <Link
                   href={item.href}
-                  className="text-white/35 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a84c] rounded"
+                  className="text-white/35 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a84c] rounded py-2 px-1 inline-block min-h-[44px] flex items-center"
                 >
                   {item.label}
                 </Link>

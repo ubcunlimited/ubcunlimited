@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+      content="width=device-width, initial-scale=1.0" />
     <title>UBC Unlimited — Utah Merchant Services</title>
     <meta name="description" content="UBC Unlimited provides merchant services, payment processing, POS systems, and more to Utah businesses. Local experts, competitive rates, 24/7 support." />
     <meta name="keywords" content="merchant services Utah, credit card processing Utah, POS systems Utah, payment processing Salt Lake City, SkyTab Utah, ACH processing Utah, dual pricing Utah" />
@@ -43,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://d2xsxph8kpxj0f.cloudfront.net" crossorigin />
-    <link rel="preconnect" href="https://plausible.io" />
+    <link rel="preconnect" href="https://plausible.io" crossorigin />
     <!-- Preload hero image for LCP — responsive hints so mobile gets the right size -->
     <link
       rel="preload"
@@ -54,8 +54,16 @@
       type="image/webp"
       fetchpriority="high"
     />
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+    <!-- Fonts: non-render-blocking via print media trick -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=DM+Serif+Display&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+    </noscript>
   </head>
 
   <body>
