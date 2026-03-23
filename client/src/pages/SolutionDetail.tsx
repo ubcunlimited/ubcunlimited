@@ -98,7 +98,7 @@ const SOLUTION_HOW_IT_WORKS: Record<string, { step: string; title: string; desc:
   default: [
     { step: "01", title: "Book a Consultation", desc: "Schedule an in-depth, no-pressure conversation with a local Utah expert. We will take time to learn about your setup and help find a solution that is right for you." },
     { step: "02", title: "Review & Proposal", desc: "We analyze your current costs and build a tailored proposal with transparent pricing — no surprises, no hidden fees." },
-    { step: "03", title: "Seamless Setup", desc: "Our team handles everything — equipment, integration, and training. Depending on the solution, businesses can be up and processing as fast as same day." },
+    { step: "03", title: "Seamless Setup", desc: "Our team handles everything — equipment, integration, and training. Most accounts are active within 24–48 hours. POS system installations typically require a 14-day lead time from approval." },
   ],
   "pos-systems": [
     { step: "01", title: "Consultation & Demo", desc: "We walk you through SkyTab's features and configure a demo around your specific menu, floor plan, and service model." },
@@ -145,7 +145,7 @@ const solutionsData: SolutionData[] = [
       "Month-to-month agreements for most business types",
       "Eliminate or reduce processing fees with cost-pass-through programs",
       "Accept every payment type your customers use",
-      "Fast onboarding — many accounts activated same day",
+      "Fast onboarding — most accounts activated within 24–48 hours",
       "$100,000 data breach protection for qualifying accounts",
     ],
     faqs: [

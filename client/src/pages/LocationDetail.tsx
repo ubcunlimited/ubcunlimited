@@ -49,7 +49,7 @@ export default function LocationDetail() {
     },
     {
       question: `How quickly can a ${location.city} business get set up?`,
-      answer: `Depending on the solution, businesses in ${location.city} can be up and processing as fast as same day. We handle the setup, training, and onboarding so you can focus on running your business.`,
+      answer: `Most accounts are approved and active within 24–48 hours. POS system installations typically require a 14-day lead time from approval. We handle the setup, training, and onboarding so you can focus on running your business.`,
     },
     {
       question: `Do you offer consultations for ${location.city} businesses?`,
@@ -125,7 +125,7 @@ export default function LocationDetail() {
             {[
               { v: SITE.yearsInBusiness, l: "Years in Business" },
               { v: "1000+", l: "Utah Businesses Served" },
-              { v: "24–48hr", l: "Average Onboarding" },
+              { v: "24–48hr", l: "Acct. Activation" },
               { v: "Local", l: "Utah-Based Support" },
             ].map((s) => (
               <div key={s.l} className="px-4">
@@ -195,7 +195,7 @@ export default function LocationDetail() {
                   `Local {location.city} support — we're in your community`,
                   "Industry-specific solutions tailored to your business type",
                   "Transparent pricing with no hidden fees",
-                  "Fast onboarding — as fast as same day, depending on the solution",
+                  "Fast onboarding — most accounts active in 24–48 hours (POS: 14-day lead time)",
                   "Authorized SkyTab reseller serving all of Utah",
                   "Free statement review — see exactly where you can save",
                 ].map((item, i) => (

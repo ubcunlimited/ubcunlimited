@@ -12,7 +12,7 @@ import SEO from "@/components/SEO";
 const HOW_IT_WORKS = [
   { step: "01", title: "Free Statement Review", desc: "Submit your current processing statement. We analyze every line and show you exactly where you're overpaying — no obligation." },
   { step: "02", title: "Custom Local Proposal", desc: "Our Utah-based team builds a tailored solution with transparent, competitive pricing that fits your business type and volume." },
-  { step: "03", title: "Seamless Setup", desc: "We handle everything — equipment, software integration, and staff training. Most businesses are live within 24–48 hours." },
+  { step: "03", title: "Seamless Setup", desc: "We handle everything — equipment, software integration, and staff training. Most accounts are active within 24–48 hours. POS system installations typically require a 14-day lead time from approval." },
 ];
 
 const SOLUTIONS = [
@@ -183,7 +183,7 @@ export default function CityDetail() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
               { icon: TrendingDown, label: "Avg Processing Savings", value: "Up to 40%" },
-              { icon: Clock, label: "Typical Setup Time", value: "24–48 Hours" },
+              { icon: Clock, label: "Acct. Activation", value: "24–48 Hrs" },
               { icon: Users, label: "Utah Businesses Served", value: "1,000+" },
               { icon: Star, label: "Years of Local Experience", value: `${SITE.yearsInBusiness}+` },
             ].map(({ icon: Icon, label, value }) => (
@@ -227,7 +227,7 @@ export default function CityDetail() {
             How It Works
           </h2>
           <p className="text-white/50 text-center mb-10 max-w-xl mx-auto">
-            Getting started with UBC Unlimited is simple. Most {city.name} businesses are approved and processing within 24–48 hours.
+            Getting started with UBC Unlimited is simple. Most {city.name} businesses are approved and processing within 24–48 hours. POS system installations typically require a 14-day lead time from approval.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {HOW_IT_WORKS.map((step) => (
@@ -254,7 +254,7 @@ export default function CityDetail() {
                   "Local Utah team — not a call center",
                   "Industry-specific solutions, not one-size-fits-all",
                   "Transparent pricing with no hidden fees",
-                  "Fast approval — most businesses live in 24–48 hours",
+                  "Fast approval — most accounts active in 24–48 hours (POS: 14-day lead time)",
                   "Dedicated account rep who knows your business",
                   "Free statement review — see your savings before you commit",
                 ].map((item) => (

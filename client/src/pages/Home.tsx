@@ -20,7 +20,7 @@ const whyUs = [
   { icon: Award, title: "20+ Years of Expertise", desc: "The UBC Unlimited team brings over two decades of merchant services experience to every client relationship." },
   { icon: Handshake, title: "Industry-Specific Solutions", desc: "We don't offer one-size-fits-all packages. Every setup is tailored to your specific industry and business needs." },
   { icon: MapPin, title: "Local Utah Support", desc: "Real people who know Utah business. Not a call center — your dedicated local rep who answers when you call." },
-  { icon: Clock, title: "Fast Onboarding", desc: "Depending on the solution, businesses can be up and processing as fast as same day. We handle the setup so you can focus on your business." },
+  { icon: Clock, title: "Fast Onboarding", desc: "Most accounts are active within 24–48 hours. POS system installations require a 14-day lead time from approval. We handle the entire setup so you can focus on your business." },
 ];
 
 const howItWorks = [
@@ -37,7 +37,7 @@ const homeFAQ = [
   },
   {
     question: "How long does it take to get set up?",
-    answer: "Most low-risk businesses are approved within 24–48 hours and can be approved as quickly as same day. Lead time for most POS system installations requires at least 14 days from complete paperwork submission."
+    answer: "Most low-risk businesses are approved and active within 24–48 hours. POS system installations require a 14-day lead time from approval. High-risk and specialty industries may have longer timelines depending on the underwriting process."
   },
   {
     question: "Do you offer month-to-month agreements?",

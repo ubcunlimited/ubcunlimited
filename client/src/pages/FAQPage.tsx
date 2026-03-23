@@ -25,7 +25,7 @@ const faqCategories = [
       {
         question: "How long does it take to get set up?",
         answer:
-          "Most low-risk businesses are approved within 24–48 hours and can be approved as quickly as same day. Lead time for most POS system installations requires at least 14 days from complete paperwork submission. High-risk and specialty industries may have longer timelines depending on the underwriting process.",
+          "Most low-risk businesses are approved and active within 24–48 hours. POS system installations require a 14-day lead time from approval. High-risk and specialty industries may have longer timelines depending on the underwriting process.",
       },
       {
         question: "Do you offer month-to-month agreements?",
@@ -612,7 +612,7 @@ export default function FAQPage() {
           "@type": "FAQPage",
           "mainEntity": [
             { "@type": "Question", "name": "What makes UBC Unlimited different from other processors?", "acceptedAnswer": { "@type": "Answer", "text": "Better service, industry-specific expertise, and local Utah support. With 20+ years in the industry and a wide range of partner relationships, the UBC Unlimited team can tailor solutions to your individual needs — something a national call center simply can't do." } },
-            { "@type": "Question", "name": "How long does it take to get set up?", "acceptedAnswer": { "@type": "Answer", "text": "Most low-risk businesses are approved within 24–48 hours and can be approved as quickly as same day. Lead time for most POS system installations requires at least 14 days from complete paperwork submission." } },
+            { "@type": "Question", "name": "How long does it take to get set up?", "acceptedAnswer": { "@type": "Answer", "text": "Most low-risk businesses are approved and active within 24–48 hours. POS system installations require a 14-day lead time from approval. High-risk and specialty industries may have longer timelines depending on the underwriting process." } },
             { "@type": "Question", "name": "Do you offer month-to-month agreements?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in most situations we offer a month-to-month agreement because we believe you must set yourself apart with service. We do have certain products that require agreements due to solution requirements, and we do our best to minimize the impact in those situations." } },
             { "@type": "Question", "name": "What types of businesses do you serve?", "acceptedAnswer": { "@type": "Answer", "text": "We serve restaurants, retail, medical, automotive, salons, eCommerce, professional services, and more. We can also service medium and high-risk businesses, though those are evaluated on a case-by-case basis." } },
             { "@type": "Question", "name": "Are there cancellation fees?", "acceptedAnswer": { "@type": "Answer", "text": "Generally, no cancellation fees apply — we believe in earning your business every month, not locking you in. Certain solutions require a formal agreement, and in those cases cancellation fees are based on the terms of the individual agreement." } },

@@ -767,7 +767,7 @@ const DEFAULT_PULL_QUOTE = {
 const ONBOARDING_STEPS = [
   { step: "01", title: "Statement Review", desc: "Submit your current processing statement. We analyze it line by line and identify exactly where you're overpaying — at no cost to you." },
   { step: "02", title: "Custom Proposal", desc: "We build a tailored proposal with transparent pricing, the right hardware, and the integrations your business actually needs. No generic rate sheets." },
-  { step: "03", title: "Setup & Go Live", desc: "Our local Utah team handles equipment, training, and integration. Depending on the solution, businesses can be up and processing as fast as same day." },
+  { step: "03", title: "Setup & Go Live", desc: "Our local Utah team handles equipment, training, and integration. Most accounts are active within 24–48 hours. POS system installations typically require a 14-day lead time from approval." },
 ];
 
 export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {

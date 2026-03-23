@@ -9,7 +9,7 @@ import SEO from "@/components/SEO";
 const HOW_IT_WORKS = [
   { step: "01", title: "Free Statement Review", desc: "Submit your current processing statement. We analyze every line and show you exactly where you're overpaying — no obligation." },
   { step: "02", title: "Custom Local Proposal", desc: "Our Utah-based team builds a tailored solution with transparent, competitive pricing that fits your business type and volume." },
-  { step: "03", title: "Seamless Setup", desc: "We handle everything — equipment, software integration, and staff training. Most businesses are live within 24–48 hours." },
+  { step: "03", title: "Seamless Setup", desc: "We handle everything — equipment, software integration, and staff training. Most accounts are active within 24–48 hours. POS system installations typically require a 14-day lead time from approval." },
 ];
 
 const SOLUTIONS = [
@@ -166,7 +166,7 @@ export default function CountyDetail() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
               { icon: TrendingDown, label: "Avg Processing Savings", value: "Up to 40%" },
-              { icon: Clock, label: "Typical Setup Time", value: "24–48 Hours" },
+              { icon: Clock, label: "Acct. Activation", value: "24–48 Hrs" },
               { icon: Users, label: "Utah Businesses Served", value: "1,000+" },
               { icon: Star, label: "Years of Local Experience", value: `${SITE.yearsInBusiness}+` },
             ].map(({ icon: Icon, label, value }) => (
@@ -209,7 +209,7 @@ export default function CountyDetail() {
           <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2 text-center" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
             How It Works
           </h2>
-          <p className="text-white/50 text-center mb-10 max-w-xl mx-auto">Getting started with UBC Unlimited is simple. Most {county.name} businesses are approved and processing within 24–48 hours.</p>
+          <p className="text-white/50 text-center mb-10 max-w-xl mx-auto">Getting started with UBC Unlimited is simple. Most {county.name} businesses are approved and processing within 24–48 hours. POS system installations typically require a 14-day lead time from approval.</p>
           <div className="grid md:grid-cols-3 gap-6">
             {HOW_IT_WORKS.map((step) => (
               <div key={step.step} className="relative bg-white/5 border border-white/10 rounded-2xl p-6">
