@@ -170,42 +170,9 @@ export default defineConfig({
     // Minification
     minify: "esbuild",
     cssMinify: true,
-    // Chunk splitting for better long-term caching
+    // Content-hash filenames for immutable caching
     rollupOptions: {
       output: {
-        manualChunks(id) {
-          // React core — changes rarely, cache aggressively
-          if (
-            id.includes("node_modules/react") ||
-            id.includes("node_modules/react-dom") ||
-            id.includes("node_modules/scheduler")
-          ) {
-            return "vendor-react";
-          }
-          // Routing + animation
-          if (
-            id.includes("node_modules/wouter") ||
-            id.includes("node_modules/framer-motion")
-          ) {
-            return "vendor-ui";
-          }
-          // tRPC + tanstack query
-          if (
-            id.includes("node_modules/@trpc") ||
-            id.includes("node_modules/@tanstack")
-          ) {
-            return "vendor-trpc";
-          }
-          // Lucide icons (large bundle)
-          if (id.includes("node_modules/lucide-react")) {
-            return "vendor-icons";
-          }
-          // All remaining node_modules
-          if (id.includes("node_modules")) {
-            return "vendor-misc";
-          }
-        },
-        // Content-hash filenames for immutable caching
         chunkFileNames: "assets/js/[name]-[hash].js",
         entryFileNames: "assets/js/[name]-[hash].js",
         assetFileNames: (assetInfo) => {

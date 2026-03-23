@@ -151,3 +151,4 @@
 - [x] Fix BackToTop button position so it doesn't overlap the ADA accessibility widget
 - [x] Reduce space between hero content and navigation bar
 - [x] Further reduce gap between hero content and navigation bar
+- [x] Identify and fix all current project errors (blank screen on live site caused by manual chunk splitting race condition — removed manualChunks, kept content-hash filenames)
