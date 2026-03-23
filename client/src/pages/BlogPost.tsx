@@ -731,7 +731,7 @@ SkyTab's pricing model is one of its most compelling advantages. The all-inclusi
 
 This pricing compares favorably to Toast and Clover, which typically charge higher monthly software fees on top of separate hardware purchases. [Contact us](/consultation) for a current pricing comparison tailored to your operation size.
 
-Payment processing fees are separate from the monthly SkyTab fee and are negotiated with your Shift4 reseller (UBC Unlimited, in our case). We offer interchange-plus pricing for SkyTab clients, which means your processing costs are transparent and competitive.
+Payment processing fees are separate from the monthly SkyTab fee and are negotiated with your Shift4 reseller (UBC Unlimited, in our case).
 
 ## Key Features
 
