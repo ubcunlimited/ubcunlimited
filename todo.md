@@ -116,3 +116,6 @@
 - [x] Build AgentAuthGate component to protect /agent-iso
 - [x] Add tRPC procedure to verify agent portal password server-side
 - [x] Wire /agent-login and /agent-iso routes in App.tsx
+- [x] Fix /news: Update SkyTab installation article to reflect 14-day lead time after approval
+- [x] Fix /news: Replace Utah Retail Merchants Association partnership article with new content
+- [x] Fix /news: Correct FTC typo "solutionss" -> "solutions"

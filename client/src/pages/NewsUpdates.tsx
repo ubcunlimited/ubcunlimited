@@ -31,8 +31,8 @@ const companyAnnouncements = [
   },
   {
     date: "February 2026",
-    title: "SkyTab POS Now Available with Same-Day Installation in Salt Lake Valley",
-    body: "We've added two additional certified SkyTab installation technicians to our Salt Lake Valley team. Most restaurant and bar installations can now be completed same-day or next-day after approval.",
+    title: "SkyTab POS Installations Now Targeting 14-Day Go-Live After Approval",
+    body: "UBC Unlimited has streamlined the SkyTab onboarding process to target a full go-live within 14 days of account approval. Our Utah-based installation team handles menu configuration, hardware setup, staff training, and integration before your launch date — so you're ready to process on day one.",
     tag: "Product Update",
   },
   {
@@ -43,9 +43,9 @@ const companyAnnouncements = [
   },
   {
     date: "December 2025",
-    title: "UBC Unlimited Joins the Utah Retail Merchants Association",
-    body: "We're proud to join the Utah Retail Merchants Association as an associate member. This partnership gives our retail clients access to group resources, advocacy, and networking events across the state.",
-    tag: "Partnership",
+    title: "UBC Unlimited Expands Retail Payment Solutions Across Utah",
+    body: "We've expanded our retail-focused merchant services offerings to better serve Utah's independent retailers. From integrated POS systems and inventory management to contactless payments and gift card programs, UBC Unlimited now provides a full suite of retail payment tools backed by local Utah support.",
+    tag: "Company News",
   },
 ];
 
@@ -58,7 +58,7 @@ const industryNews = [
   {
     date: "February 2026",
     headline: "FTC Issues New Guidance on Cash Discount Program Disclosures",
-    summary: "The FTC clarified disclosure requirements for businesses using surcharge & cash discount solutionss. All signage must clearly state the cash price and the card price at the point of sale. UBC Unlimited clients are already compliant under our standard implementation.",
+    summary: "The FTC clarified disclosure requirements for businesses using surcharge & cash discount solutions. All signage must clearly state the cash price and the card price at the point of sale. UBC Unlimited clients are already compliant under our standard implementation.",
   },
   {
     date: "January 2026",
