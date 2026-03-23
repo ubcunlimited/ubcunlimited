@@ -44,12 +44,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://d2xsxph8kpxj0f.cloudfront.net" crossorigin />
     <link rel="preconnect" href="https://plausible.io" />
-    <!-- Preload hero image for LCP -->
+    <!-- Preload hero image for LCP — responsive hints so mobile gets the right size -->
     <link
       rel="preload"
       as="image"
-      href="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_5dc35667.webp"
+      href="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1440w_647784d7.webp"
+      imagesrcset="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-480w_520d8679.webp 480w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-768w_47c94b7a.webp 768w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1024w_49bd132c.webp 1024w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1440w_647784d7.webp 1440w"
+      imagesizes="100vw"
       type="image/webp"
+      fetchpriority="high"
     />
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />

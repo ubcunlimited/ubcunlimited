@@ -12,9 +12,30 @@ import PricingTransparency from "@/components/sections/PricingTransparency";
 import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES, TRUST_SIGNALS } from "@/lib/config";
 import SEO from "@/components/SEO";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_5dc35667.webp";
-const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation_39f98a43.webp";
-const ABSTRACT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract-v2_b990fdb5.webp";
+// Hero image — responsive srcset for mobile/tablet/desktop
+const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1440w_647784d7.webp";
+const HERO_SRCSET = [
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-480w_520d8679.webp 480w",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-768w_47c94b7a.webp 768w",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1024w_49bd132c.webp 1024w",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1440w_647784d7.webp 1440w",
+].join(", ");
+
+// Consultation image — responsive srcset
+const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-1024w_58d8f30a.webp";
+const CONSULT_SRCSET = [
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-480w_092dd2b2.webp 480w",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-768w_ad9716b3.webp 768w",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-1024w_58d8f30a.webp 1024w",
+].join(", ");
+
+// Abstract image — responsive srcset
+const ABSTRACT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract-v2-1024w_2d873cbe.webp";
+const ABSTRACT_SRCSET = [
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract-v2-480w_e64e178e.webp 480w",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract-v2-768w_71820c30.webp 768w",
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract-v2-1024w_2d873cbe.webp 1024w",
+].join(", ");
 
 const whyUs = [
   { icon: Award, title: "20+ Years of Expertise", desc: "The UBC Unlimited team brings over two decades of merchant services experience to every client relationship." },
@@ -191,6 +212,8 @@ export default function Home() {
         {/* Hero background — img tag with fetchpriority for LCP optimisation */}
         <img
           src={HERO_IMG}
+          srcSet={HERO_SRCSET}
+          sizes="100vw"
           alt=""
           aria-hidden="true"
           fetchPriority="high"
@@ -427,7 +450,13 @@ export default function Home() {
             <div className="relative">
               <img
                 src={CONSULT_IMG}
+                srcSet={CONSULT_SRCSET}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                 alt="UBC Unlimited merchant services consultant reviewing payment processing options with Utah business owner"
+                loading="lazy"
+                decoding="async"
+                width={1024}
+                height={764}
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
               <div className="absolute -bottom-4 -left-4 glass-card-light rounded-xl p-4 shadow-xl border border-[#c9a84c]/20">

@@ -140,3 +140,10 @@
 - [x] P1 perf: add explicit width/height to logo image
 - [x] P1 perf: add preconnect hints for analytics domains
 - [x] Compress and convert all images on About, Solutions, and Industry pages to WebP
+- [x] Perf: defer third-party scripts (analytics, chat, CRM) to not block TBT
+- [x] Perf: add responsive srcset to hero and key images for mobile scaling
+- [x] Perf: CLS from cookie banner already handled (fixed bottom overlay, 1.2s delay, no layout shift)
+- [x] Perf: configure Vite build with manual chunk splitting for vendor code
+- [x] Perf: add Cache-Control headers for static assets via Express
+- [x] Perf: React.lazy code splitting for all non-critical routes (reduces initial bundle)
+- [x] Perf: responsive hero image srcset (480w/768w/1024w/1440w) with imagesrcset preload hint

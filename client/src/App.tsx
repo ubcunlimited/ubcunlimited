@@ -1,276 +1,297 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
-import { useEffect, useLayoutEffect } from "react";
+import { lazy, Suspense, useLayoutEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 
-// Core pages
+// ── Eagerly loaded (critical path) ──────────────────────────────────────────
 import Home from "./pages/Home";
 import CookieConsent from "./components/CookieConsent";
 import LiveChat from "./components/LiveChat";
 import BackToTop from "./components/BackToTop";
-import Locations from "./pages/Locations";
-import LocationDetail from "./pages/LocationDetail";
-import SaltLakeCity from "./pages/locations/SaltLakeCity";
-import Provo from "@/pages/locations/Provo";
-import Orem from "@/pages/locations/Orem";
-import Lehi from "@/pages/locations/Lehi";
-import AmericanFork from "@/pages/locations/AmericanFork";
-import Draper from "@/pages/locations/Draper";
-import SouthJordan from "@/pages/locations/SouthJordan";
-import WestJordan from "@/pages/locations/WestJordan";
-import Sandy from "@/pages/locations/Sandy";
-import Murray from "@/pages/locations/Murray";
-import Layton from "@/pages/locations/Layton";
-import Bountiful from "@/pages/locations/Bountiful";
-import Ogden from "@/pages/locations/Ogden";
-import Springville from "@/pages/locations/Springville";
-import SpanishFork from "@/pages/locations/SpanishFork";
-import ParkCity from "@/pages/locations/ParkCity";
-import HeberCity from "@/pages/locations/HeberCity";
-import SaltLakeCounty from "@/pages/locations/counties/SaltLakeCounty";
-import UtahCounty from "@/pages/locations/counties/UtahCounty";
-import DavisCounty from "@/pages/locations/counties/DavisCounty";
-import WeberCounty from "@/pages/locations/counties/WeberCounty";
-import WashingtonCounty from "@/pages/locations/counties/WashingtonCounty";
-import CacheCounty from "@/pages/locations/counties/CacheCounty";
-import SummitCounty from "@/pages/locations/counties/SummitCounty";
-import TooeleCounty from "@/pages/locations/counties/TooeleCounty";
-import BoxElderCounty from "@/pages/locations/counties/BoxElderCounty";
-import IronCounty from "@/pages/locations/counties/IronCounty";
-import SanpeteCounty from "@/pages/locations/counties/SanpeteCounty";
-import SevierCounty from "@/pages/locations/counties/SevierCounty";
-import CarbonCounty from "@/pages/locations/counties/CarbonCounty";
-import EmeryCounty from "@/pages/locations/counties/EmeryCounty";
-import GrandCounty from "@/pages/locations/counties/GrandCounty";
-import SanJuanCounty from "@/pages/locations/counties/SanJuanCounty";
-import KaneCounty from "@/pages/locations/counties/KaneCounty";
-import GarfieldCounty from "@/pages/locations/counties/GarfieldCounty";
-import BeaverCounty from "@/pages/locations/counties/BeaverCounty";
-import MillardCounty from "@/pages/locations/counties/MillardCounty";
-import JuabCounty from "@/pages/locations/counties/JuabCounty";
-import PiuteCounty from "@/pages/locations/counties/PiuteCounty";
-import WayneCounty from "@/pages/locations/counties/WayneCounty";
-import RichCounty from "@/pages/locations/counties/RichCounty";
-import MorganCounty from "@/pages/locations/counties/MorganCounty";
-import WasatchCounty from "@/pages/locations/counties/WasatchCounty";
-import DuchesneCounty from "@/pages/locations/counties/DuchesneCounty";
-import UintahCounty from "@/pages/locations/counties/UintahCounty";
-import DaggettCounty from "@/pages/locations/counties/DaggettCounty";
-import About from "./pages/About";
-import Testimonials from "./pages/Testimonials";
-import Contact from "./pages/Contact";
+
+// ── Lazy-loaded pages (split into separate chunks) ───────────────────────────
+// Core
+const About = lazy(() => import("./pages/About"));
+const Testimonials = lazy(() => import("./pages/Testimonials"));
+const Contact = lazy(() => import("./pages/Contact"));
 
 // Solutions
-import Solutions from "./pages/Solutions";
-import SolutionDetail from "./pages/SolutionDetail";
+const Solutions = lazy(() => import("./pages/Solutions"));
+const SolutionDetail = lazy(() => import("./pages/SolutionDetail"));
 
 // Industries
-import Industries from "./pages/Industries";
-import IndustryDetail from "./pages/IndustryDetail";
+const Industries = lazy(() => import("./pages/Industries"));
+const IndustryDetail = lazy(() => import("./pages/IndustryDetail"));
 
 // Blog
-import Blog from "./pages/Blog";
-import NewsUpdates from "./pages/NewsUpdates";
-import AgentISO from "./pages/AgentISO";
-import AgentLogin from "./pages/AgentLogin";
-import AgentAuthGate from "./components/AgentAuthGate";
-import BlogPost from "./pages/BlogPost";
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const NewsUpdates = lazy(() => import("./pages/NewsUpdates"));
+
+// Agent portal
+const AgentISO = lazy(() => import("./pages/AgentISO"));
+const AgentLogin = lazy(() => import("./pages/AgentLogin"));
+const AgentAuthGate = lazy(() => import("./components/AgentAuthGate"));
 
 // Forms
-import Consultation from "./pages/Consultation";
-import StatementReview from "./pages/StatementReview";
-import ThankYou from "./pages/ThankYou";
+const Consultation = lazy(() => import("./pages/Consultation"));
+const StatementReview = lazy(() => import("./pages/StatementReview"));
+const ThankYou = lazy(() => import("./pages/ThankYou"));
 
 // Legal
-import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
-import AccessibilityStatement from "./pages/legal/AccessibilityStatement";
-import TermsOfService from "./pages/legal/TermsOfService";
-import CookiePolicy from "./pages/legal/CookiePolicy";
-import Disclaimer from "./pages/legal/Disclaimer";
+const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy"));
+const AccessibilityStatement = lazy(() => import("./pages/legal/AccessibilityStatement"));
+const TermsOfService = lazy(() => import("./pages/legal/TermsOfService"));
+const CookiePolicy = lazy(() => import("./pages/legal/CookiePolicy"));
+const Disclaimer = lazy(() => import("./pages/legal/Disclaimer"));
 
 // FAQ
-import FAQPage from "./pages/FAQPage";
+const FAQPage = lazy(() => import("./pages/FAQPage"));
 
 // Admin
-import AdminTestimonials from "./pages/admin/AdminTestimonials";
+const AdminTestimonials = lazy(() => import("./pages/admin/AdminTestimonials"));
 
 // POC
-import RestaurantsPOC from "./pages/RestaurantsPOC";
+const RestaurantsPOC = lazy(() => import("./pages/RestaurantsPOC"));
 
 // POS Configurator
-import BuildAPOS from "./pages/BuildAPOS";
+const BuildAPOS = lazy(() => import("./pages/BuildAPOS"));
 
-// Counties & Cities
-import Counties from "./pages/Counties";
-import CountyDetail from "./pages/CountyDetail";
-import Cities from "./pages/Cities";
-import CityDetail from "./pages/CityDetail";
+// Locations
+const Locations = lazy(() => import("./pages/Locations"));
+const LocationDetail = lazy(() => import("./pages/LocationDetail"));
+const SaltLakeCity = lazy(() => import("./pages/locations/SaltLakeCity"));
+const Provo = lazy(() => import("./pages/locations/Provo"));
+const Orem = lazy(() => import("./pages/locations/Orem"));
+const Lehi = lazy(() => import("./pages/locations/Lehi"));
+const AmericanFork = lazy(() => import("./pages/locations/AmericanFork"));
+const Draper = lazy(() => import("./pages/locations/Draper"));
+const SouthJordan = lazy(() => import("./pages/locations/SouthJordan"));
+const WestJordan = lazy(() => import("./pages/locations/WestJordan"));
+const Sandy = lazy(() => import("./pages/locations/Sandy"));
+const Murray = lazy(() => import("./pages/locations/Murray"));
+const Layton = lazy(() => import("./pages/locations/Layton"));
+const Bountiful = lazy(() => import("./pages/locations/Bountiful"));
+const Ogden = lazy(() => import("./pages/locations/Ogden"));
+const Springville = lazy(() => import("./pages/locations/Springville"));
+const SpanishFork = lazy(() => import("./pages/locations/SpanishFork"));
+const ParkCity = lazy(() => import("./pages/locations/ParkCity"));
+const HeberCity = lazy(() => import("./pages/locations/HeberCity"));
+
+// Counties
+const SaltLakeCounty = lazy(() => import("./pages/locations/counties/SaltLakeCounty"));
+const UtahCounty = lazy(() => import("./pages/locations/counties/UtahCounty"));
+const DavisCounty = lazy(() => import("./pages/locations/counties/DavisCounty"));
+const WeberCounty = lazy(() => import("./pages/locations/counties/WeberCounty"));
+const WashingtonCounty = lazy(() => import("./pages/locations/counties/WashingtonCounty"));
+const CacheCounty = lazy(() => import("./pages/locations/counties/CacheCounty"));
+const SummitCounty = lazy(() => import("./pages/locations/counties/SummitCounty"));
+const TooeleCounty = lazy(() => import("./pages/locations/counties/TooeleCounty"));
+const BoxElderCounty = lazy(() => import("./pages/locations/counties/BoxElderCounty"));
+const IronCounty = lazy(() => import("./pages/locations/counties/IronCounty"));
+const SanpeteCounty = lazy(() => import("./pages/locations/counties/SanpeteCounty"));
+const SevierCounty = lazy(() => import("./pages/locations/counties/SevierCounty"));
+const CarbonCounty = lazy(() => import("./pages/locations/counties/CarbonCounty"));
+const EmeryCounty = lazy(() => import("./pages/locations/counties/EmeryCounty"));
+const GrandCounty = lazy(() => import("./pages/locations/counties/GrandCounty"));
+const SanJuanCounty = lazy(() => import("./pages/locations/counties/SanJuanCounty"));
+const KaneCounty = lazy(() => import("./pages/locations/counties/KaneCounty"));
+const GarfieldCounty = lazy(() => import("./pages/locations/counties/GarfieldCounty"));
+const BeaverCounty = lazy(() => import("./pages/locations/counties/BeaverCounty"));
+const MillardCounty = lazy(() => import("./pages/locations/counties/MillardCounty"));
+const JuabCounty = lazy(() => import("./pages/locations/counties/JuabCounty"));
+const PiuteCounty = lazy(() => import("./pages/locations/counties/PiuteCounty"));
+const WayneCounty = lazy(() => import("./pages/locations/counties/WayneCounty"));
+const RichCounty = lazy(() => import("./pages/locations/counties/RichCounty"));
+const MorganCounty = lazy(() => import("./pages/locations/counties/MorganCounty"));
+const WasatchCounty = lazy(() => import("./pages/locations/counties/WasatchCounty"));
+const DuchesneCounty = lazy(() => import("./pages/locations/counties/DuchesneCounty"));
+const UintahCounty = lazy(() => import("./pages/locations/counties/UintahCounty"));
+const DaggettCounty = lazy(() => import("./pages/locations/counties/DaggettCounty"));
+
+// Counties & Cities index + detail
+const Counties = lazy(() => import("./pages/Counties"));
+const CountyDetail = lazy(() => import("./pages/CountyDetail"));
+const Cities = lazy(() => import("./pages/Cities"));
+const CityDetail = lazy(() => import("./pages/CityDetail"));
+
+// ── Minimal page-level loading fallback ─────────────────────────────────────
+function PageFallback() {
+  return (
+    <div
+      className="min-h-screen flex items-center justify-center bg-[#080808]"
+      aria-label="Loading page"
+    >
+      <div className="w-8 h-8 border-2 border-[#c9a84c]/30 border-t-[#c9a84c] rounded-full animate-spin" />
+    </div>
+  );
+}
 
 // Scroll to top on every route change
 function ScrollToTop() {
   const [location] = useLocation();
   useLayoutEffect(() => {
-    // Use both methods for maximum browser compatibility
     window.scrollTo(0, 0);
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   }, [location]);
   return null;
 }
+
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <>
       <ScrollToTop />
-      <Switch>
-        {/* Core */}
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/testimonials" component={Testimonials} />
-        <Route path="/contact" component={Contact} />
+      <Suspense fallback={<PageFallback />}>
+        <Switch>
+          {/* Core — Home is eagerly loaded */}
+          <Route path="/" component={Home} />
+          <Route path="/about">{() => <About />}</Route>
+          <Route path="/testimonials">{() => <Testimonials />}</Route>
+          <Route path="/contact">{() => <Contact />}</Route>
 
-        {/* Solutions */}
-        <Route path="/solutions" component={Solutions} />
-        <Route path="/solutions/credit-card-processing">{() => <SolutionDetail slug="credit-card-processing" />}</Route>
-        <Route path="/solutions/ach-echeck-processing">{() => <SolutionDetail slug="ach-echeck-processing" />}</Route>
-        <Route path="/solutions/check-guarantee">{() => <SolutionDetail slug="check-guarantee" />}</Route>
-        <Route path="/solutions/pos-systems">{() => <SolutionDetail slug="pos-systems" />}</Route>
-        <Route path="/solutions/ecommerce-payments">{() => <SolutionDetail slug="ecommerce-payments" />}</Route>
-        <Route path="/solutions/mobile-processing">{() => <SolutionDetail slug="mobile-processing" />}</Route>
-        <Route path="/solutions/virtual-terminals">{() => <SolutionDetail slug="virtual-terminals" />}</Route>
-        <Route path="/solutions/invoicing">{() => <SolutionDetail slug="invoicing" />}</Route>
-        <Route path="/solutions/gift-loyalty">{() => <SolutionDetail slug="gift-loyalty" />}</Route>
-        <Route path="/solutions/surcharge-cash-discount">{() => <SolutionDetail slug="surcharge-cash-discount" />}</Route>
-        <Route path="/solutions/surcharge-cash-discount">{() => { window.location.replace("/solutions/surcharge-cash-discount"); return null; }}</Route>
-        <Route path="/solutions/high-risk-processing">{() => <SolutionDetail slug="high-risk-processing" />}</Route>
+          {/* Solutions */}
+          <Route path="/solutions">{() => <Solutions />}</Route>
+          <Route path="/solutions/credit-card-processing">{() => <SolutionDetail slug="credit-card-processing" />}</Route>
+          <Route path="/solutions/ach-echeck-processing">{() => <SolutionDetail slug="ach-echeck-processing" />}</Route>
+          <Route path="/solutions/check-guarantee">{() => <SolutionDetail slug="check-guarantee" />}</Route>
+          <Route path="/solutions/pos-systems">{() => <SolutionDetail slug="pos-systems" />}</Route>
+          <Route path="/solutions/ecommerce-payments">{() => <SolutionDetail slug="ecommerce-payments" />}</Route>
+          <Route path="/solutions/mobile-processing">{() => <SolutionDetail slug="mobile-processing" />}</Route>
+          <Route path="/solutions/virtual-terminals">{() => <SolutionDetail slug="virtual-terminals" />}</Route>
+          <Route path="/solutions/invoicing">{() => <SolutionDetail slug="invoicing" />}</Route>
+          <Route path="/solutions/gift-loyalty">{() => <SolutionDetail slug="gift-loyalty" />}</Route>
+          <Route path="/solutions/surcharge-cash-discount">{() => <SolutionDetail slug="surcharge-cash-discount" />}</Route>
+          <Route path="/solutions/high-risk-processing">{() => <SolutionDetail slug="high-risk-processing" />}</Route>
 
-        {/* POS Configurator */}
-        <Route path="/build-a-pos" component={BuildAPOS} />
+          {/* POS Configurator */}
+          <Route path="/build-a-pos">{() => <BuildAPOS />}</Route>
 
-        {/* POC */}
-        <Route path="/poc/restaurants" component={RestaurantsPOC} />
+          {/* POC */}
+          <Route path="/poc/restaurants">{() => <RestaurantsPOC />}</Route>
 
-        {/* Industries */}
-        <Route path="/industries" component={Industries} />
-        <Route path="/industries/restaurants">{() => <IndustryDetail slug="restaurants" />}</Route>
-        <Route path="/industries/bars-nightclubs">{() => <IndustryDetail slug="bars-nightclubs" />}</Route>
-        <Route path="/industries/retail">{() => <IndustryDetail slug="retail" />}</Route>
-        <Route path="/industries/medical">{() => <IndustryDetail slug="medical" />}</Route>
-        <Route path="/industries/ecommerce">{() => <IndustryDetail slug="ecommerce" />}</Route>
-        <Route path="/industries/automotive">{() => <IndustryDetail slug="automotive" />}</Route>
-        <Route path="/industries/professional-services">{() => <IndustryDetail slug="professional-services" />}</Route>
-        <Route path="/industries/salons-spas">{() => <IndustryDetail slug="salons-spas" />}</Route>
-        <Route path="/industries/property-management">{() => <IndustryDetail slug="property-management" />}</Route>
-        <Route path="/industries/firearms">{() => <IndustryDetail slug="firearms" />}</Route>
-        <Route path="/industries/cbd-hemp">{() => <IndustryDetail slug="cbd-hemp" />}</Route>
-        <Route path="/industries/nutraceuticals">{() => <IndustryDetail slug="nutraceuticals" />}</Route>
-        <Route path="/industries/non-profit">{() => <IndustryDetail slug="non-profit" />}</Route>
-        <Route path="/industries/adult-entertainment">{() => <IndustryDetail slug="adult-entertainment" />}</Route>
-        <Route path="/industries/travel">{() => <IndustryDetail slug="travel" />}</Route>
-        <Route path="/industries/online-gaming">{() => <IndustryDetail slug="online-gaming" />}</Route>
-        <Route path="/industries/telemarketing">{() => <IndustryDetail slug="telemarketing" />}</Route>
-        <Route path="/industries/credit-repair">{() => <IndustryDetail slug="credit-repair" />}</Route>
-        <Route path="/industries/subscription-continuity">{() => <IndustryDetail slug="subscription-continuity" />}</Route>
-        <Route path="/industries/vape-ecig">{() => <IndustryDetail slug="vape-ecig" />}</Route>
-        <Route path="/industries/online-pharmacy">{() => <IndustryDetail slug="online-pharmacy" />}</Route>
-        <Route path="/industries/cryptocurrency">{() => <IndustryDetail slug="cryptocurrency" />}</Route>
+          {/* Industries */}
+          <Route path="/industries">{() => <Industries />}</Route>
+          <Route path="/industries/restaurants">{() => <IndustryDetail slug="restaurants" />}</Route>
+          <Route path="/industries/bars-nightclubs">{() => <IndustryDetail slug="bars-nightclubs" />}</Route>
+          <Route path="/industries/retail">{() => <IndustryDetail slug="retail" />}</Route>
+          <Route path="/industries/medical">{() => <IndustryDetail slug="medical" />}</Route>
+          <Route path="/industries/ecommerce">{() => <IndustryDetail slug="ecommerce" />}</Route>
+          <Route path="/industries/automotive">{() => <IndustryDetail slug="automotive" />}</Route>
+          <Route path="/industries/professional-services">{() => <IndustryDetail slug="professional-services" />}</Route>
+          <Route path="/industries/salons-spas">{() => <IndustryDetail slug="salons-spas" />}</Route>
+          <Route path="/industries/property-management">{() => <IndustryDetail slug="property-management" />}</Route>
+          <Route path="/industries/firearms">{() => <IndustryDetail slug="firearms" />}</Route>
+          <Route path="/industries/cbd-hemp">{() => <IndustryDetail slug="cbd-hemp" />}</Route>
+          <Route path="/industries/nutraceuticals">{() => <IndustryDetail slug="nutraceuticals" />}</Route>
+          <Route path="/industries/non-profit">{() => <IndustryDetail slug="non-profit" />}</Route>
+          <Route path="/industries/adult-entertainment">{() => <IndustryDetail slug="adult-entertainment" />}</Route>
+          <Route path="/industries/travel">{() => <IndustryDetail slug="travel" />}</Route>
+          <Route path="/industries/online-gaming">{() => <IndustryDetail slug="online-gaming" />}</Route>
+          <Route path="/industries/telemarketing">{() => <IndustryDetail slug="telemarketing" />}</Route>
+          <Route path="/industries/credit-repair">{() => <IndustryDetail slug="credit-repair" />}</Route>
+          <Route path="/industries/subscription-continuity">{() => <IndustryDetail slug="subscription-continuity" />}</Route>
+          <Route path="/industries/vape-ecig">{() => <IndustryDetail slug="vape-ecig" />}</Route>
+          <Route path="/industries/online-pharmacy">{() => <IndustryDetail slug="online-pharmacy" />}</Route>
+          <Route path="/industries/cryptocurrency">{() => <IndustryDetail slug="cryptocurrency" />}</Route>
 
-        {/* Blog */}
-        <Route path="/blog" component={Blog} />
-        <Route path="/news" component={NewsUpdates} />
-        <Route path="/agent-login" component={AgentLogin} />
-        <Route path="/agent-iso">{() => <AgentAuthGate><AgentISO /></AgentAuthGate>}</Route>
-        <Route path="/blog/:slug">{(params) => <BlogPost slug={params.slug} />}</Route>
+          {/* Blog */}
+          <Route path="/blog">{() => <Blog />}</Route>
+          <Route path="/news">{() => <NewsUpdates />}</Route>
+          <Route path="/agent-login">{() => <AgentLogin />}</Route>
+          <Route path="/agent-iso">{() => <AgentAuthGate><AgentISO /></AgentAuthGate>}</Route>
+          <Route path="/blog/:slug">{(params) => <BlogPost slug={params.slug} />}</Route>
 
-        {/* Forms */}
-        <Route path="/consultation" component={Consultation} />
-        <Route path="/quote" component={Consultation} />
-        <Route path="/statement-review" component={StatementReview} />
-        <Route path="/thank-you" component={ThankYou} />
+          {/* Forms */}
+          <Route path="/consultation">{() => <Consultation />}</Route>
+          <Route path="/quote">{() => <Consultation />}</Route>
+          <Route path="/statement-review">{() => <StatementReview />}</Route>
+          <Route path="/thank-you">{() => <ThankYou />}</Route>
 
-        {/* Legal */}
-        <Route path="/legal/privacy-policy" component={PrivacyPolicy} />
-        <Route path="/legal/terms-of-service" component={TermsOfService} />
-        <Route path="/legal/cookie-policy" component={CookiePolicy} />
-        <Route path="/legal/disclaimer" component={Disclaimer} />
-        <Route path="/accessibility" component={AccessibilityStatement} />
-        {/* Alias routes — footer links use short paths */}
-        <Route path="/privacy-policy" component={PrivacyPolicy} />
-        <Route path="/terms-of-service" component={TermsOfService} />
-        <Route path="/cookie-policy" component={CookiePolicy} />
-        <Route path="/disclaimer" component={Disclaimer} />
+          {/* Legal */}
+          <Route path="/legal/privacy-policy">{() => <PrivacyPolicy />}</Route>
+          <Route path="/legal/terms-of-service">{() => <TermsOfService />}</Route>
+          <Route path="/legal/cookie-policy">{() => <CookiePolicy />}</Route>
+          <Route path="/legal/disclaimer">{() => <Disclaimer />}</Route>
+          <Route path="/accessibility">{() => <AccessibilityStatement />}</Route>
+          {/* Alias routes — footer links use short paths */}
+          <Route path="/privacy-policy">{() => <PrivacyPolicy />}</Route>
+          <Route path="/terms-of-service">{() => <TermsOfService />}</Route>
+          <Route path="/cookie-policy">{() => <CookiePolicy />}</Route>
+          <Route path="/disclaimer">{() => <Disclaimer />}</Route>
 
-        {/* Locations */}
-        <Route path="/locations" component={Locations} />
-        <Route path="/locations/salt-lake-city" component={SaltLakeCity} />
-        <Route path="/locations/provo" component={Provo} />
-        <Route path="/locations/orem" component={Orem} />
-        <Route path="/locations/lehi" component={Lehi} />
-        <Route path="/locations/american-fork" component={AmericanFork} />
-        <Route path="/locations/draper" component={Draper} />
-        <Route path="/locations/south-jordan" component={SouthJordan} />
-        <Route path="/locations/west-jordan" component={WestJordan} />
-        <Route path="/locations/sandy" component={Sandy} />
-        <Route path="/locations/murray" component={Murray} />
-        <Route path="/locations/layton" component={Layton} />
-        <Route path="/locations/bountiful" component={Bountiful} />
-        <Route path="/locations/ogden" component={Ogden} />
-        <Route path="/locations/springville" component={Springville} />
-        <Route path="/locations/spanish-fork" component={SpanishFork} />
-        <Route path="/locations/park-city" component={ParkCity} />
-        <Route path="/locations/heber-city" component={HeberCity} />
-        <Route path="/locations/salt-lake-county" component={SaltLakeCounty} />
-        <Route path="/locations/utah-county" component={UtahCounty} />
-        <Route path="/locations/davis-county" component={DavisCounty} />
-        <Route path="/locations/weber-county" component={WeberCounty} />
-        <Route path="/locations/washington-county" component={WashingtonCounty} />
-        <Route path="/locations/cache-county" component={CacheCounty} />
-        <Route path="/locations/summit-county" component={SummitCounty} />
-        <Route path="/locations/tooele-county" component={TooeleCounty} />
-        <Route path="/locations/box-elder-county" component={BoxElderCounty} />
-        <Route path="/locations/iron-county" component={IronCounty} />
-        <Route path="/locations/sanpete-county" component={SanpeteCounty} />
-        <Route path="/locations/sevier-county" component={SevierCounty} />
-        <Route path="/locations/carbon-county" component={CarbonCounty} />
-        <Route path="/locations/emery-county" component={EmeryCounty} />
-        <Route path="/locations/grand-county" component={GrandCounty} />
-        <Route path="/locations/san-juan-county" component={SanJuanCounty} />
-        <Route path="/locations/kane-county" component={KaneCounty} />
-        <Route path="/locations/garfield-county" component={GarfieldCounty} />
-        <Route path="/locations/beaver-county" component={BeaverCounty} />
-        <Route path="/locations/millard-county" component={MillardCounty} />
-        <Route path="/locations/juab-county" component={JuabCounty} />
-        <Route path="/locations/piute-county" component={PiuteCounty} />
-        <Route path="/locations/wayne-county" component={WayneCounty} />
-        <Route path="/locations/rich-county" component={RichCounty} />
-        <Route path="/locations/morgan-county" component={MorganCounty} />
-        <Route path="/locations/wasatch-county" component={WasatchCounty} />
-        <Route path="/locations/duchesne-county" component={DuchesneCounty} />
-        <Route path="/locations/uintah-county" component={UintahCounty} />
-        <Route path="/locations/daggett-county" component={DaggettCounty} />
-        <Route path="/locations/:slug" component={LocationDetail} />
+          {/* Locations */}
+          <Route path="/locations">{() => <Locations />}</Route>
+          <Route path="/locations/salt-lake-city">{() => <SaltLakeCity />}</Route>
+          <Route path="/locations/provo">{() => <Provo />}</Route>
+          <Route path="/locations/orem">{() => <Orem />}</Route>
+          <Route path="/locations/lehi">{() => <Lehi />}</Route>
+          <Route path="/locations/american-fork">{() => <AmericanFork />}</Route>
+          <Route path="/locations/draper">{() => <Draper />}</Route>
+          <Route path="/locations/south-jordan">{() => <SouthJordan />}</Route>
+          <Route path="/locations/west-jordan">{() => <WestJordan />}</Route>
+          <Route path="/locations/sandy">{() => <Sandy />}</Route>
+          <Route path="/locations/murray">{() => <Murray />}</Route>
+          <Route path="/locations/layton">{() => <Layton />}</Route>
+          <Route path="/locations/bountiful">{() => <Bountiful />}</Route>
+          <Route path="/locations/ogden">{() => <Ogden />}</Route>
+          <Route path="/locations/springville">{() => <Springville />}</Route>
+          <Route path="/locations/spanish-fork">{() => <SpanishFork />}</Route>
+          <Route path="/locations/park-city">{() => <ParkCity />}</Route>
+          <Route path="/locations/heber-city">{() => <HeberCity />}</Route>
+          <Route path="/locations/salt-lake-county">{() => <SaltLakeCounty />}</Route>
+          <Route path="/locations/utah-county">{() => <UtahCounty />}</Route>
+          <Route path="/locations/davis-county">{() => <DavisCounty />}</Route>
+          <Route path="/locations/weber-county">{() => <WeberCounty />}</Route>
+          <Route path="/locations/washington-county">{() => <WashingtonCounty />}</Route>
+          <Route path="/locations/cache-county">{() => <CacheCounty />}</Route>
+          <Route path="/locations/summit-county">{() => <SummitCounty />}</Route>
+          <Route path="/locations/tooele-county">{() => <TooeleCounty />}</Route>
+          <Route path="/locations/box-elder-county">{() => <BoxElderCounty />}</Route>
+          <Route path="/locations/iron-county">{() => <IronCounty />}</Route>
+          <Route path="/locations/sanpete-county">{() => <SanpeteCounty />}</Route>
+          <Route path="/locations/sevier-county">{() => <SevierCounty />}</Route>
+          <Route path="/locations/carbon-county">{() => <CarbonCounty />}</Route>
+          <Route path="/locations/emery-county">{() => <EmeryCounty />}</Route>
+          <Route path="/locations/grand-county">{() => <GrandCounty />}</Route>
+          <Route path="/locations/san-juan-county">{() => <SanJuanCounty />}</Route>
+          <Route path="/locations/kane-county">{() => <KaneCounty />}</Route>
+          <Route path="/locations/garfield-county">{() => <GarfieldCounty />}</Route>
+          <Route path="/locations/beaver-county">{() => <BeaverCounty />}</Route>
+          <Route path="/locations/millard-county">{() => <MillardCounty />}</Route>
+          <Route path="/locations/juab-county">{() => <JuabCounty />}</Route>
+          <Route path="/locations/piute-county">{() => <PiuteCounty />}</Route>
+          <Route path="/locations/wayne-county">{() => <WayneCounty />}</Route>
+          <Route path="/locations/rich-county">{() => <RichCounty />}</Route>
+          <Route path="/locations/morgan-county">{() => <MorganCounty />}</Route>
+          <Route path="/locations/wasatch-county">{() => <WasatchCounty />}</Route>
+          <Route path="/locations/duchesne-county">{() => <DuchesneCounty />}</Route>
+          <Route path="/locations/uintah-county">{() => <UintahCounty />}</Route>
+          <Route path="/locations/daggett-county">{() => <DaggettCounty />}</Route>
+          <Route path="/locations/:slug">{() => <LocationDetail />}</Route>
 
-        {/* Counties */}
-        <Route path="/counties" component={Counties} />
-        <Route path="/counties/:slug">{(params) => <CountyDetail />}</Route>
+          {/* Counties */}
+          <Route path="/counties">{() => <Counties />}</Route>
+          <Route path="/counties/:slug">{() => <CountyDetail />}</Route>
 
-        {/* Cities */}
-        <Route path="/cities" component={Cities} />
-        <Route path="/cities/:slug">{(params) => <CityDetail />}</Route>
+          {/* Cities */}
+          <Route path="/cities">{() => <Cities />}</Route>
+          <Route path="/cities/:slug">{() => <CityDetail />}</Route>
 
-        {/* Admin */}
-        <Route path="/admin/testimonials" component={AdminTestimonials} />
+          {/* Admin */}
+          <Route path="/admin/testimonials">{() => <AdminTestimonials />}</Route>
 
-        {/* Company */}
-        <Route path="/faq" component={FAQPage} />
+          {/* Company */}
+          <Route path="/faq">{() => <FAQPage />}</Route>
 
-        {/* 404 */}
-        <Route path="/404" component={NotFound} />
-        <Route component={NotFound} />
-      </Switch>
+          {/* 404 */}
+          <Route path="/404">{() => { const NotFound = lazy(() => import("./pages/NotFound")); return <NotFound />; }}</Route>
+          <Route>{() => { const NotFound = lazy(() => import("./pages/NotFound")); return <NotFound />; }}</Route>
+        </Switch>
+      </Suspense>
     </>
   );
 }
