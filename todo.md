@@ -135,3 +135,7 @@
 - [x] Cities page: show only top 10 highest-populated non-featured cities + search bar for all remaining cities
 - [x] skytab-pos-review-utah page: remove interchange-plus pricing sentence
 - [x] merchant-service-utah-county blog: add "But" to business base sentence and rephrase interchange-plus pricing line
+- [x] P1 perf: compress and re-upload homepage images as WebP (team-consultation, hero-main, logo)
+- [x] P1 perf: add fetchpriority="high" to hero LCP image
+- [x] P1 perf: add explicit width/height to logo image
+- [x] P1 perf: add preconnect hints for analytics domains

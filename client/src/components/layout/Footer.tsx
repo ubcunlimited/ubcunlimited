@@ -70,8 +70,10 @@ export default function Footer() {
               aria-label="UBC Unlimited — Home"
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent3_53cdf614.png"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_c7383863.webp"
                 alt="UBC Unlimited — Utah Merchant Services & Payment Processing"
+                width={320}
+                height={213}
                 className="h-28 w-auto object-contain"
                 style={{ maxWidth: "160px" }}
               />

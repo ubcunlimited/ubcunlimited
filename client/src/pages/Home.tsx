@@ -12,8 +12,8 @@ import PricingTransparency from "@/components/sections/PricingTransparency";
 import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES, TRUST_SIGNALS } from "@/lib/config";
 import SEO from "@/components/SEO";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_02a49aab.jpg";
-const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation_77637e8d.jpg";
+const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_5dc35667.webp";
+const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation_39f98a43.webp";
 const ABSTRACT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract_ee7158df.jpg";
 
 const whyUs = [
@@ -188,9 +188,16 @@ export default function Home() {
       />
       {/* Hero */}
       <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#080808]">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url(${HERO_IMG})` }}
+        {/* Hero background — img tag with fetchpriority for LCP optimisation */}
+        <img
+          src={HERO_IMG}
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          width={1440}
+          height={803}
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/85 to-[#080808]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
