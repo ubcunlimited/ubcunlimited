@@ -4,6 +4,7 @@ import { notifyOwner } from "../_core/notification";
 import { storagePut } from "../storage";
 import { nanoid } from "nanoid";
 import { insertBlogLead } from "../db";
+import { sendToWebhook } from "../webhook";
 
 // ─── Consultation ────────────────────────────────────────────────────────────
 
@@ -100,6 +101,14 @@ export const formsRouter = router({
         content: lines,
       });
 
+      // Forward to LeadConnector webhook
+      await sendToWebhook("blog_lead", {
+        first_name: input.name.split(" ")[0] ?? input.name,
+        last_name: input.name.split(" ").slice(1).join(" ") || undefined,
+        email: input.email,
+        source_page: input.sourcePage,
+      });
+
       return { success: true };
     }),
 
@@ -127,10 +136,22 @@ export const formsRouter = router({
       ]
         .filter(Boolean)
         .join("\n");
+
       await notifyOwner({
         title: `New Agent Application — ${input.name}`,
         content: lines,
       });
+
+      // Forward to LeadConnector webhook
+      await sendToWebhook("agent_lead", {
+        first_name: input.name.split(" ")[0] ?? input.name,
+        last_name: input.name.split(" ").slice(1).join(" ") || undefined,
+        email: input.email,
+        phone: input.phone,
+        agent_type: input.agentType,
+        experience: input.experience,
+      });
+
       return { success: true };
     }),
 
@@ -146,10 +167,20 @@ export const formsRouter = router({
         ``,
         `Source: Homepage hero micro-form. Follow up promptly.`,
       ].join("\n");
+
       await notifyOwner({
         title: `New Homepage Lead — ${input.name}`,
         content: lines,
       });
+
+      // Forward to LeadConnector webhook
+      await sendToWebhook("hero_lead", {
+        first_name: input.name.split(" ")[0] ?? input.name,
+        last_name: input.name.split(" ").slice(1).join(" ") || undefined,
+        phone: input.phone,
+        business_type: input.businessType,
+      });
+
       return { success: true };
     }),
 
@@ -175,6 +206,20 @@ export const formsRouter = router({
       await notifyOwner({
         title: `New Consultation Request — ${input.firstName} ${input.lastName}`,
         content: lines,
+      });
+
+      // Forward to LeadConnector webhook
+      await sendToWebhook("consultation", {
+        first_name: input.firstName,
+        last_name: input.lastName,
+        email: input.email,
+        phone: input.phone,
+        business_name: input.businessName,
+        business_type: input.businessType,
+        preferred_date: input.preferredDate,
+        preferred_time: input.preferredTime,
+        message: input.message,
+        sms_consent: input.smsConsent ?? false,
       });
 
       return { success: true };
@@ -205,6 +250,21 @@ export const formsRouter = router({
       await notifyOwner({
         title: `New Quote Request — ${input.firstName} ${input.lastName}`,
         content: lines,
+      });
+
+      // Forward to LeadConnector webhook
+      await sendToWebhook("quote_request", {
+        first_name: input.firstName,
+        last_name: input.lastName,
+        email: input.email,
+        phone: input.phone,
+        business_name: input.businessName,
+        business_type: input.businessType,
+        monthly_volume: input.monthlyVolume,
+        current_processor: input.currentProcessor,
+        solutions_interested: input.solutions?.join(", "),
+        message: input.message,
+        sms_consent: input.smsConsent ?? false,
       });
 
       return { success: true };
@@ -249,6 +309,21 @@ export const formsRouter = router({
       await notifyOwner({
         title: `New Statement Review Request — ${input.firstName} ${input.lastName}`,
         content: lines,
+      });
+
+      // Forward to LeadConnector webhook
+      await sendToWebhook("statement_review", {
+        first_name: input.firstName,
+        last_name: input.lastName,
+        email: input.email,
+        phone: input.phone,
+        business_name: input.businessName,
+        business_type: input.businessType,
+        current_processor: input.currentProcessor,
+        monthly_volume: input.monthlyVolume,
+        message: input.message,
+        sms_consent: input.smsConsent ?? false,
+        statement_file_url: fileUrl,
       });
 
       return { success: true, fileUploaded: !!fileUrl };

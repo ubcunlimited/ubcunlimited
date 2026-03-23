@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import cors from "cors";
 import { createServer } from "http";
 import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
@@ -27,9 +28,41 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
   throw new Error(`No available port found starting from ${startPort}`);
 }
 
+// Allowed origins: the deployed domains + localhost dev
+const ALLOWED_ORIGINS = [
+  "https://ubcunlimited.com",
+  "https://www.ubcunlimited.com",
+  "https://ubcmerch-buvnwzjn.manus.space",
+  /\.manus\.computer$/,   // sandbox preview URLs
+  /^http:\/\/localhost/,  // local dev
+  /^http:\/\/127\.0\.0\.1/,  // local dev (IP form)
+];
+
 async function startServer() {
   const app = express();
   const server = createServer(app);
+
+  // CORS — must be registered before any routes
+  app.use(
+    cors({
+      origin: (origin, callback) => {
+        // Allow requests with no origin (server-to-server, curl, Postman)
+        if (!origin) return callback(null, true);
+        const allowed = ALLOWED_ORIGINS.some(o =>
+          typeof o === "string" ? o === origin : o.test(origin)
+        );
+        if (allowed) {
+          callback(null, true);
+        } else {
+          callback(new Error(`CORS: origin '${origin}' not allowed`));
+        }
+      },
+      credentials: true,          // required for session cookies
+      methods: ["GET", "POST", "OPTIONS"],
+      allowedHeaders: ["Content-Type", "Authorization"],
+    })
+  );
+
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));

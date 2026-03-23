@@ -128,3 +128,5 @@
 - [x] Add David N. PhD testimonial with short preview card + expandable full version
 - [x] Site-wide: replace all "Surcharge & Cash Discount" variations with "Cash Discount & Dual Pricing"
 - [x] high-risk-industries-dropped-by-stripe blog: replace "pre-dunning" with "pre-billing"
+- [x] Wire all site forms to LeadConnector webhook (consultation, statement review, contact, SkyTab configurator quote)
+- [x] Verify server CORS configuration allows frontend to reach tRPC API and webhook calls are server-side only
