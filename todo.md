@@ -111,3 +111,8 @@
 - [x] Remove Agent / ISO Program link from all nav menus and footer
 - [x] Add noindex/nofollow meta tags to the Agent / ISO Program page
 - [x] Add Disallow /agent-iso rule to robots.txt
+- [x] Add AGENT_PORTAL_PASSWORD secret for agent portal auth
+- [x] Build /agent-login page (private branded landing page)
+- [x] Build AgentAuthGate component to protect /agent-iso
+- [x] Add tRPC procedure to verify agent portal password server-side
+- [x] Wire /agent-login and /agent-iso routes in App.tsx

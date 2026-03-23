@@ -1,9 +1,11 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
+import { ENV } from "./_core/env";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { formsRouter } from "./routers/forms";
 import { testimonialsRouter } from "./routers/testimonials";
+import { z } from "zod";
 
 export const appRouter = router({
     // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
@@ -21,6 +23,19 @@ export const appRouter = router({
 
   forms: formsRouter,
   testimonials: testimonialsRouter,
+
+  agent: router({
+    verifyPassword: publicProcedure
+      .input(z.object({ password: z.string() }))
+      .mutation(({ input }) => {
+        const correct = ENV.agentPortalPassword;
+        if (!correct) {
+          // If no password is set, deny access
+          return { success: false };
+        }
+        return { success: input.password === correct };
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
