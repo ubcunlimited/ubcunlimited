@@ -691,7 +691,7 @@ This diversity means that merchant services needs in Utah County vary widely. A 
 
 The most important factor in choosing a merchant services provider is not the rate — it is the combination of rate, service, and local accountability. A processor that offers a slightly lower rate but provides no local support is often a worse deal than a local provider with competitive rates and a team that can be on-site within hours if something goes wrong.
 
-Look for a provider that offers transparent interchange-plus pricing (not flat-rate or tiered pricing), local installation and support, no long-term contracts or early termination fees, and a statement review process that shows you exactly what you are currently paying and what you would pay with them.
+Look for a provider that offers pricing tailored to your individual business needs — structured to optimize your profitability rather than maximize their margin — along with local installation and support, no long-term contracts or early termination fees, and a statement review process that shows you exactly what you are currently paying and what you would pay with them.
 
 ## Common Payment Processing Mistakes Utah County Businesses Make
 

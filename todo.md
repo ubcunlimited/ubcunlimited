@@ -134,3 +134,4 @@
 - [x] Webhook: restructure payload so firstName/lastName/phone/email are top-level; all other vars go in "notes" JSON object
 - [x] Cities page: show only top 10 highest-populated non-featured cities + search bar for all remaining cities
 - [x] skytab-pos-review-utah page: remove interchange-plus pricing sentence
+- [x] merchant-service-utah-county blog: add "But" to business base sentence and rephrase interchange-plus pricing line
