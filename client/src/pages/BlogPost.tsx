@@ -1006,7 +1006,7 @@ If you have ever looked at your monthly processing statement and wondered why yo
 
 ## What Is Interchange?
 
-Interchange is a fee paid by your bank (the acquiring bank) to the cardholder's bank (the issuing bank) every time a card transaction is processed. It is not a fee your processor invented — it is a fee set by the card networks (Visa, Mastercard, Discover, and American Express) and published publicly twice a year, typically in April and October.
+Interchange is a fee paid by your bank (the acquiring bank) to the cardholder's bank (the issuing bank) every time a card transaction is processed. It is not a fee your processor invented — it is a fee set by the card networks ([Visa](https://usa.visa.com/support/small-business/regulations-fees.html), [Mastercard](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html), [Discover](https://www.discoverglobalnetwork.com/partners/merchants/), and [American Express](https://www.americanexpress.com/us/merchant/optblue.html)) and published publicly twice a year, typically in April and October.
 
 The interchange fee compensates the issuing bank for the cost of extending credit, managing fraud risk, funding rewards programs, and processing the transaction. From the merchant's perspective, interchange is a pass-through cost — your processor collects it from you and passes it to the issuing bank. No processor can reduce interchange; they can only add their own markup on top of it.
 
@@ -1030,7 +1030,7 @@ This is the question most merchants have after seeing their first interchange-pl
 
 ## A Reference Table of Common Interchange Rates
 
-The following rates reflect [Visa's and Mastercard's published schedules](https://usa.visa.com/support/small-business/regulations-fees.html) as of 2026. These are the actual interchange rates — not what your processor charges you.
+The following rates reflect the card networks' published schedules as of 2026 — [Visa](https://usa.visa.com/support/small-business/regulations-fees.html), [Mastercard](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html), [Discover](https://www.discoverglobalnetwork.com/partners/merchants/), and [American Express](https://www.americanexpress.com/us/merchant/optblue.html). These are the actual interchange rates — not what your processor charges you.
 
 | Card Type | Transaction Type | Interchange Rate |
 |---|---|---|
@@ -1091,10 +1091,14 @@ If you have never had your processing statement reviewed by someone who can expl
 
 1. [Nilson Report — Merchant Processing Fees in the United States 2023](https://nilsonreport.com/articles/merchant-processing-fees-in-the-united-states-2023/)
 2. [Visa — Interchange Reimbursement Fees (Published Schedule)](https://usa.visa.com/support/small-business/regulations-fees.html)
-3. [Mastercard — Interchange Rates Explained](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html)
-4. [Federal Register — Debit Card Interchange Fees and Routing (Durbin Amendment)](https://www.federalregister.gov/documents/2023/11/14/2023-24034/debit-card-interchange-fees-and-routing)
-5. [CNBC — Visa, Mastercard Reach Revised Swipe Fee Settlement with Merchants (November 2025)](https://www.cnbc.com/2025/11/10/visa-mastercard-reach-revised-swipe-fee-settlement-with-merchants-.html)
-6. [Merchants Payments Coalition — Swipe Fees Hit Record $187.2 Billion in 2024](https://www.merchantspaymentscoalition.com/credit-and-debit-card-swipe-fees-hit-new-record-1872-billion-driving-prices-american-families)
+3. [Visa — Interchange Reimbursement Fees PDF (Direct Download)](https://usa.visa.com/content/dam/VCOM/download/merchants/visa-usa-interchange-reimbursement-fees.pdf)
+4. [Mastercard — Interchange Rates Explained](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html)
+5. [Mastercard — U.S. Region Interchange Bulletin PDF (Direct Download)](https://www.mastercard.com/content/dam/mccom/us/business/documents/merchant-rates-2025-2026.pdf)
+6. [Discover Global Network — Merchant Partners](https://www.discoverglobalnetwork.com/partners/merchants/)
+7. [American Express — OptBlue Program for Merchants](https://www.americanexpress.com/us/merchant/optblue.html)
+8. [Federal Register — Debit Card Interchange Fees and Routing (Durbin Amendment)](https://www.federalregister.gov/documents/2023/11/14/2023-24034/debit-card-interchange-fees-and-routing)
+9. [CNBC — Visa, Mastercard Reach Revised Swipe Fee Settlement with Merchants (November 2025)](https://www.cnbc.com/2025/11/10/visa-mastercard-reach-revised-swipe-fee-settlement-with-merchants-.html)
+10. [Merchants Payments Coalition — Swipe Fees Hit Record $187.2 Billion in 2024](https://www.merchantspaymentscoalition.com/credit-and-debit-card-swipe-fees-hit-new-record-1872-billion-driving-prices-american-families)
     `,
   },
 };
