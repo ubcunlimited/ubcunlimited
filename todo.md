@@ -149,3 +149,4 @@
 - [x] Perf: responsive hero image srcset (480w/768w/1024w/1440w) with imagesrcset preload hint
 - [x] Add floating ADA accessibility widget above chat bubble (font size, contrast, dyslexia font, reduce motion, focus highlights)
 - [x] Fix BackToTop button position so it doesn't overlap the ADA accessibility widget
+- [x] Reduce space between hero content and navigation bar
