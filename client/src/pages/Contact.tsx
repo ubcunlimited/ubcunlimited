@@ -165,7 +165,7 @@ function QuoteForm({ onSuccess }: { onSuccess: () => void }) {
     mutation.mutate(form);
   };
 
-  const solutionOptions = ["Credit Card Processing", "Surcharge & Cash Discount Solutions / Surcharge & Cash Discount Solutions", "POS System", "eCommerce / Payment Gateway", "ACH / eCheck", "Mobile Processing", "Virtual Terminal", "Gift & Loyalty", "High-Risk Processing"];
+  const solutionOptions = ["Credit Card Processing", "Cash Discount & Dual Pricing / Cash Discount & Dual Pricing", "POS System", "eCommerce / Payment Gateway", "ACH / eCheck", "Mobile Processing", "Virtual Terminal", "Gift & Loyalty", "High-Risk Processing"];
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">

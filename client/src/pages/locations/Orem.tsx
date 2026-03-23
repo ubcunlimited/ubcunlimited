@@ -78,7 +78,7 @@ const OREM_BENEFITS = [
   },
   {
     icon: DollarSign,
-    title: "Surcharge & Cash Discount Solutions Available",
+    title: "Cash Discount & Dual Pricing Available",
     desc: "Eliminate processing fees entirely with our cash discount program — popular with Orem restaurants, retail, and service businesses looking to protect margins.",
   }
 ];

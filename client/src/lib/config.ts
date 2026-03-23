@@ -40,7 +40,7 @@ export const NAV_SOLUTIONS = [
   { label: "Virtual Terminals", href: "/solutions/virtual-terminals", desc: "Process payments by phone, mail order, or manual entry from any browser", icon: "💻" },
   { label: "Invoicing", href: "/solutions/invoicing", desc: "Send digital invoices and collect payments online without a physical terminal", icon: "📄" },
   { label: "Gift Cards & Loyalty", href: "/solutions/gift-loyalty", desc: "Custom-branded gift cards and loyalty programs to increase repeat business", icon: "🎁" },
-  { label: "Surcharge & Cash Discount Solutions", href: "/solutions/surcharge-cash-discount", desc: "Pass processing costs to card-paying customers legally and transparently", icon: "💲" },
+  { label: "Cash Discount & Dual Pricing", href: "/solutions/surcharge-cash-discount", desc: "Pass processing costs to card-paying customers legally and transparently", icon: "💲" },
   { label: "High-Risk Processing", href: "/solutions/high-risk-processing", desc: "Stable merchant accounts for high-risk industries that standard processors won't approve", icon: "🛡️", highRisk: true },
 ];
 

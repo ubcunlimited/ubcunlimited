@@ -20,7 +20,7 @@ const industryDetails: Record<string, IndustryDetail> = {
       { icon: "🍽️", title: "Tableside Ordering & Pay", desc: "Handheld terminals let servers take orders and process payments at the table — reducing errors and speeding up turns." },
       { icon: "🖥️", title: "Kitchen Display Systems", desc: "Eliminate ticket confusion with real-time order routing from POS to kitchen, bar, and expo stations." },
       { icon: "📱", title: "Online Ordering Integration", desc: "Connect your POS to DoorDash, Uber Eats, and your own website — all orders flow into one system." },
-      { icon: "💳", title: "Surcharge & Cash Discount Solutions", desc: "Eliminate up to 100% of your processing fees by offering a small discount to cash-paying customers." },
+      { icon: "💳", title: "Cash Discount & Dual Pricing", desc: "Eliminate up to 100% of your processing fees by offering a small discount to cash-paying customers." },
     ],
     cta: "Get a Restaurant Payment Consultation",
   },

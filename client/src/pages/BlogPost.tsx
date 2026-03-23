@@ -231,7 +231,7 @@ Apple Pay and Google Pay are no longer just for tech-savvy early adopters. Digit
 
 For merchants, accepting digital wallets requires no additional setup beyond having an NFC-enabled terminal. The processing fees are the same as a standard card-present transaction. The benefit is a faster, more secure checkout experience that reduces friction and increases customer satisfaction.
 
-## Cash Discounting & Surcharging Are Going Mainstream
+## Cash Discounting & Dual Pricing Are Going Mainstream
 
 As processing costs have risen alongside the proliferation of premium rewards credit cards, more Utah businesses are implementing cash discount programs and credit card surcharging to offset their processing expenses. Cash discounting — offering a lower price for customers who pay with cash — is legal in all 50 states and has become increasingly common in industries from restaurants to auto repair shops to medical offices.
 
@@ -528,14 +528,14 @@ Your payment processor should provide PCI compliance support as part of your mer
   },
 
   "cash-discounting-surcharging-utah": {
-    title: "Surcharge & Cash Discount Solutions vs. Surcharging: What Utah Businesses Need to Know",
+    title: "Cash Discount & Dual Pricing vs. Surcharging: What Utah Businesses Need to Know",
     category: "Pricing & Fees",
     date: "2025-04-08",
     readTime: "8 min read",
     content: `
-Credit card processing fees are a significant expense for most Utah businesses. Two strategies have emerged as popular ways to offset or eliminate these costs: surcharge & cash discount solutions and credit card surcharging. While they may seem similar on the surface, they work very differently, have different legal requirements, and are better suited to different types of businesses. Understanding the distinction is essential before implementing either program.
+Credit card processing fees are a significant expense for most Utah businesses. Two strategies have emerged as popular ways to offset or eliminate these costs: cash discounting & dual pricing and credit card surcharging. While they may seem similar on the surface, they work very differently, have different legal requirements, and are better suited to different types of businesses. Understanding the distinction is essential before implementing either program.
 
-## Surcharge & Cash Discount Solutions: Legal in All 50 States
+## Cash Discount & Dual Pricing: Legal in All 50 States
 
 A cash discount program works by establishing a standard price that includes the cost of card acceptance, then offering a discount to customers who pay with cash. For example, a service that costs $100 by card might be priced at $97 for cash-paying customers. The customer paying with cash receives a discount; the card-paying customer pays the standard price.
 
@@ -553,15 +553,15 @@ As of 2025, credit card surcharging is prohibited in four states: Connecticut, M
 
 The card network requirements for surcharging are specific and must be followed carefully. Merchants must register their intent to surcharge with Mastercard at least 30 days before implementing the program. Signage must be posted at the entrance of the business and near the point of sale, clearly disclosing the surcharge percentage. The surcharge must be disclosed on the customer's receipt. Surcharges may only be applied to credit cards — not debit cards or prepaid cards. The surcharge cannot exceed 3% (or the merchant's actual cost of acceptance, whichever is lower). Merchants cannot combine surcharging with a cash discount program.
 
-## Surcharge & Cash Discount Solutions: A Related Approach
+## Dual Pricing: A Related Approach
 
-Dual pricing is a third approach that is related to both surcharge & cash discount solutions and surcharging. Under surcharge & cash discount solutions, the merchant displays two prices simultaneously — a cash price and a card price — for every item or service. This is different from surcharge & cash discount solutions (which shows one price and applies a discount at checkout) and from surcharging (which shows one price and adds a fee at checkout).
+Dual pricing is a third approach that is related to both cash discounting and surcharging. Under dual pricing, the merchant displays two prices simultaneously — a cash price and a card price — for every item or service. This is different from a cash discount program (which shows one price and applies a discount at checkout) and from surcharging (which shows one price and adds a fee at checkout).
 
 Dual pricing is generally considered the most transparent approach, since customers can see both prices before they decide how to pay. It is legal in most states and is supported by most major payment processors. The operational requirement is that your POS system must be capable of displaying and processing two prices for each item.
 
 ## Which Approach Is Right for Your Business?
 
-| Factor | Surcharge & Cash Discount Solutions | Surcharging | Surcharge & Cash Discount Solutions |
+| Factor | Cash Discount | Surcharging | Dual Pricing |
 |---|---|---|---|
 | Legal in all 50 states | Yes | No (banned in 4 states) | Most states |
 | Applies to debit cards | No (discount applies to cash only) | No (cannot surcharge debit) | Varies |

@@ -112,7 +112,7 @@ export default function Home() {
       <SEO
         title="Utah Merchant Services & Payment Processing | UBC Unlimited"
         canonical="/"
-        description="Utah merchant services provider. Credit card processing, surcharge & cash discount solutions, SkyTab POS, ACH payments. Serving Salt Lake City, Provo & statewide. Free statement review."
+        description="Utah merchant services provider. Credit card processing, cash discount & dual pricing, SkyTab POS, ACH payments. Serving Salt Lake City, Provo & statewide. Free statement review."
         schema={[
           {
             "@context": "https://schema.org",
@@ -120,7 +120,7 @@ export default function Home() {
             "@id": "https://ubcunlimited.com/#business",
             "name": "UBC Unlimited",
             "alternateName": "UBC Unlimited Merchant Services",
-            "description": "Utah merchant services provider offering credit card processing, POS systems, ACH payments, surcharge & cash discount solutions, and payment gateway solutions for businesses across Utah.",
+            "description": "Utah merchant services provider offering credit card processing, POS systems, ACH payments, cash discount & dual pricing, and payment gateway solutions for businesses across Utah.",
             "url": "https://ubcunlimited.com",
             "telephone": "+18014576500",
             "email": "sales@ubcunlimited.com",
@@ -155,7 +155,7 @@ export default function Home() {
               "name": "Merchant Services",
               "itemListElement": [
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Credit Card Processing"}},
-                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Surcharge & Cash Discount Solutions"}},
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cash Discount & Dual Pricing"}},
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "POS Systems"}},
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ACH & eCheck Processing"}},
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "High-Risk Merchant Accounts"}},
@@ -176,7 +176,7 @@ export default function Home() {
             "@id": "https://ubcunlimited.com/#website",
             "url": "https://ubcunlimited.com",
             "name": "UBC Unlimited",
-            "description": "Utah merchant services — credit card processing, POS systems, surcharge & cash discount solutions, and payment solutions for Utah businesses.",
+            "description": "Utah merchant services — credit card processing, POS systems, cash discount & dual pricing, and payment solutions for Utah businesses.",
             "publisher": {"@id": "https://ubcunlimited.com/#business"},
             "potentialAction": {
               "@type": "SearchAction",

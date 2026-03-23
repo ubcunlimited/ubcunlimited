@@ -111,7 +111,7 @@ const SOLUTION_HOW_IT_WORKS: Record<string, { step: string; title: string; desc:
     { step: "03", title: "Approval & Activation", desc: "High-risk underwriting timelines vary by vertical and acquiring bank. We manage the process end-to-end — gateway setup, integration, and ongoing account management — so you're ready to process as soon as approval is granted." },
   ],
   "surcharge-cash-discount": [
-    { step: "01", title: "Program Selection", desc: "We review your business type, card mix, and customer base to recommend the right program — cash discount, surcharging, or surcharge & cash discount solutions." },
+    { step: "01", title: "Program Selection", desc: "We review your business type, card mix, and customer base to recommend the right program — cash discount, surcharging, or cash discount & dual pricing." },
     { step: "02", title: "Equipment & Compliance Setup", desc: "We configure your terminals or POS, provide all required signage and receipt language, and ensure full card brand compliance." },
     { step: "03", title: "Training & Launch", desc: "We train your staff on how to explain the program to customers and monitor your first month of savings to confirm performance." },
   ],
@@ -123,11 +123,11 @@ const solutionsData: SolutionData[] = [
     icon: "💳",
     title: "Credit Card Processing",
     subtitle: "Accept all major cards with pricing tailored to your business",
-    metaDescription: "Utah credit card processing with surcharge & cash discount solutions, surcharge & cash discount solutions & surcharging options. Eliminate processing fees, get next-day funding & local support.",
+    metaDescription: "Utah credit card processing with cash discount & dual pricing, cash discount & dual pricing & surcharging options. Eliminate processing fees, get next-day funding & local support.",
     description: "UBC Unlimited provides end-to-end credit card processing solutions designed around your business — not a one-size-fits-all rate sheet. We work with you to identify the pricing model and payment infrastructure that best fits your transaction volume, industry, and customer base. Whether you're accepting payments in-person, online, or on the go, we deliver a seamless, secure, and cost-effective solution.",
     heroPoints: ["Pricing tailored to your business", "Next-day funding available", "Visa, MC, Amex, Discover & more", "EMV, NFC & digital wallets"],
     features: [
-      { title: "Flexible Pricing Models", desc: "We structure pricing around your specific business needs. Options include flat rate, tiered, and pass-through pricing models — as well as cost-reduction programs like Surcharge & Cash Discount Solutions and surcharging that can significantly lower or eliminate your processing costs." },
+      { title: "Flexible Pricing Models", desc: "We structure pricing around your specific business needs. Options include flat rate, tiered, and pass-through pricing models — as well as cost-reduction programs like Cash Discount & Dual Pricing and surcharging that can significantly lower or eliminate your processing costs." },
       { title: "In-Person, Online & Mobile Payments", desc: "Accept payments anywhere — countertop terminals, wireless and mobile devices, online checkout, virtual terminals, and pay-by-link. We provide a unified commerce experience across all your sales channels." },
       { title: "EMV, Contactless & Digital Wallets", desc: "Full support for chip cards, tap-to-pay, Apple Pay, Google Pay, Samsung Pay, and all modern payment methods — keeping you current with how customers want to pay." },
       { title: "Next-Day Funding", desc: "Get your money faster. Funds deposited directly to your business bank account the next business day for most qualifying accounts." },
@@ -473,9 +473,9 @@ const solutionsData: SolutionData[] = [
   {
     slug: "surcharge-cash-discount",
     icon: "💰",
-    title: "Surcharge & Cash Discount Solutions",
+    title: "Cash Discount & Dual Pricing",
     subtitle: "Keep more of every sale — legally pass processing costs to the card, not your bottom line",
-    metaDescription: "Cash discounting, surcharge & cash discount solutions & surcharging programs for Utah businesses. Eliminate credit card processing fees legally & keep more of every sale.",
+    metaDescription: "Cash discounting, cash discount & dual pricing & surcharging programs for Utah businesses. Eliminate credit card processing fees legally & keep more of every sale.",
     description: "Credit card processing fees quietly drain 2.5% to 4% from every card transaction. UBC Unlimited proven, fully compliant programs to help offset or eliminate processing costs — Dual Pricing or Cash Discount Solutions that are compliant in all 50 States and Credit Card Surcharging that has restrictions based on your location and card acceptance — designed to offset your processing costs while passing meaningful savings directly to your customers. We'll analyze your current statement, walk you through every option, and implement the program that maximizes savings for your business and your customers — fully compliant with your state's regulations.",
     heroPoints: ["Legal in all 50 states (program-dependent)", "Eliminate up to 100% of processing fees", "Compliant signage & receipt language included", "Works with most POS systems & terminals"],
     features: [
@@ -491,7 +491,7 @@ const solutionsData: SolutionData[] = [
     ],
     benefits: [
       "Eliminate or dramatically reduce credit card processing costs",
-      "Cash discounting and surcharge & cash discount solutions legal in all 50 states",
+      "Cash discounting and cash discount & dual pricing legal in all 50 states",
       "Surcharging available in most states with full compliance support",
       "Compliant signage and receipt language provided",
       "Compatible with most existing terminals and POS systems",

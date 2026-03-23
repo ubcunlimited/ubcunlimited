@@ -57,7 +57,7 @@ const faqCategories = [
       {
         question: "What credit card processing rates do you offer?",
         answer:
-          "We work with you to set up pricing that optimizes your profitability. Depending on your business type and volume, we can structure Flat Rate, Multi-Tiered, or Interchange-Plus pricing. We can also set you up to be compliant for surcharging, surcharge & cash discount solutions, or surcharge & cash discount solutions models — all designed to maximize your profits while minimizing the cost to accept payments.",
+          "We work with you to set up pricing that optimizes your profitability. Depending on your business type and volume, we can structure Flat Rate, Multi-Tiered, or Interchange-Plus pricing. We can also set you up to be compliant for surcharging, cash discount & dual pricing, or cash discount & dual pricing models — all designed to maximize your profits while minimizing the cost to accept payments.",
       },
       {
         question: "What is interchange-plus pricing?",
@@ -65,20 +65,20 @@ const faqCategories = [
           "Interchange-plus pricing passes the actual interchange cost (set by Visa/Mastercard) directly to you, plus a small fixed markup. It's the most transparent pricing model and is especially beneficial for businesses with high-ticket transactions or a mix of card types.",
       },
       {
-        question: "What is surcharge & cash discount solutions and how does it work?",
+        question: "What is cash discount & dual pricing and how does it work?",
         answer: (
           <div className="space-y-3">
             <p>
               Dual pricing is a compliant payment strategy where your business displays two prices at the point of sale — a lower price for customers who pay with cash, and a slightly higher price for customers who pay with a credit or debit card. The difference between the two prices reflects your card processing cost, which is passed to the customer transparently before the transaction is completed.
             </p>
             <p>
-              Dual pricing is <strong>legal in all 50 states</strong> and applies to all card types — credit, debit, and prepaid. It is distinct from surcharging (which is limited to credit cards only and is prohibited in some states) and from surcharge & cash discount solutions (which posts one price and applies a discount at checkout for cash payers). Dual pricing is generally considered the most transparent and consumer-friendly approach because both prices are shown upfront.
+              Dual pricing is <strong>legal in all 50 states</strong> and applies to all card types — credit, debit, and prepaid. It is distinct from surcharging (which is limited to credit cards only and is prohibited in some states) and from cash discount & dual pricing (which posts one price and applies a discount at checkout for cash payers). Dual pricing is generally considered the most transparent and consumer-friendly approach because both prices are shown upfront.
             </p>
             <p>
               When implemented correctly with proper signage and receipt language, most businesses report minimal customer pushback. UBC Unlimited provides all required compliance materials, staff training, and compatible hardware or equipment programming as part of our setup.
             </p>
             <p>
-              <a href="/solutions/surcharge-cash-discount" className="text-[#c9a84c] font-semibold hover:underline">Learn more about our Surcharge & Cash Discount Solutions &amp; Cash Discount program →</a>
+              <a href="/solutions/surcharge-cash-discount" className="text-[#c9a84c] font-semibold hover:underline">Learn more about our Cash Discount & Dual Pricing &amp; Cash Discount program →</a>
             </p>
           </div>
         ),
@@ -605,7 +605,7 @@ export default function FAQPage() {
     <PageLayout>
       <SEO
         title="FAQ — Merchant Services Questions Answered | UBC Unlimited"
-        description="Answers to common questions about credit card processing, POS systems, ACH payments, surcharge & cash discount solutions, eCommerce, and more. Utah's local merchant services experts."
+        description="Answers to common questions about credit card processing, POS systems, ACH payments, cash discount & dual pricing, eCommerce, and more. Utah's local merchant services experts."
         canonical="/faq"
         schema={{
           "@context": "https://schema.org",
@@ -616,9 +616,9 @@ export default function FAQPage() {
             { "@type": "Question", "name": "Do you offer month-to-month agreements?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in most situations we offer a month-to-month agreement because we believe you must set yourself apart with service. We do have certain products that require agreements due to solution requirements, and we do our best to minimize the impact in those situations." } },
             { "@type": "Question", "name": "What types of businesses do you serve?", "acceptedAnswer": { "@type": "Answer", "text": "We serve restaurants, retail, medical, automotive, salons, eCommerce, professional services, and more. We can also service medium and high-risk businesses, though those are evaluated on a case-by-case basis." } },
             { "@type": "Question", "name": "Are there cancellation fees?", "acceptedAnswer": { "@type": "Answer", "text": "Generally, no cancellation fees apply — we believe in earning your business every month, not locking you in. Certain solutions require a formal agreement, and in those cases cancellation fees are based on the terms of the individual agreement." } },
-            { "@type": "Question", "name": "What credit card processing rates do you offer?", "acceptedAnswer": { "@type": "Answer", "text": "We offer Flat Rate, Multi-Tiered, or Interchange-Plus pricing depending on your business type and volume. We can also set you up for surcharging, surcharge & cash discount solutions, or surcharge & cash discount solutions models." } },
+            { "@type": "Question", "name": "What credit card processing rates do you offer?", "acceptedAnswer": { "@type": "Answer", "text": "We offer Flat Rate, Multi-Tiered, or Interchange-Plus pricing depending on your business type and volume. We can also set you up for surcharging, cash discount & dual pricing, or cash discount & dual pricing models." } },
             { "@type": "Question", "name": "What is interchange-plus pricing?", "acceptedAnswer": { "@type": "Answer", "text": "Interchange-plus pricing passes the actual interchange cost set by Visa/Mastercard directly to you, plus a small fixed markup. It is the most transparent pricing model and is especially beneficial for high-ticket transactions." } },
-            { "@type": "Question", "name": "What is surcharge & cash discount solutions and how does it work?", "acceptedAnswer": { "@type": "Answer", "text": "Dual pricing displays two prices at the point of sale — a lower price for cash and a slightly higher price for card. The difference reflects your processing cost. It is legal in all 50 states and applies to all card types." } },
+            { "@type": "Question", "name": "What is cash discount & dual pricing and how does it work?", "acceptedAnswer": { "@type": "Answer", "text": "Dual pricing displays two prices at the point of sale — a lower price for cash and a slightly higher price for card. The difference reflects your processing cost. It is legal in all 50 states and applies to all card types." } },
             { "@type": "Question", "name": "Is the statement review really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, completely free with no obligation. We analyze your current statement, identify overcharges, and present a clear comparison. You decide if it makes sense to switch — there is no pressure." } },
             { "@type": "Question", "name": "Do you work with SkyTab POS systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — UBC Unlimited is an authorized SkyTab reseller in Utah. SkyTab is one of the most powerful POS systems available for restaurants and bars, and we provide full local installation and support." } }
           ]
