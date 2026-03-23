@@ -159,3 +159,10 @@
 - [x] Fix logo image: add srcset (160w/320w), correct width/height attrs, sizes=160px
 - [x] Fix consultation image: tighten sizes attribute to match actual display dimensions
 - [x] Make Google Fonts non-render-blocking via rel=preload + onload swap trick
+- [x] Fix Google Fonts render-blocking: switched to media="print" onload="this.media='all'" pattern
+- [x] Re-compress logo images at quality=60/70 (logo_320w: 17 KiB → 12 KiB, logo_160w: 6.5 KiB → 5 KiB)
+- [x] Re-compress hero images at quality=72 (768w: 29 KiB → 20 KiB, 1440w: 54 KiB → 41 KiB)
+- [x] Add 600w consultation image to srcset (browser picks 600w instead of 768w for 587px display)
+- [x] Re-compress consultation 768w at quality=72 (41 KiB → 29 KiB)
+- [x] Upgrade Vite build target to ES2020 to reduce legacy JS polyfills (~8 KiB savings)
+- [x] Update all image srcsets and preload hints to reference new re-compressed CDN URLs

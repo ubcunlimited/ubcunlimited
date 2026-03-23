@@ -167,6 +167,8 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    // Target modern browsers to reduce legacy polyfills (saves ~8 KiB)
+    target: "es2020",
     // Minification
     minify: "esbuild",
     cssMinify: true,
