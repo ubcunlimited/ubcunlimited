@@ -1,5 +1,6 @@
 import { Star, Quote, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { useState } from "react";
 
 const JOANN_FULL_QUOTE =
   "Since the day we opened our doors, Josh has been there to provide reliable credit card processing and truly outstanding service. He is always helpful, responsive, and someone we know we can count on. His loyalty and commitment to our business are a big part of why we continue to trust him.";
@@ -7,6 +8,12 @@ const JOANN_FULL_QUOTE =
 // Truncate to roughly the first sentence for the homepage preview
 const JOANN_SHORT_QUOTE =
   "Since the day we opened our doors, Josh has been there to provide reliable credit card processing and truly outstanding service.";
+
+const DAVID_FULL_QUOTE =
+  "For more than ten years, UBC Unlimited has been a trusted resource for my practice. They took the time to understand how my business works and put payment processing procedures in place that made sense for my specific needs. Over the years, they have helped me update technology when needed and have always been proactive in reviewing options to improve and streamline my payment collection process. Their level of service, attention to detail, and long-term commitment have been a real benefit to my business."
+
+const DAVID_SHORT_QUOTE =
+  "For more than ten years, UBC Unlimited has been a trusted resource for my practice. They took the time to understand how my business works and put payment processing procedures in place that made sense for my specific needs."
 
 const testimonials = [
   {
@@ -38,6 +45,14 @@ const testimonials = [
     rating: 5,
     readMore: true,
   },
+  {
+    name: "David N., PhD",
+    role: "Psychologist · Davis County",
+    text: DAVID_SHORT_QUOTE,
+    fullText: DAVID_FULL_QUOTE,
+    rating: 5,
+    readMore: true,
+  },
 ];
 
 interface TestimonialBlockProps {
@@ -45,6 +60,8 @@ interface TestimonialBlockProps {
 }
 
 export default function TestimonialBlock({ dark = false }: TestimonialBlockProps) {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   return (
     <section className={`py-16 ${dark ? "bg-[#080808]" : "bg-white"}`}>
       <div className="container">
@@ -61,58 +78,67 @@ export default function TestimonialBlock({ dark = false }: TestimonialBlockProps
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className={`rounded-2xl p-6 relative flex flex-col ${
-                dark
-                  ? "bg-white/5 border border-white/10 hover:border-[#c9a84c]/30"
-                  : "bg-[#f8fafc] border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-md"
-              } transition-all`}
-            >
-              <Quote size={24} className="text-[#c9a84c]/30 mb-3 shrink-0" />
-              <p
-                className={`text-sm leading-relaxed mb-4 flex-1 ${
-                  dark ? "text-white/70" : "text-gray-600"
-                }`}
+          {testimonials.map((t, i) => {
+            const isExpanded = expandedIndex === i;
+            const hasFullText = Boolean(t.fullText);
+            const displayText = hasFullText && !isExpanded ? t.text : (t.fullText ?? t.text);
+            return (
+              <div
+                key={i}
+                className={`rounded-2xl p-6 relative flex flex-col ${
+                  dark
+                    ? "bg-white/5 border border-white/10 hover:border-[#c9a84c]/30"
+                    : "bg-[#f8fafc] border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-md"
+                } transition-all`}
               >
-                "{t.text}"
-                {t.readMore && (
-                  <>
-                    {"… "}
-                    <Link
-                      href="/testimonials"
-                      className="inline-flex items-center gap-1 text-[#c9a84c] hover:text-[#b8963e] font-medium whitespace-nowrap transition-colors"
+                <Quote size={24} className="text-[#c9a84c]/30 mb-3 shrink-0" />
+                <div className={`text-sm leading-relaxed mb-4 flex-1 ${dark ? "text-white/70" : "text-gray-600"}`}>
+                  <span>&ldquo;{displayText}{hasFullText && !isExpanded ? "\u2026" : ""}&rdquo;</span>
+                  {hasFullText ? (
+                    <button
+                      onClick={() => setExpandedIndex(isExpanded ? null : i)}
+                      className="ml-1.5 inline-flex items-center gap-1 text-[#c9a84c] hover:text-[#b8963e] font-medium whitespace-nowrap transition-colors"
                     >
-                      Read full testimonial
-                      <ArrowRight size={11} />
-                    </Link>
-                  </>
-                )}
-              </p>
-              <div className="flex items-center justify-between mt-auto">
-                <div>
-                  <div
-                    className={`font-semibold text-sm ${
-                      dark ? "text-white" : "text-[#080808]"
-                    }`}
-                  >
-                    {t.name}
-                  </div>
-                  <div
-                    className={`text-xs ${dark ? "text-white/40" : "text-gray-400"}`}
-                  >
-                    {t.role}
-                  </div>
+                      {isExpanded ? "Show less" : "Read full testimonial"}
+                      <ArrowRight size={11} className={isExpanded ? "rotate-90" : ""} />
+                    </button>
+                  ) : t.readMore ? (
+                    <>
+                      {" "}
+                      <Link
+                        href="/testimonials"
+                        className="inline-flex items-center gap-1 text-[#c9a84c] hover:text-[#b8963e] font-medium whitespace-nowrap transition-colors"
+                      >
+                        Read full testimonial
+                        <ArrowRight size={11} />
+                      </Link>
+                    </>
+                  ) : null}
                 </div>
-                <div className="flex gap-0.5">
-                  {Array.from({ length: t.rating }).map((_, j) => (
-                    <Star key={j} size={13} className="text-[#d4a843] fill-[#d4a843]" />
-                  ))}
+                <div className="flex items-center justify-between mt-auto">
+                  <div>
+                    <div
+                      className={`font-semibold text-sm ${
+                        dark ? "text-white" : "text-[#080808]"
+                      }`}
+                    >
+                      {t.name}
+                    </div>
+                    <div
+                      className={`text-xs ${dark ? "text-white/40" : "text-gray-400"}`}
+                    >
+                      {t.role}
+                    </div>
+                  </div>
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: t.rating }).map((_, j) => (
+                      <Star key={j} size={13} className="text-[#d4a843] fill-[#d4a843]" />
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Link to full testimonials page */}

@@ -125,3 +125,4 @@
 - [x] Lower CC fees blog: remove all Stax references
 - [x] Lower CC fees blog: remove "Eliminate junk fees" section/bullet
 - [x] how-interchange-rates-work blog: add official interchange rate schedule links for all card brands (Visa, Mastercard, Discover, Amex) opening in new tab
+- [x] Add David N. PhD testimonial with short preview card + expandable full version

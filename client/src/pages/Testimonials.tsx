@@ -17,6 +17,7 @@ interface Testimonial {
   city: string;
   industry: string;
   quote: string;
+  shortQuote?: string;
   rating: number;
   featured?: boolean;
 }
@@ -184,6 +185,18 @@ const TESTIMONIALS: Testimonial[] = [
     quote: "I called three processors before UBC Unlimited. They were the only ones who actually came to my restaurant, looked at my setup, and gave me a real proposal. That's the kind of service I wanted.",
     rating: 5,
   },
+  {
+    id: 13,
+    name: "David N., PhD",
+    title: "Psychologist",
+    business: "Private Practice",
+    city: "Davis County, UT",
+    industry: "Medical",
+    shortQuote: "For more than ten years, UBC Unlimited has been a trusted resource for my practice. They took the time to understand how my business works and put payment processing procedures in place that made sense for my specific needs.",
+    quote: "For more than ten years, UBC Unlimited has been a trusted resource for my practice. They took the time to understand how my business works and put payment processing procedures in place that made sense for my specific needs. Over the years, they have helped me update technology when needed and have always been proactive in reviewing options to improve and streamline my payment collection process. Their level of service, attention to detail, and long-term commitment have been a real benefit to my business.",
+    rating: 5,
+    featured: true,
+  },
 ];
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
@@ -202,13 +215,33 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 function TestimonialCard({ t }: { t: Testimonial }) {
+  const [expanded, setExpanded] = useState(false);
+  const hasShortVersion = Boolean(t.shortQuote);
+  const displayQuote = hasShortVersion && !expanded ? t.shortQuote! : t.quote;
+
   return (
     <div className="bg-[#111111] border border-white/10 rounded-xl p-6 flex flex-col gap-4 hover:border-[#c9a84c]/30 transition-colors duration-200">
       <div className="flex items-start justify-between gap-2">
         <Quote size={28} className="text-[#c9a84c]/40 shrink-0 mt-0.5" />
         <StarRating rating={t.rating} />
       </div>
-      <p className="text-white/80 text-sm leading-relaxed flex-1">"{t.quote}"</p>
+      <div className="flex-1">
+        <p className="text-white/80 text-sm leading-relaxed">
+          &ldquo;{displayQuote}{hasShortVersion && !expanded ? "\u2026" : ""}&rdquo;
+        </p>
+        {hasShortVersion && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="mt-2 inline-flex items-center gap-1 text-[#c9a84c] hover:text-[#b8963e] text-xs font-semibold transition-colors"
+          >
+            {expanded ? (
+              <><span>Show less</span><ArrowRight size={11} className="rotate-90" /></>
+            ) : (
+              <><span>Read full testimonial</span><ArrowRight size={11} /></>
+            )}
+          </button>
+        )}
+      </div>
       <div className="border-t border-white/10 pt-4">
         <p className="text-white font-semibold text-sm">{t.name}</p>
         <p className="text-[#c9a84c] text-xs font-medium">{t.title} · {t.business}</p>
