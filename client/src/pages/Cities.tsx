@@ -162,31 +162,42 @@ export default function Cities() {
         </section>
       )}
 
-      {/* Non-featured cities — always visible */}
+      {/* Non-featured cities — top 10 by default, full search on demand */}
       {!noResults && (
         <section className="bg-[#111] py-12 border-t border-white/5">
           <div className="container">
             <h2 className="text-xl font-extrabold text-white mb-2" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
               {search ? `More Results for "${search}"` : "More Utah Cities We Serve"}
             </h2>
-            <p className="text-white/50 mb-6 text-sm">
-              We service businesses in these cities too. Click any city to request a consultation, or call us directly.
+            <p className="text-white/50 mb-4 text-sm">
+              {search
+                ? "Matching cities from our full service area."
+                : "Showing the 10 most populated non-featured cities. Use the search below to find any Utah city."}
             </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-              {(search ? nonFeaturedFiltered : CITIES.filter(c => !c.featured).sort((a,b) => b.population - a.population)).map((city) => (
-                <Link
-                  key={city.slug}
-                  href={`/cities/${city.slug}`}
-                  className="group flex items-center gap-2 bg-white/5 hover:bg-[#c9a84c]/10 border border-white/10 hover:border-[#c9a84c]/30 rounded-xl px-3 py-3 transition-all"
-                >
-                  <MapPin size={12} className="text-[#c9a84c] shrink-0" />
-                  <div>
-                    <div className="text-white/80 group-hover:text-white text-xs font-medium transition-colors leading-tight">{city.name}</div>
-                    <div className="text-white/35 text-[10px]">{city.county.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())} Co.</div>
-                  </div>
-                </Link>
-              ))}
-            </div>
+
+            {/* City search bar — only shown when not already filtering from hero */}
+            {!search && (
+              <CitySearch allCities={CITIES.filter(c => !c.featured)} />
+            )}
+
+            {/* When a hero search is active, show all matching non-featured results */}
+            {search && (
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mt-4">
+                {nonFeaturedFiltered.map((city) => (
+                  <Link
+                    key={city.slug}
+                    href={`/cities/${city.slug}`}
+                    className="group flex items-center gap-2 bg-white/5 hover:bg-[#c9a84c]/10 border border-white/10 hover:border-[#c9a84c]/30 rounded-xl px-3 py-3 transition-all"
+                  >
+                    <MapPin size={12} className="text-[#c9a84c] shrink-0" />
+                    <div>
+                      <div className="text-white/80 group-hover:text-white text-xs font-medium transition-colors leading-tight">{city.name}</div>
+                      <div className="text-white/35 text-[10px]">{city.county.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())} Co.</div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -239,6 +250,84 @@ export default function Cities() {
         </div>
       </section>
     </PageLayout>
+  );
+}
+
+// ─── City search + top-10 display ───────────────────────────────────────────────
+
+type CityEntry = { slug: string; name: string; county: string; population: number; featured?: boolean };
+
+function CitySearch({ allCities }: { allCities: CityEntry[] }) {
+  const [citySearch, setCitySearch] = useState("");
+
+  const sorted = allCities.slice().sort((a, b) => b.population - a.population);
+
+  // When no search term: show top 10 by population
+  // When searching: show all matches
+  const displayed = citySearch.trim()
+    ? sorted.filter((c) => c.name.toLowerCase().includes(citySearch.toLowerCase()))
+    : sorted.slice(0, 10);
+
+  const totalCount = allCities.length;
+
+  return (
+    <div>
+      {/* Inline search bar */}
+      <div className="relative max-w-sm mb-5">
+        <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/35" />
+        <input
+          type="text"
+          value={citySearch}
+          onChange={(e) => setCitySearch(e.target.value)}
+          placeholder={`Search all ${totalCount} cities...`}
+          className="w-full bg-white/8 border border-white/10 rounded-xl pl-9 pr-4 py-2.5 text-sm text-white/70 placeholder-white/25 focus:outline-none focus:border-[#c9a84c]/40 transition-colors"
+        />
+        {citySearch && (
+          <button
+            onClick={() => setCitySearch("")}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors text-xs"
+          >
+            ✕
+          </button>
+        )}
+      </div>
+
+      {/* City cards */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        {displayed.map((city) => (
+          <Link
+            key={city.slug}
+            href={`/cities/${city.slug}`}
+            className="group flex items-center gap-2 bg-white/5 hover:bg-[#c9a84c]/10 border border-white/10 hover:border-[#c9a84c]/30 rounded-xl px-3 py-3 transition-all"
+          >
+            <MapPin size={12} className="text-[#c9a84c] shrink-0" />
+            <div>
+              <div className="text-white/80 group-hover:text-white text-xs font-medium transition-colors leading-tight">{city.name}</div>
+              <div className="text-white/35 text-[10px]">{city.county.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())} Co.</div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* Footer note */}
+      {!citySearch && (
+        <p className="text-white/30 text-xs mt-4">
+          Showing top 10 of {totalCount} cities.{" "}
+          <span className="text-[#c9a84c]/70">Type above to search all {totalCount} cities.</span>
+        </p>
+      )}
+      {citySearch && displayed.length === 0 && (
+        <p className="text-white/40 text-sm mt-4">
+          No cities found matching "{citySearch}" — but we service all of Utah.{" "}
+          <Link href="/consultation" className="text-[#c9a84c] hover:underline">Request a consultation</Link>.
+        </p>
+      )}
+      {citySearch && displayed.length > 0 && (
+        <p className="text-white/30 text-xs mt-4">
+          {displayed.length} result{displayed.length !== 1 ? "s" : ""} for "{citySearch}"
+        </p>
+      )}
+    </div>
   );
 }
 
