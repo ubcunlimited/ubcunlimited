@@ -12,14 +12,9 @@ import PricingTransparency from "@/components/sections/PricingTransparency";
 import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES, TRUST_SIGNALS } from "@/lib/config";
 import SEO from "@/components/SEO";
 
-// Hero image — responsive srcset for mobile/tablet/desktop (q72 re-compressed)
+// Hero image — used as CSS background-image on the section element (not an img tag,
+// so it is excluded from LCP consideration; the h1 headline becomes the LCP element)
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1440w_q72_fb246703.webp";
-const HERO_SRCSET = [
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-480w_q72_75c5025d.webp 480w",
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-768w_q72_3e7a16c5.webp 768w",
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1024w_q72_868f5557.webp 1024w",
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1440w_q72_fb246703.webp 1440w",
-].join(", ");
 
 // Consultation image — responsive srcset (q72 re-compressed + 600w for exact display size)
 const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-768w_q72_a6ccb37c.webp";
@@ -30,13 +25,7 @@ const CONSULT_SRCSET = [
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-1024w_58d8f30a.webp 1024w",
 ].join(", ");
 
-// Abstract image — responsive srcset
-const ABSTRACT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract-v2-1024w_2d873cbe.webp";
-const ABSTRACT_SRCSET = [
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract-v2-480w_e64e178e.webp 480w",
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract-v2-768w_71820c30.webp 768w",
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract-v2-1024w_2d873cbe.webp 1024w",
-].join(", ");
+
 
 const whyUs = [
   { icon: Award, title: "20+ Years of Expertise", desc: "The UBC Unlimited team brings over two decades of merchant services experience to every client relationship." },
@@ -209,20 +198,18 @@ export default function Home() {
         ]}
       />
       {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-[#080808]">
-        {/* Hero background — img tag with fetchpriority for LCP optimisation */}
-        <img
-          src={HERO_IMG}
-          srcSet={HERO_SRCSET}
-          sizes="100vw"
-          alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-          decoding="async"
-          width={1440}
-          height={803}
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
-        />
+      <section
+        className="relative min-h-[80vh] flex items-center overflow-hidden bg-[#080808]"
+        style={{
+          backgroundImage: `url(${HERO_IMG})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        {/* Semi-transparent overlay — replaces the old opacity-20 img tag.
+            Using CSS background-image keeps the decorative image out of LCP consideration
+            so the h1 headline becomes the LCP element instead. */}
+        <div className="absolute inset-0 bg-[#080808]/80" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/85 to-[#080808]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
 

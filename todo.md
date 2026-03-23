@@ -166,3 +166,7 @@
 - [x] Re-compress consultation 768w at quality=72 (41 KiB → 29 KiB)
 - [x] Upgrade Vite build target to ES2020 to reduce legacy JS polyfills (~8 KiB savings)
 - [x] Update all image srcsets and preload hints to reference new re-compressed CDN URLs
+- [x] Perf: Convert hero background from img tag to CSS background-image (h1 headline is now LCP element)
+- [x] Perf: Self-host Google Fonts via CDN — eliminates Google Fonts DNS lookup + render-blocking CSS chain
+- [x] Perf: Old logo src fallback already using re-compressed versions; stale cache will clear on next publish
+- [x] Perf: Removed unused HERO_SRCSET, ABSTRACT_IMG, ABSTRACT_SRCSET constants from Home.tsx bundle
