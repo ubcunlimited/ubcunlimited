@@ -225,7 +225,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/85 to-[#080808]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
 
-        <div className="container relative z-10 pt-4 pb-12 lg:pt-2 lg:pb-16">
+        <div className="container relative z-10 pt-0 pb-10 lg:pt-0 lg:pb-14">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left column — headline + stats + CTAs */}
             <motion.div

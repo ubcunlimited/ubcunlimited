@@ -150,3 +150,4 @@
 - [x] Add floating ADA accessibility widget above chat bubble (font size, contrast, dyslexia font, reduce motion, focus highlights)
 - [x] Fix BackToTop button position so it doesn't overlap the ADA accessibility widget
 - [x] Reduce space between hero content and navigation bar
+- [x] Further reduce gap between hero content and navigation bar
