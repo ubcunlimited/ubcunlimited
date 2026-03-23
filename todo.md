@@ -127,3 +127,4 @@
 - [x] how-interchange-rates-work blog: add official interchange rate schedule links for all card brands (Visa, Mastercard, Discover, Amex) opening in new tab
 - [x] Add David N. PhD testimonial with short preview card + expandable full version
 - [x] Site-wide: replace all "Surcharge & Cash Discount" variations with "Cash Discount & Dual Pricing"
+- [x] high-risk-industries-dropped-by-stripe blog: replace "pre-dunning" with "pre-billing"

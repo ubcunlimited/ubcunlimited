@@ -795,7 +795,7 @@ The FTC has also brought high-profile enforcement actions against supplement com
 
 Stripe's terms of service explicitly prohibit "nutraceuticals, quasi-pharmaceutical products, or other products making health claims that have not been approved or verified by the applicable local and/or national regulatory body." This language is broad enough to capture most supplement brands.
 
-**The solution:** Specialized nutraceutical processors understand the category and can structure accounts with the chargeback management tools you need — pre-dunning notifications, clear billing descriptors, and dispute response workflows. For brands with multiple product lines, a multiple MID structure can isolate chargeback risk across accounts.
+**The solution:** Specialized nutraceutical processors understand the category and can structure accounts with the chargeback management tools you need — pre-billing notifications, clear billing descriptors, and dispute response workflows. For brands with multiple product lines, a multiple MID structure can isolate chargeback risk across accounts.
 
 ## 3. Firearms and Shooting Sports
 
