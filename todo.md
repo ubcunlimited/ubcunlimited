@@ -122,3 +122,5 @@
 - [x] Audit all blog posts and site pages for inaccurate SkyTab/POS installation timeline language and update to 14-day standard
 - [x] Payment trends blog: rename surcharge section heading to "Cash Discounting & Surcharging Are Going Mainstream"
 - [x] Payment trends blog: add paragraph on importance of proper implementation (risks, fines, confusion)
+- [x] Lower CC fees blog: remove all Stax references
+- [x] Lower CC fees blog: remove "Eliminate junk fees" section/bullet

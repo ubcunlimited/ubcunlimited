@@ -34,7 +34,7 @@ Your monthly processing statement contains three distinct layers of fees, and un
 
 **Tiered pricing** groups transactions into "qualified," "mid-qualified," and "non-qualified" buckets, each with different rates. This model is common among traditional processors but is widely considered the least transparent, as processors decide which tier each transaction falls into.
 
-**Subscription pricing** charges a flat monthly fee plus a small per-transaction fee, with interchange passed through at cost. Providers like Stax use this model and it can be very cost-effective for high-volume businesses.
+**Subscription pricing** charges a flat monthly fee plus a small per-transaction fee, with interchange passed through at cost. This model can be very cost-effective for high-volume businesses where the savings on per-transaction rates outweigh the monthly membership cost.
 
 ## 6 Proven Ways to Lower Your Processing Costs
 
@@ -45,8 +45,6 @@ Your monthly processing statement contains three distinct layers of fees, and un
 **Encourage debit card payments.** Debit cards carry significantly lower interchange rates than credit cards. A standard Visa debit card processed with a PIN carries one of the lowest interchange rates available under the Durbin Amendment cap for large issuers. A simple "debit preferred" prompt at checkout can meaningfully reduce your average blended rate.
 
 **Batch your transactions daily.** Transactions that are not settled within 24 hours of authorization are subject to "downgrade" fees — higher interchange rates that the card networks charge for delayed settlement. Most modern POS systems batch automatically, but it is worth confirming with your processor.
-
-**Eliminate junk fees.** Review your statement line by line for fees with vague names like "regulatory compliance fee," "network access fee," "IRS reporting fee," or "statement fee." Many of these are processor-invented fees that have nothing to do with the card networks and are often negotiable or removable entirely.
 
 **Get a statement review.** A qualified merchant services provider can analyze your current statement and identify exactly where you are overpaying. At UBC Unlimited, we provide complimentary statement reviews for Utah businesses and show you a side-by-side comparison before you make any changes.
 
