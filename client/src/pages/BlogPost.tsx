@@ -233,11 +233,13 @@ Apple Pay and Google Pay are no longer just for tech-savvy early adopters. Digit
 
 For merchants, accepting digital wallets requires no additional setup beyond having an NFC-enabled terminal. The processing fees are the same as a standard card-present transaction. The benefit is a faster, more secure checkout experience that reduces friction and increases customer satisfaction.
 
-## Surcharge & Cash Discount Solutions and Surcharging Are Going Mainstream
+## Cash Discounting & Surcharging Are Going Mainstream
 
 As processing costs have risen alongside the proliferation of premium rewards credit cards, more Utah businesses are implementing cash discount programs and credit card surcharging to offset their processing expenses. Cash discounting — offering a lower price for customers who pay with cash — is legal in all 50 states and has become increasingly common in industries from restaurants to auto repair shops to medical offices.
 
 Credit card surcharging, which adds a fee for card-paying customers, is legal in most states (with exceptions in Connecticut, Maine, Massachusetts, and Oklahoma) and requires registration with the card networks. When implemented correctly with proper signage and disclosure, surcharging allows businesses to recover their processing costs without raising prices across the board.
+
+However, the way these programs are implemented matters enormously. Businesses that roll out cash discounting or surcharging without proper setup risk more than just customer confusion — they can face significant consequences. Card network rules require specific signage at the point of entry and point of sale, precise receipt language, and in the case of surcharging, advance registration with Visa and Mastercard. Failure to follow these requirements can result in fines from the card networks, forced program termination, and in some cases, loss of card acceptance privileges altogether. Beyond regulatory risk, a poorly communicated program can erode customer trust and generate negative reviews that outlast the savings. Working with an experienced merchant services provider to configure compliant hardware, provide approved signage, and train staff on how to explain the program to customers is not optional — it is the difference between a program that saves money and one that creates liability.
 
 ## Same-Day ACH Is Changing B2B Payments
 
