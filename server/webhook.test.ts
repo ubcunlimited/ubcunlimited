@@ -1,6 +1,9 @@
 /**
  * Tests for the LeadConnector webhook forwarding utility.
- * Verifies that sendToWebhook posts the correct payload and handles errors gracefully.
+ * Verifies the new payload contract:
+ *   - firstName, lastName, phone, email are always top-level
+ *   - all other form-specific data is bundled into `notes`
+ *   - errors never propagate to the caller
  */
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
@@ -22,12 +25,10 @@ describe("sendToWebhook", () => {
   it("POSTs to the correct LeadConnector webhook URL", async () => {
     mockFetch.mockResolvedValueOnce({ ok: true, status: 200 });
 
-    await sendToWebhook("consultation", {
-      first_name: "Jane",
-      last_name: "Doe",
-      email: "jane@example.com",
-      phone: "8015551234",
-    });
+    await sendToWebhook(
+      "consultation",
+      { firstName: "Michael", lastName: "Torres", phone: "8015551234", email: "michael@example.com" }
+    );
 
     expect(mockFetch).toHaveBeenCalledOnce();
     const [url, init] = mockFetch.mock.calls[0] as [string, RequestInit];
@@ -36,27 +37,61 @@ describe("sendToWebhook", () => {
     expect(init.headers).toMatchObject({ "Content-Type": "application/json" });
   });
 
-  it("includes form_type, submitted_at, and source in the payload", async () => {
+  it("places firstName, lastName, phone, email at the top level", async () => {
     mockFetch.mockResolvedValueOnce({ ok: true, status: 200 });
 
-    await sendToWebhook("hero_lead", { phone: "8015559999", business_type: "Retail" });
+    await sendToWebhook(
+      "quote_request",
+      { firstName: "Michael", lastName: "Torres", phone: "8015551234", email: "michael@example.com" },
+      { business_name: "Torres Auto", business_type: "Automotive", monthly_volume: "$25,000" }
+    );
 
     const [, init] = mockFetch.mock.calls[0] as [string, RequestInit];
     const body = JSON.parse(init.body as string);
 
-    expect(body.form_type).toBe("hero_lead");
+    // Required top-level contact fields
+    expect(body.firstName).toBe("Michael");
+    expect(body.lastName).toBe("Torres");
+    expect(body.phone).toBe("8015551234");
+    expect(body.email).toBe("michael@example.com");
+
+    // Metadata
+    expect(body.form_type).toBe("quote_request");
     expect(body.source).toBe("ubcunlimited.com");
     expect(body.submitted_at).toBeDefined();
-    expect(body.phone).toBe("8015559999");
-    expect(body.business_type).toBe("Retail");
+
+    // Extra fields must be in notes, NOT at top level
+    expect(body.notes).toMatchObject({
+      business_name: "Torres Auto",
+      business_type: "Automotive",
+      monthly_volume: "$25,000",
+    });
+    expect(body.business_name).toBeUndefined();
+    expect(body.business_type).toBeUndefined();
+  });
+
+  it("omits notes when no extras are provided", async () => {
+    mockFetch.mockResolvedValueOnce({ ok: true, status: 200 });
+
+    await sendToWebhook(
+      "hero_lead",
+      { firstName: "Michael", lastName: "Torres", phone: "8015559999", email: "" }
+    );
+
+    const [, init] = mockFetch.mock.calls[0] as [string, RequestInit];
+    const body = JSON.parse(init.body as string);
+
+    expect(body.notes).toBeUndefined();
   });
 
   it("does not throw when the webhook returns a non-OK status", async () => {
     mockFetch.mockResolvedValueOnce({ ok: false, status: 500 });
 
-    // Should resolve without throwing
     await expect(
-      sendToWebhook("quote_request", { first_name: "Bob" })
+      sendToWebhook(
+        "statement_review",
+        { firstName: "Michael", lastName: "Torres", phone: "8015550001", email: "michael@example.com" }
+      )
     ).resolves.toBeUndefined();
   });
 
@@ -64,7 +99,11 @@ describe("sendToWebhook", () => {
     mockFetch.mockRejectedValueOnce(new Error("Network failure"));
 
     await expect(
-      sendToWebhook("statement_review", { first_name: "Alice" })
+      sendToWebhook(
+        "blog_lead",
+        { firstName: "Michael", lastName: "Torres", phone: "", email: "michael@example.com" },
+        { source_page: "how-interchange-rates-work" }
+      )
     ).resolves.toBeUndefined();
   });
 
@@ -73,7 +112,11 @@ describe("sendToWebhook", () => {
     mockFetch.mockRejectedValueOnce(abortErr);
 
     await expect(
-      sendToWebhook("blog_lead", { email: "test@example.com" })
+      sendToWebhook(
+        "agent_lead",
+        { firstName: "Michael", lastName: "Torres", phone: "8015550002", email: "michael@example.com" },
+        { agent_type: "ISO", experience: "5 years" }
+      )
     ).resolves.toBeUndefined();
   });
 });

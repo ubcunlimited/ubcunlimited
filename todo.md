@@ -131,3 +131,4 @@
 - [x] Wire all site forms to LeadConnector webhook (consultation, statement review, contact, SkyTab configurator quote)
 - [x] Verify server CORS configuration allows frontend to reach tRPC API and webhook calls are server-side only
 - [x] Counties page map: only highlight/list the most populated counties (not all 29)
+- [x] Webhook: restructure payload so firstName/lastName/phone/email are top-level; all other vars go in "notes" JSON object

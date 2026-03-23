@@ -6,7 +6,7 @@ import { nanoid } from "nanoid";
 import { insertBlogLead } from "../db";
 import { sendToWebhook } from "../webhook";
 
-// ─── Consultation ────────────────────────────────────────────────────────────
+// ─── Schemas ─────────────────────────────────────────────────────────────────
 
 const consultationSchema = z.object({
   firstName: z.string().min(1),
@@ -20,8 +20,6 @@ const consultationSchema = z.object({
   message: z.string().optional(),
   smsConsent: z.boolean().optional(),
 });
-
-// ─── Quote ───────────────────────────────────────────────────────────────────
 
 const quoteSchema = z.object({
   firstName: z.string().min(1),
@@ -37,8 +35,6 @@ const quoteSchema = z.object({
   smsConsent: z.boolean().optional(),
 });
 
-// ─── Statement Review ────────────────────────────────────────────────────────
-
 const statementReviewSchema = z.object({
   firstName: z.string().min(1),
   lastName: z.string().min(1),
@@ -50,13 +46,10 @@ const statementReviewSchema = z.object({
   monthlyVolume: z.string().optional(),
   message: z.string().optional(),
   smsConsent: z.boolean().optional(),
-  // base64-encoded file upload (optional)
   fileData: z.string().optional(),
   fileName: z.string().optional(),
   fileType: z.string().optional(),
 });
-
-// ─── Hero Lead ─────────────────────────────────────────────────────────────
 
 const heroLeadSchema = z.object({
   name: z.string().min(1),
@@ -67,6 +60,8 @@ const heroLeadSchema = z.object({
 // ─── Router ──────────────────────────────────────────────────────────────────
 
 export const formsRouter = router({
+
+  // ── Blog email lead ────────────────────────────────────────────────────────
   submitBlogLead: publicProcedure
     .input(
       z.object({
@@ -76,14 +71,16 @@ export const formsRouter = router({
       })
     )
     .mutation(async ({ input }) => {
-      // Persist to database
       await insertBlogLead({
         name: input.name,
         email: input.email,
         sourcePage: input.sourcePage ?? null,
       });
 
-      // Notify owner
+      const nameParts = input.name.trim().split(/\s+/);
+      const firstName = nameParts[0] ?? input.name;
+      const lastName = nameParts.slice(1).join(" ") || "";
+
       const lines = [
         `**New Blog Email Lead — UBC Unlimited**`,
         ``,
@@ -92,26 +89,20 @@ export const formsRouter = router({
         input.sourcePage ? `**Source Page:** ${input.sourcePage}` : null,
         ``,
         `This visitor opted in to receive the free processing fee guide from the blog sidebar.`,
-      ]
-        .filter(Boolean)
-        .join("\n");
+      ].filter(Boolean).join("\n");
 
-      await notifyOwner({
-        title: `New Blog Lead — ${input.name}`,
-        content: lines,
-      });
+      await notifyOwner({ title: `New Blog Lead — ${input.name}`, content: lines });
 
-      // Forward to LeadConnector webhook
-      await sendToWebhook("blog_lead", {
-        first_name: input.name.split(" ")[0] ?? input.name,
-        last_name: input.name.split(" ").slice(1).join(" ") || undefined,
-        email: input.email,
-        source_page: input.sourcePage,
-      });
+      await sendToWebhook(
+        "blog_lead",
+        { firstName, lastName, phone: "", email: input.email },
+        { source_page: input.sourcePage }
+      );
 
       return { success: true };
     }),
 
+  // ── Agent / ISO lead ───────────────────────────────────────────────────────
   submitAgentLead: publicProcedure
     .input(
       z.object({
@@ -123,6 +114,10 @@ export const formsRouter = router({
       })
     )
     .mutation(async ({ input }) => {
+      const nameParts = input.name.trim().split(/\s+/);
+      const firstName = nameParts[0] ?? input.name;
+      const lastName = nameParts.slice(1).join(" ") || "";
+
       const lines = [
         `**New Agent/ISO Partner Application — UBC Unlimited**`,
         ``,
@@ -133,31 +128,27 @@ export const formsRouter = router({
         input.experience ? `**Experience:** ${input.experience}` : null,
         ``,
         `Source: /agent-iso partner application form.`,
-      ]
-        .filter(Boolean)
-        .join("\n");
+      ].filter(Boolean).join("\n");
 
-      await notifyOwner({
-        title: `New Agent Application — ${input.name}`,
-        content: lines,
-      });
+      await notifyOwner({ title: `New Agent Application — ${input.name}`, content: lines });
 
-      // Forward to LeadConnector webhook
-      await sendToWebhook("agent_lead", {
-        first_name: input.name.split(" ")[0] ?? input.name,
-        last_name: input.name.split(" ").slice(1).join(" ") || undefined,
-        email: input.email,
-        phone: input.phone,
-        agent_type: input.agentType,
-        experience: input.experience,
-      });
+      await sendToWebhook(
+        "agent_lead",
+        { firstName, lastName, phone: input.phone, email: input.email },
+        { agent_type: input.agentType, experience: input.experience }
+      );
 
       return { success: true };
     }),
 
+  // ── Homepage hero micro-form ───────────────────────────────────────────────
   submitHeroLead: publicProcedure
     .input(heroLeadSchema)
     .mutation(async ({ input }) => {
+      const nameParts = input.name.trim().split(/\s+/);
+      const firstName = nameParts[0] ?? input.name;
+      const lastName = nameParts.slice(1).join(" ") || "";
+
       const lines = [
         `**New Homepage Lead — UBC Unlimited**`,
         ``,
@@ -168,22 +159,18 @@ export const formsRouter = router({
         `Source: Homepage hero micro-form. Follow up promptly.`,
       ].join("\n");
 
-      await notifyOwner({
-        title: `New Homepage Lead — ${input.name}`,
-        content: lines,
-      });
+      await notifyOwner({ title: `New Homepage Lead — ${input.name}`, content: lines });
 
-      // Forward to LeadConnector webhook
-      await sendToWebhook("hero_lead", {
-        first_name: input.name.split(" ")[0] ?? input.name,
-        last_name: input.name.split(" ").slice(1).join(" ") || undefined,
-        phone: input.phone,
-        business_type: input.businessType,
-      });
+      await sendToWebhook(
+        "hero_lead",
+        { firstName, lastName, phone: input.phone, email: "" },
+        { business_type: input.businessType }
+      );
 
       return { success: true };
     }),
 
+  // ── Consultation request ───────────────────────────────────────────────────
   submitConsultation: publicProcedure
     .input(consultationSchema)
     .mutation(async ({ input }) => {
@@ -208,23 +195,23 @@ export const formsRouter = router({
         content: lines,
       });
 
-      // Forward to LeadConnector webhook
-      await sendToWebhook("consultation", {
-        first_name: input.firstName,
-        last_name: input.lastName,
-        email: input.email,
-        phone: input.phone,
-        business_name: input.businessName,
-        business_type: input.businessType,
-        preferred_date: input.preferredDate,
-        preferred_time: input.preferredTime,
-        message: input.message,
-        sms_consent: input.smsConsent ?? false,
-      });
+      await sendToWebhook(
+        "consultation",
+        { firstName: input.firstName, lastName: input.lastName, phone: input.phone, email: input.email },
+        {
+          business_name: input.businessName,
+          business_type: input.businessType,
+          preferred_date: input.preferredDate,
+          preferred_time: input.preferredTime,
+          message: input.message,
+          sms_consent: input.smsConsent ?? false,
+        }
+      );
 
       return { success: true };
     }),
 
+  // ── Quote request ──────────────────────────────────────────────────────────
   submitQuote: publicProcedure
     .input(quoteSchema)
     .mutation(async ({ input }) => {
@@ -238,7 +225,7 @@ export const formsRouter = router({
         `**Business Type:** ${input.businessType}`,
         input.monthlyVolume ? `**Monthly Volume:** ${input.monthlyVolume}` : null,
         input.currentProcessor ? `**Current Processor:** ${input.currentProcessor}` : null,
-        input.solutions && input.solutions.length > 0
+        input.solutions?.length
           ? `**Solutions Interested In:** ${input.solutions.join(", ")}`
           : null,
         input.message ? `**Message:** ${input.message}` : null,
@@ -252,30 +239,29 @@ export const formsRouter = router({
         content: lines,
       });
 
-      // Forward to LeadConnector webhook
-      await sendToWebhook("quote_request", {
-        first_name: input.firstName,
-        last_name: input.lastName,
-        email: input.email,
-        phone: input.phone,
-        business_name: input.businessName,
-        business_type: input.businessType,
-        monthly_volume: input.monthlyVolume,
-        current_processor: input.currentProcessor,
-        solutions_interested: input.solutions?.join(", "),
-        message: input.message,
-        sms_consent: input.smsConsent ?? false,
-      });
+      await sendToWebhook(
+        "quote_request",
+        { firstName: input.firstName, lastName: input.lastName, phone: input.phone, email: input.email },
+        {
+          business_name: input.businessName,
+          business_type: input.businessType,
+          monthly_volume: input.monthlyVolume,
+          current_processor: input.currentProcessor,
+          solutions_interested: input.solutions?.join(", "),
+          message: input.message,
+          sms_consent: input.smsConsent ?? false,
+        }
+      );
 
       return { success: true };
     }),
 
+  // ── Statement review ───────────────────────────────────────────────────────
   submitStatementReview: publicProcedure
     .input(statementReviewSchema)
     .mutation(async ({ input }) => {
       let fileUrl: string | null = null;
 
-      // Upload statement file to S3 if provided
       if (input.fileData && input.fileName && input.fileType) {
         try {
           const buffer = Buffer.from(input.fileData, "base64");
@@ -285,7 +271,6 @@ export const formsRouter = router({
           fileUrl = result.url;
         } catch (err) {
           console.error("[StatementReview] File upload failed:", err);
-          // Continue without the file — don't block the submission
         }
       }
 
@@ -311,20 +296,19 @@ export const formsRouter = router({
         content: lines,
       });
 
-      // Forward to LeadConnector webhook
-      await sendToWebhook("statement_review", {
-        first_name: input.firstName,
-        last_name: input.lastName,
-        email: input.email,
-        phone: input.phone,
-        business_name: input.businessName,
-        business_type: input.businessType,
-        current_processor: input.currentProcessor,
-        monthly_volume: input.monthlyVolume,
-        message: input.message,
-        sms_consent: input.smsConsent ?? false,
-        statement_file_url: fileUrl,
-      });
+      await sendToWebhook(
+        "statement_review",
+        { firstName: input.firstName, lastName: input.lastName, phone: input.phone, email: input.email },
+        {
+          business_name: input.businessName,
+          business_type: input.businessType,
+          current_processor: input.currentProcessor,
+          monthly_volume: input.monthlyVolume,
+          message: input.message,
+          sms_consent: input.smsConsent ?? false,
+          statement_file_url: fileUrl,
+        }
+      );
 
       return { success: true, fileUploaded: !!fileUrl };
     }),
