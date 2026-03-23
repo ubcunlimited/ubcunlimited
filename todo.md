@@ -147,3 +147,4 @@
 - [x] Perf: add Cache-Control headers for static assets via Express
 - [x] Perf: React.lazy code splitting for all non-critical routes (reduces initial bundle)
 - [x] Perf: responsive hero image srcset (480w/768w/1024w/1440w) with imagesrcset preload hint
+- [x] Add floating ADA accessibility widget above chat bubble (font size, contrast, dyslexia font, reduce motion, focus highlights)

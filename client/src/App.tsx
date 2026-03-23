@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import CookieConsent from "./components/CookieConsent";
 import LiveChat from "./components/LiveChat";
 import BackToTop from "./components/BackToTop";
+import AccessibilityWidget from "./components/AccessibilityWidget";
 
 // ── Lazy-loaded pages (split into separate chunks) ───────────────────────────
 // Core
@@ -304,6 +305,7 @@ function App() {
           <Toaster />
           <Router />
           <CookieConsent />
+          <AccessibilityWidget />
           <LiveChat />
           <BackToTop />
         </TooltipProvider>
