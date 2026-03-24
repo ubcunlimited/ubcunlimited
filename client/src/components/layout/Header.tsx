@@ -122,8 +122,7 @@ export default function Header() {
               alt="UBC Unlimited — Processing Without Limits"
               width={190}
               height={30}
-              className="h-6 w-auto object-contain transition-all duration-300 lg:hidden"
-              style={{ maxWidth: "63px" }}
+              className="w-[50vw] h-auto object-contain transition-all duration-300 lg:hidden"
             />
             {/* Desktop logo: horizontallogo1 at h-20 / h-12 scrolled */}
             <img
