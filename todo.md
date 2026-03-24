@@ -231,3 +231,16 @@
 ## Mobile Header & Launcher Cleanup
 - [x] Hide "Call Now" button in mobile header (keep on desktop)
 - [x] Hide FloatingLauncher widget bubble on mobile (show only on desktop)
+
+## Comprehensive Accessibility Panel
+- [x] Vision: font size increase/decrease (3 levels), line height adjustment
+- [x] Vision: high contrast mode (dark/light/yellow-black)
+- [x] Vision: grayscale mode, invert colors mode
+- [x] Vision: highlight links, highlight headings
+- [x] Motor: large cursor mode, keyboard navigation focus indicator
+- [x] Cognitive: reading guide (horizontal line follows cursor), dyslexia-friendly font (Lexend)
+- [x] Cognitive: reduce animations/motion (prefers-reduced-motion override)
+- [x] Cognitive: reading mask (dim everything except hovered paragraph)
+- [x] Color: color blind modes (protanopia, deuteranopia, tritanopia SVG filters)
+- [x] Persist all settings to localStorage, apply via injected <style> tag
+- [x] Add reset all button (appears only when settings are modified)
