@@ -660,25 +660,7 @@ export default function Home() {
       {/* CTA Banner */}
       <CTABanner />
 
-      {/* Sticky Mobile CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#080808] border-t border-[#c9a84c]/20 shadow-2xl">
-        <div className="flex">
-          <a
-            href={SITE.phoneHref}
-            className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white bg-[#111111] hover:bg-[#1a1a1a] transition-colors border-r border-white/10"
-          >
-            <Phone size={15} /> Call Now
-          </a>
-          <Link
-            href="/consultation"
-            className="flex-1 flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-white bg-[#c9a84c] hover:bg-[#e2c97e] transition-colors"
-          >
-            Book a Consultation <ArrowRight size={15} />
-          </Link>
-        </div>
-      </div>
-      {/* Bottom padding for sticky bar on mobile */}
-      <div className="h-14 md:hidden" />
+
     </PageLayout>
   );
 }

@@ -224,3 +224,6 @@
 - [x] Chat button: dark charcoal (#1a1a1a) with gold border/icon to match site palette
 - [x] ADA button: ISA handicap blue (#0057B8)
 - [x] Back to Top button: dark charcoal (#1a1a1a) with gold icon to match site palette
+
+## Sticky Scroll CTA Fix
+- [x] Removed duplicate sticky mobile CTA bar from Home.tsx — MobileCallBar in PageLayout already handles this globally
