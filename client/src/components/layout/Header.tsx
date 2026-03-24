@@ -117,14 +117,14 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group" aria-label="UBC Unlimited — Home">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_160w_q70_0156212d.webp"
-              srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_160w_q70_0156212d.webp 160w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_320w_q60_d9b6acad.webp 320w"
-              sizes="160px"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_480w_d82435fa.webp"
+              srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_240w_088a2ae7.webp 240w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_480w_d82435fa.webp 480w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_759w_ad78fe1d.webp 759w"
+              sizes="(max-width: 1024px) 200px, 320px"
               alt="UBC Unlimited — Processing Without Limits"
-              width={160}
-              height={106}
-              className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-12" : "h-12 lg:h-24"}`}
-              style={{ maxWidth: scrolled ? "180px" : "160px" }}
+              width={320}
+              height={51}
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-10" : "h-10 lg:h-16"}`}
+              style={{ maxWidth: scrolled ? "240px" : "320px" }}
             />
           </Link>
 
