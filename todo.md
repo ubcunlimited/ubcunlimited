@@ -179,3 +179,4 @@
 - [x] Use horizontallogo2.png for mobile menu drawer logo (h-8, 190px max-width)
 - [x] Use circular logo for mobile menu drawer instead of horizontal (h-10 w-10 square)
 - [x] Reduce horizontal logo on mobile header to h-2 (lg:h-20 desktop unchanged)
+- [x] Change mobile header logo to horizontallogo2 at h-6 (desktop still uses full logo_v2 at h-20/h-12)
