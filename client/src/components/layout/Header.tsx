@@ -376,6 +376,20 @@ export default function Header() {
             className="lg:hidden bg-[#080808] border-t border-white/10 overflow-hidden max-h-[80vh] overflow-y-auto"
           >
             <div className="container py-4 space-y-1">
+              {/* Logo at top of mobile menu */}
+              <div className="flex items-center justify-center pb-4 mb-2 border-b border-white/10">
+                <Link href="/" aria-label="UBC Unlimited — Home">
+                  <img
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_480w_36563e62.webp"
+                    srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_240w_aa5f29cd.webp 240w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_480w_36563e62.webp 480w"
+                    sizes="200px"
+                    alt="UBC Unlimited — Processing Without Limits"
+                    width={200}
+                    height={32}
+                    className="h-10 w-auto object-contain"
+                  />
+                </Link>
+              </div>
               {/* Solutions */}
               <div
                 className="text-[10px] font-semibold text-[#c9a84c] uppercase tracking-widest px-3 py-2"
