@@ -377,16 +377,17 @@ export default function Header() {
           >
             <div className="container py-4 space-y-1">
               {/* Logo at top of mobile menu */}
-              <div className="flex items-center justify-center pb-4 mb-2 border-b border-white/10">
+              <div className="flex items-center px-3 pb-3 mb-1 border-b border-white/10">
                 <Link href="/" aria-label="UBC Unlimited — Home">
                   <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_480w_36563e62.webp"
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_240w_aa5f29cd.webp"
                     srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_240w_aa5f29cd.webp 240w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_480w_36563e62.webp 480w"
-                    sizes="200px"
+                    sizes="140px"
                     alt="UBC Unlimited — Processing Without Limits"
-                    width={200}
-                    height={32}
-                    className="h-10 w-auto object-contain"
+                    width={140}
+                    height={22}
+                    className="h-6 w-auto object-contain"
+                    style={{ maxWidth: "140px" }}
                   />
                 </Link>
               </div>
