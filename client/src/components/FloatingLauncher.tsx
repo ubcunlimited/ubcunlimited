@@ -50,6 +50,19 @@ export default function FloatingLauncher() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Alt+A keyboard shortcut to open accessibility panel
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.altKey && e.key.toLowerCase() === "a") {
+        e.preventDefault();
+        setActivePanel((prev) => (prev === "a11y" ? null : "a11y"));
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     setMenuOpen(false);

@@ -247,3 +247,9 @@
 
 ## Crash Fix
 - [x] Fix React runtime crash: confirmed old deployed version had AccessibilityWidget still in App.tsx; latest code is clean with only FloatingLauncher — publish latest checkpoint to fix
+
+## Accessibility Enhancements
+- [x] Add Alt+A keyboard shortcut to FloatingLauncher to open accessibility panel
+- [x] Updated /accessibility statement page with built-in tools section and Alt+A reference
+- [x] /accessibility already linked from footer (existing)
+- [x] /accessibility route already registered in App.tsx (existing)

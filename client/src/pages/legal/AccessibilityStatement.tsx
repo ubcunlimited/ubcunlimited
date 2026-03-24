@@ -139,6 +139,44 @@ export default function AccessibilityStatement() {
               </ul>
             </div>
 
+            {/* Built-In Accessibility Tools */}
+            <div>
+              <h2
+                className="text-lg font-bold text-[#080808] mb-3"
+                style={{ fontFamily: "Sora, sans-serif" }}
+              >
+                3b. Built-In Accessibility Tools
+              </h2>
+              <p>
+                This website includes a built-in accessibility panel that allows visitors to
+                customize their experience without requiring third-party software. The panel is
+                available on desktop via the blue <strong className="text-[#080808]">Accessibility</strong> button
+                in the bottom-right corner, or by pressing{" "}
+                <kbd className="px-1.5 py-0.5 bg-[#f0f0f0] border border-[#ccc] rounded text-xs font-mono">Alt + A</kbd>{" "}
+                on any page. Available adjustments include:
+              </p>
+              <ul className="mt-3 space-y-2 list-none pl-0">
+                {[
+                  "Font size scaling (80%–160%), line height, and letter spacing adjustments.",
+                  "High contrast modes: Dark High Contrast, Light High Contrast, and Yellow-on-Black.",
+                  "Grayscale and invert colors modes for visual comfort.",
+                  "Color blind simulation filters: Protanopia, Deuteranopia, and Tritanopia.",
+                  "Enhanced focus indicators and large cursor mode for motor accessibility.",
+                  "Highlight links and headings for easier page scanning.",
+                  "Dyslexia-friendly font (Lexend) for improved reading ease.",
+                  "Reduce motion to suppress animations for users sensitive to movement.",
+                  "Reading guide (cursor line) and reading mask for cognitive accessibility.",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <span className="mt-0.5 w-4 h-4 rounded-full bg-[#c9a84c]/15 flex items-center justify-center flex-shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#c9a84c] block" />
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {/* Known Limitations */}
             <div>
               <h2
