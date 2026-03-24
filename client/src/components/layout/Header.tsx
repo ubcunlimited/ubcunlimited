@@ -123,7 +123,7 @@ export default function Header() {
               alt="UBC Unlimited — Processing Without Limits"
               width={320}
               height={51}
-              className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-12" : "h-12 lg:h-20"}`}
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-2 lg:h-12" : "h-2 lg:h-20"}`}
               style={{ maxWidth: scrolled ? "240px" : "360px" }}
             />
           </Link>
