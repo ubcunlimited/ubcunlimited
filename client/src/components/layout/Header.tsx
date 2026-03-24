@@ -348,16 +348,8 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile: Call Now + hamburger */}
-          <div className="lg:hidden flex items-center gap-2">
-            <a
-              href={SITE.phoneHref}
-              aria-label={`Call UBC Unlimited at ${SITE.phone}`}
-              className="flex items-center gap-1.5 bg-[#c9a84c] hover:bg-[#e2c97e] text-[#080808] font-bold text-xs px-3 py-2 rounded-lg transition-colors"
-            >
-              <Phone size={13} aria-hidden="true" />
-              <span>Call Now</span>
-            </a>
+          {/* Mobile: hamburger only */}
+          <div className="lg:hidden flex items-center">
             <button
               className="p-2 text-white/75 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded"
               onClick={() => setMobileOpen(!mobileOpen)}

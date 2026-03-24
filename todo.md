@@ -227,3 +227,7 @@
 
 ## Sticky Scroll CTA Fix
 - [x] Removed duplicate sticky mobile CTA bar from Home.tsx — MobileCallBar in PageLayout already handles this globally
+
+## Mobile Header & Launcher Cleanup
+- [x] Hide "Call Now" button in mobile header (keep on desktop)
+- [x] Hide FloatingLauncher widget bubble on mobile (show only on desktop)

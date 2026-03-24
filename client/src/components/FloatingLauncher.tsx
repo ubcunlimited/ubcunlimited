@@ -79,6 +79,9 @@ export default function FloatingLauncher() {
   // Panels open 80px above the main trigger
   const panelBottomPx = base + 80;
 
+  // Hide entirely on mobile — the MobileCallBar already provides primary CTAs
+  if (isMobile) return null;
+
   return (
     <>
       {/* ── Active panels ──────────────────────────────────────────────── */}
