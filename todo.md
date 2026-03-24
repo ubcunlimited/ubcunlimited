@@ -219,3 +219,8 @@
 - [x] Assign distinct colors: Chat=indigo, Accessibility=sky-blue, BackToTop=emerald-green
 - [x] Remove rogue hidden arrow/minimized chat pill that appears while scrolling
 - [x] Fix all spacing so buttons are clearly separated and don't overlap (60px STEP between each)
+
+## FloatingLauncher Color Update
+- [x] Chat button: dark charcoal (#1a1a1a) with gold border/icon to match site palette
+- [x] ADA button: ISA handicap blue (#0057B8)
+- [x] Back to Top button: dark charcoal (#1a1a1a) with gold icon to match site palette

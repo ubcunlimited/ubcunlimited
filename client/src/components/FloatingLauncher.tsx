@@ -106,7 +106,7 @@ export default function FloatingLauncher() {
                 onClick={scrollToTop}
                 aria-label="Scroll back to top"
                 style={{ bottom: `${topBottom}px`, right: "24px" }}
-                className="fixed z-50 w-11 h-11 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-lg flex items-center justify-center transition-colors"
+                className="fixed z-50 w-11 h-11 rounded-full bg-[#1a1a1a] border border-[#c9a84c]/50 hover:border-[#c9a84c] hover:bg-[#222] text-[#c9a84c] shadow-lg flex items-center justify-center transition-colors"
               >
                 <ArrowUp size={18} aria-hidden="true" />
               </motion.button>
@@ -121,8 +121,8 @@ export default function FloatingLauncher() {
               transition={{ duration: 0.18, delay: 0.04 }}
               onClick={() => openPanel("a11y")}
               aria-label="Open accessibility options"
-              style={{ bottom: `${a11yBottom}px`, right: "24px" }}
-              className="fixed z-50 w-11 h-11 rounded-full bg-sky-500 hover:bg-sky-400 text-white shadow-lg flex items-center justify-center transition-colors"
+              style={{ bottom: `${a11yBottom}px`, right: "24px", backgroundColor: "#0057B8" }}
+              className="fixed z-50 w-11 h-11 rounded-full text-white shadow-lg flex items-center justify-center transition-colors"
             >
               <Accessibility size={18} aria-hidden="true" />
             </motion.button>
@@ -137,7 +137,7 @@ export default function FloatingLauncher() {
               onClick={() => openPanel("chat")}
               aria-label="Open live chat"
               style={{ bottom: `${chatBottom}px`, right: "24px" }}
-              className="fixed z-50 w-11 h-11 rounded-full bg-indigo-500 hover:bg-indigo-400 text-white shadow-lg flex items-center justify-center transition-colors"
+              className="fixed z-50 w-11 h-11 rounded-full bg-[#1a1a1a] border border-[#c9a84c]/50 hover:border-[#c9a84c] hover:bg-[#222] text-[#c9a84c] shadow-lg flex items-center justify-center transition-colors"
             >
               <MessageCircle size={18} aria-hidden="true" />
             </motion.button>
