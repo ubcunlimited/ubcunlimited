@@ -263,7 +263,7 @@ export default function LiveChat() {
         <button
           onClick={handleOpen}
           aria-label="Open live chat"
-          className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#c9a84c] shadow-lg hover:bg-[#b8972a] transition-all hover:scale-105 active:scale-95 flex items-center justify-center"
+          className="fixed bottom-[5.5rem] lg:bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#c9a84c] shadow-lg hover:bg-[#b8972a] transition-all hover:scale-105 active:scale-95 flex items-center justify-center"
           style={{ boxShadow: "0 4px 24px rgba(201,168,76,0.45)" }}
         >
           <MessageCircle size={26} className="text-[#080808]" />
@@ -281,7 +281,7 @@ export default function LiveChat() {
           role="dialog"
           aria-label="UBC Unlimited live chat"
           aria-modal="false"
-          className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] rounded-2xl overflow-hidden shadow-2xl flex flex-col"
+          className="fixed bottom-[5.5rem] lg:bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] rounded-2xl overflow-hidden shadow-2xl flex flex-col"
           style={{ height: "520px", boxShadow: "0 8px 40px rgba(0,0,0,0.55)" }}
         >
           {/* Header */}

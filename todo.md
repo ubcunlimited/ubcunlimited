@@ -203,3 +203,8 @@
 - [x] StatementReview: form grid-cols-2 — stack to single column on mobile
 - [x] Global: section vertical padding — reduce py-16/py-20 to py-10/py-12 on mobile throughout
 - [x] Global: h1/h2 font sizes — ensure proper scaling on mobile
+
+## Mobile Testimonial Fix
+- [x] Fix testimonial cards being clipped/cut off at top of mobile viewport (overflow-hidden on parent)
+- [x] Add bottom padding to testimonial section to prevent sticky bar overlap on last card
+- [x] Ensure testimonial grid has no overflow:hidden that clips card tops

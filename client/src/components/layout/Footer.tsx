@@ -214,7 +214,7 @@ export default function Footer() {
 
       {/* Bottom copyright + legal bar */}
       <div className="border-t border-white/5 bg-[#050505]">
-        <div className="container py-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-xs text-white/30">
+        <div className="container py-4 pb-[88px] lg:pb-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-xs text-white/30">
           <span className="shrink-0">© {year} UBC Unlimited. All rights reserved.</span>
           <nav aria-label="Legal navigation" className="flex flex-wrap items-center gap-x-1 gap-y-1.5">
             {LEGAL_LINKS.map((item, i) => (

@@ -203,7 +203,7 @@ export default function AccessibilityWidget() {
         aria-label={open ? "Close accessibility options" : "Open accessibility options"}
         aria-expanded={open}
         aria-haspopup="dialog"
-        className="fixed bottom-[6.5rem] right-6 z-50 w-12 h-12 rounded-full bg-[#1a1a1a] border border-[#c9a84c]/40 hover:border-[#c9a84c] shadow-lg hover:shadow-[#c9a84c]/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center group"
+        className="fixed bottom-[10rem] lg:bottom-[6.5rem] right-6 z-50 w-12 h-12 rounded-full bg-[#1a1a1a] border border-[#c9a84c]/40 hover:border-[#c9a84c] shadow-lg hover:shadow-[#c9a84c]/20 transition-all hover:scale-105 active:scale-95 flex items-center justify-center group"
         title="Accessibility options"
       >
         <Accessibility
@@ -231,7 +231,7 @@ export default function AccessibilityWidget() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 8 }}
             transition={{ type: "spring", stiffness: 320, damping: 28 }}
-            className="fixed bottom-[10rem] right-6 z-50 w-72 bg-[#111111] border border-[#c9a84c]/25 rounded-2xl shadow-2xl shadow-black/60 overflow-hidden"
+            className="fixed bottom-[13.5rem] lg:bottom-[10rem] right-6 z-50 w-72 bg-[#111111] border border-[#c9a84c]/25 rounded-2xl shadow-2xl shadow-black/60 overflow-hidden"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 border-b border-white/8 bg-[#0d0d0d]">

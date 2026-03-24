@@ -24,7 +24,7 @@ export default function BackToTop() {
       onClick={scrollToTop}
       aria-label="Scroll back to top"
       className={[
-        "fixed bottom-[11rem] right-6 z-50",
+        "fixed bottom-[14rem] lg:bottom-[11rem] right-6 z-50",
         "w-11 h-11 rounded-full",
         "bg-[#c9a84c] hover:bg-[#b8972a] active:bg-[#a07820]",
         "flex items-center justify-center",
