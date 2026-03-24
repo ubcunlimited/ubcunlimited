@@ -172,3 +172,4 @@
 - [x] Perf: Removed unused HERO_SRCSET, ABSTRACT_IMG, ABSTRACT_SRCSET constants from Home.tsx bundle
 - [x] Increase logo height to h-24 in Header (nav bar adjusted to h-28, PageLayout pt updated to 160px)
 - [x] Replace logo with new horizontallogo1.png (WebP srcset 240w/480w/759w, CDN upload)
+- [x] Update logo to new version (v2) and set height to h-20 desktop / h-12 scrolled
