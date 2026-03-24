@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { X, Cookie } from "lucide-react";
+import { X, Cookie, Accessibility } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const STORAGE_KEY = "ubc_cookie_consent";
@@ -30,6 +30,12 @@ export default function CookieConsent() {
   const handleDecline = () => {
     localStorage.setItem(STORAGE_KEY, "declined");
     setConsent("declined");
+    setVisible(false);
+  };
+
+  const handleOpenAccessibility = () => {
+    // Dispatch a custom event that FloatingLauncher listens for
+    window.dispatchEvent(new CustomEvent("ubc:open-accessibility"));
     setVisible(false);
   };
 
@@ -76,7 +82,15 @@ export default function CookieConsent() {
             </div>
 
             {/* Actions */}
-            <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto">
+            <div className="flex items-center gap-2 shrink-0 flex-wrap w-full sm:w-auto">
+              <button
+                onClick={handleOpenAccessibility}
+                className="flex-1 sm:flex-none px-3 py-2 text-sm font-medium text-[#0057B8] hover:text-[#0057B8]/80 border border-[#0057B8]/40 hover:border-[#0057B8]/70 rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0057B8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] flex items-center gap-1.5"
+                aria-label="Open accessibility settings"
+              >
+                <Accessibility size={14} aria-hidden="true" />
+                Accessibility
+              </button>
               <button
                 onClick={handleDecline}
                 className="flex-1 sm:flex-none px-4 py-2 text-sm font-medium text-white/60 hover:text-white border border-white/20 hover:border-white/40 rounded-lg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"

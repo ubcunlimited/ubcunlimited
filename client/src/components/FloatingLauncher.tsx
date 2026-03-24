@@ -50,6 +50,16 @@ export default function FloatingLauncher() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Listen for cookie banner accessibility button click
+  useEffect(() => {
+    const onOpenA11y = () => {
+      setActivePanel("a11y");
+      setMenuOpen(false);
+    };
+    window.addEventListener("ubc:open-accessibility", onOpenA11y);
+    return () => window.removeEventListener("ubc:open-accessibility", onOpenA11y);
+  }, []);
+
   // Alt+A keyboard shortcut to open accessibility panel
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -92,8 +102,17 @@ export default function FloatingLauncher() {
   // Panels open 80px above the main trigger
   const panelBottomPx = base + 80;
 
-  // Hide entirely on mobile — the MobileCallBar already provides primary CTAs
-  if (isMobile) return null;
+  // On mobile: hide the launcher buttons but still render the accessibility panel
+  // when triggered from the cookie banner (ubc:open-accessibility event)
+  if (isMobile) {
+    return (
+      <AnimatePresence>
+        {activePanel === "a11y" && (
+          <AccessibilityPanel onClose={closePanel} bottomClass="" bottomPx={80} />
+        )}
+      </AnimatePresence>
+    );
+  }
 
   return (
     <>

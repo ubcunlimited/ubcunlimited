@@ -253,3 +253,6 @@
 - [x] Updated /accessibility statement page with built-in tools section and Alt+A reference
 - [x] /accessibility already linked from footer (existing)
 - [x] /accessibility route already registered in App.tsx (existing)
+
+## Cookie Banner Enhancement
+- [x] Add "Accessibility" button to cookie banner that opens the accessibility panel (dispatches ubc:open-accessibility event, works on both mobile and desktop)
