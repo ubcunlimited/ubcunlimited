@@ -170,3 +170,4 @@
 - [x] Perf: Self-host Google Fonts via CDN — eliminates Google Fonts DNS lookup + render-blocking CSS chain
 - [x] Perf: Old logo src fallback already using re-compressed versions; stale cache will clear on next publish
 - [x] Perf: Removed unused HERO_SRCSET, ABSTRACT_IMG, ABSTRACT_SRCSET constants from Home.tsx bundle
+- [x] Increase logo height to h-24 in Header (nav bar adjusted to h-28, PageLayout pt updated to 160px)

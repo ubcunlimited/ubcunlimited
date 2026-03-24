@@ -14,9 +14,9 @@ export default function PageLayout({ children }: PageLayoutProps) {
         Skip to main content
       </a>
       <Header />
-      {/* pt-16 = 64px matches mobile nav h-16; lg:pt-[120px] tightened nav-to-hero gap */}
+      {/* pt-16 = 64px matches mobile nav h-16; lg:pt-[160px] = top bar 48px + nav h-28 112px */}
       {/* pb-[76px] on mobile reserves space so footer content isn't hidden behind the sticky call bar */}
-      <main id="main-content" className="flex-1 pt-16 lg:pt-[120px] pb-[76px] lg:pb-0">
+      <main id="main-content" className="flex-1 pt-16 lg:pt-[160px] pb-[76px] lg:pb-0">
         {children}
       </main>
       <Footer />

@@ -111,7 +111,7 @@ export default function Header() {
       <div className="container" ref={navRef}>
         <div
           className={`flex items-center justify-between transition-all duration-300 ${
-            scrolled ? "h-16" : "h-16 lg:h-36"
+            scrolled ? "h-16" : "h-16 lg:h-28"
           }`}
         >
           {/* Logo */}
@@ -123,7 +123,7 @@ export default function Header() {
               alt="UBC Unlimited — Processing Without Limits"
               width={160}
               height={106}
-              className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-12" : "h-12 lg:h-34"}`}
+              className={`w-auto object-contain transition-all duration-300 ${scrolled ? "h-12" : "h-12 lg:h-24"}`}
               style={{ maxWidth: scrolled ? "180px" : "160px" }}
             />
           </Link>
