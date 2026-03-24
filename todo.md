@@ -176,3 +176,4 @@
 - [x] Update footer logo to match new horizontal header logo (h-12, max-width 280px, same v2 srcset)
 - [x] Add new horizontal logo to top of mobile menu drawer (h-10, centered, with gold divider below)
 - [x] Resize mobile menu logo to h-6 / 140px max-width, left-aligned with nav links
+- [x] Use horizontallogo2.png for mobile menu drawer logo (h-8, 190px max-width)

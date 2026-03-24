@@ -380,14 +380,12 @@ export default function Header() {
               <div className="flex items-center px-3 pb-3 mb-1 border-b border-white/10">
                 <Link href="/" aria-label="UBC Unlimited — Home">
                   <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_240w_aa5f29cd.webp"
-                    srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_240w_aa5f29cd.webp 240w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_480w_36563e62.webp 480w"
-                    sizes="140px"
+                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_mobile_v2_50fd3d7c.webp"
                     alt="UBC Unlimited — Processing Without Limits"
-                    width={140}
-                    height={22}
-                    className="h-6 w-auto object-contain"
-                    style={{ maxWidth: "140px" }}
+                    width={190}
+                    height={30}
+                    className="h-8 w-auto object-contain"
+                    style={{ maxWidth: "190px" }}
                   />
                 </Link>
               </div>
