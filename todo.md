@@ -177,3 +177,4 @@
 - [x] Add new horizontal logo to top of mobile menu drawer (h-10, centered, with gold divider below)
 - [x] Resize mobile menu logo to h-6 / 140px max-width, left-aligned with nav links
 - [x] Use horizontallogo2.png for mobile menu drawer logo (h-8, 190px max-width)
+- [x] Use circular logo for mobile menu drawer instead of horizontal (h-10 w-10 square)
