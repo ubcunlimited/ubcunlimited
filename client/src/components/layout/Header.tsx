@@ -123,6 +123,7 @@ export default function Header() {
               width={190}
               height={30}
               className="h-6 w-auto object-contain transition-all duration-300 lg:hidden"
+              style={{ maxWidth: "63px" }}
             />
             {/* Desktop logo: horizontallogo1 at h-20 / h-12 scrolled */}
             <img
