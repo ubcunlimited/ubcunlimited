@@ -124,16 +124,16 @@ export default function Header() {
               height={30}
               className="h-6 w-auto object-contain transition-all duration-300 lg:hidden"
             />
-            {/* Desktop logo: full horizontal at h-20 / h-12 scrolled */}
+            {/* Desktop logo: horizontallogo1 at h-20 / h-12 scrolled */}
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_480w_36563e62.webp"
-              srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_240w_aa5f29cd.webp 240w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_480w_36563e62.webp 480w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_640w_fa1c6e9b.webp 640w"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_480w_d79c112f.webp"
+              srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_240w_3fa55674.webp 240w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_480w_d79c112f.webp 480w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_759w_4279eeb0.webp 759w"
               sizes="320px"
               alt="UBC Unlimited — Processing Without Limits"
-              width={320}
-              height={51}
+              width={759}
+              height={121}
               className={`hidden lg:block w-auto object-contain transition-all duration-300 ${scrolled ? "h-12" : "h-20"}`}
-              style={{ maxWidth: scrolled ? "240px" : "360px" }}
+              style={{ maxWidth: scrolled ? "240px" : "380px" }}
             />
           </Link>
 

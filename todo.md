@@ -182,3 +182,4 @@
 - [x] Change mobile header logo to horizontallogo2 at h-6 (desktop still uses full logo_v2 at h-20/h-12)
 - [x] Adjust mobile header logo from h-6 to h-8
 - [x] Revert mobile header logo back to h-6
+- [x] Set desktop header logo to horizontallogo1 at h-20 (h-12 scrolled, max-width 380px)
