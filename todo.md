@@ -208,3 +208,8 @@
 - [x] Fix testimonial cards being clipped/cut off at top of mobile viewport (overflow-hidden on parent)
 - [x] Add bottom padding to testimonial section to prevent sticky bar overlap on last card
 - [x] Ensure testimonial grid has no overflow:hidden that clips card tops
+
+## Floating Widget Launcher
+- [x] Build FloatingLauncher component: single chat bubble icon that expands to show chat, ADA widget, and back-to-top actions
+- [x] Remove standalone BackToTop, AccessibilityWidget trigger button, and LiveChat trigger from their individual components
+- [x] Wire FloatingLauncher into App.tsx, remove old individual floating components

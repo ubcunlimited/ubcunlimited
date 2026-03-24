@@ -8,9 +8,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 // ── Eagerly loaded (critical path) ──────────────────────────────────────────
 import Home from "./pages/Home";
 import CookieConsent from "./components/CookieConsent";
-import LiveChat from "./components/LiveChat";
-import BackToTop from "./components/BackToTop";
-import AccessibilityWidget from "./components/AccessibilityWidget";
+import FloatingLauncher from "./components/FloatingLauncher";
 
 // ── Lazy-loaded pages (split into separate chunks) ───────────────────────────
 // Core
@@ -305,9 +303,7 @@ function App() {
           <Toaster />
           <Router />
           <CookieConsent />
-          <AccessibilityWidget />
-          <LiveChat />
-          <BackToTop />
+          <FloatingLauncher />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
