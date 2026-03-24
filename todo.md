@@ -213,3 +213,9 @@
 - [x] Build FloatingLauncher component: single chat bubble icon that expands to show chat, ADA widget, and back-to-top actions
 - [x] Remove standalone BackToTop, AccessibilityWidget trigger button, and LiveChat trigger from their individual components
 - [x] Wire FloatingLauncher into App.tsx, remove old individual floating components
+
+## FloatingLauncher Fixes
+- [x] Fix fan-out buttons stacking on top of each other — use proper bottom offset per button instead of mb- hack
+- [x] Assign distinct colors: Chat=indigo, Accessibility=sky-blue, BackToTop=emerald-green
+- [x] Remove rogue hidden arrow/minimized chat pill that appears while scrolling
+- [x] Fix all spacing so buttons are clearly separated and don't overlap (60px STEP between each)

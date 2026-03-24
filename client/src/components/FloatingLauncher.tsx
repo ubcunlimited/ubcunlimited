@@ -1,31 +1,46 @@
 /**
  * FloatingLauncher — Single expandable floating action button for UBC Unlimited
  *
- * A single chat-bubble icon sits in the bottom-right corner.
- * Clicking it fans out three action buttons:
- *   1. Live Chat (opens the chat window)
- *   2. Accessibility (opens the ADA panel)
- *   3. Back to Top (scrolls to top)
+ * Layout: uses explicit `bottom` pixel values (not mb-) so each button
+ * sits at a fixed absolute position above the main trigger.
  *
- * Positioning: bottom-[5.5rem] on mobile (above sticky call bar), bottom-6 on desktop.
- * The chat window and ADA panel are rendered inline here and controlled via callbacks.
+ * Button stack (from bottom up):
+ *   0 — Main trigger (gold)    bottom: 88px mobile / 24px desktop
+ *   1 — Chat (blue)            bottom: 160px mobile / 96px desktop
+ *   2 — Accessibility (teal)   bottom: 220px mobile / 156px desktop
+ *   3 — Back to Top (green)    bottom: 280px mobile / 216px desktop  (only when scrolled)
+ *
+ * Each button is 44px tall, spaced 16px apart.
  */
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { MessageCircle, Accessibility, ArrowUp, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
-
-// ── Sub-panel imports ─────────────────────────────────────────────────────────
 import ChatPanel from "./ChatPanel";
 import AccessibilityPanel from "./AccessibilityPanel";
 
-// ── Types ─────────────────────────────────────────────────────────────────────
 type ActivePanel = "chat" | "a11y" | null;
+
+// ── Pixel offsets ─────────────────────────────────────────────────────────────
+// Mobile: sticky call bar is ~64px, so main trigger sits at 88px
+// Desktop: main trigger sits at 24px (bottom-6)
+const MOBILE_BASE = 88;   // px — main trigger bottom on mobile
+const DESKTOP_BASE = 24;  // px — main trigger bottom on desktop
+const STEP = 60;          // px — vertical gap between each fan-out button
 
 export default function FloatingLauncher() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activePanel, setActivePanel] = useState<ActivePanel>(null);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile breakpoint
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener("resize", check, { passive: true });
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   // Show back-to-top after 400px scroll
   useEffect(() => {
@@ -41,9 +56,10 @@ export default function FloatingLauncher() {
   };
 
   const toggleMenu = () => {
-    setMenuOpen((v) => !v);
-    // Close any open panel when collapsing the menu
-    if (menuOpen) setActivePanel(null);
+    setMenuOpen((v) => {
+      if (v) setActivePanel(null);
+      return !v;
+    });
   };
 
   const openPanel = (panel: ActivePanel) => {
@@ -53,24 +69,25 @@ export default function FloatingLauncher() {
 
   const closePanel = () => setActivePanel(null);
 
-  // Bottom positioning: above sticky mobile call bar on mobile, normal on desktop
-  const baseBottom = "bottom-[5.5rem] lg:bottom-6";
+  const base = isMobile ? MOBILE_BASE : DESKTOP_BASE;
+
+  // Compute bottom px for each fan-out slot (0 = closest to trigger)
+  const chatBottom    = base + STEP * 1;
+  const a11yBottom    = base + STEP * 2;
+  const topBottom     = base + STEP * 3;
+
+  // Panels open 80px above the main trigger
+  const panelBottomPx = base + 80;
 
   return (
     <>
       {/* ── Active panels ──────────────────────────────────────────────── */}
       <AnimatePresence>
         {activePanel === "chat" && (
-          <ChatPanel
-            onClose={closePanel}
-            bottomClass="bottom-[5.5rem] lg:bottom-6"
-          />
+          <ChatPanel onClose={closePanel} bottomClass="" bottomPx={panelBottomPx} />
         )}
         {activePanel === "a11y" && (
-          <AccessibilityPanel
-            onClose={closePanel}
-            bottomClass="bottom-[5.5rem] lg:bottom-6"
-          />
+          <AccessibilityPanel onClose={closePanel} bottomClass="" bottomPx={panelBottomPx} />
         )}
       </AnimatePresence>
 
@@ -78,48 +95,51 @@ export default function FloatingLauncher() {
       <AnimatePresence>
         {menuOpen && (
           <>
-            {/* Back to Top — only when scrolled */}
+            {/* Back to Top — green — only when scrolled */}
             {showBackToTop && (
               <motion.button
                 key="back-to-top"
-                initial={{ opacity: 0, y: 12, scale: 0.85 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 12, scale: 0.85 }}
-                transition={{ duration: 0.18, delay: 0.04 }}
+                initial={{ opacity: 0, scale: 0.7, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.7, y: 10 }}
+                transition={{ duration: 0.18, delay: 0.06 }}
                 onClick={scrollToTop}
                 aria-label="Scroll back to top"
-                className={`fixed right-6 ${baseBottom} z-50 mb-[9.5rem] w-11 h-11 rounded-full bg-[#1a1a1a] border border-white/15 hover:border-[#c9a84c]/60 text-white/70 hover:text-[#c9a84c] shadow-lg flex items-center justify-center transition-colors`}
+                style={{ bottom: `${topBottom}px`, right: "24px" }}
+                className="fixed z-50 w-11 h-11 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-lg flex items-center justify-center transition-colors"
               >
-                <ArrowUp size={17} aria-hidden="true" />
+                <ArrowUp size={18} aria-hidden="true" />
               </motion.button>
             )}
 
-            {/* Accessibility */}
+            {/* Accessibility — teal/blue */}
             <motion.button
               key="a11y"
-              initial={{ opacity: 0, y: 12, scale: 0.85 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 12, scale: 0.85 }}
-              transition={{ duration: 0.18, delay: showBackToTop ? 0.08 : 0.04 }}
+              initial={{ opacity: 0, scale: 0.7, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.7, y: 10 }}
+              transition={{ duration: 0.18, delay: 0.04 }}
               onClick={() => openPanel("a11y")}
               aria-label="Open accessibility options"
-              className={`fixed right-6 ${baseBottom} z-50 ${showBackToTop ? "mb-[7rem]" : "mb-[4.5rem]"} w-11 h-11 rounded-full bg-[#1a1a1a] border border-white/15 hover:border-[#c9a84c]/60 text-white/70 hover:text-[#c9a84c] shadow-lg flex items-center justify-center transition-colors`}
+              style={{ bottom: `${a11yBottom}px`, right: "24px" }}
+              className="fixed z-50 w-11 h-11 rounded-full bg-sky-500 hover:bg-sky-400 text-white shadow-lg flex items-center justify-center transition-colors"
             >
-              <Accessibility size={17} aria-hidden="true" />
+              <Accessibility size={18} aria-hidden="true" />
             </motion.button>
 
-            {/* Chat */}
+            {/* Chat — blue-indigo */}
             <motion.button
               key="chat"
-              initial={{ opacity: 0, y: 12, scale: 0.85 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 12, scale: 0.85 }}
-              transition={{ duration: 0.18, delay: showBackToTop ? 0.12 : 0.08 }}
+              initial={{ opacity: 0, scale: 0.7, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.7, y: 10 }}
+              transition={{ duration: 0.18, delay: 0.02 }}
               onClick={() => openPanel("chat")}
               aria-label="Open live chat"
-              className={`fixed right-6 ${baseBottom} z-50 mb-[2.5rem] w-11 h-11 rounded-full bg-[#1a1a1a] border border-white/15 hover:border-[#c9a84c]/60 text-white/70 hover:text-[#c9a84c] shadow-lg flex items-center justify-center transition-colors`}
+              style={{ bottom: `${chatBottom}px`, right: "24px" }}
+              className="fixed z-50 w-11 h-11 rounded-full bg-indigo-500 hover:bg-indigo-400 text-white shadow-lg flex items-center justify-center transition-colors"
             >
-              <MessageCircle size={17} aria-hidden="true" />
+              <MessageCircle size={18} aria-hidden="true" />
             </motion.button>
           </>
         )}
@@ -130,8 +150,8 @@ export default function FloatingLauncher() {
         onClick={toggleMenu}
         aria-label={menuOpen ? "Close widget menu" : "Open widget menu"}
         aria-expanded={menuOpen}
-        className={`fixed right-6 ${baseBottom} z-50 w-14 h-14 rounded-full bg-[#c9a84c] hover:bg-[#b8972a] active:bg-[#a07820] shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-200 ${menuOpen ? "rotate-45" : "rotate-0"}`}
-        style={{ boxShadow: "0 4px 24px rgba(201,168,76,0.45)" }}
+        style={{ bottom: `${base}px`, right: "24px", boxShadow: "0 4px 24px rgba(201,168,76,0.45)" }}
+        className={`fixed z-50 w-14 h-14 rounded-full bg-[#c9a84c] hover:bg-[#b8972a] active:bg-[#a07820] shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-200 ${menuOpen ? "rotate-45" : "rotate-0"}`}
       >
         {menuOpen ? (
           <X size={22} className="text-[#080808]" aria-hidden="true" />

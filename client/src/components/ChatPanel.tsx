@@ -85,9 +85,10 @@ function renderText(text: string) {
 interface ChatPanelProps {
   onClose: () => void;
   bottomClass: string;
+  bottomPx?: number;
 }
 
-export default function ChatPanel({ onClose, bottomClass }: ChatPanelProps) {
+export default function ChatPanel({ onClose, bottomClass, bottomPx }: ChatPanelProps) {
   const [minimized, setMinimized] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([{
@@ -127,20 +128,10 @@ export default function ChatPanel({ onClose, bottomClass }: ChatPanelProps) {
 
   const formatTime = (d: Date) => d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
 
-  if (minimized) {
-    return (
-      <motion.button
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }}
-        onClick={() => setMinimized(false)}
-        className={`fixed right-[5rem] ${bottomClass} z-[49] bg-[#080808] border border-[#c9a84c]/30 text-white text-xs px-4 py-2 rounded-full shadow-lg flex items-center gap-2 hover:border-[#c9a84c]/60 transition-colors`}
-      >
-        <MessageCircle size={13} className="text-[#c9a84c]" />
-        UBC Chat
-      </motion.button>
-    );
-  }
+  // When minimized, close the panel entirely (user can reopen from launcher)
+  useEffect(() => {
+    if (minimized) onClose();
+  }, [minimized, onClose]);
 
   return (
     <motion.div
@@ -151,8 +142,8 @@ export default function ChatPanel({ onClose, bottomClass }: ChatPanelProps) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 16, scale: 0.97 }}
       transition={{ type: "spring", stiffness: 300, damping: 28 }}
-      className={`fixed right-6 ${bottomClass} z-[49] w-[360px] max-w-[calc(100vw-2rem)] rounded-2xl overflow-hidden shadow-2xl flex flex-col mb-[4.5rem]`}
-      style={{ height: "520px", boxShadow: "0 8px 40px rgba(0,0,0,0.55)" }}
+      className={`fixed right-6 z-[49] w-[360px] max-w-[calc(100vw-2rem)] rounded-2xl overflow-hidden shadow-2xl flex flex-col`}
+      style={{ height: "520px", bottom: bottomPx !== undefined ? `${bottomPx}px` : undefined, boxShadow: "0 8px 40px rgba(0,0,0,0.55)" }}
     >
       {/* Header */}
       <div className="bg-[#080808] px-4 py-3 flex items-center gap-3 border-b border-white/10 shrink-0">

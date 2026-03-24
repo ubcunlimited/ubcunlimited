@@ -104,9 +104,10 @@ function ToggleRow({ icon, label, description, active, onToggle }: ToggleRowProp
 interface AccessibilityPanelProps {
   onClose: () => void;
   bottomClass: string;
+  bottomPx?: number;
 }
 
-export default function AccessibilityPanel({ onClose, bottomClass }: AccessibilityPanelProps) {
+export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: AccessibilityPanelProps) {
   const [state, setState] = useState<A11yState>(DEFAULT_STATE);
 
   useEffect(() => {
@@ -142,7 +143,8 @@ export default function AccessibilityPanel({ onClose, bottomClass }: Accessibili
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.92, y: 8 }}
       transition={{ type: "spring", stiffness: 320, damping: 28 }}
-      className={`fixed right-6 ${bottomClass} z-[49] w-72 bg-[#111111] border border-[#c9a84c]/25 rounded-2xl shadow-2xl shadow-black/60 overflow-hidden mb-[4.5rem]`}
+      className={`fixed right-6 z-[49] w-72 bg-[#111111] border border-[#c9a84c]/25 rounded-2xl shadow-2xl shadow-black/60 overflow-hidden`}
+      style={{ bottom: bottomPx !== undefined ? `${bottomPx}px` : undefined }}
     >
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-white/8 bg-[#0d0d0d]">
