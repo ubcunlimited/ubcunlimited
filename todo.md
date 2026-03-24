@@ -173,3 +173,4 @@
 - [x] Increase logo height to h-24 in Header (nav bar adjusted to h-28, PageLayout pt updated to 160px)
 - [x] Replace logo with new horizontallogo1.png (WebP srcset 240w/480w/759w, CDN upload)
 - [x] Update logo to new version (v2) and set height to h-20 desktop / h-12 scrolled
+- [x] Update footer logo to match new horizontal header logo (h-12, max-width 280px, same v2 srcset)
