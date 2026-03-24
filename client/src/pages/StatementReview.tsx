@@ -19,11 +19,11 @@ export default function StatementReview() {
 
   return (
     <PageLayout>
-      <section className="bg-[#080808] py-16">
+      <section className="bg-[#080808] py-10 sm:py-16">
         <div className="container">
           <div className="max-w-xl">
             <div className="stat-badge mb-4">Statement Review</div>
-            <h1 className="text-4xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
               See Exactly How Much You're Overpaying
             </h1>
             <p className="text-white/60 text-lg">
@@ -33,9 +33,9 @@ export default function StatementReview() {
         </div>
       </section>
 
-      <section className="py-12 bg-[#f8fafc]">
+      <section className="py-8 sm:py-12 bg-[#f8fafc]">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
             {steps.map((s) => (
               <div key={s.step} className="bg-white rounded-xl p-5 border border-gray-100 text-center">
                 <div className="w-10 h-10 rounded-full bg-[#c9a84c]/10 text-[#c9a84c] font-bold text-lg flex items-center justify-center mx-auto mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>{s.step}</div>
@@ -45,7 +45,7 @@ export default function StatementReview() {
             ))}
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
             <div>
               <div className="bg-gradient-to-br from-[#080808] to-[#0f2040] rounded-2xl p-7 text-white mb-5">
                 <TrendingDown size={28} className="text-[#c9a84c] mb-3" />
@@ -65,7 +65,7 @@ export default function StatementReview() {
 
             <div>
               <form onSubmit={handleSubmit} data-ghl-form="statement-review" className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-[#080808] mb-1.5">First Name *</label>
                     <input type="text" required className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20" />

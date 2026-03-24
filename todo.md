@@ -183,4 +183,23 @@
 - [x] Adjust mobile header logo from h-6 to h-8
 - [x] Revert mobile header logo back to h-6
 - [x] Set desktop header logo to horizontallogo1 at h-20 (h-12 scrolled, max-width 380px)
-- [ ] Reduce mobile header logo (horizontallogo2) to 1/3 size: h-6 (24px) → h-2 (8px), max-width ~63px
+- [x] Reduce mobile header logo (horizontallogo2) to 1/3 size: h-6 (24px) → h-2 (8px), max-width ~63px
+
+## Mobile Optimization Pass
+- [x] Home: hero section — reduce py on mobile, ensure form stacks below headline properly
+- [x] Home: hero bottom phone strip — stack vertically on small screens
+- [x] Home: solutions grid — already grid-cols-2, reduce card padding on mobile
+- [x] Home: "Why Choose Us" — floating badge overflows on mobile, fix positioning
+- [x] Home: how-it-works — single column on mobile with better spacing
+- [x] Home: blog preview — single column on mobile (already grid-cols-1 md:grid-cols-3)
+- [x] Home: service area cards — full width on mobile (already grid md:grid-cols-2)
+- [x] SolutionDetail: hero — reduce py-20 to py-10 on mobile, fix h1 text-4xl on mobile
+- [x] SolutionDetail: features grid — ensure single column on mobile
+- [x] IndustryDetail: hero — reduce padding on mobile, fix h1 text-4xl on mobile
+- [x] IndustryDetail: challenges/solutions — already stacks on mobile via border-b
+- [x] Footer: CTA strip buttons — already flex-col sm:flex-row, verify on mobile
+- [x] CTABanner: subtitle text-lg — reduce to text-base on mobile
+- [x] PricingTransparency: comparison table — ensure overflow-x-auto works on mobile
+- [x] StatementReview: form grid-cols-2 — stack to single column on mobile
+- [x] Global: section vertical padding — reduce py-16/py-20 to py-10/py-12 on mobile throughout
+- [x] Global: h1/h2 font sizes — ensure proper scaling on mobile

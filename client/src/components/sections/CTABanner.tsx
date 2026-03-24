@@ -22,14 +22,14 @@ export default function CTABanner({
   dark = true,
 }: CTABannerProps) {
   return (
-    <section className={`py-16 ${dark ? "bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a]" : "bg-gradient-to-br from-[#b8972a] via-[#c9a84c] to-[#e2c97e]"}`}>
+    <section className={`py-10 sm:py-16 ${dark ? "bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a]" : "bg-gradient-to-br from-[#b8972a] via-[#c9a84c] to-[#e2c97e]"}`}>
       <div className="container text-center">
         <div className="max-w-2xl mx-auto">
           <div className="teal-divider mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
             {title}
           </h2>
-          <p className="text-white/70 text-lg mb-8">{subtitle}</p>
+          <p className="text-white/70 text-sm sm:text-lg mb-6 sm:mb-8">{subtitle}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href={primaryHref} className="btn-gold text-base py-3 px-7 justify-center">
               {primaryLabel} <ArrowRight size={18} />

@@ -28,11 +28,11 @@ export default function Consultation() {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="bg-[#080808] py-16">
+      <section className="bg-[#080808] py-10 sm:py-16">
         <div className="container">
           <div className="max-w-xl">
             <div className="stat-badge mb-4">Book a Consultation</div>
-            <h1 className="text-4xl font-extrabold text-white mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h1 className="text-2xl sm:text-4xl font-extrabold text-white mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Book Your Consultation
             </h1>
             <p className="text-white/60 text-lg">
@@ -42,9 +42,9 @@ export default function Consultation() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12">
             {/* Left: Benefits */}
             <div>
               <h2 className="text-2xl font-bold text-[#080808] mb-5" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>What to Expect</h2>

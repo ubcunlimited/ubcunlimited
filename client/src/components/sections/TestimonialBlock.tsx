@@ -63,12 +63,12 @@ export default function TestimonialBlock({ dark = false }: TestimonialBlockProps
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   return (
-    <section className={`py-16 ${dark ? "bg-[#080808]" : "bg-white"}`}>
+    <section className={`py-10 sm:py-16 ${dark ? "bg-[#080808]" : "bg-white"}`}>
       <div className="container">
         <div className="text-center mb-10">
           <div className="teal-divider mx-auto mb-4" />
           <h2
-            className={`text-3xl font-bold mb-2 ${dark ? "text-white" : "text-[#080808]"}`}
+            className={`text-2xl sm:text-3xl font-bold mb-2 ${dark ? "text-white" : "text-[#080808]"}`}
             style={{ fontFamily: "Sora, sans-serif" }}
           >
             What Utah Business Owners Say

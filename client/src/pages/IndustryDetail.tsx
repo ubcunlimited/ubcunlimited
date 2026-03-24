@@ -839,7 +839,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
         ]}
       />
       {/* ── Hero ── */}
-      <section className="bg-[#080808] py-20">
+      <section className="bg-[#080808] py-10 sm:py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#c9a84c]/5 via-transparent to-transparent pointer-events-none" />
         <div className="container relative z-10">
           <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
@@ -849,14 +849,14 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
             <ChevronRight size={14} />
             <span className="text-white/70">{data.title}</span>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             {/* Left — copy */}
             <div>
               <div className="text-5xl mb-4">{data.icon}</div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
                 {data.title} Payment Processing
               </h1>
-              <p className="text-white/70 text-lg mb-3">{data.subtitle}</p>
+              <p className="text-white/70 text-sm sm:text-lg mb-3">{data.subtitle}</p>
               <p className="text-white/55 mb-7 leading-relaxed text-sm">{data.description}</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/consultation" className="btn-gold text-sm py-3 px-7 justify-center">Request a Consultation <ArrowRight size={16} /></Link>
@@ -906,11 +906,11 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
       </div>
 
       {/* ── Challenges & Solutions (Option B: Paired Card Rows) ── */}
-      <section className="py-16 bg-[#f8fafc]">
+      <section className="py-10 sm:py-16 bg-[#f8fafc]">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
               Challenges We Solve for {data.title} Businesses
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-sm">We've worked with hundreds of Utah {data.title.toLowerCase()} businesses. Here are the problems we hear most — and exactly how we solve them.</p>
@@ -990,14 +990,14 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
       </section>
 
       {/* ── What to Expect ── */}
-      <section className="py-16 bg-[#080808]">
+      <section className="py-10 sm:py-16 bg-[#080808]">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>What to Expect When You Work With Us</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>What to Expect When You Work With Us</h2>
             <p className="text-white/50 max-w-xl mx-auto text-sm">From your first call to going live — here's the process for Utah {data.title.toLowerCase()} businesses.</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {ONBOARDING_STEPS.map((step, i) => (
               <div key={step.step} className="bg-white/4 border border-white/8 rounded-2xl p-7 flex flex-col gap-3">
                 <span className="text-5xl font-extrabold text-[#c9a84c]/20 leading-none" style={{ fontFamily: 'Sora, sans-serif' }}>{step.step}</span>
@@ -1011,9 +1011,9 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
       </section>
 
       {/* ── Why UBC + Recommended Solutions ── */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start">
             {/* Left — trust block */}
             <div>
               <div className="teal-divider mb-5" />

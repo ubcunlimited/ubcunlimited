@@ -146,17 +146,17 @@ export default function Blog() {
       />
 
       {/* Hero */}
-      <section className="bg-[#080808] py-16">
+      <section className="bg-[#080808] py-10 sm:py-16">
         <div className="container">
           <div className="max-w-2xl">
             <div className="stat-badge mb-4">News &amp; Updates</div>
             <h1
-              className="text-4xl font-extrabold text-white mb-4"
+              className="text-2xl sm:text-4xl font-extrabold text-white mb-4"
               style={{ fontFamily: "DM Serif Display, Georgia, serif" }}
             >
               Merchant Services Insights<br />for Utah Businesses
             </h1>
-            <p className="text-white/60 text-lg">
+            <p className="text-white/60 text-sm sm:text-lg">
               Practical guides, industry news, and expert tips from{" "}
               <span className="text-[#c9a84c] font-medium">UBC Unlimited</span> — Utah's local merchant services experts.
             </p>
@@ -164,7 +164,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="py-12 bg-white">
+      <section className="py-8 sm:py-12 bg-white">
         <div className="container">
           {/* Search + Sort Bar */}
           <div className="flex flex-col sm:flex-row gap-3 mb-8">
@@ -242,7 +242,7 @@ export default function Blog() {
               {featured && (
                 <Link
                   href={`/blog/${featured.slug}`}
-                  className="group block mb-8 rounded-2xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-xl transition-all overflow-hidden bg-gradient-to-br from-[#080808] to-[#111111] p-7 md:p-9 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
+                  className="group block mb-8 rounded-2xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-xl transition-all overflow-hidden bg-gradient-to-br from-[#080808] to-[#111111] p-5 sm:p-7 md:p-9 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
                 >
                   <div className="flex items-center gap-2 mb-4">
                     <span className="bg-[#c9a84c] text-white text-xs font-bold px-2.5 py-1 rounded-full">Featured</span>

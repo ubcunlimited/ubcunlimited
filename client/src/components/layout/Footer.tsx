@@ -34,7 +34,7 @@ export default function Footer() {
 
       {/* CTA Strip */}
       <div className="bg-gradient-to-r from-[#111111] via-[#1a1a1a] to-[#111111] border-b border-[#c9a84c]/15">
-        <div className="container py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="container py-7 sm:py-10 flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6">
           <div>
             <h3 className="text-white text-xl font-bold mb-1" style={{ fontFamily: "Sora, sans-serif" }}>
               Ready to lower your processing costs?
@@ -59,11 +59,11 @@ export default function Footer() {
       </div>
 
       {/* Main footer grid */}
-      <div className="container py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="container py-8 sm:py-14">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10">
 
           {/* Brand column */}
-          <div className="lg:col-span-1">
+          <div className="col-span-2 md:col-span-1 lg:col-span-1">
             <Link
               href="/"
               className="flex items-center mb-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded"

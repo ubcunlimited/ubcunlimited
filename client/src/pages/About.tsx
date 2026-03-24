@@ -52,7 +52,7 @@ export default function About() {
         canonical="/about"
       />
       {/* Hero */}
-      <section className="relative py-20 bg-[#080808] overflow-hidden">
+      <section className="relative py-10 sm:py-20 bg-[#080808] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-10"
           style={{ backgroundImage: `url(${ABSTRACT_IMG})` }}
@@ -60,11 +60,11 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/60 to-[#080808]" />
         <div className="container relative z-10 text-center max-w-3xl mx-auto">
           <div className="stat-badge mx-auto mb-5 inline-block">About UBC Unlimited</div>
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
             Set Yourself Apart<br />
             <span className="gradient-text">with Service</span>
           </h1>
-          <p className="text-white/65 text-lg leading-relaxed">
+          <p className="text-white/65 text-sm sm:text-lg leading-relaxed">
             Utah's trusted local merchant services partner — built on {SITE.yearsInBusiness} years of experience, broad industry relationships, and an unwavering commitment to putting clients first.
           </p>
         </div>
@@ -85,12 +85,12 @@ export default function About() {
       </div>
 
       {/* Founder Story */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             <div>
               <div className="teal-divider mb-5" />
-              <h2 className="text-3xl md:text-4xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 The UBC Unlimited Story
               </h2>
               <p className="text-gray-600 mb-5 leading-relaxed">
@@ -134,11 +134,11 @@ export default function About() {
       </section>
 
       {/* Our Values */}
-      <section className="py-16 bg-[#f7f3ec]">
+      <section className="py-10 sm:py-16 bg-[#f7f3ec]">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="text-center mb-7 sm:mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               What We Stand For
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm">
@@ -160,12 +160,12 @@ export default function About() {
       </section>
 
       {/* Why Choose UBC */}
-      <section className="py-16 bg-[#080808]">
+      <section className="py-10 sm:py-16 bg-[#080808]">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             <div>
               <div className="teal-divider mb-5" />
-              <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 What Makes UBC Unlimited Different
               </h2>
               <p className="text-white/60 mb-8 text-sm leading-relaxed">

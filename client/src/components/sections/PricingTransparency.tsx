@@ -152,7 +152,7 @@ function Cell({ value }: { value: CellValue }) {
 
 export default function PricingTransparency() {
   return (
-    <section className="py-20 bg-white" id="pricing">
+    <section className="py-10 sm:py-20 bg-white" id="pricing">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-4">
@@ -181,7 +181,7 @@ export default function PricingTransparency() {
         </div>
 
         {/* Pricing model cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-14">
           {models.map((model) => (
             <div
               key={model.name}
@@ -225,7 +225,7 @@ export default function PricingTransparency() {
         </div>
 
         {/* What affects your rate */}
-        <div className="bg-[#080808] rounded-2xl p-8 md:p-10 mb-14">
+        <div className="bg-[#080808] rounded-2xl p-5 sm:p-8 md:p-10 mb-10 sm:mb-14">
           <div className="text-center mb-8">
             <h3
               className="text-2xl font-bold text-white mb-2"
@@ -237,7 +237,7 @@ export default function PricingTransparency() {
               Understanding these three factors is why a statement review is worth more than any rate quote we could give you upfront.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {cardMixFactors.map((factor) => (
               <div key={factor.title} className="flex gap-4">
                 <div className="w-10 h-10 rounded-xl bg-[#c9a84c]/10 flex items-center justify-center shrink-0">
@@ -267,7 +267,7 @@ export default function PricingTransparency() {
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm">
-            <table className="w-full text-sm">
+            <table className="w-full text-sm" style={{ minWidth: '560px' }}>
               <thead>
                 <tr className="bg-[#080808]">
                   <th className="text-left px-5 py-4 text-white/60 font-medium text-xs w-[30%]">Feature</th>

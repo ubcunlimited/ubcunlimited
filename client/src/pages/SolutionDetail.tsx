@@ -635,7 +635,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
       />
 
       {/* ── Hero ── */}
-      <section className="relative bg-[#080808] py-20 overflow-hidden">
+      <section className="relative bg-[#080808] py-10 sm:py-20 overflow-hidden">
         {hasHeroImage && (
           <>
             <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImg})`, opacity: 0.18 }} />
@@ -644,7 +644,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
           </>
         )}
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             {/* Left — copy */}
             <div>
               <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
@@ -655,10 +655,10 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 <span className="text-white/70">{data.title}</span>
               </div>
               <div className="text-4xl mb-4">{data.icon}</div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
                 {data.title}
               </h1>
-              <p className="text-white/70 text-lg mb-4">{data.subtitle}</p>
+              <p className="text-white/70 text-sm sm:text-lg mb-4">{data.subtitle}</p>
               <p className="text-white/55 mb-7 leading-relaxed text-sm">{data.description}</p>
               <ul className="space-y-2.5 mb-8">
                 {data.heroPoints.map((p) => (
@@ -738,14 +738,14 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
       </div>
 
       {/* ── How It Works ── */}
-      <section className="py-16 bg-[#080808]">
+      <section className="py-10 sm:py-16 bg-[#080808]">
         <div className="container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8 sm:mb-12">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>How It Works</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>How It Works</h2>
             <p className="text-white/50 max-w-xl mx-auto text-sm">From first conversation to live processing — here's what to expect when you work with UBC Unlimited.</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 relative">
             {/* Connector line */}
             <div className="hidden sm:block absolute top-10 left-1/6 right-1/6 h-px bg-gradient-to-r from-transparent via-[#c9a84c]/30 to-transparent" />
             {howItWorks.map((step, i) => (
@@ -765,11 +765,11 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
 
       {/* ── Features ── */}
       {/* ── Challenges & Solutions (Option B: Paired Card Rows) ── */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="text-center mb-7 sm:mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Common Problems We Solve</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Common Problems We Solve</h2>
             <p className="text-gray-500 max-w-2xl mx-auto text-sm">Real challenges Utah businesses face with payment processing — and exactly how our {data.title} solution addresses each one.</p>
           </div>
           {/* Column headers — desktop only */}
@@ -864,9 +864,9 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
       </section>
 
       {/* ── Why UBC Unlimited ── */}
-      <section className="py-16 bg-[#f8fafc]">
+      <section className="py-10 sm:py-16 bg-[#f8fafc]">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             {/* Left — benefits */}
             <div>
               <div className="teal-divider mb-5" />
@@ -937,7 +937,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
 
       {/* Gateway Logos — eCommerce only */}
       {data.slug === "ecommerce-payments" && (
-        <section className="py-16 bg-white border-t border-gray-100">
+        <section className="py-10 sm:py-16 bg-white border-t border-gray-100">
           <div className="container">
             <div className="text-center mb-10">
               <div className="teal-divider mx-auto mb-4" />
@@ -991,7 +991,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
 
       {/* High-Risk Industries Grid — shown only on high-risk-processing page */}
       {data.slug === "high-risk-processing" && (
-        <section className="py-16 bg-[#080808]">
+        <section className="py-10 sm:py-16 bg-[#080808]">
           <div className="container">
             <div className="text-center mb-10">
               <div className="teal-divider mx-auto mb-4" />

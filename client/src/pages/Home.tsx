@@ -213,8 +213,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/85 to-[#080808]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
 
-        <div className="container relative z-10 pt-0 pb-10 lg:pt-0 lg:pb-14">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="container relative z-10 pt-0 pb-6 sm:pb-10 lg:pt-0 lg:pb-14">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-center">
             {/* Left column — headline + stats + CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -222,15 +222,15 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <div className="stat-badge mb-4">Local Expertise &middot; Nationwide Reach</div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-3 leading-tight" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 Your Local Merchant
                 <br />
                 <span className="gradient-text">Services Expert</span>
               </h1>
-              <p className="text-white/70 text-base md:text-lg mb-3 leading-relaxed">
+              <p className="text-white/70 text-sm md:text-lg mb-2 leading-relaxed">
                 Personal service from a Utah team that knows your industry — wherever you do business.
               </p>
-              <p className="text-white/55 text-sm mb-5 leading-relaxed">
+              <p className="text-white/55 text-xs sm:text-sm mb-4 leading-relaxed">
                 Competitive pricing, fast onboarding, and industry-specific solutions — backed by {SITE.yearsInBusiness} years of experience and a dedicated rep who answers when you call.
               </p>
               {/* Stats row — hidden on mobile to keep hero compact; form takes priority */}
@@ -340,8 +340,8 @@ export default function Home() {
 
         {/* Bottom phone strip */}
         <div className="absolute bottom-0 left-0 right-0 bg-[#c9a84c]/10 border-t border-[#c9a84c]/20 backdrop-blur-sm">
-          <div className="container py-3 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <span className="text-white/60 text-sm">Questions? Talk to a local Utah expert today.</span>
+          <div className="container py-2 sm:py-3 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-2">
+            <span className="text-white/60 text-xs sm:text-sm">Questions? Talk to a local Utah expert today.</span>
             <a href={SITE.phoneHref} className="flex items-center gap-2 text-[#c9a84c] font-bold text-sm hover:text-[#e2c97e] transition-colors">
               <Phone size={14} /> {SITE.phone}
             </a>
@@ -353,9 +353,9 @@ export default function Home() {
       <TrustBadges dark={false} />
 
       {/* Stats bar */}
-      <div className="bg-[#080808] py-10 border-t border-white/5">
+      <div className="bg-[#080808] py-8 sm:py-10 border-t border-white/5">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
             {TRUST_SIGNALS.map((s) => (
               <div key={s.label}>
                 <div className="text-3xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
@@ -367,23 +367,23 @@ export default function Home() {
       </div>
 
       {/* Solutions */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="text-center mb-7 sm:mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Payment Solutions for Every Business
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm">
               From credit card processing to full POS systems — tailored to your industry, backed by local Utah expertise.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {NAV_SOLUTIONS.map((sol) => (
               <Link
                 key={sol.href}
                 href={sol.href}
-                className="group p-5 rounded-xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-lg transition-all bg-white"
+                className="group p-3 sm:p-5 rounded-xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-lg transition-all bg-white"
               >
                 <div className="text-2xl mb-3">{sol.icon}</div>
                 <div className="font-semibold text-sm text-[#080808] group-hover:text-[#c9a84c] transition-colors mb-1">
@@ -405,12 +405,12 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16 bg-[#f7f3ec]">
+      <section className="py-10 sm:py-16 bg-[#f7f3ec]">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <div className="teal-divider mb-5" />
-              <h2 className="text-3xl md:text-4xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 Better Service. Industry Specific. Local Support.
               </h2>
               <p className="text-gray-500 mb-8 text-sm leading-relaxed">
@@ -447,7 +447,7 @@ export default function Home() {
                 height={764}
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
-              <div className="absolute -bottom-4 -left-4 glass-card-light rounded-xl p-4 shadow-xl border border-[#c9a84c]/20">
+              <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 glass-card-light rounded-xl p-3 sm:p-4 shadow-xl border border-[#c9a84c]/20">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-[#c9a84c] flex items-center justify-center">
                     <Star size={16} className="text-white fill-white" />
@@ -464,23 +464,23 @@ export default function Home() {
       </section>
 
       {/* Industries */}
-      <section className="py-16 bg-[#080808]">
+      <section className="py-10 sm:py-16 bg-[#080808]">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="text-center mb-7 sm:mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Industry-Specific Solutions
             </h2>
             <p className="text-white/50 max-w-xl mx-auto text-sm">
               We specialize in restaurants, service companies, and businesses across the Wasatch Front — with solutions tailored to how your industry actually operates.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-8">
+          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 mb-6 sm:mb-8">
             {NAV_INDUSTRIES.map((ind) => (
               <Link
                 key={ind.href}
                 href={ind.href}
-                className="group glass-card rounded-xl p-4 text-center hover:bg-white/10 transition-all"
+                className="group glass-card rounded-xl p-3 sm:p-4 text-center hover:bg-white/10 transition-all"
               >
                 <div className="text-2xl mb-2">{ind.icon}</div>
                 <div className="font-medium text-xs text-white/80 group-hover:text-white transition-colors">{ind.label}</div>
@@ -499,18 +499,18 @@ export default function Home() {
       <TestimonialBlock />
 
       {/* How It Works */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="text-center mb-7 sm:mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               How It Works
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto text-sm">
               Getting started is simple. Our local team handles everything so you can focus on running your business.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {howItWorks.map((step, i) => (
               <div key={step.step} className="relative">
                 {i < howItWorks.length - 1 && (
@@ -538,9 +538,9 @@ export default function Home() {
       <PricingTransparency />
 
       {/* Blog Preview */}
-      <section className="py-16 bg-[#f7f3ec]">
+      <section className="py-10 sm:py-16 bg-[#f7f3ec]">
         <div className="container">
-          <div className="flex items-end justify-between mb-8">
+          <div className="flex items-end justify-between mb-6 sm:mb-8">
             <div>
               <div className="teal-divider mb-4" />
               <h2 className="text-2xl md:text-3xl font-bold text-[#080808]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
@@ -576,11 +576,11 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="container max-w-3xl">
-          <div className="text-center mb-10">
+          <div className="text-center mb-7 sm:mb-10">
             <div className="teal-divider mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               FAQ's
             </h2>
           </div>
@@ -589,9 +589,9 @@ export default function Home() {
       </section>
 
       {/* Service Area — Counties & Cities */}
-      <section className="bg-[#111] py-14 border-t border-white/5">
+      <section className="bg-[#111] py-10 sm:py-14 border-t border-white/5">
         <div className="container">
-          <div className="text-center mb-10">
+          <div className="text-center mb-7 sm:mb-10">
             <div className="inline-flex items-center gap-2 bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
               <MapPin size={12} /> Statewide Coverage
             </div>
