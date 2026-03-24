@@ -244,3 +244,6 @@
 - [x] Color: color blind modes (protanopia, deuteranopia, tritanopia SVG filters)
 - [x] Persist all settings to localStorage, apply via injected <style> tag
 - [x] Add reset all button (appears only when settings are modified)
+
+## Crash Fix
+- [x] Fix React runtime crash: confirmed old deployed version had AccessibilityWidget still in App.tsx; latest code is clean with only FloatingLauncher — publish latest checkpoint to fix
