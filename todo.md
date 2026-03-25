@@ -259,3 +259,7 @@
 
 ## Blog Content Edit
 - [x] Remove liquor law line from bar/restaurant blog post
+
+## Dual Pricing Blog Updates
+- [x] Update dual pricing blog post to reflect legal in all 50 states
+- [x] Fix comparison matrix: first 3 dual pricing items now match cash discount (Legal=Yes, Debit=No, Registration=No)

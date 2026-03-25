@@ -557,15 +557,15 @@ The card network requirements for surcharging are specific and must be followed 
 
 Dual pricing is a third approach that is related to both cash discounting and surcharging. Under dual pricing, the merchant displays two prices simultaneously — a cash price and a card price — for every item or service. This is different from a cash discount program (which shows one price and applies a discount at checkout) and from surcharging (which shows one price and adds a fee at checkout).
 
-Dual pricing is generally considered the most transparent approach, since customers can see both prices before they decide how to pay. It is legal in most states and is supported by most major payment processors. The operational requirement is that your POS system must be capable of displaying and processing two prices for each item.
+Dual pricing is generally considered the most transparent approach, since customers can see both prices before they decide how to pay. It is legal in all 50 states and is supported by most major payment processors. The operational requirement is that your POS system must be capable of displaying and processing two prices for each item.
 
 ## Which Approach Is Right for Your Business?
 
 | Factor | Cash Discount | Surcharging | Dual Pricing |
 |---|---|---|---|
-| Legal in all 50 states | Yes | No (banned in 4 states) | Most states |
-| Applies to debit cards | No (discount applies to cash only) | No (cannot surcharge debit) | Varies |
-| Registration required | No | Yes (Mastercard 30-day notice) | Varies |
+| Legal in all 50 states | Yes | No (banned in 4 states) | Yes |
+| Applies to debit cards | No (discount applies to cash only) | No (cannot surcharge debit) | No (discount applies to cash only) |
+| Registration required | No | Yes (Mastercard 30-day notice) | No |
 | Customer perception | Generally positive (getting a discount) | Sometimes negative (paying more) | Neutral (transparent) |
 | Best for | Retail, restaurants, services | Professional services, B2B | Any business |
 
