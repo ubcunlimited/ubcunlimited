@@ -256,3 +256,6 @@
 
 ## Cookie Banner Enhancement
 - [x] Add "Accessibility" button to cookie banner that opens the accessibility panel (dispatches ubc:open-accessibility event, works on both mobile and desktop)
+
+## Blog Content Edit
+- [x] Remove liquor law line from bar/restaurant blog post

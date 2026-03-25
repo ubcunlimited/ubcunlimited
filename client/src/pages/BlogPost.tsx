@@ -637,7 +637,7 @@ Running a bar or nightclub in Utah comes with a unique set of operational challe
 
 ## What Makes a Bar POS Different
 
-A bar POS has different priorities than a restaurant POS. Speed is paramount — bartenders need to open tabs, add drinks, and close out customers in seconds, not minutes. Tab management must be intuitive and reliable. The system needs to handle pre-authorizations (holding a card for a tab) without creating excessive holds on customer accounts. And it needs to manage the complexity of Utah's liquor laws, including the requirement that alcohol be served by a licensed server.
+A bar POS has different priorities than a restaurant POS. Speed is paramount — bartenders need to open tabs, add drinks, and close out customers in seconds, not minutes. Tab management must be intuitive and reliable. The system needs to handle pre-authorizations (holding a card for a tab) without creating excessive holds on customer accounts.
 
 Reporting is also critical for bar operators. You need to know your pour cost, your most profitable items, your busiest hours, and your staff's sales performance. A good bar POS provides all of this data in real time, accessible from a mobile device or any web browser.
 
