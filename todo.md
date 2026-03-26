@@ -278,3 +278,7 @@
 - [x] Fix intro sentence: replace "surcharging and cash discounting" with "dual pricing and cash discounting"
 - [x] Update section heading to: "Cash Discounting and Dual Pricing Or Surcharging Solutions for Mobile Business"
 - [x] Add surcharging compliance blurb explaining compliant rules/requirements
+
+## Mobile Blog: Surcharging Blurb Corrections
+- [x] Update prohibited states to: California, Connecticut, Maine, and Massachusetts
+- [x] Add note that some states regulate the 3% cap to a lower rate
