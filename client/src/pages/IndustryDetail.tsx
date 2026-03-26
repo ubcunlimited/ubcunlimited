@@ -789,6 +789,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
   const relatedIndustries = NAV_INDUSTRIES.filter((i) => !i.href.endsWith(slug)).slice(0, 4);
   const industryStats = INDUSTRY_STATS[data.slug] ?? INDUSTRY_STATS["default"];
   const pullQuote = INDUSTRY_PULL_QUOTES[data.slug] ?? DEFAULT_PULL_QUOTE;
+  const isHighRisk = data.recommendedSolutions.includes("/solutions/high-risk-processing");
 
   return (
     <PageLayout>
@@ -1046,7 +1047,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
               {/* Quick stats */}
               <div className="grid grid-cols-3 gap-3">
                 {[
-                  { icon: Clock, label: "24–48h", sub: "Avg. Activation" },
+                  { icon: Clock, label: isHighRisk ? "5–7 Days" : "24–48h", sub: isHighRisk ? "Approval Time" : "Avg. Activation" },
                   { icon: TrendingUp, label: "20+", sub: "Years Experience" },
                   { icon: Zap, label: "Local", sub: "Utah Support" },
                 ].map((item) => (
