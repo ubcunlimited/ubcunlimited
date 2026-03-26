@@ -263,3 +263,7 @@
 ## Dual Pricing Blog Updates
 - [x] Update dual pricing blog post to reflect legal in all 50 states
 - [x] Fix comparison matrix: first 3 dual pricing items now match cash discount (Legal=Yes, Debit=No, Registration=No)
+
+## Mobile Payments Blog Updates
+- [x] Emphasize Square's lack of real 1-on-1 personal service in mobile payments blog post
+- [x] Add section on surcharging and cash discounting setup, pricing, and compliance in mobile payments blog post

@@ -407,6 +407,16 @@ Square uses flat-rate pricing for in-person transactions. For lower-volume busin
 
 Square works on both Wi-Fi and cellular data, accepts all major cards and contactless payments, and integrates with Square's broader ecosystem of invoicing, inventory, and reporting tools. It is a good fit for very small mobile businesses that value simplicity over cost optimization.
 
+### The Square Support Problem: No Real 1-on-1 Service
+
+What Square's marketing does not emphasize — and what many business owners only discover after a problem arises — is that Square does not offer dedicated, personal account support. When something goes wrong with your account, your funds, or your hardware, you are directed to a help center, a chatbot, or a general customer support queue. There is no dedicated account representative who knows your business, your volume, or your history.
+
+This matters more than most people expect. Account holds and fund freezes are common with Square, particularly as a business grows or processes an unusually large transaction. When Square flags a transaction or places a hold on your funds, you cannot pick up the phone and call someone who has the authority and context to resolve it quickly. You submit a ticket and wait — sometimes for days — while your cash flow is frozen.
+
+Square's support model is built for scale, not for relationships. Their business is built on volume: millions of small merchants who self-onboard, self-manage, and self-resolve issues through documentation and automated tools. That model works fine when everything is running smoothly. When it is not — when you have a chargeback dispute, a sudden account review, a hardware failure at a critical event, or a question about your rates — the absence of a real human who knows your account becomes a serious liability.
+
+For a Utah contractor processing $15,000 in a single week after a large job, or a farmers market vendor whose account gets flagged during their busiest season, the inability to reach a knowledgeable, dedicated representative is not just an inconvenience — it can be a business disruption. Working with a local merchant services provider means you have a real person — someone who knows your business and can advocate on your behalf — available when it counts.
+
 ## Clover Go and Clover Flex
 
 Clover offers two mobile options. The Clover Go is a Bluetooth card reader that pairs with a smartphone app — similar to Square Reader but requiring a merchant account through a Clover reseller. The Clover Flex is a standalone handheld POS device with a built-in printer, camera, and barcode scanner, priced around $599.
@@ -429,7 +439,31 @@ This approach is particularly valuable for contractors, service businesses, and 
 
 Regardless of which mobile solution you choose, make sure it supports contactless payments — NFC tap-to-pay, Apple Pay, and Google Pay. Contactless payment adoption has grown dramatically, and customers increasingly expect to be able to tap their phone or watch to pay. NFC-capable hardware is now the industry standard, and customer expectations for tap-to-pay have grown accordingly.
 
-[Contact our Utah team](/contact) to discuss the best mobile payment solution for your specific business.
+## Offsetting Your Processing Costs: Surcharging and Cash Discounting for Mobile Businesses
+
+Processing fees are one of the most significant operating costs for mobile businesses, and many Utah merchants are unaware that there are fully compliant, legal programs available that allow them to offset or eliminate those costs entirely. Two programs — surcharging and cash discounting — are now legal in all 50 states and, when implemented correctly, can dramatically reduce or eliminate what you pay to accept credit cards.
+
+### How Cash Discounting Works
+
+A cash discount program works by posting a single price that reflects the cost of accepting a card, then offering customers a discount when they pay with cash. The posted price is the standard price; cash-paying customers receive a reduction. Because you are offering a discount rather than adding a fee, the program is straightforward to communicate and widely accepted by customers.
+
+For mobile businesses — where margins are often tight and every transaction counts — a properly implemented cash discount program means your processing costs are effectively built into your pricing rather than coming out of your margin. The key word is "properly implemented." The program must be set up with compliant signage, correct receipt language, and a payment terminal or software that handles the pricing logic automatically. A poorly implemented cash discount program can create customer confusion, card brand violations, and potential fines.
+
+### How Surcharging Works
+
+A surcharge program takes a different approach: your standard price is your cash price, and a surcharge — capped at 3% by Visa and Mastercard rules — is added when a customer pays by credit card. Debit card transactions cannot be surcharged under card brand rules, so the surcharge applies only to credit card purchases.
+
+Surcharging requires advance registration with Visa and Mastercard before you begin the program. It also requires compliant point-of-sale signage notifying customers of the surcharge before they pay, and the surcharge must appear as a separate line item on the receipt. These are not optional steps — they are card brand requirements, and failure to follow them can result in fines or program termination.
+
+### Choosing the Right Program for Your Business
+
+The right program depends on your customer base, your average ticket, and how you want to communicate pricing. Cash discounting tends to be easier to implement and explain to customers, since you are framing it as a reward for paying with cash rather than a penalty for using a card. Surcharging is more transparent about the mechanics but requires the registration and compliance steps described above.
+
+For mobile businesses specifically, both programs require hardware and software that handle the pricing logic automatically — you should never be manually calculating or adding fees at the point of sale. A properly configured mobile terminal or app will apply the correct pricing, generate compliant receipts, and handle debit card exemptions automatically.
+
+This is where working with a dedicated merchant services provider makes a significant difference. Square does not offer a compliant cash discount or surcharging program for mobile merchants. If you attempt to implement one informally — by manually adding fees or adjusting prices — you risk violating card brand rules and Square's own terms of service. A merchant services provider can set you up with a compliant program from day one, including the correct hardware, signage, receipt language, and registration where required.
+
+[Contact our Utah team](/contact) to discuss the best mobile payment solution for your specific business — including whether a cash discount or surcharging program is the right fit for your operation.
     `,
   },
 
