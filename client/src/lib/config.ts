@@ -66,6 +66,7 @@ export const NAV_INDUSTRIES = [
   { label: "Vape & E-Cigarettes", href: "/industries/vape-ecig", desc: "Vape shops & e-cigarette retailers", icon: "💨", highRisk: true },
   { label: "Online Pharmacy", href: "/industries/online-pharmacy", desc: "Telehealth & online pharmacy payment solutions", icon: "💊", highRisk: true },
   { label: "Cryptocurrency", href: "/industries/cryptocurrency", desc: "Crypto exchange & blockchain business accounts", icon: "₿", highRisk: true },
+  { label: "Adult Entertainment", href: "/industries/adult-entertainment", desc: "Discreet, compliant merchant accounts for adult content platforms and subscription sites", icon: "🔞", highRisk: true },
 ];
 
 export const BLOG_CATEGORIES = [

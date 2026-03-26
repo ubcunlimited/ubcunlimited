@@ -286,3 +286,8 @@
 ## Mobile Blog: Remove Surcharging Section, Add Dual Pricing Section
 - [x] Remove "How Surcharging Works" subsection from mobile payments blog
 - [x] Add "How Dual Pricing Works" section with full description and info
+
+## Adult Entertainment Industry Page
+- [x] Add adult entertainment to high-risk overview on Industries page
+- [x] Create dedicated /industries/adult-entertainment page
+- [x] Wire up route in App.tsx
