@@ -715,6 +715,72 @@ const INDUSTRY_STATS: Record<string, { value: string; label: string }[]> = {
     { value: "Local", label: "Utah Rep" },
     { value: "Compliant", label: "Card Brand Rules" },
   ],
+  nutraceuticals: [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Stable", label: "Long-Term Accounts" },
+  ],
+  "adult-entertainment": [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Compliant", label: "Card Brand Rules" },
+  ],
+  "adult-content": [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Compliant", label: "Card Brand Rules" },
+  ],
+  travel: [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Stable", label: "Long-Term Accounts" },
+  ],
+  "online-gaming": [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Compliant", label: "Card Brand Rules" },
+  ],
+  telemarketing: [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Stable", label: "Long-Term Accounts" },
+  ],
+  "credit-repair": [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Compliant", label: "Card Brand Rules" },
+  ],
+  "subscription-continuity": [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Stable", label: "Long-Term Accounts" },
+  ],
+  "vape-ecig": [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Compliant", label: "Card Brand Rules" },
+  ],
+  "online-pharmacy": [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Compliant", label: "Card Brand Rules" },
+  ],
+  cryptocurrency: [
+    { value: "5–7 Days", label: "Approval Time" },
+    { value: "Multiple", label: "Acquiring Banks" },
+    { value: "Local", label: "Utah Rep" },
+    { value: "Stable", label: "Long-Term Accounts" },
+  ],
   default: [
     { value: "20+", label: "Years in Business" },
     { value: "Next Day", label: "Funding Available" },
@@ -765,10 +831,12 @@ const DEFAULT_PULL_QUOTE = {
 };
 
 // Onboarding process steps (shared)
-const ONBOARDING_STEPS = [
+const getOnboardingSteps = (isHighRisk: boolean) => [
   { step: "01", title: "Statement Review", desc: "Submit your current processing statement. We analyze it line by line and identify exactly where you're overpaying — at no cost to you." },
   { step: "02", title: "Custom Proposal", desc: "We build a tailored proposal with transparent pricing, the right hardware, and the integrations your business actually needs. No generic rate sheets." },
-  { step: "03", title: "Setup & Go Live", desc: "Our local Utah team handles equipment, training, and integration. Most accounts are active within 24–48 hours. POS system installations typically require a 14-day lead time from approval." },
+  { step: "03", title: "Setup & Go Live", desc: isHighRisk
+    ? "Our local Utah team guides you through the high-risk underwriting process and handles equipment, training, and integration once approved. Approval timelines for specialized accounts generally run 5–7 business days, though individual underwriting requirements may vary."
+    : "Our local Utah team handles equipment, training, and integration. Most accounts are active within 24–48 hours. POS system installations typically require a 14-day lead time from approval." },
 ];
 
 export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
@@ -1002,7 +1070,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
             <p className="text-white/50 max-w-xl mx-auto text-sm">From your first call to going live — here's the process for Utah {data.title.toLowerCase()} businesses.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            {ONBOARDING_STEPS.map((step, i) => (
+            {getOnboardingSteps(isHighRisk).map((step, i) => (
               <div key={step.step} className="bg-white/4 border border-white/8 rounded-2xl p-7 flex flex-col gap-3">
                 <span className="text-5xl font-extrabold text-[#c9a84c]/20 leading-none" style={{ fontFamily: 'Sora, sans-serif' }}>{step.step}</span>
                 <div className="w-8 h-8 rounded-full bg-[#c9a84c] flex items-center justify-center text-[#080808] font-bold text-sm shrink-0">{i + 1}</div>

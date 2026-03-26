@@ -314,3 +314,4 @@
 - [x] Replace "hundreds of Utah restaurants" in BlogPost.tsx restaurant POS intro
 - [x] Remove FFL compliance/age verification challenge-solution pair from Firearms industry page
 - [x] Replace 24-48h activation stat with 5-7 Days on all high-risk industry pages (CBD, Firearms, etc.)
+- [x] Replace all 24-48h activation/approval references on all high-risk industry pages with 5-7 business day language (non-guaranteed)
