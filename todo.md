@@ -306,3 +306,9 @@
 - [x] Remove interchange-plus pricing references from all high-risk industry pages
 - [x] Replace Firearms In-Store POS card with In-Store Payment Terminals on Industries page
 - [x] Remove In-Store POS card from Vape/E-Cig industry section
+
+## Business Count Language Cleanup (Round 2)
+- [x] Replace "hundreds of Utah businesses" in About.tsx body paragraph
+- [x] Replace "Join hundreds of Utah businesses" in About.tsx CTA banner
+- [x] Replace "hundreds of Utah restaurants" in blogData.ts excerpt
+- [x] Replace "hundreds of Utah restaurants" in BlogPost.tsx restaurant POS intro

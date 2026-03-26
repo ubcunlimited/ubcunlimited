@@ -111,7 +111,7 @@ Want to see what you would save? [Request a statement review](/statement-review)
     date: "2025-02-01",
     readTime: "10 min read",
     content: `
-Choosing the right point-of-sale system is one of the most important technology decisions a restaurant owner makes. The wrong system means slow service, frustrated staff, and missed revenue. The right system streamlines operations, reduces errors, and gives you the data you need to run a better business. Having helped hundreds of Utah restaurants set up and switch POS systems, we have seen firsthand what works — and what does not.
+Choosing the right point-of-sale system is one of the most important technology decisions a restaurant owner makes. The wrong system means slow service, frustrated staff, and missed revenue. The right system streamlines operations, reduces errors, and gives you the data you need to run a better business. Having worked with restaurants across Utah on POS system setups and transitions, we have seen firsthand what works — and what does not.
 
 ## What Makes a Restaurant POS Different
 

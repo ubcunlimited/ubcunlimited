@@ -35,7 +35,7 @@ export const blogPosts: BlogPostMeta[] = [
     slug: "best-pos-systems-utah-restaurants-2025",
     title: "Best POS Systems for Utah Restaurants",
     excerpt:
-      "After installing POS systems in hundreds of Utah restaurants, we've seen what works and what creates headaches. This guide compares the leading options on price, features, and real-world reliability — so you can make a confident decision without sitting through a dozen sales demos.",
+      "After working with restaurants across Utah on POS system setups and transitions, we've seen what works and what creates headaches. This guide compares the leading options on price, features, and real-world reliability — so you can make a confident decision without sitting through a dozen sales demos.",
     category: "POS Systems",
     date: "2025-02-01",
     readTime: "10 min read",

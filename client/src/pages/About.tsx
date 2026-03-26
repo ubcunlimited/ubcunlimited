@@ -103,7 +103,7 @@ export default function About() {
                 That means industry-specific solutions, not one-size-fits-all packages. It means local support from someone who answers when you call. And it means honest, transparent pricing — because you deserve to know exactly what you're paying and why.
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Today, UBC Unlimited serves hundreds of Utah businesses — from restaurants and bars along the Wasatch Front to retail shops, medical offices, automotive dealers, and service companies across Salt Lake, Utah, Davis, and Weber counties.
+                Today, UBC Unlimited works with businesses across Utah — from restaurants and bars along the Wasatch Front to retail shops, medical offices, automotive dealers, and service companies across Salt Lake, Utah, Davis, and Weber counties.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/consultation" className="btn-teal py-3 px-6">
@@ -207,7 +207,7 @@ export default function About() {
       </section>
 
       <TestimonialBlock />
-      <CTABanner title="Ready to Work with a Local Partner?" subtitle="Join hundreds of Utah businesses who trust UBC Unlimited for their payment processing needs." />
+      <CTABanner title="Ready to Work with a Local Partner?" subtitle="Work with a team that understands your industry and is invested in your long-term success." />
     </PageLayout>
   );
 }
