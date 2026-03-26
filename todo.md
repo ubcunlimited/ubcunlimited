@@ -297,3 +297,4 @@
 - [x] Add 5-7 business day approval language to all high-risk industry page descriptions
 - [x] Remove all specific business count references from all industry pages (use experience language instead)
 - [x] Replace 'worked with hundreds of Utah [industry] businesses' with experience-based language on all industry pages
+- [x] Replace squirt gun emoji with proper SVG firearm icon on all industry pages

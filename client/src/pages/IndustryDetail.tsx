@@ -9,6 +9,7 @@ import FAQ from "@/components/sections/FAQ";
 import SkyTabPOSBuilder from "@/components/sections/SkyTabPOSBuilder";
 import { NAV_INDUSTRIES, NAV_SOLUTIONS } from "@/lib/config";
 import SEO from "@/components/SEO";
+import IndustryIcon from "@/components/icons/IndustryIcon";
 
 export interface IndustryData {
   slug: string;
@@ -298,7 +299,7 @@ const industriesData: IndustryData[] = [
   },
   {
     slug: "firearms",
-    icon: "🎯",
+    icon: "__firearm__",
     title: "Firearms & Shooting Sports",
     subtitle: "Compliant payment processing for FFL dealers, gun shops, and shooting ranges",
     description: "Firearms retailers and shooting ranges operate in a highly regulated industry that many payment processors won't touch. UBC Unlimited works with specialized banking partners to provide reliable, compliant payment processing for FFL dealers, gun shops, ammo retailers, and shooting ranges across Utah. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
@@ -852,7 +853,9 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             {/* Left — copy */}
             <div>
-              <div className="text-5xl mb-4">{data.icon}</div>
+              <div className="text-5xl mb-4 flex items-center justify-center">
+                <IndustryIcon icon={data.icon} size={52} className="text-white" />
+              </div>
               <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
                 {data.title} Payment Processing
               </h1>

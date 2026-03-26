@@ -4,6 +4,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import SEO from "@/components/SEO";
 import { NAV_INDUSTRIES } from "@/lib/config";
+import IndustryIcon from "@/components/icons/IndustryIcon";
 
 interface IndustryDetail {
   tagline: string;
@@ -116,7 +117,7 @@ const industryDetails: Record<string, IndustryDetail> = {
     tagline: "Stable FFL dealer accounts with in-store POS and online gateway solutions.",
     painPoints: ["Account terminations from mainstream processors", "Online sales gateway restrictions", "FFL compliance documentation", "High chargeback risk from online sales"],
     solutions: [
-      { icon: "🔫", title: "Stable FFL Merchant Account", desc: "Accounts through acquiring banks that specialize in firearms — no surprise terminations or holds." },
+      { icon: "__firearm__", title: "Stable FFL Merchant Account", desc: "Accounts through acquiring banks that specialize in firearms — no surprise terminations or holds." },
       { icon: "🛒", title: "Online Gateway Support", desc: "Accept online payments for firearms accessories, ammunition, and legal transfers through compliant gateways." },
       { icon: "🏪", title: "In-Store POS", desc: "Full-featured retail POS with inventory management, layaway, and background check workflow integration." },
       { icon: "🛡️", title: "Chargeback Management", desc: "Transaction documentation and dispute management tools to protect your account and win disputes." },
@@ -318,7 +319,7 @@ export default function Industries() {
                 <div key={ind.href} className="rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg hover:border-[#c9a84c]/30 transition-all flex flex-col">
                   <div className="p-6 pb-4 border-b border-gray-50">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="text-3xl">{ind.icon}</span>
+                      <IndustryIcon icon={ind.icon} size={30} className="text-[#080808]" />
                       <h3 className="text-lg font-bold text-[#080808]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{ind.label}</h3>
                     </div>
                     <p className="text-gray-500 text-sm leading-relaxed">{detail.tagline}</p>
@@ -338,7 +339,7 @@ export default function Industries() {
                     <div className="grid grid-cols-2 gap-2">
                       {detail.solutions.map((s) => (
                         <div key={s.title} className="bg-gray-50 rounded-xl p-3">
-                          <div className="text-lg mb-1">{s.icon}</div>
+                          <div className="text-lg mb-1"><IndustryIcon icon={s.icon} size={20} className="text-[#080808]" /></div>
                           <div className="text-xs font-bold text-[#080808] mb-0.5">{s.title}</div>
                           <div className="text-xs text-gray-400 leading-tight">{s.desc}</div>
                         </div>
@@ -429,7 +430,7 @@ export default function Industries() {
                 <div key={ind.href} className="rounded-2xl border border-white/10 bg-[#111111] hover:border-[#d4a843]/40 hover:shadow-xl transition-all flex flex-col">
                   <div className="p-6 pb-4 border-b border-white/5">
                     <div className="flex items-center gap-3 mb-3">
-                      <span className="text-3xl">{ind.icon}</span>
+                      <IndustryIcon icon={ind.icon} size={30} className="text-white" />
                       <h3 className="text-lg font-bold text-white" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{ind.label}</h3>
                     </div>
                     <p className="text-white/50 text-sm leading-relaxed">{detail.tagline}</p>
@@ -449,7 +450,7 @@ export default function Industries() {
                     <div className="grid grid-cols-2 gap-2">
                       {detail.solutions.map((s) => (
                         <div key={s.title} className="bg-white/5 rounded-xl p-3">
-                          <div className="text-lg mb-1">{s.icon}</div>
+                          <div className="text-lg mb-1"><IndustryIcon icon={s.icon} size={20} className="text-white" /></div>
                           <div className="text-xs font-bold text-white mb-0.5">{s.title}</div>
                           <div className="text-xs text-white/35 leading-tight">{s.desc}</div>
                         </div>

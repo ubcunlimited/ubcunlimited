@@ -8,6 +8,7 @@ import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
 import { NAV_SOLUTIONS } from "@/lib/config";
 import SEO from "@/components/SEO";
+import IndustryIcon from "@/components/icons/IndustryIcon";
 
 export interface SolutionData {
   slug: string;
@@ -1009,7 +1010,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 { icon: "🔞", label: "Adult Entertainment", href: "/industries/adult-entertainment", desc: "Discreet, compliant adult merchant accounts" },
                 { icon: "✈️", label: "Travel & Hospitality", href: "/industries/travel", desc: "Travel agencies & booking platforms" },
                 { icon: "🎮", label: "Online Gaming & Fantasy Sports", href: "/industries/online-gaming", desc: "Skill-based gaming & fantasy sports platforms" },
-                { icon: "🎯", label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions" },
+                { icon: "__firearm__", label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions" },
                 { icon: "📞", label: "Telemarketing & Outbound Sales", href: "/industries/telemarketing", desc: "Outbound sales & telemarketing operations" },
                 { icon: "💳", label: "Credit Repair & Debt Settlement", href: "/industries/credit-repair", desc: "Credit services & debt relief programs" },
                 { icon: "🔄", label: "Subscription & Continuity", href: "/industries/subscription-continuity", desc: "Subscription box & recurring billing" },
@@ -1022,7 +1023,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                   href={ind.href}
                   className="group glass-card rounded-xl p-5 hover:bg-white/10 transition-all border border-white/5 hover:border-[#c9a84c]/30"
                 >
-                  <div className="text-3xl mb-3">{ind.icon}</div>
+                  <div className="text-3xl mb-3"><IndustryIcon icon={ind.icon} size={30} className="text-white" /></div>
                   <div className="font-semibold text-white text-sm mb-1 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>{ind.label}</div>
                   <div className="text-white/40 text-xs leading-relaxed">{ind.desc}</div>
                   <div className="mt-3 flex items-center gap-1 text-[#c9a84c] text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
