@@ -316,3 +316,4 @@
 - [x] Replace 24-48h activation stat with 5-7 Days on all high-risk industry pages (CBD, Firearms, etc.)
 - [x] Replace all 24-48h activation/approval references on all high-risk industry pages with 5-7 business day language (non-guaranteed)
 - [x] Remove age verification challenge-solution pair from Vape/E-Cig industry page
+- [x] Remove loyalty program pair from Vape/E-Cig industry page

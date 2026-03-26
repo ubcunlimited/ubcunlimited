@@ -1384,14 +1384,6 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
       impact: "Stable online payment processing",
     },
     {
-      challenge: "Loyalty program for repeat vape customers",
-      challengeDetail: "Vape retailers with loyal repeat customers need a way to reward purchases and drive return visits without a complex loyalty platform.",
-      solution: "Built-in loyalty and rewards program",
-      solutionDetail: "A POS-integrated loyalty program that automatically tracks points per purchase and applies rewards at checkout. No separate app required — customers earn and redeem at the register.",
-      solutionTag: "Gift & Loyalty",
-      impact: "Higher customer retention",
-    },
-    {
       challenge: "Dual pricing to offset processing costs",
       challengeDetail: "Vape retailers operating on thin margins feel the impact of processing fees acutely. A 2.5% fee on every sale adds up quickly.",
       solution: "Dual pricing program",
