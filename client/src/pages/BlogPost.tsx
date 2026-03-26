@@ -453,21 +453,33 @@ A cash discount program works by posting a single price that reflects the cost o
 
 For mobile businesses — where margins are often tight and every transaction counts — a properly implemented cash discount program means your processing costs are effectively built into your pricing rather than coming out of your margin. The key word is "properly implemented." The program must be set up with compliant signage, correct receipt language, and a payment terminal or software that handles the pricing logic automatically. A poorly implemented cash discount program can create customer confusion, card brand violations, and potential fines.
 
-### How Surcharging Works
+### How Dual Pricing Works
 
-A surcharge program takes a different approach: your standard price is your cash price, and a surcharge — capped at 3% by Visa and Mastercard rules — is added when a customer pays by credit card. Debit card transactions cannot be surcharged under card brand rules, so the surcharge applies only to credit card purchases.
+Dual pricing is one of the most transparent and customer-friendly approaches to offsetting processing costs. Under a dual pricing program, you display two prices for every item or service: a cash price and a card price. The card price reflects the cost of card acceptance built into the total, while the cash price is lower — giving customers a clear, visible choice at the point of sale before they decide how to pay.
 
-Surcharging requires advance registration with Visa and Mastercard before you begin the program. It also requires compliant point-of-sale signage notifying customers of the surcharge before they pay, and the surcharge must appear as a separate line item on the receipt. These are not optional steps — they are card brand requirements, and failure to follow them can result in fines or program termination.
+This is distinct from cash discounting in an important way. With cash discounting, you post a single price and then reduce it for cash-paying customers at checkout. With dual pricing, both prices are visible upfront — on your menu, price list, or POS display — so there is no surprise at the register. Many customers and business owners find this the most straightforward approach because the pricing is fully transparent before the transaction begins.
 
-### Choosing the Right Program for Your Business
+Dual pricing is legal in all 50 states and is supported by Visa, Mastercard, American Express, and Discover, provided it is implemented correctly. The card networks require that the card price — not the cash price — be the price submitted to the network for settlement. Your POS system or mobile terminal must be configured to handle this automatically, displaying both prices and submitting the correct amount based on the customer's payment method. Attempting to implement dual pricing manually or through a system that is not configured for it creates compliance risk and is not something UBC Unlimited recommends.
 
-The right program depends on your customer base, your average ticket, and how you want to communicate pricing. Cash discounting tends to be easier to implement and explain to customers, since you are framing it as a reward for paying with cash rather than a penalty for using a card. Surcharging is more transparent about the mechanics but requires the registration and compliance steps described above.
+For mobile businesses, dual pricing is particularly effective because it eliminates the need to explain a surcharge or discount at the point of sale — the customer sees both prices, makes their choice, and the terminal handles the rest. This is especially valuable at high-volume events like farmers markets or trade shows, where transaction speed matters and you do not want to be explaining pricing mechanics to every customer in line.
 
-For mobile businesses specifically, both programs require hardware and software that handle the pricing logic automatically — you should never be manually calculating or adding fees at the point of sale. A properly configured mobile terminal or app will apply the correct pricing, generate compliant receipts, and handle debit card exemptions automatically.
+Dual pricing programs also require compliant signage — customers must be informed that two prices exist and what each one represents. UBC Unlimited provides the signage, terminal configuration, and receipt language required for a fully compliant dual pricing setup.
 
-This is where working with a dedicated merchant services provider makes a significant difference. Square does not offer a compliant cash discount or surcharging program for mobile merchants. If you attempt to implement one informally — by manually adding fees or adjusting prices — you risk violating card brand rules and Square's own terms of service. A merchant services provider can set you up with a compliant program from day one, including the correct hardware, signage, receipt language, and registration where required.
+### Choosing the Right Program for Your Mobile Business
 
-[Contact our Utah team](/contact) to discuss the best mobile payment solution for your specific business — including whether a cash discount or surcharging program is the right fit for your operation.
+All three programs — cash discounting, dual pricing, and surcharging — can meaningfully reduce or eliminate your processing costs, but they work differently and suit different business types and customer bases.
+
+Cash discounting is the simplest to explain: you post one price and reward cash-paying customers with a reduction. It works well for businesses with a mix of payment types and customers who are accustomed to cash discount programs in their industry.
+
+Dual pricing is the most transparent: both prices are visible before the customer commits to a payment method. It works especially well for businesses with posted price lists — food trucks, market vendors, service businesses with standard service menus — where displaying two prices is natural and easy.
+
+Surcharging is the most compliance-intensive but is a straightforward offset for businesses whose customers predominantly pay by credit card. It requires pre-registration with the card networks, compliant signage, and a terminal configured to detect and exempt debit cards automatically.
+
+For mobile businesses specifically, all three programs require hardware and software that handle the pricing logic automatically — you should never be manually calculating or adding fees at the point of sale. A properly configured mobile terminal will apply the correct pricing, generate compliant receipts, and handle debit card exemptions without any manual intervention.
+
+This is where working with a dedicated merchant services provider makes a critical difference. Square does not offer a compliant cash discount, dual pricing, or surcharging program for mobile merchants. If you attempt to implement any of these programs informally — by manually adjusting prices or adding fees — you risk violating card brand rules and Square's own terms of service, which can result in account termination and withheld funds. UBC Unlimited sets up each program correctly from day one, with the right hardware, signage, receipt language, and network registrations where required.
+
+[Contact our Utah team](/contact) to discuss which cost-offset program is the right fit for your mobile business — and to get a compliant setup that protects you from day one.
     `,
   },
 

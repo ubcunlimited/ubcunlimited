@@ -282,3 +282,7 @@
 ## Mobile Blog: Surcharging Blurb Corrections
 - [x] Update prohibited states to: California, Connecticut, Maine, and Massachusetts
 - [x] Add note that some states regulate the 3% cap to a lower rate
+
+## Mobile Blog: Remove Surcharging Section, Add Dual Pricing Section
+- [x] Remove "How Surcharging Works" subsection from mobile payments blog
+- [x] Add "How Dual Pricing Works" section with full description and info
