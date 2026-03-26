@@ -300,3 +300,4 @@
 - [x] Replace squirt gun emoji with proper SVG firearm icon on all industry pages
 - [x] Switch Firearms icon from custom SVG back to 🎯 target emoji in all locations
 - [x] Rewrite local support messaging to remove after-hours availability implication
+- [x] Replace 'Competitive interchange-plus pricing' with 'Pricing tailored for your business' on Industries page

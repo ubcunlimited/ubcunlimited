@@ -309,7 +309,7 @@ export default function Industries() {
             Standard Industries
           </h2>
           <p className="text-gray-500 text-sm mb-10 max-w-2xl">
-            Competitive interchange-plus pricing, industry-specific integrations, and local Utah support for businesses across all major sectors.
+            Pricing tailored for your business, industry-specific integrations, and local Utah support for businesses across all major sectors.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {standardIndustries.map((ind) => {
