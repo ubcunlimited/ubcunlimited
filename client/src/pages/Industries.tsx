@@ -119,7 +119,7 @@ const industryDetails: Record<string, IndustryDetail> = {
     solutions: [
       { icon: "🎯", title: "Stable FFL Merchant Account", desc: "Accounts through acquiring banks that specialize in firearms — no surprise terminations or holds." },
       { icon: "🛒", title: "Online Gateway Support", desc: "Accept online payments for firearms accessories, ammunition, and legal transfers through compliant gateways." },
-      { icon: "🏪", title: "In-Store POS", desc: "Full-featured retail POS with inventory management, layaway, and background check workflow integration." },
+      { icon: "💳", title: "In-Store Payment Terminals", desc: "Reliable countertop and wireless payment terminals built for high-volume retail environments — fast, secure, and compliant." },
       { icon: "🛡️", title: "Chargeback Management", desc: "Transaction documentation and dispute management tools to protect your account and win disputes." },
     ],
     cta: "Get a Firearms Dealer Consultation",

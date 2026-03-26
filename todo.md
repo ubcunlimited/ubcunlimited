@@ -304,3 +304,4 @@
 - [x] Replace Vagaro with Mangomint in booking software integration line on Industries page
 - [x] Remove POS reference from Firearms industry tagline
 - [x] Remove interchange-plus pricing references from all high-risk industry pages
+- [x] Replace Firearms In-Store POS card with In-Store Payment Terminals on Industries page
