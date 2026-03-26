@@ -322,3 +322,4 @@
 - [x] Generate comprehensive sitemap.xml with all current routes and correct lastmod dates
 - [x] Update robots.txt to use www canonical domain for sitemap URL
 - [x] Create branded OG image matching site dark/gold aesthetic and update meta tags
+- [x] Create OG meta card with actual UBC logo on dark branded background
