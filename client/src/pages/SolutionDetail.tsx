@@ -704,8 +704,8 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 <div className="bg-[#c9a84c]/8 border border-[#c9a84c]/20 rounded-2xl p-5 flex items-start gap-4">
                   <Shield size={22} className="text-[#c9a84c] shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-white font-semibold text-sm mb-1">Local Utah Support — Always</p>
-                    <p className="text-white/50 text-xs leading-relaxed">Every UBC Unlimited client gets a dedicated local rep — not a call center ticket. We answer when you call and show up when it matters.</p>
+                    <p className="text-white font-semibold text-sm mb-1">Local Utah Support — A Rep Who Knows You</p>
+                    <p className="text-white/50 text-xs leading-relaxed">Every UBC Unlimited client gets a dedicated local rep who knows your account and your industry — not a call center queue. You work with someone who understands your business from day one.</p>
                   </div>
                 </div>
               </div>

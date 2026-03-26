@@ -254,7 +254,7 @@ const whyItMatters = [
   { icon: TrendingDown, title: "Pricing Tailored to Your Card Mix", desc: "A restaurant's card mix differs from a firearms dealer's. We analyze your actual transaction data and build a pricing model that reflects your real cost — not a generic rate." },
   { icon: Zap, title: "Industry-Specific Integrations", desc: "Your POS, booking software, eCommerce platform, and accounting system all need to talk to each other. We connect the dots so your payment system works with your workflow." },
   { icon: Shield, title: "Stable Accounts, No Surprises", desc: "Mainstream processors terminate accounts without warning. We work with acquiring banks that understand your industry — so your account stays open and your cash flow stays predictable." },
-  { icon: Clock, title: "Local Support That Knows Your Business", desc: "When something goes wrong at 7pm on a Friday, you need a real person who knows your setup. Our Utah-based team provides direct support — not a call center ticket." },
+  { icon: Clock, title: "A Local Rep Who Knows Your Business", desc: "With UBC Unlimited, you work with a dedicated Utah-based rep who knows your account, your setup, and your industry — not a rotating call center queue. When you have a question, you reach someone who already knows the answer." },
 ];
 
 export default function Industries() {
