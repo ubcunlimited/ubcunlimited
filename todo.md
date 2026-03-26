@@ -321,3 +321,4 @@
 - [x] Install Google Analytics gtag G-MBY1WMZHL2 in index.html
 - [x] Generate comprehensive sitemap.xml with all current routes and correct lastmod dates
 - [x] Update robots.txt to use www canonical domain for sitemap URL
+- [x] Create branded OG image matching site dark/gold aesthetic and update meta tags
