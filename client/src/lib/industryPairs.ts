@@ -1360,14 +1360,6 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
       impact: "Stay PACT Act compliant",
     },
     {
-      challenge: "Age verification for in-store and online sales",
-      challengeDetail: "Vape retailers must verify customer age at the point of sale — both in-store and online — to comply with regulations and maintain processor relationships.",
-      solution: "Age verification integration",
-      solutionDetail: "POS systems with built-in age verification prompts for in-store sales, and online age verification workflows for eCommerce. Document compliance to protect your merchant account.",
-      solutionTag: "Compliance",
-      impact: "Compliant age verification",
-    },
-    {
       challenge: "High chargeback rates from online vape sales",
       challengeDetail: "Online vape sales attract higher dispute rates, especially from customers disputing age verification or product quality.",
       solution: "Chargeback prevention & fraud detection",
