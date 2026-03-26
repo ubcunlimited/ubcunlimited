@@ -131,7 +131,7 @@ const industryDetails: Record<string, IndustryDetail> = {
       { icon: "🌿", title: "Compliant Merchant Account", desc: "Accounts through banks familiar with Farm Bill compliance — stable processing without surprise holds." },
       { icon: "🛒", title: "eCommerce Gateway", desc: "Accept online payments for CBD products through compliant gateways that understand the industry." },
       { icon: "📋", title: "Compliance Support", desc: "We help you prepare the documentation banks require — COAs, lab results, and business verification." },
-      { icon: "💰", title: "Competitive Rates", desc: "Interchange-plus pricing that reflects your actual risk profile — not a blanket high-risk surcharge." },
+      { icon: "💰", title: "Competitive Rates", desc: "Pricing tailored to your actual risk profile and transaction mix — not a blanket high-risk surcharge applied across the board." },
     ],
     cta: "Get a CBD & Hemp Consultation",
   },

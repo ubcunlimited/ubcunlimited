@@ -1075,8 +1075,8 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
     {
       challenge: "Processing fees on high-ticket travel packages",
       challengeDetail: "A 2.5% fee on a $5,000 travel package is $125. For a high-volume travel agency, processing fees on premium packages significantly erode margins.",
-      solution: "Interchange-plus pricing for travel agencies",
-      solutionDetail: "Interchange-plus pricing passes the actual card network cost through to you with a small fixed markup, rather than a flat rate. For high-ticket travel, this typically saves 0.3–0.7% per transaction.",
+      solution: "Competitive pricing tailored for travel agencies",
+      solutionDetail: "Pricing for travel agencies is structured around your actual transaction mix and risk profile rather than a generic flat rate, which typically results in meaningful savings on high-ticket bookings.",
       solutionTag: "Credit Card Processing",
       impact: "Lower effective rate on high-ticket sales",
     },

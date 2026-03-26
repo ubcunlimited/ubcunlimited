@@ -303,3 +303,4 @@
 - [x] Replace 'Competitive interchange-plus pricing' with 'Pricing tailored for your business' on Industries page
 - [x] Replace Vagaro with Mangomint in booking software integration line on Industries page
 - [x] Remove POS reference from Firearms industry tagline
+- [x] Remove interchange-plus pricing references from all high-risk industry pages
