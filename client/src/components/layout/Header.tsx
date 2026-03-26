@@ -30,7 +30,8 @@ export default function Header() {
   const companyBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll(); // initialise on mount
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -74,7 +75,7 @@ export default function Header() {
   return (
     <header
       role="banner"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
         scrolled
           ? "bg-[#080808]/98 backdrop-blur-md shadow-xl shadow-black/20 border-b border-white/5"
           : "bg-[#080808]/95 backdrop-blur-sm"
@@ -110,21 +111,23 @@ export default function Header() {
 
       <div className="container" ref={navRef}>
         <div
-          className={`flex items-center justify-between transition-all duration-300 ${
-            scrolled ? "h-16" : "h-16 lg:h-28"
+          className={`flex items-center justify-between transition-all duration-300 ease-in-out ${
+            scrolled ? "h-14" : "h-16 lg:h-24"
           }`}
         >
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group" aria-label="UBC Unlimited — Home">
-            {/* Mobile logo: horizontallogo2 at h-6 */}
+            {/* Mobile logo: horizontallogo2, shrinks slightly on scroll */}
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_mobile_v2_50fd3d7c.webp"
               alt="UBC Unlimited — Processing Without Limits"
               width={190}
               height={30}
-              className="w-[50vw] h-auto object-contain transition-all duration-300 lg:hidden"
+              className={`h-auto object-contain transition-all duration-300 ease-in-out lg:hidden ${
+                scrolled ? "w-[38vw]" : "w-[50vw]"
+              }`}
             />
-            {/* Desktop logo: horizontallogo1 at h-20 / h-12 scrolled */}
+            {/* Desktop logo: shrinks from h-20 → h-10 on scroll */}
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_480w_d79c112f.webp"
               srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_240w_3fa55674.webp 240w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_480w_d79c112f.webp 480w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_759w_4279eeb0.webp 759w"
@@ -132,8 +135,8 @@ export default function Header() {
               alt="UBC Unlimited — Processing Without Limits"
               width={759}
               height={121}
-              className={`hidden lg:block w-auto object-contain transition-all duration-300 ${scrolled ? "h-12" : "h-20"}`}
-              style={{ maxWidth: scrolled ? "240px" : "380px" }}
+              className={`hidden lg:block w-auto object-contain transition-all duration-300 ease-in-out ${scrolled ? "h-10" : "h-20"}`}
+              style={{ maxWidth: scrolled ? "200px" : "360px" }}
             />
           </Link>
 

@@ -267,3 +267,6 @@
 ## Mobile Payments Blog Updates
 - [x] Emphasize Square's lack of real 1-on-1 personal service in mobile payments blog post
 - [x] Add section on surcharging and cash discounting setup, pricing, and compliance in mobile payments blog post
+
+## Header Scroll Shrink
+- [x] Header shrinks smoothly on scroll on every page (height, logo size, padding all reduce)
