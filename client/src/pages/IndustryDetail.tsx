@@ -299,7 +299,7 @@ const industriesData: IndustryData[] = [
   },
   {
     slug: "firearms",
-    icon: "__firearm__",
+    icon: "🎯",
     title: "Firearms & Shooting Sports",
     subtitle: "Compliant payment processing for FFL dealers, gun shops, and shooting ranges",
     description: "Firearms retailers and shooting ranges operate in a highly regulated industry that many payment processors won't touch. UBC Unlimited works with specialized banking partners to provide reliable, compliant payment processing for FFL dealers, gun shops, ammo retailers, and shooting ranges across Utah. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",

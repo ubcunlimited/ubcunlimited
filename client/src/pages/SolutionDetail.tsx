@@ -1010,7 +1010,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 { icon: "🔞", label: "Adult Entertainment", href: "/industries/adult-entertainment", desc: "Discreet, compliant adult merchant accounts" },
                 { icon: "✈️", label: "Travel & Hospitality", href: "/industries/travel", desc: "Travel agencies & booking platforms" },
                 { icon: "🎮", label: "Online Gaming & Fantasy Sports", href: "/industries/online-gaming", desc: "Skill-based gaming & fantasy sports platforms" },
-                { icon: "__firearm__", label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions" },
+                { icon: "🎯", label: "Firearms & Shooting Sports", href: "/industries/firearms", desc: "FFL dealer & range payment solutions" },
                 { icon: "📞", label: "Telemarketing & Outbound Sales", href: "/industries/telemarketing", desc: "Outbound sales & telemarketing operations" },
                 { icon: "💳", label: "Credit Repair & Debt Settlement", href: "/industries/credit-repair", desc: "Credit services & debt relief programs" },
                 { icon: "🔄", label: "Subscription & Continuity", href: "/industries/subscription-continuity", desc: "Subscription box & recurring billing" },

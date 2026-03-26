@@ -117,7 +117,7 @@ const industryDetails: Record<string, IndustryDetail> = {
     tagline: "Stable FFL dealer accounts with in-store POS and online gateway solutions.",
     painPoints: ["Account terminations from mainstream processors", "Online sales gateway restrictions", "FFL compliance documentation", "High chargeback risk from online sales"],
     solutions: [
-      { icon: "__firearm__", title: "Stable FFL Merchant Account", desc: "Accounts through acquiring banks that specialize in firearms — no surprise terminations or holds." },
+      { icon: "🎯", title: "Stable FFL Merchant Account", desc: "Accounts through acquiring banks that specialize in firearms — no surprise terminations or holds." },
       { icon: "🛒", title: "Online Gateway Support", desc: "Accept online payments for firearms accessories, ammunition, and legal transfers through compliant gateways." },
       { icon: "🏪", title: "In-Store POS", desc: "Full-featured retail POS with inventory management, layaway, and background check workflow integration." },
       { icon: "🛡️", title: "Chargeback Management", desc: "Transaction documentation and dispute management tools to protect your account and win disputes." },
