@@ -439,9 +439,13 @@ This approach is particularly valuable for contractors, service businesses, and 
 
 Regardless of which mobile solution you choose, make sure it supports contactless payments — NFC tap-to-pay, Apple Pay, and Google Pay. Contactless payment adoption has grown dramatically, and customers increasingly expect to be able to tap their phone or watch to pay. NFC-capable hardware is now the industry standard, and customer expectations for tap-to-pay have grown accordingly.
 
-## Offsetting Your Processing Costs: Surcharging and Cash Discounting for Mobile Businesses
+## Cash Discounting and Dual Pricing Or Surcharging Solutions for Mobile Business
 
-Processing fees are one of the most significant operating costs for mobile businesses, and many Utah merchants are unaware that there are fully compliant, legal programs available that allow them to offset or eliminate those costs entirely. Two programs — surcharging and cash discounting — are now legal in all 50 states and, when implemented correctly, can dramatically reduce or eliminate what you pay to accept credit cards.
+Processing fees are one of the most significant operating costs for mobile businesses, and many Utah merchants are unaware that there are fully compliant, legal programs available that allow them to offset or eliminate those costs entirely. Two programs — dual pricing and cash discounting — are now legal in all 50 states and, when implemented correctly, can dramatically reduce or eliminate what you pay to accept credit cards.
+
+### Surcharging: Compliant Implementation Is Everything
+
+Credit card surcharging — adding a fee specifically for customers who pay by credit card — is legal in 48 states (prohibited only in Connecticut and Massachusetts) and is a legitimate tool for offsetting processing costs. However, surcharging is the most compliance-intensive of the three programs. Before you begin, you must register your surcharge program with Visa and Mastercard — this is a mandatory step, not optional, and failure to register before surcharging is a card brand violation. The surcharge is capped at 3% (or your actual cost of acceptance, whichever is lower) and must appear as a distinct line item on the receipt. Critically, surcharges cannot be applied to debit card transactions under any circumstances — your terminal must be configured to detect and exempt debit cards automatically. Compliant signage must be posted at the store entrance and at the point of sale, notifying customers of the surcharge before they commit to a payment method. UBC Unlimited sets up surcharge programs with all required registrations, compliant hardware configuration, and signage — so you are protected from day one.
 
 ### How Cash Discounting Works
 

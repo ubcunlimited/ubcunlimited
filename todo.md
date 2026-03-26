@@ -273,3 +273,8 @@
 
 ## Mobile Header Logo Overlap Fix
 - [x] Fix mobile logo overflowing header and overlapping the announcement top bar
+
+## Mobile Blog: Terminology & Surcharging Compliance Update
+- [x] Fix intro sentence: replace "surcharging and cash discounting" with "dual pricing and cash discounting"
+- [x] Update section heading to: "Cash Discounting and Dual Pricing Or Surcharging Solutions for Mobile Business"
+- [x] Add surcharging compliance blurb explaining compliant rules/requirements
