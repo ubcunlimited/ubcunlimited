@@ -318,3 +318,4 @@
 - [x] Remove age verification challenge-solution pair from Vape/E-Cig industry page
 - [x] Remove loyalty program pair from Vape/E-Cig industry page
 - [x] Remove vape FAQ entry about in-store POS and age verification
+- [x] Install Google Analytics gtag G-MBY1WMZHL2 in index.html
