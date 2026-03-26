@@ -219,7 +219,7 @@ const industryDetails: Record<string, IndustryDetail> = {
       { icon: "💨", title: "Vape Merchant Account", desc: "Accounts through banks that understand the vape industry — stable processing without surprise holds." },
       { icon: "✅", title: "Age Verification Integration", desc: "Compliant age verification workflows for online sales that satisfy card network and regulatory requirements." },
       { icon: "🛒", title: "eCommerce Gateway", desc: "Accept online payments for vape products through compliant gateways with fraud prevention built in." },
-      { icon: "🏪", title: "In-Store POS", desc: "Retail POS with inventory management, age verification prompts, and loyalty programs for vape shops." },
+      { icon: "💳", title: "In-Store Payment Terminals", desc: "Reliable countertop and wireless payment terminals for vape and e-cigarette retailers — fast, secure, and built for high-volume retail." },
     ],
     cta: "Get a Vape & E-Cigarette Consultation",
   },
