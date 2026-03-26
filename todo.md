@@ -302,3 +302,4 @@
 - [x] Rewrite local support messaging to remove after-hours availability implication
 - [x] Replace 'Competitive interchange-plus pricing' with 'Pricing tailored for your business' on Industries page
 - [x] Replace Vagaro with Mangomint in booking software integration line on Industries page
+- [x] Remove POS reference from Firearms industry tagline

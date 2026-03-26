@@ -114,7 +114,7 @@ const industryDetails: Record<string, IndustryDetail> = {
     cta: "Get a Property Management Consultation",
   },
   "/industries/firearms": {
-    tagline: "Stable FFL dealer accounts with in-store POS and online gateway solutions.",
+    tagline: "Stable FFL dealer accounts with in-store and online payment solutions.",
     painPoints: ["Account terminations from mainstream processors", "Online sales gateway restrictions", "FFL compliance documentation", "High chargeback risk from online sales"],
     solutions: [
       { icon: "🎯", title: "Stable FFL Merchant Account", desc: "Accounts through acquiring banks that specialize in firearms — no surprise terminations or holds." },
