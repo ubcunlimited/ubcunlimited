@@ -270,3 +270,6 @@
 
 ## Header Scroll Shrink
 - [x] Header shrinks smoothly on scroll on every page (height, logo size, padding all reduce)
+
+## Mobile Header Logo Overlap Fix
+- [x] Fix mobile logo overflowing header and overlapping the announcement top bar

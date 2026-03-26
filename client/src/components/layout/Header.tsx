@@ -117,14 +117,14 @@ export default function Header() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group" aria-label="UBC Unlimited — Home">
-            {/* Mobile logo: horizontallogo2, shrinks slightly on scroll */}
+            {/* Mobile logo: constrained to nav bar height so it never overflows into the top bar */}
             <img
               src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_mobile_v2_50fd3d7c.webp"
               alt="UBC Unlimited — Processing Without Limits"
               width={190}
               height={30}
-              className={`h-auto object-contain transition-all duration-300 ease-in-out lg:hidden ${
-                scrolled ? "w-[38vw]" : "w-[50vw]"
+              className={`w-auto object-contain transition-all duration-300 ease-in-out lg:hidden ${
+                scrolled ? "h-8 max-w-[38vw]" : "h-10 max-w-[50vw]"
               }`}
             />
             {/* Desktop logo: shrinks from h-20 → h-10 on scroll */}
