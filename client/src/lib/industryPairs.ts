@@ -690,14 +690,6 @@ export const INDUSTRY_PAIRS: Record<string, ChallengeSolutionPair[]> = {
       impact: "Stable, uninterrupted processing",
     },
     {
-      challenge: "FFL compliance and age verification requirements",
-      challengeDetail: "Firearms sales require strict compliance with FFL regulations, age verification, and background check workflows that standard POS systems don't support.",
-      solution: "FFL-aware POS and payment workflows",
-      solutionDetail: "We work with POS systems and payment workflows designed for FFL dealers, including age verification prompts, compliance documentation support, and audit-ready transaction records.",
-      solutionTag: "Compliance",
-      impact: "Stay FFL-compliant",
-    },
-    {
       challenge: "Online firearms accessory and ammunition sales",
       challengeDetail: "Selling firearms accessories and ammunition online requires a payment gateway that won't shut you down for legal product categories.",
       solution: "eCommerce payment gateway for firearms",

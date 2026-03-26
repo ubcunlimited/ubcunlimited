@@ -312,3 +312,4 @@
 - [x] Replace "Join hundreds of Utah businesses" in About.tsx CTA banner
 - [x] Replace "hundreds of Utah restaurants" in blogData.ts excerpt
 - [x] Replace "hundreds of Utah restaurants" in BlogPost.tsx restaurant POS intro
+- [x] Remove FFL compliance/age verification challenge-solution pair from Firearms industry page
