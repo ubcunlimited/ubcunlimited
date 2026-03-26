@@ -296,3 +296,4 @@
 - [x] Add Firearms to high-risk grid (highRisk: true) and move near top of NAV_INDUSTRIES
 - [x] Add 5-7 business day approval language to all high-risk industry page descriptions
 - [x] Remove all specific business count references from all industry pages (use experience language instead)
+- [x] Replace 'worked with hundreds of Utah [industry] businesses' with experience-based language on all industry pages

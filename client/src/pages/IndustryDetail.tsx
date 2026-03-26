@@ -913,7 +913,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
             <h2 className="text-2xl sm:text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
               Challenges We Solve for {data.title} Businesses
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-sm">We've worked with hundreds of Utah {data.title.toLowerCase()} businesses. Here are the problems we hear most — and exactly how we solve them.</p>
+            <p className="text-gray-500 max-w-2xl mx-auto text-sm">Our experience in the {data.title.toLowerCase()} space gives us a clear picture of the challenges businesses in this industry face. Here are the problems we hear most — and exactly how we solve them.</p>
           </div>
           {/* Column headers — desktop only */}
           <div className="hidden md:grid md:grid-cols-2 gap-6 mb-3 px-1">
