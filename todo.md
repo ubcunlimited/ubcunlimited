@@ -291,3 +291,8 @@
 - [x] Add adult entertainment to high-risk overview on Industries page
 - [x] Create dedicated /industries/adult-entertainment page
 - [x] Wire up route in App.tsx
+
+## High-Risk Industry Page Updates
+- [x] Add Firearms to high-risk grid (highRisk: true) and move near top of NAV_INDUSTRIES
+- [x] Add 5-7 business day approval language to all high-risk industry page descriptions
+- [x] Remove all specific business count references from all industry pages (use experience language instead)

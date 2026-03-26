@@ -301,7 +301,7 @@ const industriesData: IndustryData[] = [
     icon: "🎯",
     title: "Firearms & Shooting Sports",
     subtitle: "Compliant payment processing for FFL dealers, gun shops, and shooting ranges",
-    description: "Firearms retailers and shooting ranges operate in a highly regulated industry that many payment processors won't touch. UBC Unlimited works with specialized banking partners to provide reliable, compliant payment processing for FFL dealers, gun shops, ammo retailers, and shooting ranges across Utah.",
+    description: "Firearms retailers and shooting ranges operate in a highly regulated industry that many payment processors won't touch. UBC Unlimited works with specialized banking partners to provide reliable, compliant payment processing for FFL dealers, gun shops, ammo retailers, and shooting ranges across Utah. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "High-risk merchant account approval",
       "Processor drop risk and sudden account termination",
@@ -327,7 +327,7 @@ const industriesData: IndustryData[] = [
     icon: "🌿",
     title: "CBD & Hemp",
     subtitle: "Stable, compliant merchant accounts for CBD and hemp retailers",
-    description: "CBD and hemp businesses face one of the most challenging payment processing environments of any retail category. Most standard banks and processors prohibit CBD sales outright, leaving merchants scrambling for accounts that don't get shut down without warning. UBC Unlimited works with specialized acquiring banks that have deep experience in the hemp and CBD space, providing stable, compliant merchant accounts for CBD retailers, hemp product manufacturers, online CBD stores, and wellness brands across Utah and nationwide.",
+    description: "CBD and hemp businesses face one of the most challenging payment processing environments of any retail category. Most standard banks and processors prohibit CBD sales outright, leaving merchants scrambling for accounts that don't get shut down without warning. UBC Unlimited works with specialized acquiring banks that have deep experience in the hemp and CBD space, providing stable, compliant merchant accounts for CBD retailers, hemp product manufacturers, online CBD stores, and wellness brands across Utah and nationwide. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "Frequent account terminations from mainstream processors",
       "Difficulty distinguishing hemp-derived CBD from marijuana for bank underwriting",
@@ -355,7 +355,7 @@ const industriesData: IndustryData[] = [
     icon: "💊",
     title: "Nutraceuticals & Supplements",
     subtitle: "Payment processing for supplement brands, health products, and continuity programs",
-    description: "The nutraceutical and dietary supplement industry is one of the most consistently high-risk categories in payment processing. Elevated chargeback rates from subscription and continuity billing, aggressive marketing practices across the industry, and heavy FTC regulatory scrutiny make it difficult for supplement brands to maintain stable merchant accounts with traditional processors. UBC Unlimited works with acquiring banks that specialize in nutraceuticals, dietary supplements, weight loss products, sports nutrition, and health and wellness brands — providing stable accounts with the chargeback management tools you need to stay compliant.",
+    description: "The nutraceutical and dietary supplement industry is one of the most consistently high-risk categories in payment processing. Elevated chargeback rates from subscription and continuity billing, aggressive marketing practices across the industry, and heavy FTC regulatory scrutiny make it difficult for supplement brands to maintain stable merchant accounts with traditional processors. UBC Unlimited works with acquiring banks that specialize in nutraceuticals, dietary supplements, weight loss products, sports nutrition, and health and wellness brands — providing stable accounts with the chargeback management tools you need to stay compliant. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "High chargeback rates from continuity and subscription billing",
       "FTC scrutiny of health claims and marketing practices",
@@ -411,7 +411,7 @@ const industriesData: IndustryData[] = [
     icon: "🔞",
     title: "Adult Entertainment",
     subtitle: "Discreet, stable payment processing for adult content and entertainment businesses",
-    description: "Adult entertainment is one of the most restricted categories in payment processing. Visa and Mastercard have implemented strict content and compliance requirements for adult merchants following the 2020 policy changes, and most mainstream processors have exited the category entirely. UBC Unlimited works with specialized acquiring banks that remain active in the adult space and have the compliance frameworks to support adult content platforms, subscription sites, live streaming, and adult retail businesses — with discreet billing descriptors and stable, long-term accounts.",
+    description: "Adult entertainment is one of the most restricted categories in payment processing. Visa and Mastercard have implemented strict content and compliance requirements for adult merchants following the 2020 policy changes, and most mainstream processors have exited the category entirely. UBC Unlimited works with specialized acquiring banks that remain active in the adult space and have the compliance frameworks to support adult content platforms, subscription sites, live streaming, and adult retail businesses — with discreet billing descriptors and stable, long-term accounts. Due to the extensive compliance review required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "Mainstream processor prohibitions on adult content",
       "Visa/Mastercard compliance requirements (age verification, content moderation)",
@@ -439,7 +439,7 @@ const industriesData: IndustryData[] = [
     icon: "✈️",
     title: "Travel & Hospitality",
     subtitle: "Payment processing for travel agencies, booking platforms, and hospitality businesses",
-    description: "Travel businesses face a unique combination of high-risk factors: large average ticket sizes, advance payment for future services, high chargeback rates from cancellations and disputes, and significant exposure to fraud. These factors cause many mainstream processors to classify travel agencies, online booking platforms, tour operators, and vacation rental companies as high-risk — even when the business is well-established and financially healthy. UBC Unlimited works with acquiring banks experienced in the travel vertical to provide stable merchant accounts with the chargeback management tools and fraud prevention capabilities that travel businesses need.",
+    description: "Travel businesses face a unique combination of high-risk factors: large average ticket sizes, advance payment for future services, high chargeback rates from cancellations and disputes, and significant exposure to fraud. These factors cause many mainstream processors to classify travel agencies, online booking platforms, tour operators, and vacation rental companies as high-risk — even when the business is well-established and financially healthy. UBC Unlimited works with acquiring banks experienced in the travel vertical to provide stable merchant accounts with the chargeback management tools and fraud prevention capabilities that travel businesses need. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "High chargeback rates from cancellations and travel disruptions",
       "Large average ticket sizes triggering fraud flags",
@@ -467,7 +467,7 @@ const industriesData: IndustryData[] = [
     icon: "🎮",
     title: "Online Gaming & Fantasy Sports",
     subtitle: "Payment processing for skill-based gaming, fantasy sports, and gaming platforms",
-    description: "Online gaming and fantasy sports platforms operate in a complex regulatory and payment processing environment. While skill-based gaming and daily fantasy sports are legal in most U.S. states, many payment processors treat the entire category as high-risk due to regulatory uncertainty, high chargeback rates, and the association with gambling. UBC Unlimited works with specialized acquiring banks that distinguish between skill-based gaming, fantasy sports, and gambling — providing compliant merchant accounts for legitimate gaming platforms, esports organizations, gaming merchandise retailers, and arcade businesses.",
+    description: "Online gaming and fantasy sports platforms operate in a complex regulatory and payment processing environment. While skill-based gaming and daily fantasy sports are legal in most U.S. states, many payment processors treat the entire category as high-risk due to regulatory uncertainty, high chargeback rates, and the association with gambling. UBC Unlimited works with specialized acquiring banks that distinguish between skill-based gaming, fantasy sports, and gambling — providing compliant merchant accounts for legitimate gaming platforms, esports organizations, gaming merchandise retailers, and arcade businesses. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "Processor classification as gambling even for skill-based games",
       "State-by-state regulatory complexity for daily fantasy sports",
@@ -495,7 +495,7 @@ const industriesData: IndustryData[] = [
     icon: "📞",
     title: "Telemarketing",
     subtitle: "Stable payment processing for outbound and inbound call center businesses",
-    description: "Telemarketing businesses face unique payment processing challenges — high chargeback exposure, regulatory scrutiny under the FTC Telemarketing Sales Rule, and blanket rejection from most standard processors. UBC Unlimited connects telemarketing and call center businesses with specialized high-risk processors who understand the industry and offer stable, long-term merchant accounts.",
+    description: "Telemarketing businesses face unique payment processing challenges — high chargeback exposure, regulatory scrutiny under the FTC Telemarketing Sales Rule, and blanket rejection from most standard processors. UBC Unlimited connects telemarketing and call center businesses with specialized high-risk processors who understand the industry and offer stable, long-term merchant accounts. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "Blanket rejection from most standard processors",
       "High chargeback rates from card-not-present transactions",
@@ -524,7 +524,7 @@ const industriesData: IndustryData[] = [
     icon: "💳",
     title: "Credit Repair",
     subtitle: "Payment solutions for credit repair, counseling, and financial coaching businesses",
-    description: "Credit repair and credit counseling businesses are among the most heavily scrutinized industries in payment processing. The Credit Repair Organizations Act (CROA) prohibits advance fees before services are rendered, and most standard processors refuse to work with credit repair companies entirely. UBC Unlimited connects compliant credit repair businesses with specialized processors who understand the regulatory framework and offer stable merchant accounts.",
+    description: "Credit repair and credit counseling businesses are among the most heavily scrutinized industries in payment processing. The Credit Repair Organizations Act (CROA) prohibits advance fees before services are rendered, and most standard processors refuse to work with credit repair companies entirely. UBC Unlimited connects compliant credit repair businesses with specialized processors who understand the regulatory framework and offer stable merchant accounts. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "Near-universal rejection from standard processors",
       "CROA compliance requirements prohibiting advance fee collection",
@@ -553,7 +553,7 @@ const industriesData: IndustryData[] = [
     icon: "🔄",
     title: "Subscription & Continuity",
     subtitle: "Reliable recurring billing processing for subscription and continuity businesses",
-    description: "Subscription and continuity businesses — including membership programs, box subscriptions, SaaS platforms, and free-trial-to-paid offers — face heightened scrutiny from payment processors due to elevated chargeback rates and consumer protection concerns. UBC Unlimited provides compliant recurring billing infrastructure and high-risk merchant accounts that support the full lifecycle of subscription commerce.",
+    description: "Subscription and continuity businesses — including membership programs, box subscriptions, SaaS platforms, and free-trial-to-paid offers — face heightened scrutiny from payment processors due to elevated chargeback rates and consumer protection concerns. UBC Unlimited provides compliant recurring billing infrastructure and high-risk merchant accounts that support the full lifecycle of subscription commerce. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "High chargeback rates from customers who forget they subscribed or dispute recurring charges",
       "Free-trial-to-paid conversion models flagged by processors and card networks",
@@ -582,7 +582,7 @@ const industriesData: IndustryData[] = [
     icon: "💨",
     title: "Vape & E-Cigarettes",
     subtitle: "Payment processing for vape shops, e-liquid brands, and online vape retailers",
-    description: "Vape shops, e-cigarette retailers, and e-liquid manufacturers face significant payment processing obstacles. Most standard processors explicitly prohibit tobacco and vape products in their terms of service. UBC Unlimited connects vape businesses with specialized processors who support both retail and online vape sales, including age verification compliance.",
+    description: "Vape shops, e-cigarette retailers, and e-liquid manufacturers face significant payment processing obstacles. Most standard processors explicitly prohibit tobacco and vape products in their terms of service. UBC Unlimited connects vape businesses with specialized processors who support both retail and online vape sales, including age verification compliance. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "Explicit prohibition by most standard processors",
       "FDA regulatory oversight of tobacco and nicotine products",
@@ -611,7 +611,7 @@ const industriesData: IndustryData[] = [
     icon: "💊",
     title: "Online Pharmacy",
     subtitle: "Payment processing for licensed online pharmacies and telehealth prescription services",
-    description: "Licensed online pharmacies and telehealth prescription services face some of the most challenging payment processing environments of any industry. Most processors refuse pharmacy accounts outright due to regulatory complexity, DEA oversight, and the prevalence of fraudulent online pharmacies that have tainted the category. UBC Unlimited works exclusively with licensed, compliant online pharmacies and connects them with processors who understand the regulatory framework.",
+    description: "Licensed online pharmacies and telehealth prescription services face some of the most challenging payment processing environments of any industry. Most processors refuse pharmacy accounts outright due to regulatory complexity, DEA oversight, and the prevalence of fraudulent online pharmacies that have tainted the category. UBC Unlimited works exclusively with licensed, compliant online pharmacies and connects them with processors who understand the regulatory framework. Due to the extensive compliance review required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "Near-universal rejection from standard processors",
       "DEA and FDA regulatory oversight of prescription medications",
@@ -640,7 +640,7 @@ const industriesData: IndustryData[] = [
     icon: "₿",
     title: "Cryptocurrency",
     subtitle: "Payment processing for crypto exchanges, NFT platforms, and blockchain businesses",
-    description: "Cryptocurrency exchanges, NFT marketplaces, crypto ATM operators, and blockchain-based businesses face significant payment processing challenges. Most standard processors refuse crypto-related businesses due to regulatory uncertainty, AML/KYC compliance requirements, and the volatility associated with digital assets. UBC Unlimited connects compliant crypto businesses with processors who understand the digital asset landscape.",
+    description: "Cryptocurrency exchanges, NFT marketplaces, crypto ATM operators, and blockchain-based businesses face significant payment processing challenges. Most standard processors refuse crypto-related businesses due to regulatory uncertainty, AML/KYC compliance requirements, and the volatility associated with digital assets. UBC Unlimited connects compliant crypto businesses with processors who understand the digital asset landscape. Due to the specialized underwriting required for this category, approval typically takes 5–7 business days.",
     challenges: [
       "Rejection by most standard processors due to regulatory uncertainty",
       "FinCEN Money Services Business (MSB) registration requirements",
@@ -703,14 +703,14 @@ const INDUSTRY_STATS: Record<string, { value: string; label: string }[]> = {
     { value: "24–48h", label: "Activation" },
   ],
   "cbd-hemp": [
-    { value: "24–72h", label: "Approval Time" },
+    { value: "5–7 Days", label: "Approval Time" },
     { value: "Multiple", label: "Acquiring Banks" },
     { value: "Local", label: "Utah Rep" },
     { value: "Stable", label: "Long-Term Accounts" },
   ],
   firearms: [
     { value: "FFL", label: "Dealer Approved" },
-    { value: "24–72h", label: "Approval Time" },
+    { value: "5–7 Days", label: "Approval Time" },
     { value: "Local", label: "Utah Rep" },
     { value: "Compliant", label: "Card Brand Rules" },
   ],
