@@ -301,3 +301,4 @@
 - [x] Switch Firearms icon from custom SVG back to 🎯 target emoji in all locations
 - [x] Rewrite local support messaging to remove after-hours availability implication
 - [x] Replace 'Competitive interchange-plus pricing' with 'Pricing tailored for your business' on Industries page
+- [x] Replace Vagaro with Mangomint in booking software integration line on Industries page

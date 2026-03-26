@@ -95,7 +95,7 @@ const industryDetails: Record<string, IndustryDetail> = {
     tagline: "Appointment-integrated payments with tip management and gift cards for beauty businesses.",
     painPoints: ["Tip management and reporting complexity", "Appointment no-shows and cancellation fees", "Gift card and package tracking", "Staff commission calculations"],
     solutions: [
-      { icon: "💇", title: "Appointment Integration", desc: "Connect your booking software (Vagaro, Mindbody, Booksy) directly to your payment system." },
+      { icon: "💇", title: "Appointment Integration", desc: "Connect your booking software (Mangomint, Mindbody, Booksy) directly to your payment system." },
       { icon: "💸", title: "Tip Management", desc: "Prompt customers for tips at checkout and automatically calculate staff tip distributions at close." },
       { icon: "🎁", title: "Gift Cards & Packages", desc: "Sell and redeem physical and digital gift cards, service packages, and memberships in one system." },
       { icon: "📊", title: "Staff Commission Reports", desc: "Track sales by stylist and generate commission reports automatically — save hours of manual calculation." },
