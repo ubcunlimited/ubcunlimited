@@ -319,3 +319,5 @@
 - [x] Remove loyalty program pair from Vape/E-Cig industry page
 - [x] Remove vape FAQ entry about in-store POS and age verification
 - [x] Install Google Analytics gtag G-MBY1WMZHL2 in index.html
+- [x] Generate comprehensive sitemap.xml with all current routes and correct lastmod dates
+- [x] Update robots.txt to use www canonical domain for sitemap URL

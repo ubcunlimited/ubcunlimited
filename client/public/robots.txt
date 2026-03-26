@@ -11,4 +11,4 @@ Disallow: /api/oauth/
 Disallow: /agent-iso
 
 # Sitemap
-Sitemap: https://ubcunlimited.com/sitemap.xml
+Sitemap: https://www.ubcunlimited.com/sitemap.xml
