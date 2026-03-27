@@ -323,3 +323,4 @@
 - [x] Update robots.txt to use www canonical domain for sitemap URL
 - [x] Create branded OG image matching site dark/gold aesthetic and update meta tags
 - [x] Create OG meta card with actual UBC logo on dark branded background
+- [x] Install Meta Pixel (ID: 1304934438209527) in index.html

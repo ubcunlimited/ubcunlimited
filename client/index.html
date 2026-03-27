@@ -93,9 +93,27 @@
       href="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/inter-400-latin_0e1d5b13.woff2" />
     <!-- NOTE: Hero background is now CSS background-image (not an img tag) so no preload needed.
          The browser will fetch it after CSS is parsed, which is fine for a decorative background. -->
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1304934438209527');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code (noscript fallback placed at top of body below) -->
   </head>
 
   <body>
+    <!-- Meta Pixel noscript fallback -->
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1304934438209527&ev=PageView&noscript=1"
+    /></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script
