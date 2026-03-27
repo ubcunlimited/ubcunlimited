@@ -9,6 +9,7 @@ import { SITE } from "@/lib/config";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { trackLead } from "@/lib/pixel";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 const inputClass =
   "w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 transition-all text-[#080808] placeholder-gray-400 bg-white";
@@ -77,6 +78,7 @@ function ConsultationForm({ onSuccess }: { onSuccess: () => void }) {
   });
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [termsError, setTermsError] = useState("");
+  const { getToken: getConsultToken } = useRecaptcha();
   const mutation = trpc.forms.submitConsultation.useMutation({
     onSuccess: () => { trackLead(); onSuccess(); },
     onError: () => toast.error("Something went wrong. Please try again or call us directly."),
@@ -89,7 +91,9 @@ function ConsultationForm({ onSuccess }: { onSuccess: () => void }) {
     e.preventDefault();
     if (!termsAccepted) { setTermsError("Please accept the Privacy Policy and Terms of Service."); return; }
     setTermsError("");
-    mutation.mutate(form);
+    getConsultToken("submit_consultation").then((recaptchaToken) => {
+      mutation.mutate({ ...form, recaptchaToken });
+    });
   };
 
   return (
@@ -142,6 +146,7 @@ function QuoteForm({ onSuccess }: { onSuccess: () => void }) {
     businessName: "", businessType: "Restaurant", monthlyVolume: "", currentProcessor: "",
     solutions: [] as string[], message: "", smsConsent: false,
   });
+  const { getToken: getQuoteToken } = useRecaptcha();
   const mutation = trpc.forms.submitQuote.useMutation({
     onSuccess: () => { trackLead(); onSuccess(); },
     onError: () => toast.error("Something went wrong. Please try again or call us directly."),
@@ -163,7 +168,9 @@ function QuoteForm({ onSuccess }: { onSuccess: () => void }) {
     e.preventDefault();
     if (!termsAccepted) { setTermsError("Please accept the Privacy Policy and Terms of Service."); return; }
     setTermsError("");
-    mutation.mutate(form);
+    getQuoteToken("submit_quote").then((recaptchaToken) => {
+      mutation.mutate({ ...form, recaptchaToken });
+    });
   };
 
   const solutionOptions = ["Credit Card Processing", "Cash Discount & Dual Pricing / Cash Discount & Dual Pricing", "POS System", "eCommerce / Payment Gateway", "ACH / eCheck", "Mobile Processing", "Virtual Terminal", "Gift & Loyalty", "High-Risk Processing"];
@@ -234,6 +241,7 @@ function StatementReviewForm({ onSuccess }: { onSuccess: () => void }) {
   const [fileData, setFileData] = useState<string | null>(null);
   const [fileType, setFileType] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const { getToken: getStatementToken } = useRecaptcha();
 
   const mutation = trpc.forms.submitStatementReview.useMutation({
     onSuccess: () => { trackLead(); onSuccess(); },
@@ -264,9 +272,12 @@ function StatementReviewForm({ onSuccess }: { onSuccess: () => void }) {
     e.preventDefault();
     if (!termsAccepted) { setTermsError("Please accept the Privacy Policy and Terms of Service."); return; }
     setTermsError("");
-    mutation.mutate({
-      ...form,
-      ...(fileData && fileName && fileType ? { fileData, fileName, fileType } : {}),
+    getStatementToken("submit_statement_review").then((recaptchaToken) => {
+      mutation.mutate({
+        ...form,
+        ...(fileData && fileName && fileType ? { fileData, fileName, fileType } : {}),
+        recaptchaToken,
+      });
     });
   };
 

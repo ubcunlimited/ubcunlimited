@@ -10,6 +10,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import LocationSearch from "@/components/LocationSearch";
 import { trackLead } from "@/lib/pixel";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 export default function Cities() {
   const [search, setSearch] = useState("");
@@ -337,6 +338,7 @@ function CitySearch({ allCities }: { allCities: CityEntry[] }) {
 function UnlistedCityForm({ cityName }: { cityName: string }) {
   const [form, setForm] = useState({ name: "", phone: "", businessType: "", city: cityName });
   const [submitted, setSubmitted] = useState(false);
+  const { getToken } = useRecaptcha();
 
   const submit = trpc.forms.submitHeroLead.useMutation({
     onSuccess: () => {
@@ -362,10 +364,13 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        submit.mutate({
-          name: form.name,
-          phone: form.phone,
-          businessType: (form.businessType || "Not specified") + (form.city ? ` — City: ${form.city}` : ""),
+        getToken("submit_hero_lead").then((recaptchaToken) => {
+          submit.mutate({
+            name: form.name,
+            phone: form.phone,
+            businessType: (form.businessType || "Not specified") + (form.city ? ` — City: ${form.city}` : ""),
+            recaptchaToken,
+          });
         });
       }}
       className="space-y-3"

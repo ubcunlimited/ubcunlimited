@@ -12,6 +12,7 @@ import PricingTransparency from "@/components/sections/PricingTransparency";
 import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES, TRUST_SIGNALS } from "@/lib/config";
 import SEO from "@/components/SEO";
 import { trackLead } from "@/lib/pixel";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 // Hero image — used as CSS background-image on the section element (not an img tag,
 // so it is excluded from LCP consideration; the h1 headline becomes the LCP element)
@@ -95,6 +96,8 @@ export default function Home() {
   const [heroError, setHeroError] = useState("");
   const [heroAgreed, setHeroAgreed] = useState(false);
 
+  const { getToken } = useRecaptcha();
+
   const heroMutation = trpc.forms.submitHeroLead.useMutation({
     onSuccess: () => {
       setHeroSubmitted(true);
@@ -117,7 +120,9 @@ export default function Home() {
       return;
     }
     setHeroError("");
-    heroMutation.mutate({ name: heroName.trim(), phone: heroPhone.trim(), businessType: heroType });
+    getToken("submit_hero_lead").then((recaptchaToken) => {
+      heroMutation.mutate({ name: heroName.trim(), phone: heroPhone.trim(), businessType: heroType, recaptchaToken });
+    });
   };
 
   return (

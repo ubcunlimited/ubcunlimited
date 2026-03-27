@@ -9,6 +9,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
 import { trackLead } from "@/lib/pixel";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 const HOW_IT_WORKS = [
   { step: "01", title: "Free Statement Review", desc: "Submit your current processing statement. We analyze every line and show you exactly where you're overpaying — no obligation." },
@@ -334,6 +335,7 @@ export default function CityDetail() {
 function UnlistedCityForm({ cityName }: { cityName: string }) {
   const [form, setForm] = useState({ name: "", phone: "", email: "", businessType: "", city: cityName });
   const [submitted, setSubmitted] = useState(false);
+  const { getToken } = useRecaptcha();
 
   const submit = trpc.forms.submitHeroLead.useMutation({
     onSuccess: () => {
@@ -362,7 +364,9 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        submit.mutate({ name: form.name, phone: form.phone, businessType: `${form.businessType || "Not specified"} — ${cityDisplay}, Utah` });
+        getToken("submit_hero_lead").then((recaptchaToken) => {
+          submit.mutate({ name: form.name, phone: form.phone, businessType: `${form.businessType || "Not specified"} — ${cityDisplay}, Utah`, recaptchaToken });
+        });
       }}
       className="space-y-3"
     >

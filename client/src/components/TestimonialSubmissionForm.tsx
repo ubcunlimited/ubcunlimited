@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { MessageSquarePlus, CheckCircle, Loader2, Star } from "lucide-react";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 const INDUSTRIES = [
   "Restaurants",
@@ -42,6 +43,8 @@ export default function TestimonialSubmissionForm() {
   const [submitted, setSubmitted] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
+  const { getToken } = useRecaptcha();
+
   const submitTestimonial = trpc.testimonials.submit.useMutation({
     onSuccess: () => {
       setSubmitted(true);
@@ -75,14 +78,17 @@ export default function TestimonialSubmissionForm() {
       return;
     }
     setFieldErrors({});
-    submitTestimonial.mutate({
-      name: name.trim(),
-      businessName: businessName.trim(),
-      location: location.trim(),
-      industry: industry as Industry,
-      rating,
-      quote: quote.trim(),
-      email: email.trim() || undefined,
+    getToken("submit_testimonial").then((recaptchaToken) => {
+      submitTestimonial.mutate({
+        name: name.trim(),
+        businessName: businessName.trim(),
+        location: location.trim(),
+        industry: industry as Industry,
+        rating,
+        quote: quote.trim(),
+        email: email.trim() || undefined,
+        recaptchaToken,
+      });
     });
   };
 

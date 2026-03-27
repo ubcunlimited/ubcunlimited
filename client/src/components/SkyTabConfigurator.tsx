@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CheckCircle, ChevronRight, ChevronLeft, Monitor, Tablet, Smartphone, Tv, Users, ShoppingBag, Utensils, Scissors, Wrench, Building2, ArrowRight, Phone, Package, Printer, DollarSign, Wifi, BarChart3, Star, Plus, Minus, Info } from "lucide-react";
 import { Link } from "wouter";
 import { trackLead } from "@/lib/pixel";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -364,11 +365,13 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
     return `Business Type: ${biz}\nHardware: ${hw || "None selected"}\nAdd-Ons: ${ao || "None selected"}`;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const { getToken } = useRecaptcha();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await getToken("submit_skytab_configurator");
     setSubmitted(true);
     trackLead();
-    // In a real implementation, this would submit to the server
     setTimeout(() => {
       window.location.href = "/thank-you";
     }, 2000);

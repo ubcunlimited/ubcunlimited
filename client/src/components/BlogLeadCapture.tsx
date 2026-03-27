@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { Mail, CheckCircle, Loader2 } from "lucide-react";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 interface BlogLeadCaptureProps {
   /** Optional slug of the current blog post for attribution */
@@ -14,6 +15,8 @@ export default function BlogLeadCapture({ sourcePage }: BlogLeadCaptureProps) {
   const [agreed, setAgreed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [fieldErrors, setFieldErrors] = useState<{ name?: string; email?: string; agreed?: string }>({});
+
+  const { getToken } = useRecaptcha();
 
   const submitLead = trpc.forms.submitBlogLead.useMutation({
     onSuccess: () => {
@@ -39,7 +42,9 @@ export default function BlogLeadCapture({ sourcePage }: BlogLeadCaptureProps) {
       return;
     }
     setFieldErrors({});
-    submitLead.mutate({ name: name.trim(), email: email.trim(), sourcePage });
+    getToken("submit_blog_lead").then((recaptchaToken) => {
+      submitLead.mutate({ name: name.trim(), email: email.trim(), sourcePage, recaptchaToken });
+    });
   };
 
   if (submitted) {

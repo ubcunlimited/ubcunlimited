@@ -5,8 +5,12 @@ import { storagePut } from "../storage";
 import { nanoid } from "nanoid";
 import { insertBlogLead } from "../db";
 import { sendToWebhook } from "../webhook";
+import { verifyRecaptcha } from "../recaptcha";
+import { TRPCError } from "@trpc/server";
 
 // ─── Schemas ─────────────────────────────────────────────────────────────────
+
+const recaptchaToken = z.string().optional();
 
 const consultationSchema = z.object({
   firstName: z.string().min(1),
@@ -19,6 +23,7 @@ const consultationSchema = z.object({
   preferredTime: z.string().optional(),
   message: z.string().optional(),
   smsConsent: z.boolean().optional(),
+  recaptchaToken: recaptchaToken,
 });
 
 const quoteSchema = z.object({
@@ -33,6 +38,7 @@ const quoteSchema = z.object({
   solutions: z.array(z.string()).optional(),
   message: z.string().optional(),
   smsConsent: z.boolean().optional(),
+  recaptchaToken: recaptchaToken,
 });
 
 const statementReviewSchema = z.object({
@@ -49,12 +55,16 @@ const statementReviewSchema = z.object({
   fileData: z.string().optional(),
   fileName: z.string().optional(),
   fileType: z.string().optional(),
+  recaptchaToken: recaptchaToken,
 });
 
 const heroLeadSchema = z.object({
   name: z.string().min(1),
   phone: z.string().min(7),
   businessType: z.string().min(1),
+  recaptchaToken: recaptchaToken,
+  city: z.string().optional(),
+  email: z.string().optional(),
 });
 
 // ─── Router ──────────────────────────────────────────────────────────────────
@@ -68,9 +78,14 @@ export const formsRouter = router({
         name: z.string().min(1, "Name is required").max(128),
         email: z.string().email("Please enter a valid email address"),
         sourcePage: z.string().max(256).optional(),
+        recaptchaToken: recaptchaToken,
       })
     )
     .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_blog_lead");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
       await insertBlogLead({
         name: input.name,
         email: input.email,
@@ -111,9 +126,14 @@ export const formsRouter = router({
         phone: z.string().min(7),
         agentType: z.string().min(1),
         experience: z.string().optional(),
+        recaptchaToken: recaptchaToken,
       })
     )
     .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_agent_lead");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
       const nameParts = input.name.trim().split(/\s+/);
       const firstName = nameParts[0] ?? input.name;
       const lastName = nameParts.slice(1).join(" ") || "";
@@ -145,6 +165,10 @@ export const formsRouter = router({
   submitHeroLead: publicProcedure
     .input(heroLeadSchema)
     .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_hero_lead");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
       const nameParts = input.name.trim().split(/\s+/);
       const firstName = nameParts[0] ?? input.name;
       const lastName = nameParts.slice(1).join(" ") || "";
@@ -174,6 +198,10 @@ export const formsRouter = router({
   submitConsultation: publicProcedure
     .input(consultationSchema)
     .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_consultation");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
       const lines = [
         `**New Consultation Request — UBC Unlimited**`,
         ``,
@@ -215,6 +243,10 @@ export const formsRouter = router({
   submitQuote: publicProcedure
     .input(quoteSchema)
     .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_quote");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
       const lines = [
         `**New Quote Request — UBC Unlimited**`,
         ``,
@@ -260,6 +292,10 @@ export const formsRouter = router({
   submitStatementReview: publicProcedure
     .input(statementReviewSchema)
     .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_statement_review");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
       let fileUrl: string | null = null;
 
       if (input.fileData && input.fileName && input.fileType) {

@@ -8,4 +8,5 @@ export const ENV = {
   agentPortalPassword: process.env.AGENT_PORTAL_PASSWORD ?? "",
   forgeApiUrl: process.env.BUILT_IN_FORGE_API_URL ?? "",
   forgeApiKey: process.env.BUILT_IN_FORGE_API_KEY ?? "",
+  recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY ?? "",
 };

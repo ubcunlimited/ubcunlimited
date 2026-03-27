@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 interface LeadCaptureFormProps {
   title?: string;
@@ -30,9 +31,11 @@ export default function LeadCaptureForm({
 }: LeadCaptureFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [newsletter, setNewsletter] = useState(false);
+  const { getToken } = useRecaptcha();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await getToken("submit_lead_capture");
     setSubmitted(true);
   };
 

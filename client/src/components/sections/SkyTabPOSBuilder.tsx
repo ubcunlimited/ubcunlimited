@@ -7,6 +7,7 @@
 import { useState } from "react";
 import { CheckCircle, ArrowRight, ChevronLeft, ChevronRight, Send } from "lucide-react";
 import { trackLead } from "@/lib/pixel";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 // ─── CDN Image URLs (correct sources from skytabmountainwest.com) ──────────────
 const IMG = {
@@ -446,10 +447,13 @@ export default function SkyTabPOSBuilder() {
   const isFormValid = form.firstName && form.lastName && form.businessName &&
     form.phone && form.email && form.businessType && form.state && form.city && form.consent;
 
+  const { getToken } = useRecaptcha();
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isFormValid) return;
     setSubmitting(true);
+    await getToken("submit_skytab_order");
 
     const orderSummary = buildOrderSummaryText(config, total);
     const proc = PROCESSING_PLANS.find((p) => p.id === config.processing);

@@ -26,6 +26,7 @@ import StatsBar from "@/components/sections/StatsBar";
 import CTABanner from "@/components/sections/CTABanner";
 import { SITE } from "@/lib/config";
 import { trpc } from "@/lib/trpc";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -156,6 +157,7 @@ export default function AgentISO() {
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
   const [termsAgreed, setTermsAgreed] = useState(false);
+  const { getToken } = useRecaptcha();
 
   const agentMutation = trpc.forms.submitAgentLead.useMutation({
     onSuccess: () => {
@@ -178,12 +180,15 @@ export default function AgentISO() {
       return;
     }
     setFormError("");
-    agentMutation.mutate({
-      name: name.trim(),
-      email: email.trim(),
-      phone: phone.trim(),
-      agentType,
-      experience: experience.trim(),
+    getToken("submit_agent_lead").then((recaptchaToken) => {
+      agentMutation.mutate({
+        name: name.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        agentType,
+        experience: experience.trim(),
+        recaptchaToken,
+      });
     });
   };
 

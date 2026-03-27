@@ -2,6 +2,7 @@ import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import { notifyOwner } from "../_core/notification";
 import { adminProcedure, publicProcedure, router } from "../_core/trpc";
+import { verifyRecaptcha } from "../recaptcha";
 import {
   getTestimonialSubmissions,
   insertTestimonialSubmission,
@@ -44,9 +45,14 @@ export const testimonialsRouter = router({
           .min(20, "Please write at least 20 characters")
           .max(1500),
         email: z.string().email("Please enter a valid email address").optional(),
+        recaptchaToken: z.string().optional(),
       })
     )
     .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_testimonial");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
       // Persist to database (status defaults to "pending")
       await insertTestimonialSubmission({
         name: input.name,
