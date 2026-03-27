@@ -11,6 +11,7 @@ import FAQ from "@/components/sections/FAQ";
 import PricingTransparency from "@/components/sections/PricingTransparency";
 import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES, TRUST_SIGNALS } from "@/lib/config";
 import SEO from "@/components/SEO";
+import { trackLead } from "@/lib/pixel";
 
 // Hero image — used as CSS background-image on the section element (not an img tag,
 // so it is excluded from LCP consideration; the h1 headline becomes the LCP element)
@@ -98,6 +99,7 @@ export default function Home() {
     onSuccess: () => {
       setHeroSubmitted(true);
       setHeroError("");
+      trackLead();
     },
     onError: () => {
       setHeroError("Something went wrong. Please call us directly.");

@@ -9,6 +9,7 @@ import SEO from "@/components/SEO";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import LocationSearch from "@/components/LocationSearch";
+import { trackLead } from "@/lib/pixel";
 
 export default function Cities() {
   const [search, setSearch] = useState("");
@@ -340,13 +341,13 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
   const submit = trpc.forms.submitHeroLead.useMutation({
     onSuccess: () => {
       setSubmitted(true);
+      trackLead();
       toast.success("Request received! We'll reach out within one business hour.");
     },
     onError: () => {
       toast.error("Something went wrong. Please call us directly at " + SITE.phone);
     },
   });
-
   if (submitted) {
     return (
       <div className="text-center py-6">

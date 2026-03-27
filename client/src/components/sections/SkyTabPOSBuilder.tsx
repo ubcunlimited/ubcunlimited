@@ -6,6 +6,7 @@
  */
 import { useState } from "react";
 import { CheckCircle, ArrowRight, ChevronLeft, ChevronRight, Send } from "lucide-react";
+import { trackLead } from "@/lib/pixel";
 
 // ─── CDN Image URLs (correct sources from skytabmountainwest.com) ──────────────
 const IMG = {
@@ -475,6 +476,7 @@ export default function SkyTabPOSBuilder() {
     window.open(`mailto:sales@ubcunlimited.com?subject=${subject}&body=${body}`, "_blank");
     setSubmitting(false);
     setSubmitted(true);
+    trackLead();
     setTimeout(() => { window.location.href = "/thank-you"; }, 1500);
   };
 

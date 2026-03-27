@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CheckCircle, ChevronRight, ChevronLeft, Monitor, Tablet, Smartphone, Tv, Users, ShoppingBag, Utensils, Scissors, Wrench, Building2, ArrowRight, Phone, Package, Printer, DollarSign, Wifi, BarChart3, Star, Plus, Minus, Info } from "lucide-react";
 import { Link } from "wouter";
+import { trackLead } from "@/lib/pixel";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -366,6 +367,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    trackLead();
     // In a real implementation, this would submit to the server
     setTimeout(() => {
       window.location.href = "/thank-you";

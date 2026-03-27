@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Calendar, CheckCircle, ArrowRight, Phone } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import { SITE } from "@/lib/config";
+import { trackLead } from "@/lib/pixel";
 
 const inputClass = "w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 transition-all text-[#080808] placeholder-gray-400 bg-white";
 const labelClass = "block text-sm font-medium text-[#080808] mb-1.5";
@@ -22,6 +23,7 @@ export default function Consultation() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    trackLead();
     setTimeout(() => { window.location.href = "/thank-you"; }, 1500);
   };
 

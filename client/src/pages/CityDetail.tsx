@@ -8,6 +8,7 @@ import { SITE } from "@/lib/config";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import SEO from "@/components/SEO";
+import { trackLead } from "@/lib/pixel";
 
 const HOW_IT_WORKS = [
   { step: "01", title: "Free Statement Review", desc: "Submit your current processing statement. We analyze every line and show you exactly where you're overpaying — no obligation." },
@@ -337,14 +338,14 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
   const submit = trpc.forms.submitHeroLead.useMutation({
     onSuccess: () => {
       setSubmitted(true);
+      trackLead();
       toast.success("Request received! We'll reach out within one business hour.");
     },
     onError: () => {
       toast.error("Something went wrong. Please call us directly at " + SITE.phone);
     },
   });
-
-  // Keep city in sync if cityName prop changes (e.g. navigation)
+  // Keep city in sync if cityName prop changes (e.g. navigation))
   const cityDisplay = form.city || cityName;
 
   if (submitted) {

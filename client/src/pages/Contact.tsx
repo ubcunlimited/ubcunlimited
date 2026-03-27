@@ -8,6 +8,7 @@ import SEO from "@/components/SEO";
 import { SITE } from "@/lib/config";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { trackLead } from "@/lib/pixel";
 
 const inputClass =
   "w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 transition-all text-[#080808] placeholder-gray-400 bg-white";
@@ -77,7 +78,7 @@ function ConsultationForm({ onSuccess }: { onSuccess: () => void }) {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [termsError, setTermsError] = useState("");
   const mutation = trpc.forms.submitConsultation.useMutation({
-    onSuccess: () => onSuccess(),
+    onSuccess: () => { trackLead(); onSuccess(); },
     onError: () => toast.error("Something went wrong. Please try again or call us directly."),
   });
 
@@ -142,7 +143,7 @@ function QuoteForm({ onSuccess }: { onSuccess: () => void }) {
     solutions: [] as string[], message: "", smsConsent: false,
   });
   const mutation = trpc.forms.submitQuote.useMutation({
-    onSuccess: () => onSuccess(),
+    onSuccess: () => { trackLead(); onSuccess(); },
     onError: () => toast.error("Something went wrong. Please try again or call us directly."),
   });
 
@@ -235,7 +236,7 @@ function StatementReviewForm({ onSuccess }: { onSuccess: () => void }) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const mutation = trpc.forms.submitStatementReview.useMutation({
-    onSuccess: () => onSuccess(),
+    onSuccess: () => { trackLead(); onSuccess(); },
     onError: () => toast.error("Something went wrong. Please try again or call us directly."),
   });
 
