@@ -135,7 +135,7 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
   // Contact / phone / email
   if (/contact|phone|call|email|reach|speak|talk|human|person|agent|representative/.test(q)) {
     return {
-      text: "You can reach our team directly:\n\n📞 **(801) 309-6988** — call or text anytime\n✉️ **sales@ubcunlimited.com**\n\nOr book a consultation and we'll reach out to you at a time that works best.",
+      text: "You can reach our team directly:\n\n📞 **(801) 309-6988** — call or text anytime\n✉️ **info@ubcunlimited.com**\n\nOr book a consultation and we'll reach out to you at a time that works best.",
       links: [
         { label: "Book a Consultation", href: "/consultation" },
         { label: "Contact Us", href: "/contact" },
@@ -154,13 +154,13 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
   // Thank you / bye
   if (/thank|thanks|bye|goodbye|that.?s\s*(all|it)|no\s*(more|other)\s*question/.test(q)) {
     return {
-      text: "You're welcome! If you have more questions later, don't hesitate to reach out. You can also call us at **(801) 309-6988** or email **sales@ubcunlimited.com** anytime. Have a great day! 🙌",
+      text: "You're welcome! If you have more questions later, don't hesitate to reach out. You can also call us at **(801) 309-6988** or email **info@ubcunlimited.com** anytime. Have a great day! 🙌",
     };
   }
 
   // Default fallback
   return {
-    text: "That's a great question! For the most accurate answer, I'd recommend speaking directly with one of our Utah-based merchant services specialists. You can call us at **(801) 309-6988**, email **sales@ubcunlimited.com**, or book a consultation below.",
+    text: "That's a great question! For the most accurate answer, I'd recommend speaking directly with one of our Utah-based merchant services specialists. You can call us at **(801) 309-6988**, email **info@ubcunlimited.com**, or book a consultation below.",
     links: [
       { label: "Book a Consultation", href: "/consultation" },
       { label: "Contact Us", href: "/contact" },
@@ -409,8 +409,8 @@ export default function LiveChat() {
               <Phone size={11} /> (801) 309-6988
             </a>
             <span className="text-white/15">·</span>
-            <a href="mailto:sales@ubcunlimited.com" className="flex items-center gap-1.5 text-white/35 hover:text-[#c9a84c] transition-colors text-xs">
-              <Mail size={11} /> sales@ubcunlimited.com
+            <a href="mailto:info@ubcunlimited.com" className="flex items-center gap-1.5 text-white/35 hover:text-[#c9a84c] transition-colors text-xs">
+              <Mail size={11} /> info@ubcunlimited.com
             </a>
           </div>
         </div>

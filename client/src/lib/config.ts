@@ -10,7 +10,7 @@ export const SITE = {
   phone: "(801) 309-6988",
   phoneHref: "tel:+18013096988",
   phoneRaw: "8013096988",
-  email: "sales@ubcunlimited.com",
+  email: "info@ubcunlimited.com",
   founder: "Josh Cornia",
   yearsInBusiness: "20+",
   address: {

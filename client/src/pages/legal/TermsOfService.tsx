@@ -8,7 +8,7 @@ export default function TermsOfService() {
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>2. Use of Website</h2><p>You may use our website for lawful purposes only. You agree not to use the website in any way that violates applicable laws or regulations, or that infringes on the rights of others.</p></div>
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>3. Intellectual Property</h2><p>The content, features, and functionality of this website are owned by UBC Unlimited and are protected by copyright, trademark, and other intellectual property laws.</p></div>
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>4. Disclaimer of Warranties</h2><p>This website is provided on an "as is" basis without warranties of any kind. UBC Unlimited does not warrant that the website will be uninterrupted or error-free.</p></div>
-        <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>5. Contact</h2><p>Questions about these Terms? Contact us at legal@ubcunlimited.com.</p></div>
+        <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>5. Contact</h2><p>Questions about these Terms? Contact us at info@ubcunlimited.com.</p></div>
       </div></div></section>
     </PageLayout>
   );

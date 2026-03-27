@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
             </div>
             <div>
               <h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>6. Contact Us</h2>
-              <p>If you have questions about this Privacy Policy, please contact us at privacy@ubcunlimited.com.</p>
+              <p>If you have questions about this Privacy Policy, please contact us at info@ubcunlimited.com.</p>
             </div>
           </div>
         </div>

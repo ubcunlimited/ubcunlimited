@@ -7,7 +7,7 @@ export default function CookiePolicy() {
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>What Are Cookies?</h2><p>Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and improve your experience.</p></div>
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>How We Use Cookies</h2><p>We use cookies for analytics (to understand how visitors use our site), functionality (to remember your preferences), and marketing (to show relevant content). We do not use cookies to collect sensitive personal information.</p></div>
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>Managing Cookies</h2><p>You can control cookies through your browser settings. Disabling cookies may affect the functionality of our website.</p></div>
-        <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>Contact</h2><p>Questions? Email us at privacy@ubcunlimited.com.</p></div>
+        <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>Contact</h2><p>Questions? Email us at info@ubcunlimited.com.</p></div>
       </div></div></section>
     </PageLayout>
   );

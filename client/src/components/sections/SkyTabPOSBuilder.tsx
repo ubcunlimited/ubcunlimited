@@ -473,7 +473,7 @@ export default function SkyTabPOSBuilder() {
     // Simulate a brief submission delay for UX
     await new Promise((r) => setTimeout(r, 800));
     // Open mailto for the order details, then redirect to thank-you
-    window.open(`mailto:sales@ubcunlimited.com?subject=${subject}&body=${body}`, "_blank");
+    window.open(`mailto:info@ubcunlimited.com?subject=${subject}&body=${body}`, "_blank");
     setSubmitting(false);
     setSubmitted(true);
     trackLead();

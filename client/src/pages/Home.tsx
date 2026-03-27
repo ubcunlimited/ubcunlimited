@@ -136,7 +136,7 @@ export default function Home() {
             "description": "Utah merchant services provider offering credit card processing, POS systems, ACH payments, cash discount & dual pricing, and payment gateway solutions for businesses across Utah.",
             "url": "https://ubcunlimited.com",
             "telephone": "+18014576500",
-            "email": "sales@ubcunlimited.com",
+            "email": "info@ubcunlimited.com",
             "logo": "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png",
             "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png",
             "address": {

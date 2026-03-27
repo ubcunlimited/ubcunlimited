@@ -164,7 +164,7 @@ export default function AgentLogin() {
                   <p className="text-white/30 text-xs text-center">
                     Don't have access?{" "}
                     <a
-                      href="mailto:sales@ubcunlimited.com"
+                      href="mailto:info@ubcunlimited.com"
                       className="text-[#c9a84c] hover:underline"
                     >
                       Contact your UBC representative

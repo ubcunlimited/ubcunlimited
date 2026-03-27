@@ -268,8 +268,8 @@ export default function AccessibilityStatement() {
               <div className="mt-4 bg-[#f8fafc] rounded-xl border border-gray-100 p-5 space-y-2.5">
                 <div className="flex items-start gap-3">
                   <span className="text-[#c9a84c] font-semibold w-20 flex-shrink-0">Email:</span>
-                  <a href="mailto:accessibility@ubcunlimited.com" className="text-[#c9a84c] hover:underline break-all">
-                    accessibility@ubcunlimited.com
+                  <a href="mailto:info@ubcunlimited.com" className="text-[#c9a84c] hover:underline break-all">
+                    info@ubcunlimited.com
                   </a>
                 </div>
                 <div className="flex items-start gap-3">
