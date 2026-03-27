@@ -1,9 +1,10 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch, useLocation } from "wouter";
-import { lazy, Suspense, useLayoutEffect } from "react";
+import { lazy, Suspense, useLayoutEffect, useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { installPhoneClickTracker } from "@/lib/pixel";
 
 // ── Eagerly loaded (critical path) ──────────────────────────────────────────
 import Home from "./pages/Home";
@@ -296,6 +297,10 @@ function Router() {
 }
 
 function App() {
+  useEffect(() => {
+    installPhoneClickTracker();
+  }, []);
+
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">

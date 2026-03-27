@@ -30,3 +30,23 @@ export function trackPixelEvent(event: string, params?: Record<string, unknown>)
 export function trackLead(params?: Record<string, unknown>) {
   trackPixelEvent("Lead", params);
 }
+
+/** Convenience: fire the standard Contact event on phone/email link clicks. */
+export function trackContact(params?: Record<string, unknown>) {
+  trackPixelEvent("Contact", params);
+}
+
+/**
+ * Install a single global document-level click listener that fires
+ * fbq('track', 'Contact') whenever any tel: link is clicked.
+ * Call once at app startup (e.g. in main.tsx or App.tsx useEffect).
+ */
+export function installPhoneClickTracker() {
+  if (typeof document === "undefined") return;
+  document.addEventListener("click", (e) => {
+    const target = (e.target as HTMLElement).closest("a[href^='tel:']");
+    if (target) {
+      trackContact();
+    }
+  });
+}

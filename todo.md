@@ -325,3 +325,4 @@
 - [x] Create OG meta card with actual UBC logo on dark branded background
 - [x] Install Meta Pixel (ID: 1304934438209527) in index.html
 - [x] Add fbq('track', 'Lead') Meta Pixel event on successful consultation form submission
+- [x] Add fbq('track', 'Contact') Meta Pixel event on phone number link clicks
