@@ -53,6 +53,9 @@ const FAQPage = lazy(() => import("./pages/FAQPage"));
 // Admin
 const AdminTestimonials = lazy(() => import("./pages/admin/AdminTestimonials"));
 
+// Internal docs
+const RecaptchaDoc = lazy(() => import("./pages/RecaptchaDoc"));
+
 // POC
 const RestaurantsPOC = lazy(() => import("./pages/RestaurantsPOC"));
 
@@ -283,6 +286,9 @@ function Router() {
 
           {/* Admin */}
           <Route path="/admin/testimonials">{() => <AdminTestimonials />}</Route>
+
+          {/* Internal docs */}
+          <Route path="/recaptcha-docs">{() => <RecaptchaDoc />}</Route>
 
           {/* Company */}
           <Route path="/faq">{() => <FAQPage />}</Route>

@@ -328,3 +328,4 @@
 - [x] Add fbq('track', 'Contact') Meta Pixel event on phone number link clicks
 - [x] Consolidate all @ubcunlimited.com emails to info@ubcunlimited.com
 - [x] Add Google reCAPTCHA v3 to all forms and CTAs with server-side verification
+- [x] Create /recaptcha-docs page detailing full reCAPTCHA v3 implementation
