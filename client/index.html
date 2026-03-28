@@ -107,8 +107,20 @@
       fbq('track', 'PageView');
     </script>
     <!-- End Meta Pixel Code (noscript fallback placed at top of body below) -->
-    <!-- Google reCAPTCHA v3 -->
-    <script src="https://www.google.com/recaptcha/api.js?render=%VITE_RECAPTCHA_SITE_KEY%" async defer></script>
+    <!-- Google reCAPTCHA v3 — only load on production domains to avoid invalid-domain errors on dev -->
+    <script>
+      (function() {
+        var host = window.location.hostname;
+        var isProd = host === 'ubcunlimited.com' || host === 'www.ubcunlimited.com';
+        if (isProd) {
+          var s = document.createElement('script');
+          s.src = 'https://www.google.com/recaptcha/api.js?render=%VITE_RECAPTCHA_SITE_KEY%';
+          s.async = true;
+          s.defer = true;
+          document.head.appendChild(s);
+        }
+      })();
+    </script>
   </head>
 
   <body>
