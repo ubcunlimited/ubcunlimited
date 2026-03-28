@@ -332,3 +332,4 @@
 - [x] Password-protect /recaptcha-docs page with a dedicated server-side password
 - [x] Move reCAPTCHA badge to bottom-left
 - [x] Hide reCAPTCHA badge on non-production domains
+- [x] Reduce reCAPTCHA badge to half size

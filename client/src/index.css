@@ -358,8 +358,10 @@
   }
 }
 
-/* ── reCAPTCHA v3 badge — bottom-left on production only ───────────────── */
+/* ── reCAPTCHA v3 badge — bottom-left, half size on production only ──────── */
 .grecaptcha-badge {
   left: 14px !important;
   right: auto !important;
+  transform: scale(0.5) !important;
+  transform-origin: bottom left !important;
 }
