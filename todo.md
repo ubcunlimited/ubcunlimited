@@ -330,3 +330,4 @@
 - [x] Add Google reCAPTCHA v3 to all forms and CTAs with server-side verification
 - [x] Create /recaptcha-docs page detailing full reCAPTCHA v3 implementation
 - [x] Password-protect /recaptcha-docs page with a dedicated server-side password
+- [x] Move reCAPTCHA badge to bottom-left

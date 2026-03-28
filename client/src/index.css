@@ -357,3 +357,9 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── reCAPTCHA v3 badge — reposition to bottom-left ─────────────────────── */
+.grecaptcha-badge {
+  left: 14px !important;
+  right: auto !important;
+}
