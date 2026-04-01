@@ -361,3 +361,6 @@
 
 ## AccessibilityPanel Auto-Open Active Section
 - [x] On panel open, auto-expand the section containing the currently active setting (instead of always defaulting to Vision)
+
+## Form Accessibility: aria-live Confirmation Messages
+- [x] Wrap all form submission success/confirmation messages with role="status" aria-live="polite" so screen readers announce them (9 locations: LeadCaptureForm, BlogLeadCapture, TestimonialSubmissionForm, SkyTabConfigurator, SkyTabPOSBuilder, Contact SuccessCard, Consultation, AgentISO, CityDetail, Cities)

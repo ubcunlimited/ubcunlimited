@@ -55,7 +55,7 @@ export default function LeadCaptureForm({
         </div>
 
         {submitted ? (
-          <div className="flex flex-col items-center text-center py-10">
+          <div role="status" aria-live="polite" aria-atomic="true" className="flex flex-col items-center text-center py-10">
             <div className="w-14 h-14 rounded-full bg-[#c9a84c]/15 flex items-center justify-center mb-4">
               <CheckCircle2 size={28} className="text-[#c9a84c]" />
             </div>

@@ -488,7 +488,7 @@ export default function SkyTabPOSBuilder() {
     return (
       <section className="py-16 bg-[#f7f3ec]">
         <div className="container max-w-2xl text-center">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-lg p-12">
+          <div role="status" aria-live="polite" aria-atomic="true" className="bg-white rounded-2xl border border-gray-100 shadow-lg p-12">
             <div className="w-16 h-16 bg-[#22c55e]/10 rounded-full flex items-center justify-center mx-auto mb-5">
               <CheckCircle size={32} className="text-[#22c55e]" />
             </div>

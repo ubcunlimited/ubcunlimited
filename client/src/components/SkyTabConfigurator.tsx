@@ -819,7 +819,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                 </p>
 
                 {submitted ? (
-                  <div className="text-center py-8">
+                  <div role="status" aria-live="polite" aria-atomic="true" className="text-center py-8">
                     <div className="w-14 h-14 rounded-full bg-[#c9a84c]/20 flex items-center justify-center mx-auto mb-4">
                       <CheckCircle size={28} className="text-[#c9a84c]" />
                     </div>

@@ -99,7 +99,7 @@ export default function TestimonialSubmissionForm() {
 
   if (submitted) {
     return (
-      <div className="bg-[#1a1a1a] border border-[#c9a84c]/30 rounded-2xl p-10 text-center max-w-xl mx-auto">
+      <div role="status" aria-live="polite" aria-atomic="true" className="bg-[#1a1a1a] border border-[#c9a84c]/30 rounded-2xl p-10 text-center max-w-xl mx-auto">
         <div className="flex justify-center mb-4">
           <div className="w-16 h-16 rounded-full bg-[#c9a84c]/15 flex items-center justify-center">
             <CheckCircle size={32} className="text-[#c9a84c]" />

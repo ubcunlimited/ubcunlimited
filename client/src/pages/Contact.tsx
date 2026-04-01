@@ -60,7 +60,7 @@ function LegalConsent({ smsChecked, onSmsChange, termsChecked, onTermsChange, te
 
 function SuccessCard({ title, message }: { title: string; message: string }) {
   return (
-    <div className="flex flex-col items-center justify-center py-16 text-center">
+    <div role="status" aria-live="polite" aria-atomic="true" className="flex flex-col items-center justify-center py-16 text-center">
       <div className="w-16 h-16 rounded-full bg-[#c9a84c]/15 flex items-center justify-center mb-5">
         <CheckCircle2 size={32} className="text-[#c9a84c]" />
       </div>

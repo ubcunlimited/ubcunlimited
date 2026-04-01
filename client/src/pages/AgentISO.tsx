@@ -393,8 +393,8 @@ export default function AgentISO() {
           </div>
 
           {submitted ? (
-            <div className="bg-[#c9a84c]/10 border border-[#c9a84c]/30 rounded-2xl px-8 py-10 text-center">
-              <CheckCircle size={40} className="text-[#c9a84c] mx-auto mb-4" />
+            <div role="status" aria-live="polite" aria-atomic="true" className="bg-[#c9a84c]/10 border border-[#c9a84c]/30 rounded-2xl px-8 py-10 text-center">
+              <CheckCircle size={40} className="text-[#c9a84c] mx-auto mb-4" aria-hidden="true" />
               <h3 className="text-white font-bold text-xl mb-2">Application Received!</h3>
               <p className="text-white/60 text-sm mb-6">
                 Our agent team will review your application and reach out within one business day.

@@ -49,7 +49,7 @@ export default function BlogLeadCapture({ sourcePage }: BlogLeadCaptureProps) {
 
   if (submitted) {
     return (
-      <div className="bg-[#1a1a1a] border border-[#c9a84c]/30 rounded-xl p-6 text-center">
+      <div role="status" aria-live="polite" aria-atomic="true" className="bg-[#1a1a1a] border border-[#c9a84c]/30 rounded-xl p-6 text-center">
         <div className="flex justify-center mb-3">
           <div className="w-12 h-12 rounded-full bg-[#c9a84c]/15 flex items-center justify-center">
             <CheckCircle size={24} className="text-[#c9a84c]" />

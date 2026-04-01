@@ -85,8 +85,8 @@ export default function Consultation() {
             {/* Right: Form */}
             <div>
               {submitted ? (
-                <div className="bg-[#c9a84c]/10 border border-[#c9a84c]/20 rounded-2xl p-10 text-center">
-                  <div className="text-4xl mb-4">✅</div>
+                <div role="status" aria-live="polite" aria-atomic="true" className="bg-[#c9a84c]/10 border border-[#c9a84c]/20 rounded-2xl p-10 text-center">
+                  <div className="text-4xl mb-4" aria-hidden="true">✅</div>
                   <h3 className="text-xl font-bold text-[#080808] mb-2" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Received!</h3>
                   <p className="text-gray-500 mb-4">We'll reach out within 1 business hour to confirm your consultation time.</p>
                   <a href={SITE.phoneHref} className="btn-teal text-sm py-2.5 px-6">

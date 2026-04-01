@@ -352,8 +352,8 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
 
   if (submitted) {
     return (
-      <div className="text-center py-6">
-        <CheckCircle size={32} className="text-[#c9a84c] mx-auto mb-3" />
+      <div role="status" aria-live="polite" aria-atomic="true" className="text-center py-6">
+        <CheckCircle size={32} className="text-[#c9a84c] mx-auto mb-3" aria-hidden="true" />
         <div className="text-white font-bold text-base mb-1">Request Received!</div>
         <div className="text-white/55 text-sm">Our team will reach out within one business hour.</div>
       </div>
