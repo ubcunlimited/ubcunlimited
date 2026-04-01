@@ -355,3 +355,6 @@
 
 ## AccessibilityPanel Accordion
 - [x] Change AccessibilityPanel sections to accordion: only one section open at a time, opens with Vision section expanded by default
+
+## AccessibilityPanel Reset Button
+- [x] Add always-visible 'Reset to Default' button to AccessibilityPanel footer (replaces the conditional isModified reset button)

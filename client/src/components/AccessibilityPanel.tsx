@@ -555,19 +555,25 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
           <ToggleRow icon={<BookOpen size={13} />} label="Reading Mask" description="Dims text except hovered paragraph" active={state.readingMask} onToggle={() => activate("readingMask")} />
         </Section>
 
-        {/* Reset */}
-        {isModified && (
-          <button
-            onClick={reset}
-            className="w-full flex items-center justify-center gap-2 py-2 rounded-xl border border-white/15 hover:border-red-500/40 text-white/50 hover:text-red-400 text-xs font-medium transition-all hover:bg-red-500/5"
-            aria-label="Reset all accessibility settings"
-          >
-            <RotateCcw size={12} aria-hidden="true" /> Reset all settings
-          </button>
-        )}
       </div>
 
-      <div className="px-4 py-2.5 border-t border-white/8 shrink-0">
+      {/* Footer: Reset to Default + info */}
+      <div className="px-3 py-3 border-t border-white/8 shrink-0 space-y-2">
+        <button
+          onClick={reset}
+          disabled={!isModified}
+          className="w-full flex items-center justify-center gap-2 py-2 rounded-xl border transition-all text-xs font-semibold"
+          style={{
+            backgroundColor: isModified ? "rgba(220,38,38,0.08)" : "rgba(255,255,255,0.03)",
+            borderColor: isModified ? "rgba(220,38,38,0.35)" : "rgba(255,255,255,0.10)",
+            color: isModified ? "#f87171" : "rgba(255,255,255,0.25)",
+            cursor: isModified ? "pointer" : "default",
+          }}
+          aria-label="Reset all accessibility settings to default"
+        >
+          <RotateCcw size={13} aria-hidden="true" />
+          Reset to Default
+        </button>
         <p className="text-white/25 text-[10px] text-center leading-relaxed">Settings are saved in your browser and apply across all pages.</p>
       </div>
     </motion.div>
