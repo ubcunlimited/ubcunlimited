@@ -334,3 +334,4 @@
 - [x] Hide reCAPTCHA badge on non-production domains
 - [x] Reduce reCAPTCHA badge to half size
 - [x] Add reCAPTCHA slide-out disclosure badge (terminalbroker.com style)
+- [x] Pass reCAPTCHA score to GoHighLevel webhook payload on all form submissions

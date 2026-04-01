@@ -82,9 +82,11 @@ export const formsRouter = router({
       })
     )
     .mutation(async ({ input }) => {
+      let rcScore: number | undefined;
       if (input.recaptchaToken) {
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_blog_lead");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+        rcScore = rc.score;
       }
       await insertBlogLead({
         name: input.name,
@@ -111,7 +113,8 @@ export const formsRouter = router({
       await sendToWebhook(
         "blog_lead",
         { firstName, lastName, phone: "", email: input.email },
-        { source_page: input.sourcePage }
+        { source_page: input.sourcePage },
+        { recaptchaScore: rcScore }
       );
 
       return { success: true };
@@ -130,9 +133,11 @@ export const formsRouter = router({
       })
     )
     .mutation(async ({ input }) => {
+      let rcScore: number | undefined;
       if (input.recaptchaToken) {
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_agent_lead");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+        rcScore = rc.score;
       }
       const nameParts = input.name.trim().split(/\s+/);
       const firstName = nameParts[0] ?? input.name;
@@ -155,7 +160,8 @@ export const formsRouter = router({
       await sendToWebhook(
         "agent_lead",
         { firstName, lastName, phone: input.phone, email: input.email },
-        { agent_type: input.agentType, experience: input.experience }
+        { agent_type: input.agentType, experience: input.experience },
+        { recaptchaScore: rcScore }
       );
 
       return { success: true };
@@ -165,9 +171,11 @@ export const formsRouter = router({
   submitHeroLead: publicProcedure
     .input(heroLeadSchema)
     .mutation(async ({ input }) => {
+      let rcScore: number | undefined;
       if (input.recaptchaToken) {
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_hero_lead");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+        rcScore = rc.score;
       }
       const nameParts = input.name.trim().split(/\s+/);
       const firstName = nameParts[0] ?? input.name;
@@ -188,7 +196,8 @@ export const formsRouter = router({
       await sendToWebhook(
         "hero_lead",
         { firstName, lastName, phone: input.phone, email: "" },
-        { business_type: input.businessType }
+        { business_type: input.businessType },
+        { recaptchaScore: rcScore }
       );
 
       return { success: true };
@@ -198,9 +207,11 @@ export const formsRouter = router({
   submitConsultation: publicProcedure
     .input(consultationSchema)
     .mutation(async ({ input }) => {
+      let rcScore: number | undefined;
       if (input.recaptchaToken) {
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_consultation");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+        rcScore = rc.score;
       }
       const lines = [
         `**New Consultation Request — UBC Unlimited**`,
@@ -233,7 +244,8 @@ export const formsRouter = router({
           preferred_time: input.preferredTime,
           message: input.message,
           sms_consent: input.smsConsent ?? false,
-        }
+        },
+        { recaptchaScore: rcScore }
       );
 
       return { success: true };
@@ -243,9 +255,11 @@ export const formsRouter = router({
   submitQuote: publicProcedure
     .input(quoteSchema)
     .mutation(async ({ input }) => {
+      let rcScore: number | undefined;
       if (input.recaptchaToken) {
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_quote");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+        rcScore = rc.score;
       }
       const lines = [
         `**New Quote Request — UBC Unlimited**`,
@@ -282,7 +296,8 @@ export const formsRouter = router({
           solutions_interested: input.solutions?.join(", "),
           message: input.message,
           sms_consent: input.smsConsent ?? false,
-        }
+        },
+        { recaptchaScore: rcScore }
       );
 
       return { success: true };
@@ -292,9 +307,11 @@ export const formsRouter = router({
   submitStatementReview: publicProcedure
     .input(statementReviewSchema)
     .mutation(async ({ input }) => {
+      let rcScore: number | undefined;
       if (input.recaptchaToken) {
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_statement_review");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+        rcScore = rc.score;
       }
       let fileUrl: string | null = null;
 
@@ -343,7 +360,8 @@ export const formsRouter = router({
           message: input.message,
           sms_consent: input.smsConsent ?? false,
           statement_file_url: fileUrl,
-        }
+        },
+        { recaptchaScore: rcScore }
       );
 
       return { success: true, fileUploaded: !!fileUrl };
