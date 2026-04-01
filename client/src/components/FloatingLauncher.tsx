@@ -329,11 +329,11 @@ export default function FloatingLauncher() {
               </motion.button>
             )}
 
-            {/* Accessibility — blue — with attention animation */}
+            {/* Accessibility — blue — entry animation wrapper, attention pulse on inner element */}
             <motion.button
               key="a11y"
               initial={{ opacity: 0, scale: 0.7, y: 10 }}
-              animate={desktopA11yControls}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.7, y: 10 }}
               transition={{ duration: 0.18, delay: 0.04 }}
               onClick={() => openPanel("a11y")}
@@ -341,7 +341,9 @@ export default function FloatingLauncher() {
               style={{ bottom: `${a11yBottom}px`, right: "24px", backgroundColor: "#0057B8" }}
               className="fixed z-50 w-11 h-11 rounded-full text-white shadow-lg flex items-center justify-center transition-colors"
             >
-              <Accessibility size={18} aria-hidden="true" />
+              <motion.span animate={desktopA11yControls} style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Accessibility size={18} aria-hidden="true" />
+              </motion.span>
             </motion.button>
 
             {/* Chat — blue-indigo */}

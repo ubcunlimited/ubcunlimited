@@ -349,3 +349,6 @@
 - [x] Fix: No heading structure — added static h1 in noscript fallback block in index.html
 - [x] Fix: No page regions — added static header/main/nav/footer in noscript fallback block; React landmarks already correct
 - [x] Fix: Noscript element — added second noscript block with visible h1, nav, main, footer, and JS-required message; added skip-to-main-content link
+
+## FloatingLauncher Message Bubble Bug Fix
+- [ ] Fix: clicking the message bubble on desktop doesn't open the accessibility panel on live site
