@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import CookieConsent from "./components/CookieConsent";
 import FloatingLauncher from "./components/FloatingLauncher";
 import RecaptchaBadge from "./components/RecaptchaBadge";
+import AccessibilitySlideOut from "./components/AccessibilitySlideOut";
 
 // ── Lazy-loaded pages (split into separate chunks) ───────────────────────────
 // Core
@@ -318,6 +319,7 @@ function App() {
           <CookieConsent />
           <FloatingLauncher />
           <RecaptchaBadge />
+          <AccessibilitySlideOut />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

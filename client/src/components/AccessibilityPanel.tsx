@@ -251,9 +251,11 @@ interface AccessibilityPanelProps {
   onClose: () => void;
   bottomClass: string;
   bottomPx?: number;
+  /** When true, renders as a relative block (no fixed positioning) for use inside slide-out containers */
+  inlineMode?: boolean;
 }
 
-export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: AccessibilityPanelProps) {
+export default function AccessibilityPanel({ onClose, bottomClass, bottomPx, inlineMode }: AccessibilityPanelProps) {
   const [state, setState] = useState<A11yState>(DEFAULT_STATE);
   const readingGuideRef = useRef<HTMLDivElement | null>(null);
   const readingMaskRef = useRef<HTMLDivElement | null>(null);
@@ -364,8 +366,11 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.92, y: 8 }}
       transition={{ type: "spring", stiffness: 320, damping: 28 }}
-      className="fixed right-6 z-[49] w-80 bg-[#111111] border border-[#0057B8]/40 rounded-2xl shadow-2xl shadow-black/60 flex flex-col"
-      style={{ bottom: bottomPx !== undefined ? `${bottomPx}px` : undefined, maxHeight: "80vh" }}
+      className={inlineMode
+        ? "relative w-80 bg-[#111111] border border-[#0057B8]/40 rounded-l-2xl shadow-2xl shadow-black/60 flex flex-col"
+        : "fixed right-6 z-[49] w-80 bg-[#111111] border border-[#0057B8]/40 rounded-2xl shadow-2xl shadow-black/60 flex flex-col"
+      }
+      style={inlineMode ? { maxHeight: "80vh" } : { bottom: bottomPx !== undefined ? `${bottomPx}px` : undefined, maxHeight: "80vh" }}
     >
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-white/8 bg-[#0d0d0d] rounded-t-2xl shrink-0">
