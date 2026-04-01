@@ -255,10 +255,20 @@ interface AccessibilityPanelProps {
 
 export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: AccessibilityPanelProps) {
   const [state, setState] = useState<A11yState>(DEFAULT_STATE);
-  // Accordion: only one section open at a time; Vision open by default
+
+  // Derive which section has an active setting — used to auto-open on panel mount
+  const getActiveSection = (s: A11yState): "vision" | "color" | "motor" | "cognitive" => {
+    if (s.highContrast !== "off" || s.grayscale || s.invertColors || s.colorBlind !== "off") return "color";
+    if (s.focusHighlight || s.largeCursor || s.highlightLinks || s.highlightHeadings) return "motor";
+    if (s.dyslexiaFont || s.reduceMotion || s.readingGuide || s.readingMask) return "cognitive";
+    if (s.fontSize !== 1 || s.lineHeight !== 1 || s.letterSpacing !== 0) return "vision";
+    return "vision"; // default
+  };
+
+  // Accordion: only one section open at a time; auto-opens to active section on mount
   const [openSection, setOpenSection] = useState<"vision" | "color" | "motor" | "cognitive">("vision");
   const toggleSection = (s: "vision" | "color" | "motor" | "cognitive") =>
-    setOpenSection((prev) => (prev === s ? s : s)); // always open the clicked section
+    setOpenSection(s);
   const readingGuideRef = useRef<HTMLDivElement | null>(null);
   const readingMaskRef = useRef<HTMLDivElement | null>(null);
 
@@ -266,6 +276,8 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
     const loaded = loadState();
     setState(loaded);
     applyStyles(loaded);
+    // Auto-open the section that has an active setting
+    setOpenSection(getActiveSection(loaded));
   }, []);
 
   // Reading guide — horizontal line follows cursor

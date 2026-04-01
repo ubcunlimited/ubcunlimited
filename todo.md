@@ -358,3 +358,6 @@
 
 ## AccessibilityPanel Reset Button
 - [x] Add always-visible 'Reset to Default' button to AccessibilityPanel footer (replaces the conditional isModified reset button)
+
+## AccessibilityPanel Auto-Open Active Section
+- [x] On panel open, auto-expand the section containing the currently active setting (instead of always defaulting to Vision)
