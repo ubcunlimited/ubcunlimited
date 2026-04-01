@@ -134,6 +134,7 @@ export default function FloatingLauncher() {
             {showBackToTop && (
               <motion.button
                 key="back-to-top"
+                data-a11y-ui="true"
                 initial={{ opacity: 0, scale: 0.7, y: 10 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.7, y: 10 }}
@@ -150,6 +151,7 @@ export default function FloatingLauncher() {
             {/* Accessibility — teal/blue */}
             <motion.button
               key="a11y"
+              data-a11y-ui="true"
               initial={{ opacity: 0, scale: 0.7, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.7, y: 10 }}
@@ -165,6 +167,7 @@ export default function FloatingLauncher() {
             {/* Chat — blue-indigo */}
             <motion.button
               key="chat"
+              data-a11y-ui="true"
               initial={{ opacity: 0, scale: 0.7, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.7, y: 10 }}
@@ -182,6 +185,7 @@ export default function FloatingLauncher() {
 
       {/* ── Main trigger button ────────────────────────────────────────── */}
       <button
+        data-a11y-ui="true"
         onClick={toggleMenu}
         aria-label={menuOpen ? "Close widget menu" : "Open widget menu"}
         aria-expanded={menuOpen}

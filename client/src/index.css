@@ -358,7 +358,7 @@
   }
 }
 
-/* ── reCAPTCHA v3 badge — hidden on all domains; replaced by RecaptchaBadge component ── */
+/* ── reCAPTCHA v3 native badge — hidden; custom RecaptchaBadge slide-out used instead ── */
 .grecaptcha-badge {
   visibility: hidden !important;
   opacity: 0 !important;

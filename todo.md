@@ -333,11 +333,9 @@
 - [x] Move reCAPTCHA badge to bottom-left
 - [x] Hide reCAPTCHA badge on non-production domains
 - [x] Reduce reCAPTCHA badge to half size
-- [x] Add reCAPTCHA slide-out disclosure badge (terminalbroker.com style)
-- [x] Pass reCAPTCHA score to GoHighLevel webhook payload on all form submissions
-- [x] Redesign RecaptchaBadge: full size, reversed layout (blue tab left, panel right), fully opaque, slides from left
-- [x] Add ADA accessibility compliance slide-out widget on bottom-right
-- [x] Revert to FloatingLauncher chat bubble stack (remove standalone AccessibilitySlideOut tab)
-- [x] Fix RecaptchaBadge visibility on dev/preview domains (add manus.computer to allowed hosts)
-- [x] Fix FloatingLauncher z-index so it appears above mobile bottom nav bar
-- [x] Change reCAPTCHA badge to slide out on hover instead of click
+- [x] Full ADA audit: fix high contrast mode CSS (dark text on dark backgrounds)
+- [x] Fix accessibility icon visibility in all ADA modes (grayscale, invert, high contrast)
+- [x] Fix toggle state persistence across all accessibility options
+- [x] Create custom reCAPTCHA slide-out badge matching terminalbroker.com (hover-activated)
+- [x] Add noindex meta to /recaptcha-docs page
+- [ ] Audit and fix base contrast ratios on key pages (WCAG AA 4.5:1 minimum)

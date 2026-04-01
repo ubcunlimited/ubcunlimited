@@ -67,31 +67,53 @@ function buildCSS(s: A11yState): string {
   if (s.letterSpacing > 0) rules.push(`body, body * { letter-spacing: ${s.letterSpacing}px !important; }`);
 
   // Color & Contrast
+  // NOTE: [data-a11y-ui] excludes the accessibility panel, FloatingLauncher, and reCAPTCHA badge
+  // from all high-contrast overrides so they remain readable in every mode.
   if (s.highContrast === "dark") {
     rules.push(`
-      body, body * { background-color: #000 !important; color: #fff !important; border-color: #555 !important; }
-      a, button, [role="button"] { color: #ffff00 !important; }
-      img { filter: contrast(1.3) brightness(0.9) !important; }
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) { background-color: #000 !important; color: #fff !important; border-color: #555 !important; }
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) a,
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) button,
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) [role="button"] { color: #ffff00 !important; }
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) img { filter: contrast(1.3) brightness(0.9) !important; }
     `);
   } else if (s.highContrast === "light") {
     rules.push(`
-      body, body * { background-color: #fff !important; color: #000 !important; border-color: #333 !important; }
-      a, button, [role="button"] { color: #00008b !important; }
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) { background-color: #fff !important; color: #000 !important; border-color: #333 !important; }
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) a,
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) button,
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) [role="button"] { color: #00008b !important; }
     `);
   } else if (s.highContrast === "yellow") {
     rules.push(`
-      body, body * { background-color: #000 !important; color: #ffff00 !important; border-color: #ffff00 !important; }
-      a, button, [role="button"] { color: #00ffff !important; }
-      img { filter: contrast(1.2) !important; }
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) { background-color: #000 !important; color: #ffff00 !important; border-color: #ffff00 !important; }
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) a,
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) button,
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) [role="button"] { color: #00ffff !important; }
+      body :not([data-a11y-ui]):not([data-a11y-ui] *) img { filter: contrast(1.2) !important; }
     `);
   }
 
-  if (s.grayscale) rules.push(`html { filter: ${s.invertColors ? "grayscale(1) invert(1)" : "grayscale(1)"} !important; }`);
-  else if (s.invertColors) rules.push(`html { filter: invert(1) hue-rotate(180deg) !important; }`);
+  // Grayscale/invert applied to body instead of html so [data-a11y-ui] elements can be re-excluded
+  if (s.grayscale) {
+    const f = s.invertColors ? "grayscale(1) invert(1)" : "grayscale(1)";
+    rules.push(`
+      body { filter: ${f} !important; }
+      [data-a11y-ui] { filter: none !important; }
+    `);
+  } else if (s.invertColors) {
+    rules.push(`
+      body { filter: invert(1) hue-rotate(180deg) !important; }
+      [data-a11y-ui] { filter: none !important; }
+    `);
+  }
 
-  // Color blind SVG filters are injected separately; apply via class
+  // Color blind SVG filters — exclude a11y UI
   if (s.colorBlind !== "off") {
-    rules.push(`html { filter: url(#ubc-a11y-cb-${s.colorBlind}) !important; }`);
+    rules.push(`
+      body { filter: url(#ubc-a11y-cb-${s.colorBlind}) !important; }
+      [data-a11y-ui] { filter: none !important; }
+    `);
   }
 
   // Motor & Navigation
@@ -251,11 +273,9 @@ interface AccessibilityPanelProps {
   onClose: () => void;
   bottomClass: string;
   bottomPx?: number;
-  /** When true, renders as a relative block (no fixed positioning) for use inside slide-out containers */
-  inlineMode?: boolean;
 }
 
-export default function AccessibilityPanel({ onClose, bottomClass, bottomPx, inlineMode }: AccessibilityPanelProps) {
+export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: AccessibilityPanelProps) {
   const [state, setState] = useState<A11yState>(DEFAULT_STATE);
   const readingGuideRef = useRef<HTMLDivElement | null>(null);
   const readingMaskRef = useRef<HTMLDivElement | null>(null);
@@ -366,11 +386,9 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx, inl
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.92, y: 8 }}
       transition={{ type: "spring", stiffness: 320, damping: 28 }}
-      className={inlineMode
-        ? "relative w-80 bg-[#111111] border border-[#0057B8]/40 rounded-l-2xl shadow-2xl shadow-black/60 flex flex-col"
-        : "fixed right-6 z-[49] w-80 bg-[#111111] border border-[#0057B8]/40 rounded-2xl shadow-2xl shadow-black/60 flex flex-col"
-      }
-      style={inlineMode ? { maxHeight: "80vh" } : { bottom: bottomPx !== undefined ? `${bottomPx}px` : undefined, maxHeight: "80vh" }}
+      data-a11y-ui="true"
+      className="fixed right-6 z-[49] w-80 bg-[#111111] border border-[#0057B8]/40 rounded-2xl shadow-2xl shadow-black/60 flex flex-col"
+      style={{ bottom: bottomPx !== undefined ? `${bottomPx}px` : undefined, maxHeight: "80vh" }}
     >
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3 border-b border-white/8 bg-[#0d0d0d] rounded-t-2xl shrink-0">
