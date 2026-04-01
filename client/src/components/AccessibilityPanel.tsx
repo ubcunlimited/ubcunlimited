@@ -8,16 +8,17 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import {
   Accessibility, X, ZoomIn, ZoomOut, Sun, Moon, Type, Wind,
   Eye, RotateCcw, MousePointer2, BookOpen, Contrast,
-  Minus, AlignJustify, Underline, ChevronDown, ChevronUp,
+  AlignJustify, Underline, ChevronDown, ChevronUp, Minus,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // ── State shape ────────────────────────────────────────────────────────────────
+
 interface A11yState {
   // Vision
-  fontSize: number;          // 0.8 – 1.6 (multiplier)
-  lineHeight: number;        // 1 – 2 (multiplier, applied as em)
-  letterSpacing: number;     // 0 – 4 px extra
+  fontSize: number;        // 0.8 – 1.6 (multiplier)
+  lineHeight: number;      // 1 – 2 (multiplier)
+  letterSpacing: number;   // 0 – 4 px extra
   // Color & Contrast
   highContrast: "off" | "dark" | "light" | "yellow";
   grayscale: boolean;
@@ -31,8 +32,8 @@ interface A11yState {
   // Cognitive & Reading
   dyslexiaFont: boolean;
   reduceMotion: boolean;
-  readingGuide: boolean;     // horizontal line follows cursor
-  readingMask: boolean;      // dim everything except hovered paragraph
+  readingGuide: boolean;   // horizontal line follows cursor
+  readingMask: boolean;    // dim everything except hovered paragraph
 }
 
 const DEFAULT_STATE: A11yState = {
@@ -53,18 +54,31 @@ const DEFAULT_STATE: A11yState = {
   readingMask: false,
 };
 
+// All boolean toggles — mutually exclusive with each other and with highContrast/colorBlind
+const BOOL_FIELDS = [
+  "grayscale", "invertColors",
+  "focusHighlight", "largeCursor", "highlightLinks", "highlightHeadings",
+  "dyslexiaFont", "reduceMotion", "readingGuide", "readingMask",
+] as const;
+
+type BoolField = typeof BOOL_FIELDS[number];
+
 const STORAGE_KEY = "ubc_a11y_v2";
-const STYLE_ID = "ubc-a11y-styles";
+const STYLE_ID    = "ubc-a11y-styles";
 const FONT_LINK_ID = "ubc-a11y-font";
 
-// ── CSS builder ────────────────────────────────────────────────────────────────
+// ── Pure helpers ───────────────────────────────────────────────────────────────
+
 function buildCSS(s: A11yState): string {
   const rules: string[] = [];
 
   // Vision
-  if (s.fontSize !== 1) rules.push(`html { font-size: ${Math.round(s.fontSize * 100)}% !important; }`);
-  if (s.lineHeight !== 1) rules.push(`body, body * { line-height: ${(1.4 + (s.lineHeight - 1) * 0.6).toFixed(2)} !important; }`);
-  if (s.letterSpacing > 0) rules.push(`body, body * { letter-spacing: ${s.letterSpacing}px !important; }`);
+  if (s.fontSize !== 1)
+    rules.push(`html { font-size: ${Math.round(s.fontSize * 100)}% !important; }`);
+  if (s.lineHeight !== 1)
+    rules.push(`body, body * { line-height: ${(1.4 + (s.lineHeight - 1) * 0.6).toFixed(2)} !important; }`);
+  if (s.letterSpacing > 0)
+    rules.push(`body, body * { letter-spacing: ${s.letterSpacing}px !important; }`);
 
   // Color & Contrast
   if (s.highContrast === "dark") {
@@ -86,41 +100,34 @@ function buildCSS(s: A11yState): string {
     `);
   }
 
-  if (s.grayscale) rules.push(`html { filter: ${s.invertColors ? "grayscale(1) invert(1)" : "grayscale(1)"} !important; }`);
-  else if (s.invertColors) rules.push(`html { filter: invert(1) hue-rotate(180deg) !important; }`);
+  if (s.grayscale)
+    rules.push(`html { filter: ${s.invertColors ? "grayscale(1) invert(1)" : "grayscale(1)"} !important; }`);
+  else if (s.invertColors)
+    rules.push(`html { filter: invert(1) hue-rotate(180deg) !important; }`);
 
-  // Color blind SVG filters are injected separately; apply via class
-  if (s.colorBlind !== "off") {
+  if (s.colorBlind !== "off")
     rules.push(`html { filter: url(#ubc-a11y-cb-${s.colorBlind}) !important; }`);
-  }
 
   // Motor & Navigation
-  if (s.focusHighlight) {
+  if (s.focusHighlight)
     rules.push(`*:focus, *:focus-visible { outline: 3px solid #0057B8 !important; outline-offset: 3px !important; box-shadow: 0 0 0 6px rgba(0,87,184,0.25) !important; }`);
-  }
-  if (s.largeCursor) {
+  if (s.largeCursor)
     rules.push(`*, *::before, *::after { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 4l16 12-7 1 4 9-3 1-4-9-6 5z' fill='black' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E") 0 0, auto !important; }`);
-  }
-  if (s.highlightLinks) {
+  if (s.highlightLinks)
     rules.push(`a { background-color: rgba(255,255,0,0.25) !important; text-decoration: underline !important; text-underline-offset: 3px !important; }`);
-  }
-  if (s.highlightHeadings) {
+  if (s.highlightHeadings)
     rules.push(`h1,h2,h3,h4,h5,h6 { border-left: 4px solid #0057B8 !important; padding-left: 0.5em !important; }`);
-  }
 
   // Cognitive & Reading
-  if (s.dyslexiaFont) {
+  if (s.dyslexiaFont)
     rules.push(`body, body * { font-family: 'Lexend', 'Comic Sans MS', cursive !important; word-spacing: 0.12em !important; }`);
-  }
-  if (s.reduceMotion) {
+  if (s.reduceMotion)
     rules.push(`*, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }`);
-  }
   // readingGuide and readingMask are handled by JS event listeners, not CSS
 
   return rules.join("\n");
 }
 
-// ── SVG color-blind filter definitions ────────────────────────────────────────
 const COLOR_BLIND_SVG = `
 <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0">
   <defs>
@@ -145,7 +152,6 @@ function ensureColorBlindSVG() {
   }
 }
 
-// ── Apply styles ───────────────────────────────────────────────────────────────
 function applyStyles(s: A11yState) {
   let styleEl = document.getElementById(STYLE_ID) as HTMLStyleElement | null;
   if (!styleEl) {
@@ -155,7 +161,6 @@ function applyStyles(s: A11yState) {
   }
   styleEl.textContent = buildCSS(s);
 
-  // Dyslexia font
   if (s.dyslexiaFont && !document.getElementById(FONT_LINK_ID)) {
     const link = document.createElement("link");
     link.id = FONT_LINK_ID;
@@ -164,11 +169,9 @@ function applyStyles(s: A11yState) {
     document.head.appendChild(link);
   }
 
-  // Color blind SVG filters
   if (s.colorBlind !== "off") ensureColorBlindSVG();
 }
 
-// ── Persist ────────────────────────────────────────────────────────────────────
 function loadState(): A11yState {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -176,11 +179,26 @@ function loadState(): A11yState {
   } catch { /* ignore */ }
   return { ...DEFAULT_STATE };
 }
+
 function saveState(s: A11yState) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(s));
 }
 
+/** Returns which accordion section contains the currently active setting. */
+function getActiveSection(s: A11yState): "vision" | "color" | "motor" | "cognitive" {
+  if (s.highContrast !== "off" || s.grayscale || s.invertColors || s.colorBlind !== "off")
+    return "color";
+  if (s.focusHighlight || s.largeCursor || s.highlightLinks || s.highlightHeadings)
+    return "motor";
+  if (s.dyslexiaFont || s.reduceMotion || s.readingGuide || s.readingMask)
+    return "cognitive";
+  if (s.fontSize !== 1 || s.lineHeight !== 1 || s.letterSpacing !== 0)
+    return "vision";
+  return "vision";
+}
+
 // ── Sub-components ─────────────────────────────────────────────────────────────
+
 interface ToggleRowProps {
   icon: React.ReactNode;
   label: string;
@@ -188,13 +206,18 @@ interface ToggleRowProps {
   active: boolean;
   onToggle: () => void;
 }
+
 function ToggleRow({ icon, label, description, active, onToggle }: ToggleRowProps) {
   return (
     <button
       role="switch"
       aria-checked={active}
       onClick={onToggle}
-      className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl border transition-all text-left ${active ? "bg-[#0057B8]/15 border-[#0057B8]/50 text-white" : "bg-white/3 border-white/8 text-white/60 hover:border-white/20 hover:text-white/80"}`}
+      className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl border transition-all text-left ${
+        active
+          ? "bg-[#0057B8]/15 border-[#0057B8]/50 text-white"
+          : "bg-white/3 border-white/8 text-white/60 hover:border-white/20 hover:text-white/80"
+      }`}
     >
       <span className={`shrink-0 ${active ? "text-[#4da6ff]" : "text-white/40"}`}>{icon}</span>
       <div className="flex-1 min-w-0">
@@ -215,6 +238,7 @@ interface SectionProps {
   open: boolean;
   onToggle: () => void;
 }
+
 function Section({ title, icon, children, open, onToggle }: SectionProps) {
   return (
     <div className="border border-white/8 rounded-xl overflow-hidden">
@@ -227,7 +251,10 @@ function Section({ title, icon, children, open, onToggle }: SectionProps) {
           <span className="text-[#4da6ff]">{icon}</span>
           <span className="text-xs font-semibold uppercase tracking-wider">{title}</span>
         </div>
-        {open ? <ChevronUp size={12} className="text-white/40" /> : <ChevronDown size={12} className="text-white/40" />}
+        {open
+          ? <ChevronUp size={12} className="text-white/40" />
+          : <ChevronDown size={12} className="text-white/40" />
+        }
       </button>
       <AnimatePresence initial={false}>
         {open && (
@@ -247,6 +274,7 @@ function Section({ title, icon, children, open, onToggle }: SectionProps) {
 }
 
 // ── Main component ─────────────────────────────────────────────────────────────
+
 interface AccessibilityPanelProps {
   onClose: () => void;
   bottomClass: string;
@@ -255,28 +283,15 @@ interface AccessibilityPanelProps {
 
 export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: AccessibilityPanelProps) {
   const [state, setState] = useState<A11yState>(DEFAULT_STATE);
-
-  // Derive which section has an active setting — used to auto-open on panel mount
-  const getActiveSection = (s: A11yState): "vision" | "color" | "motor" | "cognitive" => {
-    if (s.highContrast !== "off" || s.grayscale || s.invertColors || s.colorBlind !== "off") return "color";
-    if (s.focusHighlight || s.largeCursor || s.highlightLinks || s.highlightHeadings) return "motor";
-    if (s.dyslexiaFont || s.reduceMotion || s.readingGuide || s.readingMask) return "cognitive";
-    if (s.fontSize !== 1 || s.lineHeight !== 1 || s.letterSpacing !== 0) return "vision";
-    return "vision"; // default
-  };
-
-  // Accordion: only one section open at a time; auto-opens to active section on mount
   const [openSection, setOpenSection] = useState<"vision" | "color" | "motor" | "cognitive">("vision");
-  const toggleSection = (s: "vision" | "color" | "motor" | "cognitive") =>
-    setOpenSection(s);
   const readingGuideRef = useRef<HTMLDivElement | null>(null);
-  const readingMaskRef = useRef<HTMLDivElement | null>(null);
+  const readingMaskRef  = useRef<HTMLDivElement | null>(null);
 
+  // Load persisted state and auto-open the section with an active setting
   useEffect(() => {
     const loaded = loadState();
     setState(loaded);
     applyStyles(loaded);
-    // Auto-open the section that has an active setting
     setOpenSection(getActiveSection(loaded));
   }, []);
 
@@ -341,16 +356,8 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
     });
   }, []);
 
-  // ── Exclusive activation helpers ─────────────────────────────────────────────
-  // All boolean toggles are mutually exclusive — activating one turns off all others.
-  // highContrast and colorBlind are also reset when a boolean toggle is activated.
-  const BOOL_FIELDS = [
-    "grayscale", "invertColors",
-    "focusHighlight", "largeCursor", "highlightLinks", "highlightHeadings",
-    "dyslexiaFont", "reduceMotion", "readingGuide", "readingMask",
-  ] as const;
-
-  const activate = useCallback((field: typeof BOOL_FIELDS[number]) => {
+  // Activating any boolean toggle turns off all other boolean toggles, highContrast, and colorBlind
+  const activate = useCallback((field: BoolField) => {
     setState((prev) => {
       const allOff: Partial<A11yState> = { highContrast: "off", colorBlind: "off" };
       BOOL_FIELDS.forEach((f) => { allOff[f] = false; });
@@ -362,7 +369,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
     });
   }, []);
 
-  // highContrast radio: selecting any value deactivates all boolean toggles
+  // Selecting a highContrast value deactivates all boolean toggles and colorBlind
   const setHighContrast = useCallback((value: A11yState["highContrast"]) => {
     setState((prev) => {
       const allOff: Partial<A11yState> = { colorBlind: "off", highContrast: value };
@@ -374,7 +381,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
     });
   }, []);
 
-  // colorBlind radio: selecting any value deactivates all boolean toggles
+  // Selecting a colorBlind value deactivates all boolean toggles and highContrast
   const setColorBlind = useCallback((value: A11yState["colorBlind"]) => {
     setState((prev) => {
       const allOff: Partial<A11yState> = { highContrast: "off", colorBlind: value };
@@ -390,22 +397,21 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
     saveState(DEFAULT_STATE);
     applyStyles(DEFAULT_STATE);
     setState({ ...DEFAULT_STATE });
-    // Clean up DOM elements
     document.getElementById("ubc-reading-guide")?.remove();
     document.getElementById("ubc-reading-mask")?.remove();
     document.getElementById("ubc-reading-mask-style")?.remove();
     document.body.classList.remove("ubc-mask-active");
     readingGuideRef.current = null;
-    readingMaskRef.current = null;
+    readingMaskRef.current  = null;
   }, []);
 
   const isModified = JSON.stringify(state) !== JSON.stringify(DEFAULT_STATE);
-  const fontPct = Math.round(state.fontSize * 100);
+  const fontPct    = Math.round(state.fontSize * 100);
 
   const contrastOptions: { value: A11yState["highContrast"]; label: string; color: string }[] = [
-    { value: "off",    label: "Default",       color: "bg-white/10 border-white/20" },
-    { value: "dark",   label: "Dark HC",        color: "bg-black border-white/40" },
-    { value: "light",  label: "Light HC",       color: "bg-white border-black/30" },
+    { value: "off",    label: "Default",        color: "bg-white/10 border-white/20" },
+    { value: "dark",   label: "Dark HC",         color: "bg-black border-white/40" },
+    { value: "light",  label: "Light HC",        color: "bg-white border-black/30" },
     { value: "yellow", label: "Yellow on Black", color: "bg-yellow-400 border-yellow-600" },
   ];
 
@@ -435,16 +441,27 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
           <span className="text-white font-semibold text-sm">Accessibility</span>
           {isModified && <span className="w-2 h-2 rounded-full bg-[#4da6ff]" aria-label="Settings active" />}
         </div>
-        <button onClick={onClose} aria-label="Close accessibility panel" className="p-1.5 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors">
+        <button
+          onClick={onClose}
+          aria-label="Close accessibility panel"
+          className="p-1.5 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors"
+        >
           <X size={14} aria-hidden="true" />
         </button>
       </div>
 
       {/* Scrollable controls */}
-      <div className="overflow-y-auto flex-1 p-3 space-y-2.5" style={{ scrollbarWidth: "thin", scrollbarColor: "#333 transparent" }}>
-
+      <div
+        className="overflow-y-auto flex-1 p-3 space-y-2.5"
+        style={{ scrollbarWidth: "thin", scrollbarColor: "#333 transparent" }}
+      >
         {/* ── Vision ── */}
-        <Section title="Vision" icon={<Eye size={13} />} open={openSection === "vision"} onToggle={() => toggleSection("vision")}>
+        <Section
+          title="Vision"
+          icon={<Eye size={13} />}
+          open={openSection === "vision"}
+          onToggle={() => setOpenSection("vision")}
+        >
           {/* Font size */}
           <div>
             <p className="text-white/40 text-[10px] font-medium mb-1.5">Text Size — {fontPct}%</p>
@@ -478,14 +495,20 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
 
           {/* Line height */}
           <div>
-            <p className="text-white/40 text-[10px] font-medium mb-1.5">Line Height — {state.lineHeight === 1 ? "Normal" : state.lineHeight === 1.5 ? "Relaxed" : "Spacious"}</p>
+            <p className="text-white/40 text-[10px] font-medium mb-1.5">
+              Line Height — {state.lineHeight === 1 ? "Normal" : state.lineHeight === 1.5 ? "Relaxed" : "Spacious"}
+            </p>
             <div className="flex gap-1.5">
               {[{ v: 1, label: "Normal" }, { v: 1.5, label: "Relaxed" }, { v: 2, label: "Spacious" }].map(({ v, label }) => (
                 <button
                   key={v}
                   onClick={() => update({ lineHeight: v })}
                   aria-pressed={state.lineHeight === v}
-                  className={`flex-1 py-1.5 rounded-lg text-xs border transition-all ${state.lineHeight === v ? "bg-[#0057B8]/20 border-[#0057B8]/50 text-white" : "bg-white/4 border-white/10 text-white/50 hover:border-white/25"}`}
+                  className={`flex-1 py-1.5 rounded-lg text-xs border transition-all ${
+                    state.lineHeight === v
+                      ? "bg-[#0057B8]/20 border-[#0057B8]/50 text-white"
+                      : "bg-white/4 border-white/10 text-white/50 hover:border-white/25"
+                  }`}
                 >
                   {label}
                 </button>
@@ -495,14 +518,20 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
 
           {/* Letter spacing */}
           <div>
-            <p className="text-white/40 text-[10px] font-medium mb-1.5">Letter Spacing — {state.letterSpacing === 0 ? "Normal" : `+${state.letterSpacing}px`}</p>
+            <p className="text-white/40 text-[10px] font-medium mb-1.5">
+              Letter Spacing — {state.letterSpacing === 0 ? "Normal" : `+${state.letterSpacing}px`}
+            </p>
             <div className="flex gap-1.5">
               {[{ v: 0, label: "Normal" }, { v: 1, label: "+1px" }, { v: 2, label: "+2px" }, { v: 4, label: "+4px" }].map(({ v, label }) => (
                 <button
                   key={v}
                   onClick={() => update({ letterSpacing: v })}
                   aria-pressed={state.letterSpacing === v}
-                  className={`flex-1 py-1.5 rounded-lg text-xs border transition-all ${state.letterSpacing === v ? "bg-[#0057B8]/20 border-[#0057B8]/50 text-white" : "bg-white/4 border-white/10 text-white/50 hover:border-white/25"}`}
+                  className={`flex-1 py-1.5 rounded-lg text-xs border transition-all ${
+                    state.letterSpacing === v
+                      ? "bg-[#0057B8]/20 border-[#0057B8]/50 text-white"
+                      : "bg-white/4 border-white/10 text-white/50 hover:border-white/25"
+                  }`}
                 >
                   {label}
                 </button>
@@ -512,8 +541,12 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
         </Section>
 
         {/* ── Color & Contrast ── */}
-        <Section title="Color & Contrast" icon={<Contrast size={13} />} open={openSection === "color"} onToggle={() => toggleSection("color")}>
-          {/* High contrast presets */}
+        <Section
+          title="Color & Contrast"
+          icon={<Contrast size={13} />}
+          open={openSection === "color"}
+          onToggle={() => setOpenSection("color")}
+        >
           <div>
             <p className="text-white/40 text-[10px] font-medium mb-1.5">High Contrast Mode</p>
             <div className="grid grid-cols-2 gap-1.5">
@@ -522,7 +555,11 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
                   key={value}
                   onClick={() => setHighContrast(value)}
                   aria-pressed={state.highContrast === value}
-                  className={`py-1.5 px-2 rounded-lg text-xs border transition-all ${state.highContrast === value ? "ring-2 ring-[#0057B8] ring-offset-1 ring-offset-[#111]" : "opacity-70 hover:opacity-100"} ${color} ${value === "light" ? "text-black" : "text-white"}`}
+                  className={`py-1.5 px-2 rounded-lg text-xs border transition-all ${
+                    state.highContrast === value
+                      ? "ring-2 ring-[#0057B8] ring-offset-1 ring-offset-[#111]"
+                      : "opacity-70 hover:opacity-100"
+                  } ${color} ${value === "light" ? "text-black" : "text-white"}`}
                 >
                   {label}
                 </button>
@@ -530,10 +567,21 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
             </div>
           </div>
 
-          <ToggleRow icon={<Minus size={13} />} label="Grayscale" description="Remove all color from the page" active={state.grayscale} onToggle={() => activate("grayscale")} />
-          <ToggleRow icon={<Moon size={13} />} label="Invert Colors" description="Invert all page colors" active={state.invertColors} onToggle={() => activate("invertColors")} />
+          <ToggleRow
+            icon={<Minus size={13} />}
+            label="Grayscale"
+            description="Remove all color from the page"
+            active={state.grayscale}
+            onToggle={() => activate("grayscale")}
+          />
+          <ToggleRow
+            icon={<Moon size={13} />}
+            label="Invert Colors"
+            description="Invert all page colors"
+            active={state.invertColors}
+            onToggle={() => activate("invertColors")}
+          />
 
-          {/* Color blind */}
           <div>
             <p className="text-white/40 text-[10px] font-medium mb-1.5">Color Blind Mode</p>
             <div className="space-y-1">
@@ -542,7 +590,11 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
                   key={value}
                   onClick={() => setColorBlind(value)}
                   aria-pressed={state.colorBlind === value}
-                  className={`w-full text-left px-3 py-1.5 rounded-lg text-xs border transition-all ${state.colorBlind === value ? "bg-[#0057B8]/20 border-[#0057B8]/50 text-white" : "bg-white/4 border-white/10 text-white/50 hover:border-white/25 hover:text-white/80"}`}
+                  className={`w-full text-left px-3 py-1.5 rounded-lg text-xs border transition-all ${
+                    state.colorBlind === value
+                      ? "bg-[#0057B8]/20 border-[#0057B8]/50 text-white"
+                      : "bg-white/4 border-white/10 text-white/50 hover:border-white/25 hover:text-white/80"
+                  }`}
                 >
                   {label}
                 </button>
@@ -552,41 +604,52 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
         </Section>
 
         {/* ── Motor & Navigation ── */}
-        <Section title="Motor & Navigation" icon={<MousePointer2 size={13} />} open={openSection === "motor"} onToggle={() => toggleSection("motor")}>
-          <ToggleRow icon={<Eye size={13} />} label="Focus Indicators" description="Blue outline on focused elements" active={state.focusHighlight} onToggle={() => activate("focusHighlight")} />
-          <ToggleRow icon={<MousePointer2 size={13} />} label="Large Cursor" description="Bigger mouse pointer for visibility" active={state.largeCursor} onToggle={() => activate("largeCursor")} />
-          <ToggleRow icon={<Underline size={13} />} label="Highlight Links" description="Yellow highlight on all links" active={state.highlightLinks} onToggle={() => activate("highlightLinks")} />
-          <ToggleRow icon={<AlignJustify size={13} />} label="Highlight Headings" description="Blue left border on all headings" active={state.highlightHeadings} onToggle={() => activate("highlightHeadings")} />
+        <Section
+          title="Motor & Navigation"
+          icon={<MousePointer2 size={13} />}
+          open={openSection === "motor"}
+          onToggle={() => setOpenSection("motor")}
+        >
+          <ToggleRow icon={<Eye size={13} />}          label="Focus Indicators"  description="Blue outline on focused elements"    active={state.focusHighlight}  onToggle={() => activate("focusHighlight")} />
+          <ToggleRow icon={<MousePointer2 size={13} />} label="Large Cursor"      description="Bigger mouse pointer for visibility" active={state.largeCursor}     onToggle={() => activate("largeCursor")} />
+          <ToggleRow icon={<Underline size={13} />}    label="Highlight Links"   description="Yellow highlight on all links"       active={state.highlightLinks}  onToggle={() => activate("highlightLinks")} />
+          <ToggleRow icon={<AlignJustify size={13} />} label="Highlight Headings" description="Blue left border on all headings"   active={state.highlightHeadings} onToggle={() => activate("highlightHeadings")} />
         </Section>
 
         {/* ── Cognitive & Reading ── */}
-        <Section title="Cognitive & Reading" icon={<BookOpen size={13} />} open={openSection === "cognitive"} onToggle={() => toggleSection("cognitive")}>
-          <ToggleRow icon={<Type size={13} />} label="Dyslexia Font" description="Lexend — wider, more readable" active={state.dyslexiaFont} onToggle={() => activate("dyslexiaFont")} />
-          <ToggleRow icon={<Wind size={13} />} label="Reduce Motion" description="Stops animations & transitions" active={state.reduceMotion} onToggle={() => activate("reduceMotion")} />
-          <ToggleRow icon={<Sun size={13} />} label="Reading Guide" description="Horizontal line follows your cursor" active={state.readingGuide} onToggle={() => activate("readingGuide")} />
-          <ToggleRow icon={<BookOpen size={13} />} label="Reading Mask" description="Dims text except hovered paragraph" active={state.readingMask} onToggle={() => activate("readingMask")} />
+        <Section
+          title="Cognitive & Reading"
+          icon={<BookOpen size={13} />}
+          open={openSection === "cognitive"}
+          onToggle={() => setOpenSection("cognitive")}
+        >
+          <ToggleRow icon={<Type size={13} />}     label="Dyslexia Font"   description="Lexend — wider, more readable"           active={state.dyslexiaFont}  onToggle={() => activate("dyslexiaFont")} />
+          <ToggleRow icon={<Wind size={13} />}     label="Reduce Motion"   description="Stops animations & transitions"          active={state.reduceMotion}  onToggle={() => activate("reduceMotion")} />
+          <ToggleRow icon={<Sun size={13} />}      label="Reading Guide"   description="Horizontal line follows your cursor"     active={state.readingGuide}  onToggle={() => activate("readingGuide")} />
+          <ToggleRow icon={<BookOpen size={13} />} label="Reading Mask"    description="Dims text except hovered paragraph"      active={state.readingMask}   onToggle={() => activate("readingMask")} />
         </Section>
-
       </div>
 
-      {/* Footer: Reset to Default + info */}
+      {/* Footer */}
       <div className="px-3 py-3 border-t border-white/8 shrink-0 space-y-2">
         <button
           onClick={reset}
           disabled={!isModified}
+          aria-label="Reset all accessibility settings to default"
           className="w-full flex items-center justify-center gap-2 py-2 rounded-xl border transition-all text-xs font-semibold"
           style={{
             backgroundColor: isModified ? "rgba(220,38,38,0.08)" : "rgba(255,255,255,0.03)",
-            borderColor: isModified ? "rgba(220,38,38,0.35)" : "rgba(255,255,255,0.10)",
-            color: isModified ? "#f87171" : "rgba(255,255,255,0.25)",
-            cursor: isModified ? "pointer" : "default",
+            borderColor:     isModified ? "rgba(220,38,38,0.35)" : "rgba(255,255,255,0.10)",
+            color:           isModified ? "#f87171"              : "rgba(255,255,255,0.25)",
+            cursor:          isModified ? "pointer"              : "default",
           }}
-          aria-label="Reset all accessibility settings to default"
         >
           <RotateCcw size={13} aria-hidden="true" />
           Reset to Default
         </button>
-        <p className="text-white/25 text-[10px] text-center leading-relaxed">Settings are saved in your browser and apply across all pages.</p>
+        <p className="text-white/25 text-[10px] text-center leading-relaxed">
+          Settings are saved in your browser and apply across all pages.
+        </p>
       </div>
     </motion.div>
   );

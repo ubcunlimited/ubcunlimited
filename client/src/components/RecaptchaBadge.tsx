@@ -1,15 +1,15 @@
-import { useState, useRef } from "react";
-
 /**
  * RecaptchaBadge — custom reCAPTCHA v3 disclosure badge
  *
  * Geometry (matches terminalbroker.com reference implementation):
- *   - Total width  : PANEL_W + TAB_W = 218 + 28 = 246px
- *   - Height       : 60px (panel and tab share the same height via align-items: stretch)
- *   - Collapsed    : left = -PANEL_W  →  only the 28px tab button peeks out from the left edge
- *   - Expanded     : left = 0         →  full panel visible
- *   - Animation    : transition on `left` property (avoids conflict with ADA CSS transforms)
+ *   Total width  : PANEL_W + TAB_W = 218 + 28 = 246 px
+ *   Height       : 60 px (panel and tab share the same height via align-items: stretch)
+ *   Collapsed    : left = -PANEL_W  →  only the 28 px tab button peeks out from the left edge
+ *   Expanded     : left = 0         →  full panel visible
+ *   Animation    : transition on `left` property (avoids conflict with ADA CSS transforms)
  */
+
+import { useState, useRef } from "react";
 
 const PANEL_W = 218;
 const TAB_W   = 28;
@@ -28,8 +28,6 @@ export default function RecaptchaBadge() {
     timerRef.current = setTimeout(() => setOpen(false), 300);
   };
 
-  const leftPx = open ? 0 : -PANEL_W;
-
   return (
     <div
       data-a11y-ui="true"
@@ -42,7 +40,7 @@ export default function RecaptchaBadge() {
       style={{
         position: "fixed",
         bottom: "14px",
-        left: `${leftPx}px`,
+        left: `${open ? 0 : -PANEL_W}px`,
         zIndex: 9999,
         display: "flex",
         alignItems: "stretch",
@@ -53,6 +51,7 @@ export default function RecaptchaBadge() {
         backgroundColor: "transparent",
       }}
     >
+      {/* Disclosure panel */}
       <div
         style={{
           width: `${PANEL_W}px`,
@@ -123,9 +122,10 @@ export default function RecaptchaBadge() {
         </div>
       </div>
 
+      {/* Toggle tab */}
       <button
         aria-label="Toggle reCAPTCHA disclosure"
-        onClick={() => setOpen(v => !v)}
+        onClick={() => setOpen((v) => !v)}
         style={{
           width: `${TAB_W}px`,
           flexShrink: 0,

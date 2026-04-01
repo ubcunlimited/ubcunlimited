@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBY1WMZHL2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -10,16 +10,17 @@
       gtag('js', new Date());
       gtag('config', 'G-MBY1WMZHL2');
     </script>
+
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UBC Unlimited — Utah Merchant Services</title>
     <meta name="description" content="UBC Unlimited provides merchant services, payment processing, POS systems, and more to Utah businesses. Local experts, competitive rates, 24/7 support." />
     <meta name="keywords" content="merchant services Utah, credit card processing Utah, POS systems Utah, payment processing Salt Lake City, SkyTab Utah, ACH processing Utah, dual pricing Utah" />
     <meta name="author" content="UBC Unlimited" />
     <meta name="geo.region" content="US-UT" />
     <meta name="geo.placename" content="Salt Lake City, Utah" />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -27,7 +28,8 @@
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#080808" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-    <!-- Open Graph / Social Share -->
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="UBC Unlimited" />
     <meta property="og:locale" content="en_US" />
@@ -40,6 +42,7 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="UBC Unlimited — Utah Merchant Services. Cash Discounting, Surcharging, POS Solutions." />
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ubcunlimited" />
@@ -47,11 +50,12 @@
     <meta name="twitter:description" content="Utah's trusted local merchant services provider. Cash discounting, surcharging, credit card processing, POS systems, and more." />
     <meta name="twitter:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-card-final_c2722614.png" />
     <meta name="twitter:image:alt" content="UBC Unlimited — Utah Merchant Services. Cash Discounting, Surcharging, POS Solutions." />
-    <!-- Preconnect to CDN and analytics only — no Google Fonts DNS lookup needed (self-hosted) -->
+
+    <!-- Preconnect to CDN and analytics -->
     <link rel="preconnect" href="https://d2xsxph8kpxj0f.cloudfront.net" crossorigin />
     <link rel="preconnect" href="https://plausible.io" crossorigin />
-    <!-- Self-hosted fonts via CDN — eliminates third-party DNS lookup + render-blocking font CSS.
-         Only latin subsets are loaded; font-display:swap prevents invisible text during load. -->
+
+    <!-- Self-hosted fonts via CDN (latin subsets, font-display:swap) -->
     <style>
       @font-face {
         font-family: 'DM Serif Display';
@@ -85,53 +89,8 @@
         src: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/sora-latin_4d2a7767.woff2') format('woff2');
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
-    </style>
-    <!-- Preload the two most critical fonts for above-the-fold text -->
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/dm-serif-display-latin_648ef92e.woff2" />
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/inter-400-latin_0e1d5b13.woff2" />
-    <!-- NOTE: Hero background is now CSS background-image (not an img tag) so no preload needed.
-         The browser will fetch it after CSS is parsed, which is fine for a decorative background. -->
-    <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1304934438209527');
-      fbq('track', 'PageView');
-    </script>
-    <!-- End Meta Pixel Code (noscript fallback placed at top of body below) -->
-    <!-- Google reCAPTCHA v3 — only load on production domains to avoid invalid-domain errors on dev -->
-    <script>
-      (function() {
-        var host = window.location.hostname;
-        var isProd = host === 'ubcunlimited.com' || host === 'www.ubcunlimited.com';
-        if (isProd) {
-          var s = document.createElement('script');
-          s.src = 'https://www.google.com/recaptcha/api.js?render=%VITE_RECAPTCHA_SITE_KEY%';
-          s.async = true;
-          s.defer = true;
-          document.head.appendChild(s);
-        }
-      })();
-    </script>
-  </head>
 
-  <body>
-    <!-- ═══════════════════════════════════════════════════════════════════════
-         STATIC ACCESSIBILITY SCAFFOLD
-         Provides heading structure, page regions, skip link target, and a
-         meaningful no-JS message for WAVE / screen readers that scan before
-         React hydrates. React replaces this content on hydration.
-         ═══════════════════════════════════════════════════════════════════ -->
-    <style>
-      /* Skip link — visible only on keyboard focus */
+      /* Skip link — visible only on keyboard focus (WCAG 2.4.1) */
       #skip-to-main {
         position: absolute;
         left: -9999px;
@@ -156,10 +115,10 @@
         height: auto;
         overflow: visible;
       }
-      /* Static scaffold — visually hidden but accessible to screen readers and WAVE.
-         Uses the sr-only technique (clip + position:absolute) so accessibility tools
-         can scan heading structure and landmark regions before React hydrates.
-         After React mounts, the scaffold is hidden via JS (see script below). */
+
+      /* Static accessibility scaffold — visually hidden but readable by WAVE and screen readers.
+         Provides heading structure and landmark regions before React hydrates.
+         Hidden via JS after React mounts (see MutationObserver script below). */
       #static-a11y-scaffold {
         position: absolute;
         width: 1px;
@@ -173,19 +132,48 @@
       }
     </style>
 
-    <!-- Skip navigation link — visible on keyboard focus, hidden otherwise (WCAG 2.4.1)
-         This static link is the pre-hydration skip link for WAVE. After React mounts,
-         PageLayout renders its own skip link inside the app. Both point to #main-content. -->
-    <a href="#main-content"
-       style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;"
-       onfocus="this.style.cssText='position:fixed;top:0;left:0;z-index:99999;padding:12px 20px;background:#c9a84c;color:#080808;font-weight:700;font-size:16px;text-decoration:none;border-radius:0 0 6px 0;width:auto;height:auto;overflow:visible;'"
-       onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'"
-    >Skip to main content</a>
+    <!-- Preload critical above-the-fold fonts -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/dm-serif-display-latin_648ef92e.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/inter-400-latin_0e1d5b13.woff2" />
 
-    <!-- Static page scaffold: provides heading + landmark regions for WAVE/screen readers
-         before React hydrates. The id="main-content" is the skip link target for WAVE
-         pre-hydration scans. React's PageLayout renders its own skip link and
-         <main id="main-content"> after hydration. Hidden by default; shown only when JS is disabled. -->
+    <!-- Meta Pixel -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1304934438209527');
+      fbq('track', 'PageView');
+    </script>
+
+    <!-- Google reCAPTCHA v3 — only load on production to avoid invalid-domain errors in dev -->
+    <script>
+      (function() {
+        var host = window.location.hostname;
+        if (host === 'ubcunlimited.com' || host === 'www.ubcunlimited.com') {
+          var s = document.createElement('script');
+          s.src = 'https://www.google.com/recaptcha/api.js?render=%VITE_RECAPTCHA_SITE_KEY%';
+          s.async = true;
+          s.defer = true;
+          document.head.appendChild(s);
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <!-- Skip navigation link (WCAG 2.4.1) -->
+    <a id="skip-to-main" href="#main-content">Skip to main content</a>
+
+    <!-- Static accessibility scaffold: heading structure and landmark regions for WAVE / screen
+         readers before React hydrates. The MutationObserver below hides it once React mounts
+         to prevent duplicate content for assistive technologies. -->
     <div id="static-a11y-scaffold">
       <header role="banner">
         <h1>UBC Unlimited &mdash; Utah Merchant Services</h1>
@@ -205,11 +193,10 @@
       </footer>
     </div>
 
-    <!-- Meta Pixel noscript fallback — required by Facebook for non-JS tracking compliance.
-         Includes a visible message for users with JavaScript disabled. -->
+    <!-- noscript: visible message for users with JavaScript disabled + Meta Pixel fallback pixel -->
     <noscript>
       <p style="font-family:Arial,sans-serif;font-size:14px;color:#333;padding:8px;background:#fff8e1;border:1px solid #f0c040;margin:0;">
-        <strong>JavaScript is required</strong> to view this website. Please enable JavaScript in your browser, or
+        <strong>JavaScript is required</strong> to view this website. Please enable JavaScript in your browser, or call
         <a href="tel:+18013096988" style="color:#0057B8;">(801) 309-6988</a> to speak with a local expert.
       </p>
       <img height="1" width="1" style="display:none"
@@ -219,14 +206,13 @@
     </noscript>
 
     <div id="root"></div>
-    <!-- Hide static scaffold after React hydrates to prevent duplicate content for screen readers -->
+
+    <!-- Hide static scaffold after React hydrates to prevent duplicate content -->
     <script>
       (function() {
         var scaffold = document.getElementById('static-a11y-scaffold');
-        if (!scaffold) return;
-        // Use MutationObserver to detect when React has rendered content into #root
         var root = document.getElementById('root');
-        if (!root) return;
+        if (!scaffold || !root) return;
         var observer = new MutationObserver(function() {
           if (root.children.length > 0) {
             scaffold.setAttribute('aria-hidden', 'true');
@@ -237,6 +223,7 @@
         observer.observe(root, { childList: true });
       })();
     </script>
+
     <script type="module" src="/src/main.tsx"></script>
     <script
       defer

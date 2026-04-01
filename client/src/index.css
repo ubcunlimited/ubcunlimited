@@ -5,8 +5,6 @@
 
 /* ============================================================
    UBC UNLIMITED — BLACK & GOLD PREMIUM DESIGN SYSTEM
-   Inspired by the UBC shield logo: deep charcoal/black backgrounds,
-   rich metallic gold accents, crisp white text.
    Logo palette: #0a0a0a (near-black), #c9a84c (gold mid), #b8972a (gold dark),
                  #e2c97e (gold light), #1a1a1a (charcoal card)
    Fonts: Sora (headings) + Inter (body)
@@ -49,7 +47,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  /* UBC Brand Colors — Black & Gold Shield Palette */
+  /* UBC Brand Colors */
   --color-black-deep: #080808;
   --color-black-card: #111111;
   --color-black-surface: #1a1a1a;
@@ -144,18 +142,13 @@
     .container { padding-left: 2rem; padding-right: 2rem; max-width: 1280px; }
   }
 
-  /* UBC Brand Utilities — Black & Gold Shield Palette */
-  .bg-navy        { background-color: #080808; }
-  .bg-navy-800    { background-color: #111111; }
-  .bg-navy-700    { background-color: #1a1a1a; }
-  .text-teal      { color: #c9a84c; }
-  .text-gold      { color: #c9a84c; }
-  .bg-teal        { background-color: #c9a84c; }
-  .bg-gold        { background-color: #c9a84c; }
-  .border-teal    { border-color: #c9a84c; }
-  .border-gold    { border-color: #c9a84c; }
+  /* ── Section backgrounds ── */
+  .section-dark  { background-color: #080808; color: white; }
+  .section-navy  { background-color: #111111; color: white; }
+  .section-light { background-color: #f5f0e8; color: #111111; }
+  .section-white { background-color: #ffffff; color: #111111; }
 
-  /* Gradient text — gold shimmer */
+  /* ── Gradient text — gold shimmer ── */
   .gradient-text {
     background: linear-gradient(135deg, #c9a84c 0%, #e2c97e 50%, #b8972a 100%);
     -webkit-background-clip: text;
@@ -163,7 +156,7 @@
     background-clip: text;
   }
 
-  /* Glass card effect */
+  /* ── Glass card effects ── */
   .glass-card {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(12px);
@@ -175,7 +168,7 @@
     border: 1px solid rgba(201, 168, 76, 0.2);
   }
 
-  /* Gold glow effect */
+  /* ── Gold glow effects ── */
   .teal-glow {
     box-shadow: 0 0 20px rgba(201, 168, 76, 0.25), 0 0 60px rgba(201, 168, 76, 0.08);
   }
@@ -184,25 +177,10 @@
     border-color: rgba(201, 168, 76, 0.5) !important;
   }
 
-  /* Section patterns */
-  .section-dark {
-    background-color: #080808;
-    color: white;
-  }
-  .section-navy {
-    background-color: #111111;
-    color: white;
-  }
-  .section-light {
-    background-color: #f5f0e8;
-    color: #111111;
-  }
-  .section-white {
-    background-color: #ffffff;
-    color: #111111;
-  }
+  /* ── CTA buttons ── */
 
-  /* CTA buttons — gold primary */
+  /* Gold primary button — .btn-gold is the canonical name; .btn-teal is an alias */
+  .btn-gold,
   .btn-teal {
     background: linear-gradient(135deg, #b8972a, #c9a84c);
     color: #080808;
@@ -216,36 +194,20 @@
     font-family: 'Inter', sans-serif;
     letter-spacing: -0.01em;
   }
+  .btn-gold:hover,
   .btn-teal:hover {
     transform: translateY(-1px);
     box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
     background: linear-gradient(135deg, #c9a84c, #e2c97e);
   }
-  .btn-gold {
-    background: linear-gradient(135deg, #b8972a, #c9a84c);
-    color: #080808;
-    font-weight: 700;
-    padding: 0.75rem 1.75rem;
-    border-radius: 0.375rem;
-    transition: all 0.2s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.01em;
-  }
-  .btn-gold:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 25px rgba(201, 168, 76, 0.4);
-    background: linear-gradient(135deg, #c9a84c, #e2c97e);
-  }
+
   .btn-outline-white {
     background: transparent;
     color: white;
     font-weight: 600;
     padding: 0.75rem 1.75rem;
     border-radius: 0.375rem;
-    border: 1.5px solid rgba(255,255,255,0.35);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
     transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
@@ -254,9 +216,10 @@
     letter-spacing: -0.01em;
   }
   .btn-outline-white:hover {
-    background: rgba(255,255,255,0.08);
-    border-color: rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.6);
   }
+
   .btn-outline-teal {
     background: transparent;
     color: #c9a84c;
@@ -275,7 +238,7 @@
     background: rgba(201, 168, 76, 0.1);
   }
 
-  /* Divider */
+  /* ── Divider ── */
   .teal-divider {
     width: 3rem;
     height: 3px;
@@ -283,18 +246,8 @@
     border-radius: 2px;
   }
 
-  /* Stat badge */
-  .stat-badge {
-    background: rgba(201, 168, 76, 0.1);
-    border: 1px solid rgba(201, 168, 76, 0.3);
-    color: #c9a84c;
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
+  /* ── Stat badge — .stat-badge-gold is an alias ── */
+  .stat-badge,
   .stat-badge-gold {
     background: rgba(201, 168, 76, 0.12);
     border: 1px solid rgba(201, 168, 76, 0.3);
@@ -319,27 +272,24 @@
   border-radius: 4px;
 }
 
-/* Remove default outline only when using mouse (not keyboard) */
+/* Suppress outline for mouse users */
 :focus:not(:focus-visible) {
   outline: none;
 }
 
 /* Button focus styles */
-.btn-teal:focus-visible,
 .btn-gold:focus-visible,
+.btn-teal:focus-visible,
 .btn-outline-white:focus-visible,
 .btn-outline-teal:focus-visible {
   outline: 2px solid #c9a84c;
   outline-offset: 3px;
 }
 
-/* Ensure sufficient color contrast for muted text on dark backgrounds */
-/* #c9a84c on #080808 = ~7.5:1 — passes AAA */
-
 /* High contrast mode support */
 @media (forced-colors: active) {
-  .btn-teal,
   .btn-gold,
+  .btn-teal,
   .btn-outline-white,
   .btn-outline-teal {
     forced-color-adjust: none;
@@ -358,18 +308,15 @@
   }
 }
 
-/* ── Mobile accessibility button — circular focus ring ── */
-/* Overrides the global :focus-visible rule (which uses border-radius: 4px)
-   to produce a circular ring that matches the button's 50% border-radius.
-   White ring on a blue button provides 4.5:1+ contrast (WCAG AA). */
+/* Mobile accessibility button — circular focus ring
+   Overrides the global :focus-visible rule (border-radius: 4px) to match
+   the button's 50% border-radius. White ring on blue provides 4.5:1+ contrast. */
 .a11y-mobile-btn:focus-visible {
   outline: 3px solid #ffffff;
   outline-offset: 3px;
   border-radius: 50%;
-  /* Blue halo ensures the white ring is visible against light page backgrounds */
   box-shadow: 0 0 0 6px rgba(0, 87, 184, 0.55), 0 4px 16px rgba(0, 87, 184, 0.5);
 }
-/* Forced-colors (Windows High Contrast) override */
 @media (forced-colors: active) {
   .a11y-mobile-btn:focus-visible {
     outline: 3px solid Highlight;
@@ -377,7 +324,7 @@
   }
 }
 
-/* ── reCAPTCHA v3 badge — hidden; replaced by custom RecaptchaBadge component ── */
+/* reCAPTCHA v3 native badge — hidden; replaced by custom RecaptchaBadge component */
 .grecaptcha-badge {
   visibility: hidden !important;
   opacity: 0 !important;
