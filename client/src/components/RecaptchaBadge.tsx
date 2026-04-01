@@ -1,23 +1,33 @@
 /**
  * RecaptchaBadge — custom slide-out reCAPTCHA v3 disclosure panel.
  *
- * Replaces the native .grecaptcha-badge (hidden via CSS) with a branded
- * slide-out drawer anchored to the bottom-left. A blue vertical tab labelled
- * "reCAPTCHA" is always visible; clicking it reveals the full disclosure panel
- * with the shield logo and links to Google's Privacy Policy & Terms of Service.
+ * Layout (reversed from terminalbroker.com):
+ *   [BLUE TAB] [DISCLOSURE PANEL →]
  *
- * Only rendered on production domains (ubcunlimited.com / www.ubcunlimited.com)
- * to match the conditional script loading in index.html.
+ * The blue "reCAPTCHA" vertical tab is always visible on the LEFT edge.
+ * Clicking it slides the white disclosure panel OUT TO THE RIGHT.
+ * The whole assembly is anchored to the bottom-left of the viewport.
+ *
+ * - Full default size (no CSS scale transform)
+ * - Fully opaque (no transparency / drop-shadow)
+ * - Only rendered on production domains
  */
 
 import { useEffect, useState } from "react";
 
-const PRODUCTION_HOSTS = ["ubcunlimited.com", "www.ubcunlimited.com"];
+const PRODUCTION_HOSTS = [
+  "ubcunlimited.com",
+  "www.ubcunlimited.com",
+  "ubcmerch-buvnwzjn.manus.space",
+];
 
 function isProduction() {
   if (typeof window === "undefined") return false;
   return PRODUCTION_HOSTS.includes(window.location.hostname);
 }
+
+const TAB_WIDTH = 28;   // px — blue toggle tab
+const PANEL_WIDTH = 218; // px — white disclosure panel
 
 export default function RecaptchaBadge() {
   const [open, setOpen] = useState(false);
@@ -34,8 +44,6 @@ export default function RecaptchaBadge() {
   // Only render on production
   if (!isProduction()) return null;
 
-  const PANEL_WIDTH = 218; // px — matches terminalbroker.com
-
   return (
     <div
       className="recaptcha-custom-badge"
@@ -43,32 +51,38 @@ export default function RecaptchaBadge() {
       style={{
         position: "fixed",
         bottom: 14,
-        left: open ? 0 : -PANEL_WIDTH,
+        // When closed: only the tab (28px) is visible at left:0
+        // When open: the full assembly (tab + panel = 246px) is visible
+        left: 0,
         zIndex: 9999,
         display: "flex",
         alignItems: "stretch",
         height: 60,
-        transition: "left 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        filter: "drop-shadow(2px 2px 6px rgba(0,0,0,0.28))",
+        // Slide the panel in/out by translating the whole container
+        // Closed: panel is off-screen to the left (only tab peeks out)
+        // Open: full width visible
+        transform: open ? "translateX(0)" : `translateX(-${PANEL_WIDTH}px)`,
+        transition: "transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
       }}
     >
-      {/* ── Disclosure panel ───────────────────────────────────────────── */}
+      {/* ── Disclosure panel (LEFT side of assembly, slides in from left) ── */}
       <div
         style={{
           width: PANEL_WIDTH,
-          background: "#fff",
+          background: "#ffffff",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           padding: "0 12px",
-          borderRadius: "0 4px 0 0",
+          borderRadius: "0 0 0 0",
           borderTop: "1px solid #e0e0e0",
-          borderRight: "1px solid #e0e0e0",
+          borderBottom: "1px solid #e0e0e0",
+          borderLeft: "1px solid #e0e0e0",
         }}
       >
         {/* Logo + label row */}
         <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 3 }}>
-          {/* reCAPTCHA shield SVG (Google's official colours) */}
+          {/* reCAPTCHA shield SVG */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 64 64"
@@ -114,12 +128,12 @@ export default function RecaptchaBadge() {
         </div>
       </div>
 
-      {/* ── Toggle tab ─────────────────────────────────────────────────── */}
+      {/* ── Toggle tab (RIGHT side of assembly, always visible) ─────────── */}
       <button
         aria-label={open ? "Hide reCAPTCHA badge" : "Show reCAPTCHA badge"}
         onClick={() => setOpen((v) => !v)}
         style={{
-          width: 28,
+          width: TAB_WIDTH,
           background: "#1A73E8",
           border: "none",
           cursor: "pointer",
@@ -138,7 +152,7 @@ export default function RecaptchaBadge() {
             transform: "rotate(180deg)",
             fontSize: 8,
             fontWeight: 700,
-            color: "#fff",
+            color: "#ffffff",
             letterSpacing: "0.08em",
             userSelect: "none",
             lineHeight: 1,

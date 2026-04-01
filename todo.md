@@ -335,3 +335,4 @@
 - [x] Reduce reCAPTCHA badge to half size
 - [x] Add reCAPTCHA slide-out disclosure badge (terminalbroker.com style)
 - [x] Pass reCAPTCHA score to GoHighLevel webhook payload on all form submissions
+- [x] Redesign RecaptchaBadge: full size, reversed layout (blue tab left, panel right), fully opaque, slides from left
