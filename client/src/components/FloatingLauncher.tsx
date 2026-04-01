@@ -13,9 +13,9 @@
  * Each button is 44px tall, spaced 16px apart.
  */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { MessageCircle, Accessibility, ArrowUp, X } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import ChatPanel from "./ChatPanel";
 import AccessibilityPanel from "./AccessibilityPanel";
 
@@ -28,25 +28,62 @@ const MOBILE_BASE = 88;   // px — main trigger bottom on mobile
 const DESKTOP_BASE = 24;  // px — main trigger bottom on desktop
 const STEP = 60;          // px — vertical gap between each fan-out button
 
+// Attention animation: gentle 3-beat pulse + slight rotation
+// Respects prefers-reduced-motion — skipped entirely if user has that set
+const ATTENTION_SEQUENCE = {
+  scale: [1, 1.18, 1, 1.14, 1, 1.10, 1],
+  rotate: [0, -8, 8, -5, 5, -2, 0],
+  transition: {
+    duration: 1.4,
+    ease: [0.42, 0, 0.58, 1] as [number, number, number, number],
+    times: [0, 0.15, 0.30, 0.45, 0.60, 0.75, 1.0],
+  },
+};
+
 export default function FloatingLauncher() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activePanel, setActivePanel] = useState<ActivePanel>(null);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
   // First-visit tooltip: show "Accessibility" label for 2.5s on first page load (mobile only)
   const [showTooltip, setShowTooltip] = useState(false);
   useEffect(() => {
     const seen = localStorage.getItem("ubc-a11y-tooltip-seen");
     if (!seen && window.innerWidth < 1024) {
-      // Delay 1.5s so the page has settled before the tooltip appears
       const showTimer = setTimeout(() => setShowTooltip(true), 1500);
       const hideTimer = setTimeout(() => {
         setShowTooltip(false);
         localStorage.setItem("ubc-a11y-tooltip-seen", "1");
-      }, 4000); // show for 2.5s (4000 - 1500)
+      }, 4000);
       return () => { clearTimeout(showTimer); clearTimeout(hideTimer); };
     }
   }, []);
+
+  // Attention animation controls — fires once on first load after 2s delay
+  const mobileA11yControls = useAnimation();
+  const desktopA11yControls = useAnimation();
+  const [showRipple, setShowRipple] = useState(false);
+  const animatedRef = useRef(false);
+
+  useEffect(() => {
+    // Respect prefers-reduced-motion
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) return;
+
+    const timer = setTimeout(async () => {
+      if (animatedRef.current) return;
+      animatedRef.current = true;
+      setShowRipple(true);
+      // Run on whichever control is relevant (both fire, only the rendered one matters)
+      mobileA11yControls.start(ATTENTION_SEQUENCE);
+      desktopA11yControls.start(ATTENTION_SEQUENCE);
+      // Hide ripple after animation completes
+      setTimeout(() => setShowRipple(false), 1600);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [mobileA11yControls, desktopA11yControls]);
 
   // Detect mobile breakpoint
   useEffect(() => {
@@ -117,18 +154,41 @@ export default function FloatingLauncher() {
   const panelBottomPx = base + 80;
 
   // ── Mobile layout ─────────────────────────────────────────────────────────
-  // On mobile: show a dedicated accessibility button that is always visible.
-  // Positioned above the sticky call bar (56px) with a 16px gap = bottom: 72px.
-  // The panel opens above the button at bottom: 120px.
   if (isMobile) {
     return (
       <>
+        {/* Ripple ring — expands outward from the button center */}
+        <AnimatePresence>
+          {showRipple && (
+            <motion.span
+              key="ripple-mobile"
+              initial={{ opacity: 0.7, scale: 1 }}
+              animate={{ opacity: 0, scale: 2.6 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              data-a11y-ui="true"
+              style={{
+                position: "fixed",
+                bottom: "72px",
+                right: "16px",
+                zIndex: 9899,
+                width: "44px",
+                height: "44px",
+                borderRadius: "50%",
+                backgroundColor: "rgba(0, 87, 184, 0.45)",
+                pointerEvents: "none",
+              }}
+            />
+          )}
+        </AnimatePresence>
+
         {/* Accessibility button — always visible on mobile */}
-        <button
+        <motion.button
           onClick={() => setActivePanel((prev) => (prev === "a11y" ? null : "a11y"))}
           aria-label={activePanel === "a11y" ? "Close accessibility options" : "Open accessibility options"}
           aria-expanded={activePanel === "a11y"}
           data-a11y-ui="true"
+          animate={mobileA11yControls}
           style={{
             position: "fixed",
             bottom: "72px",
@@ -153,7 +213,7 @@ export default function FloatingLauncher() {
           ) : (
             <Accessibility size={18} aria-hidden="true" />
           )}
-        </button>
+        </motion.button>
 
         {/* First-visit tooltip label */}
         <AnimatePresence>
@@ -183,7 +243,6 @@ export default function FloatingLauncher() {
               }}
             >
               Accessibility
-              {/* Arrow pointing right toward the button */}
               <span style={{
                 position: "absolute",
                 right: "-6px",
@@ -221,6 +280,33 @@ export default function FloatingLauncher() {
         )}
       </AnimatePresence>
 
+      {/* ── Desktop: ripple ring behind the main trigger button ─────────── */}
+      {/* On desktop the a11y button is hidden until menu opens, so we animate
+          the main trigger button with a subtle ring to draw attention */}
+      <AnimatePresence>
+        {showRipple && (
+          <motion.span
+            key="ripple-desktop"
+            initial={{ opacity: 0.6, scale: 1 }}
+            animate={{ opacity: 0, scale: 2.8 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.3, ease: "easeOut" }}
+            data-a11y-ui="true"
+            style={{
+              position: "fixed",
+              bottom: `${base}px`,
+              right: "24px",
+              zIndex: 49,
+              width: "56px",
+              height: "56px",
+              borderRadius: "50%",
+              backgroundColor: "rgba(0, 87, 184, 0.35)",
+              pointerEvents: "none",
+            }}
+          />
+        )}
+      </AnimatePresence>
+
       {/* ── Fan-out action buttons ─────────────────────────────────────── */}
       <AnimatePresence>
         {menuOpen && (
@@ -242,11 +328,11 @@ export default function FloatingLauncher() {
               </motion.button>
             )}
 
-            {/* Accessibility — teal/blue */}
+            {/* Accessibility — blue — with attention animation */}
             <motion.button
               key="a11y"
               initial={{ opacity: 0, scale: 0.7, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
+              animate={desktopA11yControls}
               exit={{ opacity: 0, scale: 0.7, y: 10 }}
               transition={{ duration: 0.18, delay: 0.04 }}
               onClick={() => openPanel("a11y")}
