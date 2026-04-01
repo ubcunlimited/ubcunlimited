@@ -212,14 +212,14 @@ interface SectionProps {
   title: string;
   icon: React.ReactNode;
   children: React.ReactNode;
-  defaultOpen?: boolean;
+  open: boolean;
+  onToggle: () => void;
 }
-function Section({ title, icon, children, defaultOpen = true }: SectionProps) {
-  const [open, setOpen] = useState(defaultOpen);
+function Section({ title, icon, children, open, onToggle }: SectionProps) {
   return (
     <div className="border border-white/8 rounded-xl overflow-hidden">
       <button
-        onClick={() => setOpen((v) => !v)}
+        onClick={onToggle}
         className="w-full flex items-center justify-between px-3 py-2.5 bg-white/4 hover:bg-white/7 transition-colors"
         aria-expanded={open}
       >
@@ -255,6 +255,10 @@ interface AccessibilityPanelProps {
 
 export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: AccessibilityPanelProps) {
   const [state, setState] = useState<A11yState>(DEFAULT_STATE);
+  // Accordion: only one section open at a time; Vision open by default
+  const [openSection, setOpenSection] = useState<"vision" | "color" | "motor" | "cognitive">("vision");
+  const toggleSection = (s: "vision" | "color" | "motor" | "cognitive") =>
+    setOpenSection((prev) => (prev === s ? s : s)); // always open the clicked section
   const readingGuideRef = useRef<HTMLDivElement | null>(null);
   const readingMaskRef = useRef<HTMLDivElement | null>(null);
 
@@ -428,7 +432,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
       <div className="overflow-y-auto flex-1 p-3 space-y-2.5" style={{ scrollbarWidth: "thin", scrollbarColor: "#333 transparent" }}>
 
         {/* ── Vision ── */}
-        <Section title="Vision" icon={<Eye size={13} />}>
+        <Section title="Vision" icon={<Eye size={13} />} open={openSection === "vision"} onToggle={() => toggleSection("vision")}>
           {/* Font size */}
           <div>
             <p className="text-white/40 text-[10px] font-medium mb-1.5">Text Size — {fontPct}%</p>
@@ -496,7 +500,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
         </Section>
 
         {/* ── Color & Contrast ── */}
-        <Section title="Color & Contrast" icon={<Contrast size={13} />}>
+        <Section title="Color & Contrast" icon={<Contrast size={13} />} open={openSection === "color"} onToggle={() => toggleSection("color")}>
           {/* High contrast presets */}
           <div>
             <p className="text-white/40 text-[10px] font-medium mb-1.5">High Contrast Mode</p>
@@ -536,7 +540,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
         </Section>
 
         {/* ── Motor & Navigation ── */}
-        <Section title="Motor & Navigation" icon={<MousePointer2 size={13} />} defaultOpen={false}>
+        <Section title="Motor & Navigation" icon={<MousePointer2 size={13} />} open={openSection === "motor"} onToggle={() => toggleSection("motor")}>
           <ToggleRow icon={<Eye size={13} />} label="Focus Indicators" description="Blue outline on focused elements" active={state.focusHighlight} onToggle={() => activate("focusHighlight")} />
           <ToggleRow icon={<MousePointer2 size={13} />} label="Large Cursor" description="Bigger mouse pointer for visibility" active={state.largeCursor} onToggle={() => activate("largeCursor")} />
           <ToggleRow icon={<Underline size={13} />} label="Highlight Links" description="Yellow highlight on all links" active={state.highlightLinks} onToggle={() => activate("highlightLinks")} />
@@ -544,7 +548,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
         </Section>
 
         {/* ── Cognitive & Reading ── */}
-        <Section title="Cognitive & Reading" icon={<BookOpen size={13} />} defaultOpen={false}>
+        <Section title="Cognitive & Reading" icon={<BookOpen size={13} />} open={openSection === "cognitive"} onToggle={() => toggleSection("cognitive")}>
           <ToggleRow icon={<Type size={13} />} label="Dyslexia Font" description="Lexend — wider, more readable" active={state.dyslexiaFont} onToggle={() => activate("dyslexiaFont")} />
           <ToggleRow icon={<Wind size={13} />} label="Reduce Motion" description="Stops animations & transitions" active={state.reduceMotion} onToggle={() => activate("reduceMotion")} />
           <ToggleRow icon={<Sun size={13} />} label="Reading Guide" description="Horizontal line follows your cursor" active={state.readingGuide} onToggle={() => activate("readingGuide")} />

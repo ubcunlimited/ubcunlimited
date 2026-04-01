@@ -351,4 +351,7 @@
 - [x] Fix: Noscript element — added second noscript block with visible h1, nav, main, footer, and JS-required message; added skip-to-main-content link
 
 ## FloatingLauncher Message Bubble Bug Fix
-- [ ] Fix: clicking the message bubble on desktop doesn't open the accessibility panel on live site
+- [x] Fix: clicking the message bubble on desktop doesn't open the accessibility panel on live site (root cause: desktopA11yControls AnimationControls defaulted opacity to 0; moved to inner motion.span)
+
+## AccessibilityPanel Accordion
+- [x] Change AccessibilityPanel sections to accordion: only one section open at a time, opens with Vision section expanded by default
