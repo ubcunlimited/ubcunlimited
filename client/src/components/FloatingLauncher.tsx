@@ -102,15 +102,52 @@ export default function FloatingLauncher() {
   // Panels open 80px above the main trigger
   const panelBottomPx = base + 80;
 
-  // On mobile: hide the launcher buttons but still render the accessibility panel
-  // when triggered from the cookie banner (ubc:open-accessibility event)
+  // ── Mobile layout ─────────────────────────────────────────────────────────
+  // On mobile: show a dedicated accessibility button that is always visible.
+  // Positioned above the sticky call bar (56px) with a 16px gap = bottom: 72px.
+  // The panel opens above the button at bottom: 120px.
   if (isMobile) {
     return (
-      <AnimatePresence>
-        {activePanel === "a11y" && (
-          <AccessibilityPanel onClose={closePanel} bottomClass="" bottomPx={80} />
-        )}
-      </AnimatePresence>
+      <>
+        {/* Accessibility button — always visible on mobile */}
+        <button
+          onClick={() => setActivePanel((prev) => (prev === "a11y" ? null : "a11y"))}
+          aria-label={activePanel === "a11y" ? "Close accessibility options" : "Open accessibility options"}
+          aria-expanded={activePanel === "a11y"}
+          data-a11y-ui="true"
+          style={{
+            position: "fixed",
+            bottom: "72px",
+            right: "16px",
+            zIndex: 9900,
+            width: "44px",
+            height: "44px",
+            borderRadius: "50%",
+            backgroundColor: "#0057B8",
+            color: "#ffffff",
+            border: "none",
+            boxShadow: "0 4px 16px rgba(0,87,184,0.5)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            flexShrink: 0,
+          }}
+        >
+          {activePanel === "a11y" ? (
+            <X size={18} aria-hidden="true" />
+          ) : (
+            <Accessibility size={18} aria-hidden="true" />
+          )}
+        </button>
+
+        {/* Accessibility panel — opens above the button */}
+        <AnimatePresence>
+          {activePanel === "a11y" && (
+            <AccessibilityPanel onClose={closePanel} bottomClass="" bottomPx={120} />
+          )}
+        </AnimatePresence>
+      </>
     );
   }
 

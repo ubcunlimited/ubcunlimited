@@ -335,3 +335,4 @@
 - [x] Reduce reCAPTCHA badge to half size
 - [x] Fix reCAPTCHA slide-out badge: replaced native .grecaptcha-badge (hidden via CSS) with custom RecaptchaBadge component that collapses to tab-only by default and expands on hover/focus
 - [x] Accessibility panel: make options exclusive (radio-style) — selecting one closes/deactivates all others, no toggle-off on same option
+- [x] Fix ADA accessibility button visibility on mobile/responsive viewports
