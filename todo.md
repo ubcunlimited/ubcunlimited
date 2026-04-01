@@ -340,3 +340,4 @@
 - [x] Revert to FloatingLauncher chat bubble stack (remove standalone AccessibilitySlideOut tab)
 - [x] Fix RecaptchaBadge visibility on dev/preview domains (add manus.computer to allowed hosts)
 - [x] Fix FloatingLauncher z-index so it appears above mobile bottom nav bar
+- [x] Change reCAPTCHA badge to slide out on hover instead of click

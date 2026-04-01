@@ -13,7 +13,7 @@
  * - Only rendered on production domains
  */
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const PRODUCTION_HOSTS = [
   "ubcunlimited.com",
@@ -33,15 +33,6 @@ const PANEL_WIDTH = 218; // px — white disclosure panel
 export default function RecaptchaBadge() {
   const [open, setOpen] = useState(false);
 
-  // Close on Escape key
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
-
   // Only render on production
   if (!isProduction()) return null;
 
@@ -49,6 +40,8 @@ export default function RecaptchaBadge() {
     <div
       className="recaptcha-custom-badge"
       aria-label="reCAPTCHA protection disclosure"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
       style={{
         position: "fixed",
         bottom: 14,
@@ -131,8 +124,8 @@ export default function RecaptchaBadge() {
 
       {/* ── Toggle tab (RIGHT side of assembly, always visible) ─────────── */}
       <button
-        aria-label={open ? "Hide reCAPTCHA badge" : "Show reCAPTCHA badge"}
-        onClick={() => setOpen((v) => !v)}
+        aria-label="reCAPTCHA disclosure"
+        tabIndex={-1}
         style={{
           width: TAB_WIDTH,
           background: "#1A73E8",
