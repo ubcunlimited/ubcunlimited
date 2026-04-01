@@ -5,7 +5,6 @@
 import { useState } from "react";
 import { Shield, CheckCircle, AlertTriangle, Code, Server, Globe, ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
-import SEO from "@/components/SEO";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -305,11 +304,6 @@ export default function RecaptchaDoc() {
 
   return (
     <PageLayout>
-      <SEO
-        title="reCAPTCHA v3 Implementation Docs"
-        description="Internal documentation for the reCAPTCHA v3 implementation on UBC Unlimited."
-        noIndex={true}
-      />
       {/* Header */}
       <section className="bg-[#080808] text-white py-16">
         <div className="container max-w-4xl">

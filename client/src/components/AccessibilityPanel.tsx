@@ -2,15 +2,6 @@
  * AccessibilityPanel — Comprehensive WCAG-aligned accessibility controls
  * Categories: Vision | Color & Contrast | Motor & Navigation | Cognitive & Reading
  * All settings persist to localStorage and apply via injected <style> on <html>.
- *
- * ADA Compliance Notes:
- * - data-a11y-ui="true" on the panel root AND the FloatingLauncher buttons ensures
- *   those elements are EXCLUDED from every high-contrast and filter override.
- * - High contrast rules target `html` (for background) AND `body :not([data-a11y-ui]):not([data-a11y-ui] *)`
- *   (for all page content), while explicitly re-asserting the panel's own colors.
- * - Grayscale/invert/colorblind filters target `body` only, with
- *   `[data-a11y-ui], [data-a11y-ui] *` re-excluded so the panel and launcher
- *   remain fully visible in all modes.
  */
 
 import { useState, useEffect, useCallback, useRef } from "react";
@@ -67,202 +58,62 @@ const STYLE_ID = "ubc-a11y-styles";
 const FONT_LINK_ID = "ubc-a11y-font";
 
 // ── CSS builder ────────────────────────────────────────────────────────────────
-// IMPORTANT: [data-a11y-ui] and [data-a11y-ui] * are ALWAYS excluded from
-// high-contrast and filter overrides. This keeps the accessibility panel,
-// FloatingLauncher buttons, and reCAPTCHA badge readable in every mode.
 function buildCSS(s: A11yState): string {
   const rules: string[] = [];
 
-  // ── Vision ──────────────────────────────────────────────────────────────────
-  if (s.fontSize !== 1) {
-    rules.push(`html { font-size: ${Math.round(s.fontSize * 100)}% !important; }`);
-  }
-  if (s.lineHeight !== 1) {
-    const lh = (1.4 + (s.lineHeight - 1) * 0.6).toFixed(2);
-    rules.push(`body :not([data-a11y-ui]):not([data-a11y-ui] *) { line-height: ${lh} !important; }`);
-  }
-  if (s.letterSpacing > 0) {
-    rules.push(`body :not([data-a11y-ui]):not([data-a11y-ui] *) { letter-spacing: ${s.letterSpacing}px !important; }`);
-  }
+  // Vision
+  if (s.fontSize !== 1) rules.push(`html { font-size: ${Math.round(s.fontSize * 100)}% !important; }`);
+  if (s.lineHeight !== 1) rules.push(`body, body * { line-height: ${(1.4 + (s.lineHeight - 1) * 0.6).toFixed(2)} !important; }`);
+  if (s.letterSpacing > 0) rules.push(`body, body * { letter-spacing: ${s.letterSpacing}px !important; }`);
 
-  // ── Color & Contrast ────────────────────────────────────────────────────────
-  // Strategy:
-  //   1. Set html background so the page chrome (scrollbar gutters etc.) matches.
-  //   2. Override all non-a11y-ui elements in the body.
-  //   3. Explicitly restore the a11y panel's own colors so it is always readable.
+  // Color & Contrast
   if (s.highContrast === "dark") {
     rules.push(`
-/* Dark High Contrast — page */
-html { background-color: #000 !important; }
-body :not([data-a11y-ui]):not([data-a11y-ui] *) {
-  background-color: #000 !important;
-  color: #fff !important;
-  border-color: #555 !important;
-}
-body :not([data-a11y-ui]):not([data-a11y-ui] *) a,
-body :not([data-a11y-ui]):not([data-a11y-ui] *) button,
-body :not([data-a11y-ui]):not([data-a11y-ui] *) [role="button"] {
-  color: #ffff00 !important;
-}
-body :not([data-a11y-ui]):not([data-a11y-ui] *) img {
-  filter: contrast(1.3) brightness(0.9) !important;
-}
-/* Restore a11y UI — always dark panel with white text */
-[data-a11y-ui] {
-  background-color: initial !important;
-  color: initial !important;
-  border-color: initial !important;
-}
-[data-a11y-ui] * {
-  background-color: initial !important;
-  color: initial !important;
-  border-color: initial !important;
-}
+      body, body * { background-color: #000 !important; color: #fff !important; border-color: #555 !important; }
+      a, button, [role="button"] { color: #ffff00 !important; }
+      img { filter: contrast(1.3) brightness(0.9) !important; }
     `);
   } else if (s.highContrast === "light") {
     rules.push(`
-/* Light High Contrast — page */
-html { background-color: #fff !important; }
-body :not([data-a11y-ui]):not([data-a11y-ui] *) {
-  background-color: #fff !important;
-  color: #000 !important;
-  border-color: #333 !important;
-}
-body :not([data-a11y-ui]):not([data-a11y-ui] *) a,
-body :not([data-a11y-ui]):not([data-a11y-ui] *) button,
-body :not([data-a11y-ui]):not([data-a11y-ui] *) [role="button"] {
-  color: #00008b !important;
-}
-/* Restore a11y UI */
-[data-a11y-ui] {
-  background-color: initial !important;
-  color: initial !important;
-  border-color: initial !important;
-}
-[data-a11y-ui] * {
-  background-color: initial !important;
-  color: initial !important;
-  border-color: initial !important;
-}
+      body, body * { background-color: #fff !important; color: #000 !important; border-color: #333 !important; }
+      a, button, [role="button"] { color: #00008b !important; }
     `);
   } else if (s.highContrast === "yellow") {
     rules.push(`
-/* Yellow-on-Black High Contrast — page */
-html { background-color: #000 !important; }
-body :not([data-a11y-ui]):not([data-a11y-ui] *) {
-  background-color: #000 !important;
-  color: #ffff00 !important;
-  border-color: #ffff00 !important;
-}
-body :not([data-a11y-ui]):not([data-a11y-ui] *) a,
-body :not([data-a11y-ui]):not([data-a11y-ui] *) button,
-body :not([data-a11y-ui]):not([data-a11y-ui] *) [role="button"] {
-  color: #00ffff !important;
-}
-body :not([data-a11y-ui]):not([data-a11y-ui] *) img {
-  filter: contrast(1.2) !important;
-}
-/* Restore a11y UI */
-[data-a11y-ui] {
-  background-color: initial !important;
-  color: initial !important;
-  border-color: initial !important;
-}
-[data-a11y-ui] * {
-  background-color: initial !important;
-  color: initial !important;
-  border-color: initial !important;
-}
+      body, body * { background-color: #000 !important; color: #ffff00 !important; border-color: #ffff00 !important; }
+      a, button, [role="button"] { color: #00ffff !important; }
+      img { filter: contrast(1.2) !important; }
     `);
   }
 
-  // ── Grayscale / Invert / Color-blind filters ─────────────────────────────────
-  // Applied to body (not html) so [data-a11y-ui] elements can be re-excluded.
-  // Both [data-a11y-ui] AND [data-a11y-ui] * need filter:none so children are
-  // also excluded (CSS filter is inherited through stacking contexts).
-  if (s.grayscale && s.invertColors) {
-    rules.push(`
-body { filter: grayscale(1) invert(1) !important; }
-[data-a11y-ui], [data-a11y-ui] * { filter: none !important; }
-    `);
-  } else if (s.grayscale) {
-    rules.push(`
-body { filter: grayscale(1) !important; }
-[data-a11y-ui], [data-a11y-ui] * { filter: none !important; }
-    `);
-  } else if (s.invertColors) {
-    rules.push(`
-body { filter: invert(1) hue-rotate(180deg) !important; }
-[data-a11y-ui], [data-a11y-ui] * { filter: none !important; }
-    `);
-  }
+  if (s.grayscale) rules.push(`html { filter: ${s.invertColors ? "grayscale(1) invert(1)" : "grayscale(1)"} !important; }`);
+  else if (s.invertColors) rules.push(`html { filter: invert(1) hue-rotate(180deg) !important; }`);
 
-  // Color blind SVG filters — exclude a11y UI
+  // Color blind SVG filters are injected separately; apply via class
   if (s.colorBlind !== "off") {
-    rules.push(`
-body { filter: url(#ubc-a11y-cb-${s.colorBlind}) !important; }
-[data-a11y-ui], [data-a11y-ui] * { filter: none !important; }
-    `);
+    rules.push(`html { filter: url(#ubc-a11y-cb-${s.colorBlind}) !important; }`);
   }
 
-  // ── Motor & Navigation ───────────────────────────────────────────────────────
+  // Motor & Navigation
   if (s.focusHighlight) {
-    rules.push(`
-*:focus, *:focus-visible {
-  outline: 3px solid #0057B8 !important;
-  outline-offset: 3px !important;
-  box-shadow: 0 0 0 6px rgba(0,87,184,0.25) !important;
-}
-    `);
+    rules.push(`*:focus, *:focus-visible { outline: 3px solid #0057B8 !important; outline-offset: 3px !important; box-shadow: 0 0 0 6px rgba(0,87,184,0.25) !important; }`);
   }
   if (s.largeCursor) {
-    rules.push(`
-*, *::before, *::after {
-  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 4l16 12-7 1 4 9-3 1-4-9-6 5z' fill='black' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E") 0 0, auto !important;
-}
-    `);
+    rules.push(`*, *::before, *::after { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8 4l16 12-7 1 4 9-3 1-4-9-6 5z' fill='black' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E") 0 0, auto !important; }`);
   }
   if (s.highlightLinks) {
-    rules.push(`
-a:not([data-a11y-ui] a) {
-  background-color: rgba(255,255,0,0.25) !important;
-  text-decoration: underline !important;
-  text-underline-offset: 3px !important;
-}
-    `);
+    rules.push(`a { background-color: rgba(255,255,0,0.25) !important; text-decoration: underline !important; text-underline-offset: 3px !important; }`);
   }
   if (s.highlightHeadings) {
-    rules.push(`
-h1:not([data-a11y-ui] h1),
-h2:not([data-a11y-ui] h2),
-h3:not([data-a11y-ui] h3),
-h4:not([data-a11y-ui] h4),
-h5:not([data-a11y-ui] h5),
-h6:not([data-a11y-ui] h6) {
-  border-left: 4px solid #0057B8 !important;
-  padding-left: 0.5em !important;
-}
-    `);
+    rules.push(`h1,h2,h3,h4,h5,h6 { border-left: 4px solid #0057B8 !important; padding-left: 0.5em !important; }`);
   }
 
-  // ── Cognitive & Reading ──────────────────────────────────────────────────────
+  // Cognitive & Reading
   if (s.dyslexiaFont) {
-    rules.push(`
-body :not([data-a11y-ui]):not([data-a11y-ui] *) {
-  font-family: 'Lexend', 'Comic Sans MS', cursive !important;
-  word-spacing: 0.12em !important;
-}
-    `);
+    rules.push(`body, body * { font-family: 'Lexend', 'Comic Sans MS', cursive !important; word-spacing: 0.12em !important; }`);
   }
   if (s.reduceMotion) {
-    rules.push(`
-*, *::before, *::after {
-  animation-duration: 0.001ms !important;
-  animation-iteration-count: 1 !important;
-  transition-duration: 0.001ms !important;
-  scroll-behavior: auto !important;
-}
-    `);
+    rules.push(`*, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }`);
   }
   // readingGuide and readingMask are handled by JS event listeners, not CSS
 
@@ -423,7 +274,6 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
     if (!readingGuideRef.current) {
       const el = document.createElement("div");
       el.id = "ubc-reading-guide";
-      el.setAttribute("data-a11y-ui", "true");
       el.style.cssText = "position:fixed;left:0;right:0;height:2px;background:rgba(0,87,184,0.5);pointer-events:none;z-index:99999;top:50%;transition:top 0.05s linear;";
       document.body.appendChild(el);
       readingGuideRef.current = el;
@@ -445,7 +295,6 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
     if (!readingMaskRef.current) {
       const el = document.createElement("div");
       el.id = "ubc-reading-mask";
-      el.setAttribute("data-a11y-ui", "true");
       el.style.cssText = "position:fixed;inset:0;pointer-events:none;z-index:99998;";
       document.body.appendChild(el);
       readingMaskRef.current = el;
@@ -492,11 +341,11 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
   const isModified = JSON.stringify(state) !== JSON.stringify(DEFAULT_STATE);
   const fontPct = Math.round(state.fontSize * 100);
 
-  const contrastOptions: { value: A11yState["highContrast"]; label: string; color: string; textColor: string }[] = [
-    { value: "off",    label: "Default",         color: "bg-[#1a1a1a] border-white/20",   textColor: "text-white" },
-    { value: "dark",   label: "Dark HC",          color: "bg-black border-white/60",       textColor: "text-white" },
-    { value: "light",  label: "Light HC",         color: "bg-white border-black/40",       textColor: "text-black" },
-    { value: "yellow", label: "Yellow on Black",  color: "bg-yellow-400 border-yellow-600", textColor: "text-black" },
+  const contrastOptions: { value: A11yState["highContrast"]; label: string; color: string }[] = [
+    { value: "off",    label: "Default",       color: "bg-white/10 border-white/20" },
+    { value: "dark",   label: "Dark HC",        color: "bg-black border-white/40" },
+    { value: "light",  label: "Light HC",       color: "bg-white border-black/30" },
+    { value: "yellow", label: "Yellow on Black", color: "bg-yellow-400 border-yellow-600" },
   ];
 
   const cbOptions: { value: A11yState["colorBlind"]; label: string }[] = [
@@ -515,42 +364,23 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.92, y: 8 }}
       transition={{ type: "spring", stiffness: 320, damping: 28 }}
-      data-a11y-ui="true"
-      className="fixed right-6 z-[49] w-80 rounded-2xl shadow-2xl shadow-black/60 flex flex-col"
-      style={{
-        bottom: bottomPx !== undefined ? `${bottomPx}px` : undefined,
-        maxHeight: "80vh",
-        // Explicit inline styles guarantee these are never overridden by high-contrast CSS
-        backgroundColor: "#111111",
-        border: "1px solid rgba(0,87,184,0.4)",
-        color: "#ffffff",
-      }}
+      className="fixed right-6 z-[49] w-80 bg-[#111111] border border-[#0057B8]/40 rounded-2xl shadow-2xl shadow-black/60 flex flex-col"
+      style={{ bottom: bottomPx !== undefined ? `${bottomPx}px` : undefined, maxHeight: "80vh" }}
     >
       {/* Header */}
-      <div
-        className="flex items-center justify-between px-4 py-3 border-b rounded-t-2xl shrink-0"
-        style={{ backgroundColor: "#0d0d0d", borderColor: "rgba(255,255,255,0.08)" }}
-      >
+      <div className="flex items-center justify-between px-4 py-3 border-b border-white/8 bg-[#0d0d0d] rounded-t-2xl shrink-0">
         <div className="flex items-center gap-2">
-          <Accessibility size={16} style={{ color: "#4da6ff" }} aria-hidden="true" />
-          <span style={{ color: "#ffffff" }} className="font-semibold text-sm">Accessibility</span>
-          {isModified && <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "#4da6ff" }} aria-label="Settings active" />}
+          <Accessibility size={16} className="text-[#4da6ff]" aria-hidden="true" />
+          <span className="text-white font-semibold text-sm">Accessibility</span>
+          {isModified && <span className="w-2 h-2 rounded-full bg-[#4da6ff]" aria-label="Settings active" />}
         </div>
-        <button
-          onClick={onClose}
-          aria-label="Close accessibility panel"
-          className="p-1.5 rounded-lg transition-colors hover:bg-white/10"
-          style={{ color: "rgba(255,255,255,0.4)" }}
-        >
+        <button onClick={onClose} aria-label="Close accessibility panel" className="p-1.5 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors">
           <X size={14} aria-hidden="true" />
         </button>
       </div>
 
       {/* Scrollable controls */}
-      <div
-        className="overflow-y-auto flex-1 p-3 space-y-2.5"
-        style={{ scrollbarWidth: "thin", scrollbarColor: "#333 transparent" }}
-      >
+      <div className="overflow-y-auto flex-1 p-3 space-y-2.5" style={{ scrollbarWidth: "thin", scrollbarColor: "#333 transparent" }}>
 
         {/* ── Vision ── */}
         <Section title="Vision" icon={<Eye size={13} />}>
@@ -626,12 +456,12 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
           <div>
             <p className="text-white/40 text-[10px] font-medium mb-1.5">High Contrast Mode</p>
             <div className="grid grid-cols-2 gap-1.5">
-              {contrastOptions.map(({ value, label, color, textColor }) => (
+              {contrastOptions.map(({ value, label, color }) => (
                 <button
                   key={value}
                   onClick={() => update({ highContrast: value })}
                   aria-pressed={state.highContrast === value}
-                  className={`py-1.5 px-2 rounded-lg text-xs border font-medium transition-all ${state.highContrast === value ? "ring-2 ring-[#4da6ff] ring-offset-1 ring-offset-[#111]" : "opacity-70 hover:opacity-100"} ${color} ${textColor}`}
+                  className={`py-1.5 px-2 rounded-lg text-xs border transition-all ${state.highContrast === value ? "ring-2 ring-[#0057B8] ring-offset-1 ring-offset-[#111]" : "opacity-70 hover:opacity-100"} ${color} ${value === "light" ? "text-black" : "text-white"}`}
                 >
                   {label}
                 </button>
@@ -688,13 +518,8 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
         )}
       </div>
 
-      <div
-        className="px-4 py-2.5 border-t shrink-0"
-        style={{ borderColor: "rgba(255,255,255,0.08)" }}
-      >
-        <p className="text-[10px] text-center leading-relaxed" style={{ color: "rgba(255,255,255,0.25)" }}>
-          Settings are saved in your browser and apply across all pages.
-        </p>
+      <div className="px-4 py-2.5 border-t border-white/8 shrink-0">
+        <p className="text-white/25 text-[10px] text-center leading-relaxed">Settings are saved in your browser and apply across all pages.</p>
       </div>
     </motion.div>
   );

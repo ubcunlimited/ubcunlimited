@@ -1,124 +1,108 @@
-/**
- * RecaptchaBadge — Custom reCAPTCHA v3 disclosure slide-out
- *
- * Matches terminalbroker.com implementation:
- * - Blue vertical "reCAPTCHA" tab anchored to bottom-left
- * - Hover to slide the disclosure panel out to the right
- * - Native .grecaptcha-badge is hidden via CSS in index.css
- *
- * Only renders on production domains (ubcunlimited.com) and
- * Manus preview domains (*.manus.space, *.manus.computer) for testing.
- *
- * data-a11y-ui="true" ensures this element is excluded from
- * AccessibilityPanel's high-contrast and filter overrides.
- */
+import { useState, useRef } from "react";
 
-import { useState } from "react";
-
-const PRODUCTION_HOSTS = [
-  "ubcunlimited.com",
-  "www.ubcunlimited.com",
-];
-
-function isAllowedHost(): boolean {
-  const host = window.location.hostname;
-  return (
-    PRODUCTION_HOSTS.includes(host) ||
-    host.endsWith(".manus.space") ||
-    host.endsWith(".manus.computer") ||
-    host === "localhost"
-  );
-}
+const PANEL_WIDTH = 256;
+const TAB_WIDTH   = 20;
 
 export default function RecaptchaBadge() {
   const [open, setOpen] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  if (!isAllowedHost()) return null;
+  const show = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    setOpen(true);
+  };
+
+  const hide = () => {
+    timerRef.current = setTimeout(() => setOpen(false), 300);
+  };
+
+  const translateX = open ? 0 : -(PANEL_WIDTH - TAB_WIDTH);
 
   return (
     <div
       data-a11y-ui="true"
+      onMouseEnter={show}
+      onMouseLeave={hide}
+      onFocusCapture={show}
+      onBlurCapture={hide}
       style={{
         position: "fixed",
         bottom: "14px",
-        left: 0,
+        left: "0",
         zIndex: 9999,
         display: "flex",
         alignItems: "flex-end",
+        transform: `translateX(${translateX}px)`,
+        transition: "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+        willChange: "transform",
+        color: "#4a4a4a",
+        backgroundColor: "transparent",
+        filter: "none",
       }}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      aria-label="reCAPTCHA disclosure"
+      role="complementary"
     >
-      {/* Disclosure panel — slides out to the right */}
       <div
         style={{
-          width: "218px",
-          background: "#f9f9f9",
+          width: `${PANEL_WIDTH}px`,
+          backgroundColor: "#f9f9f9",
           border: "1px solid #d3d3d3",
-          borderRadius: "2px",
+          borderRadius: "0 4px 4px 0",
           padding: "10px 12px",
-          fontSize: "11px",
-          color: "#555",
-          lineHeight: "1.4",
-          transform: open ? "translateX(0)" : "translateX(-218px)",
-          transition: "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+          boxShadow: "2px 2px 6px rgba(0,0,0,0.15)",
+          fontSize: "10px",
+          lineHeight: "1.5",
+          color: "#4a4a4a",
           flexShrink: 0,
         }}
       >
-        {/* reCAPTCHA logo row */}
-        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-          {/* Shield icon matching Google reCAPTCHA brand */}
-          <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M32 4L8 14v18c0 14.5 10.2 28 24 32 13.8-4 24-17.5 24-32V14L32 4z" fill="#4A90D9"/>
-            <path d="M32 4L8 14v18c0 14.5 10.2 28 24 32V4z" fill="#2C6DB5"/>
-            <path d="M20 30l8 8 16-16" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+        <div style={{ display: "flex", alignItems: "center", marginBottom: "6px", gap: "6px" }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="28" height="28" aria-hidden="true" style={{ flexShrink: 0 }}>
+            <circle cx="32" cy="32" r="32" fill="#4A90D9" />
+            <path d="M32 14a18 18 0 1 0 18 18A18 18 0 0 0 32 14zm0 4a14 14 0 1 1-14 14A14 14 0 0 1 32 18z" fill="#fff" />
+            <path d="M32 22a10 10 0 1 0 10 10A10 10 0 0 0 32 22z" fill="#4A90D9" />
+            <path d="M32 26a6 6 0 1 1-6 6 6 6 0 0 1 6-6z" fill="#fff" />
           </svg>
-          <div>
-            <div style={{ fontWeight: 700, fontSize: "12px", color: "#333" }}>reCAPTCHA</div>
-            <div style={{ fontSize: "10px", color: "#777" }}>protected by Google</div>
-          </div>
+          <span style={{ fontWeight: 700, fontSize: "11px", color: "#333" }}>reCAPTCHA</span>
         </div>
-        <div style={{ fontSize: "10px", color: "#888", lineHeight: "1.5" }}>
-          <a
-            href="https://policies.google.com/privacy"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#4A90D9", textDecoration: "none" }}
-          >
-            Privacy Policy
-          </a>
-          {" - "}
-          <a
-            href="https://policies.google.com/terms"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#4A90D9", textDecoration: "none" }}
-          >
-            Terms of Service
-          </a>
-        </div>
+        <p style={{ margin: 0, color: "#555" }}>
+          This site is protected by reCAPTCHA and the Google{" "}
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style={{ color: "#1a73e8", textDecoration: "underline" }}>Privacy Policy</a>{" "}
+          and{" "}
+          <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" style={{ color: "#1a73e8", textDecoration: "underline" }}>Terms of Service</a>{" "}
+          apply.
+        </p>
       </div>
-
-      {/* Vertical tab — always visible */}
       <div
+        aria-hidden="true"
         style={{
-          writingMode: "vertical-rl",
-          textOrientation: "mixed",
-          transform: "rotate(180deg)",
-          background: "#4A90D9",
-          color: "white",
-          fontSize: "11px",
-          fontWeight: 600,
-          padding: "8px 5px",
-          borderRadius: "0 2px 2px 0",
-          cursor: "default",
-          userSelect: "none",
-          letterSpacing: "0.5px",
+          width: `${TAB_WIDTH}px`,
+          height: "80px",
+          backgroundColor: "#4A90D9",
+          borderRadius: "0 4px 4px 0",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
           flexShrink: 0,
+          boxShadow: "2px 2px 6px rgba(0,0,0,0.2)",
         }}
       >
-        reCAPTCHA
+        <span
+          style={{
+            writingMode: "vertical-rl",
+            textOrientation: "mixed",
+            transform: "rotate(180deg)",
+            fontSize: "9px",
+            fontWeight: 700,
+            letterSpacing: "0.05em",
+            color: "#fff",
+            userSelect: "none",
+            whiteSpace: "nowrap",
+          }}
+        >
+          reCAPTCHA
+        </span>
       </div>
     </div>
   );
