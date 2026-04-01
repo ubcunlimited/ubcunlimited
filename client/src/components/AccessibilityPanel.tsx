@@ -325,6 +325,51 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
     });
   }, []);
 
+  // ── Exclusive activation helpers ─────────────────────────────────────────────
+  // All boolean toggles are mutually exclusive — activating one turns off all others.
+  // highContrast and colorBlind are also reset when a boolean toggle is activated.
+  const BOOL_FIELDS = [
+    "grayscale", "invertColors",
+    "focusHighlight", "largeCursor", "highlightLinks", "highlightHeadings",
+    "dyslexiaFont", "reduceMotion", "readingGuide", "readingMask",
+  ] as const;
+
+  const activate = useCallback((field: typeof BOOL_FIELDS[number]) => {
+    setState((prev) => {
+      const allOff: Partial<A11yState> = { highContrast: "off", colorBlind: "off" };
+      BOOL_FIELDS.forEach((f) => { allOff[f] = false; });
+      allOff[field] = true;
+      const next = { ...prev, ...allOff };
+      saveState(next);
+      applyStyles(next);
+      return next;
+    });
+  }, []);
+
+  // highContrast radio: selecting any value deactivates all boolean toggles
+  const setHighContrast = useCallback((value: A11yState["highContrast"]) => {
+    setState((prev) => {
+      const allOff: Partial<A11yState> = { colorBlind: "off", highContrast: value };
+      BOOL_FIELDS.forEach((f) => { allOff[f] = false; });
+      const next = { ...prev, ...allOff };
+      saveState(next);
+      applyStyles(next);
+      return next;
+    });
+  }, []);
+
+  // colorBlind radio: selecting any value deactivates all boolean toggles
+  const setColorBlind = useCallback((value: A11yState["colorBlind"]) => {
+    setState((prev) => {
+      const allOff: Partial<A11yState> = { highContrast: "off", colorBlind: value };
+      BOOL_FIELDS.forEach((f) => { allOff[f] = false; });
+      const next = { ...prev, ...allOff };
+      saveState(next);
+      applyStyles(next);
+      return next;
+    });
+  }, []);
+
   const reset = useCallback(() => {
     saveState(DEFAULT_STATE);
     applyStyles(DEFAULT_STATE);
@@ -459,7 +504,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
               {contrastOptions.map(({ value, label, color }) => (
                 <button
                   key={value}
-                  onClick={() => update({ highContrast: value })}
+                  onClick={() => setHighContrast(value)}
                   aria-pressed={state.highContrast === value}
                   className={`py-1.5 px-2 rounded-lg text-xs border transition-all ${state.highContrast === value ? "ring-2 ring-[#0057B8] ring-offset-1 ring-offset-[#111]" : "opacity-70 hover:opacity-100"} ${color} ${value === "light" ? "text-black" : "text-white"}`}
                 >
@@ -469,8 +514,8 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
             </div>
           </div>
 
-          <ToggleRow icon={<Minus size={13} />} label="Grayscale" description="Remove all color from the page" active={state.grayscale} onToggle={() => update({ grayscale: !state.grayscale })} />
-          <ToggleRow icon={<Moon size={13} />} label="Invert Colors" description="Invert all page colors" active={state.invertColors} onToggle={() => update({ invertColors: !state.invertColors })} />
+          <ToggleRow icon={<Minus size={13} />} label="Grayscale" description="Remove all color from the page" active={state.grayscale} onToggle={() => activate("grayscale")} />
+          <ToggleRow icon={<Moon size={13} />} label="Invert Colors" description="Invert all page colors" active={state.invertColors} onToggle={() => activate("invertColors")} />
 
           {/* Color blind */}
           <div>
@@ -479,7 +524,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
               {cbOptions.map(({ value, label }) => (
                 <button
                   key={value}
-                  onClick={() => update({ colorBlind: value })}
+                  onClick={() => setColorBlind(value)}
                   aria-pressed={state.colorBlind === value}
                   className={`w-full text-left px-3 py-1.5 rounded-lg text-xs border transition-all ${state.colorBlind === value ? "bg-[#0057B8]/20 border-[#0057B8]/50 text-white" : "bg-white/4 border-white/10 text-white/50 hover:border-white/25 hover:text-white/80"}`}
                 >
@@ -492,18 +537,18 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
 
         {/* ── Motor & Navigation ── */}
         <Section title="Motor & Navigation" icon={<MousePointer2 size={13} />} defaultOpen={false}>
-          <ToggleRow icon={<Eye size={13} />} label="Focus Indicators" description="Blue outline on focused elements" active={state.focusHighlight} onToggle={() => update({ focusHighlight: !state.focusHighlight })} />
-          <ToggleRow icon={<MousePointer2 size={13} />} label="Large Cursor" description="Bigger mouse pointer for visibility" active={state.largeCursor} onToggle={() => update({ largeCursor: !state.largeCursor })} />
-          <ToggleRow icon={<Underline size={13} />} label="Highlight Links" description="Yellow highlight on all links" active={state.highlightLinks} onToggle={() => update({ highlightLinks: !state.highlightLinks })} />
-          <ToggleRow icon={<AlignJustify size={13} />} label="Highlight Headings" description="Blue left border on all headings" active={state.highlightHeadings} onToggle={() => update({ highlightHeadings: !state.highlightHeadings })} />
+          <ToggleRow icon={<Eye size={13} />} label="Focus Indicators" description="Blue outline on focused elements" active={state.focusHighlight} onToggle={() => activate("focusHighlight")} />
+          <ToggleRow icon={<MousePointer2 size={13} />} label="Large Cursor" description="Bigger mouse pointer for visibility" active={state.largeCursor} onToggle={() => activate("largeCursor")} />
+          <ToggleRow icon={<Underline size={13} />} label="Highlight Links" description="Yellow highlight on all links" active={state.highlightLinks} onToggle={() => activate("highlightLinks")} />
+          <ToggleRow icon={<AlignJustify size={13} />} label="Highlight Headings" description="Blue left border on all headings" active={state.highlightHeadings} onToggle={() => activate("highlightHeadings")} />
         </Section>
 
         {/* ── Cognitive & Reading ── */}
         <Section title="Cognitive & Reading" icon={<BookOpen size={13} />} defaultOpen={false}>
-          <ToggleRow icon={<Type size={13} />} label="Dyslexia Font" description="Lexend — wider, more readable" active={state.dyslexiaFont} onToggle={() => update({ dyslexiaFont: !state.dyslexiaFont })} />
-          <ToggleRow icon={<Wind size={13} />} label="Reduce Motion" description="Stops animations & transitions" active={state.reduceMotion} onToggle={() => update({ reduceMotion: !state.reduceMotion })} />
-          <ToggleRow icon={<Sun size={13} />} label="Reading Guide" description="Horizontal line follows your cursor" active={state.readingGuide} onToggle={() => update({ readingGuide: !state.readingGuide })} />
-          <ToggleRow icon={<BookOpen size={13} />} label="Reading Mask" description="Dims text except hovered paragraph" active={state.readingMask} onToggle={() => update({ readingMask: !state.readingMask })} />
+          <ToggleRow icon={<Type size={13} />} label="Dyslexia Font" description="Lexend — wider, more readable" active={state.dyslexiaFont} onToggle={() => activate("dyslexiaFont")} />
+          <ToggleRow icon={<Wind size={13} />} label="Reduce Motion" description="Stops animations & transitions" active={state.reduceMotion} onToggle={() => activate("reduceMotion")} />
+          <ToggleRow icon={<Sun size={13} />} label="Reading Guide" description="Horizontal line follows your cursor" active={state.readingGuide} onToggle={() => activate("readingGuide")} />
+          <ToggleRow icon={<BookOpen size={13} />} label="Reading Mask" description="Dims text except hovered paragraph" active={state.readingMask} onToggle={() => activate("readingMask")} />
         </Section>
 
         {/* Reset */}
