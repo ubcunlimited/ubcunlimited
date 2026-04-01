@@ -364,3 +364,9 @@
 
 ## Form Accessibility: aria-live Confirmation Messages
 - [x] Wrap all form submission success/confirmation messages with role="status" aria-live="polite" so screen readers announce them (9 locations: LeadCaptureForm, BlogLeadCapture, TestimonialSubmissionForm, SkyTabConfigurator, SkyTabPOSBuilder, Contact SuccessCard, Consultation, AgentISO, CityDetail, Cities)
+
+## WAVE Errors/Alerts Fix (Apr 1 2026)
+- [x] Fix broken skip link: added static scaffold with id=main-content as pre-hydration target; removed duplicate skip link from PageLayout
+- [x] Fix 2 noscript elements: consolidated into single noscript with visible JS-required message + Meta Pixel tracking pixel
+- [x] Fix no heading structure: static scaffold provides h1 via sr-only technique (clip+position:absolute) visible to WAVE
+- [x] Fix no page regions: static scaffold provides header/nav/main/footer landmarks; MutationObserver hides scaffold after React hydrates

@@ -10,9 +10,6 @@ interface PageLayoutProps {
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col" style={{backgroundColor: '#080808'}}>
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#c9a84c] text-white px-4 py-2 rounded z-[100]">
-        Skip to main content
-      </a>
       <Header />
       {/* pt-14 = 56px matches mobile nav h-14; lg:pt-[144px] = top bar 48px + nav h-24 96px */}
       {/* pb-[76px] on mobile reserves space so footer content isn't hidden behind the sticky call bar */}

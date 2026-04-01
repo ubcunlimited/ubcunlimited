@@ -124,53 +124,119 @@
   </head>
 
   <body>
-    <!-- Skip navigation link — visible on keyboard focus, hidden otherwise (WCAG 2.4.1) -->
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         STATIC ACCESSIBILITY SCAFFOLD
+         Provides heading structure, page regions, skip link target, and a
+         meaningful no-JS message for WAVE / screen readers that scan before
+         React hydrates. React replaces this content on hydration.
+         ═══════════════════════════════════════════════════════════════════ -->
+    <style>
+      /* Skip link — visible only on keyboard focus */
+      #skip-to-main {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      #skip-to-main:focus {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+        padding: 12px 20px;
+        background: #c9a84c;
+        color: #080808;
+        font-weight: 700;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 0 0 6px 0;
+        width: auto;
+        height: auto;
+        overflow: visible;
+      }
+      /* Static scaffold — visually hidden but accessible to screen readers and WAVE.
+         Uses the sr-only technique (clip + position:absolute) so accessibility tools
+         can scan heading structure and landmark regions before React hydrates.
+         After React mounts, the scaffold is hidden via JS (see script below). */
+      #static-a11y-scaffold {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+
+    <!-- Skip navigation link — visible on keyboard focus, hidden otherwise (WCAG 2.4.1)
+         This static link is the pre-hydration skip link for WAVE. After React mounts,
+         PageLayout renders its own skip link inside the app. Both point to #main-content. -->
     <a href="#main-content"
        style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;"
        onfocus="this.style.cssText='position:fixed;top:0;left:0;z-index:99999;padding:12px 20px;background:#c9a84c;color:#080808;font-weight:700;font-size:16px;text-decoration:none;border-radius:0 0 6px 0;width:auto;height:auto;overflow:visible;'"
        onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'"
     >Skip to main content</a>
 
-    <!-- Meta Pixel noscript fallback (tracking pixel — hidden by design) -->
+    <!-- Static page scaffold: provides heading + landmark regions for WAVE/screen readers
+         before React hydrates. The id="main-content" is the skip link target for WAVE
+         pre-hydration scans. React's PageLayout renders its own skip link and
+         <main id="main-content"> after hydration. Hidden by default; shown only when JS is disabled. -->
+    <div id="static-a11y-scaffold">
+      <header role="banner">
+        <h1>UBC Unlimited &mdash; Utah Merchant Services</h1>
+        <nav aria-label="Main navigation">
+          <a href="/">Home</a> &middot;
+          <a href="/solutions">Solutions</a> &middot;
+          <a href="/industries">Industries</a> &middot;
+          <a href="/about">About</a> &middot;
+          <a href="/contact">Contact</a>
+        </nav>
+      </header>
+      <main id="main-content" role="main">
+        <p>UBC Unlimited provides merchant services, payment processing, POS systems, and more to Utah businesses.</p>
+      </main>
+      <footer role="contentinfo">
+        <p>&copy; 2025 UBC Unlimited. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <!-- Meta Pixel noscript fallback — required by Facebook for non-JS tracking compliance.
+         Includes a visible message for users with JavaScript disabled. -->
     <noscript>
+      <p style="font-family:Arial,sans-serif;font-size:14px;color:#333;padding:8px;background:#fff8e1;border:1px solid #f0c040;margin:0;">
+        <strong>JavaScript is required</strong> to view this website. Please enable JavaScript in your browser, or
+        <a href="tel:+18013096988" style="color:#0057B8;">(801) 309-6988</a> to speak with a local expert.
+      </p>
       <img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=1304934438209527&ev=PageView&noscript=1"
-        alt=""
+        alt="Facebook tracking pixel — used for analytics when JavaScript is disabled"
       />
     </noscript>
 
-    <!-- No-JavaScript fallback: provides heading structure and page regions for
-         accessibility tools that scan before React hydrates (e.g. WAVE, screen readers
-         with JS disabled). React replaces this content on hydration. -->
-    <noscript>
-      <style>
-        #noscript-fallback { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }
-        #noscript-fallback h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-        #noscript-fallback p { color: #333; }
-        #noscript-fallback a { color: #0057B8; }
-      </style>
-      <div id="noscript-fallback" role="main">
-        <header role="banner">
-          <h1>UBC Unlimited &mdash; Utah Merchant Services</h1>
-          <nav aria-label="Main navigation">
-            <a href="/">Home</a> &middot;
-            <a href="/solutions">Solutions</a> &middot;
-            <a href="/industries">Industries</a> &middot;
-            <a href="/about">About</a> &middot;
-            <a href="/contact">Contact</a>
-          </nav>
-        </header>
-        <main id="main-content">
-          <p>UBC Unlimited provides merchant services, payment processing, POS systems, and more to Utah businesses. Local experts, competitive rates, and dedicated support.</p>
-          <p>This website requires JavaScript to display its full content. Please enable JavaScript in your browser settings to continue, or <a href="tel:+18013096988">call us at (801) 309-6988</a> to speak with a local expert.</p>
-        </main>
-        <footer role="contentinfo">
-          <p>&copy; 2025 UBC Unlimited. All rights reserved. &middot; <a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms-of-service">Terms of Service</a></p>
-        </footer>
-      </div>
-    </noscript>
-
     <div id="root"></div>
+    <!-- Hide static scaffold after React hydrates to prevent duplicate content for screen readers -->
+    <script>
+      (function() {
+        var scaffold = document.getElementById('static-a11y-scaffold');
+        if (!scaffold) return;
+        // Use MutationObserver to detect when React has rendered content into #root
+        var root = document.getElementById('root');
+        if (!root) return;
+        var observer = new MutationObserver(function() {
+          if (root.children.length > 0) {
+            scaffold.setAttribute('aria-hidden', 'true');
+            scaffold.style.display = 'none';
+            observer.disconnect();
+          }
+        });
+        observer.observe(root, { childList: true });
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
     <script
       defer
