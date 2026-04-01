@@ -188,6 +188,7 @@ export default function FloatingLauncher() {
           aria-label={activePanel === "a11y" ? "Close accessibility options" : "Open accessibility options"}
           aria-expanded={activePanel === "a11y"}
           data-a11y-ui="true"
+          className="a11y-mobile-btn"
           animate={mobileA11yControls}
           style={{
             position: "fixed",

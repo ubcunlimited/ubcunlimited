@@ -358,6 +358,25 @@
   }
 }
 
+/* ── Mobile accessibility button — circular focus ring ── */
+/* Overrides the global :focus-visible rule (which uses border-radius: 4px)
+   to produce a circular ring that matches the button's 50% border-radius.
+   White ring on a blue button provides 4.5:1+ contrast (WCAG AA). */
+.a11y-mobile-btn:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  border-radius: 50%;
+  /* Blue halo ensures the white ring is visible against light page backgrounds */
+  box-shadow: 0 0 0 6px rgba(0, 87, 184, 0.55), 0 4px 16px rgba(0, 87, 184, 0.5);
+}
+/* Forced-colors (Windows High Contrast) override */
+@media (forced-colors: active) {
+  .a11y-mobile-btn:focus-visible {
+    outline: 3px solid Highlight;
+    box-shadow: none;
+  }
+}
+
 /* ── reCAPTCHA v3 badge — hidden; replaced by custom RecaptchaBadge component ── */
 .grecaptcha-badge {
   visibility: hidden !important;

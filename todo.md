@@ -343,3 +343,4 @@
 - [x] Add first-visit tooltip label on mobile accessibility button
 - [x] Add max-height 80vh + overflow-y auto to AccessibilityPanel for small screens (already implemented)
 - [x] Add subtle first-load animation to accessibility icon button (desktop + mobile)
+- [x] Add keyboard focus ring to mobile accessibility button (:focus-visible)
