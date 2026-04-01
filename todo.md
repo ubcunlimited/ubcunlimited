@@ -338,3 +338,5 @@
 - [x] Redesign RecaptchaBadge: full size, reversed layout (blue tab left, panel right), fully opaque, slides from left
 - [x] Add ADA accessibility compliance slide-out widget on bottom-right
 - [x] Revert to FloatingLauncher chat bubble stack (remove standalone AccessibilitySlideOut tab)
+- [x] Fix RecaptchaBadge visibility on dev/preview domains (add manus.computer to allowed hosts)
+- [x] Fix FloatingLauncher z-index so it appears above mobile bottom nav bar

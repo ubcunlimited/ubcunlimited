@@ -23,7 +23,8 @@ const PRODUCTION_HOSTS = [
 
 function isProduction() {
   if (typeof window === "undefined") return false;
-  return PRODUCTION_HOSTS.includes(window.location.hostname);
+  const h = window.location.hostname;
+  return PRODUCTION_HOSTS.includes(h) || h.endsWith(".manus.computer") || h === "localhost";
 }
 
 const TAB_WIDTH = 28;   // px — blue toggle tab
