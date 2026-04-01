@@ -10,6 +10,7 @@ import { installPhoneClickTracker } from "@/lib/pixel";
 import Home from "./pages/Home";
 import CookieConsent from "./components/CookieConsent";
 import FloatingLauncher from "./components/FloatingLauncher";
+import RecaptchaBadge from "./components/RecaptchaBadge";
 
 // ── Lazy-loaded pages (split into separate chunks) ───────────────────────────
 // Core
@@ -316,6 +317,7 @@ function App() {
           <Router />
           <CookieConsent />
           <FloatingLauncher />
+          <RecaptchaBadge />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

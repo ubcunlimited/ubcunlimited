@@ -358,10 +358,9 @@
   }
 }
 
-/* ── reCAPTCHA v3 badge — bottom-left, half size on production only ──────── */
+/* ── reCAPTCHA v3 badge — hidden on all domains; replaced by RecaptchaBadge component ── */
 .grecaptcha-badge {
-  left: 14px !important;
-  right: auto !important;
-  transform: scale(0.5) !important;
-  transform-origin: bottom left !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
