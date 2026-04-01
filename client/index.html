@@ -124,10 +124,52 @@
   </head>
 
   <body>
-    <!-- Meta Pixel noscript fallback -->
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1304934438209527&ev=PageView&noscript=1"
-    /></noscript>
+    <!-- Skip navigation link — visible on keyboard focus, hidden otherwise (WCAG 2.4.1) -->
+    <a href="#main-content"
+       style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;"
+       onfocus="this.style.cssText='position:fixed;top:0;left:0;z-index:99999;padding:12px 20px;background:#c9a84c;color:#080808;font-weight:700;font-size:16px;text-decoration:none;border-radius:0 0 6px 0;width:auto;height:auto;overflow:visible;'"
+       onblur="this.style.cssText='position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;'"
+    >Skip to main content</a>
+
+    <!-- Meta Pixel noscript fallback (tracking pixel — hidden by design) -->
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1304934438209527&ev=PageView&noscript=1"
+        alt=""
+      />
+    </noscript>
+
+    <!-- No-JavaScript fallback: provides heading structure and page regions for
+         accessibility tools that scan before React hydrates (e.g. WAVE, screen readers
+         with JS disabled). React replaces this content on hydration. -->
+    <noscript>
+      <style>
+        #noscript-fallback { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }
+        #noscript-fallback h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        #noscript-fallback p { color: #333; }
+        #noscript-fallback a { color: #0057B8; }
+      </style>
+      <div id="noscript-fallback" role="main">
+        <header role="banner">
+          <h1>UBC Unlimited &mdash; Utah Merchant Services</h1>
+          <nav aria-label="Main navigation">
+            <a href="/">Home</a> &middot;
+            <a href="/solutions">Solutions</a> &middot;
+            <a href="/industries">Industries</a> &middot;
+            <a href="/about">About</a> &middot;
+            <a href="/contact">Contact</a>
+          </nav>
+        </header>
+        <main id="main-content">
+          <p>UBC Unlimited provides merchant services, payment processing, POS systems, and more to Utah businesses. Local experts, competitive rates, and dedicated support.</p>
+          <p>This website requires JavaScript to display its full content. Please enable JavaScript in your browser settings to continue, or <a href="tel:+18013096988">call us at (801) 309-6988</a> to speak with a local expert.</p>
+        </main>
+        <footer role="contentinfo">
+          <p>&copy; 2025 UBC Unlimited. All rights reserved. &middot; <a href="/privacy-policy">Privacy Policy</a> &middot; <a href="/terms-of-service">Terms of Service</a></p>
+        </footer>
+      </div>
+    </noscript>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script

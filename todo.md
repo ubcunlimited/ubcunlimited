@@ -344,3 +344,8 @@
 - [x] Add max-height 80vh + overflow-y auto to AccessibilityPanel for small screens (already implemented)
 - [x] Add subtle first-load animation to accessibility icon button (desktop + mobile)
 - [x] Add keyboard focus ring to mobile accessibility button (:focus-visible)
+
+## WAVE Accessibility Alerts (Apr 2026)
+- [x] Fix: No heading structure — added static h1 in noscript fallback block in index.html
+- [x] Fix: No page regions — added static header/main/nav/footer in noscript fallback block; React landmarks already correct
+- [x] Fix: Noscript element — added second noscript block with visible h1, nav, main, footer, and JS-required message; added skip-to-main-content link
