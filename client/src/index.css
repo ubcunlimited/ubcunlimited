@@ -364,3 +364,22 @@
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* ── ADA Accessibility UI exclusion ─────────────────────────────────────────
+   Elements with data-a11y-ui="true" (AccessibilityPanel, FloatingLauncher,
+   RecaptchaBadge) must NEVER be affected by injected high-contrast or filter
+   overrides. These rules act as a static CSS safety net in addition to the
+   dynamic !important rules injected by AccessibilityPanel's buildCSS.
+   ─────────────────────────────────────────────────────────────────────────── */
+[data-a11y-ui] {
+  /* Preserve stacking context so filter:none on children works correctly */
+  isolation: isolate;
+}
+
+/* Ensure forced-colors (OS-level high contrast) does not override the panel */
+@media (forced-colors: active) {
+  [data-a11y-ui],
+  [data-a11y-ui] * {
+    forced-color-adjust: none;
+  }
+}

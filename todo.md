@@ -339,3 +339,15 @@
 - [x] Create custom reCAPTCHA slide-out badge matching terminalbroker.com (hover-activated)
 - [x] Add noindex meta to /recaptcha-docs page
 - [ ] Audit and fix base contrast ratios on key pages (WCAG AA 4.5:1 minimum)
+
+## ADA Compliance Re-Audit (Apr 2026)
+- [x] Rewrite AccessibilityPanel buildCSS: correct html/body selectors for high contrast, [data-a11y-ui] exclusions via :not() compound selectors
+- [x] Add explicit inline styles to AccessibilityPanel panel root to guarantee colors are never overridden by injected CSS
+- [x] Rewrite FloatingLauncher: all buttons use inline style props instead of Tailwind classes to guarantee visibility in every accessibility mode
+- [x] Add data-a11y-ui exclusion rules to index.css: isolation:isolate + forced-colors:none for OS-level high contrast
+- [x] Add Yellow-on-Black high contrast mode as fourth option
+- [x] Verified Dark HC: white text on black background, panel stays dark with white text
+- [x] Verified Light HC: black text on white background, panel stays dark with white text
+- [x] Verified Grayscale+Invert: page desaturated and inverted, floating button retains gold color
+- [x] Verified panel visibility in all modes: panel always shows dark background with white text
+- [x] Changed main FloatingLauncher trigger icon from MessageCircle to Accessibility (wheelchair symbol)
