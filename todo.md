@@ -336,3 +336,9 @@
 - [x] Fix reCAPTCHA slide-out badge: replaced native .grecaptcha-badge (hidden via CSS) with custom RecaptchaBadge component that collapses to tab-only by default and expands on hover/focus
 - [x] Accessibility panel: make options exclusive (radio-style) — selecting one closes/deactivates all others, no toggle-off on same option
 - [x] Fix ADA accessibility button visibility on mobile/responsive viewports
+
+## Mobile Accessibility UX Improvements
+- [x] Add first-visit tooltip label on mobile accessibility button (shows "Accessibility" for 2s on first visit)
+- [ ] Add max-height: 80vh + overflow-y: auto to AccessibilityPanel for small screen scroll support
+- [x] Add first-visit tooltip label on mobile accessibility button
+- [x] Add max-height 80vh + overflow-y auto to AccessibilityPanel for small screens (already implemented)

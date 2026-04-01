@@ -33,6 +33,20 @@ export default function FloatingLauncher() {
   const [activePanel, setActivePanel] = useState<ActivePanel>(null);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  // First-visit tooltip: show "Accessibility" label for 2.5s on first page load (mobile only)
+  const [showTooltip, setShowTooltip] = useState(false);
+  useEffect(() => {
+    const seen = localStorage.getItem("ubc-a11y-tooltip-seen");
+    if (!seen && window.innerWidth < 1024) {
+      // Delay 1.5s so the page has settled before the tooltip appears
+      const showTimer = setTimeout(() => setShowTooltip(true), 1500);
+      const hideTimer = setTimeout(() => {
+        setShowTooltip(false);
+        localStorage.setItem("ubc-a11y-tooltip-seen", "1");
+      }, 4000); // show for 2.5s (4000 - 1500)
+      return () => { clearTimeout(showTimer); clearTimeout(hideTimer); };
+    }
+  }, []);
 
   // Detect mobile breakpoint
   useEffect(() => {
@@ -140,6 +154,50 @@ export default function FloatingLauncher() {
             <Accessibility size={18} aria-hidden="true" />
           )}
         </button>
+
+        {/* First-visit tooltip label */}
+        <AnimatePresence>
+          {showTooltip && (
+            <motion.div
+              key="a11y-tooltip"
+              initial={{ opacity: 0, x: 8 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 8 }}
+              transition={{ duration: 0.25 }}
+              data-a11y-ui="true"
+              style={{
+                position: "fixed",
+                bottom: "82px",
+                right: "66px",
+                zIndex: 9901,
+                backgroundColor: "#0057B8",
+                color: "#ffffff",
+                fontSize: "12px",
+                fontWeight: 600,
+                letterSpacing: "0.03em",
+                padding: "5px 10px",
+                borderRadius: "6px",
+                whiteSpace: "nowrap",
+                pointerEvents: "none",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+              }}
+            >
+              Accessibility
+              {/* Arrow pointing right toward the button */}
+              <span style={{
+                position: "absolute",
+                right: "-6px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                width: 0,
+                height: 0,
+                borderTop: "5px solid transparent",
+                borderBottom: "5px solid transparent",
+                borderLeft: "6px solid #0057B8",
+              }} />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Accessibility panel — opens above the button */}
         <AnimatePresence>
