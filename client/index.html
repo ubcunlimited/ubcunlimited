@@ -120,19 +120,20 @@
         overflow: visible;
       }
 
-      /* Static accessibility scaffold — visually hidden but readable by WAVE and screen readers.
-         Provides heading structure and landmark regions before React hydrates.
-         Hidden via JS after React mounts (see MutationObserver script below). */
+      /* Static accessibility scaffold — provides heading structure and landmark regions
+         for WAVE and screen readers before React hydrates.
+         Uses opacity:0 + pointer-events:none so it is in the accessibility tree
+         (WAVE can detect it) but invisible and non-interactive to sighted users.
+         The MutationObserver below sets display:none after React mounts. */
       #static-a11y-scaffold {
         position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+        z-index: -1;
       }
     </style>
 
@@ -176,7 +177,7 @@
   </head>
 
   <body>
-    <!-- Skip navigation link (WCAG 2.4.1) -->
+    <!-- Skip navigation link — visible on keyboard focus, hidden otherwise (WCAG 2.4.1) -->
     <a id="skip-to-main" href="#main-content">Skip to main content</a>
 
     <!-- Static accessibility scaffold: heading structure and landmark regions for WAVE / screen
