@@ -391,3 +391,6 @@
 
 ## Screen Reader Landmark Improvements
 - [x] Add aria-label="Main content" to the main element in PageLayout.tsx
+
+## Critical Bug Fix (Apr 2 2026)
+- [x] Fix black screen on live site: removed manualChunks from vite.config.ts — Rollup's vendor splitting caused a TDZ (temporal dead zone) circular dependency error in vendor-C0Htrpzl.js that prevented React from mounting
