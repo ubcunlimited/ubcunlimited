@@ -40,7 +40,7 @@ export default function StatementReview() {
               <div key={s.step} className="bg-white rounded-xl p-5 border border-gray-100 text-center">
                 <div className="w-10 h-10 rounded-full bg-[#c9a84c]/10 text-[#c9a84c] font-bold text-lg flex items-center justify-center mx-auto mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>{s.step}</div>
                 <h3 className="font-bold text-[#080808] mb-1 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{s.title}</h3>
-                <p className="text-gray-500 text-xs">{s.desc}</p>
+                <p className="text-gray-600 text-xs">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -93,19 +93,19 @@ export default function StatementReview() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-[#080808] mb-1.5">
-                    Upload Statement <span className="text-gray-400 font-normal">(optional — you can also email it)</span>
+                    Upload Statement <span className="text-gray-600 font-normal">(optional — you can also email it)</span>
                   </label>
                   <div className="border-2 border-dashed border-gray-200 rounded-lg p-6 text-center hover:border-[#c9a84c]/40 transition-colors cursor-pointer">
-                    <Upload size={20} className="text-gray-400 mx-auto mb-2" />
-                    <p className="text-sm text-gray-500">Click to upload or drag & drop</p>
-                    <p className="text-xs text-gray-400 mt-1">PDF, JPG, PNG up to 10MB</p>
+                    <Upload size={20} className="text-gray-600 mx-auto mb-2" />
+                    <p className="text-sm text-gray-600">Click to upload or drag & drop</p>
+                    <p className="text-xs text-gray-600 mt-1">PDF, JPG, PNG up to 10MB</p>
                     <input type="file" className="hidden" accept=".pdf,.jpg,.png" />
                   </div>
                 </div>
                 <button type="submit" className="btn-teal w-full justify-center py-3">
                   Get My Free Analysis <ArrowRight size={16} />
                 </button>
-                <p className="text-xs text-gray-400 text-center">
+                <p className="text-xs text-gray-600 text-center">
                   Your statement is kept strictly confidential. See our <Link href="/legal/privacy-policy" className="text-[#c9a84c] hover:underline">Privacy Policy</Link>.
                 </p>
               </form>

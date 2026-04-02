@@ -85,7 +85,7 @@ export default function DocsAuthGate({ children }: DocsAuthGateProps) {
         >
           Internal Documentation
         </h1>
-        <p className="text-white/40 text-sm text-center mb-6">
+        <p className="text-white/70 text-sm text-center mb-6">
           This page is restricted to UBC Unlimited administrators. Enter the access password to continue.
         </p>
 
@@ -94,21 +94,21 @@ export default function DocsAuthGate({ children }: DocsAuthGateProps) {
           <div className="relative">
             <Lock
               size={14}
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-white/60 pointer-events-none"
             />
             <Input
               type={showPassword ? "text" : "password"}
               placeholder="Access password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="pl-9 pr-10 bg-white/5 border-white/10 text-white placeholder:text-white/30 focus:border-[#c9a84c]/50 focus:ring-[#c9a84c]/20"
+              className="pl-9 pr-10 bg-white/5 border-white/10 text-white placeholder:text-white/60 focus:border-[#c9a84c]/50 focus:ring-[#c9a84c]/20"
               autoFocus
               autoComplete="current-password"
             />
             <button
               type="button"
               onClick={() => setShowPassword((v) => !v)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-white/60 hover:text-white/60 transition-colors"
               tabIndex={-1}
               aria-label={showPassword ? "Hide password" : "Show password"}
             >
@@ -140,7 +140,7 @@ export default function DocsAuthGate({ children }: DocsAuthGateProps) {
       {/* Back link */}
       <a
         href="/"
-        className="mt-6 text-xs text-white/30 hover:text-white/60 transition-colors"
+        className="mt-6 text-xs text-white/60 hover:text-white/60 transition-colors"
       >
         ← Back to ubcunlimited.com
       </a>

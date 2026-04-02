@@ -184,6 +184,24 @@ export default defineConfig({
             return "assets/fonts/[name]-[hash][extname]";
           return "assets/[name]-[hash][extname]";
         },
+        // Split vendor libraries into separate cacheable chunks so they are
+        // not re-downloaded when only app code changes.
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            // Animation library — large, rarely changes
+            if (id.includes("framer-motion")) return "vendor-framer";
+            // React core
+            if (id.includes("react-dom") || id.includes("/react/")) return "vendor-react";
+            // tRPC + React Query
+            if (id.includes("@trpc") || id.includes("@tanstack")) return "vendor-trpc";
+            // Radix UI primitives (shadcn)
+            if (id.includes("@radix-ui")) return "vendor-radix";
+            // Lucide icons
+            if (id.includes("lucide-react")) return "vendor-lucide";
+            // Everything else in node_modules
+            return "vendor";
+          }
+        },
       },
     },
   },

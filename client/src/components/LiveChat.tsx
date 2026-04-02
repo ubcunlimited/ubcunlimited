@@ -293,20 +293,20 @@ export default function LiveChat() {
               </div>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                <span className="text-white/50 text-xs">Typically replies in minutes</span>
+                <span className="text-white/70 text-xs">Typically replies in minutes</span>
               </div>
             </div>
             <button
               onClick={() => setMinimized(true)}
               aria-label="Minimize chat"
-              className="text-white/40 hover:text-white transition-colors p-1"
+              className="text-white/70 hover:text-white transition-colors p-1"
             >
               <Minimize2 size={16} />
             </button>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close chat"
-              className="text-white/40 hover:text-white transition-colors p-1"
+              className="text-white/70 hover:text-white transition-colors p-1"
             >
               <X size={16} />
             </button>
@@ -346,7 +346,7 @@ export default function LiveChat() {
                         ))}
                       </div>
                     )}
-                    <div className="text-white/25 text-[10px] mt-1 px-1">{formatTime(msg.timestamp)}</div>
+                    <div className="text-white/70 text-[10px] mt-1 px-1">{formatTime(msg.timestamp)}</div>
                   </div>
                 </div>
               </div>
@@ -405,11 +405,11 @@ export default function LiveChat() {
 
           {/* Footer contact strip */}
           <div className="bg-[#080808] px-4 py-2 flex items-center justify-center gap-4 border-t border-white/5 shrink-0">
-            <a href="tel:+18013096988" className="flex items-center gap-1.5 text-white/35 hover:text-[#c9a84c] transition-colors text-xs">
+            <a href="tel:+18013096988" className="flex items-center gap-1.5 text-white/60 hover:text-[#c9a84c] transition-colors text-xs">
               <Phone size={11} /> (801) 309-6988
             </a>
-            <span className="text-white/15">·</span>
-            <a href="mailto:info@ubcunlimited.com" className="flex items-center gap-1.5 text-white/35 hover:text-[#c9a84c] transition-colors text-xs">
+            <span className="text-white/60">·</span>
+            <a href="mailto:info@ubcunlimited.com" className="flex items-center gap-1.5 text-white/60 hover:text-[#c9a84c] transition-colors text-xs">
               <Mail size={11} /> info@ubcunlimited.com
             </a>
           </div>

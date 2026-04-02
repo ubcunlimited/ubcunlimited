@@ -80,7 +80,7 @@ export default function AdminTestimonials() {
       <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center gap-4 text-center px-4">
         <ShieldAlert size={40} className="text-[#c9a84c]" />
         <h1 className="text-white text-xl font-bold">Sign In Required</h1>
-        <p className="text-gray-400 text-sm">You must be signed in to access this page.</p>
+        <p className="text-gray-600 text-sm">You must be signed in to access this page.</p>
         <a
           href={getLoginUrl()}
           className="bg-[#c9a84c] hover:bg-[#b8963e] text-black font-semibold px-6 py-2.5 rounded-lg text-sm transition-colors"
@@ -96,7 +96,7 @@ export default function AdminTestimonials() {
       <div className="min-h-screen bg-[#0a0a0a] flex flex-col items-center justify-center gap-4 text-center px-4">
         <ShieldAlert size={40} className="text-red-400" />
         <h1 className="text-white text-xl font-bold">Access Denied</h1>
-        <p className="text-gray-400 text-sm">This page is restricted to administrators.</p>
+        <p className="text-gray-600 text-sm">This page is restricted to administrators.</p>
       </div>
     );
   }
@@ -120,13 +120,13 @@ export default function AdminTestimonials() {
             >
               Testimonial Review
             </h1>
-            <p className="text-gray-400 text-sm mt-0.5">
+            <p className="text-gray-600 text-sm mt-0.5">
               Approve or reject client testimonial submissions before they go live.
             </p>
           </div>
           <button
             onClick={() => refetch()}
-            className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors"
+            className="flex items-center gap-2 text-gray-600 hover:text-white text-sm transition-colors"
           >
             <RefreshCw size={14} />
             Refresh
@@ -137,7 +137,7 @@ export default function AdminTestimonials() {
       <div className="max-w-5xl mx-auto px-6 py-8">
         {/* Status filter tabs */}
         <div className="flex items-center gap-2 mb-6 flex-wrap">
-          <Filter size={14} className="text-gray-500 mr-1" />
+          <Filter size={14} className="text-gray-600 mr-1" />
           {(["pending", "approved", "rejected", "all"] as StatusFilter[]).map((s) => (
             <button
               key={s}
@@ -145,7 +145,7 @@ export default function AdminTestimonials() {
               className={`px-4 py-1.5 rounded-full text-xs font-semibold border transition-all capitalize ${
                 statusFilter === s
                   ? "bg-[#c9a84c] text-black border-[#c9a84c]"
-                  : "bg-transparent text-gray-400 border-white/15 hover:border-[#c9a84c]/40 hover:text-white"
+                  : "bg-transparent text-gray-600 border-white/15 hover:border-[#c9a84c]/40 hover:text-white"
               }`}
             >
               {s === "all" ? "All" : s.charAt(0).toUpperCase() + s.slice(1)}
@@ -162,7 +162,7 @@ export default function AdminTestimonials() {
 
         {/* Empty state */}
         {!isLoading && (!submissions || submissions.length === 0) && (
-          <div className="text-center py-20 text-gray-500">
+          <div className="text-center py-20 text-gray-600">
             <Clock size={36} className="mx-auto mb-3 opacity-40" />
             <p className="text-base">No submissions with status "{statusFilter}".</p>
           </div>
@@ -186,10 +186,10 @@ export default function AdminTestimonials() {
                     <div>
                       <div className="flex items-center gap-2 flex-wrap">
                         <span className="text-white font-semibold">{sub.name}</span>
-                        <span className="text-gray-500 text-xs">·</span>
+                        <span className="text-gray-600 text-xs">·</span>
                         <span className="text-[#c9a84c] text-sm">{sub.businessName}</span>
-                        <span className="text-gray-500 text-xs">·</span>
-                        <span className="text-gray-400 text-xs">{sub.location}</span>
+                        <span className="text-gray-600 text-xs">·</span>
+                        <span className="text-gray-600 text-xs">{sub.location}</span>
                       </div>
                       <div className="flex items-center gap-3 mt-1.5">
                         <StarDisplay rating={sub.rating} />
@@ -197,7 +197,7 @@ export default function AdminTestimonials() {
                           {sub.industry}
                         </span>
                         {sub.email && (
-                          <span className="text-gray-500 text-xs">{sub.email}</span>
+                          <span className="text-gray-600 text-xs">{sub.email}</span>
                         )}
                       </div>
                     </div>
@@ -274,8 +274,8 @@ export default function AdminTestimonials() {
                   {/* Show admin notes if already reviewed */}
                   {!isPending && sub.adminNotes && (
                     <div className="pt-2 border-t border-white/10">
-                      <p className="text-gray-500 text-xs">
-                        <span className="font-semibold text-gray-400">Admin notes:</span>{" "}
+                      <p className="text-gray-600 text-xs">
+                        <span className="font-semibold text-gray-600">Admin notes:</span>{" "}
                         {sub.adminNotes}
                       </p>
                     </div>

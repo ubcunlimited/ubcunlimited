@@ -61,7 +61,7 @@ export default function Cities() {
             </div>
             {/* Legacy filter for card grid */}
             <div className="max-w-md mx-auto mt-3 relative">
-              <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40" />
+              <Search size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70" />
               <input
                 type="text"
                 value={search}
@@ -111,7 +111,7 @@ export default function Cities() {
             ].map(({ value, label }) => (
               <div key={label} className="flex flex-col items-center gap-0.5">
                 <div className="text-xl font-extrabold text-[#c9a84c]" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>{value}</div>
-                <div className="text-white/50 text-xs">{label}</div>
+                <div className="text-white/70 text-xs">{label}</div>
               </div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function Cities() {
             <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
               {search ? "Matching Featured Cities" : "Utah's Most Populated Cities"}
             </h2>
-            <p className="text-white/50 mb-8">
+            <p className="text-white/70 mb-8">
               These cities have dedicated service pages with local industry insights, tailored solutions, and city-specific information.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -144,13 +144,13 @@ export default function Cities() {
                       <div className="w-9 h-9 rounded-xl bg-[#c9a84c]/15 flex items-center justify-center">
                         <MapPin size={16} className="text-[#c9a84c]" />
                       </div>
-                      <span className="text-xs text-white/35 font-medium">{city.population.toLocaleString()}</span>
+                      <span className="text-xs text-white/60 font-medium">{city.population.toLocaleString()}</span>
                     </div>
                     <h3 className="text-white font-bold text-base mb-1 group-hover:text-[#c9a84c] transition-colors">{city.name}</h3>
-                    <p className="text-white/45 text-xs mb-3">{city.county.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())} County</p>
+                    <p className="text-white/70 text-xs mb-3">{city.county.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())} County</p>
                     <div className="flex flex-wrap gap-1.5 mb-4">
                       {city.keyIndustries.slice(0, 3).map((ind) => (
-                        <span key={ind} className="text-[10px] text-white/50 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full">{ind}</span>
+                        <span key={ind} className="text-[10px] text-white/70 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full">{ind}</span>
                       ))}
                     </div>
                     <div className="flex items-center gap-1 text-[#c9a84c] text-xs font-semibold">
@@ -171,7 +171,7 @@ export default function Cities() {
             <h2 className="text-xl font-extrabold text-white mb-2" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
               {search ? `More Results for "${search}"` : "More Utah Cities We Serve"}
             </h2>
-            <p className="text-white/50 mb-4 text-sm">
+            <p className="text-white/70 mb-4 text-sm">
               {search
                 ? "Matching cities from our full service area."
                 : "Showing the 10 most populated non-featured cities. Use the search below to find any Utah city."}
@@ -194,7 +194,7 @@ export default function Cities() {
                     <MapPin size={12} className="text-[#c9a84c] shrink-0" />
                     <div>
                       <div className="text-white/80 group-hover:text-white text-xs font-medium transition-colors leading-tight">{city.name}</div>
-                      <div className="text-white/35 text-[10px]">{city.county.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())} Co.</div>
+                      <div className="text-white/60 text-[10px]">{city.county.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())} Co.</div>
                     </div>
                   </Link>
                 ))}
@@ -235,7 +235,7 @@ export default function Cities() {
             </div>
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
               <h3 className="text-white font-bold text-lg mb-1">Request a Consultation</h3>
-              <p className="text-white/50 text-sm mb-5">Tell us about your business and we'll reach out with a tailored solution — no obligation.</p>
+              <p className="text-white/70 text-sm mb-5">Tell us about your business and we'll reach out with a tailored solution — no obligation.</p>
               <UnlistedCityForm cityName="" />
             </div>
           </div>
@@ -245,7 +245,7 @@ export default function Cities() {
       {/* Browse by county */}
       <section className="bg-[#111] py-12 border-t border-white/5">
         <div className="container text-center">
-          <p className="text-white/50 text-sm mb-4">Prefer to browse by county?</p>
+          <p className="text-white/70 text-sm mb-4">Prefer to browse by county?</p>
           <Link href="/counties" className="btn-gold text-sm py-2.5 px-6 inline-flex">
             View All Utah Counties <ArrowRight size={14} />
           </Link>
@@ -276,7 +276,7 @@ function CitySearch({ allCities }: { allCities: CityEntry[] }) {
     <div>
       {/* Inline search bar */}
       <div className="relative max-w-sm mb-5">
-        <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/35" />
+        <Search size={14} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/60" />
         <input
           type="text"
           value={citySearch}
@@ -287,7 +287,7 @@ function CitySearch({ allCities }: { allCities: CityEntry[] }) {
         {citySearch && (
           <button
             onClick={() => setCitySearch("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors text-xs"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-white/60 hover:text-white/60 transition-colors text-xs"
           >
             ✕
           </button>
@@ -305,7 +305,7 @@ function CitySearch({ allCities }: { allCities: CityEntry[] }) {
             <MapPin size={12} className="text-[#c9a84c] shrink-0" />
             <div>
               <div className="text-white/80 group-hover:text-white text-xs font-medium transition-colors leading-tight">{city.name}</div>
-              <div className="text-white/35 text-[10px]">{city.county.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())} Co.</div>
+              <div className="text-white/60 text-[10px]">{city.county.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())} Co.</div>
             </div>
           </Link>
         ))}
@@ -313,19 +313,19 @@ function CitySearch({ allCities }: { allCities: CityEntry[] }) {
 
       {/* Footer note */}
       {!citySearch && (
-        <p className="text-white/30 text-xs mt-4">
+        <p className="text-white/60 text-xs mt-4">
           Showing top 10 of {totalCount} cities.{" "}
           <span className="text-[#c9a84c]/70">Type above to search all {totalCount} cities.</span>
         </p>
       )}
       {citySearch && displayed.length === 0 && (
-        <p className="text-white/40 text-sm mt-4">
+        <p className="text-white/70 text-sm mt-4">
           No cities found matching "{citySearch}" — but we service all of Utah.{" "}
           <Link href="/consultation" className="text-[#c9a84c] hover:underline">Request a consultation</Link>.
         </p>
       )}
       {citySearch && displayed.length > 0 && (
-        <p className="text-white/30 text-xs mt-4">
+        <p className="text-white/60 text-xs mt-4">
           {displayed.length} result{displayed.length !== 1 ? "s" : ""} for "{citySearch}"
         </p>
       )}
@@ -355,7 +355,7 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
       <div role="status" aria-live="polite" aria-atomic="true" className="text-center py-6">
         <CheckCircle size={32} className="text-[#c9a84c] mx-auto mb-3" aria-hidden="true" />
         <div className="text-white font-bold text-base mb-1">Request Received!</div>
-        <div className="text-white/55 text-sm">Our team will reach out within one business hour.</div>
+        <div className="text-white/70 text-sm">Our team will reach out within one business hour.</div>
       </div>
     );
   }

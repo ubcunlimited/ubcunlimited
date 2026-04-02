@@ -31,7 +31,7 @@ export default function BuildAPOS() {
             <p className="text-white/60 text-lg mb-8 leading-relaxed">
               Select your bundle, choose your hardware, and add the features you need. A local Utah SkyTab expert will reach out with a custom quote — no obligation, no pressure.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/50">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/70">
               <div className="flex items-center gap-1.5">
                 <CheckCircle size={14} className="text-[#c9a84c]" />
                 $0 upfront hardware (qualifying accounts)

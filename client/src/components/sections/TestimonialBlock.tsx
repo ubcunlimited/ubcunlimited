@@ -73,7 +73,7 @@ export default function TestimonialBlock({ dark = false }: TestimonialBlockProps
           >
             What Utah Business Owners Say
           </h2>
-          <p className={`text-sm ${dark ? "text-white/50" : "text-gray-500"}`}>
+          <p className={`text-sm ${dark ? "text-white/70" : "text-gray-600"}`}>
             Real results from real local businesses
           </p>
         </div>
@@ -125,7 +125,7 @@ export default function TestimonialBlock({ dark = false }: TestimonialBlockProps
                       {t.name}
                     </div>
                     <div
-                      className={`text-xs ${dark ? "text-white/40" : "text-gray-400"}`}
+                      className={`text-xs ${dark ? "text-white/70" : "text-gray-600"}`}
                     >
                       {t.role}
                     </div>

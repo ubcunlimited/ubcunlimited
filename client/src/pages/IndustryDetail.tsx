@@ -86,7 +86,7 @@ const industriesData: IndustryData[] = [
               ))}
             </tbody>
           </table>
-          <p className="text-[10px] text-gray-400 mt-2 italic">✅ Included &nbsp; ⚠️ Limited/add-on &nbsp; ❌ Not available. Pricing and features based on publicly available information as of early 2026 and may vary.</p>
+          <p className="text-[10px] text-gray-600 mt-2 italic">✅ Included &nbsp; ⚠️ Limited/add-on &nbsp; ❌ Not available. Pricing and features based on publicly available information as of early 2026 and may vary.</p>
         </div>
       ) },
     ],
@@ -149,7 +149,7 @@ const industriesData: IndustryData[] = [
               ))}
             </tbody>
           </table>
-          <p className="text-[10px] text-gray-400 mt-2 italic">✅ Included &nbsp; ⚠️ Limited/add-on &nbsp; ❌ Not available. Pricing and features based on publicly available information as of early 2026 and may vary.</p>
+          <p className="text-[10px] text-gray-600 mt-2 italic">✅ Included &nbsp; ⚠️ Limited/add-on &nbsp; ❌ Not available. Pricing and features based on publicly available information as of early 2026 and may vary.</p>
         </div>
       ) },
     ],
@@ -911,7 +911,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
       <section className="bg-[#080808] py-10 sm:py-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#c9a84c]/5 via-transparent to-transparent pointer-events-none" />
         <div className="container relative z-10">
-          <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
+          <div className="flex items-center gap-2 text-white/70 text-sm mb-5">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={14} />
             <Link href="/industries" className="hover:text-white transition-colors">Industries</Link>
@@ -928,7 +928,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
                 {data.title} Payment Processing
               </h1>
               <p className="text-white/70 text-sm sm:text-lg mb-3">{data.subtitle}</p>
-              <p className="text-white/55 mb-7 leading-relaxed text-sm">{data.description}</p>
+              <p className="text-white/70 mb-7 leading-relaxed text-sm">{data.description}</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/consultation" className="btn-gold text-sm py-3 px-7 justify-center">Request a Consultation <ArrowRight size={16} /></Link>
                 <Link href="/statement-review" className="btn-outline-white text-sm py-3 px-7 justify-center">Statement Review</Link>
@@ -945,7 +945,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
                   {industryStats.map((s) => (
                     <div key={s.label} className="bg-white/4 rounded-xl p-4 border border-white/6">
                       <div className="text-2xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{s.value}</div>
-                      <div className="text-white/50 text-xs leading-tight">{s.label}</div>
+                      <div className="text-white/70 text-xs leading-tight">{s.label}</div>
                     </div>
                   ))}
                 </div>
@@ -954,7 +954,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
                 <Award size={20} className="text-[#c9a84c] shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-semibold text-sm">20+ Years Serving Utah Businesses</p>
-                  <p className="text-white/50 text-xs leading-relaxed mt-1">Local expertise, dedicated reps, and industry-specific solutions — not a one-size-fits-all rate sheet.</p>
+                  <p className="text-white/70 text-xs leading-relaxed mt-1">Local expertise, dedicated reps, and industry-specific solutions — not a one-size-fits-all rate sheet.</p>
                 </div>
               </div>
             </div>
@@ -984,17 +984,17 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
             <h2 className="text-2xl sm:text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
               Challenges We Solve for {data.title} Businesses
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-sm">Our experience in the {data.title.toLowerCase()} space gives us a clear picture of the challenges businesses in this industry face. Here are the problems we hear most — and exactly how we solve them.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm">Our experience in the {data.title.toLowerCase()} space gives us a clear picture of the challenges businesses in this industry face. Here are the problems we hear most — and exactly how we solve them.</p>
           </div>
           {/* Column headers — desktop only */}
           <div className="hidden md:grid md:grid-cols-2 gap-6 mb-3 px-1">
             <div className="flex items-center gap-2">
               <AlertCircle size={14} className="text-red-400" />
-              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400">The Challenge</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-600">The Challenge</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle size={14} className="text-[#c9a84c]" />
-              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400">Our Solution</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-600">Our Solution</span>
             </div>
           </div>
           {/* Paired rows */}
@@ -1016,7 +1016,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
                     </div>
                     <div>
                       <p className="font-bold text-sm text-[#080808] leading-snug mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{pair.challenge}</p>
-                      {pair.challengeDetail && <p className="text-gray-500 text-xs leading-relaxed">{pair.challengeDetail}</p>}
+                      {pair.challengeDetail && <p className="text-gray-600 text-xs leading-relaxed">{pair.challengeDetail}</p>}
                     </div>
                   </div>
                 </div>
@@ -1066,7 +1066,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
           <div className="text-center mb-8 sm:mb-12">
             <div className="teal-divider mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>What to Expect When You Work With Us</h2>
-            <p className="text-white/50 max-w-xl mx-auto text-sm">From your first call to going live — here's the process for Utah {data.title.toLowerCase()} businesses.</p>
+            <p className="text-white/70 max-w-xl mx-auto text-sm">From your first call to going live — here's the process for Utah {data.title.toLowerCase()} businesses.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {getOnboardingSteps(isHighRisk).map((step, i) => (
@@ -1074,7 +1074,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
                 <span className="text-5xl font-extrabold text-[#c9a84c]/20 leading-none" style={{ fontFamily: 'Sora, sans-serif' }}>{step.step}</span>
                 <div className="w-8 h-8 rounded-full bg-[#c9a84c] flex items-center justify-center text-[#080808] font-bold text-sm shrink-0">{i + 1}</div>
                 <h3 className="text-white font-bold text-base" style={{ fontFamily: 'Sora, sans-serif' }}>{step.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -1089,7 +1089,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
             <div>
               <div className="teal-divider mb-5" />
               <h2 className="text-2xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Why Utah {data.title} Businesses Choose UBC Unlimited</h2>
-              <p className="text-gray-500 text-sm mb-6 leading-relaxed">We're not a national call center. We're a local Utah team that specializes in {data.title.toLowerCase()} payment processing — with dedicated reps, industry-specific solutions, and transparent pricing.</p>
+              <p className="text-gray-600 text-sm mb-6 leading-relaxed">We're not a national call center. We're a local Utah team that specializes in {data.title.toLowerCase()} payment processing — with dedicated reps, industry-specific solutions, and transparent pricing.</p>
               {/* Pull quote — real client testimonial per industry */}
               <div className="bg-[#080808] rounded-2xl p-6 relative overflow-hidden mb-5">
                 <div className="absolute top-3 right-4 text-5xl text-[#c9a84c]/10 font-serif leading-none select-none">&ldquo;</div>
@@ -1102,7 +1102,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
                   </div>
                   <div>
                     <p className="text-white font-semibold text-xs">{pullQuote.name}</p>
-                    <p className="text-white/40 text-xs">{pullQuote.role}</p>
+                    <p className="text-white/70 text-xs">{pullQuote.role}</p>
                   </div>
                   <div className="ml-auto flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
@@ -1121,7 +1121,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
                   <div key={item.label} className="bg-[#f8fafc] rounded-xl border border-gray-100 p-4 text-center">
                     <item.icon size={16} className="text-[#c9a84c] mx-auto mb-2" />
                     <div className="font-extrabold text-[#080808] text-base" style={{ fontFamily: 'Sora, sans-serif' }}>{item.label}</div>
-                    <div className="text-gray-400 text-xs">{item.sub}</div>
+                    <div className="text-gray-600 text-xs">{item.sub}</div>
                   </div>
                 ))}
               </div>
@@ -1145,7 +1145,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
                 <Phone size={20} className="text-[#c9a84c] shrink-0" />
                 <div className="flex-1">
                   <p className="text-[#080808] font-semibold text-sm">Talk to a local expert today</p>
-                  <p className="text-gray-500 text-xs">No obligation. No pressure. Just honest advice.</p>
+                  <p className="text-gray-600 text-xs">No obligation. No pressure. Just honest advice.</p>
                 </div>
                 <a href="tel:+18013096988" className="btn-gold text-xs py-2 px-4 shrink-0">Call Now</a>
               </div>

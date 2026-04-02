@@ -24,7 +24,7 @@ export default function TrustBadges({ dark = false }: TrustBadgesProps) {
                 <badge.icon size={20} />
               </div>
               <div className={`text-xs font-semibold ${dark ? "text-white" : "text-[#080808]"}`}>{badge.label}</div>
-              <div className={`text-[10px] ${dark ? "text-white/40" : "text-gray-400"}`}>{badge.sub}</div>
+              <div className={`text-[10px] ${dark ? "text-white/70" : "text-gray-600"}`}>{badge.sub}</div>
             </div>
           ))}
         </div>

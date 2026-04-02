@@ -72,7 +72,7 @@ export default function AgentLogin() {
               UBC Unlimited
             </span>
           </a>
-          <div className="flex items-center gap-2 text-white/40 text-sm">
+          <div className="flex items-center gap-2 text-white/70 text-sm">
             <Shield size={14} className="text-[#c9a84c]" />
             <span>Secure Partner Portal</span>
           </div>
@@ -105,7 +105,7 @@ export default function AgentLogin() {
 
               {/* Card body */}
               <div className="px-8 py-8">
-                <p className="text-white/50 text-sm mb-6 leading-relaxed">
+                <p className="text-white/70 text-sm mb-6 leading-relaxed">
                   This portal is for authorized UBC Unlimited agents and ISO partners only. Enter your portal password to continue.
                 </p>
 
@@ -119,14 +119,14 @@ export default function AgentLogin() {
                         setPassword(e.target.value);
                         setError("");
                       }}
-                      className="bg-white/5 border-white/15 text-white placeholder:text-white/30 focus:border-[#c9a84c]/60 focus:ring-[#c9a84c]/20 pr-11 h-11"
+                      className="bg-white/5 border-white/15 text-white placeholder:text-white/60 focus:border-[#c9a84c]/60 focus:ring-[#c9a84c]/20 pr-11 h-11"
                       autoComplete="current-password"
                       disabled={verify.isPending}
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword((v) => !v)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-white/60 hover:text-white/60 transition-colors"
                       tabIndex={-1}
                       aria-label={showPassword ? "Hide password" : "Show password"}
                     >
@@ -161,7 +161,7 @@ export default function AgentLogin() {
                 </form>
 
                 <div className="mt-6 pt-6 border-t border-white/10">
-                  <p className="text-white/30 text-xs text-center">
+                  <p className="text-white/60 text-xs text-center">
                     Don't have access?{" "}
                     <a
                       href="mailto:info@ubcunlimited.com"
@@ -175,7 +175,7 @@ export default function AgentLogin() {
             </div>
 
             {/* Trust signals */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-5 text-white/30 text-xs">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-5 text-white/60 text-xs">
               <div className="flex items-center gap-1.5">
                 <CheckCircle size={12} className="text-[#c9a84c]/60" />
                 Password verified server-side
@@ -193,7 +193,7 @@ export default function AgentLogin() {
         </main>
 
         {/* Footer */}
-        <footer className="border-t border-white/10 px-6 py-4 text-center text-white/20 text-xs">
+        <footer className="border-t border-white/10 px-6 py-4 text-center text-white/70 text-xs">
           © {new Date().getFullYear()} UBC Unlimited. All rights reserved. · This page is not publicly accessible.
         </footer>
       </div>

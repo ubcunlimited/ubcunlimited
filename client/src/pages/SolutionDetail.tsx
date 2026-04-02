@@ -648,7 +648,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             {/* Left — copy */}
             <div>
-              <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
+              <div className="flex items-center gap-2 text-white/70 text-sm mb-5">
                 <Link href="/" className="hover:text-white transition-colors">Home</Link>
                 <ChevronRight size={14} />
                 <Link href="/solutions" className="hover:text-white transition-colors">Solutions</Link>
@@ -660,7 +660,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 {data.title}
               </h1>
               <p className="text-white/70 text-sm sm:text-lg mb-4">{data.subtitle}</p>
-              <p className="text-white/55 mb-7 leading-relaxed text-sm">{data.description}</p>
+              <p className="text-white/70 mb-7 leading-relaxed text-sm">{data.description}</p>
               <ul className="space-y-2.5 mb-8">
                 {data.heroPoints.map((p) => (
                   <li key={p} className="flex items-start gap-2.5 text-white/75 text-sm">
@@ -695,7 +695,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                     {solutionStats.map((s) => (
                       <div key={s.label} className="bg-white/4 rounded-xl p-4 border border-white/6">
                         <div className="text-2xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{s.value}</div>
-                        <div className="text-white/50 text-xs leading-tight">{s.label}</div>
+                        <div className="text-white/70 text-xs leading-tight">{s.label}</div>
                       </div>
                     ))}
                   </div>
@@ -705,7 +705,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                   <Shield size={22} className="text-[#c9a84c] shrink-0 mt-0.5" />
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">Local Utah Support — A Rep Who Knows You</p>
-                    <p className="text-white/50 text-xs leading-relaxed">Every UBC Unlimited client gets a dedicated local rep who knows your account and your industry — not a call center queue. You work with someone who understands your business from day one.</p>
+                    <p className="text-white/70 text-xs leading-relaxed">Every UBC Unlimited client gets a dedicated local rep who knows your account and your industry — not a call center queue. You work with someone who understands your business from day one.</p>
                   </div>
                 </div>
               </div>
@@ -744,7 +744,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
           <div className="text-center mb-8 sm:mb-12">
             <div className="teal-divider mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>How It Works</h2>
-            <p className="text-white/50 max-w-xl mx-auto text-sm">From first conversation to live processing — here's what to expect when you work with UBC Unlimited.</p>
+            <p className="text-white/70 max-w-xl mx-auto text-sm">From first conversation to live processing — here's what to expect when you work with UBC Unlimited.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 relative">
             {/* Connector line */}
@@ -754,7 +754,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 <span className="text-5xl font-extrabold text-[#c9a84c]/20 leading-none" style={{ fontFamily: 'Sora, sans-serif' }}>{step.step}</span>
                 <div className="w-8 h-8 rounded-full bg-[#c9a84c] flex items-center justify-center text-[#080808] font-bold text-sm shrink-0">{i + 1}</div>
                 <h3 className="text-white font-bold text-base" style={{ fontFamily: 'Sora, sans-serif' }}>{step.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -771,17 +771,17 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
           <div className="text-center mb-7 sm:mb-10">
             <div className="teal-divider mx-auto mb-4" />
             <h2 className="text-2xl sm:text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Common Problems We Solve</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-sm">Real challenges Utah businesses face with payment processing — and exactly how our {data.title} solution addresses each one.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm">Real challenges Utah businesses face with payment processing — and exactly how our {data.title} solution addresses each one.</p>
           </div>
           {/* Column headers — desktop only */}
           <div className="hidden md:grid md:grid-cols-2 gap-6 mb-3 px-1">
             <div className="flex items-center gap-2">
               <AlertCircle size={14} className="text-red-400" />
-              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400">The Problem</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-600">The Problem</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle size={14} className="text-[#c9a84c]" />
-              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-400">Our Solution</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-gray-600">Our Solution</span>
             </div>
           </div>
           {/* Paired rows */}
@@ -803,7 +803,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                     </div>
                     <div>
                       <p className="font-bold text-sm text-[#080808] leading-snug mb-1" style={{ fontFamily: 'Sora, sans-serif' }}>{pair.challenge}</p>
-                      {pair.challengeDetail && <p className="text-gray-500 text-xs leading-relaxed">{pair.challengeDetail}</p>}
+                      {pair.challengeDetail && <p className="text-gray-600 text-xs leading-relaxed">{pair.challengeDetail}</p>}
                     </div>
                   </div>
                 </div>
@@ -855,7 +855,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                       <div className="w-6 h-6 rounded-lg bg-[#c9a84c]/10 flex items-center justify-center text-xs font-bold text-[#c9a84c]">{i + 1}</div>
                       <h4 className="font-bold text-[#080808] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{f.title}</h4>
                     </div>
-                    <p className="text-gray-500 text-xs leading-relaxed">{f.desc}</p>
+                    <p className="text-gray-600 text-xs leading-relaxed">{f.desc}</p>
                   </div>
                 ))}
               </div>
@@ -872,7 +872,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
             <div>
               <div className="teal-divider mb-5" />
               <h2 className="text-2xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Why Utah Businesses Choose UBC Unlimited</h2>
-              <p className="text-gray-500 text-sm mb-6 leading-relaxed">We're not a national call center. We're a local Utah team that knows your market, answers when you call, and builds solutions around your business — not the other way around.</p>
+              <p className="text-gray-600 text-sm mb-6 leading-relaxed">We're not a national call center. We're a local Utah team that knows your market, answers when you call, and builds solutions around your business — not the other way around.</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {data.benefits.map((b) => (
                   <div key={b} className="flex items-start gap-2.5 bg-white rounded-lg p-3.5 border border-gray-100 text-sm text-[#080808]">
@@ -896,7 +896,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                   </div>
                   <div>
                     <p className="text-white font-semibold text-sm">Jason M.</p>
-                    <p className="text-white/40 text-xs">Utah Restaurant Owner</p>
+                    <p className="text-white/70 text-xs">Utah Restaurant Owner</p>
                   </div>
                   <div className="ml-auto flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
@@ -915,7 +915,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                   <div key={item.label} className="bg-white rounded-xl border border-gray-100 p-4 text-center">
                     <item.icon size={18} className="text-[#c9a84c] mx-auto mb-2" />
                     <div className="font-extrabold text-[#080808] text-lg" style={{ fontFamily: 'Sora, sans-serif' }}>{item.label}</div>
-                    <div className="text-gray-400 text-xs">{item.sub}</div>
+                    <div className="text-gray-600 text-xs">{item.sub}</div>
                   </div>
                 ))}
               </div>
@@ -924,7 +924,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 <Phone size={20} className="text-[#c9a84c] shrink-0" />
                 <div className="flex-1">
                   <p className="text-[#080808] font-semibold text-sm">Talk to a local expert today</p>
-                  <p className="text-gray-500 text-xs">No obligation. No pressure. Just honest advice.</p>
+                  <p className="text-gray-600 text-xs">No obligation. No pressure. Just honest advice.</p>
                 </div>
                 <a href="tel:+18013096988" className="btn-gold text-xs py-2 px-4 shrink-0">Call Now</a>
               </div>
@@ -943,7 +943,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
             <div className="text-center mb-10">
               <div className="teal-divider mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>Gateway Partners We Work With</h2>
-              <p className="text-gray-500 max-w-2xl mx-auto">We work with a variety of payment gateways and collaborate with you to determine the best option based on your platform, business type, and transaction needs.</p>
+              <p className="text-gray-600 max-w-2xl mx-auto">We work with a variety of payment gateways and collaborate with you to determine the best option based on your platform, business type, and transaction needs.</p>
             </div>
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               {/* Secure Gateway */}
@@ -951,39 +951,39 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
                   <span className="text-[#080808] font-semibold text-sm text-center leading-tight">Secure<br />Checkout</span>
                 </div>
-                <span className="text-xs text-gray-400 font-medium">Secure Checkout</span>
+                <span className="text-xs text-gray-600 font-medium">Secure Checkout</span>
               </div>
               {/* Recurring Billing */}
               <div className="flex flex-col items-center gap-3 group">
                 <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
                   <span className="text-[#080808] font-semibold text-sm text-center leading-tight">Recurring<br />Billing</span>
                 </div>
-                <span className="text-xs text-gray-400 font-medium">Recurring Billing</span>
+                <span className="text-xs text-gray-600 font-medium">Recurring Billing</span>
               </div>
               {/* Fraud Protection */}
               <div className="flex flex-col items-center gap-3 group">
                 <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
                   <span className="text-[#080808] font-semibold text-sm text-center leading-tight">Fraud<br />Protection</span>
                 </div>
-                <span className="text-xs text-gray-400 font-medium">Fraud Protection</span>
+                <span className="text-xs text-gray-600 font-medium">Fraud Protection</span>
               </div>
               {/* Platform Integrations */}
               <div className="flex flex-col items-center gap-3 group">
                 <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-gray-200 shadow-sm flex items-center justify-center p-4 group-hover:border-[#c9a84c]/40 group-hover:shadow-md transition-all">
                   <span className="text-[#080808] font-semibold text-sm text-center leading-tight">350+<br />Integrations</span>
                 </div>
-                <span className="text-xs text-gray-400 font-medium">Platform Integrations</span>
+                <span className="text-xs text-gray-600 font-medium">Platform Integrations</span>
               </div>
               {/* And More */}
               <div className="flex flex-col items-center gap-3 group">
                 <div className="w-44 h-20 bg-[#f8fafc] rounded-xl border border-dashed border-[#c9a84c]/40 shadow-sm flex items-center justify-center p-4 group-hover:bg-[#c9a84c]/5 transition-all">
-                  <span className="text-[#c9a84c] font-semibold text-sm text-center leading-tight">+ Many More<br /><span className="text-gray-400 font-normal text-xs">Ask us about your platform</span></span>
+                  <span className="text-[#c9a84c] font-semibold text-sm text-center leading-tight">+ Many More<br /><span className="text-gray-600 font-normal text-xs">Ask us about your platform</span></span>
                 </div>
-                <span className="text-xs text-gray-400 font-medium">And More</span>
+                <span className="text-xs text-gray-600 font-medium">And More</span>
               </div>
             </div>
             <div className="text-center mt-10">
-              <p className="text-gray-500 text-sm mb-4">Not sure which gateway is right for you? We'll help you choose.</p>
+              <p className="text-gray-600 text-sm mb-4">Not sure which gateway is right for you? We'll help you choose.</p>
               <a href="/consultation" className="btn-teal inline-flex items-center gap-2">Book a Consultation <ArrowRight size={15} /></a>
             </div>
           </div>
@@ -999,7 +999,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               <h2 className="text-3xl font-bold text-white mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
                 High-Risk Industries We Serve
               </h2>
-              <p className="text-white/50 max-w-2xl mx-auto text-sm">
+              <p className="text-white/70 max-w-2xl mx-auto text-sm">
                 We work with specialized acquiring banks to secure merchant accounts for businesses across all high-risk verticals. Click any industry to learn more about the specific challenges and solutions we provide.
               </p>
             </div>
@@ -1025,7 +1025,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 >
                   <div className="text-3xl mb-3"><IndustryIcon icon={ind.icon} size={30} className="text-white" /></div>
                   <div className="font-semibold text-white text-sm mb-1 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: 'Sora, sans-serif' }}>{ind.label}</div>
-                  <div className="text-white/40 text-xs leading-relaxed">{ind.desc}</div>
+                  <div className="text-white/70 text-xs leading-relaxed">{ind.desc}</div>
                   <div className="mt-3 flex items-center gap-1 text-[#c9a84c] text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                     Learn more <ChevronRight size={12} />
                   </div>
@@ -1033,7 +1033,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               ))}
             </div>
             <div className="text-center mt-10">
-              <p className="text-white/40 text-sm mb-4">Don't see your industry? We serve many more high-risk verticals — contact us to discuss your situation.</p>
+              <p className="text-white/70 text-sm mb-4">Don't see your industry? We serve many more high-risk verticals — contact us to discuss your situation.</p>
               <Link href="/consultation" className="btn-gold">Get a High-Risk Quote <ArrowRight size={16} /></Link>
             </div>
           </div>

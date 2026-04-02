@@ -2,6 +2,9 @@
 <html lang="en">
 
   <head>
+    <!-- charset MUST be first inside <head> (Lighthouse: charset declaration) -->
+    <meta charset="UTF-8" />
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBY1WMZHL2"></script>
     <script>
@@ -10,8 +13,6 @@
       gtag('js', new Date());
       gtag('config', 'G-MBY1WMZHL2');
     </script>
-
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UBC Unlimited — Utah Merchant Services</title>
     <meta name="description" content="UBC Unlimited provides merchant services, payment processing, POS systems, and more to Utah businesses. Local experts, competitive rates, 24/7 support." />
@@ -54,6 +55,9 @@
     <!-- Preconnect to CDN and analytics -->
     <link rel="preconnect" href="https://d2xsxph8kpxj0f.cloudfront.net" crossorigin />
     <link rel="preconnect" href="https://plausible.io" crossorigin />
+    <!-- Preconnect for reCAPTCHA v3 (reduces DNS lookup time) -->
+    <link rel="preconnect" href="https://www.google.com" />
+    <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
 
     <!-- Self-hosted fonts via CDN (latin subsets, font-display:swap) -->
     <style>
@@ -152,11 +156,15 @@
       fbq('track', 'PageView');
     </script>
 
-    <!-- Google reCAPTCHA v3 — only load on production to avoid invalid-domain errors in dev -->
+    <!-- Google reCAPTCHA v3 — loaded once on production only.
+         The window.__recaptchaLoaded guard prevents duplicate loads when
+         React components re-mount (root cause of the 6× load in Lighthouse). -->
     <script>
       (function() {
+        if (window.__recaptchaLoaded) return;
         var host = window.location.hostname;
         if (host === 'ubcunlimited.com' || host === 'www.ubcunlimited.com') {
+          window.__recaptchaLoaded = true;
           var s = document.createElement('script');
           s.src = 'https://www.google.com/recaptcha/api.js?render=%VITE_RECAPTCHA_SITE_KEY%';
           s.async = true;

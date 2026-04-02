@@ -66,14 +66,14 @@ export default function Consultation() {
                   <Calendar size={17} className="text-[#c9a84c]" />
                   <span className="font-semibold text-[#080808] text-sm">Available Mon–Fri, 8am–6pm MT</span>
                 </div>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-600 text-sm">
                   Prefer to call directly? Reach {SITE.founder} at{" "}
                   <a href={SITE.phoneHref} className="text-[#c9a84c] font-medium hover:underline">{SITE.phone}</a>
                 </p>
               </div>
               <div className="bg-[#c9a84c]/8 rounded-xl p-5 border border-[#c9a84c]/15">
                 <p className="text-[#080808] font-semibold text-sm mb-1">Have a current statement?</p>
-                <p className="text-gray-500 text-sm mb-3">
+                <p className="text-gray-600 text-sm mb-3">
                   Upload it on our Statement Review page and we'll do a full cost analysis before your consultation.
                 </p>
                 <Link href="/statement-review" className="btn-outline-teal text-sm py-2 px-4">
@@ -88,7 +88,7 @@ export default function Consultation() {
                 <div role="status" aria-live="polite" aria-atomic="true" className="bg-[#c9a84c]/10 border border-[#c9a84c]/20 rounded-2xl p-10 text-center">
                   <div className="text-4xl mb-4" aria-hidden="true">✅</div>
                   <h3 className="text-xl font-bold text-[#080808] mb-2" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Received!</h3>
-                  <p className="text-gray-500 mb-4">We'll reach out within 1 business hour to confirm your consultation time.</p>
+                  <p className="text-gray-600 mb-4">We'll reach out within 1 business hour to confirm your consultation time.</p>
                   <a href={SITE.phoneHref} className="btn-teal text-sm py-2.5 px-6">
                     <Phone size={14} /> Or Call Us Now
                   </a>
@@ -96,7 +96,7 @@ export default function Consultation() {
               ) : (
                 <form onSubmit={handleSubmit} data-ghl-form="consultation" className="space-y-4">
                   <h2 className="text-xl font-bold text-[#080808] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>Request Your Consultation</h2>
-                  <p className="text-gray-500 text-sm mb-4">Fill out the form below and we'll be in touch within 1 business hour.</p>
+                  <p className="text-gray-600 text-sm mb-4">Fill out the form below and we'll be in touch within 1 business hour.</p>
 
                   {/* Business Name */}
                   <div>
@@ -181,7 +181,7 @@ export default function Consultation() {
                   <button type="submit" className="btn-teal w-full justify-center py-3">
                     Book My Consultation <ArrowRight size={16} />
                   </button>
-                  <p className="text-xs text-gray-400 text-center">
+                  <p className="text-xs text-gray-600 text-center">
                     By submitting, you agree to our{" "}
                     <Link href="/legal/privacy-policy" className="text-[#c9a84c] hover:underline">Privacy Policy</Link>.
                     No spam, ever.

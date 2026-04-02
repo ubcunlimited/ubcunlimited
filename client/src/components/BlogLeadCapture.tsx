@@ -61,7 +61,7 @@ export default function BlogLeadCapture({ sourcePage }: BlogLeadCaptureProps) {
         >
           You're on the list!
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed">
+        <p className="text-gray-600 text-sm leading-relaxed">
           We'll be in touch with tips and resources to help you reduce your processing costs.
         </p>
       </div>
@@ -82,7 +82,7 @@ export default function BlogLeadCapture({ sourcePage }: BlogLeadCaptureProps) {
           >
             Get the Free Processing Fee Guide
           </h3>
-          <p className="text-gray-400 text-xs mt-1 leading-relaxed">
+          <p className="text-gray-600 text-xs mt-1 leading-relaxed">
             Practical tips to lower your rates — no sales pitch, just useful information.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function BlogLeadCapture({ sourcePage }: BlogLeadCaptureProps) {
               }}
               className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#111] accent-[#c9a84c] cursor-pointer flex-shrink-0"
             />
-            <span className="text-gray-400 text-[11px] leading-relaxed">
+            <span className="text-gray-600 text-[11px] leading-relaxed">
               I agree to the{" "}
               <Link
                 href="/privacy-policy"

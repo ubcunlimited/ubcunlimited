@@ -6,7 +6,7 @@ export default function PrivacyPolicy() {
       <section className="bg-[#080808] py-14">
         <div className="container">
           <h1 className="text-3xl font-extrabold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>Privacy Policy</h1>
-          <p className="text-white/50 mt-2 text-sm">Last updated: January 1, 2025</p>
+          <p className="text-white/70 mt-2 text-sm">Last updated: January 1, 2025</p>
         </div>
       </section>
       <section className="py-12 bg-white">

@@ -237,7 +237,7 @@ export default function SaltLakeCity() {
               transition={{ duration: 0.6 }}
             >
               {/* Breadcrumb */}
-              <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-white/35 mb-5">
+              <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-xs text-white/60 mb-5">
                 <Link href="/" className="hover:text-white/60 transition-colors">Home</Link>
                 <ChevronRight size={12} />
                 <Link href="/locations" className="hover:text-white/60 transition-colors">Locations</Link>
@@ -260,7 +260,7 @@ export default function SaltLakeCity() {
                 Valley — with local support that national processors simply can't match.
               </p>
 
-              <p className="text-white/45 text-sm leading-relaxed mb-8 max-w-xl">
+              <p className="text-white/70 text-sm leading-relaxed mb-8 max-w-xl">
                 From the restaurants and retail shops of Sugar House to the medical practices and
                 professional services firms of downtown SLC, we help Utah businesses accept payments
                 smarter, save on processing costs, and grow with confidence.
@@ -314,11 +314,11 @@ export default function SaltLakeCity() {
                   ].map((stat) => (
                     <div key={stat.label} className="bg-white/4 rounded-xl p-3 text-center">
                       <p className="text-[#c9a84c] font-extrabold text-xl">{stat.value}</p>
-                      <p className="text-white/40 text-xs mt-0.5">{stat.label}</p>
+                      <p className="text-white/70 text-xs mt-0.5">{stat.label}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-white/30 text-xs mt-4 leading-relaxed">
+                <p className="text-white/60 text-xs mt-4 leading-relaxed">
                   Salt Lake City is one of the fastest-growing business markets in the United States,
                   with a diverse economy spanning tech, healthcare, hospitality, and professional
                   services.
@@ -329,7 +329,7 @@ export default function SaltLakeCity() {
               <div className="bg-[#c9a84c]/8 border border-[#c9a84c]/20 rounded-2xl p-5 flex items-center justify-between gap-4">
                 <div>
                   <p className="text-white font-semibold text-sm">Talk to a local SLC rep today</p>
-                  <p className="text-white/40 text-xs mt-0.5">Free consultation, no obligation</p>
+                  <p className="text-white/70 text-xs mt-0.5">Free consultation, no obligation</p>
                 </div>
                 <a
                   href={SITE.phoneHref}
@@ -350,7 +350,7 @@ export default function SaltLakeCity() {
             <h2 className="text-3xl md:text-4xl font-bold text-[#080808] mb-3">
               Industries We Serve in Salt Lake City
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-base">
+            <p className="text-gray-600 max-w-2xl mx-auto text-base">
               From the restaurant row on South Temple to the medical corridor near the University of
               Utah, UBC Unlimited serves every major industry in the Salt Lake City market.
             </p>
@@ -374,7 +374,7 @@ export default function SaltLakeCity() {
                   <h3 className="text-[#080808] font-bold text-base mb-2 group-hover:text-[#c9a84c] transition-colors">
                     {industry.name}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{industry.desc}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{industry.desc}</p>
                   <span className="inline-flex items-center gap-1 text-[#c9a84c] text-xs font-semibold mt-3">
                     Learn more <ArrowRight size={11} />
                   </span>
@@ -392,7 +392,7 @@ export default function SaltLakeCity() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
               Why Salt Lake City Businesses Choose UBC Unlimited
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto text-base">
+            <p className="text-white/70 max-w-2xl mx-auto text-base">
               There are dozens of payment processors competing for your business. Here's why SLC
               business owners choose us — and stay with us.
             </p>
@@ -411,11 +411,11 @@ export default function SaltLakeCity() {
                   <benefit.icon size={20} className="text-[#c9a84c]" />
                 </div>
                 <h3 className="text-white font-bold text-base mb-2">{benefit.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{benefit.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{benefit.desc}</p>
               </motion.div>
             ))}
           </div>
-          <p className="text-white/25 text-xs mt-6">* Certain platforms and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.</p>
+          <p className="text-white/70 text-xs mt-6">* Certain platforms and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.</p>
         </div>
       </section>
 
@@ -426,7 +426,7 @@ export default function SaltLakeCity() {
             <h2 className="text-2xl md:text-3xl font-bold text-[#080808] mb-3">
               Serving Every Neighborhood in Salt Lake City
             </h2>
-            <p className="text-gray-500 text-base mb-8">
+            <p className="text-gray-600 text-base mb-8">
               Whether your business is in the heart of downtown or in one of SLC's vibrant
               neighborhoods, UBC Unlimited provides on-site consultations and local support
               throughout the city.
@@ -442,7 +442,7 @@ export default function SaltLakeCity() {
                 </span>
               ))}
             </div>
-            <p className="text-gray-400 text-sm mt-6">
+            <p className="text-gray-600 text-sm mt-6">
               Also serving Murray, Millcreek, Holladay, Cottonwood Heights, and surrounding Salt
               Lake Valley communities.
             </p>
@@ -457,7 +457,7 @@ export default function SaltLakeCity() {
             <h2 className="text-2xl md:text-3xl font-bold text-[#080808] mb-2">
               What Salt Lake City Business Owners Say
             </h2>
-            <p className="text-gray-500 text-base">
+            <p className="text-gray-600 text-base">
               Real feedback from real businesses in the Salt Lake City area.
             </p>
           </div>
@@ -479,7 +479,7 @@ export default function SaltLakeCity() {
                 <p className="text-gray-700 text-sm leading-relaxed mb-5 italic">"{t.text}"</p>
                 <div>
                   <p className="text-[#080808] font-bold text-sm">{t.name}</p>
-                  <p className="text-gray-400 text-xs">{t.business}</p>
+                  <p className="text-gray-600 text-xs">{t.business}</p>
                 </div>
               </motion.div>
             ))}
@@ -494,7 +494,7 @@ export default function SaltLakeCity() {
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
               Frequently Asked Questions — Salt Lake City
             </h2>
-            <p className="text-white/50 text-base">
+            <p className="text-white/70 text-base">
               Common questions from Salt Lake City business owners about merchant services.
             </p>
           </div>

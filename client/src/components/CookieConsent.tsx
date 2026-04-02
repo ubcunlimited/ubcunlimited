@@ -107,10 +107,10 @@ export default function CookieConsent() {
               </button>
               <button
                 onClick={handleDecline}
-                className="p-2 text-white/40 hover:text-white transition-colors rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
+                className="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-white/70 hover:text-white transition-colors rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808]"
                 aria-label="Close cookie banner"
               >
-                <X size={16} aria-hidden="true" />
+                <X size={18} aria-hidden="true" />
               </button>
             </div>
           </div>

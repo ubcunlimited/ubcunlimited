@@ -241,7 +241,7 @@ const faqCategories = [
                 ))}
               </tbody>
             </table>
-            <p className="text-[10px] text-gray-400 mt-2 italic">✅ Included &nbsp; ⚠️ Limited/add-on &nbsp; ❌ Not available. Pricing and features based on publicly available information as of early 2026 and may vary.</p>
+            <p className="text-[10px] text-gray-600 mt-2 italic">✅ Included &nbsp; ⚠️ Limited/add-on &nbsp; ❌ Not available. Pricing and features based on publicly available information as of early 2026 and may vary.</p>
           </div>
         ),
       },
@@ -638,7 +638,7 @@ export default function FAQPage() {
           </p>
           {/* Search */}
           <div className="relative max-w-xl mx-auto">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600" size={18} />
             <input
               type="text"
               placeholder="Search all questions..."
@@ -686,7 +686,7 @@ export default function FAQPage() {
         <div className="container max-w-4xl mx-auto">
           {filtered.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-gray-500 text-lg mb-4">No questions match your search.</p>
+              <p className="text-gray-600 text-lg mb-4">No questions match your search.</p>
               <button
                 onClick={() => { setSearch(""); setActiveCategory("all"); }}
                 className="btn-primary"
@@ -703,7 +703,7 @@ export default function FAQPage() {
                     <h2 className="text-2xl font-bold text-[#080808]" style={{ fontFamily: "Sora, sans-serif" }}>
                       {cat.label}
                     </h2>
-                    <span className="ml-auto text-xs text-gray-400 font-medium bg-gray-100 px-2 py-1 rounded-full">
+                    <span className="ml-auto text-xs text-gray-600 font-medium bg-gray-100 px-2 py-1 rounded-full">
                       {cat.questions.length} questions
                     </span>
                   </div>

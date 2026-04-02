@@ -1304,7 +1304,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
       />
       <section className="bg-[#080808] py-14">
         <div className="container">
-          <div className="flex items-center gap-2 text-white/40 text-sm mb-5">
+          <div className="flex items-center gap-2 text-white/70 text-sm mb-5">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={14} />
             <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
@@ -1318,10 +1318,10 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-4 max-w-3xl leading-tight" style={{ fontFamily: 'Sora, sans-serif' }}>
             {post.title}
           </h1>
-          <div className="flex flex-wrap items-center gap-4 text-white/40 text-xs">
+          <div className="flex flex-wrap items-center gap-4 text-white/70 text-xs">
             <span className="flex items-center gap-1"><Calendar size={12} aria-hidden="true" />{post.date}</span>
             <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" />{post.readTime}</span>
-            <span className="text-white/30">·</span>
+            <span className="text-white/60">·</span>
             <span className="flex items-center gap-1.5">
               <span className="w-5 h-5 rounded-full bg-[#c9a84c]/20 flex items-center justify-center text-[#c9a84c] text-[9px] font-bold">JC</span>
               <span>By <span className="text-white/60 font-medium">UBC Unlimited Team</span></span>
@@ -1335,7 +1335,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main content */}
             <article className="lg:col-span-2">
-              <Link href="/blog" className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-[#c9a84c] transition-colors mb-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded">
+              <Link href="/blog" className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#c9a84c] transition-colors mb-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded">
                 <ArrowLeft size={14} aria-hidden="true" /> Back to Blog
               </Link>
               <div className="prose-content max-w-none">
@@ -1356,7 +1356,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                 </div>
                 <div className="bg-[#f8fafc] rounded-xl p-5 border border-gray-100">
                   <h3 className="font-bold text-[#080808] mb-2 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Talk to a Local Expert</h3>
-                  <p className="text-gray-500 text-xs mb-3">Our Utah team is ready to answer your questions and provide personalized recommendations.</p>
+                  <p className="text-gray-600 text-xs mb-3">Our Utah team is ready to answer your questions and provide personalized recommendations.</p>
                   <Link href="/consultation" className="btn-outline-teal text-sm py-2 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
                     Book a Consultation
                   </Link>
@@ -1373,7 +1373,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                 </div>
                 <div className="bg-[#f8fafc] rounded-xl p-5 border border-gray-100">
                   <h3 className="font-bold text-[#080808] mb-2 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Cash Discount Programs</h3>
-                  <p className="text-gray-500 text-xs mb-3">Eliminate your processing fees entirely with a legal cash discount program — available in all 50 states.</p>
+                  <p className="text-gray-600 text-xs mb-3">Eliminate your processing fees entirely with a legal cash discount program — available in all 50 states.</p>
                   <Link href="/solutions/surcharge-cash-discount" className="btn-outline-teal text-sm py-2 px-4 w-full justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]">
                     Learn More
                   </Link>
@@ -1429,8 +1429,8 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                       >
                         {rp.title}
                       </h3>
-                      <p className="text-gray-500 text-sm mb-4 leading-relaxed line-clamp-3">{rp.excerpt}</p>
-                      <div className="flex items-center justify-between text-gray-400 text-xs">
+                      <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">{rp.excerpt}</p>
+                      <div className="flex items-center justify-between text-gray-600 text-xs">
                         <div className="flex items-center gap-3">
                           <span className="flex items-center gap-1"><Calendar size={11} aria-hidden="true" />{rp.date}</span>
                           <span className="flex items-center gap-1"><Clock size={11} aria-hidden="true" />{rp.readTime}</span>

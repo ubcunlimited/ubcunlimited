@@ -103,10 +103,10 @@ export default function Solutions() {
                   </h2>
                   {detail && (
                     <>
-                      <p className="text-gray-500 text-sm mb-4">{detail.desc}</p>
+                      <p className="text-gray-600 text-sm mb-4">{detail.desc}</p>
                       <ul className="space-y-1.5 mb-5">
                         {detail.features.map((f) => (
-                          <li key={f} className="flex items-center gap-2 text-xs text-gray-500">
+                          <li key={f} className="flex items-center gap-2 text-xs text-gray-600">
                             <div className="w-1.5 h-1.5 rounded-full bg-[#c9a84c]" />
                             {f}
                           </li>

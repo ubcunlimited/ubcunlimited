@@ -87,9 +87,9 @@ function PostCard({ post }: { post: BlogPostMeta }) {
       <h3 className="font-bold text-[#080808] text-sm leading-snug mb-2 group-hover:text-[#c9a84c] transition-colors flex-1">
         {post.title}
       </h3>
-      <p className="text-xs text-gray-500 leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
+      <p className="text-xs text-gray-600 leading-relaxed mb-4 line-clamp-3">{post.excerpt}</p>
       <div className="flex items-center justify-between mt-auto pt-3 border-t border-gray-50">
-        <div className="flex items-center gap-3 text-xs text-gray-400">
+        <div className="flex items-center gap-3 text-xs text-gray-600">
           <span className="flex items-center gap-1">
             <Calendar size={11} />
             {new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
@@ -159,7 +159,7 @@ export default function NewsUpdates() {
             </p>
             {/* Search */}
             <div className="relative max-w-md">
-              <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/30" />
+              <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/60" />
               <input
                 type="text"
                 placeholder="Search articles..."
@@ -170,7 +170,7 @@ export default function NewsUpdates() {
               {search && (
                 <button
                   onClick={() => setSearch("")}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-white/60 hover:text-white/60"
                 >
                   <X size={14} />
                 </button>
@@ -194,7 +194,7 @@ export default function NewsUpdates() {
                 ))}
               </div>
             ) : (
-              <p className="text-gray-500 text-sm">No articles matched your search. Try a different term or browse the sections below.</p>
+              <p className="text-gray-600 text-sm">No articles matched your search. Try a different term or browse the sections below.</p>
             )}
           </div>
         </section>
@@ -216,7 +216,7 @@ export default function NewsUpdates() {
                   >
                     Company Announcements
                   </h2>
-                  <p className="text-gray-400 text-xs">Updates from the UBC Unlimited team</p>
+                  <p className="text-gray-600 text-xs">Updates from the UBC Unlimited team</p>
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -229,10 +229,10 @@ export default function NewsUpdates() {
                       <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-[#c9a84c]/10 text-[#8a6d1e]">
                         {item.tag}
                       </span>
-                      <span className="text-xs text-gray-400">{item.date}</span>
+                      <span className="text-xs text-gray-600">{item.date}</span>
                     </div>
                     <h3 className="font-bold text-[#080808] text-sm mb-2 leading-snug">{item.title}</h3>
-                    <p className="text-xs text-gray-500 leading-relaxed">{item.body}</p>
+                    <p className="text-xs text-gray-600 leading-relaxed">{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -253,7 +253,7 @@ export default function NewsUpdates() {
                   >
                     Industry News
                   </h2>
-                  <p className="text-gray-400 text-xs">Payment processing &amp; merchant services updates</p>
+                  <p className="text-gray-600 text-xs">Payment processing &amp; merchant services updates</p>
                 </div>
               </div>
               <div className="space-y-4">
@@ -265,10 +265,10 @@ export default function NewsUpdates() {
                     <div className="w-1 rounded-full bg-[#c9a84c]/40 shrink-0" />
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs text-gray-400">{item.date}</span>
+                        <span className="text-xs text-gray-600">{item.date}</span>
                       </div>
                       <h3 className="font-bold text-[#080808] text-sm mb-1.5">{item.headline}</h3>
-                      <p className="text-xs text-gray-500 leading-relaxed">{item.summary}</p>
+                      <p className="text-xs text-gray-600 leading-relaxed">{item.summary}</p>
                     </div>
                   </div>
                 ))}
@@ -292,7 +292,7 @@ export default function NewsUpdates() {
                       >
                         News &amp; Updates Articles
                       </h2>
-                      <p className="text-gray-400 text-xs">In-depth coverage for Utah merchants</p>
+                      <p className="text-gray-600 text-xs">In-depth coverage for Utah merchants</p>
                     </div>
                   </div>
                 </div>
@@ -316,7 +316,7 @@ export default function NewsUpdates() {
                   >
                     Recent Expert Articles
                   </h2>
-                  <p className="text-gray-400 text-xs mt-0.5">Guides &amp; insights from the UBC Unlimited team</p>
+                  <p className="text-gray-600 text-xs mt-0.5">Guides &amp; insights from the UBC Unlimited team</p>
                 </div>
                 <Link
                   href="/blog"

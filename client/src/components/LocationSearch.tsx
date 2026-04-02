@@ -137,7 +137,7 @@ export default function LocationSearch({
       <div className="relative">
         <Search
           size={16}
-          className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40 pointer-events-none"
+          className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 pointer-events-none"
         />
         <input
           ref={inputRef}
@@ -157,7 +157,7 @@ export default function LocationSearch({
         {query && (
           <button
             onClick={() => { setQuery(""); setOpen(false); inputRef.current?.focus(); }}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-white/30 hover:text-white/60 transition-colors"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-white/60 hover:text-white/60 transition-colors"
           >
             <X size={14} />
           </button>
@@ -172,8 +172,8 @@ export default function LocationSearch({
         >
           {results.length === 0 ? (
             <div className="px-4 py-5 text-center">
-              <p className="text-white/50 text-sm mb-1">No results for "{query}"</p>
-              <p className="text-white/30 text-xs">
+              <p className="text-white/70 text-sm mb-1">No results for "{query}"</p>
+              <p className="text-white/60 text-xs">
                 UBC Unlimited serves all of Utah — use the form below to request a consultation for your area.
               </p>
             </div>
@@ -182,7 +182,7 @@ export default function LocationSearch({
               {/* Group headers when showing both */}
               {filter === "both" && results.some((r) => r.type === "county") && (
                 <div className="px-4 pt-3 pb-1">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/30">Counties</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">Counties</span>
                 </div>
               )}
               {results
@@ -199,7 +199,7 @@ export default function LocationSearch({
 
               {filter === "both" && results.some((r) => r.type === "city") && (
                 <div className={`px-4 pb-1 ${results.some((r) => r.type === "county") ? "pt-2 border-t border-white/8 mt-1" : "pt-3"}`}>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/30">Cities</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">Cities</span>
                 </div>
               )}
               {results
@@ -218,8 +218,8 @@ export default function LocationSearch({
                 })}
 
               <div className="px-4 py-2.5 border-t border-white/8 flex items-center justify-between">
-                <span className="text-[10px] text-white/30">{results.length} result{results.length !== 1 ? "s" : ""} found</span>
-                <span className="text-[10px] text-white/25">↑↓ navigate · Enter select · Esc close</span>
+                <span className="text-[10px] text-white/60">{results.length} result{results.length !== 1 ? "s" : ""} found</span>
+                <span className="text-[10px] text-white/70">↑↓ navigate · Enter select · Esc close</span>
               </div>
             </>
           )}
@@ -272,9 +272,9 @@ function ResultRow({
             </span>
           )}
         </div>
-        <div className="text-[11px] text-white/40 truncate">{result.subtitle}</div>
+        <div className="text-[11px] text-white/70 truncate">{result.subtitle}</div>
       </div>
-      <ArrowRight size={12} className={`shrink-0 transition-colors ${isActive ? "text-[#c9a84c]" : "text-white/20"}`} />
+      <ArrowRight size={12} className={`shrink-0 transition-colors ${isActive ? "text-[#c9a84c]" : "text-white/70"}`} />
     </button>
   );
 }

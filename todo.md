@@ -370,3 +370,16 @@
 - [x] Fix 2 noscript elements: consolidated into single noscript with visible JS-required message + Meta Pixel tracking pixel
 - [x] Fix no heading structure: static scaffold provides h1 via sr-only technique (clip+position:absolute) visible to WAVE
 - [x] Fix no page regions: static scaffold provides header/nav/main/footer landmarks; MutationObserver hides scaffold after React hydrates
+
+- [x] Lighthouse: Fix reCAPTCHA loading — ensure script loads only once, only on production domains
+- [x] Lighthouse: Add Vite manualChunks for vendor splitting (react, framer-motion, trpc, etc.)
+- [x] Lighthouse: Add Cache-Control: public, max-age=31536000 for hashed assets (already done in vite.ts, verify)
+- [x] Lighthouse: Fix contrast — PricingTransparency.tsx text-gray-400 → text-gray-600 on white bg
+- [x] Lighthouse: Fix contrast — PricingTransparency.tsx text-white/30 → text-white/60, text-white/40 → text-white/70 on dark bg
+- [x] Lighthouse: Fix contrast — Home.tsx text-gray-400 → text-gray-600 on white/cream bg
+- [x] Lighthouse: Fix contrast — Home.tsx text-gray-500 → text-gray-700 on cream bg
+- [x] Lighthouse: Fix contrast — Home.tsx text-white/45 → text-white/70 on dark bg
+- [x] Lighthouse: Fix contrast — Footer.tsx text-white/35 → text-white/60
+- [x] Lighthouse: Fix contrast — TestimonialBlock.tsx text-gray-400 → text-gray-600
+- [x] Lighthouse: Fix contrast — TrustBadges.tsx text-gray-400 → text-gray-300 on dark bg
+- [x] Lighthouse: Fix touch target — CookieConsent.tsx close button p-2 → p-3 (min 44px)

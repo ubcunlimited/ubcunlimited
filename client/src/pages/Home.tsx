@@ -237,7 +237,7 @@ export default function Home() {
               <p className="text-white/70 text-sm md:text-lg mb-2 leading-relaxed">
                 Personal service from a Utah team that knows your industry — wherever you do business.
               </p>
-              <p className="text-white/55 text-xs sm:text-sm mb-4 leading-relaxed">
+              <p className="text-white/70 text-xs sm:text-sm mb-4 leading-relaxed">
                 Competitive pricing, fast onboarding, and industry-specific solutions — backed by {SITE.yearsInBusiness} years of experience and a dedicated rep who answers when you call.
               </p>
               {/* Stats row — hidden on mobile to keep hero compact; form takes priority */}
@@ -245,7 +245,7 @@ export default function Home() {
                 {TRUST_SIGNALS.map((s) => (
                   <div key={s.label} className="glass-card rounded-xl p-3 text-center">
                     <div className="text-xl font-extrabold text-[#c9a84c] mb-0.5" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
-                    <div className="text-white/55 text-xs leading-tight">{s.label}</div>
+                    <div className="text-white/70 text-xs leading-tight">{s.label}</div>
                   </div>
                 ))}
               </div>
@@ -275,7 +275,7 @@ export default function Home() {
               ) : (
                 <form onSubmit={handleHeroSubmit} aria-label="Request a consultation" className="bg-white/5 border border-white/10 rounded-2xl p-7 backdrop-blur-sm">
                   <p className="text-white font-bold text-lg mb-1">Request a Consultation</p>
-                  <p className="text-white/50 text-sm mb-5">Tell us about your business and we'll reach out with a tailored solution — no obligation.</p>
+                  <p className="text-white/70 text-sm mb-5">Tell us about your business and we'll reach out with a tailored solution — no obligation.</p>
                   <div className="space-y-3 mb-4">
                     <input
                       type="text"
@@ -316,7 +316,7 @@ export default function Home() {
                       }}
                       className="mt-0.5 w-4 h-4 rounded border-white/20 bg-white/10 accent-[#c9a84c] cursor-pointer flex-shrink-0"
                     />
-                    <span className="text-white/40 text-[11px] leading-relaxed">
+                    <span className="text-white/70 text-[11px] leading-relaxed">
                       I agree to the{" "}
                       <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>Privacy Policy</Link>{" "}
                       and{" "}
@@ -337,8 +337,8 @@ export default function Home() {
                       <>Get Started <ArrowRight size={15} /></>
                     )}
                   </button>
-                  <p className="text-white/30 text-xs text-center mt-4">No contracts*. No pressure. Just honest advice from a local Utah team.</p>
-                  <p className="text-white/20 text-xs text-center mt-1">* Certain platforms may require a contract. This will be disclosed prior to any agreement.</p>
+                  <p className="text-white/60 text-xs text-center mt-4">No contracts*. No pressure. Just honest advice from a local Utah team.</p>
+                  <p className="text-white/70 text-xs text-center mt-1">* Certain platforms may require a contract. This will be disclosed prior to any agreement.</p>
                 </form>
               )}
             </motion.div>
@@ -366,7 +366,7 @@ export default function Home() {
             {TRUST_SIGNALS.map((s) => (
               <div key={s.label}>
                 <div className="text-3xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
-                <div className="text-white/50 text-sm">{s.label}</div>
+                <div className="text-white/70 text-sm">{s.label}</div>
               </div>
             ))}
           </div>
@@ -381,7 +381,7 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Payment Solutions for Every Business
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm">
+            <p className="text-gray-600 max-w-xl mx-auto text-sm">
               From credit card processing to full POS systems — tailored to your industry, backed by local Utah expertise.
             </p>
           </div>
@@ -396,7 +396,7 @@ export default function Home() {
                 <div className="font-semibold text-sm text-[#080808] group-hover:text-[#c9a84c] transition-colors mb-1">
                   {sol.label}
                 </div>
-                <div className="text-xs text-gray-400 leading-snug mb-2">{sol.desc}</div>
+                <div className="text-xs text-gray-600 leading-snug mb-2">{sol.desc}</div>
                 <div className="flex items-center gap-1 text-xs text-[#c9a84c] opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn more <ChevronRight size={12} />
                 </div>
@@ -420,7 +420,7 @@ export default function Home() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#080808] mb-4" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 Better Service. Industry Specific. Local Support.
               </h2>
-              <p className="text-gray-500 mb-8 text-sm leading-relaxed">
+              <p className="text-gray-600 mb-8 text-sm leading-relaxed">
                 With {SITE.yearsInBusiness} years in the industry and a wide range of partner relationships, the UBC Unlimited team can tailor solutions to your individual needs — something a national call center simply can't do.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -431,7 +431,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="font-semibold text-sm text-[#080808] mb-1">{item.title}</div>
-                      <div className="text-xs text-gray-500 leading-relaxed">{item.desc}</div>
+                      <div className="text-xs text-gray-600 leading-relaxed">{item.desc}</div>
                     </div>
                   </div>
                 ))}
@@ -461,7 +461,7 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-bold text-sm text-[#080808]">5-Star Rated</div>
-                    <div className="text-xs text-gray-500">1000+ of Utah businesses served</div>
+                    <div className="text-xs text-gray-600">1000+ of Utah businesses served</div>
                   </div>
                 </div>
               </div>
@@ -478,7 +478,7 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Industry-Specific Solutions
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto text-sm">
+            <p className="text-white/70 max-w-xl mx-auto text-sm">
               We specialize in restaurants, service companies, and businesses across the Wasatch Front — with solutions tailored to how your industry actually operates.
             </p>
           </div>
@@ -513,7 +513,7 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               How It Works
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm">
+            <p className="text-gray-600 max-w-xl mx-auto text-sm">
               Getting started is simple. Our local team handles everything so you can focus on running your business.
             </p>
           </div>
@@ -528,7 +528,7 @@ export default function Home() {
                     <span className="text-[#c9a84c] font-bold text-sm">{step.step}</span>
                   </div>
                   <h3 className="font-bold text-[#080808] mb-2 text-sm">{step.title}</h3>
-                  <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
+                  <p className="text-gray-600 text-xs leading-relaxed">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -553,7 +553,7 @@ export default function Home() {
               <h2 className="text-2xl md:text-3xl font-bold text-[#080808]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
                 News &amp; Updates
               </h2>
-              <p className="text-gray-500 text-sm mt-1">Expert insights for Utah businesses</p>
+              <p className="text-gray-600 text-sm mt-1">Expert insights for Utah businesses</p>
             </div>
             <Link href="/blog" className="hidden sm:flex items-center gap-1 text-[#c9a84c] text-sm font-medium hover:underline">
               View all posts <ChevronRight size={14} />
@@ -570,7 +570,7 @@ export default function Home() {
                 <h3 className="font-bold text-[#080808] text-sm leading-snug mb-3 group-hover:text-[#c9a84c] transition-colors">
                   {post.title}
                 </h3>
-                <div className="text-xs text-gray-400">{post.date}</div>
+                <div className="text-xs text-gray-600">{post.date}</div>
               </Link>
             ))}
           </div>
@@ -605,7 +605,7 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-3" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
               Serving Businesses Across All of Utah
             </h2>
-            <p className="text-white/55 max-w-xl mx-auto text-sm">
+            <p className="text-white/70 max-w-xl mx-auto text-sm">
               From Salt Lake City to rural communities — our local Utah team provides merchant services and payment processing in every county and city across the state.
             </p>
           </div>
@@ -618,15 +618,15 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-base group-hover:text-[#c9a84c] transition-colors">Browse by County</div>
-                  <div className="text-white/45 text-xs">All 29 Utah counties covered</div>
+                  <div className="text-white/70 text-xs">All 29 Utah counties covered</div>
                 </div>
               </div>
-              <p className="text-white/55 text-sm mb-4 leading-relaxed">
+              <p className="text-white/70 text-sm mb-4 leading-relaxed">
                 Find dedicated service information for your county — including local industry insights, featured cities, and tailored solutions for your area.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["Salt Lake", "Utah", "Davis", "Weber", "Washington", "Cache"].map((c) => (
-                  <span key={c} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/counties/${c.toLowerCase().replace(" ", "-")}`; }} className="text-xs text-white/55 bg-white/5 hover:bg-[#c9a84c]/15 border border-white/10 hover:border-[#c9a84c]/30 px-3 py-1 rounded-full transition-colors cursor-pointer">
+                  <span key={c} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/counties/${c.toLowerCase().replace(" ", "-")}`; }} className="text-xs text-white/70 bg-white/5 hover:bg-[#c9a84c]/15 border border-white/10 hover:border-[#c9a84c]/30 px-3 py-1 rounded-full transition-colors cursor-pointer">
                     {c} County
                   </span>
                 ))}
@@ -643,15 +643,15 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="text-white font-bold text-base group-hover:text-[#c9a84c] transition-colors">Browse by City</div>
-                  <div className="text-white/45 text-xs">134+ cities across all 29 counties</div>
+                  <div className="text-white/70 text-xs">134+ cities across all 29 counties</div>
                 </div>
               </div>
-              <p className="text-white/55 text-sm mb-4 leading-relaxed">
+              <p className="text-white/70 text-sm mb-4 leading-relaxed">
                 Find merchant services information specific to your city — or use our city finder to request a consultation if your city isn't listed.
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["Salt Lake City", "Provo", "Ogden", "St. George", "Lehi", "Sandy"].map((c) => (
-                  <span key={c} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/cities/${c.toLowerCase().replace(/[. ]/g, "-").replace(/--/g, "-")}`; }} className="text-xs text-white/55 bg-white/5 hover:bg-[#c9a84c]/15 border border-white/10 hover:border-[#c9a84c]/30 px-3 py-1 rounded-full transition-colors cursor-pointer">
+                  <span key={c} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/cities/${c.toLowerCase().replace(/[. ]/g, "-").replace(/--/g, "-")}`; }} className="text-xs text-white/70 bg-white/5 hover:bg-[#c9a84c]/15 border border-white/10 hover:border-[#c9a84c]/30 px-3 py-1 rounded-full transition-colors cursor-pointer">
                     {c}
                   </span>
                 ))}

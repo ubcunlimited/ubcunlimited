@@ -111,7 +111,7 @@ export default function TestimonialSubmissionForm() {
         >
           Thank you for sharing your experience!
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed">
+        <p className="text-gray-600 text-sm leading-relaxed">
           Your testimonial has been submitted for review. Once approved by our team, it will
           appear on this page. We appreciate you taking the time to share your story.
         </p>
@@ -133,7 +133,7 @@ export default function TestimonialSubmissionForm() {
           >
             Share Your Experience
           </h3>
-          <p className="text-gray-400 text-sm mt-1 leading-relaxed">
+          <p className="text-gray-600 text-sm mt-1 leading-relaxed">
             Your story helps other Utah business owners make informed decisions.
             All submissions are reviewed before being published.
           </p>
@@ -144,7 +144,7 @@ export default function TestimonialSubmissionForm() {
         {/* Row: Name + Business */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-gray-400 text-xs font-medium mb-1.5">
+            <label className="block text-gray-600 text-xs font-medium mb-1.5">
               Your Name <span className="text-red-400">*</span>
             </label>
             <input
@@ -159,7 +159,7 @@ export default function TestimonialSubmissionForm() {
             )}
           </div>
           <div>
-            <label className="block text-gray-400 text-xs font-medium mb-1.5">
+            <label className="block text-gray-600 text-xs font-medium mb-1.5">
               Business Name <span className="text-red-400">*</span>
             </label>
             <input
@@ -178,7 +178,7 @@ export default function TestimonialSubmissionForm() {
         {/* Row: Location + Industry */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-gray-400 text-xs font-medium mb-1.5">
+            <label className="block text-gray-600 text-xs font-medium mb-1.5">
               City / Location <span className="text-red-400">*</span>
             </label>
             <input
@@ -193,7 +193,7 @@ export default function TestimonialSubmissionForm() {
             )}
           </div>
           <div>
-            <label className="block text-gray-400 text-xs font-medium mb-1.5">
+            <label className="block text-gray-600 text-xs font-medium mb-1.5">
               Industry <span className="text-red-400">*</span>
             </label>
             <select
@@ -214,7 +214,7 @@ export default function TestimonialSubmissionForm() {
 
         {/* Star Rating */}
         <div>
-          <label className="block text-gray-400 text-xs font-medium mb-2">
+          <label className="block text-gray-600 text-xs font-medium mb-2">
             Overall Rating <span className="text-red-400">*</span>
           </label>
           <div
@@ -243,7 +243,7 @@ export default function TestimonialSubmissionForm() {
               </button>
             ))}
             {rating > 0 && (
-              <span className="ml-2 text-gray-400 text-sm self-center">
+              <span className="ml-2 text-gray-600 text-sm self-center">
                 {["", "Poor", "Fair", "Good", "Very Good", "Excellent"][rating]}
               </span>
             )}
@@ -255,7 +255,7 @@ export default function TestimonialSubmissionForm() {
 
         {/* Testimonial Text */}
         <div>
-          <label className="block text-gray-400 text-xs font-medium mb-1.5">
+          <label className="block text-gray-600 text-xs font-medium mb-1.5">
             Your Testimonial <span className="text-red-400">*</span>
           </label>
           <textarea
@@ -279,7 +279,7 @@ export default function TestimonialSubmissionForm() {
 
         {/* Email (optional) */}
         <div>
-          <label className="block text-gray-400 text-xs font-medium mb-1.5">
+          <label className="block text-gray-600 text-xs font-medium mb-1.5">
             Email Address{" "}
             <span className="text-gray-600 font-normal">(optional — not published)</span>
           </label>
@@ -304,7 +304,7 @@ export default function TestimonialSubmissionForm() {
               onChange={(e) => { setAgreed(e.target.checked); clearError("agreed"); }}
               className="mt-0.5 w-4 h-4 rounded border-white/20 bg-[#111] accent-[#c9a84c] cursor-pointer flex-shrink-0"
             />
-            <span className="text-gray-400 text-[11px] leading-relaxed">
+            <span className="text-gray-600 text-[11px] leading-relaxed">
               I agree to the{" "}
               <Link
                 href="/privacy-policy"

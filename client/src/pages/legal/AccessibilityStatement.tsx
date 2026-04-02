@@ -23,7 +23,7 @@ export default function AccessibilityStatement() {
           >
             Accessibility Statement
           </h1>
-          <p className="text-white/50 text-sm">Last updated: March 19, 2026</p>
+          <p className="text-white/70 text-sm">Last updated: March 19, 2026</p>
         </div>
       </section>
 

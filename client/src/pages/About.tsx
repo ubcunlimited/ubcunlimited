@@ -77,7 +77,7 @@ export default function About() {
             {TRUST_SIGNALS.map((s) => (
               <div key={s.label}>
                 <div className="text-3xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.value}</div>
-                <div className="text-white/50 text-sm">{s.label}</div>
+                <div className="text-white/70 text-sm">{s.label}</div>
               </div>
             ))}
           </div>
@@ -125,7 +125,7 @@ export default function About() {
                   {[1,2,3,4,5].map(i => <Star key={i} size={13} className="text-[#c9a84c] fill-[#c9a84c]" />)}
                 </div>
                 <div className="font-bold text-sm text-[#080808]">{SITE.founder}</div>
-                <div className="text-xs text-gray-500">Founder, UBC Unlimited</div>
+                <div className="text-xs text-gray-600">Founder, UBC Unlimited</div>
                 <div className="text-xs text-[#c9a84c] mt-1">{SITE.yearsInBusiness} Years in Merchant Services</div>
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function About() {
             <h2 className="text-2xl sm:text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               What We Stand For
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm">
+            <p className="text-gray-600 max-w-xl mx-auto text-sm">
               These aren't just values on a wall — they're the principles that guide every client relationship and every recommendation we make.
             </p>
           </div>
@@ -152,7 +152,7 @@ export default function About() {
                   <v.icon size={22} className="text-[#c9a84c]" />
                 </div>
                 <h3 className="font-bold text-[#080808] mb-2">{v.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{v.desc}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -179,12 +179,12 @@ export default function About() {
                   </div>
                 ))}
               </div>
-              <p className="text-white/40 text-xs mt-4 leading-relaxed">
+              <p className="text-white/70 text-xs mt-4 leading-relaxed">
                 * Month-to-month agreements apply to most standard accounts. Certain solutions or equipment financing programs may require a formal agreement with specific terms. All such terms will be clearly disclosed before you sign anything.
               </p>
             </div>
             <div className="glass-card rounded-2xl p-8">
-              <div className="text-white/40 text-xs uppercase tracking-widest font-medium mb-6">Our Commitment to You</div>
+              <div className="text-white/70 text-xs uppercase tracking-widest font-medium mb-6">Our Commitment to You</div>
               <div className="space-y-5">
                 {[
                   { title: "Independent Advice", desc: "We evaluate your business needs first, then recommend the solution that fits — not the one that benefits us most." },

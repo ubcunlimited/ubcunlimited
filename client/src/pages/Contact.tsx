@@ -33,7 +33,7 @@ function LegalConsent({ smsChecked, onSmsChange, termsChecked, onTermsChange, te
             onChange={(e) => onTermsChange(e.target.checked)}
             className="mt-0.5 accent-[#c9a84c]"
           />
-          <span className="text-xs text-gray-500 leading-relaxed">
+          <span className="text-xs text-gray-600 leading-relaxed">
             I agree to the{" "}
             <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#c9a84c]">Privacy Policy</Link>{" "}
             and{" "}
@@ -50,7 +50,7 @@ function LegalConsent({ smsChecked, onSmsChange, termsChecked, onTermsChange, te
           onChange={(e) => onSmsChange(e.target.checked)}
           className="mt-0.5 accent-[#c9a84c]"
         />
-        <span className="text-xs text-gray-500 leading-relaxed">
+        <span className="text-xs text-gray-600 leading-relaxed">
           I consent to receive transactional SMS messages (appointment confirmations, follow-ups) from UBC Unlimited at the number provided. Message &amp; data rates may apply. Reply STOP to opt out.
         </span>
       </label>
@@ -65,7 +65,7 @@ function SuccessCard({ title, message }: { title: string; message: string }) {
         <CheckCircle2 size={32} className="text-[#c9a84c]" />
       </div>
       <h2 className="text-2xl font-bold text-[#080808] mb-3" style={{ fontFamily: "Sora, sans-serif" }}>{title}</h2>
-      <p className="text-gray-500 text-sm max-w-md leading-relaxed">{message}</p>
+      <p className="text-gray-600 text-sm max-w-md leading-relaxed">{message}</p>
     </div>
   );
 }
@@ -99,7 +99,7 @@ function ConsultationForm({ onSuccess }: { onSuccess: () => void }) {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <h2 className="text-2xl font-bold text-[#080808] mb-1" style={{ fontFamily: "Sora, sans-serif" }}>Book a Consultation</h2>
-      <p className="text-gray-500 text-sm mb-5">Schedule a no-obligation call with {SITE.founder} to discuss your business's payment processing needs and explore your options.</p>
+      <p className="text-gray-600 text-sm mb-5">Schedule a no-obligation call with {SITE.founder} to discuss your business's payment processing needs and explore your options.</p>
       <div className="grid sm:grid-cols-2 gap-4">
         <div><label className={labelClass} htmlFor="c-fname">First Name <span className="text-red-500">*</span></label><input id="c-fname" type="text" required value={form.firstName} onChange={set("firstName")} placeholder="Jane" className={inputClass} /></div>
         <div><label className={labelClass} htmlFor="c-lname">Last Name <span className="text-red-500">*</span></label><input id="c-lname" type="text" required value={form.lastName} onChange={set("lastName")} placeholder="Smith" className={inputClass} /></div>
@@ -178,7 +178,7 @@ function QuoteForm({ onSuccess }: { onSuccess: () => void }) {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <h2 className="text-2xl font-bold text-[#080808] mb-1" style={{ fontFamily: "Sora, sans-serif" }}>Request a Custom Quote</h2>
-      <p className="text-gray-500 text-sm mb-5">Tell us a bit about your business and we'll put together a tailored merchant services proposal with transparent pricing.</p>
+      <p className="text-gray-600 text-sm mb-5">Tell us a bit about your business and we'll put together a tailored merchant services proposal with transparent pricing.</p>
       <div className="grid sm:grid-cols-2 gap-4">
         <div><label className={labelClass} htmlFor="q-fname">First Name <span className="text-red-500">*</span></label><input id="q-fname" type="text" required value={form.firstName} onChange={set("firstName")} placeholder="Jane" className={inputClass} /></div>
         <div><label className={labelClass} htmlFor="q-lname">Last Name <span className="text-red-500">*</span></label><input id="q-lname" type="text" required value={form.lastName} onChange={set("lastName")} placeholder="Smith" className={inputClass} /></div>
@@ -284,7 +284,7 @@ function StatementReviewForm({ onSuccess }: { onSuccess: () => void }) {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <h2 className="text-2xl font-bold text-[#080808] mb-1" style={{ fontFamily: "Sora, sans-serif" }}>Statement Review</h2>
-      <p className="text-gray-500 text-sm mb-2">Upload your most recent processing statement and we'll do a line-by-line analysis to show you exactly what you're paying — and how much you could save with UBC Unlimited.</p>
+      <p className="text-gray-600 text-sm mb-2">Upload your most recent processing statement and we'll do a line-by-line analysis to show you exactly what you're paying — and how much you could save with UBC Unlimited.</p>
       <div className="bg-[#f8fafc] border border-gray-100 rounded-xl p-4 flex flex-wrap gap-4 mb-2">
         {["No obligation", "Results in 1–2 business days", "Confidential & secure", "Real savings numbers"].map((item) => (
           <div key={item} className="flex items-center gap-1.5 text-sm text-gray-600">
@@ -306,7 +306,7 @@ function StatementReviewForm({ onSuccess }: { onSuccess: () => void }) {
       </div>
       <div>
         <label className={labelClass} htmlFor="s-file">
-          Upload Your Processing Statement <span className="text-gray-400 font-normal">(PDF, JPG, PNG — up to 10 MB)</span>
+          Upload Your Processing Statement <span className="text-gray-600 font-normal">(PDF, JPG, PNG — up to 10 MB)</span>
         </label>
         <div
           className="relative border-2 border-dashed border-gray-200 rounded-xl p-6 text-center cursor-pointer hover:border-[#c9a84c]/50 transition-all"
@@ -322,12 +322,12 @@ function StatementReviewForm({ onSuccess }: { onSuccess: () => void }) {
             <p className="text-sm font-medium text-[#080808]">{fileName}</p>
           ) : (
             <>
-              <p className="text-sm font-medium text-gray-500">Click to upload or drag and drop</p>
-              <p className="text-xs text-gray-400 mt-1">PDF, JPG, or PNG · Max 10 MB</p>
+              <p className="text-sm font-medium text-gray-600">Click to upload or drag and drop</p>
+              <p className="text-xs text-gray-600 mt-1">PDF, JPG, or PNG · Max 10 MB</p>
             </>
           )}
         </div>
-        <p className="text-xs text-gray-400 mt-2">Don't have a digital copy? Describe your current processor and monthly volume in the notes field below and we'll still provide an estimate.</p>
+        <p className="text-xs text-gray-600 mt-2">Don't have a digital copy? Describe your current processor and monthly volume in the notes field below and we'll still provide an estimate.</p>
       </div>
       <div><label className={labelClass} htmlFor="s-notes">Current Processor / Notes</label><textarea id="s-notes" rows={3} value={form.message} onChange={set("message")} placeholder="e.g., Currently with Square, processing about $30k/month, mostly card-present transactions..." className={inputClass} /></div>
       <LegalConsent
@@ -415,11 +415,11 @@ export default function Contact() {
                   activeTab === tab.id ? "border-[#c9a84c] bg-[#c9a84c]/5 shadow-sm" : "border-gray-200 hover:border-gray-300 bg-white"
                 }`}
               >
-                <span className={activeTab === tab.id ? "text-[#c9a84c]" : "text-gray-400"}>{tab.icon}</span>
-                <span className={`text-sm font-semibold ${activeTab === tab.id ? "text-[#080808]" : "text-gray-500"}`} style={{ fontFamily: "Sora, sans-serif" }}>
+                <span className={activeTab === tab.id ? "text-[#c9a84c]" : "text-gray-600"}>{tab.icon}</span>
+                <span className={`text-sm font-semibold ${activeTab === tab.id ? "text-[#080808]" : "text-gray-600"}`} style={{ fontFamily: "Sora, sans-serif" }}>
                   {tab.label}
                 </span>
-                <span className="text-xs text-gray-400 leading-relaxed">{tab.desc}</span>
+                <span className="text-xs text-gray-600 leading-relaxed">{tab.desc}</span>
               </button>
             ))}
           </div>

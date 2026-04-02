@@ -281,14 +281,14 @@ function StepIndicator({ currentStep, totalSteps }: { currentStep: number; total
                     ? "bg-[#c9a84c] text-[#080808]"
                     : isActive
                     ? "bg-[#c9a84c] text-[#080808] ring-4 ring-[#c9a84c]/20"
-                    : "bg-white/10 text-white/40"
+                    : "bg-white/10 text-white/70"
                 }`}
               >
                 {isDone ? <CheckCircle size={16} /> : stepNum}
               </div>
               <span
                 className={`text-[10px] font-medium whitespace-nowrap ${
-                  isActive ? "text-[#c9a84c]" : isDone ? "text-white/60" : "text-white/30"
+                  isActive ? "text-[#c9a84c]" : isDone ? "text-white/60" : "text-white/60"
                 }`}
               >
                 {label}
@@ -400,7 +400,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
             Build Your{" "}
             <span className="text-[#c9a84c]">SkyTab POS System</span>
           </h2>
-          <p className="text-white/50 text-sm max-w-xl mx-auto">
+          <p className="text-white/70 text-sm max-w-xl mx-auto">
             Tell us about your business and we'll recommend the right SkyTab hardware and features — then connect you with a local Utah expert for a custom quote.
           </p>
         </div>
@@ -431,7 +431,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                   )}
                   <div
                     className={`mb-3 transition-colors ${
-                      selectedBusiness === biz.id ? "text-[#c9a84c]" : "text-white/50 group-hover:text-white/70"
+                      selectedBusiness === biz.id ? "text-[#c9a84c]" : "text-white/70 group-hover:text-white/70"
                     }`}
                   >
                     {biz.icon}
@@ -444,7 +444,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                   >
                     {biz.label}
                   </div>
-                  <div className="text-white/40 text-xs leading-snug">{biz.desc}</div>
+                  <div className="text-white/70 text-xs leading-snug">{biz.desc}</div>
                 </button>
               ))}
             </div>
@@ -467,7 +467,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
               <h3 className="text-lg font-bold text-white mb-1" style={{ fontFamily: "Sora, sans-serif" }}>
                 Select your hardware
               </h3>
-              <p className="text-white/40 text-sm">
+              <p className="text-white/70 text-sm">
                 We've pre-selected the recommended setup for{" "}
                 <span className="text-[#c9a84c] font-medium">{businessType?.label}</span>. Customize as needed.
               </p>
@@ -484,7 +484,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
               };
               return (
                 <div key={cat} className="mb-8">
-                  <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3">{catLabels[cat]}</h4>
+                  <h4 className="text-xs font-bold uppercase tracking-widest text-white/70 mb-3">{catLabels[cat]}</h4>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                     {items.map((hw) => {
                       const isSelected = selectedHardware.includes(hw.id);
@@ -506,7 +506,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                           <div className="flex items-start gap-3 mb-3">
                             <div
                               className={`p-2 rounded-xl transition-colors ${
-                                isSelected ? "bg-[#c9a84c]/20 text-[#c9a84c]" : "bg-white/8 text-white/50"
+                                isSelected ? "bg-[#c9a84c]/20 text-[#c9a84c]" : "bg-white/8 text-white/70"
                               }`}
                             >
                               {hw.icon}
@@ -520,13 +520,13 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                               >
                                 {hw.name}
                               </div>
-                              <div className="text-white/40 text-xs mt-0.5">{hw.subtitle}</div>
+                              <div className="text-white/70 text-xs mt-0.5">{hw.subtitle}</div>
                             </div>
                           </div>
-                          <p className="text-white/50 text-xs leading-relaxed mb-3">{hw.desc}</p>
+                          <p className="text-white/70 text-xs leading-relaxed mb-3">{hw.desc}</p>
                           <ul className="space-y-1">
                             {hw.highlights.slice(0, 3).map((h) => (
-                              <li key={h} className="flex items-start gap-1.5 text-xs text-white/40">
+                              <li key={h} className="flex items-start gap-1.5 text-xs text-white/70">
                                 <CheckCircle size={11} className="text-[#c9a84c]/60 mt-0.5 shrink-0" />
                                 {h}
                               </li>
@@ -553,7 +553,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
             <div className="flex items-center justify-between mt-6">
               <button
                 onClick={() => setStep(1)}
-                className="inline-flex items-center gap-2 text-white/50 hover:text-white text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
               >
                 <ChevronLeft size={16} /> Back
               </button>
@@ -574,7 +574,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
               <h3 className="text-lg font-bold text-white mb-1" style={{ fontFamily: "Sora, sans-serif" }}>
                 Enhance your system
               </h3>
-              <p className="text-white/40 text-sm">
+              <p className="text-white/70 text-sm">
                 Optional hardware and software add-ons recommended for{" "}
                 <span className="text-[#c9a84c] font-medium">{businessType?.label}</span>.
               </p>
@@ -582,7 +582,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
 
             {/* Hardware add-ons */}
             <div className="mb-8">
-              <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3">Hardware Add-Ons</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white/70 mb-3">Hardware Add-Ons</h4>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {ADD_ONS.filter((a) => a.category === "hardware").map((addon) => {
                   const isSelected = selectedAddOns.includes(addon.id);
@@ -605,7 +605,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                       <div className="flex items-start gap-3">
                         <div
                           className={`p-2 rounded-xl transition-colors shrink-0 ${
-                            isSelected ? "bg-[#c9a84c]/20 text-[#c9a84c]" : "bg-white/8 text-white/50"
+                            isSelected ? "bg-[#c9a84c]/20 text-[#c9a84c]" : "bg-white/8 text-white/70"
                           }`}
                         >
                           {addon.icon}
@@ -619,7 +619,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                           >
                             {addon.name}
                           </div>
-                          <p className="text-white/40 text-xs leading-relaxed">{addon.desc}</p>
+                          <p className="text-white/70 text-xs leading-relaxed">{addon.desc}</p>
                         </div>
                         <div
                           className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 transition-all ${
@@ -629,7 +629,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                           {isSelected ? (
                             <CheckCircle size={11} className="text-[#080808]" />
                           ) : (
-                            <Plus size={11} className="text-white/30" />
+                            <Plus size={11} className="text-white/60" />
                           )}
                         </div>
                       </div>
@@ -641,7 +641,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
 
             {/* Software add-ons */}
             <div className="mb-8">
-              <h4 className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3">Software & Features</h4>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-white/70 mb-3">Software & Features</h4>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {ADD_ONS.filter((a) => a.category === "software").map((addon) => {
                   const isSelected = selectedAddOns.includes(addon.id);
@@ -664,7 +664,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                       <div className="flex items-start gap-3">
                         <div
                           className={`p-2 rounded-xl transition-colors shrink-0 ${
-                            isSelected ? "bg-[#c9a84c]/20 text-[#c9a84c]" : "bg-white/8 text-white/50"
+                            isSelected ? "bg-[#c9a84c]/20 text-[#c9a84c]" : "bg-white/8 text-white/70"
                           }`}
                         >
                           {addon.icon}
@@ -678,7 +678,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                           >
                             {addon.name}
                           </div>
-                          <p className="text-white/40 text-xs leading-relaxed">{addon.desc}</p>
+                          <p className="text-white/70 text-xs leading-relaxed">{addon.desc}</p>
                         </div>
                         <div
                           className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 transition-all ${
@@ -688,7 +688,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                           {isSelected ? (
                             <CheckCircle size={11} className="text-[#080808]" />
                           ) : (
-                            <Plus size={11} className="text-white/30" />
+                            <Plus size={11} className="text-white/60" />
                           )}
                         </div>
                       </div>
@@ -701,7 +701,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
             <div className="flex items-center justify-between mt-6">
               <button
                 onClick={() => setStep(2)}
-                className="inline-flex items-center gap-2 text-white/50 hover:text-white text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
               >
                 <ChevronLeft size={16} /> Back
               </button>
@@ -722,7 +722,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
               <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "Sora, sans-serif" }}>
                 Your Custom SkyTab Build
               </h3>
-              <p className="text-white/40 text-sm">
+              <p className="text-white/70 text-sm">
                 Here's what we recommend for your{" "}
                 <span className="text-[#c9a84c] font-medium">{businessType?.label}</span>. Submit your details and a local Utah expert will reach out with a custom quote.
               </p>
@@ -733,14 +733,14 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
               <div className="space-y-4">
                 {/* Business type */}
                 <div className="bg-white/4 border border-white/10 rounded-2xl p-5">
-                  <div className="text-xs font-bold uppercase tracking-widest text-white/40 mb-3">Business Type</div>
+                  <div className="text-xs font-bold uppercase tracking-widest text-white/70 mb-3">Business Type</div>
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-[#c9a84c]/20 flex items-center justify-center text-[#c9a84c]">
                       {businessType?.icon}
                     </div>
                     <div>
                       <div className="font-bold text-white text-sm" style={{ fontFamily: "Sora, sans-serif" }}>{businessType?.label}</div>
-                      <div className="text-white/40 text-xs">{businessType?.desc}</div>
+                      <div className="text-white/70 text-xs">{businessType?.desc}</div>
                     </div>
                   </div>
                 </div>
@@ -748,7 +748,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                 {/* Hardware */}
                 <div className="bg-white/4 border border-white/10 rounded-2xl p-5">
                   <div className="flex items-center justify-between mb-3">
-                    <div className="text-xs font-bold uppercase tracking-widest text-white/40">Hardware Selected</div>
+                    <div className="text-xs font-bold uppercase tracking-widest text-white/70">Hardware Selected</div>
                     <button
                       onClick={() => setStep(2)}
                       className="text-[#c9a84c] text-xs hover:underline"
@@ -757,7 +757,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                     </button>
                   </div>
                   {selectedHardwareItems.length === 0 ? (
-                    <p className="text-white/30 text-sm">No hardware selected</p>
+                    <p className="text-white/60 text-sm">No hardware selected</p>
                   ) : (
                     <div className="space-y-2">
                       {selectedHardwareItems.map((hw) => (
@@ -767,7 +767,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                           </div>
                           <div>
                             <span className="text-white text-sm font-medium">{hw.name}</span>
-                            <span className="text-white/30 text-xs ml-2">{hw.subtitle}</span>
+                            <span className="text-white/60 text-xs ml-2">{hw.subtitle}</span>
                           </div>
                         </div>
                       ))}
@@ -779,7 +779,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                 {selectedAddOnItems.length > 0 && (
                   <div className="bg-white/4 border border-white/10 rounded-2xl p-5">
                     <div className="flex items-center justify-between mb-3">
-                      <div className="text-xs font-bold uppercase tracking-widest text-white/40">Add-Ons Selected</div>
+                      <div className="text-xs font-bold uppercase tracking-widest text-white/70">Add-Ons Selected</div>
                       <button
                         onClick={() => setStep(3)}
                         className="text-[#c9a84c] text-xs hover:underline"
@@ -814,7 +814,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                 <h4 className="font-bold text-white text-base mb-1" style={{ fontFamily: "Sora, sans-serif" }}>
                   Get Your Custom Quote
                 </h4>
-                <p className="text-white/40 text-xs mb-5">
+                <p className="text-white/70 text-xs mb-5">
                   A local Utah SkyTab expert will reach out within 1 business day with pricing and availability.
                 </p>
 
@@ -824,7 +824,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                       <CheckCircle size={28} className="text-[#c9a84c]" />
                     </div>
                     <p className="text-white font-bold text-lg mb-1" style={{ fontFamily: "Sora, sans-serif" }}>Build Submitted!</p>
-                    <p className="text-white/50 text-sm">We'll be in touch within 1 business day.</p>
+                    <p className="text-white/70 text-sm">We'll be in touch within 1 business day.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-3">
@@ -868,7 +868,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                     >
                       Send My Build for a Quote <ArrowRight size={15} />
                     </button>
-                    <p className="text-white/25 text-[11px] text-center leading-relaxed">
+                    <p className="text-white/70 text-[11px] text-center leading-relaxed">
                       No obligation. A local Utah expert will reach out — not a call center.
                     </p>
                   </form>
@@ -878,7 +878,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                 <div className="mt-4 pt-4 border-t border-white/8 flex items-center gap-3">
                   <Phone size={15} className="text-[#c9a84c] shrink-0" />
                   <div>
-                    <p className="text-white/50 text-xs">Prefer to talk now?</p>
+                    <p className="text-white/70 text-xs">Prefer to talk now?</p>
                     <a href="tel:+18013096988" className="text-[#c9a84c] text-sm font-semibold hover:underline">
                       (801) 309-6988
                     </a>
@@ -890,7 +890,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
             <div className="flex items-center justify-start mt-6">
               <button
                 onClick={() => setStep(3)}
-                className="inline-flex items-center gap-2 text-white/50 hover:text-white text-sm transition-colors"
+                className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors"
               >
                 <ChevronLeft size={16} /> Back to Add-Ons
               </button>

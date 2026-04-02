@@ -163,7 +163,7 @@ export default function PricingTransparency() {
           >
             Transparent Pricing, Tailored to Your Business
           </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-sm leading-relaxed">
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm leading-relaxed">
             There is no single "best rate" in merchant services — the right pricing model depends on your{" "}
             <strong className="text-[#080808]">card mix, average ticket, and monthly volume</strong>. We analyze your
             statement and build a structure that actually optimizes your savings.
@@ -201,10 +201,10 @@ export default function PricingTransparency() {
                 >
                   {model.range}
                 </div>
-                <div className="text-xs text-gray-400 mt-0.5">{model.rangeNote}</div>
+                <div className="text-xs text-gray-600 mt-0.5">{model.rangeNote}</div>
               </div>
 
-              <p className="text-xs text-gray-500 leading-relaxed mb-4 flex-1">{model.desc}</p>
+              <p className="text-xs text-gray-600 leading-relaxed mb-4 flex-1">{model.desc}</p>
 
               <div className="space-y-2 mb-5">
                 {model.highlights.map((h) => (
@@ -216,7 +216,7 @@ export default function PricingTransparency() {
               </div>
 
               <div className="border-t border-gray-100 pt-4">
-                <div className="text-xs text-gray-400 mb-1">Best for</div>
+                <div className="text-xs text-gray-600 mb-1">Best for</div>
                 <div className="text-xs font-semibold text-[#080808]">{model.best}</div>
                 <div className={`text-xs font-bold mt-2 ${model.ctaColor}`}>{model.cta}</div>
               </div>
@@ -233,7 +233,7 @@ export default function PricingTransparency() {
             >
               What Actually Determines Your Rate
             </h3>
-            <p className="text-white/50 text-sm max-w-xl mx-auto">
+            <p className="text-white/70 text-sm max-w-xl mx-auto">
               Understanding these three factors is why a statement review is worth more than any rate quote we could give you upfront.
             </p>
           </div>
@@ -245,7 +245,7 @@ export default function PricingTransparency() {
                 </div>
                 <div>
                   <div className="font-semibold text-white text-sm mb-1">{factor.title}</div>
-                  <div className="text-white/50 text-xs leading-relaxed">{factor.desc}</div>
+                  <div className="text-white/70 text-xs leading-relaxed">{factor.desc}</div>
                 </div>
               </div>
             ))}
@@ -261,7 +261,7 @@ export default function PricingTransparency() {
             >
               How We Compare
             </h3>
-            <p className="text-gray-500 text-sm max-w-xl mx-auto">
+            <p className="text-gray-600 text-sm max-w-xl mx-auto">
               UBC Unlimited vs. national platforms — on the factors that actually matter to your bottom line.
             </p>
           </div>
@@ -273,15 +273,15 @@ export default function PricingTransparency() {
                   <th className="text-left px-5 py-4 text-white/60 font-medium text-xs w-[30%]">Feature</th>
                   <th className="px-5 py-4 text-center w-[23%]">
                     <div className="text-[#c9a84c] font-bold text-sm">UBC Unlimited</div>
-                    <div className="text-white/40 text-xs font-normal">Local Utah Expert</div>
+                    <div className="text-white/70 text-xs font-normal">Local Utah Expert</div>
                   </th>
                   <th className="px-5 py-4 text-center w-[23%]">
                     <div className="text-white/70 font-semibold text-sm">Stripe</div>
-                    <div className="text-white/30 text-xs font-normal">National Platform</div>
+                    <div className="text-white/60 text-xs font-normal">National Platform</div>
                   </th>
                   <th className="px-5 py-4 text-center w-[23%]">
                     <div className="text-white/70 font-semibold text-sm">Square</div>
-                    <div className="text-white/30 text-xs font-normal">National Platform</div>
+                    <div className="text-white/60 text-xs font-normal">National Platform</div>
                   </th>
                 </tr>
               </thead>
@@ -294,7 +294,7 @@ export default function PricingTransparency() {
                     <td className="px-5 py-4 align-top">
                       <div className="font-semibold text-[#080808] text-xs mb-0.5">{row.feature}</div>
                       {row.note && (
-                        <div className="text-gray-400 text-xs leading-snug">{row.note}</div>
+                        <div className="text-gray-600 text-xs leading-snug">{row.note}</div>
                       )}
                     </td>
                     <td className="px-5 py-4 text-center align-middle bg-[#c9a84c]/5 border-x border-[#c9a84c]/10">
@@ -311,12 +311,12 @@ export default function PricingTransparency() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-400 mt-3 text-center">
+          <p className="text-xs text-gray-600 mt-3 text-center">
             Competitor data based on publicly available pricing as of 2025. Actual rates vary. UBC Unlimited rates depend on your specific card mix and volume.
           </p>
           <div className="mt-4 space-y-1">
-            <p className="text-xs text-gray-400"><sup>1</sup> Rates shown reflect low-risk merchants. Medium- and high-risk businesses may see different costs based on industry classification and risk profile.</p>
-            <p className="text-xs text-gray-400"><sup>2</sup> Certain solutions and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.</p>
+            <p className="text-xs text-gray-600"><sup>1</sup> Rates shown reflect low-risk merchants. Medium- and high-risk businesses may see different costs based on industry classification and risk profile.</p>
+            <p className="text-xs text-gray-600"><sup>2</sup> Certain solutions and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.</p>
           </div>
         </div>
 
@@ -329,7 +329,7 @@ export default function PricingTransparency() {
             Request a Custom Quote
           </Link>
         </div>
-        <p className="text-center text-xs text-gray-400 mt-4">
+        <p className="text-center text-xs text-gray-600 mt-4">
           No obligation. No pressure. Just an honest comparison of what you're paying vs. what you should be paying.
         </p>
       </div>

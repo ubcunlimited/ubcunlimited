@@ -110,7 +110,7 @@ export default function UtahCountyMap({ className = "", onCountyClick }: Props) 
               <div className="text-[#c9a84c] text-[10px] font-medium">★ Featured service page</div>
             )}
             {!tooltip.featured && (
-              <div className="text-white/40 text-[10px]">Click to view service page</div>
+              <div className="text-white/70 text-[10px]">Click to view service page</div>
             )}
           </div>
         </div>

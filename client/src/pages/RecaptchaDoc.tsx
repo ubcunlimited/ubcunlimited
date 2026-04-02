@@ -253,10 +253,10 @@ function CodeBlock({ title, code }: CodeBlockProps) {
   return (
     <div className="rounded-xl overflow-hidden border border-gray-200 my-4">
       <div className="flex items-center justify-between px-4 py-2 bg-[#0f172a] border-b border-gray-700">
-        <span className="text-xs font-mono text-gray-400">{title}</span>
+        <span className="text-xs font-mono text-gray-600">{title}</span>
         <button
           onClick={handleCopy}
-          className="text-xs text-gray-400 hover:text-white transition-colors px-2 py-1 rounded hover:bg-white/10"
+          className="text-xs text-gray-600 hover:text-white transition-colors px-2 py-1 rounded hover:bg-white/10"
         >
           {copied ? "Copied!" : "Copy"}
         </button>
@@ -277,7 +277,7 @@ function Collapsible({ title, children, defaultOpen = false }: CollapsibleProps)
         className="w-full flex items-center justify-between px-5 py-4 bg-gray-50 hover:bg-gray-100 transition-colors text-left"
       >
         <span className="font-semibold text-[#080808] text-sm">{title}</span>
-        {open ? <ChevronUp size={16} className="text-gray-500 shrink-0" /> : <ChevronDown size={16} className="text-gray-500 shrink-0" />}
+        {open ? <ChevronUp size={16} className="text-gray-600 shrink-0" /> : <ChevronDown size={16} className="text-gray-600 shrink-0" />}
       </button>
       {open && <div className="px-5 py-4 bg-white">{children}</div>}
     </div>
@@ -340,7 +340,7 @@ export default function RecaptchaDoc() {
               <div key={label} className="bg-white rounded-xl border border-gray-200 p-5 text-center">
                 <Icon size={20} className={`${color} mx-auto mb-2`} />
                 <div className={`text-2xl font-bold ${color}`}>{value}</div>
-                <div className="text-xs text-gray-500 mt-1">{label}</div>
+                <div className="text-xs text-gray-600 mt-1">{label}</div>
               </div>
             ))}
           </div>
@@ -447,7 +447,7 @@ export default function RecaptchaDoc() {
                     <tr key={entry.form} className={`border-b border-gray-100 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/40"}`}>
                       <td className="px-4 py-3">
                         <div className="font-medium text-[#080808] text-xs">{entry.form}</div>
-                        <div className="font-mono text-[10px] text-gray-400 mt-0.5">{entry.file}</div>
+                        <div className="font-mono text-[10px] text-gray-600 mt-0.5">{entry.file}</div>
                         {entry.notes && (
                           <div className="text-[10px] text-amber-600 mt-1 leading-relaxed max-w-xs">{entry.notes}</div>
                         )}
@@ -469,14 +469,14 @@ export default function RecaptchaDoc() {
               The following samples reflect the exact production code. Use these as reference when adding reCAPTCHA to new forms in the future.
             </p>
             <Collapsible title="useRecaptcha hook — client/src/hooks/useRecaptcha.ts" defaultOpen>
-              <p className="text-xs text-gray-500 mb-3 leading-relaxed">
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">
                 Shared React hook that wraps <code className="bg-gray-100 px-1 rounded">grecaptcha.execute()</code>. Call <code className="bg-gray-100 px-1 rounded">getToken(action)</code> just before calling a mutation. Returns an empty string and logs a warning if the script has not loaded, allowing the form to proceed gracefully.
               </p>
               <CodeBlock title="useRecaptcha.ts" code={HOOK_CODE} />
             </Collapsible>
 
             <Collapsible title="verifyRecaptcha utility — server/recaptcha.ts">
-              <p className="text-xs text-gray-500 mb-3 leading-relaxed">
+              <p className="text-xs text-gray-600 mb-3 leading-relaxed">
                 Server-side verification utility. Calls Google's <code className="bg-gray-100 px-1 rounded">siteverify</code> endpoint, validates the score against <code className="bg-gray-100 px-1 rounded">minScore</code> (default 0.5), and optionally checks that the action name matches what the client declared. If <code className="bg-gray-100 px-1 rounded">RECAPTCHA_SECRET_KEY</code> is not set (local dev), verification is skipped and the request passes through.
               </p>
               <CodeBlock title="recaptcha.ts" code={SERVER_CODE} />
@@ -574,10 +574,10 @@ export default function RecaptchaDoc() {
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 p-4 rounded-xl border border-gray-200 hover:border-[#c9a84c] hover:bg-[#c9a84c]/5 transition-all group"
                 >
-                  <ExternalLink size={14} className="text-gray-400 group-hover:text-[#c9a84c] shrink-0 mt-0.5 transition-colors" />
+                  <ExternalLink size={14} className="text-gray-600 group-hover:text-[#c9a84c] shrink-0 mt-0.5 transition-colors" />
                   <div>
                     <div className="text-sm font-semibold text-[#080808] group-hover:text-[#c9a84c] transition-colors">{label}</div>
-                    <div className="text-xs text-gray-500 mt-0.5">{desc}</div>
+                    <div className="text-xs text-gray-600 mt-0.5">{desc}</div>
                   </div>
                 </a>
               ))}

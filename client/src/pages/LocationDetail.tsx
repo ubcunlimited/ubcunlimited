@@ -27,7 +27,7 @@ export default function LocationDetail() {
       <PageLayout>
         <div className="container py-20 text-center">
           <h1 className="text-3xl font-bold text-[#080808] mb-4">Location Not Found</h1>
-          <p className="text-gray-500 mb-6">We couldn't find that location page.</p>
+          <p className="text-gray-600 mb-6">We couldn't find that location page.</p>
           <Link href="/locations" className="btn-teal py-3 px-6">View All Locations</Link>
         </div>
       </PageLayout>
@@ -91,8 +91,8 @@ export default function LocationDetail() {
         <div className="container relative z-10">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
-              <Link href="/locations" className="text-white/40 text-sm hover:text-white/70 transition-colors">Locations</Link>
-              <span className="text-white/30">/</span>
+              <Link href="/locations" className="text-white/70 text-sm hover:text-white/70 transition-colors">Locations</Link>
+              <span className="text-white/60">/</span>
               <span className="text-white/60 text-sm">{location.city}, UT</span>
             </div>
             <div className="flex items-center gap-2 mb-4">
@@ -130,7 +130,7 @@ export default function LocationDetail() {
             ].map((s) => (
               <div key={s.l} className="px-4">
                 <div className="text-2xl font-extrabold text-[#c9a84c]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{s.v}</div>
-                <div className="text-white/45 text-xs mt-0.5">{s.l}</div>
+                <div className="text-white/70 text-xs mt-0.5">{s.l}</div>
               </div>
             ))}
           </div>
@@ -145,7 +145,7 @@ export default function LocationDetail() {
             <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Payment Solutions for {location.city} Businesses
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm">
+            <p className="text-gray-600 max-w-xl mx-auto text-sm">
               From restaurants and retail to medical offices and automotive shops — we have the right payment solution for every {location.city} business.
             </p>
           </div>
@@ -154,7 +154,7 @@ export default function LocationDetail() {
               <div key={s.title} className="bg-[#f7f3ec] rounded-xl p-5 border border-gray-100 hover:border-[#c9a84c]/20 hover:shadow-md transition-all">
                 <div className="text-2xl mb-3">{s.icon}</div>
                 <h3 className="font-bold text-[#080808] mb-1.5">{s.title}</h3>
-                <p className="text-gray-500 text-sm">{s.desc}</p>
+                <p className="text-gray-600 text-sm">{s.desc}</p>
               </div>
             ))}
           </div>
@@ -213,7 +213,7 @@ export default function LocationDetail() {
               <blockquote className="text-white/80 text-sm leading-relaxed mb-4 italic">
                 "UBC Unlimited helped us switch processors and saved our restaurant over $400 a month. The setup was fast and {SITE.founder} was available every step of the way. I recommend them to every business owner I know."
               </blockquote>
-              <div className="text-white/50 text-xs">— Local Utah Restaurant Owner</div>
+              <div className="text-white/70 text-xs">— Local Utah Restaurant Owner</div>
               <div className="mt-6 pt-6 border-t border-white/10">
                 <Link href="/consultation" className="btn-gold w-full justify-center py-3 text-sm">
                   Book a Consultation <ArrowRight size={15} />

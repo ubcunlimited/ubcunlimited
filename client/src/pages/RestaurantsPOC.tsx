@@ -62,11 +62,11 @@ function TableLayout() {
     <section className="py-16 bg-white">
       <div className="container">
         <div className="text-center mb-10">
-          <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Option A</span>
+          <span className="inline-block bg-gray-100 text-gray-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Option A</span>
           <h2 className="text-2xl font-bold text-[#080808] mb-2" style={{ fontFamily: "Sora, sans-serif" }}>
             Challenge → Solution Table
           </h2>
-          <p className="text-gray-500 text-sm max-w-lg mx-auto">Compact, scannable. Best for decision-makers who want a quick overview. Less room for detail.</p>
+          <p className="text-gray-600 text-sm max-w-lg mx-auto">Compact, scannable. Best for decision-makers who want a quick overview. Less room for detail.</p>
         </div>
         <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
           <table className="w-full text-sm">
@@ -91,14 +91,14 @@ function TableLayout() {
                 <tr key={i} className={`border-t border-gray-100 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/60"}`}>
                   <td className="px-6 py-4 align-top">
                     <div className="font-semibold text-[#080808] mb-1">{p.challenge}</div>
-                    <div className="text-gray-500 text-xs leading-relaxed">{p.challengeDetail}</div>
+                    <div className="text-gray-600 text-xs leading-relaxed">{p.challengeDetail}</div>
                   </td>
                   <td className="px-6 py-4 align-top">
                     <div className="flex items-start gap-2 mb-1">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#c9a84c] mt-1.5 shrink-0" />
                       <span className="font-bold text-[#080808]">{p.solution}</span>
                     </div>
-                    <div className="text-gray-500 text-xs leading-relaxed pl-3.5">{p.solutionDetail}</div>
+                    <div className="text-gray-600 text-xs leading-relaxed pl-3.5">{p.solutionDetail}</div>
                     <div className="mt-2 pl-3.5">
                       <span className="inline-block bg-[#c9a84c]/10 text-[#c9a84c] text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full border border-[#c9a84c]/20">
                         {p.impact}
@@ -125,7 +125,7 @@ function PairedCardRows() {
           <h2 className="text-2xl font-bold text-[#080808] mb-2" style={{ fontFamily: "Sora, sans-serif" }}>
             Paired Challenge → Solution Cards
           </h2>
-          <p className="text-gray-500 text-sm max-w-lg mx-auto">Each challenge is visually connected to its solution with an arrow. More descriptive, more persuasive, and easier to skim on mobile.</p>
+          <p className="text-gray-600 text-sm max-w-lg mx-auto">Each challenge is visually connected to its solution with an arrow. More descriptive, more persuasive, and easier to skim on mobile.</p>
         </div>
 
         {/* Column headers */}
@@ -150,7 +150,7 @@ function PairedCardRows() {
                   </div>
                   <div>
                     <div className="font-bold text-sm text-[#080808] mb-1" style={{ fontFamily: "Sora, sans-serif" }}>{p.challenge}</div>
-                    <p className="text-gray-500 text-xs leading-relaxed">{p.challengeDetail}</p>
+                    <p className="text-gray-600 text-xs leading-relaxed">{p.challengeDetail}</p>
                   </div>
                 </div>
               </div>
@@ -201,11 +201,11 @@ function AccordionLayout() {
     <section className="py-16 bg-white">
       <div className="container">
         <div className="text-center mb-10">
-          <span className="inline-block bg-gray-100 text-gray-500 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Option C</span>
+          <span className="inline-block bg-gray-100 text-gray-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-3">Option C</span>
           <h2 className="text-2xl font-bold text-[#080808] mb-2" style={{ fontFamily: "Sora, sans-serif" }}>
             Expandable Challenge → Solution Rows
           </h2>
-          <p className="text-gray-500 text-sm max-w-lg mx-auto">Compact by default — click any challenge to reveal the full solution. Keeps the page clean while hiding depth behind interaction.</p>
+          <p className="text-gray-600 text-sm max-w-lg mx-auto">Compact by default — click any challenge to reveal the full solution. Keeps the page clean while hiding depth behind interaction.</p>
         </div>
 
         <div className="max-w-3xl mx-auto space-y-2">
@@ -235,7 +235,7 @@ function AccordionLayout() {
                 </span>
                 <ChevronDown
                   size={16}
-                  className={`text-gray-400 transition-transform shrink-0 ${openIndex === i ? "rotate-180 text-[#c9a84c]" : ""}`}
+                  className={`text-gray-600 transition-transform shrink-0 ${openIndex === i ? "rotate-180 text-[#c9a84c]" : ""}`}
                 />
               </button>
 
@@ -287,7 +287,7 @@ export default function RestaurantsPOC() {
           <h1 className="text-3xl md:text-4xl font-extrabold text-white mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
             Challenge → Solution Layout Options
           </h1>
-          <p className="text-white/55 max-w-2xl mx-auto text-base mb-6">
+          <p className="text-white/70 max-w-2xl mx-auto text-base mb-6">
             Three different ways to present the same challenge-solution data for the Restaurants industry page. Review each option and let us know which direction to take — we'll then apply it to all industry and solution pages.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
@@ -315,7 +315,7 @@ export default function RestaurantsPOC() {
 
       {/* Divider */}
       <div className="bg-gray-100 border-y border-gray-200 py-3 text-center">
-        <span className="text-gray-400 text-xs font-bold uppercase tracking-widest">↓ Option C below</span>
+        <span className="text-gray-600 text-xs font-bold uppercase tracking-widest">↓ Option C below</span>
       </div>
 
       {/* Option C */}
@@ -329,7 +329,7 @@ export default function RestaurantsPOC() {
           <h2 className="text-xl font-bold text-white mb-3" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
             Which layout works best?
           </h2>
-          <p className="text-white/50 text-sm mb-6 max-w-md mx-auto">
+          <p className="text-white/70 text-sm mb-6 max-w-md mx-auto">
             Once you choose a direction, we'll update the data structure for all industry and solution pages and roll it out consistently across the site.
           </p>
           <div className="flex flex-wrap justify-center gap-3">

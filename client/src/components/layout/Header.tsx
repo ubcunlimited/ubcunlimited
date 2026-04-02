@@ -88,7 +88,7 @@ export default function Header() {
         }`}
         aria-hidden="true"
       >
-        <div className="container flex justify-between items-center py-1.5 text-xs text-white/50">
+        <div className="container flex justify-between items-center py-1.5 text-xs text-white/70">
           <span>Local Expertise &middot; Nationwide Reach &mdash; {SITE.yearsInBusiness} Years in Business</span>
           <div className="flex items-center gap-4">
             <a
@@ -193,7 +193,7 @@ export default function Header() {
                               <div className="text-white text-sm font-medium group-hover:text-[#c9a84c] transition-colors">
                                 {item.label}
                               </div>
-                              <div className="text-white/40 text-xs mt-0.5">{item.desc}</div>
+                              <div className="text-white/70 text-xs mt-0.5">{item.desc}</div>
                             </div>
                           </Link>
                         ))}
@@ -263,7 +263,7 @@ export default function Header() {
                               <div className="text-white text-sm font-medium group-hover:text-[#c9a84c] transition-colors">
                                 {item.label}
                               </div>
-                              <div className="text-white/40 text-xs mt-0.5">{item.desc}</div>
+                              <div className="text-white/70 text-xs mt-0.5">{item.desc}</div>
                             </div>
                           </Link>
                         ))}
@@ -338,7 +338,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <a
               href={SITE.phoneHref}
-              className="flex items-center gap-1.5 text-white/55 text-sm hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] rounded"
+              className="flex items-center gap-1.5 text-white/70 text-sm hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#080808] rounded"
               aria-label={`Call UBC Unlimited at ${SITE.phone}`}
             >
               <Phone size={13} aria-hidden="true" /> {SITE.phone}

@@ -44,7 +44,7 @@ export default function ShareBar({ title, url }: ShareBarProps) {
 
   return (
     <div className="flex items-center gap-3 pt-6 mt-8 border-t border-gray-100">
-      <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mr-1">
+      <span className="text-xs font-semibold text-gray-600 uppercase tracking-wider mr-1">
         Share
       </span>
 

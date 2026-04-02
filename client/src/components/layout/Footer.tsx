@@ -25,7 +25,7 @@ const LEGAL_LINKS = [
 ];
 
 const linkClass =
-  "text-sm text-white/50 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded";
+  "text-sm text-white/70 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -80,7 +80,7 @@ export default function Footer() {
                 style={{ maxWidth: "280px" }}
               />
             </Link>
-            <p className="text-white/50 text-sm leading-relaxed mb-5">
+            <p className="text-white/70 text-sm leading-relaxed mb-5">
               Utah's trusted local merchant services provider. Helping businesses accept payments smarter since day one.
             </p>
             <address className="not-italic space-y-2.5">
@@ -110,7 +110,7 @@ export default function Footer() {
                 href={SITE.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c9a84c]/20 flex items-center justify-center text-white/50 hover:text-[#c9a84c] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
+                className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c9a84c]/20 flex items-center justify-center text-white/70 hover:text-[#c9a84c] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
                 aria-label="UBC Unlimited on Facebook"
               >
                 <Facebook size={15} aria-hidden="true" />
@@ -119,7 +119,7 @@ export default function Footer() {
                 href={SITE.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c9a84c]/20 flex items-center justify-center text-white/50 hover:text-[#c9a84c] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
+                className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c9a84c]/20 flex items-center justify-center text-white/70 hover:text-[#c9a84c] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
                 aria-label="UBC Unlimited on LinkedIn"
               >
                 <Linkedin size={15} aria-hidden="true" />
@@ -128,7 +128,7 @@ export default function Footer() {
                 href={SITE.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c9a84c]/20 flex items-center justify-center text-white/50 hover:text-[#c9a84c] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
+                className="w-8 h-8 rounded-lg bg-white/5 hover:bg-[#c9a84c]/20 flex items-center justify-center text-white/70 hover:text-[#c9a84c] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c]"
                 aria-label="UBC Unlimited on Instagram"
               >
                 <Instagram size={15} aria-hidden="true" />
@@ -214,15 +214,15 @@ export default function Footer() {
 
       {/* Bottom copyright + legal bar */}
       <div className="border-t border-white/5 bg-[#050505]">
-        <div className="container py-4 pb-[88px] lg:pb-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-xs text-white/30">
+        <div className="container py-4 pb-[88px] lg:pb-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-xs text-white/60">
           <span className="shrink-0">© {year} UBC Unlimited. All rights reserved.</span>
           <nav aria-label="Legal navigation" className="flex flex-wrap items-center gap-x-1 gap-y-1.5">
             {LEGAL_LINKS.map((item, i) => (
               <span key={item.href} className="flex items-center">
-                {i > 0 && <span className="mx-2 text-white/15" aria-hidden="true">·</span>}
+                {i > 0 && <span className="mx-2 text-white/70" aria-hidden="true">·</span>}
                 <Link
                   href={item.href}
-                  className="text-white/35 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a84c] rounded py-2 px-1 inline-block min-h-[44px] flex items-center"
+                  className="text-white/60 hover:text-[#c9a84c] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#c9a84c] rounded py-2 px-1 inline-block min-h-[44px] flex items-center"
                 >
                   {item.label}
                 </Link>

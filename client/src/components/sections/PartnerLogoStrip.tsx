@@ -43,7 +43,7 @@ export default function PartnerLogoStrip({
               </p>
             )}
             {subtitle && (
-              <p className={`text-sm ${dark ? "text-white/50" : "text-gray-400"}`}>{subtitle}</p>
+              <p className={`text-sm ${dark ? "text-white/70" : "text-gray-600"}`}>{subtitle}</p>
             )}
           </div>
         )}

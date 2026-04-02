@@ -48,7 +48,7 @@ export default function BillOfRights({
             {title}
           </h2>
           {subtitle && (
-            <p className={`text-base leading-relaxed ${dark ? "text-white/60" : "text-gray-500"}`}>
+            <p className={`text-base leading-relaxed ${dark ? "text-white/60" : "text-gray-600"}`}>
               {subtitle}
             </p>
           )}
@@ -86,7 +86,7 @@ export default function BillOfRights({
                   {item.title}
                 </h3>
                 {item.description && (
-                  <p className={`text-sm leading-relaxed ${dark ? "text-white/55" : "text-gray-500"}`}>
+                  <p className={`text-sm leading-relaxed ${dark ? "text-white/70" : "text-gray-600"}`}>
                     {item.description}
                   </p>
                 )}

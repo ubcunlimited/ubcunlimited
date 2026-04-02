@@ -35,7 +35,7 @@ export default function Locations() {
             <p className="text-white/65 text-lg leading-relaxed mb-4">
               UBC Unlimited is happy to serve Utah businesses all across the state — not just those listed in our locations below. Whether you're in Salt Lake City, St. George, Cedar City, or anywhere in between, we will work with you.
             </p>
-            <p className="text-white/50 text-base leading-relaxed mb-8">
+            <p className="text-white/70 text-base leading-relaxed mb-8">
               Our team is based along the Wasatch Front, but we provide remote setup, support, and consultation to businesses throughout all of Utah. If you're outside our listed areas, reach out — we'd love to help.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -62,7 +62,7 @@ export default function Locations() {
               <div key={item.title} className="bg-white rounded-2xl p-6 border border-gray-100 text-center">
                 <div className="text-3xl mb-3">{item.icon}</div>
                 <h3 className="font-bold text-[#080808] mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-sm">{item.desc}</p>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -77,7 +77,7 @@ export default function Locations() {
             <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Cities We Serve
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto text-sm">
+            <p className="text-gray-600 max-w-xl mx-auto text-sm">
               UBC Unlimited provides on-site and remote merchant services support to businesses across these Utah communities.
             </p>
           </div>
@@ -105,7 +105,7 @@ export default function Locations() {
                         </h4>
                         <ArrowRight size={15} className="text-gray-300 group-hover:text-[#c9a84c] transition-colors mt-0.5" />
                       </div>
-                      <p className="text-gray-500 text-xs leading-relaxed mb-3 line-clamp-2">{loc.description}</p>
+                      <p className="text-gray-600 text-xs leading-relaxed mb-3 line-clamp-2">{loc.description}</p>
                       <div className="flex flex-wrap gap-1">
                         {loc.industries.slice(0, 3).map((ind) => (
                           <span key={ind} className="text-[10px] bg-[#c9a84c]/8 text-[#c9a84c] px-2 py-0.5 rounded-full font-medium">{ind}</span>

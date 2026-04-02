@@ -170,7 +170,7 @@ export default function Blog() {
           <div className="flex flex-col sm:flex-row gap-3 mb-8">
             {/* Search */}
             <div className="relative flex-1 max-w-md">
-              <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true" />
+              <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600" aria-hidden="true" />
               <label htmlFor="blog-search" className="sr-only">Search articles</label>
               <input
                 id="blog-search"
@@ -184,7 +184,7 @@ export default function Blog() {
                 <button
                   onClick={() => setSearchQuery("")}
                   aria-label="Clear search"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 hover:text-gray-600"
                 >
                   <X size={14} aria-hidden="true" />
                 </button>
@@ -193,7 +193,7 @@ export default function Blog() {
 
             {/* Sort */}
             <div className="flex items-center gap-2">
-              <SortAsc size={15} className="text-gray-400 shrink-0" aria-hidden="true" />
+              <SortAsc size={15} className="text-gray-600 shrink-0" aria-hidden="true" />
               <label htmlFor="blog-sort" className="sr-only">Sort articles</label>
               <select
                 id="blog-sort"
@@ -210,7 +210,7 @@ export default function Blog() {
             {isFiltered && (
               <button
                 onClick={clearAll}
-                className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#c9a84c] transition-colors px-3 py-2.5 border border-gray-200 rounded-lg hover:border-[#c9a84c]/40"
+                className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#c9a84c] transition-colors px-3 py-2.5 border border-gray-200 rounded-lg hover:border-[#c9a84c]/40"
               >
                 <X size={13} aria-hidden="true" />
                 Clear filters
@@ -224,7 +224,7 @@ export default function Blog() {
             <div className="flex-1 min-w-0">
               {/* Active filter indicator */}
               {isFiltered && (
-                <div className="mb-5 text-sm text-gray-500" role="status" aria-live="polite">
+                <div className="mb-5 text-sm text-gray-600" role="status" aria-live="polite">
                   {filtered.length > 0 ? (
                     <>
                       Showing <strong className="text-[#080808]">{filtered.length}</strong> article{filtered.length !== 1 ? "s" : ""}
@@ -255,7 +255,7 @@ export default function Blog() {
                     {featured.title}
                   </h2>
                   <p className="text-white/60 mb-5 leading-relaxed max-w-2xl">{featured.excerpt}</p>
-                  <div className="flex items-center gap-4 text-white/40 text-xs">
+                  <div className="flex items-center gap-4 text-white/70 text-xs">
                     <span className="flex items-center gap-1"><Calendar size={12} aria-hidden="true" />{formatDate(featured.date)}</span>
                     <span className="flex items-center gap-1"><Clock size={12} aria-hidden="true" />{featured.readTime}</span>
                     <span className="flex items-center gap-1 text-[#c9a84c] font-medium ml-auto">
@@ -287,8 +287,8 @@ export default function Blog() {
                         >
                           {post.title}
                         </h3>
-                        <p className="text-gray-500 text-sm mb-4 leading-relaxed line-clamp-3">{post.excerpt}</p>
-                        <div className="flex items-center justify-between text-gray-400 text-xs">
+                        <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">{post.excerpt}</p>
+                        <div className="flex items-center justify-between text-gray-600 text-xs">
                           <div className="flex items-center gap-3">
                             <span className="flex items-center gap-1"><Calendar size={11} aria-hidden="true" />{formatDate(post.date)}</span>
                             <span className="flex items-center gap-1"><Clock size={11} aria-hidden="true" />{post.readTime}</span>
@@ -303,7 +303,7 @@ export default function Blog() {
                 <div className="text-center py-16">
                   <div className="text-4xl mb-4" aria-hidden="true">🔍</div>
                   <h3 className="text-lg font-bold text-[#080808] mb-2">No articles found</h3>
-                  <p className="text-gray-400 text-sm mb-5">
+                  <p className="text-gray-600 text-sm mb-5">
                     {searchQuery
                       ? `No results for "${searchQuery}". Try a different search term.`
                       : "No posts match the selected filters — check back soon."}
@@ -346,7 +346,7 @@ export default function Blog() {
                       <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium ${
                         activeCategory === cat && !activeMonth
                           ? "bg-[#c9a84c] text-white"
-                          : "bg-gray-100 text-gray-500"
+                          : "bg-gray-100 text-gray-600"
                       }`}>
                         {categoryCounts[cat] ?? 0}
                       </span>
@@ -391,7 +391,7 @@ export default function Blog() {
                         <span className={`text-xs px-1.5 py-0.5 rounded-full font-medium ${
                           activeMonth === key
                             ? "bg-[#c9a84c] text-white"
-                            : "bg-gray-100 text-gray-500"
+                            : "bg-gray-100 text-gray-600"
                         }`}>
                           {count}
                         </span>

@@ -91,7 +91,7 @@ export default function ThankYou() {
             >
               What Happens Next
             </h2>
-            <p className="text-gray-500 mt-2 max-w-xl mx-auto">
+            <p className="text-gray-600 mt-2 max-w-xl mx-auto">
               Here's exactly what to expect after submitting your request.
             </p>
           </div>
@@ -114,7 +114,7 @@ export default function ThankYou() {
                 >
                   {step.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -146,7 +146,7 @@ export default function ThankYou() {
                 <div className="font-bold text-[#080808] mb-1 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: "Sora, sans-serif" }}>
                   Browse Solutions
                 </div>
-                <p className="text-gray-500 text-sm">Explore all our payment processing options.</p>
+                <p className="text-gray-600 text-sm">Explore all our payment processing options.</p>
               </div>
             </Link>
 
@@ -162,7 +162,7 @@ export default function ThankYou() {
                 <div className="font-bold text-[#080808] mb-1 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: "Sora, sans-serif" }}>
                   Your Industry
                 </div>
-                <p className="text-gray-500 text-sm">See solutions tailored to your business type.</p>
+                <p className="text-gray-600 text-sm">See solutions tailored to your business type.</p>
               </div>
             </Link>
 
@@ -178,7 +178,7 @@ export default function ThankYou() {
                 <div className="font-bold text-[#080808] mb-1 group-hover:text-[#c9a84c] transition-colors" style={{ fontFamily: "Sora, sans-serif" }}>
                   FAQ
                 </div>
-                <p className="text-gray-500 text-sm">Answers to the most common questions we receive.</p>
+                <p className="text-gray-600 text-sm">Answers to the most common questions we receive.</p>
               </div>
             </Link>
           </div>

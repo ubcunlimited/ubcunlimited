@@ -12,7 +12,7 @@ export default function NotFound() {
             <h1 className="text-3xl font-extrabold text-[#080808] mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>
               Page Not Found
             </h1>
-            <p className="text-gray-500 mb-8">
+            <p className="text-gray-600 mb-8">
               The page you're looking for doesn't exist or has been moved. Let's get you back on track.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

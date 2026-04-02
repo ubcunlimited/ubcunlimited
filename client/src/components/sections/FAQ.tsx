@@ -28,7 +28,7 @@ export default function FAQ({ items, title = "Frequently Asked Questions", subti
               <h2 className={`text-3xl font-bold mb-3 ${dark ? "text-white" : "text-[#080808]"}`} style={{ fontFamily: 'Sora, sans-serif' }}>
                 {title}
               </h2>
-              {subtitle && <p className={`text-base ${dark ? "text-white/60" : "text-gray-500"}`}>{subtitle}</p>}
+              {subtitle && <p className={`text-base ${dark ? "text-white/60" : "text-gray-600"}`}>{subtitle}</p>}
             </div>
           )}
           <div className="space-y-3">

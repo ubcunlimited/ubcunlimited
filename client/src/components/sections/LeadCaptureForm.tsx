@@ -50,7 +50,7 @@ export default function LeadCaptureForm({
             {title}
           </h2>
           {subtitle && (
-            <p className={`text-sm ${dark ? "text-white/55" : "text-gray-500"}`}>{subtitle}</p>
+            <p className={`text-sm ${dark ? "text-white/70" : "text-gray-600"}`}>{subtitle}</p>
           )}
         </div>
 
@@ -65,7 +65,7 @@ export default function LeadCaptureForm({
             >
               Message Received!
             </h3>
-            <p className={`text-sm ${dark ? "text-white/55" : "text-gray-500"}`}>
+            <p className={`text-sm ${dark ? "text-white/70" : "text-gray-600"}`}>
               A member of our team will be in touch within 1 business day.
             </p>
           </div>
@@ -137,14 +137,14 @@ export default function LeadCaptureForm({
                   onChange={(e) => setNewsletter(e.target.checked)}
                   className="mt-0.5 accent-[#c9a84c]"
                 />
-                <span className={`text-xs leading-relaxed ${dark ? "text-white/50" : "text-gray-400"}`}>
+                <span className={`text-xs leading-relaxed ${dark ? "text-white/70" : "text-gray-600"}`}>
                   Sign up for news and updates from UBC Unlimited.
                 </span>
               </label>
             )}
 
             {/* SMS consent */}
-            <p className={`text-xs leading-relaxed ${dark ? "text-white/35" : "text-gray-400"}`}>
+            <p className={`text-xs leading-relaxed ${dark ? "text-white/60" : "text-gray-600"}`}>
               By submitting this form you agree to receive transactional SMS messages from UBC Unlimited. Message &amp; data rates may apply. Reply STOP to opt out. See our{" "}
               <Link href="/privacy-policy" className="underline hover:text-[#c9a84c]">Privacy Policy</Link>.
             </p>

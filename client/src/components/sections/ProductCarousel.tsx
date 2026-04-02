@@ -54,7 +54,7 @@ export default function ProductCarousel({
                 </h2>
               )}
               {subtitle && (
-                <p className={`text-sm mt-1 ${dark ? "text-white/50" : "text-gray-400"}`}>{subtitle}</p>
+                <p className={`text-sm mt-1 ${dark ? "text-white/70" : "text-gray-600"}`}>{subtitle}</p>
               )}
             </div>
             {/* Scroll buttons */}
@@ -64,8 +64,8 @@ export default function ProductCarousel({
                 aria-label="Scroll left"
                 className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all ${
                   dark
-                    ? "border-white/20 text-white/50 hover:border-[#c9a84c] hover:text-[#c9a84c]"
-                    : "border-gray-200 text-gray-400 hover:border-[#c9a84c] hover:text-[#c9a84c]"
+                    ? "border-white/20 text-white/70 hover:border-[#c9a84c] hover:text-[#c9a84c]"
+                    : "border-gray-200 text-gray-600 hover:border-[#c9a84c] hover:text-[#c9a84c]"
                 }`}
               >
                 <ChevronLeft size={17} />
@@ -75,8 +75,8 @@ export default function ProductCarousel({
                 aria-label="Scroll right"
                 className={`w-9 h-9 rounded-full border flex items-center justify-center transition-all ${
                   dark
-                    ? "border-white/20 text-white/50 hover:border-[#c9a84c] hover:text-[#c9a84c]"
-                    : "border-gray-200 text-gray-400 hover:border-[#c9a84c] hover:text-[#c9a84c]"
+                    ? "border-white/20 text-white/70 hover:border-[#c9a84c] hover:text-[#c9a84c]"
+                    : "border-gray-200 text-gray-600 hover:border-[#c9a84c] hover:text-[#c9a84c]"
                 }`}
               >
                 <ChevronRight size={17} />
@@ -124,7 +124,7 @@ export default function ProductCarousel({
                 >
                   {item.name}
                 </h3>
-                <p className={`text-sm leading-relaxed flex-1 ${dark ? "text-white/55" : "text-gray-500"}`}>
+                <p className={`text-sm leading-relaxed flex-1 ${dark ? "text-white/70" : "text-gray-600"}`}>
                   {item.description}
                 </p>
                 {item.href && (

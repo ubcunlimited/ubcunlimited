@@ -47,7 +47,7 @@ export default function CarbonCounty() {
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <nav aria-label="Breadcrumb" className="flex items-center justify-center gap-1.5 text-xs text-white/35 mb-5">
+              <nav aria-label="Breadcrumb" className="flex items-center justify-center gap-1.5 text-xs text-white/60 mb-5">
                 <Link href="/" className="hover:text-white/60 transition-colors">Home</Link>
                 <ChevronRight size={12} />
                 <Link href="/locations" className="hover:text-white/60 transition-colors">Locations</Link>
@@ -61,7 +61,7 @@ export default function CarbonCounty() {
                 Merchant Services<br /><span className="text-[#c9a84c]">Carbon County</span>
               </h1>
               <p className="text-white/60 text-lg leading-relaxed mb-4">Carbon County is an Eastern Utah energy and mining community anchored by Price, with a diverse local business community serving the region's industrial and agricultural economy.</p>
-              <p className="text-white/50 text-base leading-relaxed mb-8">UBC Unlimited serves every city and community in Carbon County with credit card processing, POS systems, cash discount programs, and merchant accounts — backed by local Utah support that national processors can't match.</p>
+              <p className="text-white/70 text-base leading-relaxed mb-8">UBC Unlimited serves every city and community in Carbon County with credit card processing, POS systems, cash discount programs, and merchant accounts — backed by local Utah support that national processors can't match.</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Link href="/contact" className="btn-gold text-sm py-3 px-7 justify-center">Request a Quote</Link>
                 <Link href="/statement-review" className="btn-outline-gold text-sm py-3 px-7 justify-center">Statement Review</Link>
@@ -76,7 +76,7 @@ export default function CarbonCounty() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-[#080808] mb-3">Cities & Communities We Serve in Carbon County</h2>
-            <p className="text-gray-500 text-base mb-8">UBC Unlimited provides on-site consultations and local support to businesses throughout Carbon County, including the following communities:</p>
+            <p className="text-gray-600 text-base mb-8">UBC Unlimited provides on-site consultations and local support to businesses throughout Carbon County, including the following communities:</p>
             <div className="flex flex-wrap justify-center gap-2.5">
               <span className="inline-flex items-center gap-1.5 bg-white border border-gray-200 text-[#080808] text-sm font-medium px-4 py-2 rounded-full shadow-sm"><MapPin size={12} className="text-[#c9a84c]" />Price</span>
               <span className="inline-flex items-center gap-1.5 bg-white border border-gray-200 text-[#080808] text-sm font-medium px-4 py-2 rounded-full shadow-sm"><MapPin size={12} className="text-[#c9a84c]" />Helper</span>
@@ -98,7 +98,7 @@ export default function CarbonCounty() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-[#080808] mb-3">Industries We Serve in Carbon County</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-base">UBC Unlimited serves every major industry in Carbon County with tailored payment solutions and local support.</p>
+            <p className="text-gray-600 max-w-2xl mx-auto text-base">UBC Unlimited serves every major industry in Carbon County with tailored payment solutions and local support.</p>
           </div>
           <div className="flex flex-wrap justify-center gap-2.5">
               <span className="inline-flex items-center gap-1.5 bg-white border border-gray-200 text-[#080808] text-sm font-medium px-4 py-2 rounded-full shadow-sm"><Building2 size={12} className="text-[#c9a84c]" />Restaurants</span>
@@ -116,7 +116,7 @@ export default function CarbonCounty() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">Why Carbon County Businesses Choose UBC Unlimited</h2>
-            <p className="text-white/50 max-w-2xl mx-auto text-base">Local support, transparent pricing, and payment solutions built for Utah businesses.</p>
+            <p className="text-white/70 max-w-2xl mx-auto text-base">Local support, transparent pricing, and payment solutions built for Utah businesses.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
@@ -132,12 +132,12 @@ export default function CarbonCounty() {
                   <benefit.icon size={20} className="text-[#c9a84c]" />
                 </div>
                 <h3 className="text-white font-bold text-base mb-2">{benefit.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{benefit.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{benefit.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
-          <p className="text-white/25 text-xs mt-6">* Certain platforms and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.</p>
+          <p className="text-white/70 text-xs mt-6">* Certain platforms and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.</p>
       </section>
 
       {/* FAQ */}
@@ -145,7 +145,7 @@ export default function CarbonCounty() {
         <div className="container max-w-3xl">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-[#080808] mb-2">Frequently Asked Questions — Carbon County</h2>
-            <p className="text-gray-500 text-base">Common questions from Carbon County business owners about merchant services.</p>
+            <p className="text-gray-600 text-base">Common questions from Carbon County business owners about merchant services.</p>
           </div>
           <div className="space-y-3">
             {[

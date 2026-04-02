@@ -49,7 +49,7 @@ export default function VideoTestimonials({
             {title}
           </h2>
           {subtitle && (
-            <p className={`text-base max-w-xl mx-auto ${dark ? "text-white/60" : "text-gray-500"}`}>
+            <p className={`text-base max-w-xl mx-auto ${dark ? "text-white/60" : "text-gray-600"}`}>
               {subtitle}
             </p>
           )}
@@ -181,7 +181,7 @@ function VideoCard({
           {video.clientName}
         </p>
         {video.quote && (
-          <p className={`text-xs mt-1 leading-relaxed ${dark ? "text-white/50" : "text-gray-400"}`}>
+          <p className={`text-xs mt-1 leading-relaxed ${dark ? "text-white/70" : "text-gray-600"}`}>
             {video.quote}
           </p>
         )}

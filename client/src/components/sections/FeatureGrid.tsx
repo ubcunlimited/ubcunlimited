@@ -94,7 +94,7 @@ export default function FeatureGrid({
               </h2>
             )}
             {subtitle && (
-              <p className={`text-base max-w-2xl mx-auto ${dark ? "text-white/60" : "text-gray-500"}`}>
+              <p className={`text-base max-w-2xl mx-auto ${dark ? "text-white/60" : "text-gray-600"}`}>
                 {subtitle}
               </p>
             )}
@@ -125,7 +125,7 @@ export default function FeatureGrid({
                   >
                     {feat.title}
                   </h3>
-                  <p className={`text-sm leading-relaxed ${dark ? "text-white/60" : "text-gray-500"}`}>
+                  <p className={`text-sm leading-relaxed ${dark ? "text-white/60" : "text-gray-600"}`}>
                     {feat.body}
                   </p>
                 </div>
@@ -135,7 +135,7 @@ export default function FeatureGrid({
         </div>
         {/* Contract footnote — shown whenever the feature list includes a No Contracts* item */}
         {features.some(f => f.title.toLowerCase().includes("no contracts")) && (
-          <p className={`text-xs mt-6 ${dark ? "text-white/30" : "text-gray-400"}`}>
+          <p className={`text-xs mt-6 ${dark ? "text-white/60" : "text-gray-600"}`}>
             * Certain platforms and equipment programs may require a contract. This will be clearly disclosed prior to entering any agreement.
           </p>
         )}

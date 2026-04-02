@@ -293,7 +293,7 @@ export default function Industries() {
                 <div key={item.title} className="glass-card rounded-2xl p-5">
                   <item.icon size={22} className="text-[#c9a84c] mb-3" />
                   <div className="text-white font-bold text-sm mb-1">{item.title}</div>
-                  <div className="text-white/50 text-xs leading-relaxed">{item.desc}</div>
+                  <div className="text-white/70 text-xs leading-relaxed">{item.desc}</div>
                 </div>
               ))}
             </div>
@@ -308,7 +308,7 @@ export default function Industries() {
           <h2 className="text-3xl font-bold text-[#080808] mb-2" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
             Standard Industries
           </h2>
-          <p className="text-gray-500 text-sm mb-10 max-w-2xl">
+          <p className="text-gray-600 text-sm mb-10 max-w-2xl">
             Pricing tailored for your business, industry-specific integrations, and local Utah support for businesses across all major sectors.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -322,26 +322,26 @@ export default function Industries() {
                       <IndustryIcon icon={ind.icon} size={30} className="text-[#080808]" />
                       <h3 className="text-lg font-bold text-[#080808]" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{ind.label}</h3>
                     </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{detail.tagline}</p>
+                    <p className="text-gray-600 text-sm leading-relaxed">{detail.tagline}</p>
                   </div>
                   <div className="px-6 py-4 border-b border-gray-50">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Common Challenges</p>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-600 mb-2">Common Challenges</p>
                     <ul className="space-y-1">
                       {detail.painPoints.map((p) => (
-                        <li key={p} className="flex items-start gap-2 text-xs text-gray-500">
+                        <li key={p} className="flex items-start gap-2 text-xs text-gray-600">
                           <span className="text-[#c9a84c] mt-0.5">•</span>{p}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div className="px-6 py-4 flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">Our Solutions</p>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-gray-600 mb-3">Our Solutions</p>
                     <div className="grid grid-cols-2 gap-2">
                       {detail.solutions.map((s) => (
                         <div key={s.title} className="bg-gray-50 rounded-xl p-3">
                           <div className="text-lg mb-1"><IndustryIcon icon={s.icon} size={20} className="text-[#080808]" /></div>
                           <div className="text-xs font-bold text-[#080808] mb-0.5">{s.title}</div>
-                          <div className="text-xs text-gray-400 leading-tight">{s.desc}</div>
+                          <div className="text-xs text-gray-600 leading-tight">{s.desc}</div>
                         </div>
                       ))}
                     </div>
@@ -370,7 +370,7 @@ export default function Industries() {
             <h2 className="text-3xl font-bold text-[#080808] mb-3" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>
               Why Industry-Specific Processing Matters
             </h2>
-            <p className="text-gray-500 max-w-2xl mx-auto text-sm">
+            <p className="text-gray-600 max-w-2xl mx-auto text-sm">
               Generic payment processors apply the same rates and restrictions to every business. The result is overpaying on processing costs, missing integrations, and accounts that get terminated without warning.
             </p>
           </div>
@@ -379,7 +379,7 @@ export default function Industries() {
               <div key={item.title} className="bg-white rounded-2xl p-6 shadow-sm">
                 <item.icon size={28} className="text-[#c9a84c] mb-4" />
                 <h3 className="font-bold text-[#080808] mb-2 text-sm">{item.title}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
+                <p className="text-gray-600 text-xs leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -418,7 +418,7 @@ export default function Industries() {
             <span className="text-3xl" aria-hidden="true">🛡️</span>
             <div className="flex-1">
               <div className="text-[#d4a843] font-bold text-base mb-0.5">High-Risk Merchant Processing Overview</div>
-              <div className="text-white/50 text-sm">Understand rates, rolling reserves, approval requirements, and how to get started with a high-risk account</div>
+              <div className="text-white/70 text-sm">Understand rates, rolling reserves, approval requirements, and how to get started with a high-risk account</div>
             </div>
             <ChevronRight size={18} className="text-[#d4a843] group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
@@ -433,26 +433,26 @@ export default function Industries() {
                       <IndustryIcon icon={ind.icon} size={30} className="text-white" />
                       <h3 className="text-lg font-bold text-white" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{ind.label}</h3>
                     </div>
-                    <p className="text-white/50 text-sm leading-relaxed">{detail.tagline}</p>
+                    <p className="text-white/70 text-sm leading-relaxed">{detail.tagline}</p>
                   </div>
                   <div className="px-6 py-4 border-b border-white/5">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-2">Common Challenges</p>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-2">Common Challenges</p>
                     <ul className="space-y-1">
                       {detail.painPoints.map((p) => (
-                        <li key={p} className="flex items-start gap-2 text-xs text-white/40">
+                        <li key={p} className="flex items-start gap-2 text-xs text-white/70">
                           <span className="text-[#d4a843] mt-0.5">•</span>{p}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div className="px-6 py-4 flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-white/30 mb-3">Our Solutions</p>
+                    <p className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-3">Our Solutions</p>
                     <div className="grid grid-cols-2 gap-2">
                       {detail.solutions.map((s) => (
                         <div key={s.title} className="bg-white/5 rounded-xl p-3">
                           <div className="text-lg mb-1"><IndustryIcon icon={s.icon} size={20} className="text-white" /></div>
                           <div className="text-xs font-bold text-white mb-0.5">{s.title}</div>
-                          <div className="text-xs text-white/35 leading-tight">{s.desc}</div>
+                          <div className="text-xs text-white/60 leading-tight">{s.desc}</div>
                         </div>
                       ))}
                     </div>
@@ -485,7 +485,7 @@ export default function Industries() {
               <div key={stat.label}>
                 <div className="text-4xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: 'DM Serif Display, Georgia, serif' }}>{stat.value}</div>
                 <div className="font-bold text-[#080808] text-sm mb-0.5">{stat.label}</div>
-                <div className="text-gray-400 text-xs">{stat.sub}</div>
+                <div className="text-gray-600 text-xs">{stat.sub}</div>
               </div>
             ))}
           </div>

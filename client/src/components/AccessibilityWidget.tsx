@@ -242,7 +242,7 @@ export default function AccessibilityWidget() {
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close accessibility panel"
-                className="p-1.5 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors"
+                className="p-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors"
               >
                 <X size={14} aria-hidden="true" />
               </button>
@@ -253,7 +253,7 @@ export default function AccessibilityWidget() {
 
               {/* Text Size */}
               <div>
-                <p className="text-white/50 text-xs font-medium uppercase tracking-wider mb-2">
+                <p className="text-white/70 text-xs font-medium uppercase tracking-wider mb-2">
                   Text Size — {fontPct}%
                 </p>
                 <div className="flex items-center gap-2">
@@ -319,7 +319,7 @@ export default function AccessibilityWidget() {
               {isModified && (
                 <button
                   onClick={reset}
-                  className="w-full flex items-center justify-center gap-2 py-2 rounded-xl border border-white/15 hover:border-[#c9a84c]/40 text-white/50 hover:text-white text-xs font-medium transition-all hover:bg-white/5"
+                  className="w-full flex items-center justify-center gap-2 py-2 rounded-xl border border-white/15 hover:border-[#c9a84c]/40 text-white/70 hover:text-white text-xs font-medium transition-all hover:bg-white/5"
                   aria-label="Reset all accessibility settings to default"
                 >
                   <RotateCcw size={12} aria-hidden="true" />
@@ -330,7 +330,7 @@ export default function AccessibilityWidget() {
 
             {/* Footer */}
             <div className="px-4 pb-3">
-              <p className="text-white/25 text-[10px] text-center leading-relaxed">
+              <p className="text-white/70 text-[10px] text-center leading-relaxed">
                 Settings are saved in your browser and apply across all pages.
               </p>
             </div>
@@ -364,14 +364,14 @@ function ToggleRow({ icon, label, description, active, onToggle }: ToggleRowProp
       }`}
     >
       {/* Icon */}
-      <span className={`shrink-0 ${active ? "text-[#c9a84c]" : "text-white/40"}`}>
+      <span className={`shrink-0 ${active ? "text-[#c9a84c]" : "text-white/70"}`}>
         {icon}
       </span>
 
       {/* Labels */}
       <span className="flex-1 min-w-0">
         <span className="block text-xs font-semibold leading-tight">{label}</span>
-        <span className="block text-[10px] text-white/40 leading-tight mt-0.5">{description}</span>
+        <span className="block text-[10px] text-white/70 leading-tight mt-0.5">{description}</span>
       </span>
 
       {/* Toggle pill */}

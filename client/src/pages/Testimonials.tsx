@@ -207,7 +207,7 @@ function StarRating({ rating }: { rating: number }) {
         <Star
           key={i}
           size={14}
-          className={i < rating ? "text-[#c9a84c] fill-[#c9a84c]" : "text-white/20"}
+          className={i < rating ? "text-[#c9a84c] fill-[#c9a84c]" : "text-white/70"}
         />
       ))}
     </div>
@@ -245,7 +245,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       <div className="border-t border-white/10 pt-4">
         <p className="text-white font-semibold text-sm">{t.name}</p>
         <p className="text-[#c9a84c] text-xs font-medium">{t.title} · {t.business}</p>
-        <p className="text-white/40 text-xs mt-0.5">{t.city}</p>
+        <p className="text-white/70 text-xs mt-0.5">{t.city}</p>
       </div>
     </div>
   );
@@ -262,7 +262,7 @@ function ResultFeatureCard({ card }: { card: ResultCard }) {
         </div>
         <div>
           <p className="text-3xl font-bold text-[#c9a84c]" style={{ fontFamily: 'Sora, sans-serif' }}>{card.metric}</p>
-          <p className="text-white/50 text-xs uppercase tracking-wider">{card.metricLabel}</p>
+          <p className="text-white/70 text-xs uppercase tracking-wider">{card.metricLabel}</p>
         </div>
         <span className="ml-auto text-xs font-semibold text-[#c9a84c] bg-[#c9a84c]/10 px-3 py-1 rounded-full border border-[#c9a84c]/20">
           {card.industry}
@@ -360,7 +360,7 @@ export default function Testimonials() {
               ].map((stat) => (
                 <div key={stat.label} className="bg-white/5 border border-white/10 rounded-xl py-4 px-3 text-center">
                   <p className="text-2xl font-bold text-[#c9a84c]" style={{ fontFamily: 'Sora, sans-serif' }}>{stat.value}</p>
-                  <p className="text-white/50 text-xs mt-1">{stat.label}</p>
+                  <p className="text-white/70 text-xs mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -376,7 +376,7 @@ export default function Testimonials() {
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>
               Featured Client Results
             </h2>
-            <p className="text-white/50 mt-2 text-sm">
+            <p className="text-white/70 mt-2 text-sm">
               Specific outcomes from real Utah businesses. Names and identifying details changed for privacy.
             </p>
           </div>
@@ -396,7 +396,7 @@ export default function Testimonials() {
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>
               What Utah Business Owners Are Saying
             </h2>
-            <p className="text-white/50 mt-2 text-sm">Filter by your industry to find reviews most relevant to your business.</p>
+            <p className="text-white/70 mt-2 text-sm">Filter by your industry to find reviews most relevant to your business.</p>
           </div>
 
           {/* Industry filter pills */}
@@ -417,7 +417,7 @@ export default function Testimonials() {
           </div>
 
           {/* Results count */}
-          <p className="text-center text-white/40 text-xs mb-8">
+          <p className="text-center text-white/70 text-xs mb-8">
             Showing {filtered.length} review{filtered.length !== 1 ? "s" : ""}
             {activeIndustry !== "All" ? ` in ${activeIndustry}` : " across all industries"}
           </p>
@@ -430,7 +430,7 @@ export default function Testimonials() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-16 text-white/40">
+            <div className="text-center py-16 text-white/70">
               <p className="text-lg">No reviews yet for this industry.</p>
               <p className="text-sm mt-2">Check back soon — we are always adding new client stories.</p>
             </div>
@@ -454,7 +454,7 @@ export default function Testimonials() {
                     <Icon size={18} className="text-[#c9a84c]" />
                   </div>
                   <p className="text-white font-semibold text-sm">{item.title}</p>
-                  <p className="text-white/50 text-xs leading-relaxed">{item.desc}</p>
+                  <p className="text-white/70 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               );
             })}
@@ -465,7 +465,7 @@ export default function Testimonials() {
       {/* ── Placeholder notice ── */}
       <section className="py-6 bg-[#0d0d0d]">
         <div className="container">
-          <p className="text-center text-white/30 text-xs max-w-xl mx-auto">
+          <p className="text-center text-white/60 text-xs max-w-xl mx-auto">
             <em>Testimonials marked as placeholder are representative of typical client outcomes. Real client names and identifying details have been changed for privacy. Contact us to share your own experience.</em>
           </p>
         </div>
@@ -479,7 +479,7 @@ export default function Testimonials() {
             <h2 className="text-2xl md:text-3xl font-bold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>
               Share Your Experience
             </h2>
-            <p className="text-white/50 mt-2 text-sm max-w-lg mx-auto">
+            <p className="text-white/70 mt-2 text-sm max-w-lg mx-auto">
               Are you a UBC Unlimited client? We would love to hear your story. Approved testimonials are published on this page.
             </p>
           </div>

@@ -219,10 +219,10 @@ function ToggleRow({ icon, label, description, active, onToggle }: ToggleRowProp
           : "bg-white/3 border-white/8 text-white/60 hover:border-white/20 hover:text-white/80"
       }`}
     >
-      <span className={`shrink-0 ${active ? "text-[#4da6ff]" : "text-white/40"}`}>{icon}</span>
+      <span className={`shrink-0 ${active ? "text-[#4da6ff]" : "text-white/70"}`}>{icon}</span>
       <div className="flex-1 min-w-0">
         <div className="text-xs font-medium leading-tight">{label}</div>
-        <div className="text-[10px] text-white/35 mt-0.5 leading-tight">{description}</div>
+        <div className="text-[10px] text-white/60 mt-0.5 leading-tight">{description}</div>
       </div>
       <div className={`w-8 h-4 rounded-full transition-colors shrink-0 ${active ? "bg-[#0057B8]" : "bg-white/15"}`}>
         <div className={`w-3 h-3 rounded-full bg-white shadow-sm transition-transform mt-0.5 ${active ? "translate-x-4 ml-0.5" : "translate-x-0.5"}`} />
@@ -252,8 +252,8 @@ function Section({ title, icon, children, open, onToggle }: SectionProps) {
           <span className="text-xs font-semibold uppercase tracking-wider">{title}</span>
         </div>
         {open
-          ? <ChevronUp size={12} className="text-white/40" />
-          : <ChevronDown size={12} className="text-white/40" />
+          ? <ChevronUp size={12} className="text-white/70" />
+          : <ChevronDown size={12} className="text-white/70" />
         }
       </button>
       <AnimatePresence initial={false}>
@@ -444,7 +444,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
         <button
           onClick={onClose}
           aria-label="Close accessibility panel"
-          className="p-1.5 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors"
+          className="p-1.5 rounded-lg text-white/70 hover:text-white hover:bg-white/10 transition-colors"
         >
           <X size={14} aria-hidden="true" />
         </button>
@@ -464,7 +464,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
         >
           {/* Font size */}
           <div>
-            <p className="text-white/40 text-[10px] font-medium mb-1.5">Text Size — {fontPct}%</p>
+            <p className="text-white/70 text-[10px] font-medium mb-1.5">Text Size — {fontPct}%</p>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => update({ fontSize: Math.max(0.8, +(state.fontSize - 0.1).toFixed(1)) })}
@@ -478,7 +478,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
                 onClick={() => update({ fontSize: 1 })}
                 disabled={state.fontSize === 1}
                 aria-label="Reset text size"
-                className="px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-[#0057B8]/50 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-white/40 text-xs"
+                className="px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-[#0057B8]/50 disabled:opacity-30 disabled:cursor-not-allowed transition-all text-white/70 text-xs"
               >
                 Reset
               </button>
@@ -495,7 +495,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
 
           {/* Line height */}
           <div>
-            <p className="text-white/40 text-[10px] font-medium mb-1.5">
+            <p className="text-white/70 text-[10px] font-medium mb-1.5">
               Line Height — {state.lineHeight === 1 ? "Normal" : state.lineHeight === 1.5 ? "Relaxed" : "Spacious"}
             </p>
             <div className="flex gap-1.5">
@@ -507,7 +507,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
                   className={`flex-1 py-1.5 rounded-lg text-xs border transition-all ${
                     state.lineHeight === v
                       ? "bg-[#0057B8]/20 border-[#0057B8]/50 text-white"
-                      : "bg-white/4 border-white/10 text-white/50 hover:border-white/25"
+                      : "bg-white/4 border-white/10 text-white/70 hover:border-white/25"
                   }`}
                 >
                   {label}
@@ -518,7 +518,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
 
           {/* Letter spacing */}
           <div>
-            <p className="text-white/40 text-[10px] font-medium mb-1.5">
+            <p className="text-white/70 text-[10px] font-medium mb-1.5">
               Letter Spacing — {state.letterSpacing === 0 ? "Normal" : `+${state.letterSpacing}px`}
             </p>
             <div className="flex gap-1.5">
@@ -530,7 +530,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
                   className={`flex-1 py-1.5 rounded-lg text-xs border transition-all ${
                     state.letterSpacing === v
                       ? "bg-[#0057B8]/20 border-[#0057B8]/50 text-white"
-                      : "bg-white/4 border-white/10 text-white/50 hover:border-white/25"
+                      : "bg-white/4 border-white/10 text-white/70 hover:border-white/25"
                   }`}
                 >
                   {label}
@@ -548,7 +548,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
           onToggle={() => setOpenSection("color")}
         >
           <div>
-            <p className="text-white/40 text-[10px] font-medium mb-1.5">High Contrast Mode</p>
+            <p className="text-white/70 text-[10px] font-medium mb-1.5">High Contrast Mode</p>
             <div className="grid grid-cols-2 gap-1.5">
               {contrastOptions.map(({ value, label, color }) => (
                 <button
@@ -583,7 +583,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
           />
 
           <div>
-            <p className="text-white/40 text-[10px] font-medium mb-1.5">Color Blind Mode</p>
+            <p className="text-white/70 text-[10px] font-medium mb-1.5">Color Blind Mode</p>
             <div className="space-y-1">
               {cbOptions.map(({ value, label }) => (
                 <button
@@ -593,7 +593,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
                   className={`w-full text-left px-3 py-1.5 rounded-lg text-xs border transition-all ${
                     state.colorBlind === value
                       ? "bg-[#0057B8]/20 border-[#0057B8]/50 text-white"
-                      : "bg-white/4 border-white/10 text-white/50 hover:border-white/25 hover:text-white/80"
+                      : "bg-white/4 border-white/10 text-white/70 hover:border-white/25 hover:text-white/80"
                   }`}
                 >
                   {label}
@@ -647,7 +647,7 @@ export default function AccessibilityPanel({ onClose, bottomClass, bottomPx }: A
           <RotateCcw size={13} aria-hidden="true" />
           Reset to Default
         </button>
-        <p className="text-white/25 text-[10px] text-center leading-relaxed">
+        <p className="text-white/70 text-[10px] text-center leading-relaxed">
           Settings are saved in your browser and apply across all pages.
         </p>
       </div>

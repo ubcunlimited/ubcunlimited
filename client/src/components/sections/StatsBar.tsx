@@ -34,7 +34,7 @@ export default function StatsBar({ stats = DEFAULT_STATS, dark = true }: StatsBa
                 {stat.value}
               </span>
               <span
-                className={`text-xs font-semibold tracking-widest uppercase ${dark ? "text-[#080808]/60" : "text-white/50"}`}
+                className={`text-xs font-semibold tracking-widest uppercase ${dark ? "text-[#080808]/60" : "text-white/70"}`}
               >
                 {stat.label}
               </span>

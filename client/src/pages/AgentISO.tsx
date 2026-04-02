@@ -283,7 +283,7 @@ export default function AgentISO() {
                 </div>
                 <div>
                   <p className="text-white font-bold text-sm">Why Partner With UBC Unlimited</p>
-                  <p className="text-white/40 text-xs">Built for serious agent partners</p>
+                  <p className="text-white/70 text-xs">Built for serious agent partners</p>
                 </div>
               </div>
 
@@ -298,7 +298,7 @@ export default function AgentISO() {
                     <item.icon size={18} className="text-[#c9a84c] mt-0.5 shrink-0" />
                     <div>
                       <p className="text-white text-sm font-semibold">{item.title}</p>
-                      <p className="text-white/45 text-xs leading-relaxed">{item.desc}</p>
+                      <p className="text-white/70 text-xs leading-relaxed">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -331,7 +331,7 @@ export default function AgentISO() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
               How the Partner Program Works
             </h2>
-            <p className="text-white/50 max-w-xl mx-auto text-base">
+            <p className="text-white/70 max-w-xl mx-auto text-base">
               From application to your first residual check — here's the process.
             </p>
           </div>
@@ -349,7 +349,7 @@ export default function AgentISO() {
                   {step.step}
                 </span>
                 <h3 className="text-white font-bold text-base mb-2">{step.title}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -386,7 +386,7 @@ export default function AgentISO() {
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
               Apply to Partner with UBC Unlimited
             </h2>
-            <p className="text-white/50 text-base">
+            <p className="text-white/70 text-base">
               Fill out the form below and our agent team will reach out within one business day to
               discuss your goals and get you set up.
             </p>
@@ -476,7 +476,7 @@ export default function AgentISO() {
               <div>
                 <label className="block text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wider">
                   Current Experience in Merchant Services{" "}
-                  <span className="text-white/30">(optional)</span>
+                  <span className="text-white/60">(optional)</span>
                 </label>
                 <textarea
                   value={experience}
@@ -495,7 +495,7 @@ export default function AgentISO() {
                   onChange={(e) => { setTermsAgreed(e.target.checked); if (formError.includes("Privacy")) setFormError(""); }}
                   className="mt-0.5 w-4 h-4 rounded border-white/20 bg-white/10 accent-[#c9a84c] cursor-pointer flex-shrink-0"
                 />
-                <span className="text-white/40 text-[11px] leading-relaxed">
+                <span className="text-white/70 text-[11px] leading-relaxed">
                   I agree to the{" "}
                   <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>Privacy Policy</Link>{" "}
                   and{" "}
@@ -521,7 +521,7 @@ export default function AgentISO() {
                 )}
               </button>
 
-              <p className="text-white/25 text-xs text-center">
+              <p className="text-white/70 text-xs text-center">
                 By submitting you agree to be contacted by UBC Unlimited regarding the agent
                 program. We never share your information.
               </p>
@@ -532,13 +532,13 @@ export default function AgentISO() {
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href={`tel:${SITE.phone}`}
-              className="flex items-center gap-2 text-white/50 hover:text-[#c9a84c] text-sm transition-colors"
+              className="flex items-center gap-2 text-white/70 hover:text-[#c9a84c] text-sm transition-colors"
             >
               <Phone size={14} /> {SITE.phone}
             </a>
             <a
               href={`mailto:${SITE.email}`}
-              className="flex items-center gap-2 text-white/50 hover:text-[#c9a84c] text-sm transition-colors"
+              className="flex items-center gap-2 text-white/70 hover:text-[#c9a84c] text-sm transition-colors"
             >
               <Mail size={14} /> {SITE.email}
             </a>

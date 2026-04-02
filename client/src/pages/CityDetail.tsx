@@ -54,7 +54,7 @@ export default function CityDetail() {
             {/* Unlisted city form */}
             <div className="max-w-md mx-auto bg-white/5 border border-white/10 rounded-2xl p-6 text-left mb-8">
               <h2 className="text-white font-bold text-lg mb-1">Request a Consultation</h2>
-              <p className="text-white/50 text-sm mb-4">Tell us about your business in {cityName} and we'll reach out with a tailored solution.</p>
+              <p className="text-white/70 text-sm mb-4">Tell us about your business in {cityName} and we'll reach out with a tailored solution.</p>
               <UnlistedCityForm cityName={cityName} />
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -122,7 +122,7 @@ export default function CityDetail() {
                   <MapPin size={12} /> {city.name}, Utah
                 </div>
                 {county && (
-                  <Link href={`/counties/${county.slug}`} className="inline-flex items-center gap-1 text-white/40 hover:text-white/70 text-xs transition-colors">
+                  <Link href={`/counties/${county.slug}`} className="inline-flex items-center gap-1 text-white/70 hover:text-white/70 text-xs transition-colors">
                     {county.name} <ArrowRight size={10} />
                   </Link>
                 )}
@@ -141,7 +141,7 @@ export default function CityDetail() {
               </div>
               <div className="flex flex-wrap gap-3">
                 {city.keyIndustries.map((ind) => (
-                  <span key={ind} className="flex items-center gap-1.5 text-xs text-white/55 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
+                  <span key={ind} className="flex items-center gap-1.5 text-xs text-white/70 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
                     <CheckCircle size={11} className="text-[#c9a84c]" /> {ind}
                   </span>
                 ))}
@@ -160,13 +160,13 @@ export default function CityDetail() {
                   ].map((s) => (
                     <div key={s.label} className="bg-[#080808] border border-white/10 rounded-xl p-4 text-center">
                       <div className="text-xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>{s.value}</div>
-                      <div className="text-white/50 text-xs leading-tight">{s.label}</div>
+                      <div className="text-white/70 text-xs leading-tight">{s.label}</div>
                     </div>
                   ))}
                 </div>
                 {county && (
                   <div className="border-t border-white/10 pt-5">
-                    <p className="text-white/50 text-xs mb-2 uppercase tracking-widest font-semibold">Part of</p>
+                    <p className="text-white/70 text-xs mb-2 uppercase tracking-widest font-semibold">Part of</p>
                     <Link href={`/counties/${county.slug}`} className="flex items-center gap-2 text-white/70 hover:text-[#c9a84c] transition-colors text-sm font-medium">
                       <MapPin size={13} className="text-[#c9a84c]" /> {county.name}
                       <ArrowRight size={12} className="ml-auto" />
@@ -192,7 +192,7 @@ export default function CityDetail() {
               <div key={label} className="flex flex-col items-center gap-1">
                 <Icon size={16} className="text-[#c9a84c]" />
                 <div className="text-lg font-extrabold text-white" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>{value}</div>
-                <div className="text-white/50 text-xs">{label}</div>
+                <div className="text-white/70 text-xs">{label}</div>
               </div>
             ))}
           </div>
@@ -205,14 +205,14 @@ export default function CityDetail() {
           <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
             Solutions for {city.name} Businesses
           </h2>
-          <p className="text-white/55 mb-8 max-w-2xl">
+          <p className="text-white/70 mb-8 max-w-2xl">
             From credit card processing to full POS systems, we tailor every solution to your industry and business size — with transparent pricing and no long-term contracts.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {SOLUTIONS.map((sol) => (
               <Link key={sol.href} href={sol.href} className="group bg-white/5 hover:bg-[#c9a84c]/10 border border-white/10 hover:border-[#c9a84c]/30 rounded-xl p-5 transition-all">
                 <div className="text-white font-semibold text-sm mb-2 group-hover:text-[#c9a84c] transition-colors">{sol.label}</div>
-                <div className="text-white/50 text-xs leading-relaxed">{sol.desc}</div>
+                <div className="text-white/70 text-xs leading-relaxed">{sol.desc}</div>
                 <div className="mt-3 flex items-center gap-1 text-[#c9a84c] text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn more <ArrowRight size={11} />
                 </div>
@@ -228,7 +228,7 @@ export default function CityDetail() {
           <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2 text-center" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
             How It Works
           </h2>
-          <p className="text-white/50 text-center mb-10 max-w-xl mx-auto">
+          <p className="text-white/70 text-center mb-10 max-w-xl mx-auto">
             Getting started with UBC Unlimited is simple. Most {city.name} businesses are approved and processing within 24–48 hours. POS system installations typically require a 14-day lead time from approval.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
@@ -236,7 +236,7 @@ export default function CityDetail() {
               <div key={step.step} className="bg-white/5 border border-white/10 rounded-2xl p-6">
                 <div className="text-4xl font-extrabold text-[#c9a84c]/20 mb-3" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>{step.step}</div>
                 <h3 className="text-white font-bold text-base mb-2">{step.title}</h3>
-                <p className="text-white/55 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -280,7 +280,7 @@ export default function CityDetail() {
                 </div>
                 <div>
                   <div className="text-white font-semibold text-sm">Utah Business Owner</div>
-                  <div className="text-white/40 text-xs">{city.name}, Utah</div>
+                  <div className="text-white/70 text-xs">{city.name}, Utah</div>
                 </div>
               </div>
             </div>
@@ -355,7 +355,7 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
       <div role="status" aria-live="polite" aria-atomic="true" className="text-center py-6">
         <CheckCircle size={32} className="text-[#c9a84c] mx-auto mb-3" aria-hidden="true" />
         <div className="text-white font-bold text-base mb-1">Request Received!</div>
-        <div className="text-white/55 text-sm">Our team will reach out within one business hour.</div>
+        <div className="text-white/70 text-sm">Our team will reach out within one business hour.</div>
       </div>
     );
   }
@@ -374,7 +374,7 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
       <div className="w-full bg-[#c9a84c]/10 border border-[#c9a84c]/30 rounded-xl px-4 py-3 text-sm flex items-center gap-2">
         <MapPin size={13} className="text-[#c9a84c] shrink-0" />
         <span className="text-[#c9a84c] font-semibold">{cityDisplay}, Utah</span>
-        <span className="text-white/40 text-xs ml-auto">Pre-filled</span>
+        <span className="text-white/70 text-xs ml-auto">Pre-filled</span>
       </div>
       <input
         type="text"

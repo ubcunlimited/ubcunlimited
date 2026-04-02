@@ -126,7 +126,7 @@ export default function CountyDetail() {
               </div>
               <div className="flex flex-wrap gap-3">
                 {county.keyIndustries.map((ind) => (
-                  <span key={ind} className="flex items-center gap-1.5 text-xs text-white/55 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
+                  <span key={ind} className="flex items-center gap-1.5 text-xs text-white/70 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full">
                     <CheckCircle size={11} className="text-[#c9a84c]" /> {ind}
                   </span>
                 ))}
@@ -140,12 +140,12 @@ export default function CountyDetail() {
                   {county.stats.map((s) => (
                     <div key={s.label} className="bg-[#080808] border border-white/10 rounded-xl p-4 text-center">
                       <div className="text-2xl font-extrabold text-[#c9a84c] mb-1" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>{s.value}</div>
-                      <div className="text-white/50 text-xs leading-tight">{s.label}</div>
+                      <div className="text-white/70 text-xs leading-tight">{s.label}</div>
                     </div>
                   ))}
                 </div>
                 <div className="border-t border-white/10 pt-5">
-                  <p className="text-white/50 text-xs mb-3 uppercase tracking-widest font-semibold">Cities We Serve in {county.name}</p>
+                  <p className="text-white/70 text-xs mb-3 uppercase tracking-widest font-semibold">Cities We Serve in {county.name}</p>
                   <div className="flex flex-wrap gap-2">
                     {county.cities.map((city) => (
                       <span key={city} className="text-xs text-white/65 bg-white/5 px-2.5 py-1 rounded-md border border-white/10">
@@ -173,7 +173,7 @@ export default function CountyDetail() {
               <div key={label} className="flex flex-col items-center gap-1">
                 <Icon size={16} className="text-[#c9a84c]" />
                 <div className="text-lg font-extrabold text-white" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>{value}</div>
-                <div className="text-white/50 text-xs">{label}</div>
+                <div className="text-white/70 text-xs">{label}</div>
               </div>
             ))}
           </div>
@@ -186,14 +186,14 @@ export default function CountyDetail() {
           <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
             Solutions for {county.name} Businesses
           </h2>
-          <p className="text-white/55 mb-8 max-w-2xl">
+          <p className="text-white/70 mb-8 max-w-2xl">
             From credit card processing to full POS systems, we tailor every solution to your industry and business size — with transparent pricing and no long-term contracts.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {SOLUTIONS.map((sol) => (
               <Link key={sol.href} href={sol.href} className="group bg-white/5 hover:bg-[#c9a84c]/10 border border-white/10 hover:border-[#c9a84c]/30 rounded-xl p-5 transition-all">
                 <div className="text-white font-semibold text-sm mb-2 group-hover:text-[#c9a84c] transition-colors">{sol.label}</div>
-                <div className="text-white/50 text-xs leading-relaxed">{sol.desc}</div>
+                <div className="text-white/70 text-xs leading-relaxed">{sol.desc}</div>
                 <div className="mt-3 flex items-center gap-1 text-[#c9a84c] text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                   Learn more <ArrowRight size={11} />
                 </div>
@@ -209,13 +209,13 @@ export default function CountyDetail() {
           <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2 text-center" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
             How It Works
           </h2>
-          <p className="text-white/50 text-center mb-10 max-w-xl mx-auto">Getting started with UBC Unlimited is simple. Most {county.name} businesses are approved and processing within 24–48 hours. POS system installations typically require a 14-day lead time from approval.</p>
+          <p className="text-white/70 text-center mb-10 max-w-xl mx-auto">Getting started with UBC Unlimited is simple. Most {county.name} businesses are approved and processing within 24–48 hours. POS system installations typically require a 14-day lead time from approval.</p>
           <div className="grid md:grid-cols-3 gap-6">
             {HOW_IT_WORKS.map((step) => (
               <div key={step.step} className="relative bg-white/5 border border-white/10 rounded-2xl p-6">
                 <div className="text-4xl font-extrabold text-[#c9a84c]/20 mb-3" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>{step.step}</div>
                 <h3 className="text-white font-bold text-base mb-2">{step.title}</h3>
-                <p className="text-white/55 text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -259,7 +259,7 @@ export default function CountyDetail() {
                 </div>
                 <div>
                   <div className="text-white font-semibold text-sm">Utah Restaurant Owner</div>
-                  <div className="text-white/40 text-xs">{county.name}, Utah</div>
+                  <div className="text-white/70 text-xs">{county.name}, Utah</div>
                 </div>
               </div>
             </div>

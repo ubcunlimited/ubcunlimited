@@ -2,7 +2,7 @@ import PageLayout from "@/components/layout/PageLayout";
 export default function Disclaimer() {
   return (
     <PageLayout>
-      <section className="bg-[#080808] py-14"><div className="container"><h1 className="text-3xl font-extrabold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>Disclaimer</h1><p className="text-white/50 mt-2 text-sm">Last updated: January 1, 2025</p></div></section>
+      <section className="bg-[#080808] py-14"><div className="container"><h1 className="text-3xl font-extrabold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>Disclaimer</h1><p className="text-white/70 mt-2 text-sm">Last updated: January 1, 2025</p></div></section>
       <section className="py-12 bg-white"><div className="container max-w-3xl"><div className="space-y-6 text-gray-600 text-sm leading-relaxed">
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>General Information</h2><p>The information provided on the UBC Unlimited website is for general informational purposes only. While we strive to keep the information accurate and up to date, we make no representations or warranties of any kind about the completeness, accuracy, or reliability of the information.</p></div>
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>No Professional Advice</h2><p>The content on this website does not constitute professional financial, legal, or business advice. You should consult with a qualified professional before making any business decisions.</p></div>
