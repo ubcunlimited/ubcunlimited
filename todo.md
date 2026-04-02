@@ -388,3 +388,6 @@
 - [x] Fix "No heading structure": changed scaffold CSS from clip/overflow-hidden to opacity:0+pointer-events:none so WAVE can detect the h1 in the accessibility tree
 - [x] Fix "No page regions": same scaffold CSS change exposes role=banner, role=main, role=contentinfo landmarks to WAVE
 - [x] Fix skip link: removed redundant inline onfocus/onblur attributes (CSS #skip-to-main rule already handles focus state correctly)
+
+## Screen Reader Landmark Improvements
+- [x] Add aria-label="Main content" to the main element in PageLayout.tsx
