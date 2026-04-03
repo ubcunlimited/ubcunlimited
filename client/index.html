@@ -104,7 +104,9 @@
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
 
-      /* Skip link — visible only on keyboard focus (WCAG 2.4.1) */
+      /* Skip link — visible only on keyboard focus (WCAG 2.4.1)
+         Renders as a full-width blue bar at the very top of the viewport
+         so it is unmissable for keyboard-only and screen-reader users. */
       #skip-to-main {
         position: absolute;
         left: -9999px;
@@ -112,22 +114,33 @@
         width: 1px;
         height: 1px;
         overflow: hidden;
+        /* Prevent any inherited transition from animating the off-screen position */
+        transition: none !important;
       }
-      #skip-to-main:focus {
+      #skip-to-main:focus,
+      #skip-to-main:focus-visible {
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 99999;
-        padding: 12px 20px;
-        background: #c9a84c;
-        color: #080808;
-        font-weight: 700;
-        font-size: 16px;
-        text-decoration: none;
-        border-radius: 0 0 6px 0;
-        width: auto;
+        right: 0;
+        width: 100%;
         height: auto;
+        z-index: 999999;
+        padding: 14px 24px;
+        background: #0057B8;
+        color: #ffffff;
+        font-family: 'Sora', 'Inter', system-ui, sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: 0.01em;
+        text-align: center;
+        text-decoration: none;
         overflow: visible;
+        border-radius: 0;
+        border-bottom: 3px solid #003d82;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+        outline: 3px solid #ffffff;
+        outline-offset: -4px;
       }
 
       /* Static accessibility scaffold — provides heading structure and landmark regions

@@ -426,3 +426,9 @@
 - [x] Fix: High Contrast "Default" button label is ambiguous — rename to "Off" for clarity
 - [x] Fix: Color Blind and High Contrast option groups missing `role="group"` + `aria-labelledby` for screen reader grouping
 - [x] Fix: Old AccessibilityWidget.tsx uses `STORAGE_KEY = "ubc_a11y"` while new AccessibilityPanel uses `"ubc_a11y_v2"` — verify old widget is fully removed and only new panel is active; clear stale key on load
+
+## Skip-Link & Persistent A11y Settings (Apr 2026)
+- [x] Add visible skip-link focus bar: blue full-width bar at top of viewport on :focus-visible (WCAG 2.4.1)
+- [x] Verify accessibility settings persist across page loads and browser sessions via localStorage
+- [x] Add "Settings saved" visual confirmation toast in accessibility panel footer when any setting changes
+- [x] Add "Restore saved settings" indicator on panel open when non-default settings are loaded from storage

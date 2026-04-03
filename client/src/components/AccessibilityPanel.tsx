@@ -23,7 +23,7 @@ import {
   X, ZoomIn, ZoomOut, Sun, Moon, Type, Wind,
   Eye, RotateCcw, MousePointer2, BookOpen, Contrast,
   AlignJustify, Underline, ChevronDown, ChevronUp, Minus,
-  Accessibility,
+  Accessibility, Check, History,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -287,14 +287,23 @@ interface AccessibilityPanelProps {
 export default function AccessibilityPanel({ onClose, bottomClass: _bc, bottomPx }: AccessibilityPanelProps) {
   const [state, setState] = useState<A11yState>(DEFAULT_STATE);
   const [openSection, setOpenSection] = useState<Section | null>("vision");
+  const [savedToast, setSavedToast] = useState<"saved" | "reset" | null>(null);
+  const [restoredFromSave, setRestoredFromSave] = useState(false);
+  const toastTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
   // Load persisted state on mount, clear legacy key
   useEffect(() => {
     localStorage.removeItem(OLD_KEY);
     const loaded = loadState();
+    const hasNonDefault =
+      loaded.fontSize !== 1 || loaded.lineHeight !== 1 || loaded.letterSpacing !== 0 ||
+      loaded.highContrast !== "off" || loaded.grayscale || loaded.invertColors || loaded.colorBlind !== "off" ||
+      loaded.focusHighlight || loaded.largeCursor || loaded.highlightLinks || loaded.highlightHeadings ||
+      loaded.dyslexiaFont || loaded.reduceMotion || loaded.readingGuide || loaded.readingMask;
     setState(loaded);
     applyStyles(loaded);
+    if (hasNonDefault) setRestoredFromSave(true);
     // Auto-open the section with an active setting
     if (loaded.fontSize !== 1 || loaded.lineHeight !== 1 || loaded.letterSpacing !== 0)
       setOpenSection("vision");
@@ -305,6 +314,16 @@ export default function AccessibilityPanel({ onClose, bottomClass: _bc, bottomPx
     else if (loaded.dyslexiaFont || loaded.reduceMotion || loaded.readingGuide || loaded.readingMask)
       setOpenSection("cognitive");
   }, []);
+
+  // Auto-dismiss toast after 2.5 s
+  const showToast = useCallback((type: "saved" | "reset") => {
+    setSavedToast(type);
+    if (toastTimerRef.current) clearTimeout(toastTimerRef.current);
+    toastTimerRef.current = setTimeout(() => setSavedToast(null), 2500);
+  }, []);
+
+  // Cleanup timer on unmount
+  useEffect(() => () => { if (toastTimerRef.current) clearTimeout(toastTimerRef.current); }, []);
 
   // Mouse tracking for reading guide / mask
   useEffect(() => {
@@ -331,13 +350,17 @@ export default function AccessibilityPanel({ onClose, bottomClass: _bc, bottomPx
       applyStyles(next);
       return next;
     });
-  }, []);
+    showToast("saved");
+    setRestoredFromSave(false);
+  }, [showToast]);
 
   const reset = useCallback(() => {
     saveState(DEFAULT_STATE);
     applyStyles(DEFAULT_STATE);
     setState({ ...DEFAULT_STATE });
-  }, []);
+    showToast("reset");
+    setRestoredFromSave(false);
+  }, [showToast]);
 
   // Focus trap keyboard handler
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -636,6 +659,48 @@ export default function AccessibilityPanel({ onClose, bottomClass: _bc, bottomPx
 
       {/* Footer */}
       <div className="px-3 pb-3 pt-2 border-t border-white/8 shrink-0 space-y-2">
+
+        {/* Restored-from-save banner */}
+        <AnimatePresence>
+          {restoredFromSave && (
+            <motion.div
+              initial={{ opacity: 0, y: -4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.2 }}
+              className="flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0057B8]/15 border border-[#0057B8]/30 text-[#7eb8ff] text-[10px] font-medium"
+              role="status"
+              aria-live="polite"
+            >
+              <History size={11} aria-hidden="true" />
+              <span>Your saved settings have been restored.</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Save confirmation toast */}
+        <AnimatePresence>
+          {savedToast && (
+            <motion.div
+              key={savedToast}
+              initial={{ opacity: 0, y: -4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.2 }}
+              className={`flex items-center gap-2 px-3 py-2 rounded-xl border text-[10px] font-medium ${
+                savedToast === "saved"
+                  ? "bg-emerald-500/10 border-emerald-500/25 text-emerald-400"
+                  : "bg-white/5 border-white/10 text-white/60"
+              }`}
+              role="status"
+              aria-live="polite"
+            >
+              <Check size={11} aria-hidden="true" />
+              <span>{savedToast === "saved" ? "Settings saved to your browser." : "Settings reset to default."}</span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         <button
           onClick={reset}
           className="w-full flex items-center justify-center gap-2 py-2 rounded-xl border border-white/15 hover:border-[#c9a84c]/40 text-white/60 hover:text-white text-xs font-medium transition-all hover:bg-white/5"
@@ -645,7 +710,7 @@ export default function AccessibilityPanel({ onClose, bottomClass: _bc, bottomPx
           Reset to Default
         </button>
         <p className="text-white/40 text-[10px] text-center leading-relaxed">
-          Settings saved in your browser · <kbd className="font-mono bg-white/10 px-1 rounded text-[9px]">Alt+A</kbd> to toggle
+          Settings auto-saved in your browser · <kbd className="font-mono bg-white/10 px-1 rounded text-[9px]">Alt+A</kbd> to toggle
         </p>
       </div>
     </motion.div>
