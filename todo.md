@@ -410,3 +410,7 @@
 - [x] Pingdom C/72: Reduce HTTP requests — add dns-prefetch for all third-party domains
 - [x] Pingdom C/78: Verify gzip compression is active for HTML, JS, CSS, fonts (compression@1.8.1, level 6)
 - [x] Pingdom C/80: Reduce DNS lookups — dns-prefetch added for all 8 third-party domains
+
+## Further Performance Fixes (Apr 2026)
+- [x] font-display: swap already present on all @font-face declarations in index.html (no change needed)
+- [x] Lazy-load below-fold Home.tsx sections (TestimonialBlock, PricingTransparency, FAQ, CTABanner) with React.lazy + Suspense

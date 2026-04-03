@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Phone, TrendingDown, Shield, Clock, Users, Star, ChevronRight, MapPin, Award, Handshake, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import PageLayout from "@/components/layout/PageLayout";
 import TrustBadges from "@/components/sections/TrustBadges";
-import TestimonialBlock from "@/components/sections/TestimonialBlock";
-import CTABanner from "@/components/sections/CTABanner";
-import FAQ from "@/components/sections/FAQ";
-import PricingTransparency from "@/components/sections/PricingTransparency";
 import { SITE, NAV_SOLUTIONS, NAV_INDUSTRIES, TRUST_SIGNALS } from "@/lib/config";
 import SEO from "@/components/SEO";
 import { trackLead } from "@/lib/pixel";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
+
+// Below-fold sections — lazy-loaded to reduce initial JS parse time
+const TestimonialBlock = lazy(() => import("@/components/sections/TestimonialBlock"));
+const CTABanner = lazy(() => import("@/components/sections/CTABanner"));
+const FAQ = lazy(() => import("@/components/sections/FAQ"));
+const PricingTransparency = lazy(() => import("@/components/sections/PricingTransparency"));
+
+// Minimal skeleton shown while lazy sections load
+function SectionSkeleton() {
+  return <div className="py-16 bg-white animate-pulse" aria-hidden="true" />;
+}
 
 // Hero image — used as CSS background-image on the section element (not an img tag,
 // so it is excluded from LCP consideration; the h1 headline becomes the LCP element)
@@ -502,8 +509,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <TestimonialBlock />
+      {/* Testimonials — lazy-loaded (below fold) */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <TestimonialBlock />
+      </Suspense>
 
       {/* How It Works */}
       <section className="py-10 sm:py-16 bg-white">
@@ -541,8 +550,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Transparency */}
-      <PricingTransparency />
+      {/* Pricing Transparency — lazy-loaded (below fold) */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <PricingTransparency />
+      </Suspense>
 
       {/* Blog Preview */}
       <section className="py-10 sm:py-16 bg-[#f7f3ec]">
@@ -591,7 +602,9 @@ export default function Home() {
               FAQ's
             </h2>
           </div>
-          <FAQ items={homeFAQ} />
+          <Suspense fallback={<SectionSkeleton />}>
+            <FAQ items={homeFAQ} />
+          </Suspense>
         </div>
       </section>
 
@@ -664,8 +677,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <CTABanner />
+      {/* CTA Banner — lazy-loaded (below fold) */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <CTABanner />
+      </Suspense>
 
 
     </PageLayout>
