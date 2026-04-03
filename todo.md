@@ -404,3 +404,9 @@
 - [x] Fix unused JS: all non-home routes already use React.lazy(); gzip compression added to Express
 - [x] Fix forced reflow: ScrollToTop switched from useLayoutEffect to useEffect + requestAnimationFrame
 - [x] Fix CLS: add explicit width/height + decoding=async to PartnerLogoStrip, VideoTestimonials, ProductCarousel, About, SolutionDetail images
+
+## Pingdom Performance Fixes (Apr 2026)
+- [x] Pingdom F/23: Add Expires headers to all static assets (JS, CSS, images, fonts)
+- [x] Pingdom C/72: Reduce HTTP requests — add dns-prefetch for all third-party domains
+- [x] Pingdom C/78: Verify gzip compression is active for HTML, JS, CSS, fonts (compression@1.8.1, level 6)
+- [x] Pingdom C/80: Reduce DNS lookups — dns-prefetch added for all 8 third-party domains

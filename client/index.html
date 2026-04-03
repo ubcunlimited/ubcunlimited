@@ -53,12 +53,21 @@
     <meta name="twitter:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-card-final_c2722614.png" />
     <meta name="twitter:image:alt" content="UBC Unlimited — Utah Merchant Services. Cash Discounting, Surcharging, POS Solutions." />
 
-    <!-- Preconnect to CDN and analytics -->
+    <!-- Preconnect for critical first-party CDN and analytics (establishes TCP early) -->
     <link rel="preconnect" href="https://d2xsxph8kpxj0f.cloudfront.net" crossorigin />
-    <link rel="preconnect" href="https://plausible.io" crossorigin />
-    <!-- Preconnect for reCAPTCHA v3 (reduces DNS lookup time) -->
     <link rel="preconnect" href="https://www.google.com" />
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+
+    <!-- dns-prefetch for all third-party domains (resolves DNS in parallel without blocking).
+         Pingdom C/80: each unique hostname = 1 DNS lookup; prefetch eliminates the latency. -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://connect.facebook.net" />
+    <link rel="dns-prefetch" href="https://www.facebook.com" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://www.gstatic.com" />
+    <link rel="dns-prefetch" href="https://d2xsxph8kpxj0f.cloudfront.net" />
+    <link rel="dns-prefetch" href="https://plausible.io" />
 
     <!-- Self-hosted fonts via CDN (latin subsets, font-display:swap) -->
     <style>

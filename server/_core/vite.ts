@@ -59,6 +59,12 @@ export function serveStatic(app: Express) {
   }
 
   // Immutable cache for hashed assets (JS/CSS/fonts with content hash in filename)
+  // Both Cache-Control and Expires are set: Cache-Control for modern browsers,
+  // Expires for legacy tools (Pingdom YSlow, older proxies).
+  const ONE_YEAR_MS = 365 * 24 * 60 * 60 * 1000;
+  const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+  const ONE_HOUR_MS = 60 * 60 * 1000;
+
   app.use(
     "/assets",
     express.static(path.join(distPath, "assets"), {
@@ -66,6 +72,7 @@ export function serveStatic(app: Express) {
       immutable: true,
       setHeaders: (res) => {
         res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+        res.setHeader("Expires", new Date(Date.now() + ONE_YEAR_MS).toUTCString());
       },
     })
   );
@@ -77,12 +84,14 @@ export function serveStatic(app: Express) {
         if (filePath.endsWith(".html")) {
           // HTML must always be fresh (no hash in filename)
           res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+          res.setHeader("Expires", "0");
         } else if (
           filePath.endsWith(".xml") ||
           filePath.endsWith(".txt") ||
           filePath.endsWith(".json")
         ) {
           res.setHeader("Cache-Control", "public, max-age=3600"); // 1 hour
+          res.setHeader("Expires", new Date(Date.now() + ONE_HOUR_MS).toUTCString());
         } else if (
           filePath.endsWith(".ico") ||
           filePath.endsWith(".png") ||
@@ -90,6 +99,7 @@ export function serveStatic(app: Express) {
           filePath.endsWith(".svg")
         ) {
           res.setHeader("Cache-Control", "public, max-age=604800"); // 1 week
+          res.setHeader("Expires", new Date(Date.now() + ONE_WEEK_MS).toUTCString());
         }
       },
     })
