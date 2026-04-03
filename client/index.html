@@ -5,14 +5,15 @@
     <!-- charset MUST be first inside <head> (Lighthouse: charset declaration) -->
     <meta charset="UTF-8" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBY1WMZHL2"></script>
+    <!-- Google Analytics — async so it does not block parsing.
+         The inline init script runs immediately but is tiny (<200 bytes). -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-MBY1WMZHL2');
+      gtag('config', 'G-MBY1WMZHL2', { send_page_view: false });
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBY1WMZHL2"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UBC Unlimited — Utah Merchant Services</title>
     <meta name="description" content="UBC Unlimited provides merchant services, payment processing, POS systems, and more to Utah businesses. Local experts, competitive rates, 24/7 support." />
@@ -142,6 +143,13 @@
       href="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/dm-serif-display-latin_648ef92e.woff2" />
     <link rel="preload" as="font" type="font/woff2" crossorigin
       href="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/inter-400-latin_0e1d5b13.woff2" />
+
+    <!-- Preload hero background image (LCP element on homepage).
+         fetchpriority=high tells the browser to start fetching this
+         before the CSS/JS bundles are parsed, reducing LCP time. -->
+    <link rel="preload" as="image" fetchpriority="high"
+      href="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1440w_q72_fb246703.webp"
+      type="image/webp" />
 
     <!-- Meta Pixel -->
     <script>

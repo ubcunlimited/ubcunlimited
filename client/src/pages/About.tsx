@@ -118,6 +118,10 @@ export default function About() {
               <img
                 src={TERMINAL_IMG}
                 alt="Modern credit card terminal with Salt Lake City skyline — UBC Unlimited merchant services"
+                width={800}
+                height={600}
+                loading="lazy"
+                decoding="async"
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
               <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-xl border border-[#c9a84c]/15">

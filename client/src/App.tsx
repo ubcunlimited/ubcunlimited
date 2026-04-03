@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch, useLocation } from "wouter";
-import { lazy, Suspense, useLayoutEffect, useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { installPhoneClickTracker } from "@/lib/pixel";
@@ -134,13 +134,16 @@ function PageFallback() {
   );
 }
 
-// Scroll to top on every route change
+// Scroll to top on every route change.
+// Uses useEffect + requestAnimationFrame instead of useLayoutEffect to avoid
+// forced synchronous layout (reflow) before the browser paints.
 function ScrollToTop() {
   const [location] = useLocation();
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    });
+    return () => cancelAnimationFrame(raf);
   }, [location]);
   return null;
 }

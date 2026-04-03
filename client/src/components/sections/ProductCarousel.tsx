@@ -105,8 +105,11 @@ export default function ProductCarousel({
                   <img
                     src={item.image}
                     alt={`${item.name} POS system`}
+                    width={600}
+                    height={176}
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    decoding="async"
                   />
                   {item.badge && (
                     <span className="absolute top-3 left-3 bg-[#c9a84c] text-[#080808] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">

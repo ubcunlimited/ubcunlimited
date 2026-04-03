@@ -394,3 +394,13 @@
 
 ## Critical Bug Fix (Apr 2 2026)
 - [x] Fix black screen on live site: removed manualChunks from vite.config.ts — Rollup's vendor splitting caused a TDZ (temporal dead zone) circular dependency error in vendor-C0Htrpzl.js that prevented React from mounting
+
+## PageSpeed Performance Fixes (Apr 2 2026)
+- [x] Fix cache headers: serve hashed assets with Cache-Control: public, max-age=31536000, immutable
+- [x] Fix legacy JS: set Vite build target to es2022 to eliminate legacy polyfills (saves ~20 KiB)
+- [x] Fix render-blocking fonts: add font-display:swap to Google Fonts link and preload LCP font
+- [x] Fix LCP: add <link rel="preload"> for the hero image to reduce LCP request discovery delay
+- [x] Fix unused CSS: cssCodeSplit:true added to Vite config for per-chunk CSS splitting
+- [x] Fix unused JS: all non-home routes already use React.lazy(); gzip compression added to Express
+- [x] Fix forced reflow: ScrollToTop switched from useLayoutEffect to useEffect + requestAnimationFrame
+- [x] Fix CLS: add explicit width/height + decoding=async to PartnerLogoStrip, VideoTestimonials, ProductCarousel, About, SolutionDetail images

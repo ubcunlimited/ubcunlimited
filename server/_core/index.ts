@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import compression from "compression";
 import { createServer } from "http";
 import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
@@ -41,6 +42,9 @@ const ALLOWED_ORIGINS = [
 async function startServer() {
   const app = express();
   const server = createServer(app);
+
+  // Gzip compression for all responses — reduces JS/CSS/HTML transfer size by ~70%
+  app.use(compression({ level: 6, threshold: 1024 }));
 
   // CORS — must be registered before any routes
   app.use(

@@ -156,8 +156,11 @@ function VideoCard({
         <img
           src={`https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`}
           alt={`Video testimonial from ${video.clientName}`}
+          width={480}
+          height={360}
           className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
           loading="lazy"
+          decoding="async"
         />
         {/* Play button overlay */}
         <div className="absolute inset-0 flex items-center justify-center">

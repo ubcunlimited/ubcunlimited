@@ -680,6 +680,10 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
                 <img
                   src={heroImg}
                   alt={isCashDiscount ? "Cash discount payment terminal at retail checkout — UBC Unlimited" : isInvoicing ? "Branded digital invoice with Pay Now button — UBC Unlimited invoicing" : "Modern credit card terminal — UBC Unlimited merchant services"}
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
                   className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
                 />
               </div>

@@ -167,11 +167,14 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
-    // Target modern browsers to reduce legacy polyfills (saves ~8 KiB)
-    target: "es2020",
+    // Target modern browsers to reduce legacy polyfills (saves ~20 KiB)
+    // es2022 eliminates Object.assign polyfills, async iterator helpers, etc.
+    target: "es2022",
     // Minification
     minify: "esbuild",
     cssMinify: true,
+    // Split CSS per chunk so lazy-loaded routes only load their own CSS
+    cssCodeSplit: true,
     // Content-hash filenames for immutable caching
     rollupOptions: {
       output: {

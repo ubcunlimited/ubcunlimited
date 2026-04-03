@@ -85,6 +85,8 @@ function LogoItem({ logo, dark }: { logo: { name: string; src: string; href?: st
     <img
       src={logo.src}
       alt={`${logo.name} — payment integration partner`}
+      width={120}
+      height={32}
       className={`h-8 w-auto object-contain transition-opacity ${
         dark ? "opacity-50 hover:opacity-90 brightness-0 invert" : "opacity-60 hover:opacity-100"
       }`}
