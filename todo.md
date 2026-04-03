@@ -414,3 +414,15 @@
 ## Further Performance Fixes (Apr 2026)
 - [x] font-display: swap already present on all @font-face declarations in index.html (no change needed)
 - [x] Lazy-load below-fold Home.tsx sections (TestimonialBlock, PricingTransparency, FAQ, CTABanner) with React.lazy + Suspense
+
+## Accessibility Panel Functionality Fixes (Apr 2026)
+- [x] Fix: `activate()` makes ALL boolean toggles mutually exclusive — motor/cognitive options like Focus Indicators, Large Cursor, Highlight Links, Highlight Headings, Dyslexia Font, Reduce Motion, Reading Guide, Reading Mask should be independently combinable
+- [x] Fix: Section accordion toggle — clicking the currently-open section header should close it (true toggle); currently clicking the same header does nothing
+- [x] Fix: Color-blind SVG filter and grayscale/invert both set `filter` on `html` — last one wins; need to compose filters correctly
+- [x] Fix: `aria-modal="false"` on dialog is semantically incorrect — change to `aria-modal="true"` and trap focus inside panel
+- [x] Fix: Reading Guide line has `transition: top 0.05s linear` which plays animations even when Reduce Motion is active — suppress transition when reduceMotion is on
+- [x] Fix: Large Cursor SVG data-URI does not work in Firefox — use a PNG data-URI cursor fallback
+- [x] Fix: Missing `aria-valuemin`, `aria-valuemax`, `aria-valuenow`, `aria-label` on font-size stepper (add `role="group"` wrapper with accessible label)
+- [x] Fix: High Contrast "Default" button label is ambiguous — rename to "Off" for clarity
+- [x] Fix: Color Blind and High Contrast option groups missing `role="group"` + `aria-labelledby` for screen reader grouping
+- [x] Fix: Old AccessibilityWidget.tsx uses `STORAGE_KEY = "ubc_a11y"` while new AccessibilityPanel uses `"ubc_a11y_v2"` — verify old widget is fully removed and only new panel is active; clear stale key on load
