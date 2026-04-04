@@ -438,3 +438,7 @@
 - [x] Write sitemap.xml with all URLs, priorities, and change frequencies
 - [x] Verify sitemap is served at /sitemap.xml (119 URLs, content-type: text/xml)
 - [x] Update robots.txt Sitemap directive to canonical domain; added agent-login, thank-you, poc/, recaptcha-docs disallow rules
+
+## LocalBusiness JSON-LD Structured Data (Apr 2026)
+- [x] Add LocalBusiness JSON-LD schema to index.html (address, phone, geo, openingHours, sameAs, hasOfferCatalog, founder)
+- [x] Validate schema with Google Rich Results Test (JSON parsed cleanly: 2 @types, 6 areaServed, 7 offers, openingHours, 4 sameAs)
