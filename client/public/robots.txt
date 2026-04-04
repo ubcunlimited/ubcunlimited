@@ -7,8 +7,12 @@ Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /api/oauth/
 
-# Disallow unlisted pages
+# Disallow unlisted / internal pages
 Disallow: /agent-iso
+Disallow: /agent-login
+Disallow: /thank-you
+Disallow: /poc/
+Disallow: /recaptcha-docs
 
 # Sitemap
 Sitemap: https://www.ubcunlimited.com/sitemap.xml

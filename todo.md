@@ -432,3 +432,9 @@
 - [x] Verify accessibility settings persist across page loads and browser sessions via localStorage
 - [x] Add "Settings saved" visual confirmation toast in accessibility panel footer when any setting changes
 - [x] Add "Restore saved settings" indicator on panel open when non-default settings are loaded from storage
+
+## Full Sitemap Generation (Apr 2026)
+- [x] Audit all routes in App.tsx
+- [x] Write sitemap.xml with all URLs, priorities, and change frequencies
+- [x] Verify sitemap is served at /sitemap.xml (119 URLs, content-type: text/xml)
+- [x] Update robots.txt Sitemap directive to canonical domain; added agent-login, thank-you, poc/, recaptcha-docs disallow rules
