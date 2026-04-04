@@ -442,3 +442,8 @@
 ## LocalBusiness JSON-LD Structured Data (Apr 2026)
 - [x] Add LocalBusiness JSON-LD schema to index.html (address, phone, geo, openingHours, sameAs, hasOfferCatalog, founder)
 - [x] Validate schema with Google Rich Results Test (JSON parsed cleanly: 2 @types, 6 areaServed, 7 offers, openingHours, 4 sameAs)
+
+## FAQPage JSON-LD Structured Data (Apr 2026)
+- [x] Read FAQ page component and extract all Q&A pairs
+- [x] Inject FAQPage JSON-LD script tag into the FAQ page component (60 questions across 8 categories)
+- [x] Validate JSON-LD syntax (60 Question entities confirmed, 0 TypeScript errors)
