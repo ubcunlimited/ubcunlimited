@@ -8,9 +8,11 @@ import { sendToWebhook } from "../webhook";
 import { verifyRecaptcha } from "../recaptcha";
 import { TRPCError } from "@trpc/server";
 
-// ─── Schemas ─────────────────────────────────────────────────────────────────
+// ─── Shared ───────────────────────────────────────────────────────────────────
 
 const recaptchaToken = z.string().optional();
+
+// ─── Schemas ─────────────────────────────────────────────────────────────────
 
 const consultationSchema = z.object({
   firstName: z.string().min(1),
@@ -23,7 +25,7 @@ const consultationSchema = z.object({
   preferredTime: z.string().optional(),
   message: z.string().optional(),
   smsConsent: z.boolean().optional(),
-  recaptchaToken: recaptchaToken,
+  recaptchaToken,
 });
 
 const quoteSchema = z.object({
@@ -38,7 +40,7 @@ const quoteSchema = z.object({
   solutions: z.array(z.string()).optional(),
   message: z.string().optional(),
   smsConsent: z.boolean().optional(),
-  recaptchaToken: recaptchaToken,
+  recaptchaToken,
 });
 
 const statementReviewSchema = z.object({
@@ -55,16 +57,99 @@ const statementReviewSchema = z.object({
   fileData: z.string().optional(),
   fileName: z.string().optional(),
   fileType: z.string().optional(),
-  recaptchaToken: recaptchaToken,
+  recaptchaToken,
 });
 
+// Hero lead now uses first/last/email/phone
 const heroLeadSchema = z.object({
-  name: z.string().min(1),
+  firstName: z.string().min(1),
+  lastName: z.string().min(1).optional().default(""),
+  email: z.string().email().optional().or(z.literal("")).optional(),
   phone: z.string().min(7),
   businessType: z.string().min(1),
-  recaptchaToken: recaptchaToken,
   city: z.string().optional(),
-  email: z.string().optional(),
+  recaptchaToken,
+});
+
+// Lead capture form (embedded on solution/industry pages)
+const leadCaptureSchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string().min(1),
+  email: z.string().email(),
+  phone: z.string().min(7),
+  city: z.string().optional(),
+  state: z.string().optional(),
+  message: z.string().optional(),
+  newsletter: z.boolean().optional(),
+  sourcePage: z.string().optional(),
+  recaptchaToken,
+});
+
+// Blog lead — now requires phone too
+const blogLeadSchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string().min(1).optional().default(""),
+  email: z.string().email(),
+  phone: z.string().min(7).optional().default(""),
+  sourcePage: z.string().max(256).optional(),
+  recaptchaToken,
+});
+
+// Testimonial submission — now requires phone
+const testimonialSchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string().min(1).optional().default(""),
+  email: z.string().email().optional(),
+  phone: z.string().min(7).optional().default(""),
+  businessName: z.string().optional(),
+  location: z.string().optional(),
+  industry: z.string().optional(),
+  rating: z.number().min(1).max(5),
+  quote: z.string().min(10),
+  agreed: z.boolean(),
+  recaptchaToken,
+});
+
+// SkyTab Configurator
+const skyTabConfigSchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string().min(1).optional().default(""),
+  email: z.string().email().optional().or(z.literal("")).optional(),
+  phone: z.string().min(7).optional().default(""),
+  businessName: z.string().optional(),
+  businessType: z.string().optional(),
+  selectedHardware: z.array(z.string()).optional(),
+  selectedAddOns: z.array(z.string()).optional(),
+  recaptchaToken,
+});
+
+// SkyTab POS Builder order
+const skyTabPOSSchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string().min(1),
+  email: z.string().email(),
+  phone: z.string().min(7),
+  businessName: z.string().min(1),
+  businessType: z.string().optional(),
+  city: z.string().optional(),
+  state: z.string().optional(),
+  currentPOS: z.string().optional(),
+  notes: z.string().optional(),
+  orderSummary: z.string().optional(),
+  processingPlan: z.string().optional(),
+  consent: z.boolean(),
+  recaptchaToken,
+});
+
+// Agent / ISO lead
+const agentLeadSchema = z.object({
+  firstName: z.string().min(1),
+  lastName: z.string().min(1).optional().default(""),
+  email: z.string().email(),
+  phone: z.string().min(7),
+  agentType: z.string().min(1),
+  experience: z.string().optional(),
+  recaptchaToken,
 });
 
 // ─── Router ──────────────────────────────────────────────────────────────────
@@ -73,44 +158,37 @@ export const formsRouter = router({
 
   // ── Blog email lead ────────────────────────────────────────────────────────
   submitBlogLead: publicProcedure
-    .input(
-      z.object({
-        name: z.string().min(1, "Name is required").max(128),
-        email: z.string().email("Please enter a valid email address"),
-        sourcePage: z.string().max(256).optional(),
-        recaptchaToken: recaptchaToken,
-      })
-    )
+    .input(blogLeadSchema)
     .mutation(async ({ input }) => {
       if (input.recaptchaToken) {
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_blog_lead");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
       }
+
+      const fullName = `${input.firstName} ${input.lastName}`.trim();
+
       await insertBlogLead({
-        name: input.name,
+        name: fullName,
         email: input.email,
         sourcePage: input.sourcePage ?? null,
       });
 
-      const nameParts = input.name.trim().split(/\s+/);
-      const firstName = nameParts[0] ?? input.name;
-      const lastName = nameParts.slice(1).join(" ") || "";
-
       const lines = [
         `**New Blog Email Lead — UBC Unlimited**`,
         ``,
-        `**Name:** ${input.name}`,
+        `**Name:** ${fullName}`,
         `**Email:** ${input.email}`,
+        input.phone ? `**Phone:** ${input.phone}` : null,
         input.sourcePage ? `**Source Page:** ${input.sourcePage}` : null,
         ``,
         `This visitor opted in to receive the free processing fee guide from the blog sidebar.`,
       ].filter(Boolean).join("\n");
 
-      await notifyOwner({ title: `New Blog Lead — ${input.name}`, content: lines });
+      await notifyOwner({ title: `New Blog Lead — ${fullName}`, content: lines });
 
       await sendToWebhook(
         "blog_lead",
-        { firstName, lastName, phone: "", email: input.email },
+        { firstName: input.firstName, lastName: input.lastName, phone: input.phone ?? "", email: input.email },
         { source_page: input.sourcePage }
       );
 
@@ -119,29 +197,19 @@ export const formsRouter = router({
 
   // ── Agent / ISO lead ───────────────────────────────────────────────────────
   submitAgentLead: publicProcedure
-    .input(
-      z.object({
-        name: z.string().min(1),
-        email: z.string().email(),
-        phone: z.string().min(7),
-        agentType: z.string().min(1),
-        experience: z.string().optional(),
-        recaptchaToken: recaptchaToken,
-      })
-    )
+    .input(agentLeadSchema)
     .mutation(async ({ input }) => {
       if (input.recaptchaToken) {
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_agent_lead");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
       }
-      const nameParts = input.name.trim().split(/\s+/);
-      const firstName = nameParts[0] ?? input.name;
-      const lastName = nameParts.slice(1).join(" ") || "";
+
+      const fullName = `${input.firstName} ${input.lastName}`.trim();
 
       const lines = [
         `**New Agent/ISO Partner Application — UBC Unlimited**`,
         ``,
-        `**Name:** ${input.name}`,
+        `**Name:** ${fullName}`,
         `**Email:** ${input.email}`,
         `**Phone:** ${input.phone}`,
         `**Role:** ${input.agentType}`,
@@ -150,18 +218,18 @@ export const formsRouter = router({
         `Source: /agent-iso partner application form.`,
       ].filter(Boolean).join("\n");
 
-      await notifyOwner({ title: `New Agent Application — ${input.name}`, content: lines });
+      await notifyOwner({ title: `New Agent Application — ${fullName}`, content: lines });
 
       await sendToWebhook(
         "agent_lead",
-        { firstName, lastName, phone: input.phone, email: input.email },
+        { firstName: input.firstName, lastName: input.lastName, phone: input.phone, email: input.email },
         { agent_type: input.agentType, experience: input.experience }
       );
 
       return { success: true };
     }),
 
-  // ── Homepage hero micro-form ───────────────────────────────────────────────
+  // ── Homepage / city hero micro-form ───────────────────────────────────────
   submitHeroLead: publicProcedure
     .input(heroLeadSchema)
     .mutation(async ({ input }) => {
@@ -169,26 +237,68 @@ export const formsRouter = router({
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_hero_lead");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
       }
-      const nameParts = input.name.trim().split(/\s+/);
-      const firstName = nameParts[0] ?? input.name;
-      const lastName = nameParts.slice(1).join(" ") || "";
+
+      const fullName = `${input.firstName} ${input.lastName ?? ""}`.trim();
 
       const lines = [
         `**New Homepage Lead — UBC Unlimited**`,
         ``,
-        `**Name:** ${input.name}`,
+        `**Name:** ${fullName}`,
         `**Phone:** ${input.phone}`,
+        input.email ? `**Email:** ${input.email}` : null,
         `**Business Type:** ${input.businessType}`,
+        input.city ? `**City:** ${input.city}` : null,
         ``,
-        `Source: Homepage hero micro-form. Follow up promptly.`,
-      ].join("\n");
+        `Source: Homepage / city hero micro-form. Follow up promptly.`,
+      ].filter(Boolean).join("\n");
 
-      await notifyOwner({ title: `New Homepage Lead — ${input.name}`, content: lines });
+      await notifyOwner({ title: `New Homepage Lead — ${fullName}`, content: lines });
 
       await sendToWebhook(
         "hero_lead",
-        { firstName, lastName, phone: input.phone, email: "" },
-        { business_type: input.businessType }
+        { firstName: input.firstName, lastName: input.lastName ?? "", phone: input.phone, email: input.email ?? "" },
+        { business_type: input.businessType, city: input.city }
+      );
+
+      return { success: true };
+    }),
+
+  // ── Embedded lead capture form ─────────────────────────────────────────────
+  submitLeadCapture: publicProcedure
+    .input(leadCaptureSchema)
+    .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_lead_capture");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
+
+      const fullName = `${input.firstName} ${input.lastName}`.trim();
+
+      const lines = [
+        `**New Lead Capture — UBC Unlimited**`,
+        ``,
+        `**Name:** ${fullName}`,
+        `**Email:** ${input.email}`,
+        `**Phone:** ${input.phone}`,
+        input.city ? `**City:** ${input.city}` : null,
+        input.state ? `**State:** ${input.state}` : null,
+        input.message ? `**Message:** ${input.message}` : null,
+        input.newsletter ? `**Newsletter:** Yes` : null,
+        input.sourcePage ? `**Source Page:** ${input.sourcePage}` : null,
+      ].filter(Boolean).join("\n");
+
+      await notifyOwner({ title: `New Lead — ${fullName}`, content: lines });
+
+      await sendToWebhook(
+        "lead_capture",
+        { firstName: input.firstName, lastName: input.lastName, phone: input.phone, email: input.email },
+        {
+          city: input.city,
+          state: input.state,
+          message: input.message,
+          newsletter: input.newsletter ?? false,
+          source_page: input.sourcePage,
+        }
       );
 
       return { success: true };
@@ -202,6 +312,7 @@ export const formsRouter = router({
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_consultation");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
       }
+
       const lines = [
         `**New Consultation Request — UBC Unlimited**`,
         ``,
@@ -247,6 +358,7 @@ export const formsRouter = router({
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_quote");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
       }
+
       const lines = [
         `**New Quote Request — UBC Unlimited**`,
         ``,
@@ -257,9 +369,7 @@ export const formsRouter = router({
         `**Business Type:** ${input.businessType}`,
         input.monthlyVolume ? `**Monthly Volume:** ${input.monthlyVolume}` : null,
         input.currentProcessor ? `**Current Processor:** ${input.currentProcessor}` : null,
-        input.solutions?.length
-          ? `**Solutions Interested In:** ${input.solutions.join(", ")}`
-          : null,
+        input.solutions?.length ? `**Solutions Interested In:** ${input.solutions.join(", ")}` : null,
         input.message ? `**Message:** ${input.message}` : null,
         `**SMS Consent:** ${input.smsConsent ? "Yes" : "No"}`,
         ``,
@@ -296,8 +406,8 @@ export const formsRouter = router({
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_statement_review");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
       }
-      let fileUrl: string | null = null;
 
+      let fileUrl: string | null = null;
       if (input.fileData && input.fileName && input.fileType) {
         try {
           const buffer = Buffer.from(input.fileData, "base64");
@@ -347,5 +457,133 @@ export const formsRouter = router({
       );
 
       return { success: true, fileUploaded: !!fileUrl };
+    }),
+
+  // ── Testimonial submission ─────────────────────────────────────────────────
+  submitTestimonial: publicProcedure
+    .input(testimonialSchema)
+    .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_testimonial");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
+
+      const fullName = `${input.firstName} ${input.lastName ?? ""}`.trim();
+
+      const lines = [
+        `**New Testimonial Submission — UBC Unlimited**`,
+        ``,
+        `**Name:** ${fullName}`,
+        input.email ? `**Email:** ${input.email}` : null,
+        input.phone ? `**Phone:** ${input.phone}` : null,
+        input.businessName ? `**Business:** ${input.businessName}` : null,
+        input.location ? `**Location:** ${input.location}` : null,
+        input.industry ? `**Industry:** ${input.industry}` : null,
+        `**Rating:** ${"★".repeat(input.rating)}${"☆".repeat(5 - input.rating)} (${input.rating}/5)`,
+        `**Quote:** "${input.quote}"`,
+        `**Agreed to Terms:** ${input.agreed ? "Yes" : "No"}`,
+      ].filter(Boolean).join("\n");
+
+      await notifyOwner({ title: `New Testimonial — ${fullName} (${input.rating}★)`, content: lines });
+
+      await sendToWebhook(
+        "testimonial",
+        { firstName: input.firstName, lastName: input.lastName ?? "", phone: input.phone ?? "", email: input.email ?? "" },
+        {
+          business_name: input.businessName,
+          location: input.location,
+          industry: input.industry,
+          rating: input.rating,
+          quote: input.quote,
+        }
+      );
+
+      return { success: true };
+    }),
+
+  // ── SkyTab Configurator quote ──────────────────────────────────────────────
+  submitSkyTabConfig: publicProcedure
+    .input(skyTabConfigSchema)
+    .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_skytab_configurator");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
+
+      const fullName = `${input.firstName} ${input.lastName ?? ""}`.trim();
+
+      const lines = [
+        `**New SkyTab Configurator Quote — UBC Unlimited**`,
+        ``,
+        `**Name:** ${fullName}`,
+        input.email ? `**Email:** ${input.email}` : null,
+        input.phone ? `**Phone:** ${input.phone}` : null,
+        input.businessName ? `**Business:** ${input.businessName}` : null,
+        input.businessType ? `**Business Type:** ${input.businessType}` : null,
+        input.selectedHardware?.length ? `**Hardware:** ${input.selectedHardware.join(", ")}` : null,
+        input.selectedAddOns?.length ? `**Add-Ons:** ${input.selectedAddOns.join(", ")}` : null,
+      ].filter(Boolean).join("\n");
+
+      await notifyOwner({ title: `New SkyTab Config Quote — ${fullName}`, content: lines });
+
+      await sendToWebhook(
+        "skytab_config",
+        { firstName: input.firstName, lastName: input.lastName ?? "", phone: input.phone ?? "", email: input.email ?? "" },
+        {
+          business_name: input.businessName,
+          business_type: input.businessType,
+          hardware: input.selectedHardware?.join(", "),
+          add_ons: input.selectedAddOns?.join(", "),
+        }
+      );
+
+      return { success: true };
+    }),
+
+  // ── SkyTab POS Builder order ───────────────────────────────────────────────
+  submitSkyTabOrder: publicProcedure
+    .input(skyTabPOSSchema)
+    .mutation(async ({ input }) => {
+      if (input.recaptchaToken) {
+        const rc = await verifyRecaptcha(input.recaptchaToken, "submit_skytab_order");
+        if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
+      }
+
+      const lines = [
+        `**New SkyTab POS Order — UBC Unlimited**`,
+        ``,
+        `**Name:** ${input.firstName} ${input.lastName}`,
+        `**Email:** ${input.email}`,
+        `**Phone:** ${input.phone}`,
+        `**Business:** ${input.businessName}`,
+        input.businessType ? `**Business Type:** ${input.businessType}` : null,
+        input.city ? `**City:** ${input.city}` : null,
+        input.state ? `**State:** ${input.state}` : null,
+        input.currentPOS ? `**Current POS:** ${input.currentPOS}` : null,
+        input.processingPlan ? `**Processing Plan:** ${input.processingPlan}` : null,
+        input.orderSummary ? `\n**Order Summary:**\n${input.orderSummary}` : null,
+        input.notes ? `\n**Additional Notes:** ${input.notes}` : null,
+        `**Consent:** ${input.consent ? "Yes" : "No"}`,
+      ].filter(Boolean).join("\n");
+
+      await notifyOwner({ title: `New SkyTab POS Order — ${input.firstName} ${input.lastName}`, content: lines });
+
+      await sendToWebhook(
+        "skytab_order",
+        { firstName: input.firstName, lastName: input.lastName, phone: input.phone, email: input.email },
+        {
+          business_name: input.businessName,
+          business_type: input.businessType,
+          city: input.city,
+          state: input.state,
+          current_pos: input.currentPOS,
+          processing_plan: input.processingPlan,
+          order_summary: input.orderSummary,
+          notes: input.notes,
+          consent: input.consent,
+        }
+      );
+
+      return { success: true };
     }),
 });

@@ -8,6 +8,7 @@ import { useState } from "react";
 import { CheckCircle, ArrowRight, ChevronLeft, ChevronRight, Send } from "lucide-react";
 import { trackLead } from "@/lib/pixel";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
+import { trpc } from "@/lib/trpc";
 
 // ─── CDN Image URLs (correct sources from skytabmountainwest.com) ──────────────
 const IMG = {
@@ -449,39 +450,43 @@ export default function SkyTabPOSBuilder() {
 
   const { getToken } = useRecaptcha();
 
+  const submitPOSOrder = trpc.forms.submitSkyTabOrder.useMutation({
+    onSuccess: () => {
+      setSubmitting(false);
+      setSubmitted(true);
+      trackLead();
+      setTimeout(() => { window.location.href = "/thank-you"; }, 1500);
+    },
+    onError: () => {
+      setSubmitting(false);
+    },
+  });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isFormValid) return;
     setSubmitting(true);
-    await getToken("submit_skytab_order");
+    const recaptchaToken = await getToken("submit_skytab_order");
 
     const orderSummary = buildOrderSummaryText(config, total);
     const proc = PROCESSING_PLANS.find((p) => p.id === config.processing);
 
-    // Build mailto body as fallback (no backend needed)
-    const subject = encodeURIComponent(`SkyTab POS Order — ${form.businessName}`);
-    const body = encodeURIComponent(
-      `NEW SKYTAB POS ORDER\n\n` +
-      `Name: ${form.firstName} ${form.lastName}\n` +
-      `Business: ${form.businessName}\n` +
-      `Phone: ${form.phone}\n` +
-      `Email: ${form.email}\n` +
-      `Business Type: ${form.businessType}\n` +
-      `Location: ${form.city}, ${form.state}\n` +
-      `Current POS: ${form.currentPOS || "None"}\n\n` +
-      `--- ORDER SUMMARY ---\n${orderSummary}\n\n` +
-      `Processing Plan: ${proc?.name || ""}\n\n` +
-      `Additional Notes:\n${form.notes || "None"}`
-    );
-
-    // Simulate a brief submission delay for UX
-    await new Promise((r) => setTimeout(r, 800));
-    // Open mailto for the order details, then redirect to thank-you
-    window.open(`mailto:info@ubcunlimited.com?subject=${subject}&body=${body}`, "_blank");
-    setSubmitting(false);
-    setSubmitted(true);
-    trackLead();
-    setTimeout(() => { window.location.href = "/thank-you"; }, 1500);
+    submitPOSOrder.mutate({
+      firstName: form.firstName,
+      lastName: form.lastName,
+      phone: form.phone,
+      email: form.email,
+      businessName: form.businessName,
+      businessType: form.businessType,
+      city: form.city,
+      state: form.state,
+      currentPOS: form.currentPOS,
+      processingPlan: proc?.name ?? "",
+      orderSummary,
+      notes: form.notes,
+      consent: form.consent,
+      recaptchaToken,
+    });
   };
 
   if (submitted) {

@@ -333,7 +333,7 @@ export default function CityDetail() {
 // ─── Unlisted city form component ────────────────────────────────────────────
 
 function UnlistedCityForm({ cityName }: { cityName: string }) {
-  const [form, setForm] = useState({ name: "", phone: "", email: "", businessType: "", city: cityName });
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", businessType: "", city: cityName });
   const [submitted, setSubmitted] = useState(false);
   const { getToken } = useRecaptcha();
 
@@ -365,7 +365,7 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
       onSubmit={(e) => {
         e.preventDefault();
         getToken("submit_hero_lead").then((recaptchaToken) => {
-          submit.mutate({ name: form.name, phone: form.phone, businessType: `${form.businessType || "Not specified"} — ${cityDisplay}, Utah`, recaptchaToken });
+          submit.mutate({ firstName: form.firstName, lastName: form.lastName, email: form.email, phone: form.phone, businessType: form.businessType || "Not specified", city: `${cityDisplay}, Utah`, recaptchaToken });
         });
       }}
       className="space-y-3"
@@ -376,12 +376,28 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
         <span className="text-[#c9a84c] font-semibold">{cityDisplay}, Utah</span>
         <span className="text-white/70 text-xs ml-auto">Pre-filled</span>
       </div>
+      <div className="grid grid-cols-2 gap-3">
+        <input
+          type="text"
+          required
+          placeholder="First Name"
+          value={form.firstName}
+          onChange={(e) => setForm((f) => ({ ...f, firstName: e.target.value }))}
+          className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+        />
+        <input
+          type="text"
+          placeholder="Last Name"
+          value={form.lastName}
+          onChange={(e) => setForm((f) => ({ ...f, lastName: e.target.value }))}
+          className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+        />
+      </div>
       <input
-        type="text"
-        required
-        placeholder="Your Name"
-        value={form.name}
-        onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+        type="email"
+        placeholder="Email Address"
+        value={form.email}
+        onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
         className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
       />
       <input
@@ -390,13 +406,6 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
         placeholder="Phone Number"
         value={form.phone}
         onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
-        className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
-      />
-      <input
-        type="email"
-        placeholder="Email (optional)"
-        value={form.email}
-        onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
         className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
       />
       <input

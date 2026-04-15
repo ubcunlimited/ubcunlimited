@@ -447,3 +447,11 @@
 - [x] Read FAQ page component and extract all Q&A pairs
 - [x] Inject FAQPage JSON-LD script tag into the FAQ page component (60 questions across 8 categories)
 - [x] Validate JSON-LD syntax (60 Question entities confirmed, 0 TypeScript errors)
+
+## GHL Webhook & Form Standardization (Apr 2026)
+- [ ] Audit all form components and map current fields
+- [ ] Create shared GHL webhook utility (server/ghl.ts)
+- [ ] Standardize all form tRPC procedures: firstName, lastName, email, phone + notes JSON
+- [ ] Update all form UI components to split name into first/last fields
+- [ ] POST all form submissions to GHL webhook
+- [ ] Test all forms end-to-end

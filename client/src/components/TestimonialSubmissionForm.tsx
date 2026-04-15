@@ -20,7 +20,9 @@ const INDUSTRIES = [
 type Industry = (typeof INDUSTRIES)[number];
 
 interface FieldErrors {
-  name?: string;
+  firstName?: string;
+  lastName?: string;
+  phone?: string;
   businessName?: string;
   location?: string;
   industry?: string;
@@ -31,7 +33,9 @@ interface FieldErrors {
 }
 
 export default function TestimonialSubmissionForm() {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [phone, setPhone] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [location, setLocation] = useState("");
   const [industry, setIndustry] = useState<Industry | "">("");
@@ -56,7 +60,8 @@ export default function TestimonialSubmissionForm() {
 
   const validate = (): FieldErrors => {
     const errors: FieldErrors = {};
-    if (!name.trim()) errors.name = "Please enter your name.";
+    if (!firstName.trim()) errors.firstName = "Please enter your first name.";
+    if (!lastName.trim()) errors.lastName = "Please enter your last name.";
     if (!businessName.trim()) errors.businessName = "Please enter your business name.";
     if (!location.trim()) errors.location = "Please enter your city or location.";
     if (!industry) errors.industry = "Please select your industry.";
@@ -80,7 +85,9 @@ export default function TestimonialSubmissionForm() {
     setFieldErrors({});
     getToken("submit_testimonial").then((recaptchaToken) => {
       submitTestimonial.mutate({
-        name: name.trim(),
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
+        phone: phone.trim() || undefined,
         businessName: businessName.trim(),
         location: location.trim(),
         industry: industry as Industry,
@@ -141,23 +148,42 @@ export default function TestimonialSubmissionForm() {
       </div>
 
       <form onSubmit={handleSubmit} noValidate className="space-y-4">
-        {/* Row: Name + Business */}
+        {/* Row: First Name + Last Name */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-gray-600 text-xs font-medium mb-1.5">
-              Your Name <span className="text-red-400">*</span>
+              First Name <span className="text-red-400">*</span>
             </label>
             <input
               type="text"
-              placeholder="Jane Smith"
-              value={name}
-              onChange={(e) => { setName(e.target.value); clearError("name"); }}
-              className={inputClass(!!fieldErrors.name)}
+              placeholder="Jane"
+              value={firstName}
+              onChange={(e) => { setFirstName(e.target.value); clearError("firstName"); }}
+              className={inputClass(!!fieldErrors.firstName)}
             />
-            {fieldErrors.name && (
-              <p className="text-red-400 text-xs mt-1">{fieldErrors.name}</p>
+            {fieldErrors.firstName && (
+              <p className="text-red-400 text-xs mt-1">{fieldErrors.firstName}</p>
             )}
           </div>
+          <div>
+            <label className="block text-gray-600 text-xs font-medium mb-1.5">
+              Last Name <span className="text-red-400">*</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Smith"
+              value={lastName}
+              onChange={(e) => { setLastName(e.target.value); clearError("lastName"); }}
+              className={inputClass(!!fieldErrors.lastName)}
+            />
+            {fieldErrors.lastName && (
+              <p className="text-red-400 text-xs mt-1">{fieldErrors.lastName}</p>
+            )}
+          </div>
+        </div>
+
+        {/* Row: Business + Phone */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label className="block text-gray-600 text-xs font-medium mb-1.5">
               Business Name <span className="text-red-400">*</span>
@@ -171,6 +197,22 @@ export default function TestimonialSubmissionForm() {
             />
             {fieldErrors.businessName && (
               <p className="text-red-400 text-xs mt-1">{fieldErrors.businessName}</p>
+            )}
+          </div>
+          <div>
+            <label className="block text-gray-600 text-xs font-medium mb-1.5">
+              Phone Number{" "}
+              <span className="text-gray-600 font-normal">(optional)</span>
+            </label>
+            <input
+              type="tel"
+              placeholder="(801) 555-0100"
+              value={phone}
+              onChange={(e) => { setPhone(e.target.value); clearError("phone"); }}
+              className={inputClass(!!fieldErrors.phone)}
+            />
+            {fieldErrors.phone && (
+              <p className="text-red-400 text-xs mt-1">{fieldErrors.phone}</p>
             )}
           </div>
         </div>

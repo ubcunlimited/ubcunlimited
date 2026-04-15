@@ -336,7 +336,7 @@ function CitySearch({ allCities }: { allCities: CityEntry[] }) {
 // ─── Unlisted city form ───────────────────────────────────────────────────────
 
 function UnlistedCityForm({ cityName }: { cityName: string }) {
-  const [form, setForm] = useState({ name: "", phone: "", businessType: "", city: cityName });
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", businessType: "", city: cityName });
   const [submitted, setSubmitted] = useState(false);
   const { getToken } = useRecaptcha();
 
@@ -366,21 +366,40 @@ function UnlistedCityForm({ cityName }: { cityName: string }) {
         e.preventDefault();
         getToken("submit_hero_lead").then((recaptchaToken) => {
           submit.mutate({
-            name: form.name,
+            firstName: form.firstName,
+            lastName: form.lastName,
+            email: form.email,
             phone: form.phone,
-            businessType: (form.businessType || "Not specified") + (form.city ? ` — City: ${form.city}` : ""),
+            businessType: form.businessType || "Not specified",
+            city: form.city,
             recaptchaToken,
           });
         });
       }}
       className="space-y-3"
     >
+      <div className="grid grid-cols-2 gap-3">
+        <input
+          type="text"
+          required
+          placeholder="First Name"
+          value={form.firstName}
+          onChange={(e) => setForm((f) => ({ ...f, firstName: e.target.value }))}
+          className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+        />
+        <input
+          type="text"
+          placeholder="Last Name"
+          value={form.lastName}
+          onChange={(e) => setForm((f) => ({ ...f, lastName: e.target.value }))}
+          className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+        />
+      </div>
       <input
-        type="text"
-        required
-        placeholder="Your Name"
-        value={form.name}
-        onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+        type="email"
+        placeholder="Email Address"
+        value={form.email}
+        onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
         className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
       />
       <input

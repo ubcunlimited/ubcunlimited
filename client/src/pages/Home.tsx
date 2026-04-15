@@ -96,7 +96,9 @@ const BUSINESS_TYPES = [
 ];
 
 export default function Home() {
-  const [heroName, setHeroName] = useState("");
+  const [heroFirstName, setHeroFirstName] = useState("");
+  const [heroLastName, setHeroLastName] = useState("");
+  const [heroEmail, setHeroEmail] = useState("");
   const [heroPhone, setHeroPhone] = useState("");
   const [heroType, setHeroType] = useState("");
   const [heroSubmitted, setHeroSubmitted] = useState(false);
@@ -118,8 +120,8 @@ export default function Home() {
 
   const handleHeroSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!heroName.trim() || !heroPhone.trim() || !heroType) {
-      setHeroError("Please fill in all three fields.");
+    if (!heroFirstName.trim() || !heroPhone.trim() || !heroType) {
+      setHeroError("Please fill in all required fields.");
       return;
     }
     if (!heroAgreed) {
@@ -128,7 +130,7 @@ export default function Home() {
     }
     setHeroError("");
     getToken("submit_hero_lead").then((recaptchaToken) => {
-      heroMutation.mutate({ name: heroName.trim(), phone: heroPhone.trim(), businessType: heroType, recaptchaToken });
+      heroMutation.mutate({ firstName: heroFirstName.trim(), lastName: heroLastName.trim(), email: heroEmail.trim(), phone: heroPhone.trim(), businessType: heroType, recaptchaToken });
     });
   };
 
@@ -284,13 +286,31 @@ export default function Home() {
                   <p className="text-white font-bold text-lg mb-1">Request a Consultation</p>
                   <p className="text-white/70 text-sm mb-5">Tell us about your business and we'll reach out with a tailored solution — no obligation.</p>
                   <div className="space-y-3 mb-4">
+                    <div className="grid grid-cols-2 gap-3">
+                      <input
+                        type="text"
+                        placeholder="First Name"
+                        value={heroFirstName}
+                        onChange={(e) => setHeroFirstName(e.target.value)}
+                        className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+                        aria-label="First name"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Last Name"
+                        value={heroLastName}
+                        onChange={(e) => setHeroLastName(e.target.value)}
+                        className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+                        aria-label="Last name"
+                      />
+                    </div>
                     <input
-                      type="text"
-                      placeholder="Your Name"
-                      value={heroName}
-                      onChange={(e) => setHeroName(e.target.value)}
+                      type="email"
+                      placeholder="Email Address"
+                      value={heroEmail}
+                      onChange={(e) => setHeroEmail(e.target.value)}
                       className="w-full bg-white/10 border border-white/15 rounded-xl px-4 py-3 text-sm text-white placeholder-white/35 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
-                      aria-label="Your name"
+                      aria-label="Email address"
                     />
                     <input
                       type="tel"

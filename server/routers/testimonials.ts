@@ -8,6 +8,7 @@ import {
   insertTestimonialSubmission,
   updateTestimonialStatus,
 } from "../db";
+import { sendToWebhook } from "../webhook";
 
 const INDUSTRY_VALUES = [
   "Restaurants",
@@ -27,7 +28,9 @@ export const testimonialsRouter = router({
   submit: publicProcedure
     .input(
       z.object({
-        name: z.string().min(2, "Name must be at least 2 characters").max(128),
+        firstName: z.string().min(1, "First name is required").max(64),
+        lastName: z.string().min(1, "Last name is required").max(64),
+        phone: z.string().optional(),
         businessName: z
           .string()
           .min(2, "Business name is required")
@@ -53,9 +56,12 @@ export const testimonialsRouter = router({
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_testimonial");
         if (!rc.success) throw new TRPCError({ code: "BAD_REQUEST", message: "reCAPTCHA verification failed. Please try again." });
       }
+
+      const fullName = `${input.firstName} ${input.lastName}`.trim();
+
       // Persist to database (status defaults to "pending")
       await insertTestimonialSubmission({
-        name: input.name,
+        name: fullName,
         businessName: input.businessName,
         location: input.location,
         industry: input.industry,
@@ -65,16 +71,35 @@ export const testimonialsRouter = router({
       // status defaults to "pending" via schema default
       });
 
+      // Fire GHL webhook
+      await sendToWebhook(
+        "testimonial_submission",
+        {
+          firstName: input.firstName,
+          lastName: input.lastName,
+          email: input.email ?? "",
+          phone: input.phone ?? "",
+        },
+        {
+          businessName: input.businessName,
+          location: input.location,
+          industry: input.industry,
+          rating: input.rating,
+          quote: input.quote,
+        }
+      );
+
       // Notify owner
       const stars = "★".repeat(input.rating) + "☆".repeat(5 - input.rating);
       const lines = [
         `**New Testimonial Submission — UBC Unlimited**`,
         ``,
-        `**Name:** ${input.name}`,
+        `**Name:** ${fullName}`,
         `**Business:** ${input.businessName}`,
         `**Location:** ${input.location}`,
         `**Industry:** ${input.industry}`,
         `**Rating:** ${stars} (${input.rating}/5)`,
+        input.phone ? `**Phone:** ${input.phone}` : null,
         input.email ? `**Email:** ${input.email}` : null,
         ``,
         `**Testimonial:**`,
@@ -86,7 +111,7 @@ export const testimonialsRouter = router({
         .join("\n");
 
       await notifyOwner({
-        title: `New Testimonial — ${input.name} (${input.industry})`,
+        title: `New Testimonial — ${fullName} (${input.industry})`,
         content: lines,
       });
 

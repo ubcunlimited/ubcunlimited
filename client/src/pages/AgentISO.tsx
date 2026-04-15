@@ -149,7 +149,8 @@ const BUSINESS_TYPES = [
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function AgentISO() {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [agentType, setAgentType] = useState("");
@@ -171,7 +172,7 @@ export default function AgentISO() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim() || !phone.trim() || !agentType) {
+    if (!firstName.trim() || !email.trim() || !phone.trim() || !agentType) {
       setFormError("Please fill in all required fields.");
       return;
     }
@@ -182,7 +183,8 @@ export default function AgentISO() {
     setFormError("");
     getToken("submit_agent_lead").then((recaptchaToken) => {
       agentMutation.mutate({
-        name: name.trim(),
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
         email: email.trim(),
         phone: phone.trim(),
         agentType,
@@ -416,16 +418,30 @@ export default function AgentISO() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wider">
-                    Full Name <span className="text-[#c9a84c]">*</span>
+                    First Name <span className="text-[#c9a84c]">*</span>
                   </label>
                   <input
                     type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Jane Smith"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="Jane"
                     className="w-full bg-white/8 border border-white/12 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
                   />
                 </div>
+                <div>
+                  <label className="block text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wider">
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="Smith"
+                    className="w-full bg-white/8 border border-white/12 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c]/60 transition-colors"
+                  />
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-white/60 text-xs font-semibold mb-1.5 uppercase tracking-wider">
                     Phone <span className="text-[#c9a84c]">*</span>

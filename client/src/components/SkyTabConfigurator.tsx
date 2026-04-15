@@ -3,6 +3,7 @@ import { CheckCircle, ChevronRight, ChevronLeft, Monitor, Tablet, Smartphone, Tv
 import { Link } from "wouter";
 import { trackLead } from "@/lib/pixel";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
+import { trpc } from "@/lib/trpc";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -322,7 +323,8 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
   const [submitted, setSubmitted] = useState(false);
 
   // Form fields for quote request
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [businessName, setBusinessName] = useState("");
@@ -367,14 +369,30 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
 
   const { getToken } = useRecaptcha();
 
+  const submitSkyTab = trpc.forms.submitSkyTabConfig.useMutation({
+    onSuccess: () => {
+      setSubmitted(true);
+      trackLead();
+      setTimeout(() => {
+        window.location.href = "/thank-you";
+      }, 2000);
+    },
+  });
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await getToken("submit_skytab_configurator");
-    setSubmitted(true);
-    trackLead();
-    setTimeout(() => {
-      window.location.href = "/thank-you";
-    }, 2000);
+    const recaptchaToken = await getToken("submit_skytab_configurator");
+    submitSkyTab.mutate({
+      firstName,
+      lastName,
+      phone,
+      email,
+      businessName,
+      businessType: businessType?.label ?? "Not specified",
+      selectedHardware: selectedHardwareItems.map((h) => h.name),
+      selectedAddOns: selectedAddOnItems.map((a) => a.name),
+      recaptchaToken,
+    });
   };
 
   const wrapperClass = compact
@@ -828,14 +846,23 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-3">
-                    <input
-                      type="text"
-                      placeholder="Your Name *"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      required
-                      className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 transition-all"
-                    />
+                    <div className="grid grid-cols-2 gap-3">
+                      <input
+                        type="text"
+                        placeholder="First Name *"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        required
+                        className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 transition-all"
+                      />
+                      <input
+                        type="text"
+                        placeholder="Last Name"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        className="w-full bg-white/8 border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#c9a84c] focus:ring-2 focus:ring-[#c9a84c]/20 transition-all"
+                      />
+                    </div>
                     <input
                       type="text"
                       placeholder="Business Name *"
