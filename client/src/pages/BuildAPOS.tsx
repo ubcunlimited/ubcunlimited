@@ -64,8 +64,8 @@ export default function BuildAPOS() {
               Use the configurator above to build your system, or call us directly. A local Utah SkyTab expert will walk you through the hardware, answer every question, and provide a transparent quote — no obligation.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
-              <a href="tel:+18013096988" className="btn-dark inline-flex items-center gap-2">
-                Call (801) 309-6988 <ArrowRight size={15} />
+              <a href="tel:+18014620923" className="btn-dark inline-flex items-center gap-2">
+                Call (801) 462-0923 <ArrowRight size={15} />
               </a>
               <Link href="/consultation" className="bg-white/20 hover:bg-white/30 text-[#080808] font-semibold px-5 py-2.5 rounded-lg transition-colors inline-flex items-center gap-2">
                 Book a Consultation

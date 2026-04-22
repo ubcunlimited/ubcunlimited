@@ -59,13 +59,13 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
     return { text: "UBC Unlimited is Utah's local merchant services company. We serve businesses across the entire state.", links: [{ label: "Our Utah Locations", href: "/locations" }] };
   }
   if (/contact|phone|call|email|reach|speak|talk|human|person|agent|representative/.test(q)) {
-    return { text: "You can reach our team directly:\n\n📞 **(801) 309-6988** — call or text anytime\n✉️ **info@ubcunlimited.com**", links: [{ label: "Book a Consultation", href: "/consultation" }, { label: "Contact Us", href: "/contact" }] };
+    return { text: "You can reach our team directly:\n\n📞 **(801) 462-0923** — call or text anytime\n✉️ **info@ubcunlimited.com**", links: [{ label: "Book a Consultation", href: "/consultation" }, { label: "Contact Us", href: "/contact" }] };
   }
   if (/who\s*(are|is)\s*(you|ubc)|about\s*ubc|about\s*you|company|background|experience|years/.test(q)) {
     return { text: "**UBC Unlimited** is a Utah-based merchant services company with 20+ years of experience.", links: [{ label: "About UBC Unlimited", href: "/about" }] };
   }
   if (/thank|thanks|bye|goodbye|that.?s\s*(all|it)|no\s*(more|other)\s*question/.test(q)) {
-    return { text: "You're welcome! If you have more questions later, don't hesitate to reach out. You can also call us at **(801) 309-6988** anytime. Have a great day! 🙌" };
+    return { text: "You're welcome! If you have more questions later, don't hesitate to reach out. You can also call us at **(801) 462-0923** anytime. Have a great day! 🙌" };
   }
   return { text: "That's a great question! For the most accurate answer, I'd recommend speaking directly with one of our Utah-based merchant services specialists.", links: [{ label: "Book a Consultation", href: "/consultation" }, { label: "Contact Us", href: "/contact" }] };
 }
@@ -230,7 +230,7 @@ export default function ChatPanel({ onClose, bottomClass, bottomPx }: ChatPanelP
 
       {/* Footer contact */}
       <div className="bg-[#080808] px-4 py-2 flex items-center justify-center gap-4 border-t border-white/5 shrink-0">
-        <a href="tel:+18013096988" className="flex items-center gap-1.5 text-white/60 hover:text-[#c9a84c] transition-colors text-xs"><Phone size={11} /> (801) 309-6988</a>
+        <a href="tel:+18014620923" className="flex items-center gap-1.5 text-white/60 hover:text-[#c9a84c] transition-colors text-xs"><Phone size={11} /> (801) 462-0923</a>
         <span className="text-white/60">·</span>
         <a href="mailto:info@ubcunlimited.com" className="flex items-center gap-1.5 text-white/60 hover:text-[#c9a84c] transition-colors text-xs"><Mail size={11} /> info@ubcunlimited.com</a>
       </div>

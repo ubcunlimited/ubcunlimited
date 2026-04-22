@@ -906,8 +906,8 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                   <Phone size={15} className="text-[#c9a84c] shrink-0" />
                   <div>
                     <p className="text-white/70 text-xs">Prefer to talk now?</p>
-                    <a href="tel:+18013096988" className="text-[#c9a84c] text-sm font-semibold hover:underline">
-                      (801) 309-6988
+                    <a href="tel:+18014620923" className="text-[#c9a84c] text-sm font-semibold hover:underline">
+                      (801) 462-0923
                     </a>
                   </div>
                 </div>

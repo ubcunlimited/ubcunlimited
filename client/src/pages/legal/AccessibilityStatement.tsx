@@ -274,8 +274,8 @@ export default function AccessibilityStatement() {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-[#c9a84c] font-semibold w-20 flex-shrink-0">Phone:</span>
-                  <a href="tel:+18013096988" className="text-[#c9a84c] hover:underline">
-                    (801) 309-6988
+                  <a href="tel:+18014620923" className="text-[#c9a84c] hover:underline">
+                    (801) 462-0923
                   </a>
                 </div>
                 <div className="flex items-start gap-3">

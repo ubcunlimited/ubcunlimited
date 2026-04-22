@@ -279,7 +279,7 @@ export default function Home() {
                 <div className="bg-[#c9a84c]/10 border border-[#c9a84c]/30 rounded-2xl px-8 py-10 text-center">
                   <CheckCircle size={40} className="text-[#c9a84c] mx-auto mb-4" />
                   <p className="text-white font-bold text-lg mb-2">We'll be in touch shortly!</p>
-                  <p className="text-white/60 text-sm">Our team typically responds within one business hour. You can also call us directly at <a href="tel:+18013096988" className="text-[#c9a84c] hover:underline">(801) 309-6988</a>.</p>
+                  <p className="text-white/60 text-sm">Our team typically responds within one business hour. You can also call us directly at <a href="tel:+18014620923" className="text-[#c9a84c] hover:underline">(801) 462-0923</a>.</p>
                 </div>
               ) : (
                 <form onSubmit={handleHeroSubmit} aria-label="Request a consultation" className="bg-white/5 border border-white/10 rounded-2xl p-7 backdrop-blur-sm">

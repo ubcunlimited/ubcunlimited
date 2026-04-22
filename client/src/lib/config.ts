@@ -7,9 +7,9 @@ export const SITE = {
   description:
     "Utah's trusted local merchant services provider. Competitive pricing, fast onboarding, local expertise, and tailored setups for restaurants, service companies, and businesses across the Wasatch Front.",
   url: "https://ubcunlimited.com",
-  phone: "(801) 309-6988",
-  phoneHref: "tel:+18013096988",
-  phoneRaw: "8013096988",
+  phone: "(801) 462-0923",
+  phoneHref: "tel:+18014620923",
+  phoneRaw: "8014620923",
   email: "info@ubcunlimited.com",
   founder: "Josh Cornia",
   yearsInBusiness: "20+",
