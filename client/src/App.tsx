@@ -53,6 +53,7 @@ const FAQPage = lazy(() => import("./pages/FAQPage"));
 
 // Admin
 const AdminTestimonials = lazy(() => import("./pages/admin/AdminTestimonials"));
+const AdminPortal = lazy(() => import("./pages/admin/AdminPortal"));
 
 // Internal docs
 const RecaptchaDoc = lazy(() => import("./pages/RecaptchaDoc"));
@@ -290,6 +291,7 @@ function Router() {
           <Route path="/cities/:slug">{() => <CityDetail />}</Route>
 
           {/* Admin */}
+          <Route path="/admin">{() => <AdminPortal />}</Route>
           <Route path="/admin/testimonials">{() => <AdminTestimonials />}</Route>
 
           {/* Internal docs */}

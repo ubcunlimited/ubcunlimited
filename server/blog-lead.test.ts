@@ -6,6 +6,7 @@ import type { TrpcContext } from "./_core/context";
 
 vi.mock("./db", () => ({
   insertBlogLead: vi.fn().mockResolvedValue(undefined),
+  insertLead: vi.fn().mockResolvedValue(undefined),
 }));
 
 vi.mock("./_core/notification", () => ({
@@ -38,7 +39,8 @@ describe("forms.submitBlogLead", () => {
     const caller = appRouter.createCaller(ctx);
 
     const result = await caller.forms.submitBlogLead({
-      name: "Jane Smith",
+      firstName: "Jane",
+      lastName: "Smith",
       email: "jane@example.com",
       sourcePage: "how-interchange-rates-work",
     });
@@ -54,7 +56,7 @@ describe("forms.submitBlogLead", () => {
 
     expect(notifyOwner).toHaveBeenCalledOnce();
     const notifyCall = vi.mocked(notifyOwner).mock.calls[0]![0];
-    expect(notifyCall.title).toContain("Jane Smith");
+    expect(notifyCall.title).toContain("Jane");
     expect(notifyCall.content).toContain("jane@example.com");
     expect(notifyCall.content).toContain("how-interchange-rates-work");
   });
@@ -64,7 +66,8 @@ describe("forms.submitBlogLead", () => {
     const caller = appRouter.createCaller(ctx);
 
     const result = await caller.forms.submitBlogLead({
-      name: "Bob Jones",
+      firstName: "Bob",
+      lastName: "Jones",
       email: "bob@example.com",
     });
 
@@ -81,7 +84,7 @@ describe("forms.submitBlogLead", () => {
     const caller = appRouter.createCaller(ctx);
 
     await expect(
-      caller.forms.submitBlogLead({ name: "Bad Actor", email: "not-an-email" })
+      caller.forms.submitBlogLead({ firstName: "Bad", lastName: "Actor", email: "not-an-email" })
     ).rejects.toThrow();
 
     expect(insertBlogLead).not.toHaveBeenCalled();
@@ -93,7 +96,7 @@ describe("forms.submitBlogLead", () => {
     const caller = appRouter.createCaller(ctx);
 
     await expect(
-      caller.forms.submitBlogLead({ name: "", email: "valid@example.com" })
+      caller.forms.submitBlogLead({ firstName: "", email: "valid@example.com" })
     ).rejects.toThrow();
 
     expect(insertBlogLead).not.toHaveBeenCalled();

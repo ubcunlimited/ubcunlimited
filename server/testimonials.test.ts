@@ -64,7 +64,8 @@ describe("testimonials.submit", () => {
     const caller = appRouter.createCaller(publicCtx());
 
     const result = await caller.testimonials.submit({
-      name: "Jane Smith",
+      firstName: "Jane",
+      lastName: "Smith",
       businessName: "Jane's Bistro",
       location: "Salt Lake City, UT",
       industry: "Restaurants",
@@ -85,7 +86,7 @@ describe("testimonials.submit", () => {
     );
     expect(notifyOwner).toHaveBeenCalledOnce();
     const notifyCall = vi.mocked(notifyOwner).mock.calls[0]![0];
-    expect(notifyCall.title).toContain("Jane Smith");
+    expect(notifyCall.title).toContain("Jane");
     expect(notifyCall.content).toContain("Restaurants");
   });
 
@@ -94,7 +95,7 @@ describe("testimonials.submit", () => {
 
     await expect(
       caller.testimonials.submit({
-        name: "Bob",
+        firstName: "Bob",
         businessName: "Bob's Shop",
         location: "Provo, UT",
         industry: "Retail",
@@ -111,7 +112,7 @@ describe("testimonials.submit", () => {
 
     await expect(
       caller.testimonials.submit({
-        name: "Alice",
+        firstName: "Alice",
         businessName: "Alice's Place",
         location: "Ogden, UT",
         industry: "InvalidIndustry" as never,
@@ -127,7 +128,8 @@ describe("testimonials.submit", () => {
     const caller = appRouter.createCaller(publicCtx());
 
     const result = await caller.testimonials.submit({
-      name: "No Email User",
+      firstName: "No Email",
+      lastName: "User",
       businessName: "No Email Biz",
       location: "Layton, UT",
       industry: "Medical",

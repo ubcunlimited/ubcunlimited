@@ -455,3 +455,17 @@
 - [ ] Update all form UI components to split name into first/last fields
 - [ ] POST all form submissions to GHL webhook
 - [ ] Test all forms end-to-end
+
+## Admin Analytics Portal + SEMrush Integration
+- [x] Add `leads` table to DB schema to store all form submissions (consultation, quote, statement review, hero lead, agent lead, skytab, blog lead)
+- [x] Add tRPC procedures: getLeads (with filters), getLead, updateLeadStatus, exportLeads CSV
+- [x] Update all form routers to insert into `leads` table on submission
+- [x] Build /admin portal shell with sidebar nav (Overview, Leads, SEO Analytics, Site Audit, Testimonials)
+- [x] Build Admin Overview tab: KPI cards (total leads, leads this week, top form source, top keyword)
+- [x] Build Admin Lead Inbox tab: table with filters (date, form type, status), status update, CSV export
+- [x] Build Admin SEMrush Analytics tab: domain overview, organic keywords table, backlinks overview
+- [x] Build Admin Site Audit tab: pull SEMrush errors/warnings/notices, display with severity + AI fix button
+- [x] Build AI SEO Fix Engine: LLM reads error description + affected URL, generates code fix, applies to site
+- [x] Add SEMRUSH_API_KEY secret via webdev_request_secrets
+- [x] Add /admin route to App.tsx with Manus auth protection
+- [x] Wire SEMrush API calls through server-side tRPC procedures (never expose API key to client)

@@ -5,6 +5,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { formsRouter } from "./routers/forms";
 import { testimonialsRouter } from "./routers/testimonials";
+import { adminRouter } from "./routers/admin";
 import { z } from "zod";
 
 export const appRouter = router({
@@ -23,6 +24,7 @@ export const appRouter = router({
 
   forms: formsRouter,
   testimonials: testimonialsRouter,
+  admin: adminRouter,
 
   agent: router({
     verifyPassword: publicProcedure
