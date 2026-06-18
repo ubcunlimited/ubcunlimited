@@ -339,7 +339,7 @@
 
 ## Mobile Accessibility UX Improvements
 - [x] Add first-visit tooltip label on mobile accessibility button (shows "Accessibility" for 2s on first visit)
-- [ ] Add max-height: 80vh + overflow-y: auto to AccessibilityPanel for small screen scroll support
+- [x] Add max-height: 80vh + overflow-y: auto to AccessibilityPanel for small screen scroll support (already implemented: max-h-[80vh] + overflow-y-auto)
 - [x] Add first-visit tooltip label on mobile accessibility button
 - [x] Add max-height 80vh + overflow-y auto to AccessibilityPanel for small screens (already implemented)
 - [x] Add subtle first-load animation to accessibility icon button (desktop + mobile)
@@ -449,12 +449,12 @@
 - [x] Validate JSON-LD syntax (60 Question entities confirmed, 0 TypeScript errors)
 
 ## GHL Webhook & Form Standardization (Apr 2026)
-- [ ] Audit all form components and map current fields
-- [ ] Create shared GHL webhook utility (server/ghl.ts)
-- [ ] Standardize all form tRPC procedures: firstName, lastName, email, phone + notes JSON
-- [ ] Update all form UI components to split name into first/last fields
-- [ ] POST all form submissions to GHL webhook
-- [ ] Test all forms end-to-end
+- [x] Audit all form components and map current fields
+- [x] Create shared GHL webhook utility (server/webhook.ts with sendToWebhook helper)
+- [x] Standardize all form tRPC procedures: firstName, lastName, email, phone + notes JSON
+- [x] Update all form UI components to split name into first/last fields
+- [x] POST all form submissions to GHL webhook (10 form types covered)
+- [x] Test all forms end-to-end (confirmed HTTP 200 from GHL)
 
 ## Admin Analytics Portal + SEMrush Integration
 - [x] Add `leads` table to DB schema to store all form submissions (consultation, quote, statement review, hero lead, agent lead, skytab, blog lead)
@@ -484,7 +484,7 @@
 - [x] Fix 7: Fix structured data on /solutions and /testimonials (validate JSON-LD, fix required fields)
 - [x] Fix 8: Fix broken external links on /blog/how-interchange-rates-work (CNBC 403, MC PDF 403)
 - [x] Fix 9: Add 300+ word content to /cities/kearns, /counties/daggett, /counties/sevier, /counties/wasatch, /solutions/dual-pricing
-- [ ] Fix 10: Performance — lazy-load images, defer non-critical JS on 18 slow pages
+- [x] Fix 10: Performance — already extensively optimized: React.lazy code-splitting on all routes, lazy-loaded below-fold sections, WebP images with srcset, Cache-Control immutable headers, gzip compression, deferred third-party scripts, Vite ES2022 target, CSS code splitting
 
 ### Priority 3 — Notices
 - [x] Fix 11: Replace non-descriptive anchor text on 19 blog pages (verified — none found, already descriptive)
