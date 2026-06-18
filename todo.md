@@ -544,3 +544,8 @@
 
 ## Internal Linking Expansion (Post Round 3)
 - [x] Add contextual city/county internal links from all 19 blog posts to individual city and county pages — added "Service Area" sections to all 19 blog posts with 107 city link instances (23 unique cities) and 63 county link instances (7 unique counties); reduces orphaned pages count significantly
+
+## SEMrush Round 4 SEO Fixes
+- [x] R4-1: Duplicate meta descriptions (190 pages) — implemented unique description generator functions in CityDetail.tsx (4 rotating templates using county name, seat, key industries) and CountyDetail.tsx (4 rotating templates using seat, industries); fixed 4 over-length solution meta descriptions in SolutionDetail.tsx; all descriptions now 120–160 chars and structurally distinct per page
+- [x] R4-2: Low text-to-HTML ratio (188 pages) — enhanced non-featured city template in CityDetail.tsx with genuinely localized content using per-city county data (county name, seat, key industries, nearby cities); added 600+ words of localized body content to non-featured county template in CountyDetail.tsx using county-specific data (seat, key industries, cities list, FAQ section)
+- [x] R4-3: Slow page load speed (24 pages) — added fetchPriority="high" and decoding="async" to Header logo images (LCP element); added loading="lazy" and decoding="async" to Footer logo; added loading="lazy" and decoding="async" to all SkyTabPOSBuilder product images; Vite build already optimized with es2022 target, esbuild minification, CSS code splitting, and content-hash filenames

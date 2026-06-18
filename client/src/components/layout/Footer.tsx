@@ -76,6 +76,8 @@ export default function Footer() {
                 alt="UBC Unlimited — Utah Merchant Services & Payment Processing"
                 width={280}
                 height={44}
+                loading="lazy"
+                decoding="async"
                 className="h-12 w-auto object-contain"
                 style={{ maxWidth: "280px" }}
               />

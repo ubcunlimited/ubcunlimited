@@ -559,7 +559,7 @@ export default function SkyTabPOSBuilder() {
                         className={`text-left rounded-xl border-2 overflow-hidden transition-all ${config.bundle === b.id ? "border-[#c9a84c] bg-[#c9a84c]/5" : "border-gray-200 hover:border-[#c9a84c]/40"}`}
                       >
                         <div className="bg-[#f7f3ec] p-4 flex items-center justify-center h-40">
-                          <img src={b.img} alt={b.name} className="max-h-full max-w-full object-contain" />
+                          <img src={b.img} alt={b.name} loading="lazy" decoding="async" className="max-h-full max-w-full object-contain" />
                         </div>
                         <div className="p-4">
                           <div className="flex items-center justify-between mb-1">
@@ -635,7 +635,7 @@ export default function SkyTabPOSBuilder() {
                     return (
                       <div key={item.id} className={`flex gap-4 p-4 rounded-xl border-2 transition-all ${qty > 0 ? "border-[#c9a84c] bg-[#c9a84c]/5" : "border-gray-100 hover:border-gray-200"}`}>
                         <div className="w-20 h-20 bg-[#f7f3ec] rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
-                          <img src={item.img} alt={item.name} className="max-h-full max-w-full object-contain p-1" />
+                          <img src={item.img} alt={item.name} loading="lazy" decoding="async" className="max-h-full max-w-full object-contain p-1" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="font-bold text-[#080808] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{item.name}</div>
@@ -669,7 +669,7 @@ export default function SkyTabPOSBuilder() {
                       <div key={item.id} className={`p-4 rounded-xl border-2 transition-all ${isActive ? "border-[#c9a84c] bg-[#c9a84c]/5" : "border-gray-100 hover:border-gray-200"}`}>
                         <div className="flex gap-4">
                           <div className="w-16 h-16 bg-[#f7f3ec] rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
-                            <img src={item.img} alt={item.name} className="max-h-full max-w-full object-contain p-1" />
+                            <img src={item.img} alt={item.name} loading="lazy" decoding="async" className="max-h-full max-w-full object-contain p-1" />
                           </div>
                           <div className="flex-1 min-w-0">
                             <div className="font-bold text-[#080808] text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>{item.name}</div>

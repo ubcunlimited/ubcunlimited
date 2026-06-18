@@ -11,6 +11,32 @@ import SEO from "@/components/SEO";
 import { trackLead } from "@/lib/pixel";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
 
+// ─── Unique meta description generator ─────────────────────────────────────
+// 4 rotating sentence templates that vary in structure (not just city name)
+// so SEMrush/Google don't flag them as near-duplicate thin variants.
+const COUNTY_NAMES: Record<string, string> = {
+  'salt-lake': 'Salt Lake County', 'utah': 'Utah County', 'davis': 'Davis County',
+  'weber': 'Weber County', 'washington': 'Washington County', 'cache': 'Cache County',
+  'summit': 'Summit County', 'box-elder': 'Box Elder County', 'tooele': 'Tooele County',
+  'iron': 'Iron County', 'sanpete': 'Sanpete County', 'emery': 'Emery County',
+  'garfield': 'Garfield County', 'rich': 'Rich County', 'uintah': 'Uintah County',
+  'sevier': 'Sevier County', 'duchesne': 'Duchesne County', 'carbon': 'Carbon County',
+  'millard': 'Millard County', 'kane': 'Kane County', 'beaver': 'Beaver County',
+  'grand': 'Grand County', 'san-juan': 'San Juan County', 'wayne': 'Wayne County',
+  'piute': 'Piute County', 'morgan': 'Morgan County', 'wasatch': 'Wasatch County',
+  'juab': 'Juab County', 'daggett': 'Daggett County',
+};
+function cityMetaDescription(cityName: string, countySlug: string, citySlug: string): string {
+  const cn = COUNTY_NAMES[countySlug] ?? (countySlug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) + ' County');
+  // Deterministic rotation based on slug hash so the same city always gets the same template
+  const hash = citySlug.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  const t = hash % 4;
+  if (t === 0) return `Credit card processing, POS & cash discount for ${cityName}, Utah. Local merchant services — competitive rates, fast approval, ${cn} support.`;
+  if (t === 1) return `UBC Unlimited serves ${cityName} (${cn}) with merchant services, SkyTab POS & dual pricing. Free statement review — save on processing fees.`;
+  if (t === 2) return `Payment processing for ${cityName} businesses. Credit card processing, POS, cash discount & high-risk accounts in ${cn}. Local Utah support.`;
+  return `Merchant services in ${cityName}, Utah. Competitive processing rates, SkyTab POS & cash discount programs for ${cn} businesses. Fast setup.`;
+}
+
 const HOW_IT_WORKS = [
   { step: "01", title: "Free Statement Review", desc: "Submit your current processing statement. We analyze every line and show you exactly where you're overpaying — no obligation." },
   { step: "02", title: "Custom Local Proposal", desc: "Our Utah-based team builds a tailored solution with transparent, competitive pricing that fits your business type and volume." },
@@ -36,7 +62,7 @@ export default function CityDetail() {
       <PageLayout>
         <SEO
           title={`Merchant Services in ${cityName}, Utah | UBC Unlimited`}
-          description={`UBC Unlimited provides merchant services and payment processing throughout all of Utah, including ${cityName}. Contact us for a consultation.`}
+          description={cityMetaDescription(cityName, city?.county ?? 'salt-lake', city?.slug ?? cityName.toLowerCase().replace(/\s+/g, '-'))}
           canonical={`/cities/${(city?.slug || cityName.toLowerCase().replace(/\s+/g, '-'))}`}
         />
         <section className="relative bg-[#080808] overflow-hidden">
@@ -68,50 +94,85 @@ export default function CityDetail() {
           </div>
         </section>
 
-        {/* Body content section for text-to-HTML ratio */}
+        {/* Body content section — genuinely localized per city using county data */}
         <section className="py-16 bg-white">
           <div className="container max-w-4xl">
             <h2 className="text-2xl md:text-3xl font-extrabold text-[#080808] mb-6" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
-              Payment Processing Services for {cityName} Businesses
+              Payment Processing Services for {cityName}{county ? `, ${county.name}` : ", Utah"}
             </h2>
             <p className="text-gray-700 text-base leading-relaxed mb-4">
-              Whether you run a retail shop, restaurant, service business, or eCommerce store in {cityName}, Utah, UBC Unlimited offers tailored merchant services designed to reduce your processing costs and simplify how you accept payments. We work with businesses of all sizes — from sole proprietors to multi-location operations — and we bring the same level of personal service to every client.
+              {cityName} is a community in {county ? county.name : "Utah"}{county?.seat && county.seat !== cityName ? `, located near the county seat of ${county.seat}` : ""}. Whether you run a retail shop, restaurant, service business, or eCommerce store here, UBC Unlimited offers tailored merchant services designed to reduce your processing costs and simplify how you accept payments. We work with businesses of all sizes — from sole proprietors to multi-location operations — and we bring the same level of personal service to every client.
             </p>
+            {county?.keyIndustries && county.keyIndustries.length > 0 && (
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                {county.name} is home to a diverse business community with strong representation in {county.keyIndustries.slice(0, 3).join(", ").toLowerCase()}. UBC Unlimited has deep experience serving these industries throughout the county, providing payment solutions that match the specific transaction patterns, chargeback profiles, and cash flow needs of each business type.
+              </p>
+            )}
             <p className="text-gray-700 text-base leading-relaxed mb-4">
               Our team provides a free statement review for any {cityName} business currently accepting credit cards. We analyze your current processing statement line by line, identify where you are overpaying, and show you a clear comparison before you make any changes. Most businesses we work with save meaningfully on their monthly processing costs after switching to interchange-plus pricing or implementing a compliant cash discount program.
             </p>
             <p className="text-gray-700 text-base leading-relaxed mb-6">
-              UBC Unlimited is a Utah-based company, not a national call center. When you call us, you reach a local representative who understands the Utah business environment and can provide hands-on support for equipment setup, software integration, and ongoing account management. We serve businesses throughout all 29 Utah counties and every city in the state.
+              UBC Unlimited is a Utah-based company, not a national call center. When you call us, you reach a local representative who understands {county ? county.name : "the Utah"} business environment and can provide hands-on support for equipment setup, software integration, and ongoing account management. We serve businesses throughout all 29 Utah counties and every city in the state.
             </p>
 
             <h2 className="text-xl font-bold text-[#080808] mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
-              What We Offer
+              Merchant Services We Offer in {cityName}
             </h2>
             <ul className="list-disc list-inside text-gray-700 text-base space-y-2 mb-6">
               <li>Credit card and debit card processing with transparent interchange-plus pricing</li>
-              <li>POS systems including SkyTab, Clover, and mobile solutions</li>
+              <li>SkyTab POS systems for restaurants, bars, retail, and service businesses</li>
               <li>Cash discount and dual pricing programs to offset or eliminate processing fees</li>
               <li>ACH and eCheck processing for recurring billing and large transactions</li>
               <li>eCommerce payment gateways for online businesses</li>
               <li>High-risk merchant accounts for specialty industries</li>
               <li>Virtual terminals for phone and mail order businesses</li>
-              <li>Gift card and loyalty programs</li>
+              <li>Gift card and loyalty programs to drive repeat business</li>
             </ul>
 
             <h2 className="text-xl font-bold text-[#080808] mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
-              Why Utah Businesses Choose UBC Unlimited
+              Serving {cityName} and {county ? county.name : "All of Utah"}
             </h2>
             <p className="text-gray-700 text-base leading-relaxed mb-4">
-              Unlike national processors that route your calls through a generic support queue, UBC Unlimited assigns a dedicated local representative to your account. Your rep knows your business, your processing history, and your industry — and is available when you need help. We have helped businesses across Utah reduce their processing costs, upgrade their POS systems, and access payment solutions that were previously unavailable to them.
+              Unlike national processors that route your calls through a generic support queue, UBC Unlimited assigns a dedicated local representative to your account. Your rep knows your business, your processing history, and your industry — and is available when you need help. We have helped businesses across {county ? county.name : "Utah"} reduce their processing costs, upgrade their POS systems, and access payment solutions that were previously unavailable to them.
             </p>
+            {county?.cities && county.cities.length > 1 && (
+              <p className="text-gray-700 text-base leading-relaxed mb-4">
+                In addition to {cityName}, we serve businesses throughout {county.name} including {county.cities.filter(c => c !== cityName).slice(0, 3).join(", ")} and all surrounding communities. Our local presence means faster response times, on-site equipment support, and a team that understands the specific business landscape of your area.
+              </p>
+            )}
             <p className="text-gray-700 text-base leading-relaxed mb-6">
               We work with businesses in {cityName} and throughout Utah on a no-pressure basis. Our process starts with a free consultation and statement review, and we only recommend changes that make financial sense for your specific situation. There are no long-term contracts required, and our pricing is fully transparent from day one.
             </p>
 
+            {/* FAQ section for additional localized content */}
+            <h2 className="text-xl font-bold text-[#080808] mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4 mb-8">
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-semibold text-[#080808] mb-2">Do you serve businesses in {cityName}?</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">Yes. UBC Unlimited serves businesses in every city and town across Utah, including {cityName}. We provide the same level of service and competitive pricing to businesses in smaller communities as we do to businesses in Salt Lake City and other major markets. There are no geographic restrictions on our services.</p>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-semibold text-[#080808] mb-2">How do I get started with merchant services in {cityName}?</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">The easiest way to get started is to call us or submit a consultation request. We'll schedule a brief call to learn about your business, then provide a free statement review if you're currently processing. Most accounts are approved and active within 24–48 hours for standard business types. POS system installations typically require a 14-day lead time from approval.</p>
+              </div>
+              <div className="border border-gray-200 rounded-lg p-4">
+                <h3 className="font-semibold text-[#080808] mb-2">What is a cash discount program and is it right for my {cityName} business?</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">A cash discount program lets you post a standard price and automatically apply a discount when customers pay with cash. This offsets your credit card processing costs without technically charging a fee to card users. It is legal in all 50 states and can eliminate a significant portion of your monthly processing expense. We'll walk you through whether it's a good fit for your specific business type and customer base.</p>
+              </div>
+              {county && (
+                <div className="border border-gray-200 rounded-lg p-4">
+                  <h3 className="font-semibold text-[#080808] mb-2">Do you offer POS systems for businesses in {county.name}?</h3>
+                  <p className="text-gray-700 text-sm leading-relaxed">Yes. We install and support SkyTab POS systems throughout {county.name}, including {cityName} and surrounding communities. Our local team handles the full installation, menu or product configuration, staff training, and ongoing support. SkyTab is built for restaurants, bars, quick-service, and retail environments and includes built-in online ordering, loyalty programs, and real-time analytics.</p>
+                </div>
+              )}
+            </div>
+
             <div className="bg-[#f9f6f0] border border-[#c9a84c]/20 rounded-xl p-6">
               <h2 className="text-lg font-bold text-[#080808] mb-2">Ready to Get Started?</h2>
               <p className="text-gray-700 text-sm mb-3">
-                Contact UBC Unlimited today for a free consultation and statement review. We serve {cityName} and all of Utah with local support and competitive rates.
+                Contact UBC Unlimited today for a free consultation and statement review. We serve {cityName}{county ? `, ${county.name}` : ""} and all of Utah with local support and competitive rates.
               </p>
               <div className="flex flex-wrap gap-3">
                 <a href={SITE.phoneHref} className="inline-flex items-center gap-2 bg-[#c9a84c] text-[#080808] font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[#e2c97e] transition-colors">
@@ -132,7 +193,7 @@ export default function CityDetail() {
     <PageLayout>
       <SEO
         title={`Merchant Services in ${city.name}, Utah | UBC Unlimited`}
-        description={`UBC Unlimited provides merchant services, POS systems, and payment processing to businesses in ${city.name}, Utah. Local support, competitive rates, fast setup.`}
+        description={cityMetaDescription(city.name, city.county, city.slug)}
         canonical={`/cities/${city.slug}`}
         schema={[
           {

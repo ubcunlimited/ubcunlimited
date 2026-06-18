@@ -123,6 +123,8 @@ export default function Header() {
               alt="UBC Unlimited — Processing Without Limits"
               width={190}
               height={30}
+              fetchPriority="high"
+              decoding="async"
               className={`w-auto object-contain transition-all duration-300 ease-in-out lg:hidden ${
                 scrolled ? "h-8 max-w-[38vw]" : "h-10 max-w-[50vw]"
               }`}
@@ -135,6 +137,8 @@ export default function Header() {
               alt="UBC Unlimited — Processing Without Limits"
               width={759}
               height={121}
+              fetchPriority="high"
+              decoding="async"
               className={`hidden lg:block w-auto object-contain transition-all duration-300 ease-in-out ${scrolled ? "h-10" : "h-20"}`}
               style={{ maxWidth: scrolled ? "200px" : "360px" }}
             />

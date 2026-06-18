@@ -125,7 +125,7 @@ const solutionsData: SolutionData[] = [
     icon: "💳",
     title: "Credit Card Processing",
     subtitle: "Accept all major cards with pricing tailored to your business",
-    metaDescription: "Utah credit card processing with cash discount & dual pricing, cash discount & dual pricing & surcharging options. Eliminate processing fees, get next-day funding & local support.",
+    metaDescription: "Utah credit card processing with cash discount & dual pricing options. Eliminate processing fees, get next-day funding & local support. Free statement review.",
     description: "UBC Unlimited provides end-to-end credit card processing solutions designed around your business — not a one-size-fits-all rate sheet. We work with you to identify the pricing model and payment infrastructure that best fits your transaction volume, industry, and customer base. Whether you're accepting payments in-person, online, or on the go, we deliver a seamless, secure, and cost-effective solution.",
     heroPoints: ["Pricing tailored to your business", "Next-day funding available", "Visa, MC, Amex, Discover & more", "EMV, NFC & digital wallets"],
     features: [
@@ -249,7 +249,7 @@ const solutionsData: SolutionData[] = [
     icon: "🖥️",
     title: "POS Systems",
     subtitle: "Industry-leading point-of-sale systems built for restaurants, bars, retail, and beyond",
-    metaDescription: "SkyTab POS systems for Utah restaurants, bars & retail. Built-in payment processing, online ordering, loyalty programs & local support — go-live target 14 days from approval.",
+    metaDescription: "SkyTab POS systems for Utah restaurants, bars & retail. Built-in payment processing, online ordering & loyalty programs. Local support, 14-day go-live target.",
     description: "UBC Unlimited partners with SkyTab — powered by Shift4, one of the largest payment technology companies in the world — to deliver a complete, all-in-one POS platform for restaurants, bars, quick-service, and multi-location businesses. From tableside ordering and kitchen display systems to online ordering, loyalty programs, and real-time analytics, our POS solutions are designed to transform your operations from front-of-house to back-of-house. Every system comes with local installation, training, and ongoing support from our Utah-based team.",
     heroPoints: ["SkyTab — powered by Shift4", "Restaurant, bar & quick-service ready", "Online ordering & tableside payments", "Go-live target: 14 days from approval", "Local install, training & support", "Lifetime hardware warranty included"],
     features: [
@@ -317,7 +317,7 @@ const solutionsData: SolutionData[] = [
     icon: "📱",
     title: "Mobile Processing",
     subtitle: "Turn your smartphone into a full payment terminal — accept payments anywhere, anytime",
-    metaDescription: "Mobile credit card processing for Utah businesses. Accept payments anywhere with your smartphone — EMV, tap-to-pay & digital wallets. Equipment options available.",
+    metaDescription: "Mobile credit card processing for Utah businesses. Accept payments anywhere — EMV, tap-to-pay & digital wallets. Multiple equipment options available.",
     description: "Mobile processing solutions from UBC Unlimited let you accept payments wherever your business takes you. Whether you're at a farmers market, trade show, customer's home, food truck, or delivering on the road, our mobile solutions give you the same professional payment experience as a countertop terminal — right from your smartphone or tablet. Accept all major cards, contactless payments, and digital wallets with no extra hardware required on qualifying setups.",
     heroPoints: ["No card reader needed on qualifying setups", "iOS & Android compatible", "Offline mode available", "All cards & digital wallets"],
     features: [
@@ -477,7 +477,7 @@ const solutionsData: SolutionData[] = [
     icon: "💰",
     title: "Cash Discount & Dual Pricing",
     subtitle: "Keep more of every sale — legally pass processing costs to the card, not your bottom line",
-    metaDescription: "Cash discounting, cash discount & dual pricing & surcharging programs for Utah businesses. Eliminate credit card processing fees legally & keep more of every sale.",
+    metaDescription: "Cash discounting & dual pricing programs for Utah businesses. Eliminate credit card processing fees legally and keep more of every sale. Free consultation.",
     metaTitle: "Cash Discount & Dual Pricing Programs for Utah",
     description: "Credit card processing fees quietly drain 2.5% to 4% from every card transaction — and for most businesses, that adds up to thousands of dollars every year. UBC Unlimited offers proven, fully compliant programs to help you offset or eliminate those costs entirely. We offer three main approaches: Cash Discount Programs, Dual Pricing, and Credit Card Surcharging. Each program is designed to recover your processing costs while delivering a transparent, compliant experience for your customers.\n\nA Cash Discount Program lets you post a single standard price and automatically apply a discount at checkout when the customer pays with cash. The customer sees the discount on their receipt and feels rewarded — not penalized. Dual Pricing takes a different approach: two prices are displayed side by side (a lower cash price and a standard card price) so customers see the difference upfront and choose their payment method before the transaction begins. Both programs are legal in all 50 states and apply to credit, debit, and prepaid cards.\n\nCredit Card Surcharging adds a disclosed fee to credit card transactions at the point of sale. It is capped at your actual processing cost and must be clearly disclosed before the transaction is completed. Surcharging applies to credit cards only — not debit or prepaid — and has restrictions in a small number of states.\n\nUBC Unlimited handles everything: compliance review, compliant signage and receipt language, hardware configuration, staff training, and ongoing support. We'll analyze your current processing statement, walk you through every option, and implement the program that maximizes savings for your specific business — fully compliant with all applicable regulations.",
     heroPoints: ["Legal in all 50 states (program-dependent)", "Eliminate up to 100% of processing fees", "Compliant signage & receipt language included", "Works with most POS systems & terminals"],
