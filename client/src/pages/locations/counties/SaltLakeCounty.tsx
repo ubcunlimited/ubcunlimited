@@ -35,7 +35,7 @@ export default function SaltLakeCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Salt Lake County, Utah | UBC Unlimited"
+        title="Merchant Services Salt Lake County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Salt Lake County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/salt-lake-county"
         schema={schema}

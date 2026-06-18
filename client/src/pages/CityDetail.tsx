@@ -61,7 +61,7 @@ export default function CityDetail() {
     return (
       <PageLayout>
         <SEO
-          title={`Merchant Services in ${cityName}, Utah | UBC Unlimited`}
+          title={`Merchant Services in ${cityName}, Utah`}
           description={cityMetaDescription(cityName, city?.county ?? 'salt-lake', city?.slug ?? cityName.toLowerCase().replace(/\s+/g, '-'))}
           canonical={`/cities/${(city?.slug || cityName.toLowerCase().replace(/\s+/g, '-'))}`}
         />
@@ -192,7 +192,7 @@ export default function CityDetail() {
   return (
     <PageLayout>
       <SEO
-        title={`Merchant Services in ${city.name}, Utah | UBC Unlimited`}
+        title={`Merchant Services in ${city.name}, Utah`}
         description={cityMetaDescription(city.name, city.county, city.slug)}
         canonical={`/cities/${city.slug}`}
         schema={[

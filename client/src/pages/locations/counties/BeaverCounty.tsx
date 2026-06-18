@@ -35,7 +35,7 @@ export default function BeaverCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Beaver County, Utah | UBC Unlimited"
+        title="Merchant Services Beaver County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Beaver County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/beaver-county"
         schema={schema}

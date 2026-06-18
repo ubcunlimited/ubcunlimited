@@ -35,7 +35,7 @@ export default function MillardCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Millard County, Utah | UBC Unlimited"
+        title="Merchant Services Millard County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Millard County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/millard-county"
         schema={schema}

@@ -274,7 +274,7 @@ export default function RestaurantsPOC() {
   return (
     <PageLayout>
       <SEO
-        title="Restaurants — Challenge/Solution Layout POC | UBC Unlimited"
+        title="Restaurants — Challenge/Solution Layout POC"
         description="Proof-of-concept page showing three layout options for presenting challenges and solutions."
       />
 

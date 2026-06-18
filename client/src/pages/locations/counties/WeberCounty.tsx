@@ -35,7 +35,7 @@ export default function WeberCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Weber County, Utah | UBC Unlimited"
+        title="Merchant Services Weber County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Weber County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/weber-county"
         schema={schema}

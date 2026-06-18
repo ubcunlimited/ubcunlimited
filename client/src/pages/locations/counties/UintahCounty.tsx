@@ -35,7 +35,7 @@ export default function UintahCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Uintah County, Utah | UBC Unlimited"
+        title="Merchant Services Uintah County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Uintah County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/uintah-county"
         schema={schema}

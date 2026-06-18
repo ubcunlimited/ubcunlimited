@@ -35,7 +35,7 @@ export default function TooeleCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Tooele County, Utah | UBC Unlimited"
+        title="Merchant Services Tooele County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Tooele County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/tooele-county"
         schema={schema}

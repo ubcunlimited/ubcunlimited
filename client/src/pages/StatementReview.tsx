@@ -21,7 +21,7 @@ export default function StatementReview() {
   return (
     <PageLayout>
       <SEO
-        title="Free Statement Review — Find Hidden Fees | UBC Unlimited"
+        title="Free Statement Review — Find Hidden Fees"
         description="Submit your current processing statement for a free line-by-line analysis. UBC Unlimited's Utah experts identify every hidden fee and show you exactly how much you can save."
         canonical="/statement-review"
       />

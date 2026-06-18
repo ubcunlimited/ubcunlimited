@@ -175,7 +175,7 @@ export default function SouthJordan() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services South Jordan, Utah | UBC Unlimited"
+        title="Merchant Services South Jordan, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to South Jordan, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/south-jordan"
         schema={schema}

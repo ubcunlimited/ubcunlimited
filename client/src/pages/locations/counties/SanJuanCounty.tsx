@@ -35,7 +35,7 @@ export default function SanJuanCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services San Juan County, Utah | UBC Unlimited"
+        title="Merchant Services San Juan County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout San Juan County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/san-juan-county"
         schema={schema}

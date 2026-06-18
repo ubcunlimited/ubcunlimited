@@ -219,7 +219,7 @@ export default function SaltLakeCity() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Salt Lake City, Utah | UBC Unlimited"
+        title="Merchant Services Salt Lake City, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, cash discount programs, and merchant services to Salt Lake City businesses. Local support, no contracts*, statement review."
         canonical="/locations/salt-lake-city"
         schema={schema}

@@ -32,7 +32,7 @@ export default function Cities() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services by Utah City | UBC Unlimited"
+        title="Merchant Services by Utah City"
         description="UBC Unlimited provides merchant services, POS systems, and payment processing to businesses in cities throughout Utah. Find your city or request a consultation."
       />
 

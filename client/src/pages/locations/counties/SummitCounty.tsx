@@ -35,7 +35,7 @@ export default function SummitCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Summit County, Utah | UBC Unlimited"
+        title="Merchant Services Summit County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Summit County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/summit-county"
         schema={schema}

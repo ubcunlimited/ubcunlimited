@@ -4,7 +4,7 @@ export default function CookiePolicy() {
   return (
     <PageLayout>
       <SEO
-        title="Cookie Policy | UBC Unlimited"
+        title="Cookie Policy"
         description="Learn how UBC Unlimited uses cookies and similar tracking technologies on our website to improve your experience and analyze site traffic."
         canonical="/legal/cookie-policy"
         noIndex={true}

@@ -34,7 +34,7 @@ export default function Consultation() {
   return (
     <PageLayout>
       <SEO
-        title="Book a Free Merchant Services Consultation | UBC Unlimited"
+        title="Book a Free Merchant Services Consultation"
         description="Schedule a no-obligation consultation with a local Utah payment processing expert. We'll review your current costs and build a custom solution for your business."
         canonical="/consultation"
       />

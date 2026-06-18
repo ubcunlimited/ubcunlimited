@@ -35,7 +35,7 @@ export default function GarfieldCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Garfield County, Utah | UBC Unlimited"
+        title="Merchant Services Garfield County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Garfield County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/garfield-county"
         schema={schema}

@@ -175,7 +175,7 @@ export default function Orem() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Orem, Utah | UBC Unlimited"
+        title="Merchant Services Orem, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Orem, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/orem"
         schema={schema}

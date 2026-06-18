@@ -175,7 +175,7 @@ export default function HeberCity() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Heber City, Utah | UBC Unlimited"
+        title="Merchant Services Heber City, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Heber City, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/heber-city"
         schema={schema}

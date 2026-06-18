@@ -35,7 +35,7 @@ export default function SanpeteCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Sanpete County, Utah | UBC Unlimited"
+        title="Merchant Services Sanpete County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Sanpete County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/sanpete-county"
         schema={schema}

@@ -72,7 +72,7 @@ export default function CountyDetail() {
     return (
       <PageLayout>
         <SEO
-          title={`Merchant Services in ${county?.name || "Your County"} | UBC Unlimited`}
+          title={`Merchant Services in ${county?.name || "Your County"}`}
           description={countyMetaDescription(county?.name ?? 'Your County', county?.slug ?? 'utah')}
           canonical={county?.slug ? `/counties/${county.slug}` : "/counties"}
         />
@@ -201,7 +201,7 @@ export default function CountyDetail() {
   return (
     <PageLayout>
       <SEO
-        title={`Merchant Services in ${county.name} | UBC Unlimited`}
+        title={`Merchant Services in ${county.name}`}
         description={countyMetaDescription(county.name, county.slug)}
         canonical={`/counties/${county.slug}`}
         schema={[

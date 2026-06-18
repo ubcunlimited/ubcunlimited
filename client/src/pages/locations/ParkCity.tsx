@@ -175,7 +175,7 @@ export default function ParkCity() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Park City, Utah | UBC Unlimited"
+        title="Merchant Services Park City, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Park City, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/park-city"
         schema={schema}

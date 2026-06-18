@@ -22,7 +22,7 @@ export default function Counties() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services by Utah County | UBC Unlimited"
+        title="Merchant Services by Utah County"
         description="UBC Unlimited provides merchant services, POS systems, and payment processing to businesses in every Utah county. Find your county and see how we can help your business save."
       />
 

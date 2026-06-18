@@ -175,7 +175,7 @@ export default function Murray() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Murray, Utah | UBC Unlimited"
+        title="Merchant Services Murray, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Murray, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/murray"
         schema={schema}

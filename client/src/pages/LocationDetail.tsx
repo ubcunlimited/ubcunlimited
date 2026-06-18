@@ -60,7 +60,7 @@ export default function LocationDetail() {
   return (
     <PageLayout>
       <SEO
-        title={`Merchant Services in ${location.city}, Utah | UBC Unlimited`}
+        title={`Merchant Services in ${location.city}, Utah`}
         description={`UBC Unlimited provides credit card processing, POS systems, ACH payments, and merchant services to businesses in ${location.city}, ${location.county} County, Utah. Free consultation available.`}
         canonical={`/locations/${location.slug}`}
         schema={{

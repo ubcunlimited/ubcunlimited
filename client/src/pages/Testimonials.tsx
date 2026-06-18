@@ -361,7 +361,7 @@ export default function Testimonials() {
   return (
     <PageLayout>
       <SEO
-        title="Client Testimonials | UBC Unlimited Merchant Services"
+        title="Client Testimonials — Utah Merchant Services"
         description="Real reviews from Utah business owners who switched to UBC Unlimited for payment processing. See what restaurants, retailers, medical practices, and more are saying."
         canonical="/testimonials"
         schema={schema}

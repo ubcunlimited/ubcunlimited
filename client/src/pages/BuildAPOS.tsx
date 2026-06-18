@@ -8,7 +8,7 @@ export default function BuildAPOS() {
   return (
     <PageLayout>
       <SEO
-        title="Build Your SkyTab POS System | UBC Unlimited"
+        title="Build Your SkyTab POS System"
         description="Configure your custom SkyTab POS system for your Utah business. Choose hardware, add-ons, and get a local quote — $0 upfront with qualifying accounts."
         canonical="/build-a-pos"
       />

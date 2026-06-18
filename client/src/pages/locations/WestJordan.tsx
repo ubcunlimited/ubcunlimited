@@ -175,7 +175,7 @@ export default function WestJordan() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services West Jordan, Utah | UBC Unlimited"
+        title="Merchant Services West Jordan, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to West Jordan, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/west-jordan"
         schema={schema}

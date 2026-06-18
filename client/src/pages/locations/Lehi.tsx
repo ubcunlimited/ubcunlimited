@@ -175,7 +175,7 @@ export default function Lehi() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Lehi, Utah | UBC Unlimited"
+        title="Merchant Services Lehi, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Lehi, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/lehi"
         schema={schema}

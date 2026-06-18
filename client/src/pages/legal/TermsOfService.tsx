@@ -4,7 +4,7 @@ export default function TermsOfService() {
   return (
     <PageLayout>
       <SEO
-        title="Terms of Service | UBC Unlimited"
+        title="Terms of Service"
         description="Review the terms of service governing your use of UBC Unlimited's website and merchant services, including payment processing agreements."
         canonical="/legal/terms-of-service"
         noIndex={true}

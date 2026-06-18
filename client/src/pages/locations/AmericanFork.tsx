@@ -175,7 +175,7 @@ export default function AmericanFork() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services American Fork, Utah | UBC Unlimited"
+        title="Merchant Services American Fork, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to American Fork, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/american-fork"
         schema={schema}

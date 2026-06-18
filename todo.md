@@ -561,3 +561,7 @@
 - [x] R6-Task7b: H1/title duplicate — verified all page types; no new violations found
 - [x] R6-Task7c: /solutions/dual-pricing — created new standalone page with 600+ words of unique content, unique metaTitle ("Dual Pricing for Utah Businesses | UBC Unlimited") distinct from H1 ("Dual Pricing for Utah Businesses"), added route to App.tsx and sitemap
 - [x] R6-Task8: /solutions/dual-pricing thin content — 600+ words added covering how dual pricing works, compliance, benefits, comparison table, FAQ section, and CTA
+
+## Screenshot Audit Fixes (Jun 18, 2026)
+- [x] Fix duplicate title suffix: all 229 pages show "| UBC Unlimited | UBC Unlimited" — stripped the "| UBC Unlimited" suffix from all 64 static page files + 5 template files (CityDetail, CountyDetail, LocationDetail, Locations, Testimonials). Zero remaining | UBC Unlimited title props. SEO.tsx now appends the suffix exactly once.
+- [x] Verify no other SEO regressions from the title fix — 30/30 tests pass, no TypeScript errors, all remaining UBC Unlimited title= occurrences are intentional brand mentions (About, Contact) not duplicate suffixes

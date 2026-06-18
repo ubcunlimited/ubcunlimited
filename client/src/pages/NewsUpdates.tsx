@@ -140,7 +140,7 @@ export default function NewsUpdates() {
       <SEO
         canonical="/news"
         description="Stay current with UBC Unlimited news, company announcements, industry updates, and expert insights for Utah merchants and payment processing professionals."
-        title="Merchant Services News & Industry Updates | UBC Unlimited"
+        title="Merchant Services News & Industry Updates"
       />
 
       {/* Hero */}

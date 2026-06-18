@@ -35,7 +35,7 @@ export default function JuabCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Juab County, Utah | UBC Unlimited"
+        title="Merchant Services Juab County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Juab County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/juab-county"
         schema={schema}

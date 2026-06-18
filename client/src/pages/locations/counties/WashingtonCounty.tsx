@@ -35,7 +35,7 @@ export default function WashingtonCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Washington County, Utah | UBC Unlimited"
+        title="Merchant Services Washington County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Washington County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/washington-county"
         schema={schema}

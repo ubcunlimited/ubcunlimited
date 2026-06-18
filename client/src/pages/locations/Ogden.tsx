@@ -175,7 +175,7 @@ export default function Ogden() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Ogden, Utah | UBC Unlimited"
+        title="Merchant Services Ogden, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Ogden, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/ogden"
         schema={schema}

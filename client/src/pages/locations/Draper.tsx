@@ -175,7 +175,7 @@ export default function Draper() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Draper, Utah | UBC Unlimited"
+        title="Merchant Services Draper, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Draper, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/draper"
         schema={schema}

@@ -4,7 +4,7 @@ export default function Disclaimer() {
   return (
     <PageLayout>
       <SEO
-        title="Disclaimer | UBC Unlimited"
+        title="Disclaimer"
         description="Read UBC Unlimited's disclaimer regarding the accuracy of information on our site, liability limitations, and third-party links."
         canonical="/legal/disclaimer"
         noIndex={true}

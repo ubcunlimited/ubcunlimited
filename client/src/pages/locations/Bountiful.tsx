@@ -175,7 +175,7 @@ export default function Bountiful() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Bountiful, Utah | UBC Unlimited"
+        title="Merchant Services Bountiful, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Bountiful, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/bountiful"
         schema={schema}

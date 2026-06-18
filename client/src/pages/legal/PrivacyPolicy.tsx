@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
   return (
     <PageLayout>
       <SEO
-        title="Privacy Policy | UBC Unlimited"
+        title="Privacy Policy"
         description="Read UBC Unlimited's privacy policy to understand how we collect, use, and protect your personal information when you use our merchant services."
         canonical="/legal/privacy-policy"
         noIndex={true}

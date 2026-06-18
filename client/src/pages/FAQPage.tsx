@@ -604,7 +604,7 @@ export default function FAQPage() {
   return (
     <PageLayout>
       <SEO
-        title="FAQ — Merchant Services Questions Answered | UBC Unlimited"
+        title="FAQ — Merchant Services Questions Answered"
         description="Answers to common questions about credit card processing, POS systems, ACH payments, cash discount & dual pricing, eCommerce, and more. Utah's local merchant services experts."
         canonical="/faq"
         schema={{

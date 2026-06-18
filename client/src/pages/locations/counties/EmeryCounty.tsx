@@ -35,7 +35,7 @@ export default function EmeryCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Emery County, Utah | UBC Unlimited"
+        title="Merchant Services Emery County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Emery County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/emery-county"
         schema={schema}

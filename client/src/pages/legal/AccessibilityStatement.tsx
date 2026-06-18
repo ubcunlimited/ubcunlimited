@@ -8,7 +8,7 @@ export default function AccessibilityStatement() {
   return (
     <PageLayout>
       <SEO
-        title="ADA Accessibility Statement | UBC Unlimited"
+        title="ADA Accessibility Statement"
         description="UBC Unlimited is committed to digital accessibility for people with disabilities. Learn about our WCAG 2.1 conformance efforts, known limitations, and how to request accommodations."
         canonical="/accessibility"
       />

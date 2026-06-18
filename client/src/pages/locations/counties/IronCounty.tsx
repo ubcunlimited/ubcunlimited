@@ -35,7 +35,7 @@ export default function IronCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Iron County, Utah | UBC Unlimited"
+        title="Merchant Services Iron County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Iron County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/iron-county"
         schema={schema}

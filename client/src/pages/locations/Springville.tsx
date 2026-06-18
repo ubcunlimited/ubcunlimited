@@ -175,7 +175,7 @@ export default function Springville() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Springville, Utah | UBC Unlimited"
+        title="Merchant Services Springville, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to Springville, Utah businesses. Local support, no contracts*, statement review."
         canonical="/locations/springville"
         schema={schema}

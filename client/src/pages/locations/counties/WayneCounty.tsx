@@ -35,7 +35,7 @@ export default function WayneCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Wayne County, Utah | UBC Unlimited"
+        title="Merchant Services Wayne County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Wayne County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/wayne-county"
         schema={schema}

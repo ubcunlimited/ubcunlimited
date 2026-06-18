@@ -35,7 +35,7 @@ export default function RichCounty() {
   return (
     <PageLayout>
       <SEO
-        title="Merchant Services Rich County, Utah | UBC Unlimited"
+        title="Merchant Services Rich County, Utah"
         description="UBC Unlimited provides credit card processing, POS systems, and merchant services to businesses throughout Rich County, Utah. Local support, no contracts*, statement review."
         canonical="/locations/rich-county"
         schema={schema}
