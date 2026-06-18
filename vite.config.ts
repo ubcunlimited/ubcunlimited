@@ -187,9 +187,31 @@ export default defineConfig({
             return "assets/fonts/[name]-[hash][extname]";
           return "assets/[name]-[hash][extname]";
         },
-        // Note: manualChunks intentionally omitted — Rollup's automatic
-        // chunk splitting avoids TDZ (temporal dead zone) errors that arise
-        // from circular dependencies between manually-split vendor bundles.
+        // Safe manualChunks using function form (not object form) to avoid
+        // TDZ circular-dependency errors. The function form lets Rollup resolve
+        // the module graph first, then we assign chunks by package prefix.
+        manualChunks(id) {
+          // React core — always needed, cache separately
+          if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
+            return 'vendor-react';
+          }
+          // framer-motion is large (~80 KB gzip) and used on many pages
+          if (id.includes('node_modules/framer-motion')) {
+            return 'vendor-motion';
+          }
+          // tRPC + react-query — API layer, needed on all pages
+          if (id.includes('node_modules/@trpc/') || id.includes('node_modules/@tanstack/')) {
+            return 'vendor-trpc';
+          }
+          // lucide-react icons — large tree-shakeable icon library
+          if (id.includes('node_modules/lucide-react')) {
+            return 'vendor-icons';
+          }
+          // Other node_modules go into a shared vendor chunk
+          if (id.includes('node_modules/')) {
+            return 'vendor-misc';
+          }
+        },
       },
     },
   },

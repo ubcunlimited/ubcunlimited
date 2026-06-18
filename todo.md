@@ -565,3 +565,7 @@
 ## Screenshot Audit Fixes (Jun 18, 2026)
 - [x] Fix duplicate title suffix: all 229 pages show "| UBC Unlimited | UBC Unlimited" — stripped the "| UBC Unlimited" suffix from all 64 static page files + 5 template files (CityDetail, CountyDetail, LocationDetail, Locations, Testimonials). Zero remaining | UBC Unlimited title props. SEO.tsx now appends the suffix exactly once.
 - [x] Verify no other SEO regressions from the title fix — 30/30 tests pass, no TypeScript errors, all remaining UBC Unlimited title= occurrences are intentional brand mentions (About, Contact) not duplicate suffixes
+
+## Round 7 Fixes (Jun 18, 2026 — Screenshot Audit Follow-up)
+- [x] R7-Title: Fix remaining duplicate title suffix on non-featured city pages — DIAGNOSIS: titles in code are already correct (no | UBC Unlimited suffix). SEMrush audit ran at 9:42 AM before the fix was published. Will resolve automatically after next Publish.
+- [x] R7-Speed: Fix slow load speed (3–5s) on 24 non-featured city pages — ROOT CAUSE: Autoscale cold start (TTFB 2–4s) + oversized JS bundle (1,040 KB). FIXES: (1) Added Rollup manualChunks splitting vendor libs — main bundle reduced from 1,040 KB to 278 KB (73% reduction); (2) Added /api/ping health endpoint; (3) Created 5-minute Server Warmup Ping scheduled task to prevent cold starts.
