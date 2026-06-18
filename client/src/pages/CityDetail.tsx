@@ -37,7 +37,7 @@ export default function CityDetail() {
         <SEO
           title={`Merchant Services in ${cityName}, Utah | UBC Unlimited`}
           description={`UBC Unlimited provides merchant services and payment processing throughout all of Utah, including ${cityName}. Contact us for a consultation.`}
-          canonical={`/cities/${cityName.toLowerCase().replace(/\s+/g, '-')}`}
+          canonical={`/cities/${(city?.slug || cityName.toLowerCase().replace(/\s+/g, '-'))}`}
         />
         <section className="relative min-h-[60vh] flex items-center bg-[#080808] overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[#c9a84c]/5 to-transparent" />
@@ -77,7 +77,7 @@ export default function CityDetail() {
       <SEO
         title={`Merchant Services in ${city.name}, Utah | UBC Unlimited`}
         description={`UBC Unlimited provides merchant services, POS systems, and payment processing to businesses in ${city.name}, Utah. Local support, competitive rates, fast setup.`}
-        canonical={`/locations/${city.slug}`}
+        canonical={`/cities/${city.slug}`}
         schema={[
           {
             "@context": "https://schema.org",

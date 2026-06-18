@@ -26,7 +26,7 @@ export default function LocationDetail() {
     return (
       <PageLayout>
         <div className="container py-20 text-center">
-          <h1 className="text-3xl font-bold text-[#080808] mb-4">Location Not Found</h1>
+          <h2 className="text-3xl font-bold text-[#080808] mb-4">Location Not Found</h2>
           <p className="text-gray-600 mb-6">We couldn't find that location page.</p>
           <Link href="/locations" className="btn-teal py-3 px-6">View All Locations</Link>
         </div>

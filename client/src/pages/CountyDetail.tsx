@@ -69,7 +69,7 @@ export default function CountyDetail() {
       <SEO
         title={`Merchant Services in ${county.name} | UBC Unlimited`}
         description={`UBC Unlimited provides merchant services, POS systems, and payment processing to businesses in ${county.name}, Utah. Local support, competitive rates, fast setup.`}
-        canonical={`/locations/${county.slug}`}
+        canonical={`/counties/${county.slug}`}
         schema={[
           {
             "@context": "https://schema.org",

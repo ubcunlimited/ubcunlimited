@@ -56,7 +56,7 @@ export default function Solutions() {
   return (
     <PageLayout>
       <SEO
-        title="Payment Processing Solutions for Utah Businesses | UBC Unlimited"
+        title="Payment Processing Solutions | UBC Unlimited"
         description="Credit card processing, POS systems, cash discount & dual pricing, ACH, ecommerce gateways, and more. UBC Unlimited offers tailored payment solutions for Utah businesses of every size."
         canonical="/solutions"
         schema={{

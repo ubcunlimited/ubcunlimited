@@ -140,7 +140,7 @@ export default function Blog() {
   return (
     <PageLayout>
       <SEO
-        title="Blog — Merchant Services Insights for Utah Businesses | UBC Unlimited"
+        title="Merchant Services Blog | UBC Unlimited"
         description="Expert articles on credit card processing, POS systems, payment gateways, cash discount & dual pricing, surcharging, and merchant services tips for Utah business owners."
         canonical="/blog"
       />

@@ -4,7 +4,7 @@ import { Calendar, Clock, Tag, ChevronRight, ArrowLeft, ArrowRight } from "lucid
 import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import SEO from "@/components/SEO";
-import { getRelatedPosts } from "@/lib/blogData";
+import { getRelatedPosts, blogPosts } from "@/lib/blogData";
 import ShareBar from "@/components/ShareBar";
 
 const posts: Record<string, { title: string; category: string; date: string; readTime: string; content: string }> = {
@@ -1159,6 +1159,7 @@ interface BlogPostPageProps {
 
 export default function BlogPostPage({ slug }: BlogPostPageProps) {
   const post = posts[slug];
+  const postMeta = blogPosts.find(p => p.slug === slug);
 
   if (!post) {
     return (
@@ -1263,14 +1264,14 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
     <PageLayout>
       <SEO
         title={post.title}
-        description={post.content.trim().split("\n").find(l => l.trim() && !l.startsWith("#"))?.slice(0, 160) ?? post.title}
+        description={postMeta?.excerpt ?? post.content.trim().split("\n").find(l => l.trim() && !l.startsWith("#"))?.slice(0, 160) ?? post.title}
         canonical={`/blog/${slug}`}
         schema={[
           {
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": post.title,
-            "description": post.content.trim().split("\n").find((l: string) => l.trim() && !l.startsWith("#"))?.slice(0, 160) ?? post.title,
+            "description": postMeta?.excerpt ?? post.content.trim().split("\n").find((l: string) => l.trim() && !l.startsWith("#"))?.slice(0, 160) ?? post.title,
             "datePublished": new Date(post.date).toISOString(),
             "dateModified": new Date(post.date).toISOString(),
             "author": {

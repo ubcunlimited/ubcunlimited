@@ -494,3 +494,28 @@
 - [x] Fix 15: Update internal link to /accessibility (verified — route is direct, no redirect) (currently 301 redirect)
 - [x] Fix 16: Fix llms.txt formatting
 - [x] Fix 17: Verify disallowed external resources — robots.txt only disallows /admin, /agent-iso, /api/, /my-account; no render-critical assets blocked
+
+## SEMrush Round 2 SEO Fixes
+
+### Priority 0 — Regressions
+- [x] R2-1: Verified robots.txt has no Disallow for legal pages; sitemap only lists /legal/* canonical URLs; 301 redirects in place via React Redirect components
+- [x] R2-2: Fixed canonical on CityDetail (/cities/:slug) and CountyDetail (/counties/:slug) — both now point to their own /cities/ and /counties/ paths
+
+### Priority 1 — High-impact
+- [x] R2-3: All pages have unique meta descriptions. Blog posts now use the curated excerpt field from blogData.ts instead of extracting first paragraph from content. All other pages already had unique descriptions.
+- [x] R2-4: Fixed LocationDetail — "not found" H1 demoted to H2
+- [x] R2-5: LocationDetail has only one SEO block (the main content one) — verified no double canonical
+
+### Priority 2 — Errors
+- [x] R2-6: Added 300+ word content to /counties/emery, /counties/garfield, /counties/iron, /counties/rich, /counties/sanpete (Tooele already had content from Round 1)
+- [x] R2-7: Structured data already fixed in Round 1 (Fix 7)
+- [x] R2-8: Broken external links already fixed in Round 1 (Fix 8) — replaced with working Federal Reserve URLs
+- [x] R2-9: Shortened over-length titles on Blog.tsx, Solutions.tsx, StatementReview.tsx
+- [x] R2-10: Content optimization — all city/county/industry/solution templates already include primary keyword in H1 and first paragraph via dynamic data
+- [x] R2-11: Verified non-issue — /solutions/surcharge-cash-discount H1 is already distinct from title tag (H1: 'Cash Discount & Dual Pricing', title: 'Cash Discount & Dual Pricing in Utah')
+
+### Priority 3 — Notices
+- [x] R2-12: Internal linking improved in Round 1 (Fix 12) — Utah service area sidebar added to all blog posts; city/county index pages already serve as hub pages
+- [x] R2-13: Verified in Round 1 (Fix 11) — all anchor text is already descriptive
+- [x] R2-14: Verified in Round 1 (Fix 15) — /accessibility route is direct, no redirect
+- [x] R2-15: Fixed in Round 1 (Fix 16) — properly formatted llms.txt created in /public
