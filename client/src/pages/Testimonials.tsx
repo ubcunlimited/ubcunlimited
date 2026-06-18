@@ -321,8 +321,9 @@ export default function Testimonials() {
       "name": "Client Testimonials | UBC Unlimited",
       "description": "Real reviews from Utah business owners who switched to UBC Unlimited for payment processing. See what restaurants, retailers, medical practices, and more are saying.",
       "url": "https://ubcunlimited.com/testimonials",
-      "author": {
+      "publisher": {
         "@type": "LocalBusiness",
+        "@id": "https://ubcunlimited.com/#organization",
         "name": "UBC Unlimited",
         "url": "https://ubcunlimited.com"
       }
@@ -330,8 +331,16 @@ export default function Testimonials() {
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
+      "@id": "https://ubcunlimited.com/#organization",
       "name": "UBC Unlimited",
       "url": "https://ubcunlimited.com",
+      "telephone": "+18014620923",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Salt Lake City",
+        "addressRegion": "UT",
+        "addressCountry": "US"
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
@@ -344,7 +353,7 @@ export default function Testimonials() {
         "@type": "Review",
         "author": { "@type": "Person", "name": t.name },
         "reviewBody": t.quote,
-        "reviewRating": { "@type": "Rating", "ratingValue": t.rating, "bestRating": 5 }
+        "reviewRating": { "@type": "Rating", "ratingValue": String(t.rating), "bestRating": "5" }
       }))
     }
   ];

@@ -175,6 +175,7 @@ function Router() {
           <Route path="/solutions/gift-loyalty">{() => <SolutionDetail slug="gift-loyalty" />}</Route>
           <Route path="/solutions/surcharge-cash-discount">{() => <SolutionDetail slug="surcharge-cash-discount" />}</Route>
           <Route path="/solutions/high-risk-processing">{() => <SolutionDetail slug="high-risk-processing" />}</Route>
+          <Route path="/solutions/dual-pricing">{() => <SolutionDetail slug="dual-pricing" />}</Route>
 
           {/* POS Configurator */}
           <Route path="/build-a-pos">{() => <BuildAPOS />}</Route>

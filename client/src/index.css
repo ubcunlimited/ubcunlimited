@@ -330,3 +330,13 @@
   opacity: 0 !important;
   pointer-events: none !important;
 }
+
+/* ── Scroll animations (moved from inline <style> tags to reduce HTML bloat) ── */
+@keyframes logo-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

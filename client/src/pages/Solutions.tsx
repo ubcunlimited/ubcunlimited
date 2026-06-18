@@ -66,8 +66,9 @@ export default function Solutions() {
             "name": "Payment Processing Solutions",
             "description": "UBC Unlimited offers a full suite of payment processing solutions for Utah businesses including credit card processing, POS systems, cash discount & dual pricing, ACH, and ecommerce gateways.",
             "url": "https://ubcunlimited.com/solutions",
-            "author": {
+            "publisher": {
               "@type": "LocalBusiness",
+              "@id": "https://ubcunlimited.com/#organization",
               "name": "UBC Unlimited",
               "url": "https://ubcunlimited.com"
             },
@@ -79,11 +80,12 @@ export default function Solutions() {
                 { "@type": "ListItem", "position": 3, "name": "POS Systems", "url": "https://ubcunlimited.com/solutions/pos-systems" },
                 { "@type": "ListItem", "position": 4, "name": "eCommerce Payments", "url": "https://ubcunlimited.com/solutions/ecommerce-payments" },
                 { "@type": "ListItem", "position": 5, "name": "Cash Discount & Dual Pricing", "url": "https://ubcunlimited.com/solutions/surcharge-cash-discount" },
-                { "@type": "ListItem", "position": 6, "name": "High-Risk Processing", "url": "https://ubcunlimited.com/solutions/high-risk-processing" },
-                { "@type": "ListItem", "position": 7, "name": "Mobile Processing", "url": "https://ubcunlimited.com/solutions/mobile-processing" },
-                { "@type": "ListItem", "position": 8, "name": "Virtual Terminals", "url": "https://ubcunlimited.com/solutions/virtual-terminals" },
-                { "@type": "ListItem", "position": 9, "name": "Invoicing", "url": "https://ubcunlimited.com/solutions/invoicing" },
-                { "@type": "ListItem", "position": 10, "name": "Gift Cards & Loyalty", "url": "https://ubcunlimited.com/solutions/gift-loyalty" }
+                { "@type": "ListItem", "position": 6, "name": "Dual Pricing", "url": "https://ubcunlimited.com/solutions/dual-pricing" },
+                { "@type": "ListItem", "position": 7, "name": "High-Risk Processing", "url": "https://ubcunlimited.com/solutions/high-risk-processing" },
+                { "@type": "ListItem", "position": 8, "name": "Mobile Processing", "url": "https://ubcunlimited.com/solutions/mobile-processing" },
+                { "@type": "ListItem", "position": 9, "name": "Virtual Terminals", "url": "https://ubcunlimited.com/solutions/virtual-terminals" },
+                { "@type": "ListItem", "position": 10, "name": "Invoicing", "url": "https://ubcunlimited.com/solutions/invoicing" },
+                { "@type": "ListItem", "position": 11, "name": "Gift Cards & Loyalty", "url": "https://ubcunlimited.com/solutions/gift-loyalty" }
               ]
             }
           }

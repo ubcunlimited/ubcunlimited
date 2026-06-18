@@ -1336,7 +1336,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
     <PageLayout>
       <SEO
         title={post.title}
-        description={postMeta?.excerpt ?? post.content.trim().split("\n").find(l => l.trim() && !l.startsWith("#"))?.slice(0, 160) ?? post.title}
+        description={((postMeta?.excerpt ?? post.content.trim().split("\n").find(l => l.trim() && !l.startsWith("#")) ?? post.title) as string).slice(0, 155).trimEnd().replace(/[,;:\s]+$/, '') + '...'}
         canonical={`/blog/${slug}`}
         schema={[
           {

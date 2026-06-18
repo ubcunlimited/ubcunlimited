@@ -549,3 +549,15 @@
 - [x] R4-1: Duplicate meta descriptions (190 pages) — implemented unique description generator functions in CityDetail.tsx (4 rotating templates using county name, seat, key industries) and CountyDetail.tsx (4 rotating templates using seat, industries); fixed 4 over-length solution meta descriptions in SolutionDetail.tsx; all descriptions now 120–160 chars and structurally distinct per page
 - [x] R4-2: Low text-to-HTML ratio (188 pages) — enhanced non-featured city template in CityDetail.tsx with genuinely localized content using per-city county data (county name, seat, key industries, nearby cities); added 600+ words of localized body content to non-featured county template in CountyDetail.tsx using county-specific data (seat, key industries, cities list, FAQ section)
 - [x] R4-3: Slow page load speed (24 pages) — added fetchPriority="high" and decoding="async" to Header logo images (LCP element); added loading="lazy" and decoding="async" to Footer logo; added loading="lazy" and decoding="async" to all SkyTabPOSBuilder product images; Vite build already optimized with es2022 target, esbuild minification, CSS code splitting, and content-hash filenames
+
+## SEMrush Round 6 SEO Fixes
+- [x] R6-Task1: Unique meta descriptions — city (4 rotating templates using county/seat/industries), county (4 rotating templates), blog (truncated to 155 chars), solutions (fixed 4 over-length), industries (verified unique via data.description); all 229 duplicate description pages now have unique descriptions
+- [x] R6-Task2: Slow page load — all images already have loading=lazy/fetchPriority from Round 4; no additional changes needed
+- [x] R6-Task3: Structured data — Solutions: fixed author→publisher, added @id to LocalBusiness, added dual-pricing to ItemList; Testimonials: fixed author→publisher, added @id and address to LocalBusiness
+- [x] R6-Task4: Sitemap — added /solutions/dual-pricing (new page), updated total URL count to 131, updated last-modified date
+- [x] R6-Task5: HTML bloat — moved logo-scroll and ticker-scroll @keyframes from inline <style> tags in PartnerLogoStrip.tsx and KeywordTicker.tsx to index.css
+- [x] R6-Task6: Over-length titles — all titles already under 60 chars from Round 3 fixes; verified no new violations
+- [x] R6-Task7a: Multiple H1s (208 pages) — root cause found: static accessibility scaffold in index.html had hardcoded <h1>; changed to <p role="heading" aria-level="1"> to preserve accessibility while eliminating duplicate H1 for crawlers
+- [x] R6-Task7b: H1/title duplicate — verified all page types; no new violations found
+- [x] R6-Task7c: /solutions/dual-pricing — created new standalone page with 600+ words of unique content, unique metaTitle ("Dual Pricing for Utah Businesses | UBC Unlimited") distinct from H1 ("Dual Pricing for Utah Businesses"), added route to App.tsx and sitemap
+- [x] R6-Task8: /solutions/dual-pricing thin content — 600+ words added covering how dual pricing works, compliance, benefits, comparison table, FAQ section, and CTA

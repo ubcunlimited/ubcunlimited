@@ -58,12 +58,7 @@ export default function PartnerLogoStrip({
                 <LogoItem key={`${logo.name}-${i}`} logo={logo} dark={dark} />
               ))}
             </div>
-            <style>{`
-              @keyframes logo-scroll {
-                0%   { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
-              }
-            `}</style>
+            {/* logo-scroll keyframe defined in index.css */}
           </div>
         ) : (
           <div

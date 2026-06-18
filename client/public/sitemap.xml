@@ -3,7 +3,8 @@
   UBC Unlimited — XML Sitemap
   Canonical domain: https://www.ubcunlimited.com
   Generated: 2026-04-03
-  Total URLs: 130
+  Total URLs: 131
+  Last updated: 2026-06-18
 
   Priority guide:
     1.0  Homepage
@@ -174,6 +175,13 @@
     <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.ubcunlimited.com/solutions/dual-pricing</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- ═══════════════════════════════════════════════════════════════════

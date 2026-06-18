@@ -66,12 +66,7 @@ export default function KeywordTicker({
         ))}
       </div>
 
-      <style>{`
-        @keyframes ticker-scroll {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
+      {/* ticker-scroll keyframe defined in index.css */}
     </div>
   );
 }
