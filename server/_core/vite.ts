@@ -9,7 +9,9 @@ import { buildTitle, resolveTitle } from "./titleMap";
 
 /** Inject a page-specific <title> into an HTML string based on the request path. */
 function injectTitle(html: string, pathname: string): string {
-  const pageTitle = resolveTitle(pathname);
+  // Strip query string and hash from pathname
+  const cleanPath = pathname.split('?')[0].split('#')[0] || '/';
+  const pageTitle = resolveTitle(cleanPath);
   const fullTitle = buildTitle(pageTitle);
   // Replace the existing <title>...</title> tag (handles any content between tags)
   return html.replace(/<title>[^<]*<\/title>/, `<title>${fullTitle}</title>`);
@@ -48,7 +50,9 @@ export async function setupVite(app: Express, server: Server) {
         `src="/src/main.tsx?v=${nanoid()}"`
       );
       const page = await vite.transformIndexHtml(url, template);
-      const injected = injectTitle(page, req.path);
+      // Use originalUrl to get the full path (req.path may be normalized by middleware)
+      const reqPath = new URL(req.originalUrl, 'http://localhost').pathname;
+      const injected = injectTitle(page, reqPath);
       res.status(200).set({ "Content-Type": "text/html" }).end(injected);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
@@ -125,7 +129,8 @@ export function serveStatic(app: Express) {
         res.sendFile(indexPath);
         return;
       }
-      const injected = injectTitle(html, req.path);
+      const reqPath = new URL(req.originalUrl, 'http://localhost').pathname;
+      const injected = injectTitle(html, reqPath);
       res.setHeader("Content-Type", "text/html");
       res.send(injected);
     });

@@ -29,6 +29,11 @@ vi.mock("./recaptcha", () => ({
   verifyRecaptcha: vi.fn().mockResolvedValue({ success: true, score: 0.9 }),
 }));
 
+// Mock webhook to prevent real HTTP calls during tests
+vi.mock("./webhook", () => ({
+  sendToWebhook: vi.fn().mockResolvedValue(undefined),
+}));
+
 import { insertTestimonialSubmission, getTestimonialSubmissions, updateTestimonialStatus } from "./db";
 import { notifyOwner } from "./_core/notification";
 
