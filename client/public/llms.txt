@@ -1,47 +1,119 @@
-# UBC Unlimited — Merchant Services Utah
+# UBC Unlimited — Utah Merchant Services
 
-> UBC Unlimited is a Utah-based merchant services company providing payment processing, POS systems, and credit card processing solutions to businesses across Utah. Led by Josh Cornia, UBC Unlimited offers local support, competitive rates, and fast onboarding for businesses of all sizes and risk profiles.
+> UBC Unlimited is a Utah-based merchant services company providing credit card processing, POS systems, ACH/eCheck, and payment solutions to businesses across all 29 Utah counties and all 50 states. The company offers local, dedicated support with competitive interchange-plus pricing, fast onboarding, and specialized solutions for both standard and high-risk industries. No long-term contracts on most solutions. Phone: (801) 462-0923.
 
-## About
+UBC Unlimited has 20+ years of merchant services experience. The team provides tailored payment processing solutions for every business type — from restaurants and retail to high-risk industries that standard processors decline. All pricing is transparent; free statement reviews are available to show businesses exactly where they can save.
 
-UBC Unlimited helps Utah businesses reduce credit card processing fees, implement modern POS systems, and access merchant services tailored to their industry. We serve businesses in all 29 Utah counties, from Salt Lake City to rural communities.
+Key differentiators: local Utah-based dedicated rep, interchange-plus pricing, same-day to 14-day onboarding depending on solution, high-risk merchant account expertise, and SkyTab/Clover POS authorized reseller.
 
-- Phone: (801) 462-0923
-- Address: Salt Lake City, Utah
-- [Website](https://www.ubcunlimited.com)
-- [Request a Consultation](https://www.ubcunlimited.com/consultation)
-- [Free Statement Review](https://www.ubcunlimited.com/statement-review)
+## Core Pages
 
-## Core Services
+- [Home](https://ubcunlimited.com/): Overview of services, hero consultation form, client testimonials, and service area
+- [About UBC Unlimited](https://ubcunlimited.com/about): Company background, team, values, and why local expertise matters
+- [Contact](https://ubcunlimited.com/contact): Contact form, phone number (801) 462-0923, and email info@ubcunlimited.com
+- [Request a Consultation](https://ubcunlimited.com/consultation): Free no-obligation consultation request form
+- [Free Statement Review](https://ubcunlimited.com/statement-review): Upload or submit current processing statement for a line-by-line savings analysis
+- [Get a Quote](https://ubcunlimited.com/quote): Quick quote request form
+- [Client Testimonials](https://ubcunlimited.com/testimonials): Real client reviews and case studies
+- [FAQ](https://ubcunlimited.com/faq): Frequently asked questions about merchant services, pricing, and contracts
+- [Build a POS System](https://ubcunlimited.com/build-a-pos): Interactive SkyTab POS configurator — select hardware, add-ons, and get a custom quote
+- [News & Updates](https://ubcunlimited.com/news): Company news, product updates, and industry announcements
+- [Accessibility Statement](https://ubcunlimited.com/accessibility): WCAG 2.1 accessibility commitment and contact for accommodations
 
-- Credit card processing (interchange-plus pricing)
-- ACH & eCheck processing
-- POS systems (SkyTab, Clover)
-- eCommerce payment gateways
-- Mobile processing
-- Virtual terminals
-- Invoicing & recurring billing
-- Gift cards & loyalty programs
-- Cash discount & dual pricing programs
-- High-risk merchant accounts
-- Check guarantee
+## Payment Solutions
 
-## Key Pages
-
-- [Home](https://www.ubcunlimited.com/)
-- [Payment Processing Solutions](https://www.ubcunlimited.com/solutions)
-- [Industries We Serve](https://www.ubcunlimited.com/industries)
-- [Utah Cities](https://www.ubcunlimited.com/cities)
-- [Utah Counties](https://www.ubcunlimited.com/counties)
-- [Blog & Resources](https://www.ubcunlimited.com/blog)
-- [Contact](https://www.ubcunlimited.com/contact)
-- [About UBC Unlimited](https://www.ubcunlimited.com/about)
-- [Client Testimonials](https://www.ubcunlimited.com/testimonials)
-
-## Service Area
-
-Utah statewide, including Salt Lake City, Provo, Orem, Lehi, Ogden, St. George, and all 29 Utah counties.
+- [All Solutions](https://ubcunlimited.com/solutions): Full overview of payment processing solutions
+- [Credit Card Processing](https://ubcunlimited.com/solutions/credit-card-processing): Interchange-plus pricing, Visa/Mastercard/Amex/Discover acceptance, next-day funding
+- [Cash Discount & Dual Pricing](https://ubcunlimited.com/solutions/surcharge-cash-discount): Offset processing costs legally; dual pricing and cash discount programs
+- [POS Systems](https://ubcunlimited.com/solutions/pos-systems): SkyTab and Clover POS systems; 14-day go-live target from approval
+- [High-Risk Processing](https://ubcunlimited.com/solutions/high-risk-processing): Stable merchant accounts for industries declined by standard processors
+- [ACH & eCheck Processing](https://ubcunlimited.com/solutions/ach-echeck-processing): Bank-to-bank transfers, lower fees than card processing, check guarantee
+- [eCommerce Payments](https://ubcunlimited.com/solutions/ecommerce-payments): Payment gateways, hosted checkout, recurring billing for online stores
+- [Mobile Processing](https://ubcunlimited.com/solutions/mobile-processing): Accept payments anywhere with mobile card readers and tap-to-pay
+- [Virtual Terminals](https://ubcunlimited.com/solutions/virtual-terminals): Browser-based terminal for phone orders, mail orders, and manual entry
+- [Invoicing](https://ubcunlimited.com/solutions/invoicing): Digital invoices with online payment links; no physical terminal required
+- [Gift Cards & Loyalty](https://ubcunlimited.com/solutions/gift-loyalty): Custom-branded gift card programs and loyalty rewards to drive repeat business
+- [Check Guarantee](https://ubcunlimited.com/solutions/check-guarantee): Accept paper checks with protection against returned or fraudulent checks
 
 ## Industries Served
 
-Retail, restaurants, healthcare, automotive, eCommerce, salons & spas, property management, non-profit, high-risk industries (firearms, CBD/hemp, nutraceuticals, online pharmacy, subscription/continuity, travel, online gaming, telemarketing, credit repair, vape, adult entertainment, cryptocurrency).
+- [All Industries](https://ubcunlimited.com/industries): Full list of industries with tailored payment solutions
+- [Restaurants](https://ubcunlimited.com/industries/restaurants): Full-service and QSR POS, tableside payments, tip management, kitchen display
+- [Retail](https://ubcunlimited.com/industries/retail): In-store, mobile, and omnichannel retail payment solutions
+- [Medical & Healthcare](https://ubcunlimited.com/industries/medical): HIPAA-aware payment processing for medical offices, clinics, and health services
+- [eCommerce](https://ubcunlimited.com/industries/ecommerce): Online store gateways, fraud tools, and recurring billing
+- [Bars & Nightclubs](https://ubcunlimited.com/industries/bars-nightclubs): High-volume bar tabs, pre-auth, and nightclub POS solutions
+- [Automotive](https://ubcunlimited.com/industries/automotive): Auto dealers, service centers, and repair shops
+- [Professional Services](https://ubcunlimited.com/industries/professional-services): Law firms, accounting, consulting, and B2B invoicing
+- [Salons & Spas](https://ubcunlimited.com/industries/salons-spas): Appointment-based payment solutions for beauty and wellness businesses
+- [Property Management](https://ubcunlimited.com/industries/property-management): Rent collection, HOA dues, and ACH payment processing
+- [Non-Profit & Charity](https://ubcunlimited.com/industries/non-profit): Donation processing, fund management, and reduced-rate programs
+- [Travel & Hospitality](https://ubcunlimited.com/industries/travel): Travel agencies, booking platforms, and hospitality merchant accounts
+- [Firearms & Shooting Sports](https://ubcunlimited.com/industries/firearms): FFL dealer and shooting range merchant accounts; high-risk approved
+- [CBD & Hemp](https://ubcunlimited.com/industries/cbd-hemp): Stable processing for hemp-derived CBD retailers and wholesalers
+- [Nutraceuticals & Supplements](https://ubcunlimited.com/industries/nutraceuticals): Supplement brands, continuity programs, and subscription billing
+- [Vape & E-Cigarettes](https://ubcunlimited.com/industries/vape-ecig): Vape shops and e-cigarette retailers; high-risk approved
+- [Adult Entertainment](https://ubcunlimited.com/industries/adult-entertainment): Discreet, compliant merchant accounts for adult content platforms
+- [Online Gaming & Fantasy Sports](https://ubcunlimited.com/industries/online-gaming): Skill-based gaming and fantasy sports platforms
+- [Telemarketing](https://ubcunlimited.com/industries/telemarketing): Outbound sales and call center merchant accounts
+- [Credit Repair](https://ubcunlimited.com/industries/credit-repair): Credit counseling and repair service merchant accounts
+- [Subscription & Continuity](https://ubcunlimited.com/industries/subscription-continuity): Recurring billing and membership program processing
+- [Online Pharmacy](https://ubcunlimited.com/industries/online-pharmacy): Telehealth and online pharmacy payment solutions
+- [Cryptocurrency](https://ubcunlimited.com/industries/cryptocurrency): Crypto exchange and blockchain business merchant accounts
+
+## Blog & Resources
+
+- [Blog Index](https://ubcunlimited.com/blog): All articles on payment processing, POS systems, and merchant services
+- [How to Lower Your Credit Card Processing Fees](https://ubcunlimited.com/blog/how-to-lower-credit-card-processing-fees): Practical strategies to reduce interchange, markup, and monthly fees
+- [Interchange-Plus vs. Flat-Rate Pricing](https://ubcunlimited.com/blog/interchange-plus-vs-flat-rate-pricing): Which pricing model saves your business more money
+- [Best POS Systems for Utah Restaurants](https://ubcunlimited.com/blog/best-pos-systems-utah-restaurants-2025): SkyTab, Clover, and other top POS options reviewed for Utah restaurants
+- [ACH Processing Guide for Utah Businesses](https://ubcunlimited.com/blog/ach-processing-guide-utah-businesses): How ACH/eCheck works, costs, and when to use it
+- [Payment Trends Utah Small Businesses Should Know](https://ubcunlimited.com/blog/utah-small-business-payment-trends-2025): 2025 payment technology and consumer behavior trends
+- [How to Read Your Merchant Processing Statement](https://ubcunlimited.com/blog/how-to-read-merchant-statement): Line-by-line guide to understanding processing fees and charges
+- [Chargeback Prevention Guide](https://ubcunlimited.com/blog/chargeback-prevention-guide): Practical steps to reduce chargebacks and protect your merchant account
+- [Mobile Payment Solutions for Utah Businesses](https://ubcunlimited.com/blog/mobile-payment-solutions-utah): Mobile card readers, tap-to-pay, and on-the-go payment options
+- [Restaurant Owner's Guide to Payment Processing](https://ubcunlimited.com/blog/restaurant-payment-processing-guide): Everything restaurant owners need to know about merchant services
+- [PCI Compliance Guide for Small Businesses](https://ubcunlimited.com/blog/pci-compliance-guide-small-business): What Utah small businesses actually need to do to stay PCI compliant
+- [Cash Discount vs. Surcharging in Utah](https://ubcunlimited.com/blog/cash-discounting-surcharging-utah): Legal requirements, differences, and how to implement each program
+- [Choosing the Right eCommerce Payment Gateway](https://ubcunlimited.com/blog/ecommerce-payment-gateway-guide): Gateway comparison for Utah online businesses
+- [Best POS Systems for Bars and Nightclubs in Utah](https://ubcunlimited.com/blog/pos-systems-for-bars-utah): High-volume bar POS features, tab management, and Utah-specific options
+- [Merchant Services in Utah County](https://ubcunlimited.com/blog/merchant-services-utah-county): Local merchant services guide for Provo, Orem, Lehi, and Utah County businesses
+- [SkyTab POS: An Honest Review](https://ubcunlimited.com/blog/skytab-pos-review-utah): Features, pricing, and real-world performance from Utah's authorized SkyTab reseller
+- [What Is a Rolling Reserve?](https://ubcunlimited.com/blog/rolling-reserve-merchant-account): How rolling reserves work and how to get yours released
+- [5 Industries Stripe Drops & Better Alternatives](https://ubcunlimited.com/blog/high-risk-industries-dropped-by-stripe): High-risk industries Stripe terminates and where to find stable processing
+- [How Interchange Rates Work](https://ubcunlimited.com/blog/how-interchange-rates-work): Plain-English guide to interchange fees with official rate schedule links
+- [How Better Payment Processing Helps Your Business Grow](https://ubcunlimited.com/blog/growing-business-with-better-payments): Connecting payment strategy to revenue growth
+
+## Utah Service Area
+
+- [Utah Cities Index](https://ubcunlimited.com/cities): All 134 Utah cities served; search by city name
+- [Utah Counties Index](https://ubcunlimited.com/counties): All 29 Utah counties served; interactive county map
+- [Salt Lake City](https://ubcunlimited.com/cities/salt-lake-city): Merchant services in Salt Lake City, UT
+- [Provo](https://ubcunlimited.com/cities/provo): Merchant services in Provo, UT
+- [Ogden](https://ubcunlimited.com/cities/ogden): Merchant services in Ogden, UT
+- [St. George](https://ubcunlimited.com/cities/st-george): Merchant services in St. George, UT
+- [Logan](https://ubcunlimited.com/cities/logan): Merchant services in Logan, UT
+- [Lehi](https://ubcunlimited.com/cities/lehi): Merchant services in Lehi, UT
+- [Orem](https://ubcunlimited.com/cities/orem): Merchant services in Orem, UT
+- [Sandy](https://ubcunlimited.com/cities/sandy): Merchant services in Sandy, UT
+- [West Jordan](https://ubcunlimited.com/cities/west-jordan): Merchant services in West Jordan, UT
+- [South Jordan](https://ubcunlimited.com/cities/south-jordan): Merchant services in South Jordan, UT
+- [Salt Lake County](https://ubcunlimited.com/counties/salt-lake): Merchant services across Salt Lake County
+- [Utah County](https://ubcunlimited.com/counties/utah): Merchant services across Utah County
+- [Davis County](https://ubcunlimited.com/counties/davis): Merchant services across Davis County
+- [Weber County](https://ubcunlimited.com/counties/weber): Merchant services across Weber County
+- [Washington County](https://ubcunlimited.com/counties/washington): Merchant services across Washington County (St. George area)
+- [Cache County](https://ubcunlimited.com/counties/cache): Merchant services across Cache County (Logan area)
+
+## Legal
+
+- [Privacy Policy](https://ubcunlimited.com/legal/privacy-policy): How UBC Unlimited collects, uses, and protects personal data
+- [Terms of Service](https://ubcunlimited.com/legal/terms-of-service): Website terms and conditions of use
+- [Cookie Policy](https://ubcunlimited.com/legal/cookie-policy): Cookie usage and consent management
+- [Disclaimer](https://ubcunlimited.com/legal/disclaimer): Limitations of liability and informational disclaimers
+
+## Optional
+
+- [Sitemap](https://ubcunlimited.com/sitemap.xml): Full XML sitemap with all 236 indexed URLs
+- [All Utah Cities (134)](https://ubcunlimited.com/cities): Complete list of all Utah cities with dedicated merchant services pages
+- [All Utah Counties (29)](https://ubcunlimited.com/counties): Complete list of all 29 Utah counties with dedicated merchant services pages

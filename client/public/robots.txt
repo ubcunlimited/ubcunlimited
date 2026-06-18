@@ -15,4 +15,4 @@ Disallow: /poc/
 Disallow: /recaptcha-docs
 
 # Sitemap
-Sitemap: https://www.ubcunlimited.com/sitemap.xml
+Sitemap: https://ubcunlimited.com/sitemap.xml
