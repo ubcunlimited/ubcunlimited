@@ -21,7 +21,7 @@ export default function AccessibilityStatement() {
             className="text-3xl md:text-4xl font-extrabold text-white mb-2 leading-tight"
             style={{ fontFamily: "Sora, sans-serif" }}
           >
-            Accessibility Statement
+            ADA Accessibility Commitment — UBC Unlimited
           </h1>
           <p className="text-white/70 text-sm">Last updated: March 19, 2026</p>
         </div>

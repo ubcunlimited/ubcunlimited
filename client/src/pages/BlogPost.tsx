@@ -1378,6 +1378,14 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                     Learn More
                   </Link>
                 </div>
+                <div className="bg-[#f8fafc] rounded-xl p-5 border border-gray-100">
+                  <h3 className="font-bold text-[#080808] mb-3 text-sm" style={{ fontFamily: 'Sora, sans-serif' }}>Utah Service Areas</h3>
+                  <div className="flex flex-wrap gap-1.5">
+                    {[{label:"Salt Lake City",href:"/cities/salt-lake-city"},{label:"Provo",href:"/cities/provo"},{label:"Ogden",href:"/cities/ogden"},{label:"St. George",href:"/cities/st-george"},{label:"Orem",href:"/cities/orem"},{label:"Sandy",href:"/cities/sandy"},{label:"Salt Lake County",href:"/counties/salt-lake"},{label:"Utah County",href:"/counties/utah"},{label:"Davis County",href:"/counties/davis"},{label:"Weber County",href:"/counties/weber"}].map(({label,href}) => (
+                      <Link key={href} href={href} className="text-xs bg-white border border-gray-200 rounded-md px-2 py-1 text-[#0a6e74] hover:bg-[#0a6e74] hover:text-white transition-colors">{label}</Link>
+                    ))}
+                  </div>
+                </div>
               </div>
             </aside>
           </div>

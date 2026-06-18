@@ -9,7 +9,7 @@ export default function TermsOfService() {
         canonical="/legal/terms-of-service"
         noIndex={true}
       />
-      <section className="bg-[#080808] py-14"><div className="container"><h1 className="text-3xl font-extrabold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>Terms of Service</h1><p className="text-white/70 mt-2 text-sm">Last updated: January 1, 2025</p></div></section>
+      <section className="bg-[#080808] py-14"><div className="container"><h1 className="text-3xl font-extrabold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>Terms of Service — UBC Unlimited Merchant Services</h1><p className="text-white/70 mt-2 text-sm">Last updated: January 1, 2025</p></div></section>
       <section className="py-12 bg-white"><div className="container max-w-3xl"><div className="space-y-6 text-gray-600 text-sm leading-relaxed">
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>1. Acceptance of Terms</h2><p>By accessing and using the UBC Unlimited website, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our website.</p></div>
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>2. Use of Website</h2><p>You may use our website for lawful purposes only. You agree not to use the website in any way that violates applicable laws or regulations, or that infringes on the rights of others.</p></div>
