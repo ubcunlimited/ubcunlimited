@@ -5,6 +5,15 @@ import { nanoid } from "nanoid";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import viteConfig from "../../vite.config";
+import { buildTitle, resolveTitle } from "./titleMap";
+
+/** Inject a page-specific <title> into an HTML string based on the request path. */
+function injectTitle(html: string, pathname: string): string {
+  const pageTitle = resolveTitle(pathname);
+  const fullTitle = buildTitle(pageTitle);
+  // Replace the existing <title>...</title> tag (handles any content between tags)
+  return html.replace(/<title>[^<]*<\/title>/, `<title>${fullTitle}</title>`);
+}
 
 export async function setupVite(app: Express, server: Server) {
   const serverOptions = {
@@ -39,7 +48,8 @@ export async function setupVite(app: Express, server: Server) {
         `src="/src/main.tsx?v=${nanoid()}"`
       );
       const page = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      const injected = injectTitle(page, req.path);
+      res.status(200).set({ "Content-Type": "text/html" }).end(injected);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
@@ -106,8 +116,18 @@ export function serveStatic(app: Express) {
   );
 
   // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
+  // Inject a page-specific <title> so crawlers that read static HTML see unique titles.
+  app.use("*", (req, res) => {
     res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-    res.sendFile(path.resolve(distPath, "index.html"));
+    const indexPath = path.resolve(distPath, "index.html");
+    fs.readFile(indexPath, "utf-8", (err, html) => {
+      if (err) {
+        res.sendFile(indexPath);
+        return;
+      }
+      const injected = injectTitle(html, req.path);
+      res.setHeader("Content-Type", "text/html");
+      res.send(injected);
+    });
   });
 }

@@ -24,6 +24,11 @@ vi.mock("./_core/notification", () => ({
   notifyOwner: vi.fn().mockResolvedValue(true),
 }));
 
+// Mock reCAPTCHA to prevent real HTTP calls during tests
+vi.mock("./recaptcha", () => ({
+  verifyRecaptcha: vi.fn().mockResolvedValue({ success: true, score: 0.9 }),
+}));
+
 import { insertTestimonialSubmission, getTestimonialSubmissions, updateTestimonialStatus } from "./db";
 import { notifyOwner } from "./_core/notification";
 

@@ -47,7 +47,7 @@ export default function About() {
   return (
     <PageLayout>
       <SEO
-        title="About UBC Unlimited — Utah Merchant Services"
+        title="About Us — Utah Merchant Services Team"
         description="UBC Unlimited — locally owned Utah merchant services. 20+ years of payment processing expertise. We help businesses eliminate fees & save money. Meet our team."
         canonical="/about"
       />

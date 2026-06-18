@@ -361,7 +361,7 @@ export default function Contact() {
   return (
     <PageLayout>
       <SEO
-        title="Contact UBC Unlimited — Merchant Services Utah"
+        title="Contact Us — Merchant Services Utah"
         description="Contact UBC Unlimited to book a consultation, request a custom merchant services quote, or upload your processing statement for a complimentary savings analysis. Utah's local payment experts."
         canonical="/contact"
       />
