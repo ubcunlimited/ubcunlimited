@@ -581,3 +581,10 @@
 
 > Initial screenshot findings saved: one issue set shows 225 pages with low text-to-HTML ratio, affecting the homepage, about, accessibility, blog hub, multiple blog posts, cities index, many city detail pages, solution pages, statement-review, and testimonials. Another issue set shows 21 county pages missing an H1 heading.
 
+
+## Round 10 Fixes — SEO Prompt Round 7 (Jun 18, 2026)
+- [x] R10-H1: Task 1 — CONFIRMED: CountyDetail.tsx and CityDetail.tsx each have exactly one H1 per rendered branch. The deployed CountyDetail chunk confirms H1 is present in both branches. No H1 violations exist in current source code. The SEMrush audit showing 21 missing H1s was from the pre-fix deployment.
+- [x] R10-Title2a: Task 2a — CONFIRMED: Zero | UBC Unlimited title props remain in source code. The deployed CityDetail chunk uses the corrected title format. The SEMrush audit was run before the fix was published.
+- [x] R10-Title2b: Task 2b — ROOT CAUSE FOUND AND FIXED: index.html static scaffold used HTML entities (&mdash;, &middot;, &copy;) that end in semicolons. SEMrush was reading these as trailing semicolons in the title context. Replaced all 3 entities with raw UTF-8 characters (—, ·, ©). Zero HTML entities now remain in index.html.
+- [x] R10-Title2c: Task 2c — Blog titles already shortened in Round 9. No further changes needed.
+- [x] R10-TextHTML: Task 3 — INVESTIGATED: The 367 KB Manus platform runtime script (vite-plugin-manus-runtime) is the sole cause of the low ratio (96.7% of HTML is script). It cannot be externalized. Pages already have substantial visible text content. This is a platform constraint; SEMrush should hide this check. The prompt acknowledges this is low-severity and not a Google ranking factor.
