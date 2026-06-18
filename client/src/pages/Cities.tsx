@@ -251,6 +251,25 @@ export default function Cities() {
           </Link>
         </div>
       </section>
+
+      {/* Static full city index — visible to search crawlers, styled as a compact directory */}
+      <section className="bg-[#0a0a0a] py-10 border-t border-white/5">
+        <div className="container">
+          <h2 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>Complete Utah City Directory</h2>
+          <p className="text-white/50 text-xs mb-5">UBC Unlimited provides merchant services to all {CITIES.length} Utah cities and towns listed below.</p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            {CITIES.slice().sort((a, b) => a.name.localeCompare(b.name)).map((city) => (
+              <Link
+                key={city.slug}
+                href={`/cities/${city.slug}`}
+                className="text-white/50 hover:text-[#c9a84c] text-xs transition-colors py-0.5"
+              >
+                {city.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </PageLayout>
   );
 }

@@ -314,18 +314,40 @@ export default function Testimonials() {
     ? allTestimonials
     : allTestimonials.filter(t => t.industry === activeIndustry);
 
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Client Testimonials | UBC Unlimited",
-    "description": "Real reviews from Utah business owners who switched to UBC Unlimited for payment processing. See what restaurants, retailers, medical practices, and more are saying.",
-    "url": "https://ubcunlimited.com/testimonials",
-    "publisher": {
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Client Testimonials | UBC Unlimited",
+      "description": "Real reviews from Utah business owners who switched to UBC Unlimited for payment processing. See what restaurants, retailers, medical practices, and more are saying.",
+      "url": "https://ubcunlimited.com/testimonials",
+      "author": {
+        "@type": "LocalBusiness",
+        "name": "UBC Unlimited",
+        "url": "https://ubcunlimited.com"
+      }
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "UBC Unlimited",
-      "url": "https://ubcunlimited.com"
-    },
-  };
+      "url": "https://ubcunlimited.com",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "15",
+        "reviewCount": "15"
+      },
+      "review": TESTIMONIALS.slice(0, 5).map(t => ({
+        "@type": "Review",
+        "author": { "@type": "Person", "name": t.name },
+        "reviewBody": t.quote,
+        "reviewRating": { "@type": "Rating", "ratingValue": t.rating, "bestRating": 5 }
+      }))
+    }
+  ];
 
   return (
     <PageLayout>

@@ -39,18 +39,17 @@ export default function CityDetail() {
           description={`UBC Unlimited provides merchant services and payment processing throughout all of Utah, including ${cityName}. Contact us for a consultation.`}
           canonical={`/cities/${(city?.slug || cityName.toLowerCase().replace(/\s+/g, '-'))}`}
         />
-        <section className="relative min-h-[60vh] flex items-center bg-[#080808] overflow-hidden">
+        <section className="relative bg-[#080808] overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[#c9a84c]/5 to-transparent" />
           <div className="container relative z-10 py-20 text-center">
             <div className="inline-flex items-center gap-2 bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
               <MapPin size={12} /> {cityName}, Utah
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
-              We Serve All of Utah —<br />
-              <span className="text-[#c9a84c]">Including {cityName}</span>
-            </h2>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
+              Merchant Services in {cityName}, Utah
+            </h1>
             <p className="text-white/65 text-lg max-w-2xl mx-auto mb-8">
-              UBC Unlimited provides merchant services, POS systems, and payment processing to businesses throughout every city in Utah. Our local team is ready to help your business save on processing costs — wherever you're located.
+              UBC Unlimited provides merchant services, POS systems, and payment processing to businesses throughout every city in Utah — including {cityName}. Our local Utah team is ready to help your business save on processing costs, get set up with the right POS system, and access the payment solutions that fit your industry.
             </p>
             {/* Unlisted city form */}
             <div className="max-w-md mx-auto bg-white/5 border border-white/10 rounded-2xl p-6 text-left mb-8">
@@ -63,8 +62,65 @@ export default function CityDetail() {
                 <Phone size={15} /> Call {SITE.phone}
               </a>
               <Link href="/cities" className="text-[#c9a84c] hover:text-[#e2c97e] text-sm flex items-center justify-center gap-1 py-3 px-8">
-                View all featured cities <ArrowRight size={13} />
+                View all Utah cities we serve <ArrowRight size={13} />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Body content section for text-to-HTML ratio */}
+        <section className="py-16 bg-white">
+          <div className="container max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#080808] mb-6" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
+              Payment Processing Services for {cityName} Businesses
+            </h2>
+            <p className="text-gray-700 text-base leading-relaxed mb-4">
+              Whether you run a retail shop, restaurant, service business, or eCommerce store in {cityName}, Utah, UBC Unlimited offers tailored merchant services designed to reduce your processing costs and simplify how you accept payments. We work with businesses of all sizes — from sole proprietors to multi-location operations — and we bring the same level of personal service to every client.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed mb-4">
+              Our team provides a free statement review for any {cityName} business currently accepting credit cards. We analyze your current processing statement line by line, identify where you are overpaying, and show you a clear comparison before you make any changes. Most businesses we work with save meaningfully on their monthly processing costs after switching to interchange-plus pricing or implementing a compliant cash discount program.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed mb-6">
+              UBC Unlimited is a Utah-based company, not a national call center. When you call us, you reach a local representative who understands the Utah business environment and can provide hands-on support for equipment setup, software integration, and ongoing account management. We serve businesses throughout all 29 Utah counties and every city in the state.
+            </p>
+
+            <h2 className="text-xl font-bold text-[#080808] mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
+              What We Offer
+            </h2>
+            <ul className="list-disc list-inside text-gray-700 text-base space-y-2 mb-6">
+              <li>Credit card and debit card processing with transparent interchange-plus pricing</li>
+              <li>POS systems including SkyTab, Clover, and mobile solutions</li>
+              <li>Cash discount and dual pricing programs to offset or eliminate processing fees</li>
+              <li>ACH and eCheck processing for recurring billing and large transactions</li>
+              <li>eCommerce payment gateways for online businesses</li>
+              <li>High-risk merchant accounts for specialty industries</li>
+              <li>Virtual terminals for phone and mail order businesses</li>
+              <li>Gift card and loyalty programs</li>
+            </ul>
+
+            <h2 className="text-xl font-bold text-[#080808] mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
+              Why Utah Businesses Choose UBC Unlimited
+            </h2>
+            <p className="text-gray-700 text-base leading-relaxed mb-4">
+              Unlike national processors that route your calls through a generic support queue, UBC Unlimited assigns a dedicated local representative to your account. Your rep knows your business, your processing history, and your industry — and is available when you need help. We have helped businesses across Utah reduce their processing costs, upgrade their POS systems, and access payment solutions that were previously unavailable to them.
+            </p>
+            <p className="text-gray-700 text-base leading-relaxed mb-6">
+              We work with businesses in {cityName} and throughout Utah on a no-pressure basis. Our process starts with a free consultation and statement review, and we only recommend changes that make financial sense for your specific situation. There are no long-term contracts required, and our pricing is fully transparent from day one.
+            </p>
+
+            <div className="bg-[#f9f6f0] border border-[#c9a84c]/20 rounded-xl p-6">
+              <h2 className="text-lg font-bold text-[#080808] mb-2">Ready to Get Started?</h2>
+              <p className="text-gray-700 text-sm mb-3">
+                Contact UBC Unlimited today for a free consultation and statement review. We serve {cityName} and all of Utah with local support and competitive rates.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href={SITE.phoneHref} className="inline-flex items-center gap-2 bg-[#c9a84c] text-[#080808] font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[#e2c97e] transition-colors">
+                  <Phone size={14} /> Call {SITE.phone}
+                </a>
+                <Link href="/consultation" className="inline-flex items-center gap-2 border border-[#c9a84c] text-[#c9a84c] font-semibold text-sm px-4 py-2 rounded-lg hover:bg-[#c9a84c]/10 transition-colors">
+                  Request a Consultation
+                </Link>
+              </div>
             </div>
           </div>
         </section>

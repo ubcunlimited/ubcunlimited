@@ -522,3 +522,22 @@
 
 ## Round 3 — Thin County Content
 - [x] Add 300+ word unique content to all remaining thin county pages: Uintah, Duchesne, Carbon, Millard, Kane, Beaver, Grand, San Juan, Wayne, Piute, Morgan, Juab (12 new counties; Box Elder, Wasatch, Sevier already had content from Round 2)
+
+## SEMrush Round 3 SEO Fixes (zero-tolerance)
+- [x] R3-1: Unblock legal pages from robots.txt; consolidate to /legal/* canonicals; 301-redirect /privacy-policy, /cookie-policy, /disclaimer, /terms-of-service; fix sitemap — already completed in prior rounds
+- [x] R3-2: Unique meta descriptions on all 125 pages via template variables — already completed in prior rounds
+- [x] R3-3: Single H1 per page — fixed non-featured city page template (h2 → h1 for main heading); H1 now reads "Merchant Services in {cityName}, Utah"
+- [x] R3-4: Thin content — add 300+ words to /counties/box-elder, /counties/millard, /counties/piute, /counties/wasatch, /solutions/dual-pricing — already completed in prior rounds
+- [x] R3-5: Content optimization — keyword in H1/first paragraph/subheadings on 6 pages — already completed in prior rounds
+- [x] R3-6: Slow pages — compress images, lazy-load, defer JS on 15 pages — already completed in prior rounds
+- [x] R3-7: Caching headers for JS/CSS — already implemented in Express serveStatic with immutable Cache-Control for content-hashed assets
+- [x] R3-8: Shorten over-length titles — 2 blog titles shortened in blogData.ts; Industries page title shortened to 55 chars in Industries.tsx
+- [x] R3-9: Fix structured data on /solutions and /testimonials — Solutions now has valid ItemList schema; Testimonials has Review items with AggregateRating
+- [x] R3-10: Fix broken external links on /blog/how-interchange-rates-work — replaced broken Discover merchant URL with working federalreserve.gov URL
+- [x] R3-11: H1/title duplicate on /solutions/surcharge-cash-discount — added metaTitle field to SolutionData interface; surcharge-cash-discount now uses distinct meta title vs H1
+- [x] R3-12: Internal linking — added static all-cities directory (167 city links) to Cities.tsx hub page for full crawler discoverability
+- [x] R3-13: Descriptive anchor text — fixed 'View all articles' → 'Browse all payment processing articles' and 'Read more' → descriptive text in BlogPost.tsx
+- [x] R3-14: Redirect hop — /accessibility — investigated; no redirect hop in our code; AccessibilityStatement is served directly at /accessibility
+- [x] R3-15: llms.txt formatting — reformatted to llms.txt spec with markdown links, removed comment lines, proper section headers
+- [x] R3-16: Low text-to-HTML ratio — added 500+ words of body content to non-featured city page template in CityDetail.tsx (affects ~139 non-featured city pages)
+- [x] R3-17: Disallowed external resources (126) — investigated all resources; all are third-party (Manus CDN, GTM, GA, reCAPTCHA, FB Pixel, Plausible) with robots.txt blocking by design; none are render-critical or index-critical; cannot be unblocked

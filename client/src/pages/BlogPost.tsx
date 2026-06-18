@@ -1056,7 +1056,7 @@ If you have ever looked at your monthly processing statement and wondered why yo
 
 ## What Is Interchange?
 
-Interchange is a fee paid by your bank (the acquiring bank) to the cardholder's bank (the issuing bank) every time a card transaction is processed. It is not a fee your processor invented — it is a fee set by the card networks ([Visa](https://usa.visa.com/support/small-business/regulations-fees.html), [Mastercard](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html), [Discover](https://www.discoverglobalnetwork.com/partners/merchants/), and [American Express](https://www.americanexpress.com/us/merchant/optblue.html)) and published publicly twice a year, typically in April and October.
+Interchange is a fee paid by your bank (the acquiring bank) to the cardholder's bank (the issuing bank) every time a card transaction is processed. It is not a fee your processor invented — it is a fee set by the card networks ([Visa](https://usa.visa.com/support/small-business/regulations-fees.html), [Mastercard](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html), [Discover](https://www.discover.com/credit-cards/card-smarts/credit-card-processing/), and [American Express](https://www.americanexpress.com/us/merchant/optblue.html)) and published publicly twice a year, typically in April and October.
 
 The interchange fee compensates the issuing bank for the cost of extending credit, managing fraud risk, funding rewards programs, and processing the transaction. From the merchant's perspective, interchange is a pass-through cost — your processor collects it from you and passes it to the issuing bank. No processor can reduce interchange; they can only add their own markup on top of it.
 
@@ -1080,7 +1080,7 @@ This is the question most merchants have after seeing their first interchange-pl
 
 ## A Reference Table of Common Interchange Rates
 
-The following rates reflect the card networks' published schedules as of 2026 — [Visa](https://usa.visa.com/support/small-business/regulations-fees.html), [Mastercard](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html), [Discover](https://www.discoverglobalnetwork.com/partners/merchants/), and [American Express](https://www.americanexpress.com/us/merchant/optblue.html). These are the actual interchange rates — not what your processor charges you.
+The following rates reflect the card networks' published schedules as of 2026 — [Visa](https://usa.visa.com/support/small-business/regulations-fees.html), [Mastercard](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html), [Discover](https://www.discover.com/credit-cards/card-smarts/credit-card-processing/), and [American Express](https://www.americanexpress.com/us/merchant/optblue.html). These are the actual interchange rates — not what your processor charges you.
 
 | Card Type | Transaction Type | Interchange Rate |
 |---|---|---|
@@ -1144,7 +1144,7 @@ If you have never had your processing statement reviewed by someone who can expl
 3. [Visa — Interchange Reimbursement Fees PDF (Direct Download)](https://usa.visa.com/content/dam/VCOM/download/merchants/visa-usa-interchange-reimbursement-fees.pdf)
 4. [Mastercard — Interchange Rates Explained](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html)
 5. [Federal Reserve — Debit Card Interchange Fee Data](https://www.federalreserve.gov/paymentsystems/regii-average-interchange-fee.htm)
-6. [Discover Global Network — Merchant Partners](https://www.discoverglobalnetwork.com/partners/merchants/)
+6. [Discover Global Network — Merchant Partners](https://www.discover.com/credit-cards/card-smarts/credit-card-processing/)
 7. [American Express — OptBlue Program for Merchants](https://www.americanexpress.com/us/merchant/optblue.html)
 8. [Federal Register — Debit Card Interchange Fees and Routing (Durbin Amendment)](https://www.federalregister.gov/documents/2023/11/14/2023-24034/debit-card-interchange-fees-and-routing)
 9. [Federal Reserve — Average Interchange Fee Data](https://www.federalreserve.gov/paymentsystems/regii-average-interchange-fee.htm)
@@ -1415,7 +1415,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                   href="/blog"
                   className="hidden sm:flex items-center gap-1.5 text-sm text-[#c9a84c] font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded"
                 >
-                  View all articles <ArrowRight size={14} aria-hidden="true" />
+                  View all payment processing articles <ArrowRight size={14} aria-hidden="true" />
                 </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -1459,7 +1459,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                   href="/blog"
                   className="text-sm text-[#c9a84c] font-medium hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded"
                 >
-                  View all articles →
+                  View all payment processing articles →
                 </Link>
               </div>
             </div>

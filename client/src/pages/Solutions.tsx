@@ -59,18 +59,35 @@ export default function Solutions() {
         title="Payment Processing Solutions | UBC Unlimited"
         description="Credit card processing, POS systems, cash discount & dual pricing, ACH, ecommerce gateways, and more. UBC Unlimited offers tailored payment solutions for Utah businesses of every size."
         canonical="/solutions"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          "name": "Payment Processing Solutions",
-          "description": "UBC Unlimited offers a full suite of payment processing solutions for Utah businesses including credit card processing, POS systems, cash discount & dual pricing, ACH, and ecommerce gateways.",
-          "url": "https://ubcunlimited.com/solutions",
-          "provider": {
-            "@type": "LocalBusiness",
-            "name": "UBC Unlimited",
-            "url": "https://ubcunlimited.com"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": "Payment Processing Solutions",
+            "description": "UBC Unlimited offers a full suite of payment processing solutions for Utah businesses including credit card processing, POS systems, cash discount & dual pricing, ACH, and ecommerce gateways.",
+            "url": "https://ubcunlimited.com/solutions",
+            "author": {
+              "@type": "LocalBusiness",
+              "name": "UBC Unlimited",
+              "url": "https://ubcunlimited.com"
+            },
+            "mainEntity": {
+              "@type": "ItemList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Credit Card Processing", "url": "https://ubcunlimited.com/solutions/credit-card-processing" },
+                { "@type": "ListItem", "position": 2, "name": "ACH & eCheck Processing", "url": "https://ubcunlimited.com/solutions/ach-echeck-processing" },
+                { "@type": "ListItem", "position": 3, "name": "POS Systems", "url": "https://ubcunlimited.com/solutions/pos-systems" },
+                { "@type": "ListItem", "position": 4, "name": "eCommerce Payments", "url": "https://ubcunlimited.com/solutions/ecommerce-payments" },
+                { "@type": "ListItem", "position": 5, "name": "Cash Discount & Dual Pricing", "url": "https://ubcunlimited.com/solutions/surcharge-cash-discount" },
+                { "@type": "ListItem", "position": 6, "name": "High-Risk Processing", "url": "https://ubcunlimited.com/solutions/high-risk-processing" },
+                { "@type": "ListItem", "position": 7, "name": "Mobile Processing", "url": "https://ubcunlimited.com/solutions/mobile-processing" },
+                { "@type": "ListItem", "position": 8, "name": "Virtual Terminals", "url": "https://ubcunlimited.com/solutions/virtual-terminals" },
+                { "@type": "ListItem", "position": 9, "name": "Invoicing", "url": "https://ubcunlimited.com/solutions/invoicing" },
+                { "@type": "ListItem", "position": 10, "name": "Gift Cards & Loyalty", "url": "https://ubcunlimited.com/solutions/gift-loyalty" }
+              ]
+            }
           }
-        }}
+        ]}
       />
       <section className="bg-[#080808] py-20">
         <div className="container">

@@ -105,7 +105,7 @@ export const blogPosts: BlogPostMeta[] = [
   },
   {
     slug: "cash-discounting-surcharging-utah",
-    title: "Cash Discount & Dual Pricing vs. Surcharging: What Utah Businesses Need to Know",
+    title: "Cash Discount vs. Surcharging: Utah Business Guide",
     excerpt:
       "Both cash discount & dual pricing and surcharging can help offset processing costs, but they work differently and carry different rules. Utah businesses have more flexibility than most states, but getting the implementation wrong can create compliance problems. Here's a clear breakdown of both options and how to choose the right one.",
     category: "Pricing & Fees",
@@ -159,7 +159,7 @@ export const blogPosts: BlogPostMeta[] = [
   },
   {
     slug: "high-risk-industries-dropped-by-stripe",
-    title: "5 Industries That Get Dropped by Stripe — And What to Do Instead",
+    title: "5 Industries Stripe Drops — And Better Alternatives",
     excerpt:
       "Stripe, Square, and PayPal are convenient for getting started, but they're known to terminate accounts in certain industries without much warning. If your business operates in CBD, firearms, nutraceuticals, adult entertainment, or travel, you need a processor built for your risk profile — not one that will shut you down at the worst possible moment.",
     category: "High-Risk Processing",

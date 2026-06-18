@@ -1,41 +1,47 @@
 # UBC Unlimited — Merchant Services Utah
-# https://ubcunlimited.com
-# llms.txt — Machine-readable site summary for AI/LLM crawlers
+
+> UBC Unlimited is a Utah-based merchant services company providing payment processing, POS systems, and credit card processing solutions to businesses across Utah. Led by Josh Cornia, UBC Unlimited offers local support, competitive rates, and fast onboarding for businesses of all sizes and risk profiles.
 
 ## About
-UBC Unlimited is a Utah-based merchant services company providing payment processing, POS systems, and credit card processing solutions to businesses across Utah. Led by Josh Cornia, UBC Unlimited offers local support, competitive rates, and fast onboarding for businesses of all sizes and risk profiles.
 
-## Contact
+UBC Unlimited helps Utah businesses reduce credit card processing fees, implement modern POS systems, and access merchant services tailored to their industry. We serve businesses in all 29 Utah counties, from Salt Lake City to rural communities.
+
 - Phone: (801) 462-0923
 - Address: Salt Lake City, Utah
-- Website: https://ubcunlimited.com
-- Consultation: https://ubcunlimited.com/consultation
+- [Website](https://www.ubcunlimited.com)
+- [Request a Consultation](https://www.ubcunlimited.com/consultation)
+- [Free Statement Review](https://www.ubcunlimited.com/statement-review)
 
 ## Core Services
-- Credit card processing
+
+- Credit card processing (interchange-plus pricing)
 - ACH & eCheck processing
-- POS systems (SkyTab)
-- eCommerce payments
+- POS systems (SkyTab, Clover)
+- eCommerce payment gateways
 - Mobile processing
 - Virtual terminals
 - Invoicing & recurring billing
-- Gift & loyalty programs
-- Cash discount & dual pricing
+- Gift cards & loyalty programs
+- Cash discount & dual pricing programs
 - High-risk merchant accounts
 - Check guarantee
 
 ## Key Pages
-- Home: https://ubcunlimited.com/
-- Solutions: https://ubcunlimited.com/solutions
-- Industries: https://ubcunlimited.com/industries
-- Locations: https://ubcunlimited.com/locations
-- Blog: https://ubcunlimited.com/blog
-- Contact: https://ubcunlimited.com/contact
-- Consultation: https://ubcunlimited.com/consultation
-- Statement Review: https://ubcunlimited.com/statement-review
+
+- [Home](https://www.ubcunlimited.com/)
+- [Payment Processing Solutions](https://www.ubcunlimited.com/solutions)
+- [Industries We Serve](https://www.ubcunlimited.com/industries)
+- [Utah Cities](https://www.ubcunlimited.com/cities)
+- [Utah Counties](https://www.ubcunlimited.com/counties)
+- [Blog & Resources](https://www.ubcunlimited.com/blog)
+- [Contact](https://www.ubcunlimited.com/contact)
+- [About UBC Unlimited](https://www.ubcunlimited.com/about)
+- [Client Testimonials](https://www.ubcunlimited.com/testimonials)
 
 ## Service Area
-Utah, including Salt Lake City, Provo, Orem, Lehi, Ogden, St. George, and all Utah counties.
+
+Utah statewide, including Salt Lake City, Provo, Orem, Lehi, Ogden, St. George, and all 29 Utah counties.
 
 ## Industries Served
-Retail, restaurants, healthcare, automotive, e-commerce, high-risk, adult entertainment, nutraceuticals, online pharmacy, subscription/continuity, firearms, CBD/hemp, travel, and more.
+
+Retail, restaurants, healthcare, automotive, eCommerce, salons & spas, property management, non-profit, high-risk industries (firearms, CBD/hemp, nutraceuticals, online pharmacy, subscription/continuity, travel, online gaming, telemarketing, credit repair, vape, adult entertainment, cryptocurrency).

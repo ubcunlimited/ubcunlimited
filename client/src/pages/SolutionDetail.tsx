@@ -17,6 +17,7 @@ export interface SolutionData {
   subtitle: string;
   description: string;
   metaDescription?: string;
+  metaTitle?: string;
   heroPoints: string[];
   features: { title: string; desc: string }[];
   benefits: string[];
@@ -477,6 +478,7 @@ const solutionsData: SolutionData[] = [
     title: "Cash Discount & Dual Pricing",
     subtitle: "Keep more of every sale — legally pass processing costs to the card, not your bottom line",
     metaDescription: "Cash discounting, cash discount & dual pricing & surcharging programs for Utah businesses. Eliminate credit card processing fees legally & keep more of every sale.",
+    metaTitle: "Cash Discount & Dual Pricing Programs for Utah",
     description: "Credit card processing fees quietly drain 2.5% to 4% from every card transaction — and for most businesses, that adds up to thousands of dollars every year. UBC Unlimited offers proven, fully compliant programs to help you offset or eliminate those costs entirely. We offer three main approaches: Cash Discount Programs, Dual Pricing, and Credit Card Surcharging. Each program is designed to recover your processing costs while delivering a transparent, compliant experience for your customers.\n\nA Cash Discount Program lets you post a single standard price and automatically apply a discount at checkout when the customer pays with cash. The customer sees the discount on their receipt and feels rewarded — not penalized. Dual Pricing takes a different approach: two prices are displayed side by side (a lower cash price and a standard card price) so customers see the difference upfront and choose their payment method before the transaction begins. Both programs are legal in all 50 states and apply to credit, debit, and prepaid cards.\n\nCredit Card Surcharging adds a disclosed fee to credit card transactions at the point of sale. It is capped at your actual processing cost and must be clearly disclosed before the transaction is completed. Surcharging applies to credit cards only — not debit or prepaid — and has restrictions in a small number of states.\n\nUBC Unlimited handles everything: compliance review, compliant signage and receipt language, hardware configuration, staff training, and ongoing support. We'll analyze your current processing statement, walk you through every option, and implement the program that maximizes savings for your specific business — fully compliant with all applicable regulations.",
     heroPoints: ["Legal in all 50 states (program-dependent)", "Eliminate up to 100% of processing fees", "Compliant signage & receipt language included", "Works with most POS systems & terminals"],
     features: [
@@ -590,7 +592,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
   return (
     <PageLayout>
       <SEO
-        title={`${data.title} in Utah`}
+        title={data.metaTitle ?? `${data.title} in Utah`}
         description={data.metaDescription ?? data.description.slice(0, 155)}
         canonical={`/solutions/${data.slug}`}
         schema={[
