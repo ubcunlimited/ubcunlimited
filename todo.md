@@ -541,3 +541,6 @@
 - [x] R3-15: llms.txt formatting — reformatted to llms.txt spec with markdown links, removed comment lines, proper section headers
 - [x] R3-16: Low text-to-HTML ratio — added 500+ words of body content to non-featured city page template in CityDetail.tsx (affects ~139 non-featured city pages)
 - [x] R3-17: Disallowed external resources (126) — investigated all resources; all are third-party (Manus CDN, GTM, GA, reCAPTCHA, FB Pixel, Plausible) with robots.txt blocking by design; none are render-critical or index-critical; cannot be unblocked
+
+## Internal Linking Expansion (Post Round 3)
+- [x] Add contextual city/county internal links from all 19 blog posts to individual city and county pages — added "Service Area" sections to all 19 blog posts with 107 city link instances (23 unique cities) and 63 county link instances (7 unique counties); reduces orphaned pages count significantly
