@@ -37,6 +37,7 @@ export default function CityDetail() {
         <SEO
           title={`Merchant Services in ${cityName}, Utah | UBC Unlimited`}
           description={`UBC Unlimited provides merchant services and payment processing throughout all of Utah, including ${cityName}. Contact us for a consultation.`}
+          canonical={`/cities/${cityName.toLowerCase().replace(/\s+/g, '-')}`}
         />
         <section className="relative min-h-[60vh] flex items-center bg-[#080808] overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[#c9a84c]/5 to-transparent" />
@@ -44,10 +45,10 @@ export default function CityDetail() {
             <div className="inline-flex items-center gap-2 bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
               <MapPin size={12} /> {cityName}, Utah
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
               We Serve All of Utah —<br />
               <span className="text-[#c9a84c]">Including {cityName}</span>
-            </h1>
+            </h2>
             <p className="text-white/65 text-lg max-w-2xl mx-auto mb-8">
               UBC Unlimited provides merchant services, POS systems, and payment processing to businesses throughout every city in Utah. Our local team is ready to help your business save on processing costs — wherever you're located.
             </p>
@@ -83,7 +84,7 @@ export default function CityDetail() {
             "@type": "LocalBusiness",
             "name": "UBC Unlimited",
             "url": "https://ubcunlimited.com",
-            "telephone": "+18014576500",
+            "telephone": "+18014620923",
             "description": `UBC Unlimited provides merchant services, POS systems, and payment processing to businesses in ${city.name}, Utah.`,
             "address": {
               "@type": "PostalAddress",

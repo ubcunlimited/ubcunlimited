@@ -1,7 +1,14 @@
 import PageLayout from "@/components/layout/PageLayout";
+import SEO from "@/components/SEO";
 export default function CookiePolicy() {
   return (
     <PageLayout>
+      <SEO
+        title="Cookie Policy | UBC Unlimited"
+        description="Learn how UBC Unlimited uses cookies and similar tracking technologies on our website to improve your experience and analyze site traffic."
+        canonical="/legal/cookie-policy"
+        noIndex={true}
+      />
       <section className="bg-[#080808] py-14"><div className="container"><h1 className="text-3xl font-extrabold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>Cookie Policy</h1><p className="text-white/70 mt-2 text-sm">Last updated: January 1, 2025</p></div></section>
       <section className="py-12 bg-white"><div className="container max-w-3xl"><div className="space-y-6 text-gray-600 text-sm leading-relaxed">
         <div><h2 className="text-lg font-bold text-[#080808] mb-2" style={{ fontFamily: 'Sora, sans-serif' }}>What Are Cookies?</h2><p>Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and improve your experience.</p></div>

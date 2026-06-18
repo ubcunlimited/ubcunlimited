@@ -17,10 +17,10 @@ const COMPANY_LINKS = [
 ];
 
 const LEGAL_LINKS = [
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms of Service", href: "/terms-of-service" },
-  { label: "Cookie Policy", href: "/cookie-policy" },
-  { label: "Disclaimer", href: "/disclaimer" },
+  { label: "Privacy Policy", href: "/legal/privacy-policy" },
+  { label: "Terms of Service", href: "/legal/terms-of-service" },
+  { label: "Cookie Policy", href: "/legal/cookie-policy" },
+  { label: "Disclaimer", href: "/legal/disclaimer" },
   { label: "Accessibility", href: "/accessibility" },
 ];
 

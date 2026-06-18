@@ -1,8 +1,15 @@
 import PageLayout from "@/components/layout/PageLayout";
+import SEO from "@/components/SEO";
 
 export default function PrivacyPolicy() {
   return (
     <PageLayout>
+      <SEO
+        title="Privacy Policy | UBC Unlimited"
+        description="Read UBC Unlimited's privacy policy to understand how we collect, use, and protect your personal information when you use our merchant services."
+        canonical="/legal/privacy-policy"
+        noIndex={true}
+      />
       <section className="bg-[#080808] py-14">
         <div className="container">
           <h1 className="text-3xl font-extrabold text-white" style={{ fontFamily: 'Sora, sans-serif' }}>Privacy Policy</h1>

@@ -323,16 +323,16 @@ export default function Testimonials() {
     "publisher": {
       "@type": "LocalBusiness",
       "name": "UBC Unlimited",
-      "url": "https://ubcunlimited.com",
+      "url": "https://ubcunlimited.com"
     },
   };
 
   return (
     <PageLayout>
       <SEO
-        title="Client Testimonials | UBC Unlimited — Utah Merchant Services"
+        title="Client Testimonials | UBC Unlimited Merchant Services"
         description="Real reviews from Utah business owners who switched to UBC Unlimited for payment processing. See what restaurants, retailers, medical practices, and more are saying."
-        canonical="https://ubcunlimited.com/testimonials"
+        canonical="/testimonials"
         schema={schema}
       />
 

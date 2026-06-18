@@ -1,6 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Route, Switch, useLocation } from "wouter";
+import { Route, Switch, useLocation, Redirect } from "wouter";
 import { lazy, Suspense, useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
@@ -226,11 +226,11 @@ function Router() {
           <Route path="/legal/cookie-policy">{() => <CookiePolicy />}</Route>
           <Route path="/legal/disclaimer">{() => <Disclaimer />}</Route>
           <Route path="/accessibility">{() => <AccessibilityStatement />}</Route>
-          {/* Alias routes — footer links use short paths */}
-          <Route path="/privacy-policy">{() => <PrivacyPolicy />}</Route>
-          <Route path="/terms-of-service">{() => <TermsOfService />}</Route>
-          <Route path="/cookie-policy">{() => <CookiePolicy />}</Route>
-          <Route path="/disclaimer">{() => <Disclaimer />}</Route>
+          {/* 301-style redirects: short paths → canonical /legal/* URLs (Fix 1: SEMrush duplicate content) */}
+          <Route path="/privacy-policy">{() => <Redirect to="/legal/privacy-policy" />}</Route>
+          <Route path="/terms-of-service">{() => <Redirect to="/legal/terms-of-service" />}</Route>
+          <Route path="/cookie-policy">{() => <Redirect to="/legal/cookie-policy" />}</Route>
+          <Route path="/disclaimer">{() => <Redirect to="/legal/disclaimer" />}</Route>
 
           {/* Locations */}
           <Route path="/locations">{() => <Locations />}</Route>

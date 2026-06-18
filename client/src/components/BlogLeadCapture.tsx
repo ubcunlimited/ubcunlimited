@@ -150,11 +150,11 @@ export default function BlogLeadCapture({ sourcePage }: BlogLeadCaptureProps) {
             />
             <span className="text-gray-400 text-[11px] leading-relaxed">
               I agree to the{" "}
-              <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>
+              <Link href="/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>
                 Privacy Policy
               </Link>{" "}
               and{" "}
-              <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>
+              <Link href="/legal/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>
                 Terms of Service
               </Link>
               .

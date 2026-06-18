@@ -35,9 +35,9 @@ function LegalConsent({ smsChecked, onSmsChange, termsChecked, onTermsChange, te
           />
           <span className="text-xs text-gray-600 leading-relaxed">
             I agree to the{" "}
-            <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#c9a84c]">Privacy Policy</Link>{" "}
+            <Link href="/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#c9a84c]">Privacy Policy</Link>{" "}
             and{" "}
-            <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#c9a84c]">Terms of Service</Link>.
+            <Link href="/legal/terms-of-service" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#c9a84c]">Terms of Service</Link>.
           </span>
         </label>
         {termsError && <p className="text-red-500 text-xs mt-1 ml-6">{termsError}</p>}
@@ -361,7 +361,7 @@ export default function Contact() {
   return (
     <PageLayout>
       <SEO
-        title="Contact UBC Unlimited — Book a Consultation, Get a Quote, Statement Review"
+        title="Contact UBC Unlimited — Merchant Services Utah"
         description="Contact UBC Unlimited to book a consultation, request a custom merchant services quote, or upload your processing statement for a complimentary savings analysis. Utah's local payment experts."
         canonical="/contact"
       />

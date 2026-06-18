@@ -845,7 +845,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
     return (
       <PageLayout>
         <div className="container py-20 text-center">
-          <h1 className="text-2xl font-bold text-[#080808]">Industry page not found</h1>
+          <h2 className="text-2xl font-bold text-[#080808]">Industry page not found</h2>
           <Link href="/industries" className="btn-teal mt-4 inline-flex">Back to Industries</Link>
         </div>
       </PageLayout>
@@ -874,7 +874,7 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
               "@type": "LocalBusiness",
               "name": "UBC Unlimited",
               "url": "https://ubcunlimited.com",
-              "telephone": "+18014576500",
+              "telephone": "+18014620923",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Salt Lake City",

@@ -566,7 +566,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
     return (
       <PageLayout>
         <div className="container py-20 text-center">
-          <h1 className="text-2xl font-bold text-[#080808]">Solution not found</h1>
+          <h2 className="text-2xl font-bold text-[#080808]">Solution not found</h2>
           <Link href="/solutions" className="btn-teal mt-4 inline-flex">Back to Solutions</Link>
         </div>
       </PageLayout>
@@ -603,7 +603,7 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
               "@type": "LocalBusiness",
               "name": "UBC Unlimited",
               "url": "https://ubcunlimited.com",
-              "telephone": "+18014576500",
+              "telephone": "+18014620923",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Salt Lake City",

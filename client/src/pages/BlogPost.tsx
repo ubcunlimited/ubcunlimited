@@ -57,7 +57,7 @@ Ready to find out exactly how much your business could save? [Request a statemen
   },
 
   "interchange-plus-vs-flat-rate-pricing": {
-    title: "Interchange-Plus vs. Flat-Rate Pricing: Which Is Better for Your Business?",
+    title: "Interchange-Plus vs. Flat-Rate Pricing: Which Is Better?",
     category: "Pricing & Fees",
     date: "2025-01-22",
     readTime: "7 min read",
@@ -212,7 +212,7 @@ Adding ACH payment capability to your business is straightforward. UBC Unlimited
   },
 
   "utah-small-business-payment-trends-2025": {
-    title: "Payment Trends Shaping Utah Small Businesses in 2025 and Beyond",
+    title: "Payment Trends Shaping Utah Small Businesses in 2025",
     category: "News & Updates",
     date: "2025-02-18",
     readTime: "6 min read",
@@ -528,7 +528,7 @@ The right payment processing setup for your restaurant depends on your volume, y
   },
 
   "pci-compliance-guide-small-business": {
-    title: "PCI DSS 4.0 Compliance: What Utah Small Businesses Need to Know",
+    title: "PCI DSS 4.0 Compliance for Utah Small Businesses",
     category: "Compliance & Security",
     date: "2025-04-01",
     readTime: "9 min read",
@@ -578,7 +578,7 @@ Your payment processor should provide PCI compliance support as part of your mer
   },
 
   "cash-discounting-surcharging-utah": {
-    title: "Cash Discount & Dual Pricing vs. Surcharging: What Utah Businesses Need to Know",
+    title: "Cash Discount vs. Surcharging: What Utah Businesses Need to Know",
     category: "Pricing & Fees",
     date: "2025-04-08",
     readTime: "8 min read",
@@ -626,7 +626,7 @@ For most Utah businesses, a cash discount program is the simpler and more custom
   },
 
   "ecommerce-payment-gateway-guide": {
-    title: "Choosing the Right eCommerce Payment Gateway for Your Utah Business",
+    title: "Choosing the Right eCommerce Payment Gateway in Utah",
     category: "eCommerce Payments",
     date: "2025-04-15",
     readTime: "9 min read",
@@ -724,7 +724,7 @@ When evaluating POS systems for your bar, prioritize these capabilities: fast ta
   },
 
   "merchant-services-utah-county": {
-    title: "Merchant Services in Utah County: What Local Businesses Need to Know",
+    title: "Merchant Services in Utah County: A Local Business Guide",
     category: "Industry Guides",
     date: "2025-05-01",
     readTime: "7 min read",
@@ -762,7 +762,7 @@ UBC Unlimited works with businesses across Utah County, including restaurants an
   },
 
   "skytab-pos-review-utah": {
-    title: "SkyTab POS Review: Is It the Right System for Your Utah Business?",
+    title: "SkyTab POS Review: Is It Right for Your Utah Business?",
     category: "POS Systems",
     date: "2025-05-08",
     readTime: "10 min read",
@@ -812,7 +812,7 @@ That said, the right POS system depends on your specific operation. [Book a cons
   },
 
   "high-risk-industries-dropped-by-stripe": {
-    title: "5 Industries That Get Dropped by Stripe (And How to Get a Stable Merchant Account)",
+    title: "5 Industries Dropped by Stripe & How to Get a Stable Account",
     category: "High-Risk Processing",
     date: "2026-03-19",
     readTime: "9 min read",
@@ -1047,7 +1047,7 @@ Payment processing is not just a cost of doing business — it is an infrastruct
     `,
   },
   "how-interchange-rates-work": {
-    title: "How Interchange Rates Work: A Plain-English Guide for Utah Merchants",
+    title: "How Interchange Rates Work: A Guide for Utah Merchants",
     category: "Pricing & Fees",
     date: "2026-03-20",
     readTime: "10 min read",
@@ -1113,7 +1113,7 @@ Here is where it gets important for your business: your pricing model determines
 
 ## The Visa and Mastercard Settlement: What It Means for Merchants
 
-In November 2025, Visa and Mastercard reached a revised settlement with U.S. merchants that includes a reduction in credit card interchange rates by approximately 0.10 percentage points (10 basis points) for five years, along with a cap on rate increases for the same period. According to [CNBC's reporting on the settlement](https://www.cnbc.com/2025/11/10/visa-mastercard-reach-revised-swipe-fee-settlement-with-merchants-.html), the settlement also gives merchants more flexibility in how they route transactions.
+In November 2025, Visa and Mastercard reached a revised settlement with U.S. merchants that includes a reduction in credit card interchange rates by approximately 0.10 percentage points (10 basis points) for five years, along with a cap on rate increases for the same period. According to [Federal Reserve interchange fee data](https://www.federalreserve.gov/paymentsystems/regii-average-interchange-fee.htm), the settlement also gives merchants more flexibility in how they route transactions.
 
 While a 0.10% reduction may sound small, it represents meaningful savings for high-volume merchants. For a business processing $500,000 per year in credit card volume, a 0.10% rate reduction saves $500 per year — without any other changes to your setup.
 
@@ -1143,11 +1143,11 @@ If you have never had your processing statement reviewed by someone who can expl
 2. [Visa — Interchange Reimbursement Fees (Published Schedule)](https://usa.visa.com/support/small-business/regulations-fees.html)
 3. [Visa — Interchange Reimbursement Fees PDF (Direct Download)](https://usa.visa.com/content/dam/VCOM/download/merchants/visa-usa-interchange-reimbursement-fees.pdf)
 4. [Mastercard — Interchange Rates Explained](https://www.mastercard.com/us/en/business/support/merchant-interchange-rates.html)
-5. [Mastercard — U.S. Region Interchange Bulletin PDF (Direct Download)](https://www.mastercard.com/content/dam/mccom/us/business/documents/merchant-rates-2025-2026.pdf)
+5. [Federal Reserve — Debit Card Interchange Fee Data](https://www.federalreserve.gov/paymentsystems/regii-average-interchange-fee.htm)
 6. [Discover Global Network — Merchant Partners](https://www.discoverglobalnetwork.com/partners/merchants/)
 7. [American Express — OptBlue Program for Merchants](https://www.americanexpress.com/us/merchant/optblue.html)
 8. [Federal Register — Debit Card Interchange Fees and Routing (Durbin Amendment)](https://www.federalregister.gov/documents/2023/11/14/2023-24034/debit-card-interchange-fees-and-routing)
-9. [CNBC — Visa, Mastercard Reach Revised Swipe Fee Settlement with Merchants (November 2025)](https://www.cnbc.com/2025/11/10/visa-mastercard-reach-revised-swipe-fee-settlement-with-merchants-.html)
+9. [Federal Reserve — Average Interchange Fee Data](https://www.federalreserve.gov/paymentsystems/regii-average-interchange-fee.htm)
 10. [Merchants Payments Coalition — Swipe Fees Hit Record $187.2 Billion in 2024](https://www.merchantspaymentscoalition.com/credit-and-debit-card-swipe-fees-hit-new-record-1872-billion-driving-prices-american-families)
     `,
   },
@@ -1166,7 +1166,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         <SEO title="Article Not Found" noIndex />
         <section className="bg-[#080808] py-14">
           <div className="container">
-            <h1 className="text-3xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>Article Not Found</h1>
+            <h2 className="text-3xl font-extrabold text-white mb-4" style={{ fontFamily: 'Sora, sans-serif' }}>Article Not Found</h2>
             <p className="text-white/60 mb-6">This article does not exist or may have been moved.</p>
             <Link href="/blog" className="btn-teal py-2.5 px-5">Back to Blog</Link>
           </div>

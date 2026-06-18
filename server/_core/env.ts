@@ -9,4 +9,5 @@ export const ENV = {
   forgeApiUrl: process.env.BUILT_IN_FORGE_API_URL ?? "",
   forgeApiKey: process.env.BUILT_IN_FORGE_API_KEY ?? "",
   recaptchaSecretKey: process.env.RECAPTCHA_SECRET_KEY ?? "",
+  semrushApiKey: process.env.SEMRUSH_API_KEY ?? "",
 };

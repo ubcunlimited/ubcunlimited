@@ -149,7 +149,7 @@ export default function Home() {
             "alternateName": "UBC Unlimited Merchant Services",
             "description": "Utah merchant services provider offering credit card processing, POS systems, ACH payments, cash discount & dual pricing, and payment gateway solutions for businesses across Utah.",
             "url": "https://ubcunlimited.com",
-            "telephone": "+18014576500",
+            "telephone": "+18014620923",
             "email": "info@ubcunlimited.com",
             "logo": "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png",
             "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png",
@@ -345,9 +345,9 @@ export default function Home() {
                     />
                     <span className="text-white/70 text-[11px] leading-relaxed">
                       I agree to the{" "}
-                      <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>Privacy Policy</Link>{" "}
+                      <Link href="/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>Privacy Policy</Link>{" "}
                       and{" "}
-                      <Link href="/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>Terms of Service</Link>.
+                      <Link href="/legal/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] hover:underline" onClick={(e) => e.stopPropagation()}>Terms of Service</Link>.
                     </span>
                   </label>
                   {heroError && (

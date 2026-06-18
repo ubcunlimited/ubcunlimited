@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Calendar, CheckCircle, ArrowRight, Phone } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
+import SEO from "@/components/SEO";
 import { SITE } from "@/lib/config";
 import { trackLead } from "@/lib/pixel";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
@@ -32,6 +33,11 @@ export default function Consultation() {
 
   return (
     <PageLayout>
+      <SEO
+        title="Book a Free Merchant Services Consultation | UBC Unlimited"
+        description="Schedule a no-obligation consultation with a local Utah payment processing expert. We'll review your current costs and build a custom solution for your business."
+        canonical="/consultation"
+      />
       {/* Hero */}
       <section className="bg-[#080808] py-10 sm:py-16">
         <div className="container">

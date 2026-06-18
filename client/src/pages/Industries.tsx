@@ -261,7 +261,7 @@ export default function Industries() {
   return (
     <PageLayout>
       <SEO
-        title="Industries We Serve — Tailored Merchant Services for Every Business"
+        title="Industries We Serve | Merchant Services Utah | UBC Unlimited"
         description="Payment solutions built for your industry. Restaurants, retail, medical, automotive, eCommerce, firearms, CBD, nutraceuticals, high-risk & more. Utah merchant services with local support."
         canonical="/industries"
       />

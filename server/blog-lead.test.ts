@@ -13,6 +13,10 @@ vi.mock("./_core/notification", () => ({
   notifyOwner: vi.fn().mockResolvedValue(true),
 }));
 
+vi.mock("./webhook", () => ({
+  sendToWebhook: vi.fn().mockResolvedValue(undefined),
+}));
+
 import { insertBlogLead } from "./db";
 import { notifyOwner } from "./_core/notification";
 

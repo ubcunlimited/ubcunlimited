@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Upload, CheckCircle, ArrowRight, TrendingDown } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
+import SEO from "@/components/SEO";
 
 const steps = [
   { step: "1", title: "Submit Your Statement", desc: "Upload or email us your most recent processing statement." },
@@ -19,6 +20,11 @@ export default function StatementReview() {
 
   return (
     <PageLayout>
+      <SEO
+        title="Free Merchant Statement Review — Find Hidden Fees | UBC Unlimited"
+        description="Submit your current processing statement for a free line-by-line analysis. UBC Unlimited's Utah experts identify every hidden fee and show you exactly how much you can save."
+        canonical="/statement-review"
+      />
       <section className="bg-[#080808] py-10 sm:py-16">
         <div className="container">
           <div className="max-w-xl">

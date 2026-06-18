@@ -349,7 +349,7 @@ export default function TestimonialSubmissionForm() {
             <span className="text-gray-600 text-[11px] leading-relaxed">
               I agree to the{" "}
               <Link
-                href="/privacy-policy"
+                href="/legal/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#c9a84c] hover:underline"
@@ -359,7 +359,7 @@ export default function TestimonialSubmissionForm() {
               </Link>{" "}
               and{" "}
               <Link
-                href="/terms-of-service"
+                href="/legal/terms-of-service"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#c9a84c] hover:underline"

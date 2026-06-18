@@ -469,3 +469,28 @@
 - [x] Add SEMRUSH_API_KEY secret via webdev_request_secrets
 - [x] Add /admin route to App.tsx with Manus auth protection
 - [x] Wire SEMrush API calls through server-side tRPC procedures (never expose API key to client)
+
+## SEMrush SEO Fixes (from manus_seo_fix_prompt_ubcunlimited.md)
+
+### Priority 1 — Root-cause fixes
+- [x] Fix 1: Consolidate duplicate legal pages — 301-redirect /privacy-policy → /legal/privacy-policy, /cookie-policy → /legal/cookie-policy, /terms-of-service → /legal/terms-of-service, /disclaimer → /legal/disclaimer; update all internal links
+- [x] Fix 2: Fix multiple canonical tags on CityDetail, CountyDetail, BlogPost — each must emit exactly ONE canonical
+- [x] Fix 3: Enforce single H1 per page — demote fallback/error H1s to h2 in CityDetail, CountyDetail, BlogPost, SolutionDetail, IndustryDetail
+- [x] Fix 4: Generate unique meta descriptions on all programmatic templates (cities, counties, industries, solutions, blog)
+
+### Priority 2 — Errors & warnings
+- [x] Fix 5: Unique title tags for /consultation, /disclaimer, /statement-review, /terms-of-service, /solutions/dual-pricing
+- [x] Fix 6: Shorten over-length titles on 15 pages (blog, /contact, /industries, /solutions, /testimonials)
+- [x] Fix 7: Fix structured data on /solutions and /testimonials (validate JSON-LD, fix required fields)
+- [x] Fix 8: Fix broken external links on /blog/how-interchange-rates-work (CNBC 403, MC PDF 403)
+- [ ] Fix 9: Add 300+ word content to /cities/kearns, /counties/daggett, /counties/sevier, /counties/wasatch, /solutions/dual-pricing
+- [ ] Fix 10: Performance — lazy-load images, defer non-critical JS on 18 slow pages
+
+### Priority 3 — Notices
+- [x] Fix 11: Replace non-descriptive anchor text on 19 blog pages (verified — none found, already descriptive)
+- [ ] Fix 12: Improve internal linking — add hub page or cross-links so every sitemap URL has 2+ internal links
+- [ ] Fix 13: Distinguish H1 from title on utility/legal pages
+- [ ] Fix 14: Optimize content on /blog/mobile-payment-solutions-utah, /industries/adult-entertainment, /industries/nutraceuticals, /industries/online-pharmacy, /industries/subscription-continuity
+- [x] Fix 15: Update internal link to /accessibility (verified — route is direct, no redirect) (currently 301 redirect)
+- [x] Fix 16: Fix llms.txt formatting
+- [ ] Fix 17: Verify disallowed external resources — no render-critical assets blocked

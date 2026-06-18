@@ -1,0 +1,41 @@
+# UBC Unlimited — Merchant Services Utah
+# https://ubcunlimited.com
+# llms.txt — Machine-readable site summary for AI/LLM crawlers
+
+## About
+UBC Unlimited is a Utah-based merchant services company providing payment processing, POS systems, and credit card processing solutions to businesses across Utah. Led by Josh Cornia, UBC Unlimited offers local support, competitive rates, and fast onboarding for businesses of all sizes and risk profiles.
+
+## Contact
+- Phone: (801) 462-0923
+- Address: Salt Lake City, Utah
+- Website: https://ubcunlimited.com
+- Consultation: https://ubcunlimited.com/consultation
+
+## Core Services
+- Credit card processing
+- ACH & eCheck processing
+- POS systems (SkyTab)
+- eCommerce payments
+- Mobile processing
+- Virtual terminals
+- Invoicing & recurring billing
+- Gift & loyalty programs
+- Cash discount & dual pricing
+- High-risk merchant accounts
+- Check guarantee
+
+## Key Pages
+- Home: https://ubcunlimited.com/
+- Solutions: https://ubcunlimited.com/solutions
+- Industries: https://ubcunlimited.com/industries
+- Locations: https://ubcunlimited.com/locations
+- Blog: https://ubcunlimited.com/blog
+- Contact: https://ubcunlimited.com/contact
+- Consultation: https://ubcunlimited.com/consultation
+- Statement Review: https://ubcunlimited.com/statement-review
+
+## Service Area
+Utah, including Salt Lake City, Provo, Orem, Lehi, Ogden, St. George, and all Utah counties.
+
+## Industries Served
+Retail, restaurants, healthcare, automotive, e-commerce, high-risk, adult entertainment, nutraceuticals, online pharmacy, subscription/continuity, firearms, CBD/hemp, travel, and more.

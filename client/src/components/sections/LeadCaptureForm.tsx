@@ -146,7 +146,7 @@ export default function LeadCaptureForm({
             {/* SMS consent */}
             <p className={`text-xs leading-relaxed ${dark ? "text-white/60" : "text-gray-600"}`}>
               By submitting this form you agree to receive transactional SMS messages from UBC Unlimited. Message &amp; data rates may apply. Reply STOP to opt out. See our{" "}
-              <Link href="/privacy-policy" className="underline hover:text-[#c9a84c]">Privacy Policy</Link>.
+              <Link href="/legal/privacy-policy" className="underline hover:text-[#c9a84c]">Privacy Policy</Link>.
             </p>
 
             <button type="submit" className="btn-gold w-full justify-center py-3 text-sm font-semibold">
