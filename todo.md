@@ -519,3 +519,6 @@
 - [x] R2-13: Verified in Round 1 (Fix 11) — all anchor text is already descriptive
 - [x] R2-14: Verified in Round 1 (Fix 15) — /accessibility route is direct, no redirect
 - [x] R2-15: Fixed in Round 1 (Fix 16) — properly formatted llms.txt created in /public
+
+## Round 3 — Thin County Content
+- [x] Add 300+ word unique content to all remaining thin county pages: Uintah, Duchesne, Carbon, Millard, Kane, Beaver, Grand, San Juan, Wayne, Piute, Morgan, Juab (12 new counties; Box Elder, Wasatch, Sevier already had content from Round 2)
