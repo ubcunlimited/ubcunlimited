@@ -67,10 +67,10 @@ export default function Solutions() {
             "description": "UBC Unlimited offers a full suite of payment processing solutions for Utah businesses including credit card processing, POS systems, cash discount & dual pricing, ACH, and ecommerce gateways.",
             "url": "https://ubcunlimited.com/solutions",
             "publisher": {
-              "@type": "LocalBusiness",
+              "@type": "Organization",
               "@id": "https://ubcunlimited.com/#organization",
               "name": "UBC Unlimited",
-              "url": "https://ubcunlimited.com"
+              "sameAs": "https://ubcunlimited.com"
             },
             "mainEntity": {
               "@type": "ItemList",

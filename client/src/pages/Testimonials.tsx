@@ -322,10 +322,10 @@ export default function Testimonials() {
       "description": "Real reviews from Utah business owners who switched to UBC Unlimited for payment processing. See what restaurants, retailers, medical practices, and more are saying.",
       "url": "https://ubcunlimited.com/testimonials",
       "publisher": {
-        "@type": "LocalBusiness",
+        "@type": "Organization",
         "@id": "https://ubcunlimited.com/#organization",
         "name": "UBC Unlimited",
-        "url": "https://ubcunlimited.com"
+        "sameAs": "https://ubcunlimited.com"
       }
     },
     {
