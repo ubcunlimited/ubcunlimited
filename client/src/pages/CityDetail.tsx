@@ -61,7 +61,7 @@ export default function CityDetail() {
     return (
       <PageLayout>
         <SEO
-          title={`Merchant Services in ${cityName}, Utah`}
+          title={cityName.length > 14 ? `${cityName} Merchant Services` : `Merchant Services in ${cityName}, Utah`}
           description={cityMetaDescription(cityName, city?.county ?? 'salt-lake', city?.slug ?? cityName.toLowerCase().replace(/\s+/g, '-'))}
           canonical={`/cities/${(city?.slug || cityName.toLowerCase().replace(/\s+/g, '-'))}`}
         />

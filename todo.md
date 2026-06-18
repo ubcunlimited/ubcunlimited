@@ -573,3 +573,11 @@
 ## Round 8 Fixes (Jun 18, 2026 — Structured Data + Slow Pages)
 - [x] R8-Schema: Fix 2 invalid structured data items — Solutions.tsx and Testimonials.tsx used LocalBusiness as publisher @type (invalid; publisher must be Organization or Person) and url property (invalid on publisher; must be sameAs). Fixed both to @type: Organization with sameAs.
 - [x] R8-Speed: 24 slow city pages — pre-publish audit (9:42 AM). Bundle splitting + warmup ping deployed in checkpoint 9eb14ad7. Will resolve after next SEMrush crawl.
+
+## Round 9 Fixes (Jun 18, 2026 — SEMrush follow-up)
+- [x] R9-TextHTML: INVESTIGATED — root cause is the Manus platform's required vite-plugin-manus-runtime injecting a 367 KB inline <script> into every page (96.7% of HTML is script). This is a platform-level constraint that cannot be removed. SEMrush should be configured to exclude this check, or the issue should be marked as "Hidden" in the audit since it is not a content quality problem.
+- [x] R9-H1: Fixed 21 county pages missing H1 — CountyDetail.tsx non-featured branch used <h2> for hero heading. Changed to <h1>Merchant Services in {county}, Utah</h1> and demoted the old h2 text to a styled <p> subtitle.
+- [x] R9-TitleTooLong: Fixed 4 pages with overly long title tags — shortened blog post titles ("Cash Discount vs. Surcharging in Utah" = 54 chars, "5 Industries Stripe Drops & Better Alternatives" = 63 chars) and changed CityDetail.tsx non-featured branch to use "{CityName} Merchant Services" format for city names longer than 14 chars (Cottonwood Heights = 52 chars, Washington Terrace = 52 chars). All 30 tests pass.
+
+> Initial screenshot findings saved: one issue set shows 225 pages with low text-to-HTML ratio, affecting the homepage, about, accessibility, blog hub, multiple blog posts, cities index, many city detail pages, solution pages, statement-review, and testimonials. Another issue set shows 21 county pages missing an H1 heading.
+

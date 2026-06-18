@@ -82,10 +82,13 @@ export default function CountyDetail() {
             <div className="inline-flex items-center gap-2 bg-[#c9a84c]/10 border border-[#c9a84c]/30 text-[#c9a84c] text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
               <MapPin size={12} /> {county?.name || "Your County"}, Utah
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
-              We Serve All of Utah —<br />
+            <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
+              Merchant Services in {county?.name || "Your County"}, Utah
+            </h1>
+            <p className="text-2xl text-white/80 mb-4" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
+              We Serve All of Utah —{" "}
               <span className="text-[#c9a84c]">Including {county?.name || "Your County"}</span>
-            </h2>
+            </p>
             <p className="text-white/65 text-lg max-w-2xl mx-auto mb-8">
               UBC Unlimited provides merchant services, POS systems, and payment processing to businesses throughout every county in Utah. Our local team is ready to help your business save on processing costs.
             </p>
@@ -111,6 +114,7 @@ export default function CountyDetail() {
             <h2 className="text-2xl md:text-3xl font-extrabold text-[#080808] mb-6" style={{ fontFamily: "DM Serif Display, Georgia, serif" }}>
               Payment Processing Services for {county?.name || "Your County"} Businesses
             </h2>
+            {/* H1 is in the hero section above; this h2 is the first body heading */}
             <p className="text-gray-700 text-base leading-relaxed mb-4">
               {county?.name || "This county"} is one of Utah’s 29 counties, and UBC Unlimited is proud to serve businesses throughout the area{county?.seat ? ` including ${county.seat} and surrounding communities` : ""}. Whether you run a retail shop, restaurant, service business, or eCommerce store in {county?.name || "this county"}, our team offers tailored merchant services designed to reduce your processing costs and simplify how you accept payments.
             </p>
