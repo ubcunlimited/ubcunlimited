@@ -625,3 +625,7 @@
   3. Lazy-loaded SkyTabPOSBuilder inside SolutionDetail.tsx — only loaded on pos-systems page
   4. Added Vite manualChunks for 4 large data files: industryPairs.ts (101 KB chunk), utahLocations.ts (85 KB chunk), solutionPairs.ts, utahCountyPaths.ts — each only fetched when their respective routes are visited
   5. All 30 tests pass. Build succeeds with correct chunk output.
+
+## Round 19 — SEMrush Crawler Discovery Fix (Jun 24, 2026)
+
+- [x] R19-Crawl: Diagnosed root cause of SEMrush only seeing 17 pages: SEMrush is a non-JS crawler and receives only the static HTML shell with an empty <div id="root">. React never executes, so no page content or internal links are visible. The old static scaffold had only 5 nav links. Created scripts/generate-static-scaffold.mjs that generates a comprehensive crawler scaffold in index.html with 237 crawlable links covering all 11 solution pages, 22 industry pages, 19 blog posts, 29 county pages, 134 city pages, and 13 core/company pages. Scaffold is hidden from real users once React hydrates (MutationObserver). Added "scaffold" script to package.json and wired into build pipeline. All 30 tests pass.
