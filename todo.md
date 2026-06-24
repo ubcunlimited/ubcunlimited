@@ -604,3 +604,7 @@
 
 - [x] R14-LLMS: Rebuilt llms.txt following the official llmstxt.org specification — H1 title, blockquote summary, free-text context paragraphs, then H2-delimited file lists with [name](url): description format. 7 sections: Core Pages, Payment Solutions, Industries Served, Blog & Resources, Utah Service Area, Legal, Optional. All 12 solutions, 23 industries, 19 blog posts, 16 key city/county pages, and 4 legal pages linked. All URLs use canonical non-www domain (https://ubcunlimited.com). Removed "Josh Cornia" name reference from old file.
 - [x] R14-Robots: Fixed robots.txt Sitemap directive from www to non-www canonical URL (https://ubcunlimited.com/sitemap.xml). All three files (llms.txt, robots.txt, sitemap.xml) now consistently use the canonical non-www domain.
+
+## Round 15 — Dynamic Sitemap Generator (Jun 24, 2026)
+
+- [x] R15-Sitemap: Created scripts/generate-sitemap.mjs — a Node.js script that dynamically generates sitemap.xml by reading all route sources (utahLocations.ts for 29 counties + 134 cities, blogData.ts for 19 blog slugs + dates, hardcoded static pages for 54 core/solutions/industries/legal pages). Output: 236 URLs total, all canonical non-www https://ubcunlimited.com, valid XML. Added "sitemap" script to package.json so it can be run with pnpm sitemap. All 30 tests pass.
