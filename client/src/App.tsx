@@ -7,12 +7,14 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import { installPhoneClickTracker } from "@/lib/pixel";
 
 // ── Eagerly loaded (critical path) ──────────────────────────────────────────
-import Home from "./pages/Home";
+// Only shell-level components that must render on every page are eagerly loaded.
 import CookieConsent from "./components/CookieConsent";
 import FloatingLauncher from "./components/FloatingLauncher";
 import RecaptchaBadge from "./components/RecaptchaBadge";
 
 // ── Lazy-loaded pages (split into separate chunks) ───────────────────────────
+// Home — lazy so its 700-line bundle is not parsed on non-home page visits
+const Home = lazy(() => import("./pages/Home"));
 // Core
 const About = lazy(() => import("./pages/About"));
 const Testimonials = lazy(() => import("./pages/Testimonials"));
@@ -156,7 +158,7 @@ function Router() {
       <ScrollToTop />
       <Suspense fallback={<PageFallback />}>
         <Switch>
-          {/* Core — Home is eagerly loaded */}
+          {/* Core — Home is lazy-loaded with its own chunk */}
           <Route path="/" component={Home} />
           <Route path="/about">{() => <About />}</Route>
           <Route path="/testimonials">{() => <Testimonials />}</Route>

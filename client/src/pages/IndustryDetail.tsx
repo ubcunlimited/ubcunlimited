@@ -6,7 +6,10 @@ import { getSolutionPath } from "@/lib/solutionTagMap";
 import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
-import SkyTabPOSBuilder from "@/components/sections/SkyTabPOSBuilder";
+import { lazy, Suspense } from "react";
+// SkyTabPOSBuilder is 945 lines — only shown on restaurants & bars pages.
+// Lazy-load it so all other 20 industry pages don't pay its parse cost.
+const SkyTabPOSBuilder = lazy(() => import("@/components/sections/SkyTabPOSBuilder"));
 import { NAV_INDUSTRIES, NAV_SOLUTIONS } from "@/lib/config";
 import SEO from "@/components/SEO";
 import IndustryIcon from "@/components/icons/IndustryIcon";
@@ -1155,7 +1158,11 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
       </section>
 
       {/* SkyTab POS Builder — shown for restaurant & bar industries */}
-      {(data.slug === "restaurants" || data.slug === "bars-nightclubs") && <SkyTabPOSBuilder />}
+      {(data.slug === "restaurants" || data.slug === "bars-nightclubs") && (
+        <Suspense fallback={<div className="py-16 bg-[#080808] animate-pulse" aria-hidden="true" />}>
+          <SkyTabPOSBuilder />
+        </Suspense>
+      )}
 
       <FAQ items={data.faqs} />
 

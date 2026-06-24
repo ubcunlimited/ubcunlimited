@@ -1,6 +1,9 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle, ChevronRight, Clock, Phone, Shield, TrendingUp, Zap, Star, AlertCircle } from "lucide-react";
-import SkyTabPOSBuilder from "@/components/sections/SkyTabPOSBuilder";
+import { lazy, Suspense } from "react";
+// SkyTabPOSBuilder is 945 lines — only shown on the pos-systems page.
+// Lazy-load it so all other 11 solution pages don't pay its parse cost.
+const SkyTabPOSBuilder = lazy(() => import("@/components/sections/SkyTabPOSBuilder"));
 import { SOLUTION_PAIRS } from "@/lib/solutionPairs";
 import { getSolutionPath } from "@/lib/solutionTagMap";
 import PageLayout from "@/components/layout/PageLayout";
@@ -978,7 +981,11 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
       </section>
 
       {/* ── SkyTab POS Builder — POS Systems page only ── */}
-      {data.slug === "pos-systems" && <SkyTabPOSBuilder />}
+      {data.slug === "pos-systems" && (
+        <Suspense fallback={<div className="py-16 bg-[#080808] animate-pulse" aria-hidden="true" />}>
+          <SkyTabPOSBuilder />
+        </Suspense>
+      )}
 
       {/* Gateway Logos — eCommerce only */}
       {data.slug === "ecommerce-payments" && (

@@ -616,3 +616,12 @@
 ## Round 17 — Dynamic llms.txt Generator (Jun 24, 2026)
 
 - [x] R17-LLMS: Created scripts/generate-llms-txt.mjs — reads utahLocations.ts (29 counties + 134 cities with names/slugs/featured flags), blogData.ts (19 posts with full excerpts), and config.ts (11 solutions + 22 industries with labels/hrefs/descs). Generates spec-compliant llms.txt: H1 → blockquote → free-text context → 7 H2 sections (Core Pages, Payment Solutions, Industries Served, Blog & Resources, Utah Service Area, Legal, Optional). Featured cities in main body; 114 non-featured cities in Optional section for shorter-context skipping. Added "llms-txt" script to package.json and wired into build pipeline alongside sitemap generator. All 30 tests pass.
+
+## Round 18 — Page Load Speed Fix (Jun 24, 2026)
+
+- [x] R18-Speed: Fixed slow load speed on 6 pages. Changes made:
+  1. Lazy-loaded Home.tsx (was eagerly imported — now a separate 65 KB gzip chunk deferred until the home route is visited)
+  2. Lazy-loaded SkyTabPOSBuilder (945 lines, 83 KB gzip) inside IndustryDetail.tsx — only loaded on restaurants/bars pages
+  3. Lazy-loaded SkyTabPOSBuilder inside SolutionDetail.tsx — only loaded on pos-systems page
+  4. Added Vite manualChunks for 4 large data files: industryPairs.ts (101 KB chunk), utahLocations.ts (85 KB chunk), solutionPairs.ts, utahCountyPaths.ts — each only fetched when their respective routes are visited
+  5. All 30 tests pass. Build succeeds with correct chunk output.
