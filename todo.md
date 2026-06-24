@@ -612,3 +612,7 @@
 ## Round 16 — Sitemap Auto-Build Integration (Jun 24, 2026)
 
 - [x] R16-Build: Prepended sitemap generator to the build script in package.json — `"build": "node scripts/generate-sitemap.mjs && vite build && esbuild ..."`. The sitemap is now regenerated automatically on every publish/deploy, picking up any new blog posts (with correct lastmod dates from blogData.ts) and any new city/county slugs added to utahLocations.ts. All 30 tests pass.
+
+## Round 17 — Dynamic llms.txt Generator (Jun 24, 2026)
+
+- [x] R17-LLMS: Created scripts/generate-llms-txt.mjs — reads utahLocations.ts (29 counties + 134 cities with names/slugs/featured flags), blogData.ts (19 posts with full excerpts), and config.ts (11 solutions + 22 industries with labels/hrefs/descs). Generates spec-compliant llms.txt: H1 → blockquote → free-text context → 7 H2 sections (Core Pages, Payment Solutions, Industries Served, Blog & Resources, Utah Service Area, Legal, Optional). Featured cities in main body; 114 non-featured cities in Optional section for shorter-context skipping. Added "llms-txt" script to package.json and wired into build pipeline alongside sitemap generator. All 30 tests pass.
