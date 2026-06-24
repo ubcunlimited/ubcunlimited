@@ -608,3 +608,7 @@
 ## Round 15 — Dynamic Sitemap Generator (Jun 24, 2026)
 
 - [x] R15-Sitemap: Created scripts/generate-sitemap.mjs — a Node.js script that dynamically generates sitemap.xml by reading all route sources (utahLocations.ts for 29 counties + 134 cities, blogData.ts for 19 blog slugs + dates, hardcoded static pages for 54 core/solutions/industries/legal pages). Output: 236 URLs total, all canonical non-www https://ubcunlimited.com, valid XML. Added "sitemap" script to package.json so it can be run with pnpm sitemap. All 30 tests pass.
+
+## Round 16 — Sitemap Auto-Build Integration (Jun 24, 2026)
+
+- [x] R16-Build: Prepended sitemap generator to the build script in package.json — `"build": "node scripts/generate-sitemap.mjs && vite build && esbuild ..."`. The sitemap is now regenerated automatically on every publish/deploy, picking up any new blog posts (with correct lastmod dates from blogData.ts) and any new city/county slugs added to utahLocations.ts. All 30 tests pass.
