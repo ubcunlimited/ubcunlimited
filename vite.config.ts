@@ -185,6 +185,8 @@ export default defineConfig({
     cssMinify: true,
     // Split CSS per chunk so lazy-loaded routes only load their own CSS
     cssCodeSplit: true,
+    // Generate manifest.json so the server can always inject the correct hashed entry script
+    manifest: true,
     // Content-hash filenames for immutable caching
     rollupOptions: {
       output: {
