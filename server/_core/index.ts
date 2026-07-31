@@ -33,6 +33,7 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 const ALLOWED_ORIGINS = [
   "https://ubcunlimited.com",
   "https://www.ubcunlimited.com",
+  /\.up\.railway\.app$/,  // Railway-generated deploy domains
   /^http:\/\/localhost/,  // local dev
   /^http:\/\/127\.0\.0\.1/,  // local dev (IP form)
 ];
@@ -53,11 +54,11 @@ async function startServer() {
         const allowed = ALLOWED_ORIGINS.some(o =>
           typeof o === "string" ? o === origin : o.test(origin)
         );
-        if (allowed) {
-          callback(null, true);
-        } else {
-          callback(new Error(`CORS: origin '${origin}' not allowed`));
-        }
+        // Never throw: an Error here becomes a 500 on every asset the browser
+        // requests with an Origin header (module scripts are crossorigin), which
+        // blanks the page. Disallowed origins simply get no CORS headers —
+        // same-origin requests still work fine without them.
+        callback(null, allowed);
       },
       credentials: true,          // required for session cookies
       methods: ["GET", "POST", "OPTIONS"],
