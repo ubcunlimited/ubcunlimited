@@ -199,9 +199,10 @@ export default defineConfig({
             return "assets/fonts/[name]-[hash][extname]";
           return "assets/[name]-[hash][extname]";
         },
-        // Safe manualChunks using function form (not object form) to avoid
-        // TDZ circular-dependency errors. The function form lets Rollup resolve
-        // the module graph first, then we assign chunks by package prefix.
+        // Safe manualChunks: only split well-known non-circular packages.
+        // The vendor-misc catch-all was removed because it caused TDZ
+        // (temporal dead zone) circular-dependency errors at runtime.
+        // Vite/Rollup handles remaining packages automatically.
         manualChunks(id) {
           // React core — always needed, cache separately
           if (id.includes('node_modules/react/') || id.includes('node_modules/react-dom/')) {
@@ -219,32 +220,8 @@ export default defineConfig({
           if (id.includes('node_modules/lucide-react')) {
             return 'vendor-icons';
           }
-          // Other node_modules go into a shared vendor chunk
-          if (id.includes('node_modules/')) {
-            return 'vendor-misc';
-          }
-          // Large app data files — split into separate chunks so they are only
-          // fetched when the route that needs them is visited.
-          // industryPairs.ts (110 KB) — only IndustryDetail needs it
-          if (id.includes('client/src/lib/industryPairs')) {
-            return 'data-industry-pairs';
-          }
-          // utahLocations.ts (92 KB) — only CityDetail / CountyDetail need it
-          if (id.includes('client/src/lib/utahLocations')) {
-            return 'data-utah-locations';
-          }
-          // solutionPairs.ts (29 KB) — only SolutionDetail needs it
-          if (id.includes('client/src/lib/solutionPairs')) {
-            return 'data-solution-pairs';
-          }
-          // utahCountyPaths.ts (28 KB) — only county pages need it
-          if (id.includes('client/src/lib/utahCountyPaths')) {
-            return 'data-county-paths';
-          }
-          // SkyTabPOSBuilder (945 lines) — only restaurants/bars/pos-systems pages
-          if (id.includes('SkyTabPOSBuilder')) {
-            return 'section-skytab-pos';
-          }
+          // NOTE: No vendor-misc catch-all — that caused TDZ circular-dep errors.
+          // Let Vite/Rollup handle remaining node_modules automatically.
         },
       },
     },
