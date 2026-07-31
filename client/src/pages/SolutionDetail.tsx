@@ -1,9 +1,9 @@
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle, ChevronRight, Clock, Phone, Shield, TrendingUp, Zap, Star, AlertCircle } from "lucide-react";
 import { lazy, Suspense } from "react";
-// SkyTabPOSBuilder is 945 lines — only shown on the pos-systems page.
+// Shift4DinePOSBuilder is 945 lines — only shown on the pos-systems page.
 // Lazy-load it so all other 11 solution pages don't pay its parse cost.
-const SkyTabPOSBuilder = lazy(() => import("@/components/sections/SkyTabPOSBuilder"));
+const Shift4DinePOSBuilder = lazy(() => import("@/components/sections/Shift4DinePOSBuilder"));
 import { SOLUTION_PAIRS } from "@/lib/solutionPairs";
 import { getSolutionPath } from "@/lib/solutionTagMap";
 import PageLayout from "@/components/layout/PageLayout";
@@ -106,7 +106,7 @@ const SOLUTION_HOW_IT_WORKS: Record<string, { step: string; title: string; desc:
     { step: "03", title: "Seamless Setup", desc: "Our team handles everything — equipment, integration, and training. Most accounts are active within 24–48 hours. POS system installations typically require a 14-day lead time from approval." },
   ],
   "pos-systems": [
-    { step: "01", title: "Consultation & Demo", desc: "We walk you through SkyTab's features and configure a demo around your specific menu, floor plan, and service model." },
+    { step: "01", title: "Consultation & Demo", desc: "We walk you through Shift4Dine's features and configure a demo around your specific menu, floor plan, and service model." },
     { step: "02", title: "Custom Configuration", desc: "We build your menu, set up your floor plan, configure staff permissions, and integrate your online ordering before installation day." },
     { step: "03", title: "On-Site Installation & Go-Live", desc: "Our Utah-based team installs your hardware, trains your staff, and stays until everything is running smoothly — targeting a full go-live within 14 days of approval." },
   ],
@@ -252,12 +252,12 @@ const solutionsData: SolutionData[] = [
     icon: "🖥️",
     title: "POS Systems",
     subtitle: "Industry-leading point-of-sale systems built for restaurants, bars, retail, and beyond",
-    metaDescription: "SkyTab POS systems for Utah restaurants, bars & retail. Built-in payment processing, online ordering & loyalty programs. Local support, 14-day go-live target.",
-    description: "UBC Unlimited partners with SkyTab — powered by Shift4, one of the largest payment technology companies in the world — to deliver a complete, all-in-one POS platform for restaurants, bars, quick-service, and multi-location businesses. From tableside ordering and kitchen display systems to online ordering, loyalty programs, and real-time analytics, our POS solutions are designed to transform your operations from front-of-house to back-of-house. Every system comes with local installation, training, and ongoing support from our Utah-based team.",
-    heroPoints: ["SkyTab — powered by Shift4", "Restaurant, bar & quick-service ready", "Online ordering & tableside payments", "Go-live target: 14 days from approval", "Local install, training & support", "Lifetime hardware warranty included"],
+    metaDescription: "Shift4Dine POS systems for Utah restaurants, bars & retail. Built-in payment processing, online ordering & loyalty programs. Local support, 14-day go-live target.",
+    description: "UBC Unlimited partners with Shift4Dine — powered by Shift4, one of the largest payment technology companies in the world — to deliver a complete, all-in-one POS platform for restaurants, bars, quick-service, and multi-location businesses. From tableside ordering and kitchen display systems to online ordering, loyalty programs, and real-time analytics, our POS solutions are designed to transform your operations from front-of-house to back-of-house. Every system comes with local installation, training, and ongoing support from our Utah-based team.",
+    heroPoints: ["Shift4Dine — powered by Shift4", "Restaurant, bar & quick-service ready", "Online ordering & tableside payments", "Go-live target: 14 days from approval", "Local install, training & support", "Lifetime hardware warranty included"],
     features: [
-      { title: "SkyTab POS Workstation", desc: "A sleekly designed, commercial-grade POS workstation built for demanding restaurant environments. Features a high-resolution touchscreen, powerful processor, and a lifetime hardware warranty — the only POS system in the industry to offer one. Handles high-volume service without slowdowns, freezes, or crashes." },
-      { title: "SkyTab Air — Tableside & Mobile Ordering", desc: "A handheld mobile device that lets servers take orders and accept payments at the table, curbside, or for delivery. Reduces ticket times, increases table turns, and eliminates the back-and-forth to a fixed terminal. Works on Wi-Fi or 4G LTE so your team stays connected anywhere on your property." },
+      { title: "Workstation 15", desc: "A sleekly designed, commercial-grade POS workstation built for demanding restaurant environments. Features a high-resolution touchscreen, powerful processor, and a lifetime hardware warranty — the only POS system in the industry to offer one. Handles high-volume service without slowdowns, freezes, or crashes." },
+      { title: "Shift4 Air — Tableside & Mobile Ordering", desc: "A handheld mobile device that lets servers take orders and accept payments at the table, curbside, or for delivery. Reduces ticket times, increases table turns, and eliminates the back-and-forth to a fixed terminal. Works on Wi-Fi or 4G LTE so your team stays connected anywhere on your property." },
       { title: "Online Ordering Integration", desc: "Built-in online ordering lets customers place orders directly from your website or a branded ordering page — with zero third-party commission fees. Orders flow directly into your POS and kitchen display system in real time, eliminating manual re-entry and order errors." },
       { title: "Kitchen Display System (KDS)", desc: "Replace paper tickets with a digital kitchen display that shows orders in real time as they're placed from the POS, tableside devices, or online. Reduce kitchen errors, improve ticket times, and keep your kitchen team organized during peak service." },
       { title: "Contactless & QR Code Ordering", desc: "Guests can scan a QR code at the table to view your menu, place orders, and pay — all from their own smartphone. Reduces server workload, speeds up table turns, and provides a modern, contactless dining experience that today's guests expect." },
@@ -280,13 +280,13 @@ const solutionsData: SolutionData[] = [
       "Local Utah installation, training, and ongoing support from our team",
     ],
     faqs: [
-      { question: "What types of businesses is SkyTab POS designed for?", answer: "SkyTab is purpose-built for food and beverage operations: full-service restaurants, quick-service and fast casual restaurants, bars and nightclubs, pizza shops, coffee shops, food trucks, and multi-location enterprise operations. It's specifically designed for the demands of the restaurant industry — high transaction volume, complex menu management, tableside service, and kitchen coordination. For retail, salon, and service businesses, we offer additional POS options tailored to those environments. We'll help you identify the right system during a consultation." },
-      { question: "Does SkyTab come with a hardware warranty?", answer: "Yes. SkyTab is the only POS system in the industry to offer a lifetime hardware warranty on its commercial-grade equipment. If your hardware fails, it's replaced — no questions asked, no repair fees. This eliminates the risk of unexpected hardware replacement costs that can run $500–$2,000+ per terminal with other systems." },
-      { question: "How does online ordering work with SkyTab?", answer: "SkyTab includes a built-in online ordering platform that lets customers place orders directly from your website or a branded ordering page. Orders flow directly into your POS and kitchen display system in real time — no manual re-entry required. Critically, SkyTab charges zero commission on online orders. By contrast, third-party platforms like DoorDash, Uber Eats, and Grubhub charge 15–30% commission per order. For a restaurant doing $10,000/month in online orders, that's $1,500–$3,000/month saved." },
-      { question: "What is the Lighthouse back office and what can I do with it?", answer: "Lighthouse is SkyTab's cloud-based back-office management platform. It gives you real-time access to sales reports, labor cost analysis, menu performance data, and business trend insights from any computer, tablet, or smartphone. You can update your menu remotely, push changes to all locations simultaneously, manage employee schedules and permissions, and monitor your business from anywhere using the InCharge mobile app. It's a complete business intelligence tool, not just a reporting dashboard." },
-      { question: "Do you provide installation and training?", answer: "Yes. Our Utah-based team provides local, on-site installation and hands-on training for every SkyTab system we deploy. We don't ship you a box and leave you to figure it out — we're there in person to set up your hardware, configure your menu, train your staff, and make sure everything is running smoothly before we leave. Ongoing technical support is available after installation, and for local Utah businesses, we can dispatch a technician for on-site support when needed." },
-      { question: "Can SkyTab handle multiple locations?", answer: "Yes. SkyTab's multi-location management tools let you manage menus, pricing, reporting, and staff across all your locations from a single dashboard. Push menu updates to every location simultaneously, compare performance side-by-side, and maintain brand consistency across your entire operation. The InCharge mobile app lets you monitor all locations remotely from your smartphone." },
-      { question: "What accessories are available for SkyTab?", answer: "SkyTab supports a full ecosystem of accessories including the SkyTab Air handheld for tableside ordering, Kitchen Display Systems (KDS) in 16\" and 22\" sizes, KDS bump bars, remote thermal and dot matrix printers, self-order kiosks, customer-facing displays, digital scales, and caller ID units. We'll help you design the right hardware configuration for your specific floor plan and service model." },
+      { question: "What types of businesses is Shift4Dine POS designed for?", answer: "Shift4Dine is purpose-built for food and beverage operations: full-service restaurants, quick-service and fast casual restaurants, bars and nightclubs, pizza shops, coffee shops, food trucks, and multi-location enterprise operations. It's specifically designed for the demands of the restaurant industry — high transaction volume, complex menu management, tableside service, and kitchen coordination. For retail, salon, and service businesses, we offer additional POS options tailored to those environments. We'll help you identify the right system during a consultation." },
+      { question: "Does Shift4Dine come with a hardware warranty?", answer: "Yes. Shift4Dine is the only POS system in the industry to offer a lifetime hardware warranty on its commercial-grade equipment. If your hardware fails, it's replaced — no questions asked, no repair fees. This eliminates the risk of unexpected hardware replacement costs that can run $500–$2,000+ per terminal with other systems." },
+      { question: "How does online ordering work with Shift4Dine?", answer: "Shift4Dine includes a built-in online ordering platform that lets customers place orders directly from your website or a branded ordering page. Orders flow directly into your POS and kitchen display system in real time — no manual re-entry required. Critically, Shift4Dine charges zero commission on online orders. By contrast, third-party platforms like DoorDash, Uber Eats, and Grubhub charge 15–30% commission per order. For a restaurant doing $10,000/month in online orders, that's $1,500–$3,000/month saved." },
+      { question: "What is the Lighthouse back office and what can I do with it?", answer: "Lighthouse is Shift4Dine's cloud-based back-office management platform. It gives you real-time access to sales reports, labor cost analysis, menu performance data, and business trend insights from any computer, tablet, or smartphone. You can update your menu remotely, push changes to all locations simultaneously, manage employee schedules and permissions, and monitor your business from anywhere using the InCharge mobile app. It's a complete business intelligence tool, not just a reporting dashboard." },
+      { question: "Do you provide installation and training?", answer: "Yes. Our Utah-based team provides local, on-site installation and hands-on training for every Shift4Dine system we deploy. We don't ship you a box and leave you to figure it out — we're there in person to set up your hardware, configure your menu, train your staff, and make sure everything is running smoothly before we leave. Ongoing technical support is available after installation, and for local Utah businesses, we can dispatch a technician for on-site support when needed." },
+      { question: "Can Shift4Dine handle multiple locations?", answer: "Yes. Shift4Dine's multi-location management tools let you manage menus, pricing, reporting, and staff across all your locations from a single dashboard. Push menu updates to every location simultaneously, compare performance side-by-side, and maintain brand consistency across your entire operation. The InCharge mobile app lets you monitor all locations remotely from your smartphone." },
+      { question: "What accessories are available for Shift4Dine?", answer: "Shift4Dine supports a full ecosystem of accessories including the Shift4 Air handheld for tableside ordering, Kitchen Display Systems (KDS) in 16\" and 22\" sizes, KDS bump bars, remote thermal and dot matrix printers, self-order kiosks, customer-facing displays, digital scales, and caller ID units. We'll help you design the right hardware configuration for your specific floor plan and service model." },
     ],
     relatedSolutions: ["/solutions/credit-card-processing", "/solutions/mobile-processing", "/solutions/invoicing"],
   },
@@ -618,9 +618,9 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
 
   const relatedItems = NAV_SOLUTIONS.filter((s) => data.relatedSolutions?.includes(s.href));
 
-  const TERMINAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-v2_1e6bdb8d.webp";
-  const CASH_DISCOUNT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-cash-discount-jfmB57PZVctCXZVaSjpwi2.webp";
-  const INVOICE_MOCKUP_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/invoice-mockup-S7V7Gu45yZi4Lx5S8PuZPJ.webp";
+  const TERMINAL_IMG = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/hero-main-v2_1e6bdb8d.webp";
+  const CASH_DISCOUNT_IMG = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/hero-cash-discount-jfmB57PZVctCXZVaSjpwi2.webp";
+  const INVOICE_MOCKUP_IMG = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/invoice-mockup-S7V7Gu45yZi4Lx5S8PuZPJ.webp";
   const isCreditCard = data.slug === "credit-card-processing";
   const isCashDiscount = data.slug === "surcharge-cash-discount";
   const isInvoicing = data.slug === "invoicing";
@@ -980,10 +980,10 @@ export default function SolutionDetailPage({ slug }: SolutionDetailPageProps) {
         </div>
       </section>
 
-      {/* ── SkyTab POS Builder — POS Systems page only ── */}
+      {/* ── Shift4Dine POS Builder — POS Systems page only ── */}
       {data.slug === "pos-systems" && (
         <Suspense fallback={<div className="py-16 bg-[#080808] animate-pulse" aria-hidden="true" />}>
-          <SkyTabPOSBuilder />
+          <Shift4DinePOSBuilder />
         </Suspense>
       )}
 

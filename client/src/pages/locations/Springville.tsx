@@ -15,13 +15,13 @@ const SPRINGVILLE_INDUSTRIES = [
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "Springville's local dining scene needs reliable POS and payment solutions. We support tableside payments, split checks, and SkyTab systems.",
+    desc: "Springville's local dining scene needs reliable POS and payment solutions. We support tableside payments, split checks, and Shift4Dine systems.",
     href: "/industries/restaurants",
   },
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Local retailers in Springville need fast, reliable checkout. We offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "Local retailers in Springville need fast, reliable checkout. We offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
@@ -94,7 +94,7 @@ const SPRINGVILLE_FAQS = [
   },
   {
     q: "What POS systems do you offer for Springville restaurants and retailers?",
-    a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for Springville businesses?",

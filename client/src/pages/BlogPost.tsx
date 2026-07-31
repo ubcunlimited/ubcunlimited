@@ -125,11 +125,11 @@ Choosing the right point-of-sale system is one of the most important technology 
 
 A restaurant POS has fundamentally different requirements than a retail POS. It needs to handle table management, course firing, split checks, tip adjustments, kitchen display systems (KDS), online ordering integration, and labor management — all simultaneously during a dinner rush. The hardware needs to be durable, the software needs to be intuitive enough for high-turnover staff to learn quickly, and the support needs to be available when something goes wrong at 7 PM on a Friday.
 
-## SkyTab POS by Shift4
+## Shift4Dine POS by Shift4
 
-SkyTab is our top recommendation for most Utah restaurants, and it is the system we install and support locally. Built by Shift4 Payments, SkyTab is a purpose-built restaurant platform that includes tableside ordering and payment, online ordering, loyalty programs, labor management, and a cloud-based back office — all for $29.99 per workstation per month. That fee includes hardware, software, installation, training, and ongoing support.
+Shift4Dine is our top recommendation for most Utah restaurants, and it is the system we install and support locally. Built by Shift4 Payments, Shift4Dine is a purpose-built restaurant platform that includes tableside ordering and payment, online ordering, loyalty programs, labor management, and a cloud-based back office — all for $29.99 per workstation per month. That fee includes hardware, software, installation, training, and ongoing support.
 
-SkyTab's mobile handheld units allow servers to take orders and process payments tableside, which reduces ticket times and increases table turns. The system integrates directly with Shift4's payment processing, which means your POS and payment data are unified in one platform. For bars, SkyTab handles tabs, pre-authorizations, and split bills natively. For multi-location operations, the cloud-based reporting gives owners a real-time view across all locations from a single dashboard.
+Shift4Dine's mobile handheld units allow servers to take orders and process payments tableside, which reduces ticket times and increases table turns. The system integrates directly with Shift4's payment processing, which means your POS and payment data are unified in one platform. For bars, Shift4Dine handles tabs, pre-authorizations, and split bills natively. For multi-location operations, the cloud-based reporting gives owners a real-time view across all locations from a single dashboard.
 
 The system was formerly known as HarborTouch POS before Shift4 acquired and rebranded it. The platform has been substantially rebuilt and expanded since then, and it now competes directly with Toast and Clover at a significantly lower price point.
 
@@ -157,18 +157,18 @@ Square's flat-rate processing is straightforward but expensive for high-volume f
 
 | System | Best For | Monthly Cost (per terminal) | Processing | Local Support |
 |---|---|---|---|---|
-| SkyTab | Full-service, bars, multi-location | All-inclusive monthly fee | Flexible (Shift4) | Yes — UBC Unlimited |
+| Shift4Dine | Full-service, bars, multi-location | All-inclusive monthly fee | Flexible (Shift4) | Yes — UBC Unlimited |
 | Toast | Mid-to-large full-service | Higher monthly cost + hardware | Toast only (bundled) | Limited in Utah |
 | Clover | Flexible retail/restaurant hybrid | Varies by reseller | Varies by reseller | Varies |
 | Square | QSR, cafes, food trucks | Free to moderate | Square only (flat rate) | No local support |
 
-For most Utah restaurants — whether you are running a full-service dining room in [Salt Lake City](/cities/salt-lake-city), a bar in [Provo](/cities/provo), or a multi-location chain along the Wasatch Front — SkyTab offers the best combination of features, price, and local support. As an authorized SkyTab reseller, UBC Unlimited handles installation, training, and ongoing support for Utah businesses.
+For most Utah restaurants — whether you are running a full-service dining room in [Salt Lake City](/cities/salt-lake-city), a bar in [Provo](/cities/provo), or a multi-location chain along the Wasatch Front — Shift4Dine offers the best combination of features, price, and local support. As an authorized Shift4Dine reseller, UBC Unlimited handles installation, training, and ongoing support for Utah businesses.
 
 [Book a consultation](/consultation) to discuss which system is right for your restaurant.
 
 ## Restaurant POS Service Area
 
-We install and support SkyTab for restaurants throughout Utah, including [Ogden](/cities/ogden), [St. George](/cities/st-george), [Logan](/cities/logan), [Layton](/cities/layton), [American Fork](/cities/american-fork), and [Springville](/cities/springville). Our local technicians can be on-site for installation and training anywhere in [Salt Lake County](/counties/salt-lake), [Utah County](/counties/utah), [Weber County](/counties/weber), and [Washington County](/counties/washington).
+We install and support Shift4Dine for restaurants throughout Utah, including [Ogden](/cities/ogden), [St. George](/cities/st-george), [Logan](/cities/logan), [Layton](/cities/layton), [American Fork](/cities/american-fork), and [Springville](/cities/springville). Our local technicians can be on-site for installation and training anywhere in [Salt Lake County](/counties/salt-lake), [Utah County](/counties/utah), [Weber County](/counties/weber), and [Washington County](/counties/washington).
     `,
   },
 
@@ -449,11 +449,11 @@ Clover offers two mobile options. The Clover Go is a Bluetooth card reader that 
 
 Clover's pricing depends on your reseller and merchant account, which means rates vary. The advantage of Clover over Square is that you can negotiate your processing rates through a merchant services provider rather than being locked into flat-rate pricing.
 
-## SkyTab Mobile
+## Shift4 Air
 
-For Utah businesses that are already using SkyTab POS in a fixed location — or that want a restaurant-grade mobile solution — SkyTab Mobile is an excellent option. SkyTab's handheld devices are designed for tableside ordering and payment in restaurants, but they also work well for any mobile business that needs a durable, full-featured device.
+For Utah businesses that are already using Shift4Dine POS in a fixed location — or that want a restaurant-grade mobile solution — Shift4 Air is an excellent option. Shift4Dine's handheld devices are designed for tableside ordering and payment in restaurants, but they also work well for any mobile business that needs a durable, full-featured device.
 
-SkyTab Mobile connects over Wi-Fi or cellular, accepts all major cards and contactless payments, and integrates with the full SkyTab back-office reporting platform. For food trucks and mobile food service operations, SkyTab provides a seamless bridge between mobile and fixed-location operations.
+Shift4 Air connects over Wi-Fi or cellular, accepts all major cards and contactless payments, and integrates with the full Shift4Dine back-office reporting platform. For food trucks and mobile food service operations, Shift4Dine provides a seamless bridge between mobile and fixed-location operations.
 
 ## Merchant-Provided Mobile Solutions
 
@@ -522,7 +522,7 @@ Restaurant payment processing is more complex than most industries. Between tips
 
 ## Understanding Restaurant-Specific Payment Challenges
 
-**Tip adjustments** are one of the most common sources of confusion and cost for restaurants. When a customer signs a paper receipt and adds a tip, the transaction is initially authorized for the pre-tip amount and then adjusted when you batch. This "tip adjustment" process can trigger higher interchange rates if not handled correctly. Modern POS systems like SkyTab handle tip adjustments automatically and ensure transactions are batched at the correct amount.
+**Tip adjustments** are one of the most common sources of confusion and cost for restaurants. When a customer signs a paper receipt and adds a tip, the transaction is initially authorized for the pre-tip amount and then adjusted when you batch. This "tip adjustment" process can trigger higher interchange rates if not handled correctly. Modern POS systems like Shift4Dine handle tip adjustments automatically and ensure transactions are batched at the correct amount.
 
 **Pre-authorizations for bar tabs** work similarly — a card is authorized for a small amount when a tab is opened, and then the final amount is captured when the customer closes out. Proper handling of pre-authorizations is important to avoid disputes and ensure accurate settlement.
 
@@ -538,7 +538,7 @@ Cash discount programs are also increasingly popular in the restaurant industry.
 
 ## Tip Reporting and IRS Compliance
 
-Restaurants with tipped employees have specific IRS reporting obligations. The IRS requires restaurants to report tip income, and most states have additional requirements. Your POS system should generate reports that make tip reporting straightforward. Modern systems like SkyTab integrate tip data directly into payroll reporting, reducing the administrative burden on restaurant owners and managers.
+Restaurants with tipped employees have specific IRS reporting obligations. The IRS requires restaurants to report tip income, and most states have additional requirements. Your POS system should generate reports that make tip reporting straightforward. Modern systems like Shift4Dine integrate tip data directly into payroll reporting, reducing the administrative burden on restaurant owners and managers.
 
 ## Chargebacks in Restaurants
 
@@ -548,7 +548,7 @@ For online orders, delivery confirmation and clear communication about order sta
 
 ## POS Integration with Accounting Software
 
-Most Utah restaurant owners use QuickBooks or a similar accounting platform. Your POS system should integrate directly with your accounting software to eliminate manual data entry and reduce errors. SkyTab integrates with QuickBooks and other major accounting platforms, and the cloud-based back office allows you to pull financial reports at any time from any device.
+Most Utah restaurant owners use QuickBooks or a similar accounting platform. Your POS system should integrate directly with your accounting software to eliminate manual data entry and reduce errors. Shift4Dine integrates with QuickBooks and other major accounting platforms, and the cloud-based back office allows you to pull financial reports at any time from any device.
 
 ## Getting the Right Setup for Your Restaurant
 
@@ -735,13 +735,13 @@ A bar POS has different priorities than a restaurant POS. Speed is paramount —
 
 Reporting is also critical for bar operators. You need to know your pour cost, your most profitable items, your busiest hours, and your staff's sales performance. A good bar POS provides all of this data in real time, accessible from a mobile device or any web browser.
 
-## SkyTab POS: Our Top Pick for Utah Bars
+## Shift4Dine POS: Our Top Pick for Utah Bars
 
-SkyTab is our top recommendation for Utah bars and nightclubs, and it is the system we install and support locally. SkyTab was built specifically for food and beverage operations, and its tab management capabilities are among the best in the industry.
+Shift4Dine is our top recommendation for Utah bars and nightclubs, and it is the system we install and support locally. Shift4Dine was built specifically for food and beverage operations, and its tab management capabilities are among the best in the industry.
 
-With SkyTab, bartenders can open a tab by swiping or tapping a card, add items throughout the evening, and close the tab with a single tap. Pre-authorizations are handled automatically, and the system releases holds promptly after tabs are closed. The mobile handheld units allow servers on the floor to take drink orders and process payments tableside, reducing trips to the bar and increasing efficiency.
+With Shift4Dine, bartenders can open a tab by swiping or tapping a card, add items throughout the evening, and close the tab with a single tap. Pre-authorizations are handled automatically, and the system releases holds promptly after tabs are closed. The mobile handheld units allow servers on the floor to take drink orders and process payments tableside, reducing trips to the bar and increasing efficiency.
 
-SkyTab's back-office reporting gives bar owners real-time visibility into sales, labor costs, and inventory. The cloud-based platform means you can check your numbers from anywhere — at home, on vacation, or at a second location. SkyTab's all-inclusive monthly pricing covers hardware, software, installation, and support — offering exceptional value for the feature set.
+Shift4Dine's back-office reporting gives bar owners real-time visibility into sales, labor costs, and inventory. The cloud-based platform means you can check your numbers from anywhere — at home, on vacation, or at a second location. Shift4Dine's all-inclusive monthly pricing covers hardware, software, installation, and support — offering exceptional value for the feature set.
 
 ## Toast POS for Bars
 
@@ -767,7 +767,7 @@ When evaluating POS systems for your bar, prioritize these capabilities: fast ta
 
 ## Bar POS Service Area
 
-We install and support SkyTab for bars and nightclubs throughout Utah. Our clients include venues in [Salt Lake City](/cities/salt-lake-city), [Provo](/cities/provo), [Ogden](/cities/ogden), [Murray](/cities/murray), and [West Valley City](/cities/west-valley-city). We provide on-site installation and training across [Salt Lake County](/counties/salt-lake), [Utah County](/counties/utah), and [Weber County](/counties/weber).
+We install and support Shift4Dine for bars and nightclubs throughout Utah. Our clients include venues in [Salt Lake City](/cities/salt-lake-city), [Provo](/cities/provo), [Ogden](/cities/ogden), [Murray](/cities/murray), and [West Valley City](/cities/west-valley-city). We provide on-site installation and training across [Salt Lake County](/counties/salt-lake), [Utah County](/counties/utah), and [Weber County](/counties/weber).
     `,
   },
 
@@ -814,56 +814,56 @@ Our Utah County team works directly with businesses in [Provo](/cities/provo), [
   },
 
   "skytab-pos-review-utah": {
-    title: "SkyTab POS Review: Is It Right for Your Utah Business?",
+    title: "Shift4Dine POS Review: Is It Right for Your Utah Business?",
     category: "POS Systems",
     date: "2025-05-08",
     readTime: "10 min read",
     content: `
-As an authorized SkyTab reseller and installation partner in Utah, we have set up SkyTab systems for hundreds of local businesses — restaurants, bars, cafes, food trucks, and more. We know this system inside and out, which means we can give you an honest assessment of where it excels, where it falls short, and whether it is the right fit for your specific operation.
+As an authorized Shift4Dine reseller and installation partner in Utah, we have set up Shift4Dine systems for hundreds of local businesses — restaurants, bars, cafes, food trucks, and more. We know this system inside and out, which means we can give you an honest assessment of where it excels, where it falls short, and whether it is the right fit for your specific operation.
 
-## What Is SkyTab POS?
+## What Is Shift4Dine POS?
 
-SkyTab is a cloud-based point-of-sale platform built by Shift4 Payments, one of the largest payment technology companies in the United States. SkyTab was developed specifically for the food and beverage industry and is designed to handle the full complexity of restaurant and bar operations — from tableside ordering and payment to online ordering, loyalty programs, labor management, and multi-location reporting.
+Shift4Dine is a cloud-based point-of-sale platform built by Shift4 Payments, one of the largest payment technology companies in the United States. Shift4Dine was developed specifically for the food and beverage industry and is designed to handle the full complexity of restaurant and bar operations — from tableside ordering and payment to online ordering, loyalty programs, labor management, and multi-location reporting.
 
-SkyTab was formerly known as HarborTouch POS before Shift4 acquired the company and substantially rebuilt the platform. The current SkyTab system is a significant upgrade from the HarborTouch era, with a modern interface, improved hardware, and a much broader feature set.
+Shift4Dine was formerly known as HarborTouch POS before Shift4 acquired the company and substantially rebuilt the platform. The current Shift4Dine system is a significant upgrade from the HarborTouch era, with a modern interface, improved hardware, and a much broader feature set.
 
-## SkyTab Pricing: What You Actually Pay
+## Shift4Dine Pricing: What You Actually Pay
 
-SkyTab's pricing model is one of its most compelling advantages. The all-inclusive monthly fee covers hardware (the terminal and any peripherals included in your package), software, installation, training, and ongoing support. There are no separate software licensing fees, no installation charges, and no training fees.
+Shift4Dine's pricing model is one of its most compelling advantages. The all-inclusive monthly fee covers hardware (the terminal and any peripherals included in your package), software, installation, training, and ongoing support. There are no separate software licensing fees, no installation charges, and no training fees.
 
 This pricing compares favorably to Toast and Clover, which typically charge higher monthly software fees on top of separate hardware purchases. [Contact us](/consultation) for a current pricing comparison tailored to your operation size.
 
-Payment processing fees are separate from the monthly SkyTab fee and are negotiated with your Shift4 reseller (UBC Unlimited, in our case).
+Payment processing fees are separate from the monthly Shift4Dine fee and are negotiated with your Shift4 reseller (UBC Unlimited, in our case).
 
 ## Key Features
 
-**Tableside ordering and payment** is one of SkyTab's standout features. The SkyTab Mobile handheld device allows servers to take orders and process payments at the table, reducing trips to a stationary terminal and significantly speeding up service. For full-service restaurants, this typically increases table turns and reduces ticket times.
+**Tableside ordering and payment** is one of Shift4Dine's standout features. The Shift4 Air handheld device allows servers to take orders and process payments at the table, reducing trips to a stationary terminal and significantly speeding up service. For full-service restaurants, this typically increases table turns and reduces ticket times.
 
-**Online ordering** is built into the SkyTab platform at no additional charge. Your online ordering page is branded to your restaurant and integrates directly with your POS — orders flow directly to the kitchen without manual entry. This is a significant advantage over third-party platforms like DoorDash and Uber Eats, which charge commission fees of 15–30% per order.
+**Online ordering** is built into the Shift4Dine platform at no additional charge. Your online ordering page is branded to your restaurant and integrates directly with your POS — orders flow directly to the kitchen without manual entry. This is a significant advantage over third-party platforms like DoorDash and Uber Eats, which charge commission fees of 15–30% per order.
 
-**Loyalty and gift cards** are included in the SkyTab platform. You can create a branded loyalty program that rewards customers for repeat visits and integrates with your online ordering system.
+**Loyalty and gift cards** are included in the Shift4Dine platform. You can create a branded loyalty program that rewards customers for repeat visits and integrates with your online ordering system.
 
-**Labor management** tools allow you to schedule employees, track hours, and manage tips within the SkyTab platform. The system integrates with major payroll providers to streamline the payroll process.
+**Labor management** tools allow you to schedule employees, track hours, and manage tips within the Shift4Dine platform. The system integrates with major payroll providers to streamline the payroll process.
 
 **Cloud-based back office** gives you real-time access to sales data, labor costs, inventory, and reporting from any device with a web browser. The "In Charge" mobile app provides a dashboard view of your key metrics on your smartphone.
 
 **Multi-location support** allows businesses with multiple locations to manage all of them from a single back-office account, with consolidated reporting and the ability to manage menus and pricing across locations simultaneously.
 
-## Where SkyTab Falls Short
+## Where Shift4Dine Falls Short
 
-No POS system is perfect, and SkyTab has some limitations worth knowing. The system is optimized for food and beverage — if you are a retail business, SkyTab is not the right fit. The hardware is proprietary, meaning you cannot use non-SkyTab equipment. And because SkyTab is sold through resellers like UBC Unlimited rather than directly, your experience depends significantly on the quality of your local reseller.
+No POS system is perfect, and Shift4Dine has some limitations worth knowing. The system is optimized for food and beverage — if you are a retail business, Shift4Dine is not the right fit. The hardware is proprietary, meaning you cannot use non-Shift4Dine equipment. And because Shift4Dine is sold through resellers like UBC Unlimited rather than directly, your experience depends significantly on the quality of your local reseller.
 
 The integration ecosystem, while growing, is not as extensive as Toast's or Clover's. If you rely on a specific third-party software that needs to integrate with your POS, verify compatibility before committing.
 
 ## Our Honest Recommendation
 
-For Utah restaurants, bars, cafes, and food service operations, SkyTab is our top recommendation — and not just because we sell it. The combination of comprehensive features, competitive pricing, and the local support we provide makes it the best value in the market for most food and beverage operations.
+For Utah restaurants, bars, cafes, and food service operations, Shift4Dine is our top recommendation — and not just because we sell it. The combination of comprehensive features, competitive pricing, and the local support we provide makes it the best value in the market for most food and beverage operations.
 
-That said, the right POS system depends on your specific operation. [Book a consultation](/consultation) with our Utah team — we will assess your needs honestly and recommend the right system, even if that means recommending something other than SkyTab.
+That said, the right POS system depends on your specific operation. [Book a consultation](/consultation) with our Utah team — we will assess your needs honestly and recommend the right system, even if that means recommending something other than Shift4Dine.
 
-## SkyTab Installation Service Area
+## Shift4Dine Installation Service Area
 
-We install and support SkyTab POS systems throughout Utah. Our service area includes [Salt Lake City](/cities/salt-lake-city), [Provo](/cities/provo), [Ogden](/cities/ogden), [St. George](/cities/st-george), [Logan](/cities/logan), [Park City](/cities/park-city), [Bountiful](/cities/bountiful), [Clearfield](/cities/clearfield), and [West Jordan](/cities/west-jordan). We cover all of [Salt Lake County](/counties/salt-lake), [Utah County](/counties/utah), [Weber County](/counties/weber), [Davis County](/counties/davis), [Washington County](/counties/washington), [Cache County](/counties/cache), and [Summit County](/counties/summit).
+We install and support Shift4Dine POS systems throughout Utah. Our service area includes [Salt Lake City](/cities/salt-lake-city), [Provo](/cities/provo), [Ogden](/cities/ogden), [St. George](/cities/st-george), [Logan](/cities/logan), [Park City](/cities/park-city), [Bountiful](/cities/bountiful), [Clearfield](/cities/clearfield), and [West Jordan](/cities/west-jordan). We cover all of [Salt Lake County](/counties/salt-lake), [Utah County](/counties/utah), [Weber County](/counties/weber), [Davis County](/counties/davis), [Washington County](/counties/washington), [Cache County](/counties/cache), and [Summit County](/counties/summit).
     `,
   },
 
@@ -1089,7 +1089,7 @@ For B2B businesses, accepting ACH payments can be particularly impactful. Many b
 
 Modern POS systems and payment platforms generate a wealth of data about your business: which products sell best at what times, which staff members have the highest sales, what your average transaction value is, how your sales compare to the same period last year. This data is only valuable if you can access and act on it.
 
-Cloud-based POS systems like SkyTab give you real-time access to this data from any device. Instead of waiting for a monthly report, you can see yesterday's sales before you open this morning. Instead of guessing which menu items to promote, you can see which ones have the highest margin and the highest velocity. Data-driven decisions consistently outperform gut-feel decisions, and better payment infrastructure makes that data accessible.
+Cloud-based POS systems like Shift4Dine give you real-time access to this data from any device. Instead of waiting for a monthly report, you can see yesterday's sales before you open this morning. Instead of guessing which menu items to promote, you can see which ones have the highest margin and the highest velocity. Data-driven decisions consistently outperform gut-feel decisions, and better payment infrastructure makes that data accessible.
 
 ## Reducing Processing Costs Improves Margins
 
@@ -1099,7 +1099,7 @@ For businesses with thin margins — restaurants, retail, service businesses —
 
 ## Building Customer Loyalty Through Payment Technology
 
-Modern payment platforms include loyalty program capabilities that were previously only available to large chains. SkyTab's built-in loyalty program, for example, allows restaurants and bars to reward customers for repeat visits with points, discounts, or free items — all managed automatically through the POS system. Customers who participate in loyalty programs visit more frequently and spend more per visit.
+Modern payment platforms include loyalty program capabilities that were previously only available to large chains. Shift4Dine's built-in loyalty program, for example, allows restaurants and bars to reward customers for repeat visits with points, discounts, or free items — all managed automatically through the POS system. Customers who participate in loyalty programs visit more frequently and spend more per visit.
 
 Gift card programs are another growth tool built into modern POS systems. Gift cards drive new customer acquisition (the recipient is often a new customer), generate upfront cash flow, and have a meaningful breakage rate (unredeemed value that stays with the business).
 
@@ -1356,7 +1356,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
               "name": "UBC Unlimited",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png"
+                "url": "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png"
               }
             },
             "url": `https://ubcunlimited.com/blog/${slug}`,

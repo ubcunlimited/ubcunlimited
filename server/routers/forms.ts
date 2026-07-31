@@ -107,7 +107,7 @@ const testimonialSchema = z.object({
   recaptchaToken,
 });
 
-const skyTabConfigSchema = z.object({
+const shift4DineConfigSchema = z.object({
   firstName: z.string().min(1),
   lastName: z.string().min(1).optional().default(""),
   email: z.string().email().optional().or(z.literal("")).optional(),
@@ -119,7 +119,7 @@ const skyTabConfigSchema = z.object({
   recaptchaToken,
 });
 
-const skyTabPOSSchema = z.object({
+const shift4DinePOSSchema = z.object({
   firstName: z.string().min(1),
   lastName: z.string().min(1),
   email: z.string().email(),
@@ -423,9 +423,9 @@ export const formsRouter = router({
       return { success: true };
     }),
 
-  // ── SkyTab Configurator quote ──────────────────────────────────────────────
-  submitSkyTabConfig: publicProcedure
-    .input(skyTabConfigSchema)
+  // ── Shift4Dine Configurator quote ──────────────────────────────────────────────
+  submitShift4DineConfig: publicProcedure
+    .input(shift4DineConfigSchema)
     .mutation(async ({ input }) => {
       if (input.recaptchaToken) {
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_skytab_configurator");
@@ -443,7 +443,7 @@ export const formsRouter = router({
         notes: JSON.stringify({ hardware: input.selectedHardware?.join(", "), add_ons: input.selectedAddOns?.join(", ") }),
       });
       const lines = [
-        `**New SkyTab Configurator Quote — UBC Unlimited**`, ``,
+        `**New Shift4Dine Configurator Quote — UBC Unlimited**`, ``,
         `**Name:** ${fullName}`,
         input.email ? `**Email:** ${input.email}` : null,
         input.phone ? `**Phone:** ${input.phone}` : null,
@@ -452,14 +452,14 @@ export const formsRouter = router({
         input.selectedHardware?.length ? `**Hardware:** ${input.selectedHardware.join(", ")}` : null,
         input.selectedAddOns?.length ? `**Add-Ons:** ${input.selectedAddOns.join(", ")}` : null,
       ].filter(Boolean).join("\n");
-      await notifyOwner({ title: `New SkyTab Config Quote — ${fullName}`, content: lines });
+      await notifyOwner({ title: `New Shift4Dine Config Quote — ${fullName}`, content: lines });
       await sendToWebhook("skytab_config", { firstName: input.firstName, lastName: input.lastName ?? "", phone: input.phone ?? "", email: input.email ?? "" }, { business_name: input.businessName, business_type: input.businessType, hardware: input.selectedHardware?.join(", "), add_ons: input.selectedAddOns?.join(", ") });
       return { success: true };
     }),
 
-  // ── SkyTab POS Builder order ───────────────────────────────────────────────
-  submitSkyTabOrder: publicProcedure
-    .input(skyTabPOSSchema)
+  // ── Shift4Dine POS Builder order ───────────────────────────────────────────────
+  submitShift4DineOrder: publicProcedure
+    .input(shift4DinePOSSchema)
     .mutation(async ({ input }) => {
       if (input.recaptchaToken) {
         const rc = await verifyRecaptcha(input.recaptchaToken, "submit_skytab_order");
@@ -476,7 +476,7 @@ export const formsRouter = router({
         notes: JSON.stringify({ city: input.city, state: input.state, current_pos: input.currentPOS, processing_plan: input.processingPlan, order_summary: input.orderSummary, notes: input.notes }),
       });
       const lines = [
-        `**New SkyTab POS Order — UBC Unlimited**`, ``,
+        `**New Shift4Dine POS Order — UBC Unlimited**`, ``,
         `**Name:** ${input.firstName} ${input.lastName}`, `**Email:** ${input.email}`, `**Phone:** ${input.phone}`,
         `**Business:** ${input.businessName}`,
         input.businessType ? `**Business Type:** ${input.businessType}` : null,
@@ -488,7 +488,7 @@ export const formsRouter = router({
         input.notes ? `\n**Additional Notes:** ${input.notes}` : null,
         `**Consent:** ${input.consent ? "Yes" : "No"}`,
       ].filter(Boolean).join("\n");
-      await notifyOwner({ title: `New SkyTab POS Order — ${input.firstName} ${input.lastName}`, content: lines });
+      await notifyOwner({ title: `New Shift4Dine POS Order — ${input.firstName} ${input.lastName}`, content: lines });
       await sendToWebhook("skytab_order", { firstName: input.firstName, lastName: input.lastName, phone: input.phone, email: input.email }, { business_name: input.businessName, business_type: input.businessType, city: input.city, state: input.state, current_pos: input.currentPOS, processing_plan: input.processingPlan, order_summary: input.orderSummary, notes: input.notes, consent: input.consent });
       return { success: true };
     }),

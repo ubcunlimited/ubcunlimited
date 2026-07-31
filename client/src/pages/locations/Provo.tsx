@@ -15,13 +15,13 @@ const PROVO_INDUSTRIES = [
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "From University Avenue dining to downtown Provo eateries — we support tableside payments, split checks, and SkyTab POS built for the Utah dining scene.",
+    desc: "From University Avenue dining to downtown Provo eateries — we support tableside payments, split checks, and Shift4Dine POS built for the Utah dining scene.",
     href: "/industries/restaurants",
   },
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Independent retailers near BYU and downtown Provo need fast, reliable checkout. We offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "Independent retailers near BYU and downtown Provo need fast, reliable checkout. We offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
@@ -98,7 +98,7 @@ const PROVO_FAQS = [
   },
   {
     q: "What POS systems do you offer for Provo restaurants and retailers?",
-    a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for Provo businesses?",

@@ -11,7 +11,7 @@ interface SEOProps {
 
 const SITE_NAME = "UBC Unlimited";
 const BASE_URL = "https://ubcunlimited.com";
-const DEFAULT_OG_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png";
+const DEFAULT_OG_IMAGE = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png";
 
 export default function SEO({
   title,

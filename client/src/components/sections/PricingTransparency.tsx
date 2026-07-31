@@ -123,7 +123,7 @@ const comparisonRows: { feature: string; ubc: CellValue; stripe: CellValue; squa
   },
   {
     feature: "POS Hardware Options",
-    ubc: "SkyTab, Dejavoo, PAX + more",
+    ubc: "Shift4Dine, Dejavoo, PAX + more",
     stripe: "Stripe Terminal only",
     square: "Square hardware only",
     note: "UBC is hardware-agnostic — we find the right fit for your business.",

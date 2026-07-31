@@ -40,7 +40,7 @@ const RESULT_CARDS: ResultCard[] = [
     icon: TrendingDown,
     industry: "Restaurant",
     challenge: "A Provo full-service restaurant was paying an effective rate of 3.8% on $85,000/month in card volume — over $3,200/month in processing fees with no clear breakdown of what they were being charged.",
-    solution: "UBC Unlimited performed a free statement review, identified excessive interchange downgrades, and implemented a cash discount & dual pricing with SkyTab POS. Setup and staff training were completed in a single day.",
+    solution: "UBC Unlimited performed a free statement review, identified excessive interchange downgrades, and implemented a cash discount & dual pricing with Shift4Dine POS. Setup and staff training were completed in a single day.",
     result: "Net processing cost dropped to under $200/month. The owner reinvested the savings into a second location within 18 months.",
     metric: "$36,000+",
     metricLabel: "Saved in Year One",

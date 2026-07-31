@@ -7,12 +7,12 @@ import { getLocationBySlug, UTAH_LOCATIONS } from "@/lib/locations";
 import { SITE } from "@/lib/config";
 import SEO from "@/components/SEO";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main_d2cdb0e3.jpg";
+const HERO_IMG = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/hero-main-1440w_q72_fb246703.webp";
 
 const services = [
   { icon: "💳", title: "Credit Card Processing", desc: "Competitive rates with transparent pricing. No hidden fees, no surprises." },
   { icon: "🏦", title: "ACH / eCheck Processing", desc: "Accept bank transfers and electronic checks at a fraction of card processing costs." },
-  { icon: "🖥️", title: "POS Systems", desc: "SkyTab, Clover, and more — tailored to your industry and workflow." },
+  { icon: "🖥️", title: "POS Systems", desc: "Shift4Dine, Clover, and more — tailored to your industry and workflow." },
   { icon: "🛒", title: "eCommerce Payments", desc: "Integrated online checkout solutions that work with your existing website." },
   { icon: "📱", title: "Mobile Processing", desc: "Accept payments anywhere with mobile readers and contactless solutions." },
   { icon: "📄", title: "Invoicing & Virtual Terminals", desc: "Send invoices and accept payments remotely without a physical terminal." },
@@ -45,7 +45,7 @@ export default function LocationDetail() {
     },
     {
       question: `What payment solutions are available for ${location.city} businesses?`,
-      answer: `We offer credit card processing, ACH/eCheck, POS systems (including SkyTab and Clover), eCommerce payments, mobile processing, virtual terminals, and invoicing — all tailored to your specific business type and volume.`,
+      answer: `We offer credit card processing, ACH/eCheck, POS systems (including Shift4Dine and Clover), eCommerce payments, mobile processing, virtual terminals, and invoicing — all tailored to your specific business type and volume.`,
     },
     {
       question: `How quickly can a ${location.city} business get set up?`,
@@ -196,7 +196,7 @@ export default function LocationDetail() {
                   "Industry-specific solutions tailored to your business type",
                   "Transparent pricing with no hidden fees",
                   "Fast onboarding — most accounts active in 24–48 hours (POS: 14-day lead time)",
-                  "Authorized SkyTab reseller serving all of Utah",
+                  "Authorized Shift4Dine reseller serving all of Utah",
                   "Free statement review — see exactly where you can save",
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2.5">

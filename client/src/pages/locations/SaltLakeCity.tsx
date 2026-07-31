@@ -33,13 +33,13 @@ const SLC_INDUSTRIES = [
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "From downtown SLC fine dining to food trucks in Sugar House — we support tableside payments, split checks, and SkyTab POS built for the Utah dining scene.",
+    desc: "From downtown SLC fine dining to food trucks in Sugar House — we support tableside payments, split checks, and Shift4Dine POS built for the Utah dining scene.",
     href: "/industries/restaurants",
   },
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Independent retailers on Main Street, 9th & 9th, and the Gateway need fast, reliable checkout. We offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "Independent retailers on Main Street, 9th & 9th, and the Gateway need fast, reliable checkout. We offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
@@ -112,7 +112,7 @@ const SLC_FAQS = [
   },
   {
     q: "What POS systems do you offer for Salt Lake City businesses?",
-    a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems tailored to specific industries. We handle delivery, setup, and training for all hardware — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems tailored to specific industries. We handle delivery, setup, and training for all hardware — typically within 24–48 hours of approval.",
   },
   {
     q: "Can you help a high-risk business in Salt Lake City get a merchant account?",

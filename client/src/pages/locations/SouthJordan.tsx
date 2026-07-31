@@ -15,13 +15,13 @@ const SOUTH_JORDAN_INDUSTRIES = [
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "South Jordan's growing retail scene needs fast, reliable checkout. We offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "South Jordan's growing retail scene needs fast, reliable checkout. We offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "From Daybreak dining to South Jordan Parkway restaurants — we support tableside payments, split checks, and SkyTab POS.",
+    desc: "From Daybreak dining to South Jordan Parkway restaurants — we support tableside payments, split checks, and Shift4Dine POS.",
     href: "/industries/restaurants",
   },
   {
@@ -94,7 +94,7 @@ const SOUTH_JORDAN_FAQS = [
   },
   {
     q: "What POS systems do you offer for South Jordan restaurants and retailers?",
-    a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for South Jordan businesses?",
@@ -128,7 +128,7 @@ const TESTIMONIALS = [
     name: "David W.",
     business: "Restaurant Owner, Daybreak",
     rating: 5,
-    text: "UBC Unlimited got us set up with SkyTab in two days. Our processing costs dropped and the local support is fantastic.",
+    text: "UBC Unlimited got us set up with Shift4Dine in two days. Our processing costs dropped and the local support is fantastic.",
   },
   {
     name: "Lisa M.",

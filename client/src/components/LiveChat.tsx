@@ -16,7 +16,7 @@ interface Message {
 }
 
 const LOGO_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent3_6c0e0b4a.png";
+  "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shieldubclogotransparent3_6c0e0b4a.png";
 
 // ── Smart response engine ──────────────────────────────────────────────────
 function getResponse(input: string): { text: string; links?: { label: string; href: string }[] } {
@@ -70,13 +70,13 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
     };
   }
 
-  // POS systems / SkyTab
+  // POS systems / Shift4Dine
   if (/pos|point.?of.?sale|skytab|terminal|register|restaurant.*system|retail.*system/.test(q)) {
     return {
-      text: "We offer the **SkyTab POS system** — one of the top-rated restaurant and retail POS platforms — along with countertop terminals, wireless terminals, and mobile card readers. SkyTab includes tableside ordering, online ordering, inventory management, and employee management built in.",
+      text: "We offer the **Shift4Dine POS system** — one of the top-rated restaurant and retail POS platforms — along with countertop terminals, wireless terminals, and mobile card readers. Shift4Dine includes tableside ordering, online ordering, inventory management, and employee management built in.",
       links: [
         { label: "POS Systems", href: "/solutions/pos-systems" },
-        { label: "Build Your SkyTab Setup", href: "/solutions/pos-systems" },
+        { label: "Build Your Shift4Dine Setup", href: "/solutions/pos-systems" },
       ],
     };
   }

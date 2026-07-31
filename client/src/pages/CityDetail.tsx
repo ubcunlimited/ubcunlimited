@@ -32,9 +32,9 @@ function cityMetaDescription(cityName: string, countySlug: string, citySlug: str
   const hash = citySlug.split('').reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
   const t = hash % 4;
   if (t === 0) return `Credit card processing, POS & cash discount for ${cityName}, Utah. Local merchant services — competitive rates, fast approval, ${cn} support.`;
-  if (t === 1) return `UBC Unlimited serves ${cityName} (${cn}) with merchant services, SkyTab POS & dual pricing. Free statement review — save on processing fees.`;
+  if (t === 1) return `UBC Unlimited serves ${cityName} (${cn}) with merchant services, Shift4Dine POS & dual pricing. Free statement review — save on processing fees.`;
   if (t === 2) return `Payment processing for ${cityName} businesses. Credit card processing, POS, cash discount & high-risk accounts in ${cn}. Local Utah support.`;
-  return `Merchant services in ${cityName}, Utah. Competitive processing rates, SkyTab POS & cash discount programs for ${cn} businesses. Fast setup.`;
+  return `Merchant services in ${cityName}, Utah. Competitive processing rates, Shift4Dine POS & cash discount programs for ${cn} businesses. Fast setup.`;
 }
 
 const HOW_IT_WORKS = [
@@ -45,7 +45,7 @@ const HOW_IT_WORKS = [
 
 const SOLUTIONS = [
   { href: "/solutions/credit-card-processing", label: "Credit Card Processing", desc: "Competitive rates with transparent pricing and no hidden fees." },
-  { href: "/solutions/pos-systems", label: "POS Systems", desc: "SkyTab and other industry-leading POS solutions, fully configured." },
+  { href: "/solutions/pos-systems", label: "POS Systems", desc: "Shift4Dine and other industry-leading POS solutions, fully configured." },
   { href: "/solutions/surcharge-cash-discount", label: "Cash Discount & Dual Pricing", desc: "Eliminate up to 100% of processing fees legally and transparently." },
   { href: "/solutions/high-risk-processing", label: "High-Risk Processing", desc: "Approved accounts for industries other processors decline." },
 ];
@@ -120,7 +120,7 @@ export default function CityDetail() {
             </h2>
             <ul className="list-disc list-inside text-gray-700 text-base space-y-2 mb-6">
               <li>Credit card and debit card processing with transparent interchange-plus pricing</li>
-              <li>SkyTab POS systems for restaurants, bars, retail, and service businesses</li>
+              <li>Shift4Dine POS systems for restaurants, bars, retail, and service businesses</li>
               <li>Cash discount and dual pricing programs to offset or eliminate processing fees</li>
               <li>ACH and eCheck processing for recurring billing and large transactions</li>
               <li>eCommerce payment gateways for online businesses</li>
@@ -164,7 +164,7 @@ export default function CityDetail() {
               {county && (
                 <div className="border border-gray-200 rounded-lg p-4">
                   <h3 className="font-semibold text-[#080808] mb-2">Do you offer POS systems for businesses in {county.name}?</h3>
-                  <p className="text-gray-700 text-sm leading-relaxed">Yes. We install and support SkyTab POS systems throughout {county.name}, including {cityName} and surrounding communities. Our local team handles the full installation, menu or product configuration, staff training, and ongoing support. SkyTab is built for restaurants, bars, quick-service, and retail environments and includes built-in online ordering, loyalty programs, and real-time analytics.</p>
+                  <p className="text-gray-700 text-sm leading-relaxed">Yes. We install and support Shift4Dine POS systems throughout {county.name}, including {cityName} and surrounding communities. Our local team handles the full installation, menu or product configuration, staff training, and ongoing support. Shift4Dine is built for restaurants, bars, quick-service, and retail environments and includes built-in online ordering, loyalty programs, and real-time analytics.</p>
                 </div>
               )}
             </div>

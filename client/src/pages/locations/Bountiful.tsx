@@ -15,13 +15,13 @@ const BOUNTIFUL_INDUSTRIES = [
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Bountiful's Orchard Drive corridor and local retail scene need fast, reliable checkout. We offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "Bountiful's Orchard Drive corridor and local retail scene need fast, reliable checkout. We offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "From Bountiful's local dining scene to fast casual — we support tableside payments, split checks, and SkyTab POS.",
+    desc: "From Bountiful's local dining scene to fast casual — we support tableside payments, split checks, and Shift4Dine POS.",
     href: "/industries/restaurants",
   },
   {
@@ -94,7 +94,7 @@ const BOUNTIFUL_FAQS = [
   },
   {
     q: "What POS systems do you offer for Bountiful restaurants and retailers?",
-    a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for Bountiful businesses?",
@@ -140,7 +140,7 @@ const TESTIMONIALS = [
     name: "Karen T.",
     business: "Restaurant Owner, Bountiful",
     rating: 5,
-    text: "SkyTab is perfect for our operation. The processing rates are the best we've had and the local support is fantastic.",
+    text: "Shift4Dine is perfect for our operation. The processing rates are the best we've had and the local support is fantastic.",
   }
 ];
 

@@ -34,7 +34,7 @@ export const NAV_SOLUTIONS = [
   { label: "Credit Card Processing", href: "/solutions/credit-card-processing", desc: "Competitive rates with transparent pricing", icon: "💳" },
   { label: "ACH / eCheck Processing", href: "/solutions/ach-echeck-processing", desc: "Bank-to-bank transfers and eCheck acceptance for lower processing costs", icon: "🏦" },
   { label: "Check Guarantee", href: "/solutions/check-guarantee", desc: "Accept paper checks with protection against returned or fraudulent checks", icon: "✅" },
-  { label: "POS Systems", href: "/solutions/pos-systems", desc: "SkyTab, Clover & more for your industry", icon: "🖥️" },
+  { label: "POS Systems", href: "/solutions/pos-systems", desc: "Shift4Dine, Clover & more for your industry", icon: "🖥️" },
   { label: "eCommerce Payments", href: "/solutions/ecommerce-payments", desc: "Seamless online payment gateways", icon: "🛒" },
   { label: "Mobile Processing", href: "/solutions/mobile-processing", desc: "Accept payments anywhere — in the field, at events, or on the go", icon: "📱" },
   { label: "Virtual Terminals", href: "/solutions/virtual-terminals", desc: "Process payments by phone, mail order, or manual entry from any browser", icon: "💻" },
@@ -127,7 +127,7 @@ export const TESTIMONIALS = [
   {
     name: "Kevin R.",
     business: "Ogden Bar & Grill",
-    quote: "Finally found a processor that understands the bar business. SkyTab has been a game changer for our high-volume nights.",
+    quote: "Finally found a processor that understands the bar business. Shift4Dine has been a game changer for our high-volume nights.",
     rating: 5,
   },
 ];

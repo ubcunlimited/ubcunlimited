@@ -141,9 +141,9 @@ export const blogPosts: BlogPostMeta[] = [
   },
   {
     slug: "skytab-pos-review-utah",
-    title: "SkyTab POS: An Honest Review from Utah's Authorized Reseller",
+    title: "Shift4Dine POS: An Honest Review from Utah's Authorized Reseller",
     excerpt:
-      "We install and support SkyTab systems across Utah, which means we see exactly how the platform performs in real businesses — not just in demos. This review covers what SkyTab does well, where it has limitations, and which types of Utah businesses are the best fit. No sales spin, just our honest experience.",
+      "We install and support Shift4Dine systems across Utah, which means we see exactly how the platform performs in real businesses — not just in demos. This review covers what Shift4Dine does well, where it has limitations, and which types of Utah businesses are the best fit. No sales spin, just our honest experience.",
     category: "POS Systems",
     date: "2025-05-08",
     readTime: "10 min read",

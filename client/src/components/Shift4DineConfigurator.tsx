@@ -101,7 +101,7 @@ const BUSINESS_TYPES: BusinessType[] = [
 const HARDWARE_ITEMS: HardwareItem[] = [
   {
     id: "skytab-pos",
-    name: "SkyTab POS Workstation",
+    name: "Workstation 15",
     subtitle: "14\" HD Touchscreen",
     desc: "The command center of your operation. A sleek, commercial-grade 14\" touchscreen workstation with built-in payment terminal, integrated customer-facing display, and a lifetime hardware warranty.",
     icon: <Monitor size={28} />,
@@ -113,15 +113,15 @@ const HARDWARE_ITEMS: HardwareItem[] = [
       "Lifetime hardware warranty",
       "Offline mode — works without internet",
     ],
-    imageUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/skytab-pos-workstation_placeholder.jpg",
+    imageUrl: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-workstation.jpg",
     isRequired: false,
     category: "core",
   },
   {
     id: "skytab-glass",
-    name: "SkyTab Glass",
+    name: "Shift4 Glass",
     subtitle: "8\" Tablet POS",
-    desc: "A fully mobile 8\" tablet POS that runs the complete SkyTab software suite. Perfect for table-side ordering, counter service, or as a secondary station.",
+    desc: "A fully mobile 8\" tablet POS that runs the complete Shift4Dine software suite. Perfect for table-side ordering, counter service, or as a secondary station.",
     icon: <Tablet size={28} />,
     badge: "$29.99/mo",
     highlights: [
@@ -129,15 +129,15 @@ const HARDWARE_ITEMS: HardwareItem[] = [
       "Full POS software on a tablet",
       "Lightweight and portable",
       "Ideal for table-side service",
-      "Connects to all SkyTab peripherals",
+      "Connects to all Shift4Dine peripherals",
     ],
     category: "handheld",
   },
   {
     id: "skytab-air",
-    name: "SkyTab Air",
+    name: "Shift4 Air",
     subtitle: "Handheld POS",
-    desc: "A purpose-built handheld POS device for tableside ordering and payments. 4G + WiFi connectivity, all-day battery life, and the full SkyTab feature set in the palm of your hand.",
+    desc: "A purpose-built handheld POS device for tableside ordering and payments. 4G + WiFi connectivity, all-day battery life, and the full Shift4Dine feature set in the palm of your hand.",
     icon: <Smartphone size={28} />,
     highlights: [
       "4G + WiFi connectivity",
@@ -180,7 +180,7 @@ const HARDWARE_ITEMS: HardwareItem[] = [
   },
   {
     id: "kiosk",
-    name: "SkyTab Kiosk",
+    name: "Self-Service Kiosk",
     subtitle: "Self-Service Ordering",
     desc: "Let guests order and pay at their own pace with a self-service kiosk. Reduces wait times, increases average ticket size, and frees up staff for higher-value tasks.",
     icon: <Monitor size={28} />,
@@ -190,7 +190,7 @@ const HARDWARE_ITEMS: HardwareItem[] = [
       "Digital receipts & SMS notifications",
       "Increases average ticket 15–30%",
       "Reduces perceived wait times",
-      "Fully integrated with SkyTab POS",
+      "Fully integrated with Shift4Dine POS",
     ],
     category: "kiosk",
   },
@@ -208,7 +208,7 @@ const ADD_ONS: AddOn[] = [
   {
     id: "cash-drawer",
     name: "Cash Drawer",
-    desc: "Secure, auto-open cash drawer. Integrates directly with SkyTab POS for automatic open on cash transactions.",
+    desc: "Secure, auto-open cash drawer. Integrates directly with Shift4Dine POS for automatic open on cash transactions.",
     icon: <DollarSign size={20} />,
     category: "hardware",
     recommendedFor: ["retail", "quick-service", "bar-nightclub"],
@@ -216,7 +216,7 @@ const ADD_ONS: AddOn[] = [
   {
     id: "online-ordering",
     name: "Online Ordering",
-    desc: "Commission-free online ordering integrated directly with your SkyTab POS. Orders flow straight to the kitchen — no manual entry.",
+    desc: "Commission-free online ordering integrated directly with your Shift4Dine POS. Orders flow straight to the kitchen — no manual entry.",
     icon: <Wifi size={20} />,
     category: "software",
     recommendedFor: ["full-service-restaurant", "quick-service", "bar-nightclub"],
@@ -248,7 +248,7 @@ const ADD_ONS: AddOn[] = [
   {
     id: "gift-cards",
     name: "Gift Cards",
-    desc: "Physical and digital gift cards fully integrated with your SkyTab POS. Track balances, redemptions, and outstanding liability.",
+    desc: "Physical and digital gift cards fully integrated with your Shift4Dine POS. Track balances, redemptions, and outstanding liability.",
     icon: <Package size={20} />,
     category: "software",
     recommendedFor: ["full-service-restaurant", "retail", "salon-spa"],
@@ -256,7 +256,7 @@ const ADD_ONS: AddOn[] = [
   {
     id: "reservations-waitlist",
     name: "Reservations & Waitlist",
-    desc: "Guest reservations, waitlist management, and table status tracking — all integrated with your SkyTab POS floor plan.",
+    desc: "Guest reservations, waitlist management, and table status tracking — all integrated with your Shift4Dine POS floor plan.",
     icon: <Users size={20} />,
     category: "software",
     recommendedFor: ["full-service-restaurant", "bar-nightclub"],
@@ -311,11 +311,11 @@ function StepIndicator({ currentStep, totalSteps }: { currentStep: number; total
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 
-interface SkyTabConfiguratorProps {
+interface Shift4DineConfiguratorProps {
   compact?: boolean; // When embedded in solution page, use compact mode
 }
 
-export default function SkyTabConfigurator({ compact = false }: SkyTabConfiguratorProps) {
+export default function Shift4DineConfigurator({ compact = false }: Shift4DineConfiguratorProps) {
   const [step, setStep] = useState(1);
   const [selectedBusiness, setSelectedBusiness] = useState<string | null>(null);
   const [selectedHardware, setSelectedHardware] = useState<string[]>([]);
@@ -369,7 +369,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
 
   const { getToken } = useRecaptcha();
 
-  const submitSkyTab = trpc.forms.submitSkyTabConfig.useMutation({
+  const submitShift4Dine = trpc.forms.submitShift4DineConfig.useMutation({
     onSuccess: () => {
       setSubmitted(true);
       trackLead();
@@ -382,7 +382,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const recaptchaToken = await getToken("submit_skytab_configurator");
-    submitSkyTab.mutate({
+    submitShift4Dine.mutate({
       firstName,
       lastName,
       phone,
@@ -416,10 +416,10 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
             style={{ fontFamily: "Sora, sans-serif" }}
           >
             Build Your{" "}
-            <span className="text-[#c9a84c]">SkyTab POS System</span>
+            <span className="text-[#c9a84c]">Shift4Dine POS System</span>
           </h2>
           <p className="text-white/70 text-sm max-w-xl mx-auto">
-            Tell us about your business and we'll recommend the right SkyTab hardware and features — then connect you with a local Utah expert for a custom quote.
+            Tell us about your business and we'll recommend the right Shift4Dine hardware and features — then connect you with a local Utah expert for a custom quote.
           </p>
         </div>
 
@@ -738,7 +738,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "Sora, sans-serif" }}>
-                Your Custom SkyTab Build
+                Your Custom Shift4Dine Build
               </h3>
               <p className="text-white/70 text-sm">
                 Here's what we recommend for your{" "}
@@ -822,7 +822,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                 <div className="bg-[#c9a84c]/8 border border-[#c9a84c]/20 rounded-2xl p-4 flex items-start gap-3">
                   <Info size={16} className="text-[#c9a84c] shrink-0 mt-0.5" />
                   <p className="text-white/60 text-xs leading-relaxed">
-                    SkyTab hardware is available at <strong className="text-white">$0 upfront</strong> with qualifying payment processing accounts. A local UBC Unlimited expert will provide exact pricing based on your business volume and setup.
+                    Shift4Dine hardware is available at <strong className="text-white">$0 upfront</strong> with qualifying payment processing accounts. A local UBC Unlimited expert will provide exact pricing based on your business volume and setup.
                   </p>
                 </div>
               </div>
@@ -833,7 +833,7 @@ export default function SkyTabConfigurator({ compact = false }: SkyTabConfigurat
                   Get Your Custom Quote
                 </h4>
                 <p className="text-white/70 text-xs mb-5">
-                  A local Utah SkyTab expert will reach out within 1 business day with pricing and availability.
+                  A local Utah Shift4Dine expert will reach out within 1 business day with pricing and availability.
                 </p>
 
                 {submitted ? (

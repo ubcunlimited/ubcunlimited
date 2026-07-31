@@ -110,3 +110,9 @@ temp/
 .webdev/
 .github/workflows/ci.yml
 .project-config.json
+
+# Local image staging (assets live on Cloudflare R2, not in the repo)
+_asset_staging/
+
+# Manus leftovers
+.manus-logs/

@@ -121,7 +121,7 @@ lines.push(
 );
 lines.push(``);
 lines.push(
-  `Key differentiators: local Utah-based dedicated rep, interchange-plus pricing, same-day to 14-day onboarding depending on solution, high-risk merchant account expertise, and SkyTab/Clover POS authorized reseller. Service area covers all ${cities.length} incorporated Utah cities and all ${counties.length} Utah counties.`
+  `Key differentiators: local Utah-based dedicated rep, interchange-plus pricing, same-day to 14-day onboarding depending on solution, high-risk merchant account expertise, and Shift4Dine/Clover POS authorized reseller. Service area covers all ${cities.length} incorporated Utah cities and all ${counties.length} Utah counties.`
 );
 lines.push(``);
 lines.push(`_Generated: ${TODAY}_`);
@@ -139,7 +139,7 @@ const corePages = [
   ["/quote", "Get a Quote", "Quick quote request form"],
   ["/faq", "FAQ", "Frequently asked questions about merchant services, pricing, and contracts"],
   ["/testimonials", "Client Testimonials", "Real client reviews and case studies"],
-  ["/build-a-pos", "Build a POS System", "Interactive SkyTab POS configurator — select hardware, add-ons, and get a custom quote"],
+  ["/build-a-pos", "Build a POS System", "Interactive Shift4Dine POS configurator — select hardware, add-ons, and get a custom quote"],
   ["/news", "News & Updates", "Company news, product updates, and industry announcements"],
   ["/accessibility", "Accessibility Statement", "WCAG 2.1 accessibility commitment and contact for accommodations"],
 ];

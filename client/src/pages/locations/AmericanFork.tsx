@@ -15,13 +15,13 @@ const AMERICAN_FORK_INDUSTRIES = [
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "American Fork's growing restaurant scene needs reliable POS and payment solutions. We support tableside payments, split checks, and SkyTab systems.",
+    desc: "American Fork's growing restaurant scene needs reliable POS and payment solutions. We support tableside payments, split checks, and Shift4Dine systems.",
     href: "/industries/restaurants",
   },
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Local retailers in American Fork need fast, reliable checkout. We offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "Local retailers in American Fork need fast, reliable checkout. We offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
@@ -94,7 +94,7 @@ const AMERICAN_FORK_FAQS = [
   },
   {
     q: "What POS systems do you offer for American Fork restaurants?",
-    a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for American Fork businesses?",
@@ -128,7 +128,7 @@ const TESTIMONIALS = [
     name: "Rachel B.",
     business: "Restaurant Owner, Downtown American Fork",
     rating: 5,
-    text: "UBC Unlimited got us set up with SkyTab in two days. Our processing costs dropped and the local support is fantastic.",
+    text: "UBC Unlimited got us set up with Shift4Dine in two days. Our processing costs dropped and the local support is fantastic.",
   },
   {
     name: "Chris M.",

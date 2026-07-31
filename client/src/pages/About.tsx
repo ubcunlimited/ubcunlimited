@@ -6,9 +6,9 @@ import TestimonialBlock from "@/components/sections/TestimonialBlock";
 import { SITE, TRUST_SIGNALS } from "@/lib/config";
 import SEO from "@/components/SEO";
 
-const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation_39f98a43.webp";
-const TERMINAL_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-v2_1e6bdb8d.webp";
-const ABSTRACT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/payment-abstract-v2_b990fdb5.webp";
+const CONSULT_IMG = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/team-consultation_39f98a43.webp";
+const TERMINAL_IMG = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/hero-main-v2_1e6bdb8d.webp";
+const ABSTRACT_IMG = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/payment-abstract-v2_b990fdb5.webp";
 
 const values = [
   {

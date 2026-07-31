@@ -15,13 +15,13 @@ const OREM_INDUSTRIES = [
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Orem's State Street retail corridor is one of Utah's busiest. We offer Clover and SkyTab retail setups with inventory sync and fast checkout.",
+    desc: "Orem's State Street retail corridor is one of Utah's busiest. We offer Clover and Shift4Dine retail setups with inventory sync and fast checkout.",
     href: "/industries/retail",
   },
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "From fast casual to full-service dining near UVU — we support tableside payments, split checks, and SkyTab POS built for the Utah dining scene.",
+    desc: "From fast casual to full-service dining near UVU — we support tableside payments, split checks, and Shift4Dine POS built for the Utah dining scene.",
     href: "/industries/restaurants",
   },
   {
@@ -94,7 +94,7 @@ const OREM_FAQS = [
   },
   {
     q: "What POS systems do you offer for Orem retailers?",
-    a: "We offer SkyTab, Clover, and other systems tailored to retail, restaurant, and service businesses. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine, Clover, and other systems tailored to retail, restaurant, and service businesses. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for Orem businesses?",

@@ -104,16 +104,16 @@ const FORM_ENTRIES: FormEntry[] = [
     mechanism: "tRPC mutation → submitTestimonial",
   },
   {
-    form: "SkyTab POS Builder",
-    file: "client/src/components/sections/SkyTabPOSBuilder.tsx",
+    form: "Shift4Dine POS Builder",
+    file: "client/src/components/sections/Shift4DinePOSBuilder.tsx",
     action: "submit_skytab_order",
     serverVerified: false,
     mechanism: "mailto: redirect (no backend call)",
     notes: "Token is generated and scored by Google but not verified server-side. The form opens a pre-filled mailto: link rather than posting to the API.",
   },
   {
-    form: "SkyTab Configurator",
-    file: "client/src/components/SkyTabConfigurator.tsx",
+    form: "Shift4Dine Configurator",
+    file: "client/src/components/Shift4DineConfigurator.tsx",
     action: "submit_skytab_configurator",
     serverVerified: false,
     mechanism: "Local state only (no backend call)",
@@ -540,7 +540,7 @@ export default function RecaptchaDoc() {
           <div>
             <h2 className="text-xl font-bold text-[#080808] mb-2" style={{ fontFamily: "Sora, sans-serif" }}>Client-Only Forms — Limitations & Options</h2>
             <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-              Three forms — SkyTab POS Builder, SkyTab Configurator, and the inline Lead Capture Form — do not make a server-side API call on submission. reCAPTCHA tokens are generated for these forms (which contributes to Google's scoring model for the site), but the tokens are not verified server-side because there is no backend round-trip to attach verification to.
+              Three forms — Shift4Dine POS Builder, Shift4Dine Configurator, and the inline Lead Capture Form — do not make a server-side API call on submission. reCAPTCHA tokens are generated for these forms (which contributes to Google's scoring model for the site), but the tokens are not verified server-side because there is no backend round-trip to attach verification to.
             </p>
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-4">
               <div className="flex gap-3">
@@ -548,8 +548,8 @@ export default function RecaptchaDoc() {
                 <div>
                   <p className="text-sm font-semibold text-blue-800 mb-1">Options for full server-side protection on these forms</p>
                   <ul className="text-xs text-blue-700 leading-relaxed space-y-1.5 list-disc list-outside ml-4">
-                    <li><strong>SkyTab POS Builder:</strong> Replace the mailto: redirect with a tRPC mutation that emails the order summary server-side. This enables full token verification and removes the dependency on the user's email client.</li>
-                    <li><strong>SkyTab Configurator:</strong> Add a tRPC mutation to persist the quote request to the database and trigger an owner notification. The reCAPTCHA token can then be verified in that procedure.</li>
+                    <li><strong>Shift4Dine POS Builder:</strong> Replace the mailto: redirect with a tRPC mutation that emails the order summary server-side. This enables full token verification and removes the dependency on the user's email client.</li>
+                    <li><strong>Shift4Dine Configurator:</strong> Add a tRPC mutation to persist the quote request to the database and trigger an owner notification. The reCAPTCHA token can then be verified in that procedure.</li>
                     <li><strong>Inline Lead Capture Form:</strong> Wire it to an existing tRPC procedure (e.g., <code className="bg-blue-100 px-1 rounded">submitHeroLead</code>) and pass the recaptchaToken. The component currently has no backend call by design for reusability.</li>
                   </ul>
                 </div>

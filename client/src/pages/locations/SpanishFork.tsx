@@ -15,13 +15,13 @@ const SPANISH_FORK_INDUSTRIES = [
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "Spanish Fork's growing dining scene needs reliable POS and payment solutions. We support tableside payments, split checks, and SkyTab systems.",
+    desc: "Spanish Fork's growing dining scene needs reliable POS and payment solutions. We support tableside payments, split checks, and Shift4Dine systems.",
     href: "/industries/restaurants",
   },
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Local retailers in Spanish Fork need fast, reliable checkout. We offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "Local retailers in Spanish Fork need fast, reliable checkout. We offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
@@ -94,7 +94,7 @@ const SPANISH_FORK_FAQS = [
   },
   {
     q: "What POS systems do you offer for Spanish Fork restaurants and retailers?",
-    a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for Spanish Fork businesses?",
@@ -134,7 +134,7 @@ const TESTIMONIALS = [
     name: "Sarah L.",
     business: "Restaurant Owner, Spanish Fork",
     rating: 5,
-    text: "Switched from Square and saved over $200 a month. The local support is excellent and the SkyTab system is perfect for our operation.",
+    text: "Switched from Square and saved over $200 a month. The local support is excellent and the Shift4Dine system is perfect for our operation.",
   },
   {
     name: "Dave T.",

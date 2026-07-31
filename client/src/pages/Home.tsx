@@ -23,15 +23,15 @@ function SectionSkeleton() {
 
 // Hero image — used as CSS background-image on the section element (not an img tag,
 // so it is excluded from LCP consideration; the h1 headline becomes the LCP element)
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-main-1440w_q72_fb246703.webp";
+const HERO_IMG = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/hero-main-1440w_q72_fb246703.webp";
 
 // Consultation image — responsive srcset (q72 re-compressed + 600w for exact display size)
-const CONSULT_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-768w_q72_a6ccb37c.webp";
+const CONSULT_IMG = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/team-consultation-768w_q72_a6ccb37c.webp";
 const CONSULT_SRCSET = [
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-480w_092dd2b2.webp 480w",
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-600w_4fcebb98.webp 600w",
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-768w_q72_a6ccb37c.webp 768w",
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/team-consultation-1024w_58d8f30a.webp 1024w",
+  "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/team-consultation-480w_092dd2b2.webp 480w",
+  "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/team-consultation-600w_4fcebb98.webp 600w",
+  "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/team-consultation-768w_q72_a6ccb37c.webp 768w",
+  "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/team-consultation-1024w_58d8f30a.webp 1024w",
 ].join(", ");
 
 
@@ -72,8 +72,8 @@ const homeFAQ = [
     answer: "Yes, completely free with no obligation. We analyze your current statement, identify overcharges, and present a comparison. You decide if it makes sense to switch."
   },
   {
-    question: "Do you work with SkyTab POS systems?",
-    answer: "Yes — UBC Unlimited is an authorized SkyTab reseller in Utah. SkyTab is one of the most powerful POS systems available for restaurants and bars, and we provide full local installation and support."
+    question: "Do you work with Shift4Dine POS systems?",
+    answer: "Yes — UBC Unlimited is an authorized Shift4Dine reseller in Utah. Shift4Dine is one of the most powerful POS systems available for restaurants and bars, and we provide full local installation and support."
   },
 ];
 
@@ -139,7 +139,7 @@ export default function Home() {
       <SEO
         title="Utah Merchant Services & Payment Processing"
         canonical="/"
-        description="Utah merchant services provider. Credit card processing, cash discount & dual pricing, SkyTab POS, ACH payments. Serving Salt Lake City, Provo & statewide. Free statement review."
+        description="Utah merchant services provider. Credit card processing, cash discount & dual pricing, Shift4Dine POS, ACH payments. Serving Salt Lake City, Provo & statewide. Free statement review."
         schema={[
           {
             "@context": "https://schema.org",
@@ -151,8 +151,8 @@ export default function Home() {
             "url": "https://ubcunlimited.com",
             "telephone": "+18014620923",
             "email": "info@ubcunlimited.com",
-            "logo": "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png",
-            "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png",
+            "logo": "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png",
+            "image": "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/og-image-main-7CEjeR5kzdsRUjBNtKwoS8.png",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Salt Lake City",

@@ -15,13 +15,13 @@ const PARK_CITY_INDUSTRIES = [
   {
     icon: Utensils,
     name: "Restaurants & Fine Dining",
-    desc: "Park City's world-class dining scene on Historic Main Street demands premium POS solutions. We support tableside payments, split checks, and SkyTab systems.",
+    desc: "Park City's world-class dining scene on Historic Main Street demands premium POS solutions. We support tableside payments, split checks, and Shift4Dine systems.",
     href: "/industries/restaurants",
   },
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Park City's upscale boutiques and ski shops need fast, reliable checkout. We offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "Park City's upscale boutiques and ski shops need fast, reliable checkout. We offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
@@ -94,7 +94,7 @@ const PARK_CITY_FAQS = [
   },
   {
     q: "What POS systems do you offer for Park City restaurants and ski shops?",
-    a: "We offer SkyTab (ideal for restaurants, bars, and high-volume ski resort food service), Clover (popular with retail and boutiques), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants, bars, and high-volume ski resort food service), Clover (popular with retail and boutiques), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for Park City businesses?",
@@ -128,7 +128,7 @@ const TESTIMONIALS = [
     name: "Sophie M.",
     business: "Fine Dining Restaurant, Main Street",
     rating: 5,
-    text: "UBC Unlimited understands the Park City market. Our processing costs dropped significantly and the SkyTab system handles our high-volume ski season perfectly.",
+    text: "UBC Unlimited understands the Park City market. Our processing costs dropped significantly and the Shift4Dine system handles our high-volume ski season perfectly.",
   },
   {
     name: "James H.",

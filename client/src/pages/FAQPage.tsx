@@ -162,12 +162,12 @@ const faqCategories = [
       {
         question: "Which POS system is right for my business?",
         answer:
-          "It depends on your business type. SkyTab is ideal for restaurants and bars with tableside ordering, kitchen display systems, and online ordering. Clover is great for retail, salons, and service businesses. We'll help you choose during a consultation.",
+          "It depends on your business type. Shift4Dine is ideal for restaurants and bars with tableside ordering, kitchen display systems, and online ordering. Clover is great for retail, salons, and service businesses. We'll help you choose during a consultation.",
       },
       {
-        question: "Do you work with SkyTab POS systems?",
+        question: "Do you work with Shift4Dine POS systems?",
         answer:
-          "Yes — UBC Unlimited is an authorized SkyTab reseller in Utah. SkyTab is one of the most powerful POS systems available for restaurants and bars, and we provide full local installation and support.",
+          "Yes — UBC Unlimited is an authorized Shift4Dine reseller in Utah. Shift4Dine is one of the most powerful POS systems available for restaurants and bars, and we provide full local installation and support.",
       },
       {
         question: "Do you provide training?",
@@ -200,14 +200,14 @@ const faqCategories = [
           "Yes. Our bar and restaurant POS systems support pre-authorization holds, so you can hold a card on file and capture the final amount when the customer closes out.",
       },
       {
-        question: "How does SkyTab compare to Toast, Square, and Clover?",
+        question: "How does Shift4Dine compare to Toast, Square, and Clover?",
         answer: (
           <div className="overflow-x-auto -mx-2">
             <table className="w-full text-xs border-collapse min-w-[480px]">
               <thead>
                 <tr className="bg-[#080808] text-white">
                   <th className="text-left px-3 py-2 font-semibold">Feature</th>
-                  <th className="px-3 py-2 font-bold text-[#22c55e] text-center">SkyTab<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
+                  <th className="px-3 py-2 font-bold text-[#22c55e] text-center">Shift4Dine<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
                   <th className="px-3 py-2 font-semibold text-center">Toast</th>
                   <th className="px-3 py-2 font-semibold text-center">Square</th>
                   <th className="px-3 py-2 font-semibold text-center">Clover</th>
@@ -230,10 +230,10 @@ const faqCategories = [
                   ["Local onsite installation (Utah)", "✅", "❌", "❌", "⚠️"],
                   ["4G LTE handheld POS option", "✅", "⚠️", "❌", "❌"],
                   ["Brewery & taproom features", "✅", "⚠️", "⚠️", "⚠️"],
-                ].map(([feature, skytab, toast, square, clover], i) => (
+                ].map(([feature, shift4dine, toast, square, clover], i) => (
                   <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                     <td className="px-3 py-2 text-gray-700 font-medium">{feature}</td>
-                    <td className="px-3 py-2 text-center font-semibold text-[#c9a84c]">{skytab}</td>
+                    <td className="px-3 py-2 text-center font-semibold text-[#c9a84c]">{shift4dine}</td>
                     <td className="px-3 py-2 text-center text-gray-600">{toast}</td>
                     <td className="px-3 py-2 text-center text-gray-600">{square}</td>
                     <td className="px-3 py-2 text-center text-gray-600">{clover}</td>
@@ -440,7 +440,7 @@ const faqCategories = [
       {
         question: "Do you serve restaurants and bars?",
         answer:
-          "Yes. We specialize in restaurant and bar payment solutions including SkyTab POS with tableside ordering, kitchen display systems, online ordering integration, tip management, pre-authorization holds for tabs, and chargeback management.",
+          "Yes. We specialize in restaurant and bar payment solutions including Shift4Dine POS with tableside ordering, kitchen display systems, online ordering integration, tip management, pre-authorization holds for tabs, and chargeback management.",
       },
       {
         question: "Are your payment solutions HIPAA compliant for medical practices?",
@@ -636,8 +636,8 @@ export default function FAQPage() {
             { "@type": "Question", "name": "Can I use ACH for recurring payments?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ACH is ideal for recurring billing — subscriptions, memberships, rent payments, and installment plans. We can set up automatic recurring drafts with customer authorization." } },
             { "@type": "Question", "name": "What are the fees for ACH processing?", "acceptedAnswer": { "@type": "Answer", "text": "ACH processing is very cost-effective — typically a fraction of credit card processing fees. Exact pricing depends on your volume and transaction type. Contact us for a custom quote." } },
             // ── POS Systems ──
-            { "@type": "Question", "name": "Which POS system is right for my business?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your business type. SkyTab is ideal for restaurants and bars with tableside ordering, kitchen display systems, and online ordering. Clover is great for retail, salons, and service businesses. We'll help you choose during a consultation." } },
-            { "@type": "Question", "name": "Do you work with SkyTab POS systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — UBC Unlimited is an authorized SkyTab reseller in Utah. SkyTab is one of the most powerful POS systems available for restaurants and bars, and we provide full local installation and support." } },
+            { "@type": "Question", "name": "Which POS system is right for my business?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your business type. Shift4Dine is ideal for restaurants and bars with tableside ordering, kitchen display systems, and online ordering. Clover is great for retail, salons, and service businesses. We'll help you choose during a consultation." } },
+            { "@type": "Question", "name": "Do you work with Shift4Dine POS systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — UBC Unlimited is an authorized Shift4Dine reseller in Utah. Shift4Dine is one of the most powerful POS systems available for restaurants and bars, and we provide full local installation and support." } },
             { "@type": "Question", "name": "Do you provide POS training?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our local team provides on-site installation and training for you and your staff. We also offer ongoing support if you have questions after go-live." } },
             { "@type": "Question", "name": "What if I have issues after POS setup?", "acceptedAnswer": { "@type": "Answer", "text": "We provide ongoing technical support during business hours. For local Utah businesses, we can also dispatch a technician for on-site support when needed. You'll always have a direct contact — not a call center." } },
             { "@type": "Question", "name": "How long does POS installation take?", "acceptedAnswer": { "@type": "Answer", "text": "Most POS system installations require at least 14 days from complete paperwork submission. This allows time for hardware delivery, configuration, and scheduling your on-site installation and training." } },
@@ -659,7 +659,7 @@ export default function FAQPage() {
             { "@type": "Question", "name": "Can I send invoices with payment links?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our invoicing solution lets you send professional invoices with embedded payment links that accept all major credit cards and ACH bank transfers. Customers can pay in seconds from any device." } },
             { "@type": "Question", "name": "Does invoicing integrate with my accounting software?", "acceptedAnswer": { "@type": "Answer", "text": "We integrate with QuickBooks, Xero, FreshBooks, and other popular accounting platforms to keep your books in sync automatically." } },
             // ── Industry-Specific ──
-            { "@type": "Question", "name": "Do you serve restaurants and bars?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We specialize in restaurant and bar payment solutions including SkyTab POS with tableside ordering, kitchen display systems, online ordering integration, tip management, pre-authorization holds for tabs, and chargeback management." } },
+            { "@type": "Question", "name": "Do you serve restaurants and bars?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We specialize in restaurant and bar payment solutions including Shift4Dine POS with tableside ordering, kitchen display systems, online ordering integration, tip management, pre-authorization holds for tabs, and chargeback management." } },
             { "@type": "Question", "name": "Are your payment solutions HIPAA compliant for medical practices?", "acceptedAnswer": { "@type": "Answer", "text": "Our payment processing solutions are PCI DSS compliant. We recommend working with your compliance officer to ensure your full payment workflow meets HIPAA requirements. We can set up patient payment plans and recurring billing for healthcare providers." } },
             { "@type": "Question", "name": "Can you get a merchant account for a firearms dealer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with specialized banking partners who understand and support the firearms industry. We can help FFL dealers, gun shops, ammo retailers, and shooting ranges get approved for reliable merchant accounts." } },
             { "@type": "Question", "name": "Will my firearms merchant account get shut down?", "acceptedAnswer": { "@type": "Answer", "text": "That's a real concern in this industry. We place firearms businesses with processors who specialize in high-risk retail and have a track record of stable, long-term accounts for gun shops and FFL dealers." } },

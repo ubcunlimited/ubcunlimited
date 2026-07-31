@@ -16,7 +16,7 @@ interface Message {
 }
 
 const LOGO_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/shieldubclogotransparent3_6c0e0b4a.png";
+  "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shieldubclogotransparent3_6c0e0b4a.png";
 
 // ── Smart response engine ──────────────────────────────────────────────────
 function getResponse(input: string): { text: string; links?: { label: string; href: string }[] } {
@@ -38,7 +38,7 @@ function getResponse(input: string): { text: string; links?: { label: string; hr
     return { text: "We specialize in **high-risk merchant accounts** for businesses that have been declined or terminated by standard processors.", links: [{ label: "High-Risk Processing", href: "/solutions/high-risk-processing" }, { label: "Get a High-Risk Quote", href: "/consultation" }] };
   }
   if (/pos|point.?of.?sale|skytab|terminal|register|restaurant.*system|retail.*system/.test(q)) {
-    return { text: "We offer the **SkyTab POS system** — one of the top-rated restaurant and retail POS platforms — along with countertop terminals, wireless terminals, and mobile card readers.", links: [{ label: "POS Systems", href: "/solutions/pos-systems" }, { label: "Build Your SkyTab Setup", href: "/solutions/pos-systems" }] };
+    return { text: "We offer the **Shift4Dine POS system** — one of the top-rated restaurant and retail POS platforms — along with countertop terminals, wireless terminals, and mobile card readers.", links: [{ label: "POS Systems", href: "/solutions/pos-systems" }, { label: "Build Your Shift4Dine Setup", href: "/solutions/pos-systems" }] };
   }
   if (/ecommerce|e-commerce|online.*payment|website.*payment|shopify|woocommerce|payment\s*gateway|online\s*store/.test(q)) {
     return { text: "We provide **eCommerce payment solutions** that integrate with Shopify, WooCommerce, Magento, and 350+ other platforms.", links: [{ label: "eCommerce Payments", href: "/solutions/ecommerce-payments" }] };

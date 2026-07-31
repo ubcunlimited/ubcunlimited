@@ -26,7 +26,7 @@ export type { ProductCard } from "./ProductCarousel";
 
 export { default as PullQuoteBanner } from "./PullQuoteBanner";
 
-export { default as SkyTabPOSBuilder } from "./SkyTabPOSBuilder";
+export { default as Shift4DinePOSBuilder } from "./Shift4DinePOSBuilder";
 
 export { default as StatsBar } from "./StatsBar";
 

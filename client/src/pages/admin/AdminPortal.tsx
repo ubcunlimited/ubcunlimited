@@ -45,8 +45,8 @@ const FORM_TYPE_LABELS: Record<string, string> = {
   lead_capture: "Lead Capture",
   blog_lead: "Blog Lead",
   agent_lead: "Agent Lead",
-  skytab_config: "SkyTab Config",
-  skytab_order: "SkyTab Order",
+  skytab_config: "Shift4Dine Config",
+  skytab_order: "Shift4Dine Order",
   testimonial: "Testimonial",
 };
 

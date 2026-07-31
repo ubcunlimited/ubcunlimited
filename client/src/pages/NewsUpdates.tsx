@@ -31,8 +31,8 @@ const companyAnnouncements = [
   },
   {
     date: "February 2026",
-    title: "SkyTab POS Installations Now Targeting 14-Day Go-Live After Approval",
-    body: "UBC Unlimited has streamlined the SkyTab onboarding process to target a full go-live within 14 days of account approval. Our Utah-based installation team handles menu configuration, hardware setup, staff training, and integration before your launch date — so you're ready to process on day one.",
+    title: "Shift4Dine POS Installations Now Targeting 14-Day Go-Live After Approval",
+    body: "UBC Unlimited has streamlined the Shift4Dine onboarding process to target a full go-live within 14 days of account approval. Our Utah-based installation team handles menu configuration, hardware setup, staff training, and integration before your launch date — so you're ready to process on day one.",
     tag: "Product Update",
   },
   {

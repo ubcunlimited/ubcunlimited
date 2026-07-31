@@ -4,7 +4,7 @@
 
 UBC Unlimited has 20+ years of merchant services experience. The team provides tailored payment processing solutions for every business type — from restaurants and retail to high-risk industries that standard processors decline. All pricing is transparent; free statement reviews are available to show businesses exactly where they can save.
 
-Key differentiators: local Utah-based dedicated rep, interchange-plus pricing, same-day to 14-day onboarding depending on solution, high-risk merchant account expertise, and SkyTab/Clover POS authorized reseller. Service area covers all 134 incorporated Utah cities and all 29 Utah counties.
+Key differentiators: local Utah-based dedicated rep, interchange-plus pricing, same-day to 14-day onboarding depending on solution, high-risk merchant account expertise, and Shift4Dine/Clover POS authorized reseller. Service area covers all 134 incorporated Utah cities and all 29 Utah counties.
 
 _Generated: 2026-07-31_
 
@@ -18,7 +18,7 @@ _Generated: 2026-07-31_
 - [Get a Quote](https://ubcunlimited.com/quote): Quick quote request form
 - [FAQ](https://ubcunlimited.com/faq): Frequently asked questions about merchant services, pricing, and contracts
 - [Client Testimonials](https://ubcunlimited.com/testimonials): Real client reviews and case studies
-- [Build a POS System](https://ubcunlimited.com/build-a-pos): Interactive SkyTab POS configurator — select hardware, add-ons, and get a custom quote
+- [Build a POS System](https://ubcunlimited.com/build-a-pos): Interactive Shift4Dine POS configurator — select hardware, add-ons, and get a custom quote
 - [News & Updates](https://ubcunlimited.com/news): Company news, product updates, and industry announcements
 - [Accessibility Statement](https://ubcunlimited.com/accessibility): WCAG 2.1 accessibility commitment and contact for accommodations
 
@@ -28,7 +28,7 @@ _Generated: 2026-07-31_
 - [Credit Card Processing](https://ubcunlimited.com/solutions/credit-card-processing): Competitive rates with transparent pricing
 - [ACH / eCheck Processing](https://ubcunlimited.com/solutions/ach-echeck-processing): Bank-to-bank transfers and eCheck acceptance for lower processing costs
 - [Check Guarantee](https://ubcunlimited.com/solutions/check-guarantee): Accept paper checks with protection against returned or fraudulent checks
-- [POS Systems](https://ubcunlimited.com/solutions/pos-systems): SkyTab, Clover & more for your industry
+- [POS Systems](https://ubcunlimited.com/solutions/pos-systems): Shift4Dine, Clover & more for your industry
 - [eCommerce Payments](https://ubcunlimited.com/solutions/ecommerce-payments): Seamless online payment gateways
 - [Mobile Processing](https://ubcunlimited.com/solutions/mobile-processing): Accept payments anywhere — in the field, at events, or on the go
 - [Virtual Terminals](https://ubcunlimited.com/solutions/virtual-terminals): Process payments by phone, mail order, or manual entry from any browser
@@ -80,7 +80,7 @@ _Generated: 2026-07-31_
 - [Choosing the Right eCommerce Payment Gateway for Your Utah Business](https://ubcunlimited.com/blog/ecommerce-payment-gateway-guide): A payment gateway is not the same as a merchant account, and confusing the two leads to costly mistakes. Utah eCommerce businesses need both — and the right com
 - [Best POS Systems for Bars and Nightclubs in Utah](https://ubcunlimited.com/blog/pos-systems-for-bars-utah): Running a bar in Utah comes with a specific set of POS requirements: fast tab management, pre-authorization holds, split bills, and compliance with state liquor
 - [Merchant Services in Utah County: What Local Businesses Need to Know](https://ubcunlimited.com/blog/merchant-services-utah-county): Utah County's business landscape has changed dramatically over the past decade. From Provo's growing restaurant scene to Lehi's tech corridor, local businesses 
-- [SkyTab POS: An Honest Review from Utah](https://ubcunlimited.com/blog/skytab-pos-review-utah): We install and support SkyTab systems across Utah, which means we see exactly how the platform performs in real businesses — not just in demos. This review cove
+- [Shift4Dine POS: An Honest Review from Utah](https://ubcunlimited.com/blog/skytab-pos-review-utah): We install and support Shift4Dine systems across Utah, which means we see exactly how the platform performs in real businesses — not just in demos. This review 
 - [What Is a Rolling Reserve and How Do You Get It Released?](https://ubcunlimited.com/blog/rolling-reserve-merchant-account): If your processor is withholding a percentage of your daily settlements, you're dealing with a rolling reserve. It's common for newer businesses and high-risk i
 - [5 Industries Stripe Drops & Better Alternatives](https://ubcunlimited.com/blog/high-risk-industries-dropped-by-stripe): Stripe, Square, and PayPal are convenient for getting started, but they're known to terminate accounts in certain industries without much warning. If your busin
 - [How Interchange Rates Work: A Plain-English Guide for Utah Merchants](https://ubcunlimited.com/blog/how-interchange-rates-work): Interchange fees are the largest single component of your credit card processing costs — yet most business owners have never had them explained clearly. This gu

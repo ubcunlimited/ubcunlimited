@@ -15,13 +15,13 @@ const OGDEN_INDUSTRIES = [
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "Historic 25th Street is one of Utah's premier dining destinations. We support tableside payments, split checks, and SkyTab POS built for Ogden's vibrant restaurant scene.",
+    desc: "Historic 25th Street is one of Utah's premier dining destinations. We support tableside payments, split checks, and Shift4Dine POS built for Ogden's vibrant restaurant scene.",
     href: "/industries/restaurants",
   },
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "From downtown Ogden boutiques to the Riverdale Road retail corridor — we offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "From downtown Ogden boutiques to the Riverdale Road retail corridor — we offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
@@ -94,7 +94,7 @@ const OGDEN_FAQS = [
   },
   {
     q: "What POS systems do you offer for Ogden restaurants and retailers?",
-    a: "We offer SkyTab (ideal for restaurants and bars on Historic 25th Street), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars on Historic 25th Street), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for Ogden businesses?",
@@ -128,7 +128,7 @@ const TESTIMONIALS = [
     name: "Marco R.",
     business: "Restaurant Owner, Historic 25th Street",
     rating: 5,
-    text: "UBC Unlimited got us set up with SkyTab and our processing costs dropped by 30%. The local support is fantastic — our rep actually came to the restaurant.",
+    text: "UBC Unlimited got us set up with Shift4Dine and our processing costs dropped by 30%. The local support is fantastic — our rep actually came to the restaurant.",
   },
   {
     name: "Diane K.",

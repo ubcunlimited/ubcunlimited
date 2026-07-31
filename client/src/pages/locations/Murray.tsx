@@ -15,7 +15,7 @@ const MURRAY_INDUSTRIES = [
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Murray's Fashion Place Mall area and State Street corridor are major retail destinations. We offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "Murray's Fashion Place Mall area and State Street corridor are major retail destinations. We offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
@@ -27,7 +27,7 @@ const MURRAY_INDUSTRIES = [
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "From Murray's diverse dining scene to fast casual near the freeway — we support tableside payments, split checks, and SkyTab POS.",
+    desc: "From Murray's diverse dining scene to fast casual near the freeway — we support tableside payments, split checks, and Shift4Dine POS.",
     href: "/industries/restaurants",
   },
   {
@@ -94,7 +94,7 @@ const MURRAY_FAQS = [
   },
   {
     q: "What POS systems do you offer for Murray restaurants and retailers?",
-    a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for Murray businesses?",
@@ -140,7 +140,7 @@ const TESTIMONIALS = [
     name: "James T.",
     business: "Restaurant Owner, Murray",
     rating: 5,
-    text: "SkyTab is perfect for our operation. The processing rates are the best we've had and the local support is fantastic.",
+    text: "Shift4Dine is perfect for our operation. The processing rates are the best we've had and the local support is fantastic.",
   }
 ];
 

@@ -1,5 +1,5 @@
 import PageLayout from "@/components/layout/PageLayout";
-import SkyTabPOSBuilder from "@/components/sections/SkyTabPOSBuilder";
+import Shift4DinePOSBuilder from "@/components/sections/Shift4DinePOSBuilder";
 import SEO from "@/components/SEO";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
@@ -8,8 +8,8 @@ export default function BuildAPOS() {
   return (
     <PageLayout>
       <SEO
-        title="Build Your SkyTab POS System"
-        description="Configure your custom SkyTab POS system for your Utah business. Choose hardware, add-ons, and get a local quote — $0 upfront with qualifying accounts."
+        title="Build Your Shift4Dine POS System"
+        description="Configure your custom Shift4Dine POS system for your Utah business. Choose hardware, add-ons, and get a local quote — $0 upfront with qualifying accounts."
         canonical="/build-a-pos"
       />
 
@@ -19,17 +19,17 @@ export default function BuildAPOS() {
         <div className="container relative">
           <div className="max-w-3xl mx-auto text-center pb-16">
             <div className="inline-flex items-center gap-2 bg-[#c9a84c]/15 border border-[#c9a84c]/30 rounded-full px-4 py-1.5 mb-5">
-              <span className="text-[#c9a84c] text-xs font-bold uppercase tracking-widest">SkyTab POS Configurator</span>
+              <span className="text-[#c9a84c] text-xs font-bold uppercase tracking-widest">Shift4Dine POS Configurator</span>
             </div>
             <h1
               className="text-4xl md:text-5xl font-extrabold text-white mb-5 leading-tight"
               style={{ fontFamily: "Sora, sans-serif" }}
             >
               Build Your Perfect{" "}
-              <span className="text-[#c9a84c]">SkyTab POS System</span>
+              <span className="text-[#c9a84c]">Shift4Dine POS System</span>
             </h1>
             <p className="text-white/60 text-lg mb-8 leading-relaxed">
-              Select your bundle, choose your hardware, and add the features you need. A local Utah SkyTab expert will reach out with a custom quote — no obligation, no pressure.
+              Select your bundle, choose your hardware, and add the features you need. A local Utah Shift4Dine expert will reach out with a custom quote — no obligation, no pressure.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-white/70">
               <div className="flex items-center gap-1.5">
@@ -51,17 +51,17 @@ export default function BuildAPOS() {
       </section>
 
       {/* ── Configurator ── */}
-      <SkyTabPOSBuilder />
+      <Shift4DinePOSBuilder />
 
       {/* ── CTA ── */}
       <section className="py-16 bg-[#c9a84c]">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-extrabold text-[#080808] mb-4" style={{ fontFamily: "Sora, sans-serif" }}>
-              Ready to See SkyTab in Action?
+              Ready to See Shift4Dine in Action?
             </h2>
             <p className="text-[#080808]/70 mb-8 leading-relaxed">
-              Use the configurator above to build your system, or call us directly. A local Utah SkyTab expert will walk you through the hardware, answer every question, and provide a transparent quote — no obligation.
+              Use the configurator above to build your system, or call us directly. A local Utah Shift4Dine expert will walk you through the hardware, answer every question, and provide a transparent quote — no obligation.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a href="tel:+18014620923" className="btn-dark inline-flex items-center gap-2">

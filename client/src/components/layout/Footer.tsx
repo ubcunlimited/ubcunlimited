@@ -70,8 +70,8 @@ export default function Footer() {
               aria-label="UBC Unlimited — Home"
             >
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_480w_36563e62.webp"
-                srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_240w_aa5f29cd.webp 240w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_480w_36563e62.webp 480w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_v2_640w_fa1c6e9b.webp 640w"
+                src="https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/logo_v2_480w_36563e62.webp"
+                srcSet="https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/logo_v2_240w_aa5f29cd.webp 240w, https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/logo_v2_480w_36563e62.webp 480w, https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/logo_v2_640w_fa1c6e9b.webp 640w"
                 sizes="280px"
                 alt="UBC Unlimited — Utah Merchant Services & Payment Processing"
                 width={280}

@@ -15,13 +15,13 @@ const WEST_JORDAN_INDUSTRIES = [
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Jordan Landing and West Jordan's major retail corridors need fast, reliable checkout. We offer Clover and SkyTab retail setups with inventory sync.",
+    desc: "Jordan Landing and West Jordan's major retail corridors need fast, reliable checkout. We offer Clover and Shift4Dine retail setups with inventory sync.",
     href: "/industries/retail",
   },
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "From Jordan Landing dining to neighborhood restaurants — we support tableside payments, split checks, and SkyTab POS.",
+    desc: "From Jordan Landing dining to neighborhood restaurants — we support tableside payments, split checks, and Shift4Dine POS.",
     href: "/industries/restaurants",
   },
   {
@@ -94,7 +94,7 @@ const WEST_JORDAN_FAQS = [
   },
   {
     q: "What POS systems do you offer for West Jordan restaurants and retailers?",
-    a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for West Jordan businesses?",
@@ -128,7 +128,7 @@ const TESTIMONIALS = [
     name: "Carlos R.",
     business: "Restaurant Owner, Jordan Landing",
     rating: 5,
-    text: "UBC Unlimited cut our processing costs by 28%. The SkyTab system is perfect for our high-volume lunch and dinner service.",
+    text: "UBC Unlimited cut our processing costs by 28%. The Shift4Dine system is perfect for our high-volume lunch and dinner service.",
   },
   {
     name: "Tanya S.",

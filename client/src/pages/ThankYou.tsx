@@ -4,7 +4,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import SEO from "@/components/SEO";
 import { SITE } from "@/lib/config";
 
-const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/hero-thank-you-9yQwsCCDkHfmdSEfYPMs9N.webp";
+const HERO_IMG = "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/hero-thank-you-9yQwsCCDkHfmdSEfYPMs9N.webp";
 
 const NEXT_STEPS = [
   {

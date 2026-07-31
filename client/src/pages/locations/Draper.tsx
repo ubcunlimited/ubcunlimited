@@ -15,13 +15,13 @@ const DRAPER_INDUSTRIES = [
   {
     icon: ShoppingBag,
     name: "Retail & Boutique",
-    desc: "Draper's upscale retail scene demands fast, reliable checkout. We offer Clover and SkyTab retail setups with inventory sync and premium customer experience.",
+    desc: "Draper's upscale retail scene demands fast, reliable checkout. We offer Clover and Shift4Dine retail setups with inventory sync and premium customer experience.",
     href: "/industries/retail",
   },
   {
     icon: Utensils,
     name: "Restaurants & Food Service",
-    desc: "From fine dining to fast casual along Draper Parkway — we support tableside payments, split checks, and SkyTab POS built for high-volume service.",
+    desc: "From fine dining to fast casual along Draper Parkway — we support tableside payments, split checks, and Shift4Dine POS built for high-volume service.",
     href: "/industries/restaurants",
   },
   {
@@ -94,7 +94,7 @@ const DRAPER_FAQS = [
   },
   {
     q: "What POS systems do you offer for Draper restaurants and retailers?",
-    a: "We offer SkyTab (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
+    a: "We offer Shift4Dine (ideal for restaurants and bars), Clover (popular with retail and professional services), and several other systems. We handle delivery, setup, and training — typically within 24–48 hours of approval.",
   },
   {
     q: "Do you offer a cash discount program for Draper businesses?",

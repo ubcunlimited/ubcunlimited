@@ -7,9 +7,9 @@ import PageLayout from "@/components/layout/PageLayout";
 import CTABanner from "@/components/sections/CTABanner";
 import FAQ from "@/components/sections/FAQ";
 import { lazy, Suspense } from "react";
-// SkyTabPOSBuilder is 945 lines — only shown on restaurants & bars pages.
+// Shift4DinePOSBuilder is 945 lines — only shown on restaurants & bars pages.
 // Lazy-load it so all other 20 industry pages don't pay its parse cost.
-const SkyTabPOSBuilder = lazy(() => import("@/components/sections/SkyTabPOSBuilder"));
+const Shift4DinePOSBuilder = lazy(() => import("@/components/sections/Shift4DinePOSBuilder"));
 import { NAV_INDUSTRIES, NAV_SOLUTIONS } from "@/lib/config";
 import SEO from "@/components/SEO";
 import IndustryIcon from "@/components/icons/IndustryIcon";
@@ -35,7 +35,7 @@ const industriesData: IndustryData[] = [
     description: "From fast-casual to fine dining, UBC Unlimited provides restaurant-specific POS systems and payment processing that keep your kitchen and front-of-house running smoothly.",
     challenges: ["High transaction volume during rushes", "Tip management complexity", "Table management and splitting checks", "Online ordering integration"],
     solutions: [
-      { title: "SkyTab POS", desc: "Industry-leading restaurant POS with tableside ordering, kitchen display systems, and online ordering built in." },
+      { title: "Shift4Dine POS", desc: "Industry-leading restaurant POS with tableside ordering, kitchen display systems, and online ordering built in." },
       { title: "Tip Management", desc: "Automatic tip prompts, tip pooling, and end-of-day tip reports for your entire staff." },
       { title: "Online Ordering", desc: "Integrated online ordering that flows directly into your kitchen — no third-party tablet chaos." },
       { title: "Table Management", desc: "Visual floor plan, table status tracking, and server assignment from one screen." },
@@ -45,17 +45,17 @@ const industriesData: IndustryData[] = [
     recommendedSolutions: ["/solutions/pos-systems", "/solutions/credit-card-processing", "/solutions/gift-loyalty", "/solutions/surcharge-cash-discount"],
     faqs: [
       { question: "Can I reduce my credit card processing costs as a restaurant?", answer: "Yes. Our cash discount & dual pricing lets you display a cash price and a card price at the point of sale. Customers who pay by card cover the processing cost, which can effectively eliminate your fees. The program is fully compliant with card network rules, legal in all 50 states, and includes all required signage and staff training. Most restaurant owners see minimal customer pushback when the pricing is displayed clearly upfront. Learn more at our Cash Discount & Dual Pricing page." },
-      { question: "What POS system do you recommend for restaurants?", answer: "We typically recommend SkyTab for full-service restaurants. It offers tableside ordering, kitchen display systems, online ordering integration, and robust reporting — all in one system." },
+      { question: "What POS system do you recommend for restaurants?", answer: "We typically recommend Shift4Dine for full-service restaurants. It offers tableside ordering, kitchen display systems, online ordering integration, and robust reporting — all in one system." },
       { question: "Can I accept tips with your system?", answer: "Yes. Our restaurant POS systems include tip prompts on customer-facing screens, tip pooling, and automatic tip reporting for payroll." },
       { question: "Do you integrate with online ordering platforms?", answer: "Yes. We integrate with major online ordering platforms and also offer our own integrated online ordering solution that flows directly into your POS." },
       { question: "Do you offer gift cards and loyalty programs for restaurants?", answer: "Yes. We offer fully integrated gift card and loyalty solutions that work seamlessly with your POS and payment processing. Branded physical and digital gift cards help you acquire new customers — according to research from Capital One Shopping, 61% of consumers spend more than a gift card's face value when redeeming — an average of $31.75 more — making each gift card sale both a customer acquisition event and a revenue driver. A points-based loyalty program rewards repeat diners, increases visit frequency, and builds a customer database you can market to directly with email and SMS campaigns. No punch cards, no manual tracking — everything runs automatically at the point of sale." },
-      { question: "How does SkyTab compare to Toast, Square, and Clover?", answer: (
+      { question: "How does Shift4Dine compare to Toast, Square, and Clover?", answer: (
         <div className="overflow-x-auto -mx-2">
           <table className="w-full text-xs border-collapse min-w-[480px]">
             <thead>
               <tr className="bg-[#080808] text-white">
                 <th className="text-left px-3 py-2 font-semibold">Feature</th>
-                <th className="px-3 py-2 font-bold text-[#22c55e] text-center">SkyTab<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
+                <th className="px-3 py-2 font-bold text-[#22c55e] text-center">Shift4Dine<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
                 <th className="px-3 py-2 font-semibold text-center">Toast</th>
                 <th className="px-3 py-2 font-semibold text-center">Square</th>
                 <th className="px-3 py-2 font-semibold text-center">Clover</th>
@@ -78,10 +78,10 @@ const industriesData: IndustryData[] = [
                 ["Local onsite installation (Utah)", "✅", "❌", "❌", "⚠️"],
                 ["4G LTE handheld POS option", "✅", "⚠️", "❌", "❌"],
                 ["Brewery & taproom features", "✅", "⚠️", "⚠️", "⚠️"],
-              ].map(([feature, skytab, toast, square, clover], i) => (
+              ].map(([feature, shift4dine, toast, square, clover], i) => (
                 <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                   <td className="px-3 py-2 text-gray-700 font-medium">{feature}</td>
-                  <td className="px-3 py-2 text-center font-semibold text-[#c9a84c]">{skytab}</td>
+                  <td className="px-3 py-2 text-center font-semibold text-[#c9a84c]">{shift4dine}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{toast}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{square}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{clover}</td>
@@ -112,13 +112,13 @@ const industriesData: IndustryData[] = [
     faqs: [
       { question: "Can I pre-authorize cards for tabs?", answer: "Yes. Our bar POS systems support pre-authorization holds, so you can hold a card on file and capture the final amount when the customer closes out." },
       { question: "Do you offer gift cards and loyalty programs for bars?", answer: "Yes. Branded gift cards are a proven revenue driver — they're purchased upfront and often never fully redeemed, providing float income. A loyalty program rewards your regulars with points for every visit or dollar spent, encouraging them to choose your bar over competitors. Both integrate directly with your POS so there's no manual tracking or separate system to manage." },
-      { question: "How does SkyTab compare to Toast, Square, and Clover?", answer: (
+      { question: "How does Shift4Dine compare to Toast, Square, and Clover?", answer: (
         <div className="overflow-x-auto -mx-2">
           <table className="w-full text-xs border-collapse min-w-[480px]">
             <thead>
               <tr className="bg-[#080808] text-white">
                 <th className="text-left px-3 py-2 font-semibold">Feature</th>
-                <th className="px-3 py-2 font-bold text-[#22c55e] text-center">SkyTab<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
+                <th className="px-3 py-2 font-bold text-[#22c55e] text-center">Shift4Dine<br/><span className="text-[10px] font-normal text-gray-300">by Shift4</span></th>
                 <th className="px-3 py-2 font-semibold text-center">Toast</th>
                 <th className="px-3 py-2 font-semibold text-center">Square</th>
                 <th className="px-3 py-2 font-semibold text-center">Clover</th>
@@ -141,10 +141,10 @@ const industriesData: IndustryData[] = [
                 ["Local onsite installation (Utah)", "✅", "❌", "❌", "⚠️"],
                 ["4G LTE handheld POS option", "✅", "⚠️", "❌", "❌"],
                 ["Brewery & taproom features", "✅", "⚠️", "⚠️", "⚠️"],
-              ].map(([feature, skytab, toast, square, clover], i) => (
+              ].map(([feature, shift4dine, toast, square, clover], i) => (
                 <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                   <td className="px-3 py-2 text-gray-700 font-medium">{feature}</td>
-                  <td className="px-3 py-2 text-center font-semibold text-[#c9a84c]">{skytab}</td>
+                  <td className="px-3 py-2 text-center font-semibold text-[#c9a84c]">{shift4dine}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{toast}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{square}</td>
                   <td className="px-3 py-2 text-center text-gray-600">{clover}</td>
@@ -1157,10 +1157,10 @@ export default function IndustryDetailPage({ slug }: IndustryDetailPageProps) {
         </div>
       </section>
 
-      {/* SkyTab POS Builder — shown for restaurant & bar industries */}
+      {/* Shift4Dine POS Builder — shown for restaurant & bar industries */}
       {(data.slug === "restaurants" || data.slug === "bars-nightclubs") && (
         <Suspense fallback={<div className="py-16 bg-[#080808] animate-pulse" aria-hidden="true" />}>
-          <SkyTabPOSBuilder />
+          <Shift4DinePOSBuilder />
         </Suspense>
       )}
 

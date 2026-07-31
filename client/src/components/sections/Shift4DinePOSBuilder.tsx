@@ -1,8 +1,8 @@
 /**
- * SkyTabPOSBuilder — Full 4-step interactive POS configurator
+ * Shift4DinePOSBuilder — Full 4-step interactive POS configurator
  * Design: Modern Fintech Edge — dark navy/teal, Sora font, UBC Unlimited brand
  * Steps: 1. Bundle  2. Hardware  3. Accessories  4. Processing + Order Form
- * All product images sourced directly from skytabmountainwest.com / skytab.com
+ * All product images sourced directly from shift4dinemountainwestpartner.com / shift4dinemountainwestpartner.com
  */
 import { useState } from "react";
 import { CheckCircle, ArrowRight, ChevronLeft, ChevronRight, Send } from "lucide-react";
@@ -10,19 +10,19 @@ import { trackLead } from "@/lib/pixel";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
 import { trpc } from "@/lib/trpc";
 
-// ─── CDN Image URLs (correct sources from skytabmountainwest.com) ──────────────
+// ─── CDN Image URLs (correct sources from shift4dinemountainwestpartner.com) ──────────────
 const IMG = {
-  tableService: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-table-service_78712795.webp",
-  counterService: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-counter-service_47ad432d.webp",
-  air: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-air_24cf047b.webp",
-  glass: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-glass_087fe917.webp",
-  kiosk: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-kiosk_86132708.webp",
-  thermalPrinter: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-thermal-printer_dc8f7da3.webp",
-  dotMatrix: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-dot-matrix_c9dd8b23.webp",
-  kds: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-kds_06721bca.webp",
-  kdsBumpBar: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-bump-bar_27f738b6.webp",
-  digitalScale: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-scale_6f31b37c.webp",
-  callerID: "https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/st-caller-id_02cee2cf.webp",
+  tableService: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-table-service.webp",
+  counterService: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-counter-service.webp",
+  air: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-air.webp",
+  glass: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-glass.webp",
+  kiosk: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-kiosk.webp",
+  thermalPrinter: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-thermal-printer.webp",
+  dotMatrix: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-dot-matrix.webp",
+  kds: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-kds.webp",
+  kdsBumpBar: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-bump-bar.webp",
+  digitalScale: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-scale.webp",
+  callerID: "https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/shift4dine-caller-id.webp",
 };
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
@@ -44,12 +44,12 @@ const BUNDLES = [
     desc: "Full-service restaurants, bars, and venues where servers take orders and payments tableside.",
     bestFor: ["Full Service Restaurants", "Bars & Nightclubs", "Fine Dining", "Breweries"],
     includes: [
-      "SkyTab POS workstation (14\" HD touchscreen)",
+      "Workstation 15 (14\" HD touchscreen)",
       "Integrated card reader",
       "Stainless steel cash drawer",
       "Thermal receipt printer",
       "TP-Link router + cables",
-      "SkyTab POS software",
+      "Shift4Dine POS software",
     ],
   },
   {
@@ -62,13 +62,13 @@ const BUNDLES = [
     desc: "Quick-service, fast casual, coffee shops, and any concept where guests order at the counter.",
     bestFor: ["Quick Service / Fast Casual", "Coffee Shops", "Food Trucks", "Pizza / Delivery"],
     includes: [
-      "SkyTab POS workstation (14\" HD touchscreen)",
+      "Workstation 15 (14\" HD touchscreen)",
       "Interactive customer-facing display",
       "Integrated card reader",
       "Stainless steel cash drawer",
       "Thermal receipt printer",
       "TP-Link router + cables",
-      "SkyTab POS software",
+      "Shift4Dine POS software",
     ],
   },
 ];
@@ -85,7 +85,7 @@ interface HardwareItem {
 const HARDWARE_ITEMS: HardwareItem[] = [
   {
     id: "air",
-    name: "SkyTab Air",
+    name: "Shift4 Air",
     desc: "Handheld tableside ordering & payments. 6.5\" touchscreen, 4G LTE + WiFi, all-day battery, integrated receipt printer.",
     price: 29.99,
     img: IMG.air,
@@ -93,7 +93,7 @@ const HARDWARE_ITEMS: HardwareItem[] = [
   },
   {
     id: "glass",
-    name: "SkyTab Glass",
+    name: "Shift4 Glass",
     desc: "Sleek 8-inch mobile POS for upscale tableside ordering and payments at the table.",
     price: 29.99,
     img: IMG.glass,
@@ -101,7 +101,7 @@ const HARDWARE_ITEMS: HardwareItem[] = [
   },
   {
     id: "kiosk",
-    name: "SkyTab Kiosk",
+    name: "Self-Service Kiosk",
     desc: "Self-service ordering kiosk that increases check averages 15–30% and reduces front-of-house labor.",
     price: 29.99,
     img: IMG.kiosk,
@@ -158,7 +158,7 @@ const ACCESSORY_ITEMS: AccessoryItem[] = [
   {
     id: "scale",
     name: "Digital Scale",
-    desc: "Integrated digital scale for weight-based menu items. Syncs directly with SkyTab POS for accurate pricing by pound or ounce.",
+    desc: "Integrated digital scale for weight-based menu items. Syncs directly with Shift4Dine POS for accurate pricing by pound or ounce.",
     img: IMG.digitalScale,
     type: "qty",
     price: 39.99,
@@ -398,7 +398,7 @@ function OrderSummary({ state, total }: { state: ConfigState; total: number }) {
 }
 
 // ─── Main Component ────────────────────────────────────────────────────────────
-export default function SkyTabPOSBuilder() {
+export default function Shift4DinePOSBuilder() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -450,7 +450,7 @@ export default function SkyTabPOSBuilder() {
 
   const { getToken } = useRecaptcha();
 
-  const submitPOSOrder = trpc.forms.submitSkyTabOrder.useMutation({
+  const submitPOSOrder = trpc.forms.submitShift4DineOrder.useMutation({
     onSuccess: () => {
       setSubmitting(false);
       setSubmitted(true);
@@ -525,10 +525,10 @@ export default function SkyTabPOSBuilder() {
         {/* Header */}
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 bg-[#c9a84c]/10 text-[#c9a84c] text-xs font-semibold px-3 py-1.5 rounded-full mb-3 uppercase tracking-widest">
-            SkyTab POS Configurator
+            Shift4Dine POS Configurator
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#080808] mb-3" style={{ fontFamily: 'Sora, sans-serif' }}>
-            Build Your SkyTab POS System
+            Build Your Shift4Dine POS System
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto text-sm leading-relaxed">
             Select a bundle, customize your hardware and accessories, and get a UBC Unlimited Solution Specialist to handle installation and onboarding.
@@ -887,10 +887,10 @@ export default function SkyTabPOSBuilder() {
                             I Accept — By submitting this form, I agree that I have read and understand the{" "}
                             <a href="/legal/privacy-policy" className="text-[#c9a84c] underline">Privacy Policy</a>{" "}
                             and give my consent to UBC Unlimited to collect and process the personal information I provide. A{" "}
-                            <a href="https://skytabmountainwest.com/merchant-processing-agreement.pdf" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] underline">Merchant Processing Agreement</a>{" "}
+                            <a href="https://shift4dinemountainwestpartner.com/merchant-processing-agreement" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] underline">Merchant Processing Agreement</a>{" "}
                             and{" "}
-                            <a href="https://skytabmountainwest.com/pos-service-agreement.pdf" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] underline">POS Service Agreement</a>{" "}
-                            are required to take advantage of the $0 upfront cost for SkyTab equipment and any free services included in this package.
+                            <a href="https://shift4dinemountainwestpartner.com/pos-service-agreement" target="_blank" rel="noopener noreferrer" className="text-[#c9a84c] underline">POS Service Agreement</a>{" "}
+                            are required to take advantage of the $0 upfront cost for Shift4Dine equipment and any free services included in this package.
                           </span>
                         </label>
                       </div>

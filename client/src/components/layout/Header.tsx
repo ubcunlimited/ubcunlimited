@@ -119,7 +119,7 @@ export default function Header() {
           <Link href="/" className="flex items-center shrink-0 group" aria-label="UBC Unlimited — Home">
             {/* Mobile logo: constrained to nav bar height so it never overflows into the top bar */}
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_mobile_v2_50fd3d7c.webp"
+              src="https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/logo_mobile_v2_50fd3d7c.webp"
               alt="UBC Unlimited — Processing Without Limits"
               width={190}
               height={30}
@@ -131,8 +131,8 @@ export default function Header() {
             />
             {/* Desktop logo: shrinks from h-20 → h-10 on scroll */}
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_480w_d79c112f.webp"
-              srcSet="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_240w_3fa55674.webp 240w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_480w_d79c112f.webp 480w, https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_new_759w_4279eeb0.webp 759w"
+              src="https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/logo_new_480w_d79c112f.webp"
+              srcSet="https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/logo_new_240w_3fa55674.webp 240w, https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/logo_new_480w_d79c112f.webp 480w, https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/logo_new_759w_4279eeb0.webp 759w"
               sizes="320px"
               alt="UBC Unlimited — Processing Without Limits"
               width={759}
@@ -388,7 +388,7 @@ export default function Header() {
               <div className="flex items-center px-3 pb-3 mb-1 border-b border-white/10">
                 <Link href="/" aria-label="UBC Unlimited — Home">
                   <img
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/logo_160w_q70_148b8064.webp"
+                    src="https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/logo_160w_q70_148b8064.webp"
                     alt="UBC Unlimited — Processing Without Limits"
                     width={40}
                     height={40}

@@ -58,7 +58,7 @@ export default function AgentLogin() {
         <header className="border-b border-white/10 px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 group">
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663396807781/BUvnwzJnwMZHoEGpybj36j/ubc-logo-gold_1c9c9d5b.png"
+              src="https://pub-8c85f0eebb874aac86f73c425d49f1d6.r2.dev/ubc-logo-gold_1c9c9d5b.png"
               alt="UBC Unlimited"
               className="h-10 w-auto"
               onError={(e) => {

@@ -5,7 +5,6 @@ import compression from "compression";
 import { createServer } from "http";
 import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
-import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
@@ -34,8 +33,6 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 const ALLOWED_ORIGINS = [
   "https://ubcunlimited.com",
   "https://www.ubcunlimited.com",
-  "https://ubcmerch-buvnwzjn.manus.space",
-  /\.manus\.computer$/,   // sandbox preview URLs
   /^http:\/\/localhost/,  // local dev
   /^http:\/\/127\.0\.0\.1/,  // local dev (IP form)
 ];
@@ -76,8 +73,6 @@ async function startServer() {
     res.json({ ok: true, ts: Date.now() });
   });
 
-  // OAuth callback under /api/oauth/callback
-  registerOAuthRoutes(app);
   // tRPC API
   app.use(
     "/api/trpc",

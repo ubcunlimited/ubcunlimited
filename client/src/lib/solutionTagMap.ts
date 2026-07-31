@@ -11,7 +11,7 @@ export const SOLUTION_TAG_SLUG: Record<string, string | null> = {
   "Check Guarantee": "check-guarantee",
   "Check Replacement": "check-guarantee",
   "POS Systems": "pos-systems",
-  "SkyTab POS": "pos-systems",
+  "Shift4Dine POS": "pos-systems",
   "Hardware & Setup": "pos-systems",
   "eCommerce Payments": "ecommerce-payments",
   "Platform Integration": "ecommerce-payments",

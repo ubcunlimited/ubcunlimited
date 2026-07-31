@@ -20,7 +20,7 @@ const solutionDetails: Record<string, { desc: string; features: string[] }> = {
   },
   "/solutions/pos-systems": {
     desc: "Full-featured POS systems for restaurants, retail, and service businesses.",
-    features: ["SkyTab & Clover", "Inventory management", "Employee tracking", "Reporting & analytics"],
+    features: ["Shift4Dine & Clover", "Inventory management", "Employee tracking", "Reporting & analytics"],
   },
   "/solutions/ecommerce-payments": {
     desc: "Secure online payment gateways that integrate with your website and shopping cart.",
