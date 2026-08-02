@@ -1407,7 +1407,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         <div className="container">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Main content */}
-            <article className="lg:col-span-2">
+            <article className="lg:col-span-2 min-w-0">
               <Link href="/blog" className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-[#c9a84c] transition-colors mb-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c9a84c] rounded">
                 <ArrowLeft size={14} aria-hidden="true" /> Back to Blog
               </Link>

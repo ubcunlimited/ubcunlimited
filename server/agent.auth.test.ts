@@ -4,14 +4,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 vi.mock("./_core/env", () => ({
   ENV: {
     agentPortalPassword: "test-secret-password",
-    appId: "",
-    cookieSecret: "",
-    databaseUrl: "",
-    oAuthServerUrl: "",
-    ownerOpenId: "",
-    isProduction: false,
-    forgeApiUrl: "",
-    forgeApiKey: "",
+    recaptchaSecretKey: "",
   },
 }));
 

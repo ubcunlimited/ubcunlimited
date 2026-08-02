@@ -326,10 +326,10 @@ function StepIndicator({ current }: { current: number }) {
             }`}>
               {s < current ? <CheckCircle size={14} /> : s}
             </div>
-            <span className={`text-xs mt-1 font-medium ${s === current ? "text-[#c9a84c]" : "text-gray-600"}`}>{labels[i]}</span>
+            <span className={`text-[10px] sm:text-xs mt-1 font-medium whitespace-nowrap ${s === current ? "text-[#c9a84c]" : "text-gray-600"}`}>{labels[i]}</span>
           </div>
           {i < 3 && (
-            <div className={`w-12 sm:w-20 h-0.5 mb-5 mx-1 transition-all ${s < current ? "bg-[#22c55e]" : "bg-gray-200"}`} />
+            <div className={`w-4 sm:w-20 h-0.5 mb-5 mx-0.5 sm:mx-1 transition-all ${s < current ? "bg-[#22c55e]" : "bg-gray-200"}`} />
           )}
         </div>
       ))}
@@ -542,7 +542,7 @@ export default function Shift4DinePOSBuilder() {
 
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Left: Configurator */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 min-w-0">
             <StepIndicator current={step} />
 
             {/* ── Step 1: Bundle ── */}
@@ -935,7 +935,7 @@ export default function Shift4DinePOSBuilder() {
           </div>
 
           {/* Right: Order Summary */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 min-w-0">
             <OrderSummary state={config} total={total} />
           </div>
         </div>

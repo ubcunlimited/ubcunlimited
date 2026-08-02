@@ -8,7 +8,6 @@ import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
-import { seoAuditScheduledHandler } from "../scheduledHandlers";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -82,10 +81,6 @@ async function startServer() {
       createContext,
     })
   );
-
-  // ── Scheduled endpoints (Heartbeat cron callbacks) ──────────────────────────
-  // MUST be registered before Vite/static fallthrough
-  app.post("/api/scheduled/seo-audit", seoAuditScheduledHandler);
 
   // development mode uses Vite, production mode uses static files
   if (process.env.NODE_ENV === "development") {

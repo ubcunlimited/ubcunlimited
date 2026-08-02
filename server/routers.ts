@@ -1,40 +1,21 @@
-import { COOKIE_NAME } from "@shared/const";
-import { getSessionCookieOptions } from "./_core/cookies";
 import { ENV } from "./_core/env";
-import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { formsRouter } from "./routers/forms";
 import { testimonialsRouter } from "./routers/testimonials";
-import { adminRouter } from "./routers/admin";
 import { z } from "zod";
 
 export const appRouter = router({
-    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
-  system: systemRouter,
-  auth: router({
-    me: publicProcedure.query(opts => opts.ctx.user),
-    logout: publicProcedure.mutation(({ ctx }) => {
-      const cookieOptions = getSessionCookieOptions(ctx.req);
-      ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });
-      return {
-        success: true,
-      } as const;
-    }),
-  }),
-
+  // All API routes must start with '/api/' so the gateway can route correctly.
   forms: formsRouter,
   testimonials: testimonialsRouter,
-  admin: adminRouter,
 
   agent: router({
     verifyPassword: publicProcedure
       .input(z.object({ password: z.string() }))
       .mutation(({ input }) => {
         const correct = ENV.agentPortalPassword;
-        if (!correct) {
-          // If no password is set, deny access
-          return { success: false };
-        }
+        // If no password is configured, deny access.
+        if (!correct) return { success: false };
         return { success: input.password === correct };
       }),
   }),

@@ -35,7 +35,7 @@ const models = [
     ctaColor: "text-[#2a7a6f]",
   },
   {
-    name: "Cash Discount / Cash Discount & Dual Pricing",
+    name: "Cash Discount & Dual Pricing",
     badge: "Zero-Cost Option",
     badgeColor: "bg-[#080808] text-[#c9a84c] border border-[#c9a84c]/30",
     range: "0% to you",
@@ -88,7 +88,7 @@ const comparisonRows: { feature: string; ubc: CellValue; stripe: CellValue; squa
     note: "Interchange-plus pricing can save 0.5–1.5% vs. flat-rate for businesses with favorable card mix.",
   },
   {
-    feature: "Cash Discount / Cash Discount & Dual Pricing",
+    feature: "Cash Discount & Dual Pricing",
     ubc: true,
     stripe: false,
     square: false,
@@ -187,11 +187,11 @@ export default function PricingTransparency() {
               key={model.name}
               className="rounded-2xl border border-gray-100 hover:border-[#c9a84c]/30 hover:shadow-xl transition-all p-6 flex flex-col"
             >
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="font-bold text-[#080808] text-base leading-tight">{model.name}</h3>
-                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full shrink-0 ml-2 ${model.badgeColor}`}>
+              <div className="mb-4">
+                <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3 ${model.badgeColor}`}>
                   {model.badge}
                 </span>
+                <h3 className="font-bold text-[#080808] text-base leading-tight text-balance">{model.name}</h3>
               </div>
 
               <div className="mb-4">

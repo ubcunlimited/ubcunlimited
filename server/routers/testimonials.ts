@@ -1,12 +1,11 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import { notifyOwner } from "../_core/notification";
-import { adminProcedure, publicProcedure, router } from "../_core/trpc";
+import { publicProcedure, router } from "../_core/trpc";
 import { verifyRecaptcha } from "../recaptcha";
 import {
   getTestimonialSubmissions,
   insertTestimonialSubmission,
-  updateTestimonialStatus,
 } from "../db";
 import { sendToWebhook } from "../webhook";
 
@@ -104,8 +103,6 @@ export const testimonialsRouter = router({
         ``,
         `**Testimonial:**`,
         `"${input.quote}"`,
-        ``,
-        `Review and approve at /admin/testimonials.`,
       ]
         .filter(Boolean)
         .join("\n");
@@ -115,34 +112,6 @@ export const testimonialsRouter = router({
         content: lines,
       });
 
-      return { success: true };
-    }),
-
-  // ─── Admin: list all submissions with optional status filter ─────────────
-  adminList: adminProcedure
-    .input(
-      z.object({
-        status: z.enum(["pending", "approved", "rejected", "all"]).default("all"),
-      })
-    )
-    .query(async ({ input }) => {
-      const status =
-        input.status === "all" ? undefined : input.status;
-      const rows = await getTestimonialSubmissions(status);
-      return rows;
-    }),
-
-  // ─── Admin: approve or reject a submission ───────────────────────────────
-  review: adminProcedure
-    .input(
-      z.object({
-        id: z.number().int().positive(),
-        status: z.enum(["approved", "rejected"]),
-        adminNotes: z.string().max(500).optional(),
-      })
-    )
-    .mutation(async ({ input }) => {
-      await updateTestimonialStatus(input.id, input.status, input.adminNotes);
       return { success: true };
     }),
 

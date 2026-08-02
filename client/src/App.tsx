@@ -53,10 +53,6 @@ const Disclaimer = lazy(() => import("./pages/legal/Disclaimer"));
 // FAQ
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 
-// Admin
-const AdminTestimonials = lazy(() => import("./pages/admin/AdminTestimonials"));
-const AdminPortal = lazy(() => import("./pages/admin/AdminPortal"));
-
 // Internal docs
 const RecaptchaDoc = lazy(() => import("./pages/RecaptchaDoc"));
 const DocsAuthGate = lazy(() => import("./components/DocsAuthGate"));
@@ -292,10 +288,6 @@ function Router() {
           {/* Cities */}
           <Route path="/cities">{() => <Cities />}</Route>
           <Route path="/cities/:slug">{() => <CityDetail />}</Route>
-
-          {/* Admin */}
-          <Route path="/admin">{() => <AdminPortal />}</Route>
-          <Route path="/admin/testimonials">{() => <AdminTestimonials />}</Route>
 
           {/* Internal docs */}
           <Route path="/recaptcha-docs">{() => <DocsAuthGate><RecaptchaDoc /></DocsAuthGate>}</Route>

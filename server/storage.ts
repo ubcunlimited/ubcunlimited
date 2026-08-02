@@ -17,9 +17,3 @@ export async function storagePut(
 ): Promise<{ key: string; url: string }> {
   throw new Error(NOT_CONFIGURED);
 }
-
-export async function storageGet(
-  _relKey: string
-): Promise<{ key: string; url: string }> {
-  throw new Error(NOT_CONFIGURED);
-}
